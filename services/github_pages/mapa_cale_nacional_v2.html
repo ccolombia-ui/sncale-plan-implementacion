@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=mapa_cale_nacional.html?nocache=20251029">
+    <title>Redirigiendo...</title>
+</head>
+<body>
+    <p>Redirigiendo a la nueva versión del mapa...</p>
+    <script>
+        // Limpiar todos los caches
+        localStorage.removeItem('cale_centros_cache');
+        localStorage.removeItem('iebm_cache');
+
+        // Redirigir con timestamp
+        window.location.href = 'mapa_cale_nacional.html?nocache=' + Date.now();
+    </script>
+</body>
+</html>
