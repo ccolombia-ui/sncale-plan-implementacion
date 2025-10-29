@@ -515,6 +515,20 @@
         // FUNCIÓN: Mostrar estadísticas
         // ============================================================================
         function mostrarEstadisticas(centros) {
+            // DEBUG: Examinar primeros 5 centros
+            console.log('=== DEBUG ESTADÍSTICAS ===');
+            console.log('Total centros:', centros.length);
+            console.log('Primeros 5 centros:', centros.slice(0, 5));
+
+            // Ver qué campos tienen los centros
+            if (centros.length > 0) {
+                console.log('Campos del primer centro:', Object.keys(centros[0]));
+                console.log('Valores tipo_centro de primeros 10:');
+                centros.slice(0, 10).forEach((c, i) => {
+                    console.log(`  ${i}: tipo_centro="${c.tipo_centro}" tipo="${c.tipo}"`);
+                });
+            }
+
             const stats = {
                 total: centros.length,
                 nodos: centros.filter(c => {
@@ -528,7 +542,19 @@
                 demandaTotal: centros.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || c.demanda_anual || 0), 0)
             };
 
-            document.getElementById('stats').innerHTML = `
+            console.log('Stats calculadas:', stats);
+
+            // DEBUG VISUAL en la página
+            const tiposUnicos = [...new Set(centros.map(c => c.tipo_centro || c.tipo))];
+            const debugHtml = `
+                <div style="background:#fff3cd; padding:15px; border-radius:8px; margin-bottom:20px; font-size:0.85em;">
+                    <strong>🔍 DEBUG - Tipos de centro encontrados:</strong><br>
+                    ${tiposUnicos.join(', ')}<br>
+                    <strong>Total únicos:</strong> ${tiposUnicos.length}
+                </div>
+            `;
+
+            document.getElementById('stats').innerHTML = debugHtml + `
                 <div class="stat-card">
                     <div class="stat-number">${stats.total}</div>
                     <div class="stat-label">Total Centros</div>
