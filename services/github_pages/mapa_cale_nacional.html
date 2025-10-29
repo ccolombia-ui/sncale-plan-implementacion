@@ -261,7 +261,8 @@
         const GOOGLE_SHEETS_CONFIG = {
             // URL de Google Sheets publicada como TSV (Tab-separated values)
             // Usamos TSV porque las latitudes tienen comas decimales
-            url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRfhmqT_SMan7EeQRmStRS0jofd0VMQPvKemLZ_70Oiruj-yI1jh9ShgSuR7ZsFLMfz8wwDq5hde9Jo/pub?gid=197105959&single=true&output=tsv',
+            // IMPORTANTE: Este Spreadsheet tiene TODAS las columnas incluyendo coordenadas
+            url: 'https://docs.google.com/spreadsheets/d/1ibTlTyAELNoMg6eERPvddPBdsu-eRvWuXlIbI5kDFqU/export?format=tsv&gid=197105959',
 
             // Cache en localStorage (5 minutos)
             cacheKey: 'cale_centros_cache',
@@ -454,11 +455,14 @@
                 // 5. Agregar marcadores
                 const marcadores = [];
                 centros.forEach(centro => {
-                    const lat = parseFloat(centro.latitud || centro.lat);
-                    const lng = parseFloat(centro.longitud || centro.lon || centro.lng);
+                    // Convertir coordenadas (puede venir con coma decimal: "4,649251")
+                    const latStr = (centro.latitud || centro.lat || '').toString().replace(',', '.');
+                    const lngStr = (centro.longitud || centro.lon || centro.lng || '').toString().replace(',', '.');
+                    const lat = parseFloat(latStr);
+                    const lng = parseFloat(lngStr);
 
                     if (isNaN(lat) || isNaN(lng)) {
-                        console.warn(`Coordenadas invalidas para ${centro.centro_id || centro.id}`);
+                        console.warn(`Coordenadas invalidas para ${centro.centro_id || centro.id}: lat="${centro.latitud}", lng="${centro.longitud}"`);
                         return;
                     }
 
@@ -515,46 +519,35 @@
         // FUNCIÓN: Mostrar estadísticas
         // ============================================================================
         function mostrarEstadisticas(centros) {
-            // DEBUG: Examinar primeros 5 centros
-            console.log('=== DEBUG ESTADÍSTICAS ===');
-            console.log('Total centros:', centros.length);
-            console.log('Primeros 5 centros:', centros.slice(0, 5));
-
-            // Ver qué campos tienen los centros
-            if (centros.length > 0) {
-                console.log('Campos del primer centro:', Object.keys(centros[0]));
-                console.log('Valores tipo_centro de primeros 10:');
-                centros.slice(0, 10).forEach((c, i) => {
-                    console.log(`  ${i}: tipo_centro="${c.tipo_centro}" tipo="${c.tipo}"`);
-                });
-            }
+            // Clasificación correcta:
+            // - NODOS PRINCIPALES: CALE.n_1+ y CALE.n_1
+            // - SATÉLITES: CALE.n_2, CALE.n_3, C2, C3, C4, C5
 
             const stats = {
                 total: centros.length,
                 nodos: centros.filter(c => {
-                    const tipo = (c.tipo_centro || c.tipo || '').toUpperCase();
-                    return tipo.includes('NODO') && !tipo.includes('SAT');
+                    const cat = (c['Categoría'] || c.categoria_cale || c.categoria || '').trim();
+                    return cat === 'CALE.n_1+' || cat === 'CALE.n_1';
                 }).length,
                 satelites: centros.filter(c => {
-                    const tipo = (c.tipo_centro || c.tipo || '').toUpperCase();
-                    return tipo.includes('SAT');
+                    const cat = (c['Categoría'] || c.categoria_cale || c.categoria || '').trim();
+                    return cat === 'CALE.n_2' || cat === 'CALE.n_2**' ||
+                           cat === 'CALE.n_3' ||
+                           cat === 'C2' || cat === 'C3' || cat === 'C4' || cat === 'C5';
                 }).length,
-                demandaTotal: centros.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || c.demanda_anual || 0), 0)
+                demandaTotal: centros.reduce((sum, c) => {
+                    const demanda = parseInt(c['Demanda'] || c.demanda_estimada_anual || c.demanda_anual || 0);
+                    return sum + demanda;
+                }, 0)
             };
 
-            console.log('Stats calculadas:', stats);
+            console.log('=== ESTADÍSTICAS CALCULADAS ===');
+            console.log('Total:', stats.total);
+            console.log('Nodos (CALE.n_1+ y CALE.n_1):', stats.nodos);
+            console.log('Satélites (resto):', stats.satelites);
+            console.log('Demanda Total:', stats.demandaTotal);
 
-            // DEBUG VISUAL en la página
-            const tiposUnicos = [...new Set(centros.map(c => c.tipo_centro || c.tipo))];
-            const debugHtml = `
-                <div style="background:#fff3cd; padding:15px; border-radius:8px; margin-bottom:20px; font-size:0.85em;">
-                    <strong>🔍 DEBUG - Tipos de centro encontrados:</strong><br>
-                    ${tiposUnicos.join(', ')}<br>
-                    <strong>Total únicos:</strong> ${tiposUnicos.length}
-                </div>
-            `;
-
-            document.getElementById('stats').innerHTML = debugHtml + `
+            document.getElementById('stats').innerHTML = `
                 <div class="stat-card">
                     <div class="stat-number">${stats.total}</div>
                     <div class="stat-label">Total Centros</div>
