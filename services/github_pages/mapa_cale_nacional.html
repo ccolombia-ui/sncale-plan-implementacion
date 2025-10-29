@@ -517,8 +517,14 @@
         function mostrarEstadisticas(centros) {
             const stats = {
                 total: centros.length,
-                nodos: centros.filter(c => (c.tipo_centro || c.tipo || '').includes('NODO_PRINCIPAL')).length,
-                satelites: centros.filter(c => (c.tipo_centro || c.tipo || '').includes('SAT')).length,
+                nodos: centros.filter(c => {
+                    const tipo = (c.tipo_centro || c.tipo || '').toUpperCase();
+                    return tipo.includes('NODO') && !tipo.includes('SAT');
+                }).length,
+                satelites: centros.filter(c => {
+                    const tipo = (c.tipo_centro || c.tipo || '').toUpperCase();
+                    return tipo.includes('SAT');
+                }).length,
                 demandaTotal: centros.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || c.demanda_anual || 0), 0)
             };
 
