@@ -203,6 +203,198 @@
             color: #4a5568;
             z-index: 1000;
         }
+
+        /* Botones en popup */
+        .popup-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .popup-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .popup-btn-3d {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .popup-btn-3d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .popup-btn-2d {
+            background: #48bb78;
+            color: white;
+        }
+
+        .popup-btn-2d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+
+        .popup-btn-info {
+            background: #3182ce;
+            color: white;
+        }
+
+        .popup-btn-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+        }
+
+        /* Modal para información detallada */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .modal-close {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        .modal-section {
+            margin: 20px 0;
+        }
+
+        .modal-section h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.85em;
+            color: #718096;
+            margin-bottom: 4px;
+        }
+
+        .info-item value {
+            display: block;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        /* Filtros */
+        .filters-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            font-weight: bold;
+            color: #2d3748;
+            font-size: 0.9em;
+        }
+
+        .filter-select {
+            padding: 10px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .filter-btn-clear {
+            padding: 10px 20px;
+            background: #e53e3e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            align-self: flex-end;
+        }
+
+        .filter-btn-clear:hover {
+            background: #c53030;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -214,6 +406,34 @@
                 Datos en tiempo real desde Google Sheets
             </p>
         </header>
+
+        <!-- Filtros -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <label>Tipo de Centro</label>
+                <select id="filter-tipo" class="filter-select">
+                    <option value="">Todos</option>
+                    <option value="nodo">Solo Nodos Principales</option>
+                    <option value="satelite">Solo Satélites</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Categoría CALE</label>
+                <select id="filter-categoria" class="filter-select">
+                    <option value="">Todas</option>
+                    <option value="Cat.A+">Cat.A+ (CALE.n_1+)</option>
+                    <option value="Cat.A">Cat.A (CALE.n_1)</option>
+                    <option value="Cat.B**">Cat.B** (CALE.n_2**)</option>
+                    <option value="Cat.B">Cat.B (CALE.n_2)</option>
+                    <option value="Cat.C1">Cat.C1 (CALE.n_3)</option>
+                    <option value="C2">C2 (Satélite)</option>
+                    <option value="C3">C3 (Satélite)</option>
+                    <option value="C4">C4 (Satélite)</option>
+                    <option value="C5">C5 (Satélite)</option>
+                </select>
+            </div>
+            <button class="filter-btn-clear" onclick="limpiarFiltros()">Limpiar Filtros</button>
+        </div>
 
         <div id="map-container">
             <div id="loading" class="loading">
@@ -248,6 +468,19 @@
         </div>
 
         <div class="stats" id="stats"></div>
+    </div>
+
+    <!-- Modal para información detallada -->
+    <div id="modal-centro" class="modal-overlay" onclick="cerrarModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-titulo">Información del Centro</h2>
+                <button class="modal-close" onclick="cerrarModal()">×</button>
+            </div>
+            <div id="modal-body">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
     </div>
 
     <!-- Leaflet JS -->
@@ -445,6 +678,7 @@
 
                 // 3. Crear mapa centrado en Colombia
                 const mapa = L.map('map').setView([4.5709, -74.2973], 6);
+                mapaGlobal = mapa; // Guardar referencia global para filtros
 
                 // 4. Agregar capa base de OpenStreetMap
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -453,7 +687,7 @@
                 }).addTo(mapa);
 
                 // 5. Agregar marcadores
-                const marcadores = [];
+                todosMarcadores = []; // Usar variable global para filtros
                 centros.forEach(centro => {
                     // Convertir coordenadas (puede venir con coma decimal: "4,649251")
                     const latStr = (centro.latitud || centro.lat || '').toString().replace(',', '.');
@@ -479,28 +713,40 @@
                         fillOpacity: 0.8
                     });
 
-                    // Popup con información
+                    // Popup con información y botones
+                    const centroId = centro.centro_id || centro.id || 'desconocido';
                     const popupContent = `
                         <div class="popup-content">
-                            <h3>${centro.centro_id || centro.id || centro.nombre}</h3>
+                            <h3>${centroId}</h3>
                             <p><strong>Municipio:</strong> ${centro.municipio || 'N/A'}</p>
                             <p><strong>Departamento:</strong> ${centro.departamento || 'N/A'}</p>
                             <p><strong>Tipo:</strong> ${centro.tipo_centro || centro.tipo || 'N/A'}</p>
                             <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || centro.demanda_anual || 0).toLocaleString()} estudiantes</p>
                             ${centro.nodo_principal ? `<p><strong>Nodo Principal:</strong> ${centro.nodo_principal}</p>` : ''}
                             <span class="category-badge">${categoria}</span>
+                            <div class="popup-buttons">
+                                <button class="popup-btn popup-btn-info" onclick='abrirModal(${JSON.stringify(centro).replace(/'/g, "\\'")})'>
+                                    📋 Info Completa
+                                </button>
+                                <button class="popup-btn popup-btn-3d" onclick='abrirVisor3D("${centroId}", "${categoria}")'>
+                                    🎮 Visor 3D
+                                </button>
+                                <button class="popup-btn popup-btn-2d" onclick='abrirVisor2D("${centroId}", "${categoria}")'>
+                                    📐 Visor 2D
+                                </button>
+                            </div>
                         </div>
                     `;
 
                     marker.bindPopup(popupContent);
                     marker.addTo(mapa);
-                    marcadores.push({ marker, centro, categoria });
+                    todosMarcadores.push({ marker, centro, categoria });
                 });
 
                 // 6. Mostrar estadísticas
                 mostrarEstadisticas(centros);
 
-                console.log(`Mapa inicializado con ${marcadores.length} marcadores`);
+                console.log(`Mapa inicializado con ${todosMarcadores.length} marcadores`);
 
             } catch (error) {
                 console.error('Error inicializando mapa:', error);
@@ -566,6 +812,187 @@
                 </div>
             `;
         }
+
+        // ============================================================================
+        // FUNCIONES: Modal y navegación
+        // ============================================================================
+
+        function abrirModal(centro) {
+            const modal = document.getElementById('modal-centro');
+            const modalTitulo = document.getElementById('modal-titulo');
+            const modalBody = document.getElementById('modal-body');
+
+            modalTitulo.textContent = centro.centro_id || 'Centro CALE';
+
+            // Determinar tipo de CALE para buscar subcomponentes
+            const categoria = centro.categoria_cale || centro.categoria || 'N/A';
+            let tipoCale = 'desconocido';
+
+            if (categoria === 'Cat.A+' || categoria === 'CALE.n_1+') tipoCale = 'CALE.n_1+';
+            else if (categoria === 'Cat.A' || categoria === 'CALE.n_1') tipoCale = 'CALE.n_1';
+            else if (categoria === 'Cat.B**' || categoria === 'CALE.n_2**') tipoCale = 'CALE.n_2**';
+            else if (categoria === 'Cat.B' || categoria === 'CALE.n_2') tipoCale = 'CALE.n_2';
+            else if (categoria === 'Cat.C1' || categoria === 'CALE.n_3') tipoCale = 'CALE.n_3';
+            else tipoCale = categoria; // C2, C3, C4, C5
+
+            modalBody.innerHTML = `
+                <div class="modal-section">
+                    <h4>Información General</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Centro ID</label>
+                            <value>${centro.centro_id || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Tipo de Centro</label>
+                            <value>${centro.tipo_centro || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Categoría CALE</label>
+                            <value>${categoria}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Municipio</label>
+                            <value>${centro.municipio || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Departamento</label>
+                            <value>${centro.departamento || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Código DANE</label>
+                            <value>${centro.codigo_dane || 'N/A'}</value>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Información Operativa</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Demanda Anual Estimada</label>
+                            <value>${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()} estudiantes</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Nodo Principal</label>
+                            <value>${centro.nodo_principal || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Total Municipios Cluster</label>
+                            <value>${centro.total_municipios_cluster || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Distancia Máxima</label>
+                            <value>${centro.distancia_maxima_km || 'N/A'} km</value>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Coordenadas</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Latitud</label>
+                            <value>${centro.latitud || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Longitud</label>
+                            <value>${centro.longitud || 'N/A'}</value>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Visualizar Componentes del ${tipoCale}</h4>
+                    <p style="color: #718096; margin-bottom: 15px;">
+                        Este centro es tipo ${tipoCale}. Usa los visores para explorar los componentes arquitectónicos y técnicos.
+                    </p>
+                    <div class="popup-buttons">
+                        <button class="popup-btn popup-btn-3d" onclick='abrirVisor3D("${centro.centro_id}", "${categoria}")'>
+                            🎮 Abrir Visor 3D
+                        </button>
+                        <button class="popup-btn popup-btn-2d" onclick='abrirVisor2D("${centro.centro_id}", "${categoria}")'>
+                            📐 Abrir Visor 2D (Planos)
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModal(event) {
+            const modal = document.getElementById('modal-centro');
+            if (!event || event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function abrirVisor3D(centroId, categoria) {
+            // TODO: Integrar con visor 3D real
+            alert(`Abriendo Visor 3D para ${centroId} (${categoria})\n\nEsto abrirá el visor BIM 3D con los modelos IFC del centro.`);
+            // En el futuro: window.location.href = `/visor-3d.html?centro=${centroId}&categoria=${categoria}`;
+        }
+
+        function abrirVisor2D(centroId, categoria) {
+            // TODO: Integrar con visor 2D de planos
+            alert(`Abriendo Visor 2D para ${centroId} (${categoria})\n\nEsto abrirá los planos arquitectónicos 2D exportados desde FreeCAD.`);
+            // En el futuro: window.location.href = `/visor-2d.html?centro=${centroId}&categoria=${categoria}`;
+        }
+
+        // ============================================================================
+        // FUNCIONES: Filtros
+        // ============================================================================
+
+        let todosMarcadores = [];
+        let mapaGlobal = null;
+
+        function aplicarFiltros() {
+            const filtroTipo = document.getElementById('filter-tipo').value;
+            const filtroCategoria = document.getElementById('filter-categoria').value;
+
+            todosMarcadores.forEach(({ marker, centro, categoria }) => {
+                let mostrar = true;
+
+                // Filtro por tipo
+                if (filtroTipo === 'nodo') {
+                    const cat = centro.categoria_cale || centro.categoria || '';
+                    mostrar = cat === 'Cat.A+' || cat === 'Cat.A';
+                } else if (filtroTipo === 'satelite') {
+                    const cat = centro.categoria_cale || centro.categoria || '';
+                    mostrar = cat !== 'Cat.A+' && cat !== 'Cat.A';
+                }
+
+                // Filtro por categoría
+                if (filtroCategoria && mostrar) {
+                    const cat = centro.categoria_cale || centro.categoria || '';
+                    mostrar = cat === filtroCategoria;
+                }
+
+                // Mostrar/ocultar marcador
+                if (mostrar) {
+                    if (!mapaGlobal.hasLayer(marker)) {
+                        marker.addTo(mapaGlobal);
+                    }
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) {
+                        mapaGlobal.removeLayer(marker);
+                    }
+                }
+            });
+        }
+
+        function limpiarFiltros() {
+            document.getElementById('filter-tipo').value = '';
+            document.getElementById('filter-categoria').value = '';
+            aplicarFiltros();
+        }
+
+        // Event listeners para filtros
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('filter-tipo').addEventListener('change', aplicarFiltros);
+            document.getElementById('filter-categoria').addEventListener('change', aplicarFiltros);
+        });
 
         // ============================================================================
         // INICIALIZACIÓN
