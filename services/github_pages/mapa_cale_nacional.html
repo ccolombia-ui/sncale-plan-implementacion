@@ -395,9 +395,177 @@
             background: #c53030;
             transform: translateY(-2px);
         }
+
+        /* Barra lateral jerárquica */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 2000;
+            overflow-y: auto;
+            transform: translateX(-350px);
+            transition: transform 0.3s;
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 10px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            z-index: 2001;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            transition: all 0.3s;
+        }
+
+        .sidebar-toggle:hover {
+            background: #764ba2;
+            padding-left: 15px;
+        }
+
+        .sidebar-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .sidebar-header h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .sidebar-search {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .sidebar-search::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .sidebar-content {
+            padding: 15px;
+        }
+
+        .tree-node {
+            margin: 5px 0;
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .tree-item:hover {
+            background: #f7fafc;
+        }
+
+        .tree-item.active {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+        }
+
+        .tree-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+        }
+
+        .tree-expand {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            cursor: pointer;
+            color: #718096;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+
+        .tree-expand.expanded {
+            transform: rotate(90deg);
+        }
+
+        .tree-label {
+            flex: 1;
+            font-size: 0.9em;
+            color: #2d3748;
+        }
+
+        .tree-count {
+            font-size: 0.85em;
+            color: #718096;
+            font-weight: bold;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .tree-children {
+            margin-left: 25px;
+            display: none;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 10px;
+        }
+
+        .tree-children.expanded {
+            display: block;
+        }
+
+        .tree-item.nivel-1 { color: #9333ea; }
+        .tree-item.nivel-2 { color: #16a34a; }
+        .tree-item.nivel-3 { color: #ea580c; }
+        .tree-item.nivel-sat { color: #dc2626; }
+        .tree-item.nivel-iebm { color: #3182ce; }
     </style>
 </head>
 <body>
+    <!-- Botón toggle sidebar -->
+    <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleSidebar()">
+        FILTROS JERÁRQUICOS
+    </button>
+
+    <!-- Sidebar jerárquica -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>🏛️ Red Nacional CALE</h3>
+            <input type="text" class="sidebar-search" id="sidebar-search" placeholder="Buscar centro o municipio...">
+        </div>
+        <div class="sidebar-content" id="sidebar-tree">
+            <!-- Se llenará dinámicamente con JavaScript -->
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <h1>Red Nacional de Centros CALE</h1>
@@ -721,7 +889,7 @@
                             <p><strong>Municipio:</strong> ${centro.municipio || 'N/A'}</p>
                             <p><strong>Departamento:</strong> ${centro.departamento || 'N/A'}</p>
                             <p><strong>Tipo:</strong> ${centro.tipo_centro || centro.tipo || 'N/A'}</p>
-                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || centro.demanda_anual || 0).toLocaleString()} estudiantes</p>
+                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || centro.demanda_anual || 0).toLocaleString()} aspirantes</p>
                             ${centro.nodo_principal ? `<p><strong>Nodo Principal:</strong> ${centro.nodo_principal}</p>` : ''}
                             <span class="category-badge">${categoria}</span>
                             <div class="popup-buttons">
@@ -746,7 +914,13 @@
                 // 6. Mostrar estadísticas
                 mostrarEstadisticas(centros);
 
+                // 7. Construir y renderizar jerarquía en sidebar
+                centrosGlobal = centros;
+                datosJerarquia = construirJerarquia(centros);
+                renderizarArbol(datosJerarquia);
+
                 console.log(`Mapa inicializado con ${todosMarcadores.length} marcadores`);
+                console.log('Jerarquía construida:', datosJerarquia);
 
             } catch (error) {
                 console.error('Error inicializando mapa:', error);
@@ -871,7 +1045,7 @@
                     <div class="info-grid">
                         <div class="info-item">
                             <label>Demanda Anual Estimada</label>
-                            <value>${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()} estudiantes</value>
+                            <value>${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()} aspirantes</value>
                         </div>
                         <div class="info-item">
                             <label>Nodo Principal</label>
@@ -993,6 +1167,246 @@
             document.getElementById('filter-tipo').addEventListener('change', aplicarFiltros);
             document.getElementById('filter-categoria').addEventListener('change', aplicarFiltros);
         });
+
+        // ============================================================================
+        // FUNCIONES: Sidebar Jerárquica
+        // ============================================================================
+
+        let datosJerarquia = null;
+        let centrosGlobal = [];
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.getElementById('sidebar-toggle');
+            sidebar.classList.toggle('open');
+
+            if (sidebar.classList.contains('open')) {
+                toggle.textContent = '✕ CERRAR';
+            } else {
+                toggle.textContent = 'FILTROS JERÁRQUICOS';
+            }
+        }
+
+        function construirJerarquia(centros) {
+            // Agrupar por nodo_principal
+            const jerarquia = {};
+
+            centros.forEach(centro => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const esNodo = cat === 'Cat.A+' || cat === 'Cat.A';
+                const nodoPrincipal = esNodo ? centro.centro_id : (centro.nodo_principal || 'SIN_NODO');
+
+                if (!jerarquia[nodoPrincipal]) {
+                    jerarquia[nodoPrincipal] = {
+                        nodo: esNodo ? centro : null,
+                        satelites: {
+                            n2: [],
+                            n3: [],
+                            c2: [],
+                            c3: [],
+                            c4: [],
+                            c5: []
+                        },
+                        demandaTotal: 0
+                    };
+                }
+
+                if (esNodo) {
+                    jerarquia[nodoPrincipal].nodo = centro;
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                } else {
+                    // Clasificar satélite
+                    let tipo = 'c2'; // default
+                    if (cat === 'Cat.B' || cat === 'CALE.n_2') tipo = 'n2';
+                    else if (cat === 'Cat.B**' || cat === 'CALE.n_2**') tipo = 'n2';
+                    else if (cat === 'Cat.C1' || cat === 'CALE.n_3') tipo = 'n3';
+                    else if (cat === 'C2') tipo = 'c2';
+                    else if (cat === 'C3') tipo = 'c3';
+                    else if (cat === 'C4') tipo = 'c4';
+                    else if (cat === 'C5') tipo = 'c5';
+
+                    jerarquia[nodoPrincipal].satelites[tipo].push(centro);
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                }
+            });
+
+            return jerarquia;
+        }
+
+        function renderizarArbol(jerarquia) {
+            const treeContainer = document.getElementById('sidebar-tree');
+            let html = '';
+
+            // Ordenar nodos por demanda total (descendente)
+            const nodosOrdenados = Object.entries(jerarquia)
+                .filter(([key, data]) => data.nodo !== null)
+                .sort((a, b) => b[1].demandaTotal - a[1].demandaTotal);
+
+            nodosOrdenados.forEach(([centroId, data]) => {
+                const nodo = data.nodo;
+                const municipio = nodo.municipio || 'N/A';
+                const demanda = data.demandaTotal.toLocaleString();
+                const totalSatelites = Object.values(data.satelites).reduce((sum, arr) => sum + arr.length, 0);
+
+                html += `
+                    <div class="tree-node">
+                        <div class="tree-item nivel-1" onclick="filtrarPorNodo('${centroId}')">
+                            <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}')">▶</span>
+                            <span class="tree-icon">🏛️</span>
+                            <span class="tree-label">${municipio}</span>
+                            <span class="tree-count">${demanda}</span>
+                        </div>
+                        <div class="tree-children" id="tree-${centroId}">
+                `;
+
+                // Satélites CALE.n_2
+                if (data.satelites.n2.length > 0) {
+                    const demandaN2 = data.satelites.n2.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-2">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n2')">▶</span>
+                                <span class="tree-icon">🏫</span>
+                                <span class="tree-label">CALE.n_2 (${data.satelites.n2.length})</span>
+                                <span class="tree-count">${demandaN2.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n2">
+                    `;
+                    data.satelites.n2.forEach(sat => {
+                        html += `
+                            <div class="tree-item nivel-2" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites CALE.n_3
+                if (data.satelites.n3.length > 0) {
+                    const demandaN3 = data.satelites.n3.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-3">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n3')">▶</span>
+                                <span class="tree-icon">🏢</span>
+                                <span class="tree-label">CALE.n_3 (${data.satelites.n3.length})</span>
+                                <span class="tree-count">${demandaN3.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n3">
+                    `;
+                    data.satelites.n3.forEach(sat => {
+                        html += `
+                            <div class="tree-item nivel-3" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites C2-C5 agrupados
+                const satelitesC = [...data.satelites.c2, ...data.satelites.c3, ...data.satelites.c4, ...data.satelites.c5];
+                if (satelitesC.length > 0) {
+                    const demandaC = satelitesC.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-sat">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-c')">▶</span>
+                                <span class="tree-icon">🎯</span>
+                                <span class="tree-label">Satélites C2-C5 (${satelitesC.length})</span>
+                                <span class="tree-count">${demandaC.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-c">
+                    `;
+                    satelitesC.forEach(sat => {
+                        const cat = sat.categoria_cale || sat.categoria || '';
+                        html += `
+                            <div class="tree-item nivel-sat" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">${cat}</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // TODO: Agregar IEBM cuando se implemente
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            treeContainer.innerHTML = html;
+        }
+
+        function toggleTreeNode(event, nodeId) {
+            event.stopPropagation();
+            const children = document.getElementById(`tree-${nodeId}`);
+            const expand = event.target;
+
+            if (children) {
+                children.classList.toggle('expanded');
+                expand.classList.toggle('expanded');
+            }
+        }
+
+        function filtrarPorNodo(centroId) {
+            // Mostrar solo los centros de este nodo
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const esNodo = centro.centro_id === centroId;
+                const perteneceAlNodo = centro.nodo_principal === centroId;
+
+                if (esNodo || perteneceAlNodo) {
+                    if (!mapaGlobal.hasLayer(marker)) {
+                        marker.addTo(mapaGlobal);
+                    }
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) {
+                        mapaGlobal.removeLayer(marker);
+                    }
+                }
+            });
+
+            // Centrar mapa en el nodo
+            const nodo = centrosGlobal.find(c => c.centro_id === centroId);
+            if (nodo) {
+                const latStr = (nodo.latitud || '').toString().replace(',', '.');
+                const lngStr = (nodo.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    mapaGlobal.setView([lat, lng], 9);
+                }
+            }
+        }
+
+        function centrarEnMarcador(centroId) {
+            const centro = centrosGlobal.find(c => c.centro_id === centroId);
+            if (centro) {
+                const latStr = (centro.latitud || '').toString().replace(',', '.');
+                const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    mapaGlobal.setView([lat, lng], 12);
+
+                    // Abrir popup del marcador
+                    const marcador = todosMarcadores.find(m => m.centro.centro_id === centroId);
+                    if (marcador) {
+                        marcador.marker.openPopup();
+                    }
+                }
+            }
+        }
 
         // ============================================================================
         // INICIALIZACIÓN
