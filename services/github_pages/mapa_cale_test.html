@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa CALE - Prueba Local con CSV</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        .test-mode {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            border-left: 4px solid #c53030;
+        }
+
+        #map-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #c53030;
+        }
+
+        .success {
+            background: #c6f6d5;
+            color: #22543d;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #22543d;
+        }
+
+        .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .popup-content h3 {
+            color: #2d3748;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .popup-content p {
+            margin: 5px 0;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+
+        .popup-content strong {
+            color: #2d3748;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .data-source {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255,255,255,0.95);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .data-source strong {
+            color: #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Red Nacional de Centros CALE - Prueba Local</h1>
+            <p class="subtitle">Sistema de Capacitación en Logística Eléctrica - Proyecto MUNAY</p>
+            <div class="test-mode">
+                <strong>MODO PRUEBA:</strong> Usando CSV local corregido (arquitectura_red_cale_nacional_MAPEADO.csv)
+            </div>
+        </header>
+
+        <div id="map-container">
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Cargando datos desde CSV local...</p>
+            </div>
+            <div class="data-source">
+                <strong>Fuente:</strong> <span id="data-source-text">Cargando...</span>
+            </div>
+            <div id="map"></div>
+            <div class="legend">
+                <h4>Categorías CALE</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9333ea;"></div>
+                    <span>Cat.A+ / CALE.n_1+</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2563eb;"></div>
+                    <span>Cat.A / CALE.n_1</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #16a34a;"></div>
+                    <span>Cat.B / CALE.n_2</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ea580c;"></div>
+                    <span>Cat.C1 / CALE.n_3</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #dc2626;"></div>
+                    <span>C2/C3/C4/C5</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="validation-results"></div>
+        <div class="stats" id="stats"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // Configuración de colores y tamaños
+        const COLORES_CATEGORIAS = {
+            'Cat.A+': '#9333ea', 'CALE.n_1+': '#9333ea',
+            'Cat.A': '#2563eb', 'CALE.n_1': '#2563eb',
+            'Cat.B**': '#059669', 'CALE.n_2**': '#059669',
+            'Cat.B': '#16a34a', 'CALE.n_2': '#16a34a',
+            'Cat.C1': '#ea580c', 'CALE.n_3': '#ea580c',
+            'C2': '#dc2626', 'C3': '#dc2626', 'C4': '#dc2626', 'C5': '#dc2626'
+        };
+
+        const TAMANOS_MARCADORES = {
+            'Cat.A+': 12, 'CALE.n_1+': 12,
+            'Cat.A': 10, 'CALE.n_1': 10,
+            'Cat.B**': 8, 'CALE.n_2**': 8,
+            'Cat.B': 8, 'CALE.n_2': 8,
+            'Cat.C1': 6, 'CALE.n_3': 6,
+            'C2': 5, 'C3': 5, 'C4': 5, 'C5': 5
+        };
+
+        function parseCSV(csvText) {
+            const lines = csvText.trim().split('\n');
+            const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, '').replace(/^\uFEFF/, ''));
+            const data = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                const values = [];
+                let currentValue = '';
+                let insideQuotes = false;
+
+                for (let char of lines[i]) {
+                    if (char === '"') {
+                        insideQuotes = !insideQuotes;
+                    } else if (char === ',' && !insideQuotes) {
+                        values.push(currentValue.trim().replace(/^"|"$/g, ''));
+                        currentValue = '';
+                    } else {
+                        currentValue += char;
+                    }
+                }
+                values.push(currentValue.trim().replace(/^"|"$/g, ''));
+
+                if (values.length === headers.length) {
+                    const obj = {};
+                    headers.forEach((header, index) => {
+                        obj[header] = values[index];
+                    });
+                    data.push(obj);
+                }
+            }
+
+            return data;
+        }
+
+        async function cargarCentrosCALE() {
+            try {
+                // Cargar desde CSV local en la raíz del proyecto
+                console.log('Cargando CSV local: ../../arquitectura_red_cale_nacional_MAPEADO.csv');
+                const response = await fetch('../../arquitectura_red_cale_nacional_MAPEADO.csv');
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status} - Verifica que el archivo exista`);
+                }
+
+                const csvText = await response.text();
+                const centros = parseCSV(csvText);
+
+                if (!centros || centros.length === 0) {
+                    throw new Error('No se encontraron datos en el CSV');
+                }
+
+                console.log(`Cargados ${centros.length} centros desde CSV local`);
+                document.getElementById('data-source-text').textContent = 'CSV Local (197 centros)';
+
+                return centros;
+
+            } catch (error) {
+                console.error('Error cargando datos:', error);
+                throw error;
+            }
+        }
+
+        function validarDatos(centros) {
+            const validacion = {
+                total: centros.length,
+                conCoordenadas: 0,
+                sinCoordenadas: 0,
+                nodosMapeados: 0,
+                nodosConMunicipio: 0,
+                categorias: {},
+                tiposCentro: {}
+            };
+
+            centros.forEach(centro => {
+                const lat = parseFloat(centro.latitud);
+                const lng = parseFloat(centro.longitud);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    validacion.conCoordenadas++;
+                } else {
+                    validacion.sinCoordenadas++;
+                }
+
+                // Verificar nodo_principal mapeado correctamente
+                if (centro.nodo_principal) {
+                    if (centro.nodo_principal.startsWith('NODO_') || centro.nodo_principal.startsWith('SAT_')) {
+                        validacion.nodosMapeados++;
+                    } else {
+                        validacion.nodosConMunicipio++;
+                    }
+                }
+
+                // Contar categorías
+                const cat = centro.categoria_cale || 'Sin categoría';
+                validacion.categorias[cat] = (validacion.categorias[cat] || 0) + 1;
+
+                // Contar tipos
+                const tipo = centro.tipo_centro || 'Sin tipo';
+                validacion.tiposCentro[tipo] = (validacion.tiposCentro[tipo] || 0) + 1;
+            });
+
+            return validacion;
+        }
+
+        function mostrarValidacion(validacion) {
+            const resultadosDiv = document.getElementById('validation-results');
+
+            let html = '<div class="success" style="margin: 20px 0;"><h3>Resultados de Validación</h3>';
+            html += `<p><strong>Total de centros:</strong> ${validacion.total}</p>`;
+            html += `<p><strong>Con coordenadas válidas:</strong> ${validacion.conCoordenadas} ✅</p>`;
+
+            if (validacion.sinCoordenadas > 0) {
+                html += `<p style="color: #c53030;"><strong>Sin coordenadas:</strong> ${validacion.sinCoordenadas} ⚠️</p>`;
+            }
+
+            html += `<p><strong>nodo_principal mapeado (NODO_XX):</strong> ${validacion.nodosMapeados} ✅</p>`;
+
+            if (validacion.nodosConMunicipio > 0) {
+                html += `<p style="color: #c53030;"><strong>nodo_principal con municipio:</strong> ${validacion.nodosConMunicipio} ❌</p>`;
+            }
+
+            html += '<hr style="margin: 15px 0;"><p><strong>Distribución por categoría:</strong></p><ul>';
+            Object.entries(validacion.categorias).sort((a, b) => b[1] - a[1]).forEach(([cat, count]) => {
+                html += `<li>${cat}: ${count} centros</li>`;
+            });
+            html += '</ul>';
+
+            html += '<p><strong>Distribución por tipo:</strong></p><ul>';
+            Object.entries(validacion.tiposCentro).forEach(([tipo, count]) => {
+                html += `<li>${tipo}: ${count} centros</li>`;
+            });
+            html += '</ul></div>';
+
+            resultadosDiv.innerHTML = html;
+        }
+
+        async function inicializarMapa() {
+            try {
+                const centros = await cargarCentrosCALE();
+
+                // Validar datos
+                const validacion = validarDatos(centros);
+                mostrarValidacion(validacion);
+
+                document.getElementById('loading').style.display = 'none';
+
+                const mapa = L.map('map').setView([4.5709, -74.2973], 6);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                    maxZoom: 18
+                }).addTo(mapa);
+
+                const marcadores = [];
+                let errorCount = 0;
+
+                centros.forEach(centro => {
+                    const lat = parseFloat(centro.latitud);
+                    const lng = parseFloat(centro.longitud);
+
+                    if (isNaN(lat) || isNaN(lng)) {
+                        errorCount++;
+                        return;
+                    }
+
+                    const categoria = centro.categoria_cale || 'C2';
+                    const color = COLORES_CATEGORIAS[categoria] || '#dc2626';
+                    const radio = TAMANOS_MARCADORES[categoria] || 5;
+
+                    const marker = L.circleMarker([lat, lng], {
+                        radius: radio,
+                        fillColor: color,
+                        color: '#ffffff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+
+                    const popupContent = `
+                        <div class="popup-content">
+                            <h3>${centro.centro_id}</h3>
+                            <p><strong>Municipio:</strong> ${centro.municipio}</p>
+                            <p><strong>Departamento:</strong> ${centro.departamento}</p>
+                            <p><strong>Tipo:</strong> ${centro.tipo_centro}</p>
+                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()}</p>
+                            <p><strong>Nodo Principal:</strong> ${centro.nodo_principal || 'N/A'}</p>
+                            <p><strong>Código DANE:</strong> ${centro.codigo_dane}</p>
+                            <span class="category-badge">${categoria}</span>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(mapa);
+                    marcadores.push({ marker, centro, categoria });
+                });
+
+                mostrarEstadisticas(centros);
+
+                console.log(`Mapa inicializado: ${marcadores.length} marcadores, ${errorCount} errores`);
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <strong>Error al cargar datos</strong>
+                        <p>${error.message}</p>
+                        <p>Verifica que el archivo arquitectura_red_cale_nacional_MAPEADO.csv esté en la raíz del proyecto.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function mostrarEstadisticas(centros) {
+            const stats = {
+                total: centros.length,
+                nodos: centros.filter(c => c.tipo_centro.includes('NODO_PRINCIPAL')).length,
+                satelites: centros.filter(c => c.tipo_centro.includes('SAT')).length,
+                demandaTotal: centros.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0)
+            };
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.total}</div>
+                    <div class="stat-label">Total Centros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.nodos}</div>
+                    <div class="stat-label">Nodos Principales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.satelites}</div>
+                    <div class="stat-label">Centros Satélite</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.demandaTotal.toLocaleString()}</div>
+                    <div class="stat-label">Demanda Anual Total</div>
+                </div>
+            `;
+        }
+
+        inicializarMapa();
+    </script>
+</body>
+</html>

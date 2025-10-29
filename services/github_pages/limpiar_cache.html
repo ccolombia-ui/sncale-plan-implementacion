@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpiar Cache - Mapa CALE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .success {
+            background: #c6f6d5;
+            border-left: 4px solid #22543d;
+            padding: 15px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .redirect-btn {
+            background: #48bb78;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Limpiar Cache del Mapa CALE</h1>
+
+        <div class="info">
+            <strong>Cache actual:</strong>
+            <p id="cache-status">Verificando...</p>
+        </div>
+
+        <button onclick="limpiarCache()">Limpiar Cache y Recargar</button>
+
+        <div class="success" id="success-msg">
+            <strong>Cache limpiado exitosamente!</strong>
+            <p>Los datos se recargaran desde Google Sheets.</p>
+        </div>
+
+        <button class="redirect-btn" id="redirect-btn" onclick="abrirMapa()">
+            Ir al Mapa
+        </button>
+    </div>
+
+    <script>
+        // Verificar cache actual
+        function verificarCache() {
+            const cache = localStorage.getItem('cale_centros_cache');
+
+            if (cache) {
+                const { data, timestamp } = JSON.parse(cache);
+                const fecha = new Date(timestamp);
+                const ahora = Date.now();
+                const tiempoRestante = (5 * 60 * 1000) - (ahora - timestamp);
+
+                if (tiempoRestante > 0) {
+                    const minutos = Math.floor(tiempoRestante / 60000);
+                    const segundos = Math.floor((tiempoRestante % 60000) / 1000);
+
+                    document.getElementById('cache-status').innerHTML = `
+                        <strong style="color: #38b2ac;">Cache activo</strong><br>
+                        Centros cargados: ${data.length}<br>
+                        Fecha: ${fecha.toLocaleString()}<br>
+                        Expira en: ${minutos}:${segundos.toString().padStart(2, '0')}
+                    `;
+                } else {
+                    document.getElementById('cache-status').innerHTML = `
+                        <strong style="color: #d69e2e;">Cache expirado</strong><br>
+                        Centros cargados: ${data.length}<br>
+                        Fecha: ${fecha.toLocaleString()}
+                    `;
+                }
+            } else {
+                document.getElementById('cache-status').innerHTML = `
+                    <strong style="color: #718096;">Sin cache</strong><br>
+                    El mapa cargara datos desde Google Sheets
+                `;
+            }
+        }
+
+        function limpiarCache() {
+            // Limpiar cache
+            localStorage.removeItem('cale_centros_cache');
+
+            // Mostrar mensaje de exito
+            document.getElementById('success-msg').style.display = 'block';
+            document.getElementById('redirect-btn').style.display = 'inline-block';
+
+            // Actualizar estado
+            document.getElementById('cache-status').innerHTML = `
+                <strong style="color: #22543d;">Cache limpiado</strong><br>
+                El mapa cargara datos frescos desde Google Sheets
+            `;
+        }
+
+        function abrirMapa() {
+            window.location.href = 'mapa_cale_nacional.html';
+        }
+
+        // Verificar cache al cargar
+        verificarCache();
+
+        // Actualizar cada segundo
+        setInterval(verificarCache, 1000);
+    </script>
+</body>
+</html>

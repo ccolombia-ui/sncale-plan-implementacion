@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo Red Nacional CALE | Proyecto MUNAY</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        #map-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #c53030;
+        }
+
+        /* Popup styling */
+        .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .popup-content h3 {
+            color: #2d3748;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .popup-content p {
+            margin: 5px 0;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+
+        .popup-content strong {
+            color: #2d3748;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .cache-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            color: #4a5568;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Red Nacional de Centros CALE</h1>
+            <p class="subtitle">Sistema de Capacitación en Logística Eléctrica - Proyecto MUNAY</p>
+            <p class="subtitle" style="font-size: 0.9em; margin-top: 10px; color: #48bb78;">
+                Datos en tiempo real desde Google Sheets
+            </p>
+        </header>
+
+        <div id="map-container">
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Cargando datos desde Google Sheets...</p>
+            </div>
+            <div id="cache-info" class="cache-info" style="display:none;"></div>
+            <div id="map"></div>
+            <div class="legend">
+                <h4>Categorías CALE</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9333ea;"></div>
+                    <span>CALE.n_1+ (HUB)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2563eb;"></div>
+                    <span>CALE.n_1 (Nodo)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #16a34a;"></div>
+                    <span>CALE.n_2 (Regional)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ea580c;"></div>
+                    <span>CALE.n_3 (Local)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #dc2626;"></div>
+                    <span>C2/C3/C4/C5 (Satélite)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats" id="stats"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // ============================================================================
+        // CONFIGURACIÓN - GOOGLE SHEETS COMO ÚNICA FUENTE DE VERDAD
+        // ============================================================================
+
+        const GOOGLE_SHEETS_CONFIG = {
+            // URL de Google Sheets publicada como TSV (Tab-separated values)
+            // Usamos TSV porque las latitudes tienen comas decimales
+            url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRfhmqT_SMan7EeQRmStRS0jofd0VMQPvKemLZ_70Oiruj-yI1jh9ShgSuR7ZsFLMfz8wwDq5hde9Jo/pub?gid=197105959&single=true&output=tsv',
+
+            // Cache en localStorage (5 minutos)
+            cacheKey: 'cale_centros_cache',
+            cacheTTL: 5 * 60 * 1000,
+
+            // Formato de datos
+            format: 'tsv'  // Tab-separated values
+        };
+
+        // Colores por categoría (soporta ambas nomenclaturas: Cat.X y CALE.n_X)
+        const COLORES_CATEGORIAS = {
+            'Cat.A+': '#9333ea',
+            'CALE.n_1+': '#9333ea',
+            'Cat.A': '#2563eb',
+            'CALE.n_1': '#2563eb',
+            'Cat.B**': '#059669',
+            'CALE.n_2**': '#059669',
+            'Cat.B': '#16a34a',
+            'CALE.n_2': '#16a34a',
+            'Cat.C1': '#ea580c',
+            'CALE.n_3': '#ea580c',
+            'C2': '#dc2626',
+            'C3': '#dc2626',
+            'C4': '#dc2626',
+            'C5': '#dc2626'
+        };
+
+        const TAMANOS_MARCADORES = {
+            'Cat.A+': 12, 'CALE.n_1+': 12,
+            'Cat.A': 10, 'CALE.n_1': 10,
+            'Cat.B**': 8, 'CALE.n_2**': 8,
+            'Cat.B': 8, 'CALE.n_2': 8,
+            'Cat.C1': 6, 'CALE.n_3': 6,
+            'C2': 5, 'C3': 5, 'C4': 5, 'C5': 5
+        };
+
+        // ============================================================================
+        // FUNCIÓN: Parser TSV/CSV universal
+        // ============================================================================
+        function parseData(text, format = 'tsv') {
+            const lines = text.trim().split('\n');
+            const separator = format === 'tsv' ? '\t' : ',';
+
+            // Parse headers (primera línea)
+            const headers = lines[0].split(separator).map(h => h.trim().replace(/^"|"$/g, '').replace(/^\uFEFF/, ''));
+            const data = [];
+
+            // Parse datos (resto de líneas)
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue; // Skip empty lines
+
+                // Para TSV, simplemente split por tab
+                if (format === 'tsv') {
+                    const values = line.split('\t').map(v => v.trim());
+
+                    if (values.length === headers.length) {
+                        const obj = {};
+                        headers.forEach((header, index) => {
+                            obj[header] = values[index];
+                        });
+                        data.push(obj);
+                    }
+                } else {
+                    // Para CSV, manejar comillas
+                    const values = [];
+                    let currentValue = '';
+                    let insideQuotes = false;
+
+                    for (let char of line) {
+                        if (char === '"') {
+                            insideQuotes = !insideQuotes;
+                        } else if (char === ',' && !insideQuotes) {
+                            values.push(currentValue.trim().replace(/^"|"$/g, ''));
+                            currentValue = '';
+                        } else {
+                            currentValue += char;
+                        }
+                    }
+                    values.push(currentValue.trim().replace(/^"|"$/g, ''));
+
+                    if (values.length === headers.length) {
+                        const obj = {};
+                        headers.forEach((header, index) => {
+                            obj[header] = values[index];
+                        });
+                        data.push(obj);
+                    }
+                }
+            }
+
+            return data;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Cargar datos desde Google Sheets (con cache)
+        // ============================================================================
+        async function cargarCentrosCALE() {
+            try {
+                // 1. Verificar cache
+                const cache = localStorage.getItem(GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    const { data, timestamp } = JSON.parse(cache);
+                    const now = Date.now();
+                    const timeLeft = GOOGLE_SHEETS_CONFIG.cacheTTL - (now - timestamp);
+
+                    if (timeLeft > 0) {
+                        console.log(`Cache valido por ${Math.round(timeLeft / 1000)} segundos`);
+                        mostrarInfoCache(timeLeft);
+                        return data;
+                    }
+                }
+
+                // 2. Cargar desde Google Sheets
+                console.log('Cargando datos desde Google Sheets...');
+                const response = await fetch(GOOGLE_SHEETS_CONFIG.url);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+
+                const dataText = await response.text();
+                const centros = parseData(dataText, GOOGLE_SHEETS_CONFIG.format);
+
+                if (!centros || centros.length === 0) {
+                    throw new Error('No se encontraron datos en Google Sheets');
+                }
+
+                console.log(`Cargados ${centros.length} centros desde Google Sheets`);
+
+                // 3. Guardar en cache
+                localStorage.setItem(GOOGLE_SHEETS_CONFIG.cacheKey, JSON.stringify({
+                    data: centros,
+                    timestamp: Date.now()
+                }));
+
+                mostrarInfoCache(GOOGLE_SHEETS_CONFIG.cacheTTL);
+                return centros;
+
+            } catch (error) {
+                console.error('Error cargando datos:', error);
+
+                // Fallback a cache expirado
+                const cache = localStorage.getItem(GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    console.log('Usando cache expirado como fallback');
+                    const { data } = JSON.parse(cache);
+                    mostrarInfoCache(-1);
+                    return data;
+                }
+
+                throw error;
+            }
+        }
+
+        function mostrarInfoCache(timeLeft) {
+            const cacheInfo = document.getElementById('cache-info');
+            if (timeLeft > 0) {
+                const minutos = Math.floor(timeLeft / 60000);
+                const segundos = Math.floor((timeLeft % 60000) / 1000);
+                cacheInfo.textContent = `Cache: ${minutos}:${segundos.toString().padStart(2, '0')}`;
+                cacheInfo.style.display = 'block';
+            } else if (timeLeft === -1) {
+                cacheInfo.textContent = 'Usando cache (sin conexión)';
+                cacheInfo.style.background = 'rgba(254, 215, 215, 0.9)';
+                cacheInfo.style.display = 'block';
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Inicializar mapa
+        // ============================================================================
+        async function inicializarMapa() {
+            try {
+                // 1. Cargar datos
+                const centros = await cargarCentrosCALE();
+
+                // 2. Ocultar loading
+                document.getElementById('loading').style.display = 'none';
+
+                // 3. Crear mapa centrado en Colombia
+                const mapa = L.map('map').setView([4.5709, -74.2973], 6);
+
+                // 4. Agregar capa base de OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    maxZoom: 18
+                }).addTo(mapa);
+
+                // 5. Agregar marcadores
+                const marcadores = [];
+                centros.forEach(centro => {
+                    const lat = parseFloat(centro.latitud || centro.lat);
+                    const lng = parseFloat(centro.longitud || centro.lon || centro.lng);
+
+                    if (isNaN(lat) || isNaN(lng)) {
+                        console.warn(`Coordenadas invalidas para ${centro.centro_id || centro.id}`);
+                        return;
+                    }
+
+                    const categoria = centro.categoria_cale || centro.categoria || 'C2';
+                    const color = COLORES_CATEGORIAS[categoria] || '#dc2626';
+                    const radio = TAMANOS_MARCADORES[categoria] || 5;
+
+                    const marker = L.circleMarker([lat, lng], {
+                        radius: radio,
+                        fillColor: color,
+                        color: '#ffffff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+
+                    // Popup con información
+                    const popupContent = `
+                        <div class="popup-content">
+                            <h3>${centro.centro_id || centro.id || centro.nombre}</h3>
+                            <p><strong>Municipio:</strong> ${centro.municipio || 'N/A'}</p>
+                            <p><strong>Departamento:</strong> ${centro.departamento || 'N/A'}</p>
+                            <p><strong>Tipo:</strong> ${centro.tipo_centro || centro.tipo || 'N/A'}</p>
+                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || centro.demanda_anual || 0).toLocaleString()} estudiantes</p>
+                            ${centro.nodo_principal ? `<p><strong>Nodo Principal:</strong> ${centro.nodo_principal}</p>` : ''}
+                            <span class="category-badge">${categoria}</span>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(mapa);
+                    marcadores.push({ marker, centro, categoria });
+                });
+
+                // 6. Mostrar estadísticas
+                mostrarEstadisticas(centros);
+
+                console.log(`Mapa inicializado con ${marcadores.length} marcadores`);
+
+            } catch (error) {
+                console.error('Error inicializando mapa:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <strong>Error al cargar datos</strong>
+                        <p>${error.message}</p>
+                        <p>Verifica que la Google Sheet esté publicada como CSV público.</p>
+                        <button onclick="location.reload()" style="margin-top:10px; padding:8px 16px; cursor:pointer;">Reintentar</button>
+                    </div>
+                `;
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Mostrar estadísticas
+        // ============================================================================
+        function mostrarEstadisticas(centros) {
+            const stats = {
+                total: centros.length,
+                nodos: centros.filter(c => (c.tipo_centro || c.tipo || '').includes('NODO_PRINCIPAL')).length,
+                satelites: centros.filter(c => (c.tipo_centro || c.tipo || '').includes('SAT')).length,
+                demandaTotal: centros.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || c.demanda_anual || 0), 0)
+            };
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.total}</div>
+                    <div class="stat-label">Total Centros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.nodos}</div>
+                    <div class="stat-label">Nodos Principales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.satelites}</div>
+                    <div class="stat-label">Centros Satélite</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.demandaTotal.toLocaleString()}</div>
+                    <div class="stat-label">Demanda Anual Total</div>
+                </div>
+            `;
+        }
+
+        // ============================================================================
+        // INICIALIZACIÓN
+        // ============================================================================
+        inicializarMapa();
+
+        // Actualizar cache info cada segundo
+        setInterval(() => {
+            const cache = localStorage.getItem(GOOGLE_SHEETS_CONFIG.cacheKey);
+            if (cache) {
+                const { timestamp } = JSON.parse(cache);
+                const timeLeft = GOOGLE_SHEETS_CONFIG.cacheTTL - (Date.now() - timestamp);
+                mostrarInfoCache(timeLeft);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

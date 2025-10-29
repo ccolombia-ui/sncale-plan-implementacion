@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Implementación CALE UPTC - Universidad Pedagógica y Tecnológica de Colombia</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+    <style>
+/* ========================================
+   IDENTIDAD VISUAL OFICIAL UPTC
+   Plan Implementación CALE UPTC
+   Basado en encabezado y pie oficial
+======================================== */
+
+:root {
+  /* Colores institucionales UPTC */
+  --uptc-amarillo: #FFD700;
+  --uptc-negro: #000000;
+  --uptc-blanco: #FFFFFF;
+  --uptc-gris-claro: #F5F5F5;
+  --uptc-gris-medio: #CCCCCC;
+  --ceai-dorado: #DAA520;
+  --acreditacion-azul: #0066CC;
+  
+  /* Fuentes */
+  --font-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-titulo: 'Arial Black', Arial, sans-serif;
+}
+
+/* ========================================
+   HEADER OFICIAL UPTC
+======================================== */
+.uptc-header {
+  background: linear-gradient(135deg, var(--uptc-amarillo) 0%, #F0C814 100%);
+  border-bottom: 3px solid var(--uptc-negro);
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-principal {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.texto-institucional h1 {
+  font-family: var(--font-titulo);
+  font-size: 2.2em;
+  color: var(--uptc-negro);
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.texto-institucional p {
+  font-family: var(--font-principal);
+  font-size: 0.9em;
+  color: var(--uptc-negro);
+  margin: 2px 0 0 0;
+  font-weight: 600;
+}
+
+.somos-todos {
+  background: var(--uptc-negro);
+  color: var(--uptc-amarillo);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-family: var(--font-titulo);
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  min-width: 140px;
+}
+
+.contacto-section {
+  text-align: right;
+  color: var(--uptc-negro);
+  font-family: var(--font-principal);
+}
+
+.sitio-web {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.ubicaciones {
+  font-size: 0.9em;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ========================================
+   FOOTER OFICIAL UPTC
+======================================== */
+.uptc-footer {
+  background: linear-gradient(to bottom, var(--uptc-gris-claro) 0%, #E8E8E8 100%);
+  border-top: 3px solid var(--uptc-amarillo);
+  padding: 25px 20px 20px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Certificaciones */
+.certificaciones-section {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.ceai-cert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--ceai-dorado) 0%, #B8860B 100%);
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  min-width: 200px;
+}
+
+.ceai-logo {
+  font-size: 2.2em;
+  margin-right: 5px;
+}
+
+.ceai-text {
+  font-family: var(--font-principal);
+  line-height: 1.3;
+}
+
+.ceai-text strong {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.ceai-text small {
+  font-size: 0.85em;
+  opacity: 0.95;
+}
+
+.acreditacion-cert {
+  background: linear-gradient(135deg, var(--acreditacion-azul) 0%, #004499 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  min-width: 280px;
+}
+
+.acred-text {
+  font-family: var(--font-principal);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.acred-text strong {
+  font-size: 1em;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.acred-text small {
+  font-size: 0.8em;
+  opacity: 0.95;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Información de contacto */
+.contacto-footer {
+  text-align: right;
+  color: var(--uptc-negro);
+  font-family: var(--font-principal);
+}
+
+.contacto-footer p {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+.contacto-footer strong {
+  font-weight: bold;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .certificaciones-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contacto-footer {
+    text-align: center;
+  }
+  
+  .texto-institucional h1 {
+    font-size: 1.8em;
+  }
+  
+  .somos-todos {
+    font-size: 1.2em;
+    padding: 6px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ceai-cert, .acreditacion-cert {
+    min-width: unset;
+    width: 100%;
+  }
+  
+  .logo-principal {
+    height: 50px;
+  }
+}
+
+/* ========================================
+   COMPONENTES ESPECIALES CALE
+======================================== */
+.proyecto-titulo {
+  background: linear-gradient(135deg, var(--uptc-amarillo) 0%, #F0C814 100%);
+  color: var(--uptc-negro);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 20px 0;
+  border: 2px solid var(--uptc-negro);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.proyecto-titulo h1 {
+  font-family: var(--font-titulo);
+  font-size: 2em;
+  margin: 0 0 10px 0;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.proyecto-titulo p {
+  font-family: var(--font-principal);
+  font-size: 1.1em;
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+/* Estadísticas con branding UPTC */
+.stats-panel {
+  background: linear-gradient(135deg, var(--uptc-blanco) 0%, var(--uptc-gris-claro) 100%);
+  border: 2px solid var(--uptc-amarillo);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.stats-header {
+  background: var(--uptc-amarillo);
+  color: var(--uptc-negro);
+  padding: 12px 15px;
+  border-radius: 10px 10px 0 0;
+  font-family: var(--font-titulo);
+  font-weight: bold;
+  border-bottom: 2px solid var(--uptc-negro);
+}
+</style>
+</head>
+<body>
+
+        <div class="portal-nav-button">
+            <a href="../../portal_integral_cale_uptc.html" class="btn-portal-integral">
+                🌐 Portal Integral CALE UPTC
+            </a>
+        </div>
+        
+        <style>
+        .portal-nav-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .btn-portal-integral {
+            background: linear-gradient(135deg, #FFD700 0%, #F0C814 100%);
+            color: #000000;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 2px solid #000000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-portal-integral:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #F0C814 0%, #E6B800 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .portal-nav-button {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .btn-portal-integral {
+                font-size: 0.8em;
+                padding: 10px 16px;
+            }
+        }
+        </style>
+        
+    <!-- Header -->
+    
+<header class="uptc-header">
+  <div class="header-container">
+    <div class="logo-section">
+      <img src="assets/logos/logo-uptc-oficial.png" alt="UPTC Logo" class="logo-principal">
+      <div class="texto-institucional">
+        <h1>UPTC</h1>
+        <p>Universidad Pedagógica y Tecnológica de Colombia</p>
+      </div>
+    </div>
+    
+    <div class="slogan-section">
+      <div class="somos-todos">
+        Somos Todos
+      </div>
+    </div>
+    
+    <div class="contacto-section">
+      <p class="sitio-web">uptc.edu.co</p>
+      <p class="ubicaciones">TUNJA - DUITAMA - SOGAMOSO - CHIQUINQUIRÁ</p>
+    </div>
+  </div>
+</header>
+
+    
+    <!-- Controles de filtros -->
+    <div class="controls">
+        <div class="filter-group">
+            <label>Filtrar por categoría:</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-a-plus" class="filter-checkbox" checked>
+            <label for="cat-a-plus" class="category-label" style="color: #FF0000;">CAT.A+ (3)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-a" class="filter-checkbox" checked>
+            <label for="cat-a" class="category-label" style="color: #FF4444;">CAT.A (17)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-b-star" class="filter-checkbox" checked>
+            <label for="cat-b-star" class="category-label" style="color: #FF8800;">CAT.B** (16)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-b" class="filter-checkbox" checked>
+            <label for="cat-b" class="category-label" style="color: #FFAA00;">CAT.B (4)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-c1" class="filter-checkbox" checked>
+            <label for="cat-c1" class="category-label" style="color: #FFDD00;">CAT.C1 (16)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-c2" class="filter-checkbox" checked>
+            <label for="cat-c2" class="category-label" style="color: #88DD00;">CAT.C2 (50)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-c3" class="filter-checkbox" checked>
+            <label for="cat-c3" class="category-label" style="color: #44DD00;">CAT.C3 (45)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-c4" class="filter-checkbox" checked>
+            <label for="cat-c4" class="category-label" style="color: #00DD44;">CAT.C4 (30)</label>
+        </div>
+        
+        <div class="filter-group">
+            <input type="checkbox" id="cat-c5" class="filter-checkbox" checked>
+            <label for="cat-c5" class="category-label" style="color: #00DD88;">CAT.C5 (16)</label>
+        </div>
+    </div>
+    
+    <!-- Mapa -->
+    <div id="map"></div>
+    
+    <!-- Estadísticas -->
+    <div class="stats-overlay" id="stats">
+        <div class="stats-title">📊 Estadísticas</div>
+        <div class="stat-item">
+            <span class="stat-label">Nodos visibles:</span>
+            <span class="stat-value" id="visible-nodes">56</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Demanda total:</span>
+            <span class="stat-value" id="total-demand">1.56M</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">CAPEX total:</span>
+            <span class="stat-value" id="total-capex">$851.4B</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Departamentos:</span>
+            <span class="stat-value" id="departments">33</span>
+        </div>
+    </div>
+    
+    <!-- Navegación -->
+    <div class="nav-buttons">
+        <a href="index.html" class="nav-btn">🏠 Inicio</a>
+        <a href="fichas_cale/index.html" class="nav-btn">📋 Fichas CALE</a>
+        <a href="comparativo_categorias.html" class="nav-btn">📊 Comparativo</a>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Datos CALE - MUNAY 5.3 con 197 centros (56 nodos + 141 satélites) - TODOS con coordenadas
+        let nodosCale = [];
+        
+        // Cargar datos oficiales MUNAY 5.3 (100% coordenadas válidas)
+        fetch('data/nodos_cale_197_MUNAY53.json')
+            .then(response => response.json())
+            .then(data => {
+                nodosCale = data;
+                console.log(`✅ ${nodosCale.length} centros CALE cargados desde MUNAY 5.3`);
+                console.log(`📍 Nodos principales: ${data.filter(n => n.tipo === 'NODO_PRINCIPAL').length}`);
+                console.log(`🛰️ Satélites: ${data.filter(n => n.tipo === 'SATÉLITE').length}`);
+                inicializarMapa();
+            })
+            .catch(error => {
+                console.error('❌ Error cargando datos MUNAY 5.3:', error);
+                alert('Error cargando datos del mapa. Por favor recarga la página.');
+            });
+        
+        // Función principal de inicialización del mapa
+        function inicializarMapa() {
+            if (nodosCale.length === 0) {
+                console.warn('⚠️ No hay nodos para mostrar');
+                return;
+            }
+
+        // Configuración de colores por categoría (9 categorías oficiales)
+        const categoryColors = {
+            'Cat.A+': '#FF0000',    // Rojo intenso
+            'Cat.A': '#FF4444',     // Rojo
+            'Cat.B**': '#FF8800',   // Naranja intenso
+            'Cat.B': '#FFAA00',     // Naranja
+            'Cat.C1': '#FFDD00',    // Amarillo
+            'Cat.C2': '#88DD00',    // Verde claro
+            'Cat.C3': '#44DD00',    // Verde
+            'Cat.C4': '#00DD44',    // Verde azulado
+            'Cat.C5': '#00DD88'     // Turquesa
+        };
+        
+        // Inicializar mapa de Colombia
+        const map = L.map('map').setView([4.5709, -74.2973], 6);
+        
+        // Agregar capa de mapa base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 18
+        }).addTo(map);
+        
+        // Almacenar marcadores y conexiones
+        const markers = {};
+        const connections = [];
+        
+        // Crear marcadores para cada centro (197 con coordenadas válidas en MUNAY 5.3)
+        nodosCale.forEach(nodo => {
+            // MUNAY 5.3 garantiza coordenadas válidas, pero validar por seguridad
+            if (!nodo.lat || !nodo.lon || nodo.lat === 0 || nodo.lon === 0) {
+                console.warn(`⚠️ Centro ${nodo.nombre} sin coordenadas válidas - omitido`);
+                return;
+            }
+            
+            const color = categoryColors[nodo.categoria] || '#888888';
+            
+            // Tamaño según tipo: nodos principales más grandes, satélites más pequeños
+            const radius = nodo.tipo === 'NODO_PRINCIPAL' ? 8 : 5;
+            
+            const marker = L.circleMarker([nodo.lat, nodo.lon], {
+                radius: radius,
+                fillColor: color,
+                color: '#fff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            });
+            
+            // Crear popup con datos MUNAY 5.3
+            let popupContent = `
+                <div class="popup-content">
+                    <h3>${nodo.nombre}</h3>
+                    <p><strong>Categoría:</strong> ${nodo.categoria}</p>
+                    <p><strong>Departamento:</strong> ${nodo.departamento}</p>
+                    <p><strong>Tipo:</strong> ${nodo.tipo}</p>
+                    <p><strong>Demanda Anual:</strong> ${nodo.demanda_anual.toLocaleString()} eval/año</p>
+                    <p><strong>Código DANE:</strong> ${nodo.codigo_dane}</p>
+            `;
+            
+            // Agregar datos de clustering si es satélite
+            if (nodo.tipo === 'SATÉLITE' && nodo.nodo_principal) {
+                popupContent += `
+                    <hr style="margin: 10px 0;">
+                    <p><strong>🔗 Nodo Principal:</strong> ${nodo.nodo_principal}</p>
+                    <p><strong>📍 Municipios en cluster:</strong> ${nodo.total_municipios_cluster}</p>
+                    <p><strong>📏 Distancia máxima:</strong> ${nodo.distancia_maxima_km.toFixed(2)} km</p>
+                    <p><strong>📊 Distancia promedio:</strong> ${nodo.distancia_promedio_km.toFixed(2)} km</p>
+                `;
+            }
+            
+            popupContent += `</div>`;
+            
+            marker.bindPopup(popupContent);
+            marker.addTo(map);
+            
+            markers[nodo.id] = {
+                marker: marker,
+                categoria: nodo.categoria,
+                nodo: nodo
+            };
+        });
+        
+        console.log(`✅ Mapa inicializado con ${Object.keys(markers).length} nodos visibles`);
+        
+        // Funcionalidad de filtros
+        const checkboxes = document.querySelectorAll('.filter-checkbox');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateMapDisplay);
+        });
+        
+        function updateMapDisplay() {
+            const activeCategories = [];
+            
+            // Verificar categorías activas (9 categorías)
+            if (document.getElementById('cat-a-plus') && document.getElementById('cat-a-plus').checked) activeCategories.push('Cat.A+');
+            if (document.getElementById('cat-a') && document.getElementById('cat-a').checked) activeCategories.push('Cat.A');
+            if (document.getElementById('cat-b-star') && document.getElementById('cat-b-star').checked) activeCategories.push('Cat.B**');
+            if (document.getElementById('cat-b') && document.getElementById('cat-b').checked) activeCategories.push('Cat.B');
+            if (document.getElementById('cat-c1') && document.getElementById('cat-c1').checked) activeCategories.push('Cat.C1');
+            if (document.getElementById('cat-c2') && document.getElementById('cat-c2').checked) activeCategories.push('Cat.C2');
+            if (document.getElementById('cat-c3') && document.getElementById('cat-c3').checked) activeCategories.push('Cat.C3');
+            if (document.getElementById('cat-c4') && document.getElementById('cat-c4').checked) activeCategories.push('Cat.C4');
+            if (document.getElementById('cat-c5') && document.getElementById('cat-c5').checked) activeCategories.push('Cat.C5');
+            
+            // Mostrar/ocultar marcadores
+            let visibleCount = 0;
+            let totalDemand = 0;
+            const departmentSet = new Set();
+            const categoryCounts = {};
+            
+            Object.values(markers).forEach(markerObj => {
+                if (activeCategories.includes(markerObj.categoria)) {
+                    map.addLayer(markerObj.marker);
+                    visibleCount++;
+                    totalDemand += markerObj.nodo.demanda_anual || 0;
+                    departmentSet.add(markerObj.nodo.departamento);
+                    
+                    // Contar por categoría
+                    if (!categoryCounts[markerObj.categoria]) {
+                        categoryCounts[markerObj.categoria] = 0;
+                    }
+                    categoryCounts[markerObj.categoria]++;
+                } else {
+                    map.removeLayer(markerObj.marker);
+                }
+            });
+            
+            // Actualizar estadísticas
+            document.getElementById('node-count').textContent = visibleCount;
+            document.getElementById('total-demand').textContent = totalDemand.toLocaleString();
+            document.getElementById('total-capex').textContent = 'Ver presupuesto';
+            document.getElementById('department-count').textContent = departmentSet.size;
+        }
+        
+        // Inicializar vista con todos los filtros activos
+        updateMapDisplay();
+        }  // Cierre de inicializarMapa()
+        const asignaciones = {
+  "BOGOTA": [
+    "SOACHA",
+    "GIRARDOT",
+    "ZIPAQUIRA",
+    "DUITAMA",
+    "IBAGUE",
+    "NEIVA",
+    "TUNJA",
+    "FLORENCIA",
+    "FUSAGASUGA",
+    "FACATATIVA"
+  ],
+  "MEDELLIN": [
+    "BELLO",
+    "ITAGUI",
+    "ENVIGADO",
+    "QUIBDO",
+    "TURBO",
+    "APARTADO",
+    "CAUCASIA"
+  ],
+  "CALI": [
+    "BUENAVENTURA",
+    "POPAYAN",
+    "PALMIRA",
+    "TULUA",
+    "BUGA"
+  ],
+  "BARRANQUILLA": [
+    "SOLEDAD",
+    "MAICAO",
+    "RIOHACHA"
+  ],
+  "CARTAGENA": [
+    "MAGANGUE",
+    "SINCELEJO"
+  ],
+  "BUCARAMANGA": [
+    "BARRANCABERMEJA"
+  ],
+  "PEREIRA": [
+    "DOSQUEBRADAS",
+    "ARMENIA",
+    "CARTAGO"
+  ],
+  "VILLAVICENCIO": [
+    "ACACIAS",
+    "YOPAL",
+    "ARAUCA"
+  ],
+  "SANTA_MARTA": [
+    "CIÉNAGA",
+    "ARACATACA"
+  ],
+  "NEIVA": [
+    "GARZÓN",
+    "PITALITO"
+  ],
+  "IBAGUE": [
+    "ESPINAL",
+    "MELGAR"
+  ],
+  "TUNJA": [
+    "CHIQUINQUIRA",
+    "SOGAMOSO"
+  ]
+};
+        
+        // Configuración del mapa
+        const map = L.map('map').setView([4.5709, -74.2973], 6);
+        
+        // Capa base
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© OpenStreetMap contributors © CARTO',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Capas de marcadores y conexiones
+        const markers = {};
+        const connections = [];
+        
+        // Colores por categoría (9 categorías oficiales)
+        const categoryColors = {
+            'Cat.A+': '#FF0000',    // Rojo intenso
+            'Cat.A': '#FF4444',     // Rojo
+            'Cat.B**': '#FF8800',   // Naranja intenso
+            'Cat.B': '#FFAA00',     // Naranja
+            'Cat.C1': '#FFDD00',    // Amarillo
+            'Cat.C2': '#88DD00',    // Verde claro
+            'Cat.C3': '#44DD00',    // Verde
+            'Cat.C4': '#00DD44',    // Verde azulado
+            'Cat.C5': '#00DD88'     // Turquesa
+        };
+        
+        // Tamaños de marcadores por categoría
+        const categorySize = {
+            'Cat.A+': 10,
+            'Cat.A': 9,
+            'Cat.B**': 8,
+            'Cat.B': 8,
+            'Cat.C1': 7,
+            'Cat.C2': 5,
+            'Cat.C3': 5,
+            'Cat.C4': 5,
+            'Cat.C5': 5
+        };
+        
+        // Crear marcadores
+        nodosCale.forEach(nodo => {
+            const color = categoryColors[nodo.categoria];
+            const size = categorySize[nodo.categoria] || 6;
+            
+            // Crear icono personalizado
+            const icon = L.divIcon({
+                className: 'custom-marker',
+                html: `<div style="
+                    width: ${size * 2}px; 
+                    height: ${size * 2}px; 
+                    background: ${color}; 
+                    border: 2px solid white; 
+                    border-radius: 50%; 
+                    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: bold;
+                    font-size: ${Math.max(8, size)}px;
+                "></div>`,
+                iconSize: [size * 2, size * 2],
+                iconAnchor: [size, size]
+            });
+            
+            // Crear marcador
+            const marker = L.marker([nodo.lat, nodo.lon], { icon });
+            
+            // Contenido del popup
+            const popupContent = `
+                <div class="popup-content">
+                    <div class="popup-title">
+                        🏢 ${nodo.nombre}
+                    </div>
+                    <div class="popup-category" style="background: ${color}">
+                        ${nodo.categoria}
+                    </div>
+                    <div class="popup-details">
+                        <strong>Departamento:</strong> ${nodo.departamento}<br>
+                        <strong>Demanda anual:</strong> ${nodo.demanda.toLocaleString()} evaluaciones<br>
+                        ${nodo.coordinador ? `<strong>Coordinado por:</strong> ${nodo.coordinador}<br>` : '<strong>Rol:</strong> Coordinador regional<br>'}
+                    </div>
+                    <div class="popup-config">
+                        🔧 ${nodo.config}
+                    </div>
+                    <a href="fichas_cale/" class="popup-link">
+                        Ver ficha técnica →
+                    </a>
+                </div>
+            `;
+            
+            marker.bindPopup(popupContent);
+            marker.addTo(map);
+            
+            // Guardar referencia
+            markers[nodo.id] = {
+                marker: marker,
+                categoria: nodo.categoria,
+                nodo: nodo
+            };
+        });
+        
+        // Crear conexiones regionales
+        Object.entries(asignaciones).forEach(([coordinador, asignados]) => {
+            const coordNodo = nodosCale.find(n => n.id === coordinador);
+            if (!coordNodo) return;
+            
+            asignados.forEach(asignadoId => {
+                const asignadoNodo = nodosCale.find(n => n.id === asignadoId);
+                if (!asignadoNodo) return;
+                
+                const connection = L.polyline([
+                    [coordNodo.lat, coordNodo.lon],
+                    [asignadoNodo.lat, asignadoNodo.lon]
+                ], {
+                    color: categoryColors[coordNodo.categoria],
+                    weight: 2,
+                    opacity: 0.6,
+                    dashArray: '5, 5'
+                });
+                
+                connection.addTo(map);
+                connections.push(connection);
+            });
+        });
+        
+        // Funcionalidad de filtros
+        const checkboxes = document.querySelectorAll('.filter-checkbox');
+        const conexionesCheckbox = document.getElementById('conexiones');
+        
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateMapDisplay);
+        });
+        
+        function updateMapDisplay() {
+            const activeCategories = [];
+            
+            // Verificar categorías activas
+
+            if (document.getElementById('cat-a').checked) activeCategories.push('CAT.A');
+
+            if (document.getElementById('cat-b').checked) activeCategories.push('CAT.B');
+
+            
+            // Mostrar/ocultar marcadores
+            let visibleCount = 0;
+            let totalDemand = 0;
+            let totalCapex = 0;
+            const departmentSet = new Set();
+            
+            Object.values(markers).forEach(markerObj => {
+                if (activeCategories.includes(markerObj.categoria)) {
+                    map.addLayer(markerObj.marker);
+                    visibleCount++;
+                    totalDemand += markerObj.nodo.demanda;
+                    departmentSet.add(markerObj.nodo.departamento);
+                    
+                    // Calcular CAPEX por categoría (datos oficiales en millones COP)
+                    const capexPorCategoria = {
+                        'CAT.A+': 243000000,   // $243M
+                        'CAT.A': 243000000,    // $243M
+                        'CAT.B**': 196000000,  // $196M
+                        'CAT.B': 196000000,    // $196M
+                        'CAT.C1': 120000000,   // $120M
+                        'CAT.C2': 12000000,    // $12M
+                        'CAT.C3': 12000000,    // $12M
+                        'CAT.C4': 12000000,    // $12M
+                        'CAT.C5': 12000000     // $12M
+                    };
+                    totalCapex += capexPorCategoria[markerObj.categoria] || 0;
+                } else {
+                    map.removeLayer(markerObj.marker);
+                }
+            });
+            
+            // Mostrar/ocultar conexiones
+            const showConnections = conexionesCheckbox.checked;
+            connections.forEach(connection => {
+                if (showConnections) {
+                    map.addLayer(connection);
+                } else {
+                    map.removeLayer(connection);
+                }
+            });
+            
+            // Actualizar estadísticas
+            document.getElementById('visible-nodes').textContent = visibleCount;
+            document.getElementById('total-demand').textContent = formatNumber(totalDemand);
+            document.getElementById('total-capex').textContent = '$' + formatNumber(totalCapex / 1000000000) + 'B';
+            document.getElementById('departments').textContent = departmentSet.size;
+            
+            // Actualizar estilos de etiquetas
+            document.querySelectorAll('.category-label').forEach(label => {
+                const checkbox = document.getElementById(label.getAttribute('for'));
+                if (checkbox && !checkbox.checked) {
+                    label.classList.add('inactive');
+                } else {
+                    label.classList.remove('inactive');
+                }
+            });
+        }
+        
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
+        
+        // Inicializar display
+        updateMapDisplay();
+        
+        // Agregar controles de zoom personalizados
+        const zoomToCountry = L.control({ position: 'topright' });
+        zoomToCountry.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+            div.style.backgroundColor = 'white';
+            div.style.width = '30px';
+            div.style.height = '30px';
+            div.style.cursor = 'pointer';
+            div.style.display = 'flex';
+            div.style.alignItems = 'center';
+            div.style.justifyContent = 'center';
+            div.innerHTML = '🇨🇴';
+            div.title = 'Ver toda Colombia';
+            
+            div.onclick = function() {
+                map.setView([4.5709, -74.2973], 6);
+            };
+            
+            return div;
+        };
+        zoomToCountry.addTo(map);
+        
+        // Hacer el panel de estadísticas draggable
+        function makeDraggable(element) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            
+            element.onmousedown = dragMouseDown;
+            element.ontouchstart = dragTouchStart;
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+                element.classList.add('dragging');
+            }
+
+            function dragTouchStart(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.touches[0].clientX;
+                pos4 = e.touches[0].clientY;
+                document.ontouchend = closeDragElement;
+                document.ontouchmove = elementTouchDrag;
+                element.classList.add('dragging');
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                
+                let newTop = element.offsetTop - pos2;
+                let newLeft = element.offsetLeft - pos1;
+                
+                // Limitar el panel dentro de la ventana
+                const maxTop = window.innerHeight - element.offsetHeight;
+                const maxLeft = window.innerWidth - element.offsetWidth;
+                
+                newTop = Math.max(0, Math.min(newTop, maxTop));
+                newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+                
+                element.style.top = newTop + "px";
+                element.style.left = newLeft + "px";
+                element.style.right = "auto";
+            }
+
+            function elementTouchDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.touches[0].clientX;
+                pos2 = pos4 - e.touches[0].clientY;
+                pos3 = e.touches[0].clientX;
+                pos4 = e.touches[0].clientY;
+                
+                let newTop = element.offsetTop - pos2;
+                let newLeft = element.offsetLeft - pos1;
+                
+                // Limitar el panel dentro de la ventana
+                const maxTop = window.innerHeight - element.offsetHeight;
+                const maxLeft = window.innerWidth - element.offsetWidth;
+                
+                newTop = Math.max(0, Math.min(newTop, maxTop));
+                newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+                
+                element.style.top = newTop + "px";
+                element.style.left = newLeft + "px";
+                element.style.right = "auto";
+            }
+
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+                document.ontouchend = null;
+                document.ontouchmove = null;
+                element.classList.remove('dragging');
+            }
+        }
+
+        // Hacer draggable el panel de estadísticas
+        const statsPanel = document.getElementById('stats');
+        makeDraggable(statsPanel);
+
+        console.log('🗺️ Mapa CALE Colombia cargado exitosamente');
+        console.log(`📊 ${nodosCale.length} nodos CALE disponibles`);
+        console.log('📱 Panel estadísticas: Draggable activado');
+    </script>
+
+<footer class="uptc-footer">
+  <div class="footer-container">
+    
+    <!-- Certificaciones Oficiales -->
+    <div class="certificaciones-section">
+      <div class="ceai-cert">
+        <div class="ceai-logo">🏆</div>
+        <div class="ceai-text">
+          <strong>CEAI</strong><br>
+          <small>ACREDITACIÓN INSTITUCIONAL INTERNACIONAL</small><br>
+          <small>2022 - 2027</small><br>
+          <small>VIGENCIA 5 AÑOS</small>
+        </div>
+      </div>
+      
+      <div class="acreditacion-cert">
+        <div class="acred-text">
+          <strong>ACREDITACIÓN INSTITUCIONAL DE ALTA CALIDAD</strong><br>
+          <strong>MULTICAMPUS</strong><br>
+          <small>RESOLUCIÓN 003468 DE 2023 MINEDUCACIÓN</small><br>
+          <small>VIGENCIA 8 AÑOS</small>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Información de Contacto -->
+    <div class="contacto-footer">
+      <p><strong>AVENIDA CENTRAL DEL NORTE 39-115</strong></p>
+      <p><strong>PBX 57+8 7405626</strong></p>
+      <p><strong>TUNJA - BOYACÁ</strong></p>
+    </div>
+    
+  </div>
+</footer>
+
+</body>
+</html>
