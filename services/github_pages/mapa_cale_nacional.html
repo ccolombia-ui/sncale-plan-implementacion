@@ -673,6 +673,18 @@
             format: 'tsv'  // Tab-separated values
         };
 
+        const IEBM_GOOGLE_SHEETS_CONFIG = {
+            // URL de Google Sheets con IEBM (19,521 instituciones educativas)
+            url: 'https://docs.google.com/spreadsheets/d/1ibTlTyAELNoMg6eERPvddPBdsu-eRvWuXlIbI5kDFqU/export?format=tsv&gid=268599605',
+
+            // Cache en localStorage (10 minutos - datos más estáticos)
+            cacheKey: 'iebm_cache',
+            cacheTTL: 10 * 60 * 1000,
+
+            // Formato de datos
+            format: 'tsv'
+        };
+
         // Colores por categoría (soporta ambas nomenclaturas: Cat.X y CALE.n_X)
         const COLORES_CATEGORIAS = {
             'Cat.A+': '#9333ea',
@@ -834,12 +846,74 @@
         }
 
         // ============================================================================
+        // FUNCIÓN: Cargar IEBM desde Google Sheets
+        // ============================================================================
+        async function cargarIEBM() {
+            try {
+                // 1. Verificar cache
+                const cache = localStorage.getItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    const { data, timestamp } = JSON.parse(cache);
+                    const now = Date.now();
+                    const timeLeft = IEBM_GOOGLE_SHEETS_CONFIG.cacheTTL - (now - timestamp);
+
+                    if (timeLeft > 0) {
+                        console.log(`IEBM Cache válido por ${Math.round(timeLeft / 1000)} segundos`);
+                        return data;
+                    }
+                }
+
+                // 2. Cargar desde Google Sheets
+                console.log('Cargando IEBM desde Google Sheets...');
+                const response = await fetch(IEBM_GOOGLE_SHEETS_CONFIG.url);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP al cargar IEBM: ${response.status}`);
+                }
+
+                const dataText = await response.text();
+                const iebm = parseData(dataText, IEBM_GOOGLE_SHEETS_CONFIG.format);
+
+                if (!iebm || iebm.length === 0) {
+                    throw new Error('No se encontraron datos de IEBM en Google Sheets');
+                }
+
+                console.log(`✓ Cargadas ${iebm.length} IEBM desde Google Sheets`);
+
+                // 3. Guardar en cache
+                localStorage.setItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey, JSON.stringify({
+                    data: iebm,
+                    timestamp: Date.now()
+                }));
+
+                return iebm;
+
+            } catch (error) {
+                console.error('Error cargando IEBM:', error);
+
+                // Fallback a cache expirado
+                const cache = localStorage.getItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    console.log('Usando cache expirado de IEBM como fallback');
+                    const { data } = JSON.parse(cache);
+                    return data;
+                }
+
+                // Si no hay cache, retornar array vacío (no crítico)
+                console.warn('No se pudieron cargar IEBM, continuando sin ellas');
+                return [];
+            }
+        }
+
+        // ============================================================================
         // FUNCIÓN: Inicializar mapa
         // ============================================================================
         async function inicializarMapa() {
             try {
                 // 1. Cargar datos
                 const centros = await cargarCentrosCALE();
+                const iebm = await cargarIEBM(); // Cargar IEBM también
+                iebmGlobal = iebm; // Guardar globalmente
 
                 // 2. Ocultar loading
                 document.getElementById('loading').style.display = 'none';
@@ -1174,6 +1248,8 @@
 
         let datosJerarquia = null;
         let centrosGlobal = [];
+        let iebmGlobal = [];
+        let marcadoresIEBM = [];
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
@@ -1358,7 +1434,7 @@
         }
 
         function filtrarPorNodo(centroId) {
-            // Mostrar solo los centros de este nodo
+            // 1. Mostrar solo los centros CALE de este nodo
             todosMarcadores.forEach(({ marker, centro }) => {
                 const esNodo = centro.centro_id === centroId;
                 const perteneceAlNodo = centro.nodo_principal === centroId;
@@ -1374,7 +1450,71 @@
                 }
             });
 
-            // Centrar mapa en el nodo
+            // 2. Limpiar marcadores IEBM anteriores
+            marcadoresIEBM.forEach(marker => {
+                if (mapaGlobal.hasLayer(marker)) {
+                    mapaGlobal.removeLayer(marker);
+                }
+            });
+            marcadoresIEBM = [];
+
+            // 3. Agregar marcadores IEBM para este nodo y sus satélites
+            // Obtener todos los centros de este nodo (nodo + satélites)
+            const centrosDelNodo = [centroId];
+            todosMarcadores.forEach(({ centro }) => {
+                if (centro.nodo_principal === centroId && centro.centro_id !== centroId) {
+                    centrosDelNodo.push(centro.centro_id);
+                }
+            });
+
+            // Filtrar IEBM que pertenecen a algún centro de este nodo
+            const iebmDelNodo = iebmGlobal.filter(iebm => {
+                return centrosDelNodo.includes(iebm.nodo_cale_mas_cercano);
+            });
+
+            console.log(`Mostrando ${iebmDelNodo.length} IEBM para ${centroId}`);
+
+            // Crear marcadores para cada IEBM
+            iebmDelNodo.forEach(iebm => {
+                const latStr = (iebm.latitud || '').toString().replace(',', '.');
+                const lngStr = (iebm.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (isNaN(lat) || isNaN(lng)) return;
+
+                // Marcador más pequeño para IEBM (color azul educación)
+                const marker = L.circleMarker([lat, lng], {
+                    radius: 3,
+                    fillColor: '#3182ce',
+                    color: '#ffffff',
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.7
+                });
+
+                // Popup para IEBM
+                const popupContent = `
+                    <div class="popup-content">
+                        <h3>🎓 ${iebm.sede_iebm || 'Institución Educativa'}</h3>
+                        <p><strong>Municipio:</strong> ${iebm.municipio || 'N/A'}</p>
+                        <p><strong>Departamento:</strong> ${iebm.departamento || 'N/A'}</p>
+                        <p><strong>Zona:</strong> ${iebm.zona || 'N/A'}</p>
+                        <p><strong>Sector:</strong> ${iebm.sector || 'N/A'}</p>
+                        <p><strong>CALE asignado:</strong> ${iebm.nodo_cale_mas_cercano}</p>
+                        <p><strong>Distancia al CALE:</strong> ${iebm.distancia_km} km</p>
+                        <p style="font-size:0.85em; color:#718096; margin-top:8px;">
+                            Estudiantes de media (datos pendientes)
+                        </p>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+                marker.addTo(mapaGlobal);
+                marcadoresIEBM.push(marker);
+            });
+
+            // 4. Centrar mapa en el nodo
             const nodo = centrosGlobal.find(c => c.centro_id === centroId);
             if (nodo) {
                 const latStr = (nodo.latitud || '').toString().replace(',', '.');
