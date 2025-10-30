@@ -525,12 +525,88 @@
             z-index: 3000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
+
+        /* Menú horizontal de categorías */
+        .menu-horizontal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 2500;
+            padding: 10px 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-horizontal label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            background: #f7fafc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9em;
+            border: 2px solid transparent;
+        }
+
+        .menu-horizontal label:hover {
+            background: #e2e8f0;
+        }
+
+        .menu-horizontal input[type="checkbox"]:checked + span {
+            font-weight: bold;
+        }
+
+        .menu-horizontal label.active {
+            background: #667eea;
+            color: white;
+            border-color: #764ba2;
+        }
+
+        .menu-category {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu-color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Ajustar container para el menú horizontal */
+        body.with-menu .container {
+            margin-top: 70px;
+        }
+
+        body.with-menu .sidebar {
+            top: 60px;
+            height: calc(100vh - 60px);
+        }
+
+        body.with-menu .sidebar-toggle {
+            top: calc(50% + 30px);
+        }
     </style>
 </head>
-<body>
+<body class="with-menu">
+    <!-- Menú horizontal de categorías -->
+    <div class="menu-horizontal" id="menu-categorias">
+        <strong style="margin-right: 10px;">Filtrar por Categoría:</strong>
+        <!-- Se llenará dinámicamente con JavaScript -->
+    </div>
+
     <!-- Version badge -->
     <div class="version-badge">
-        v2.1 - Checkboxes + Colores Regionales
+        v3.0 - Jerarquía Completa + Polígonos
     </div>
 
     <!-- Botón toggle sidebar -->
@@ -662,6 +738,27 @@
 
         // Estado de selección de nodos
         let nodosSeleccionados = new Set();
+        let categoriasSeleccionadas = new Set();
+
+        // Capa de polígonos municipales
+        let capaPoligonosMunicipios = null;
+        let municipiosGeoJSON = null;
+
+        // URL del GeoJSON de municipios de Colombia (1122)
+        const MUNICIPIOS_GEOJSON_URL = 'https://gist.githubusercontent.com/john-guerra/727e8992e9599b9d9f1dbfdc4c8e479e/raw/colombia_municipios.geojson';
+
+        // Categorías CALE
+        const CATEGORIAS_CALE = [
+            { id: 'Cat.A+', nombre: 'CALE.n_1+', color: '#9333ea' },
+            { id: 'Cat.A', nombre: 'CALE.n_1', color: '#2563eb' },
+            { id: 'Cat.B**', nombre: 'CALE.n_2**', color: '#059669' },
+            { id: 'Cat.B', nombre: 'CALE.n_2', color: '#16a34a' },
+            { id: 'Cat.C1', nombre: 'CALE.n_3', color: '#ea580c' },
+            { id: 'C2', nombre: 'C2', color: '#dc2626' },
+            { id: 'C3', nombre: 'C3', color: '#dc2626' },
+            { id: 'C4', nombre: 'C4', color: '#dc2626' },
+            { id: 'C5', nombre: 'C5', color: '#dc2626' }
+        ];
 
         // ============================================================================
         // FUNCIÓN: Parser TSV/CSV universal
@@ -831,6 +928,164 @@
         }
 
         // ============================================================================
+        // FUNCIÓN: Calcular nodo_raiz para cada centro
+        // ============================================================================
+        function calcularNodoRaiz(centros) {
+            console.log('📊 Calculando nodo_raiz para todos los centros...');
+
+            centros.forEach(centro => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const esNodoRaiz = cat === 'Cat.A+' || cat === 'Cat.A' || cat === 'CALE.n_1+' || cat === 'CALE.n_1';
+
+                if (esNodoRaiz) {
+                    // Es un nodo raíz, su nodo_raiz es él mismo
+                    centro.nodo_raiz = centro.centro_id;
+                } else {
+                    // Es satélite, su nodo_raiz es su nodo_principal
+                    centro.nodo_raiz = centro.nodo_principal || 'SIN_NODO';
+                }
+            });
+
+            // Log de estadísticas
+            const nodosRaiz = new Set(centros.map(c => c.nodo_raiz));
+            console.log(`✓ ${nodosRaiz.size} nodos raíz identificados`);
+            console.log(`✓ Nodos raíz:`, Array.from(nodosRaiz).sort());
+
+            return centros;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Cargar GeoJSON de municipios
+        // ============================================================================
+        async function cargarMunicipiosGeoJSON() {
+            try {
+                console.log('🗺️ Cargando GeoJSON de municipios colombianos...');
+                const response = await fetch(MUNICIPIOS_GEOJSON_URL);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+
+                const geojson = await response.json();
+                console.log(`✓ Cargados ${geojson.features.length} municipios`);
+
+                return geojson;
+
+            } catch (error) {
+                console.error('❌ Error cargando GeoJSON de municipios:', error);
+                console.warn('⚠️ Continuando sin polígonos municipales');
+                return null;
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Asignar nodo_raiz a municipios
+        // ============================================================================
+        function asignarNodoRaizAMunicipios(geojson, centros) {
+            if (!geojson) return null;
+
+            console.log('🎨 Asignando nodo_raiz a municipios...');
+
+            // Crear índice de nodo_raiz por municipio (desde centros CALE)
+            const municipioToNodoRaiz = {};
+
+            centros.forEach(centro => {
+                const municipio = centro.municipio;
+                const nodoRaiz = centro.nodo_raiz;
+
+                if (municipio && nodoRaiz) {
+                    // Normalizar nombre de municipio
+                    const municipioNorm = municipio.toUpperCase().trim();
+
+                    if (!municipioToNodoRaiz[municipioNorm]) {
+                        municipioToNodoRaiz[municipioNorm] = nodoRaiz;
+                    }
+                }
+            });
+
+            // Asignar nodo_raiz a cada feature del GeoJSON
+            let asignados = 0;
+            geojson.features.forEach(feature => {
+                const nombreMunicipio = (feature.properties.MPIO_CNMBR || feature.properties.nombre || '').toUpperCase().trim();
+
+                if (municipioToNodoRaiz[nombreMunicipio]) {
+                    feature.properties.nodo_raiz = municipioToNodoRaiz[nombreMunicipio];
+                    asignados++;
+                } else {
+                    // Sin CALE asignado
+                    feature.properties.nodo_raiz = null;
+                }
+            });
+
+            console.log(`✓ ${asignados} municipios asignados a nodos raíz`);
+            console.log(`⚠️ ${geojson.features.length - asignados} municipios sin CALE asignado`);
+
+            return geojson;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Crear mapa de colores por nodo_raiz
+        // ============================================================================
+        function crearMapaColoresNodoRaiz(centros) {
+            const nodosRaiz = [...new Set(centros.map(c => c.nodo_raiz))].filter(n => n !== 'SIN_NODO').sort();
+            const mapaColores = {};
+
+            nodosRaiz.forEach((nodoRaiz, index) => {
+                mapaColores[nodoRaiz] = COLORES_REGIONES[index % COLORES_REGIONES.length];
+            });
+
+            console.log('🎨 Mapa de colores por nodo_raiz:', mapaColores);
+            return mapaColores;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Renderizar polígonos municipales
+        // ============================================================================
+        function renderizarPoligonosMunicipales(geojson, mapaColores) {
+            if (!geojson || !mapaGlobal) return;
+
+            console.log('🗺️ Renderizando polígonos municipales...');
+
+            // Remover capa anterior si existe
+            if (capaPoligonosMunicipios) {
+                mapaGlobal.removeLayer(capaPoligonosMunicipios);
+            }
+
+            // Crear capa de polígonos
+            capaPoligonosMunicipios = L.geoJSON(geojson, {
+                style: function(feature) {
+                    const nodoRaiz = feature.properties.nodo_raiz;
+                    const color = nodoRaiz ? (mapaColores[nodoRaiz] || '#cccccc') : '#eeeeee';
+
+                    return {
+                        fillColor: color,
+                        fillOpacity: 0.3,
+                        color: '#ffffff',
+                        weight: 1,
+                        opacity: 0.6
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    const nombreMunicipio = feature.properties.MPIO_CNMBR || feature.properties.nombre || 'Desconocido';
+                    const nodoRaiz = feature.properties.nodo_raiz || 'Sin asignar';
+
+                    layer.bindPopup(`
+                        <div class="popup-content">
+                            <h3>${nombreMunicipio}</h3>
+                            <p><strong>Nodo CALE:</strong> ${nodoRaiz}</p>
+                        </div>
+                    `);
+                }
+            });
+
+            // Agregar al mapa DEBAJO de los marcadores
+            capaPoligonosMunicipios.addTo(mapaGlobal);
+            capaPoligonosMunicipios.bringToBack();
+
+            console.log('✓ Polígonos municipales renderizados');
+        }
+
+        // ============================================================================
         // FUNCIÓN: Inicializar mapa
         // ============================================================================
         let todosMarcadores = [];
@@ -839,12 +1094,28 @@
         let iebmGlobal = [];
         let marcadoresIEBM = [];
         let datosJerarquia = null;
+        let mapaColoresNodoRaiz = {};
 
         async function inicializarMapa() {
             try {
-                const centros = await cargarCentrosCALE();
+                let centros = await cargarCentrosCALE();
                 const iebm = await cargarIEBM();
                 iebmGlobal = iebm;
+
+                // Calcular nodo_raiz para todos los centros
+                centros = calcularNodoRaiz(centros);
+
+                // Crear mapa de colores por nodo_raiz
+                mapaColoresNodoRaiz = crearMapaColoresNodoRaiz(centros);
+
+                // Cargar GeoJSON de municipios
+                let municipiosGeo = await cargarMunicipiosGeoJSON();
+
+                if (municipiosGeo) {
+                    // Asignar nodo_raiz a municipios
+                    municipiosGeo = asignarNodoRaizAMunicipios(municipiosGeo, centros);
+                    municipiosGeoJSON = municipiosGeo;
+                }
 
                 document.getElementById('loading').style.display = 'none';
 
@@ -899,6 +1170,14 @@
                 centrosGlobal = centros;
                 datosJerarquia = construirJerarquia(centros);
                 renderizarArbol(datosJerarquia);
+
+                // Renderizar polígonos municipales
+                if (municipiosGeoJSON) {
+                    renderizarPoligonosMunicipales(municipiosGeoJSON, mapaColoresNodoRaiz);
+                }
+
+                // Crear menú horizontal de categorías
+                crearMenuCategorias();
 
                 console.log(`✓ Mapa inicializado con ${todosMarcadores.length} marcadores CALE + ${iebm.length} IEBM`);
 
@@ -956,6 +1235,96 @@
                     <div class="stat-label">Instituciones Educativas</div>
                 </div>
             `;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Crear menú horizontal de categorías
+        // ============================================================================
+        function crearMenuCategorias() {
+            const menuContainer = document.getElementById('menu-categorias');
+            let html = '<strong style="margin-right: 10px;">Filtrar por Categoría:</strong>';
+
+            CATEGORIAS_CALE.forEach(cat => {
+                html += `
+                    <label class="menu-category" id="menu-cat-${cat.id}">
+                        <input type="checkbox"
+                               value="${cat.id}"
+                               onchange="toggleCategoriaFiltro('${cat.id}', this.checked)">
+                        <span class="menu-color-dot" style="background: ${cat.color};"></span>
+                        <span>${cat.nombre}</span>
+                    </label>
+                `;
+            });
+
+            // Botón para limpiar filtros
+            html += `
+                <button onclick="limpiarFiltrosCategorias()"
+                        style="padding: 6px 12px; background: #e53e3e; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-left: 10px;">
+                    Limpiar Filtros
+                </button>
+            `;
+
+            menuContainer.innerHTML = html;
+        }
+
+        function toggleCategoriaFiltro(categoriaId, checked) {
+            console.log(`🎯 Filtro categoría ${categoriaId}: ${checked ? 'activado' : 'desactivado'}`);
+
+            if (checked) {
+                categoriasSeleccionadas.add(categoriaId);
+            } else {
+                categoriasSeleccionadas.delete(categoriaId);
+            }
+
+            // Actualizar estilo del label
+            const label = document.getElementById(`menu-cat-${categoriaId}`);
+            if (checked) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+
+            // Aplicar filtro al mapa
+            aplicarFiltrosCategorias();
+        }
+
+        function aplicarFiltrosCategorias() {
+            if (categoriasSeleccionadas.size === 0) {
+                // Sin filtros, mostrar todo
+                todosMarcadores.forEach(({ marker }) => {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                });
+                return;
+            }
+
+            // Filtrar marcadores por categoría
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const mostrar = categoriasSeleccionadas.has(cat);
+
+                if (mostrar) {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                }
+            });
+        }
+
+        function limpiarFiltrosCategorias() {
+            categoriasSeleccionadas.clear();
+
+            // Desmarcar todos los checkboxes
+            document.querySelectorAll('#menu-categorias input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+
+            // Remover clase active de todos los labels
+            document.querySelectorAll('.menu-category').forEach(label => {
+                label.classList.remove('active');
+            });
+
+            // Mostrar todos los marcadores
+            aplicarFiltrosCategorias();
         }
 
         // ============================================================================
