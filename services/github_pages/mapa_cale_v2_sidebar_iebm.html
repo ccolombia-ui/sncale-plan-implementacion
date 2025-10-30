@@ -852,18 +852,7 @@
         // ============================================================================
         async function cargarIEBM() {
             try {
-                const cache = localStorage.getItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey);
-                if (cache) {
-                    const { data, timestamp } = JSON.parse(cache);
-                    const now = Date.now();
-                    const timeLeft = IEBM_GOOGLE_SHEETS_CONFIG.cacheTTL - (now - timestamp);
-                    if (timeLeft > 0) {
-                        console.log(`✓ IEBM Cache válido por ${Math.round(timeLeft / 1000)} segundos`);
-                        return data;
-                    }
-                }
-
-                console.log('📥 Cargando IEBM desde Google Sheets...');
+                console.log('📥 Cargando IEBM desde Google Sheets (sin cache por tamaño)...');
                 const response = await fetch(IEBM_GOOGLE_SHEETS_CONFIG.url);
                 if (!response.ok) throw new Error(`Error HTTP al cargar IEBM: ${response.status}`);
 
@@ -871,23 +860,12 @@
                 const iebm = parseData(dataText, IEBM_GOOGLE_SHEETS_CONFIG.format);
                 if (!iebm || iebm.length === 0) throw new Error('No se encontraron datos de IEBM');
 
-                console.log(`✓ Cargadas ${iebm.length} IEBM`);
-
-                localStorage.setItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey, JSON.stringify({
-                    data: iebm,
-                    timestamp: Date.now()
-                }));
+                console.log(`✓ Cargadas ${iebm.length} IEBM (sin localStorage por tamaño de datos)`);
 
                 return iebm;
 
             } catch (error) {
                 console.error('❌ Error cargando IEBM:', error);
-                const cache = localStorage.getItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey);
-                if (cache) {
-                    console.log('⚠️ Usando cache expirado de IEBM como fallback');
-                    const { data } = JSON.parse(cache);
-                    return data;
-                }
                 console.warn('⚠️ No se pudieron cargar IEBM, continuando sin ellas');
                 return [];
             }
@@ -1503,6 +1481,18 @@
             });
 
             treeContainer.innerHTML = html;
+
+            // EXPANDIR AUTOMÁTICAMENTE los primeros 3 nodos para mostrar la jerarquía
+            setTimeout(() => {
+                nodosOrdenados.slice(0, 3).forEach(([centroId]) => {
+                    const childrenDiv = document.getElementById(`tree-${centroId}`);
+                    const expandBtn = childrenDiv?.previousElementSibling?.querySelector('.tree-expand');
+                    if (childrenDiv && expandBtn) {
+                        childrenDiv.classList.add('expanded');
+                        expandBtn.classList.add('expanded');
+                    }
+                });
+            }, 100);
         }
 
         function toggleTreeNode(event, nodeId) {
