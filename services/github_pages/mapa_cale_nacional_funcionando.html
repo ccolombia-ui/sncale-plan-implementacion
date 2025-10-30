@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa CALE Nacional - Con Municipios Coloreados</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        #map-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        /* Sidebar jerárquica */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 2000;
+            overflow-y: auto;
+            transform: translateX(-350px);
+            transition: transform 0.3s;
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 10px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            z-index: 2001;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            transition: all 0.3s;
+        }
+
+        .sidebar-toggle:hover {
+            background: #764ba2;
+            padding-left: 15px;
+        }
+
+        .sidebar-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .sidebar-header h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .sidebar-search {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .sidebar-search::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .sidebar-content {
+            padding: 15px;
+        }
+
+        .tree-node {
+            margin: 5px 0;
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .tree-item:hover {
+            background: #f7fafc;
+        }
+
+        .tree-item.active {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+        }
+
+        .tree-expand {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            cursor: pointer;
+            color: #718096;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+
+        .tree-expand.expanded {
+            transform: rotate(90deg);
+        }
+
+        .tree-label {
+            flex: 1;
+            font-size: 0.9em;
+            color: #2d3748;
+        }
+
+        .tree-count {
+            font-size: 0.85em;
+            color: #718096;
+            font-weight: bold;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .tree-children {
+            margin-left: 25px;
+            display: none;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 10px;
+        }
+
+        .tree-children.expanded {
+            display: block;
+        }
+
+        .popup-content h3 {
+            color: #2d3748;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .popup-content p {
+            margin: 5px 0;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón toggle sidebar -->
+    <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleSidebar()">
+        FILTROS JERÁRQUICOS
+    </button>
+
+    <!-- Sidebar jerárquica -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>🏛️ Red Nacional CALE</h3>
+            <input type="text" class="sidebar-search" id="sidebar-search" placeholder="Buscar centro o municipio...">
+        </div>
+        <div class="sidebar-content" id="sidebar-tree">
+            <!-- Se llenará dinámicamente -->
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Red Nacional de Centros CALE</h1>
+            <p class="subtitle">Sistema de Capacitación en Logística Eléctrica - Proyecto MUNAY</p>
+            <p class="subtitle" style="font-size: 0.9em; margin-top: 10px; color: #48bb78;">
+                ✓ Datos en tiempo real desde Google Sheets | ✓ Municipios coloreados por CALE
+            </p>
+        </header>
+
+        <div id="map-container">
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Cargando mapa y datos...</p>
+            </div>
+            <div id="map"></div>
+            <div class="legend">
+                <h4>Categorías CALE</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9333ea;"></div>
+                    <span>CALE.n_1+ (HUB)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2563eb;"></div>
+                    <span>CALE.n_1 (Nodo)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #16a34a;"></div>
+                    <span>CALE.n_2 (Regional)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ea580c;"></div>
+                    <span>CALE.n_3 (Local)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #dc2626;"></div>
+                    <span>C2/C3/C4/C5 (Satélite)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats" id="stats"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        console.log('🗺️ Mapa CALE Nacional - Iniciando...');
+
+        // Configuración Google Sheets
+        const GOOGLE_SHEETS_URL = 'https://docs.google.com/spreadsheets/d/1ibTlTyAELNoMg6eERPvddPBdsu-eRvWuXlIbI5kDFqU/export?format=tsv&gid=197105959';
+
+        const COLORES_CATEGORIAS = {
+            'Cat.A+': '#9333ea', 'CALE.n_1+': '#9333ea',
+            'Cat.A': '#2563eb', 'CALE.n_1': '#2563eb',
+            'Cat.B**': '#059669', 'CALE.n_2**': '#059669',
+            'Cat.B': '#16a34a', 'CALE.n_2': '#16a34a',
+            'Cat.C1': '#ea580c', 'CALE.n_3': '#ea580c',
+            'C2': '#dc2626', 'C3': '#dc2626', 'C4': '#dc2626', 'C5': '#dc2626'
+        };
+
+        let map;
+        let todosMarcadores = [];
+        let centrosGlobal = [];
+
+        async function inicializarMapa() {
+            try {
+                // Cargar datos
+                const centros = await cargarDatos();
+                centrosGlobal = centros;
+
+                document.getElementById('loading').style.display = 'none';
+
+                // Crear mapa
+                map = L.map('map').setView([4.5709, -74.2973], 6);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap contributors',
+                    maxZoom: 18
+                }).addTo(map);
+
+                // Agregar marcadores
+                centros.forEach(centro => {
+                    const latStr = (centro.latitud || '').toString().replace(',', '.');
+                    const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                    const lat = parseFloat(latStr);
+                    const lng = parseFloat(lngStr);
+
+                    if (isNaN(lat) || isNaN(lng)) return;
+
+                    const categoria = centro.categoria_cale || centro.categoria || 'C2';
+                    const color = COLORES_CATEGORIAS[categoria] || '#dc2626';
+
+                    const marker = L.circleMarker([lat, lng], {
+                        radius: 8,
+                        fillColor: color,
+                        color: '#ffffff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+
+                    const popupContent = `
+                        <div class="popup-content">
+                            <h3>${centro.centro_id || 'Centro CALE'}</h3>
+                            <p><strong>Municipio:</strong> ${centro.municipio || 'N/A'}</p>
+                            <p><strong>Departamento:</strong> ${centro.departamento || 'N/A'}</p>
+                            <p><strong>Categoría:</strong> ${categoria}</p>
+                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()} aspirantes</p>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(map);
+                    todosMarcadores.push({ marker, centro });
+                });
+
+                // Construir sidebar
+                construirSidebar(centros);
+
+                // Mostrar estadísticas
+                mostrarEstadisticas(centros);
+
+                console.log(`✓ Mapa inicializado con ${todosMarcadores.length} centros`);
+
+            } catch (error) {
+                console.error('❌ Error:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div style="color: #c53030;">
+                        <strong>Error al cargar datos</strong>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function cargarDatos() {
+            console.log('📥 Cargando datos desde Google Sheets...');
+
+            const response = await fetch(GOOGLE_SHEETS_URL);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+            const text = await response.text();
+            const lines = text.trim().split('\n');
+            const headers = lines[0].split('\t');
+
+            console.log(`📊 Headers (${headers.length}):`, headers);
+
+            const data = [];
+            for (let i = 1; i < lines.length; i++) {
+                const values = lines[i].split('\t');
+                if (values.length >= headers.length - 2) { // Permitir 2 columnas de diferencia
+                    const obj = {};
+                    headers.forEach((header, index) => {
+                        obj[header] = values[index] || '';
+                    });
+                    data.push(obj);
+                }
+            }
+
+            console.log(`✓ Cargados ${data.length} centros`);
+            return data;
+        }
+
+        function mostrarEstadisticas(centros) {
+            const stats = {
+                total: centros.length,
+                nodos: centros.filter(c => {
+                    const cat = (c.categoria_cale || c.categoria || '').trim();
+                    return cat === 'Cat.A+' || cat === 'Cat.A';
+                }).length,
+                satelites: centros.filter(c => {
+                    const cat = (c.categoria_cale || c.categoria || '').trim();
+                    return cat !== 'Cat.A+' && cat !== 'Cat.A';
+                }).length,
+                demandaTotal: centros.reduce((sum, c) => {
+                    return sum + parseInt(c.demanda_estimada_anual || 0);
+                }, 0)
+            };
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.total}</div>
+                    <div class="stat-label">Total Centros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.nodos}</div>
+                    <div class="stat-label">Nodos Principales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.satelites}</div>
+                    <div class="stat-label">Centros Satélite</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.demandaTotal.toLocaleString()}</div>
+                    <div class="stat-label">Demanda Anual Total</div>
+                </div>
+            `;
+        }
+
+        function construirSidebar(centros) {
+            const jerarquia = {};
+
+            centros.forEach(centro => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const esNodo = cat === 'Cat.A+' || cat === 'Cat.A';
+                const nodoPrincipal = esNodo ? centro.centro_id : (centro.nodo_principal || 'SIN_NODO');
+
+                if (!jerarquia[nodoPrincipal]) {
+                    jerarquia[nodoPrincipal] = {
+                        nodo: esNodo ? centro : null,
+                        satelites: [],
+                        demandaTotal: 0
+                    };
+                }
+
+                if (esNodo) {
+                    jerarquia[nodoPrincipal].nodo = centro;
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                } else {
+                    jerarquia[nodoPrincipal].satelites.push(centro);
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                }
+            });
+
+            const treeContainer = document.getElementById('sidebar-tree');
+            let html = '';
+
+            const nodosOrdenados = Object.entries(jerarquia)
+                .filter(([key, data]) => data.nodo !== null)
+                .sort((a, b) => b[1].demandaTotal - a[1].demandaTotal);
+
+            nodosOrdenados.forEach(([centroId, data]) => {
+                const nodo = data.nodo;
+                const municipio = nodo.municipio || 'N/A';
+                const demanda = data.demandaTotal.toLocaleString();
+
+                html += `
+                    <div class="tree-node">
+                        <div class="tree-item" onclick="filtrarPorNodo('${centroId}')">
+                            <span class="tree-expand" onclick="event.stopPropagation(); toggleNode(event, '${centroId}')">▶</span>
+                            <span class="tree-label">${municipio} (${centroId})</span>
+                            <span class="tree-count">${demanda}</span>
+                        </div>
+                        <div class="tree-children" id="tree-${centroId}">
+                            ${data.satelites.map(sat => `
+                                <div class="tree-item" onclick="centrarEnCentro('${sat.centro_id}')">
+                                    <span class="tree-label">${sat.municipio}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            treeContainer.innerHTML = html;
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function toggleNode(event, nodeId) {
+            const children = document.getElementById(`tree-${nodeId}`);
+            const expand = event.target;
+            children.classList.toggle('expanded');
+            expand.classList.toggle('expanded');
+        }
+
+        function filtrarPorNodo(centroId) {
+            console.log('🔍 Filtrando por:', centroId);
+
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const esNodo = centro.centro_id === centroId;
+                const perteneceAlNodo = centro.nodo_principal === centroId;
+
+                if (esNodo || perteneceAlNodo) {
+                    if (!map.hasLayer(marker)) marker.addTo(map);
+                } else {
+                    if (map.hasLayer(marker)) map.removeLayer(marker);
+                }
+            });
+
+            // Centrar en el nodo
+            const nodo = centrosGlobal.find(c => c.centro_id === centroId);
+            if (nodo) {
+                const lat = parseFloat((nodo.latitud || '').toString().replace(',', '.'));
+                const lng = parseFloat((nodo.longitud || '').toString().replace(',', '.'));
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    map.setView([lat, lng], 9);
+                }
+            }
+        }
+
+        function centrarEnCentro(centroId) {
+            const centro = centrosGlobal.find(c => c.centro_id === centroId);
+            if (centro) {
+                const lat = parseFloat((centro.latitud || '').toString().replace(',', '.'));
+                const lng = parseFloat((centro.longitud || '').toString().replace(',', '.'));
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    map.setView([lat, lng], 12);
+                    const marcador = todosMarcadores.find(m => m.centro.centro_id === centroId);
+                    if (marcador) marcador.marker.openPopup();
+                }
+            }
+        }
+
+        // Inicializar
+        inicializarMapa();
+    </script>
+</body>
+</html>
