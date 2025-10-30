@@ -637,25 +637,56 @@
         // FUNCIÓN: Parser TSV/CSV universal
         // ============================================================================
         function parseData(text, format = 'tsv') {
+            console.log(`[parseData] Iniciando parse en formato: ${format}`);
+            console.log(`[parseData] Tamaño del texto: ${text.length} caracteres`);
+
             const lines = text.trim().split('\n');
+            console.log(`[parseData] Total de líneas: ${lines.length}`);
+
             const separator = format === 'tsv' ? '\t' : ',';
             const headers = lines[0].split(separator).map(h => h.trim().replace(/^"|"$/g, '').replace(/^\uFEFF/, ''));
+            console.log(`[parseData] Headers encontrados (${headers.length}):`, headers);
+
             const data = [];
+            let rowsSkipped = 0;
+            let rowsParsed = 0;
 
             for (let i = 1; i < lines.length; i++) {
                 const line = lines[i].trim();
-                if (!line) continue;
+                if (!line) {
+                    rowsSkipped++;
+                    continue;
+                }
 
                 if (format === 'tsv') {
                     const values = line.split('\t').map(v => v.trim());
+
                     if (values.length === headers.length) {
                         const obj = {};
                         headers.forEach((header, index) => {
                             obj[header] = values[index];
                         });
                         data.push(obj);
+                        rowsParsed++;
+                    } else {
+                        // Log discrepancia SOLO para las primeras 3 filas con error
+                        if (rowsSkipped < 3) {
+                            console.warn(`[parseData] Línea ${i}: ${values.length} columnas vs ${headers.length} headers esperados`);
+                            console.warn(`[parseData] Contenido:`, values.slice(0, 5)); // Primeras 5 columnas
+                        }
+                        rowsSkipped++;
                     }
                 }
+            }
+
+            console.log(`[parseData] ✓ Filas parseadas: ${rowsParsed}`);
+            console.log(`[parseData] ⚠ Filas saltadas: ${rowsSkipped}`);
+
+            if (data.length > 0) {
+                console.log(`[parseData] Ejemplo de primer registro:`, data[0]);
+            } else {
+                console.error(`[parseData] ❌ NO SE PARSEARON DATOS`);
+                console.error(`[parseData] Primeras 3 líneas del texto recibido:`, lines.slice(0, 3));
             }
 
             return data;
