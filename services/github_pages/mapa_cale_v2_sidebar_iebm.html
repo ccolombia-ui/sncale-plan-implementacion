@@ -878,8 +878,10 @@
             console.log('📊 Calculando nodo_raiz para todos los centros...');
 
             centros.forEach(centro => {
-                const cat = centro.categoria_cale || centro.categoria || '';
-                const esNodoRaiz = cat === 'Cat.A+' || cat === 'Cat.A' || cat === 'CALE.n_1+' || cat === 'CALE.n_1';
+                const centroId = centro.centro_id || '';
+
+                // CORRECCION: Cualquier centro con ID "NODO_*" es un nodo raíz
+                const esNodoRaiz = centroId.startsWith('NODO_');
 
                 if (esNodoRaiz) {
                     // Es un nodo raíz, su nodo_raiz es él mismo
@@ -1297,7 +1299,10 @@
 
             centros.forEach(centro => {
                 const cat = centro.categoria_cale || centro.categoria || '';
-                const esNodo = cat === 'Cat.A+' || cat === 'Cat.A';
+                const centroId = centro.centro_id || '';
+
+                // CORRECCION: Un nodo es cualquier centro con ID "NODO_*", independiente de su categoría
+                const esNodo = centroId.startsWith('NODO_');
                 const nodoPrincipal = esNodo ? centro.centro_id : (centro.nodo_principal || 'SIN_NODO');
 
                 if (!jerarquia[nodoPrincipal]) {
@@ -1312,8 +1317,9 @@
                     jerarquia[nodoPrincipal].nodo = centro;
                     jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
                 } else {
+                    // Es un satélite (SAT_*)
                     let tipo = 'c2';
-                    if (cat === 'Cat.B' || cat === 'CALE.n_2') tipo = 'n2';
+                    if (cat === 'Cat.B' || cat === 'Cat.B**' || cat === 'CALE.n_2' || cat === 'CALE.n_2**') tipo = 'n2';
                     else if (cat === 'Cat.C1' || cat === 'CALE.n_3') tipo = 'n3';
                     else if (cat === 'C3') tipo = 'c3';
                     else if (cat === 'C4') tipo = 'c4';
