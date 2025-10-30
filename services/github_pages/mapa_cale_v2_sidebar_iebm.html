@@ -492,6 +492,25 @@
         .tree-item.nivel-sat { color: #dc2626; }
         .tree-item.nivel-iebm { color: #3182ce; }
 
+        /* Checkboxes personalizados */
+        .tree-checkbox {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            cursor: pointer;
+            accent-color: #667eea;
+            flex-shrink: 0;
+        }
+
+        /* Colores por región (20 colores distintivos) */
+        .region-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
         /* Version badge */
         .version-badge {
             position: fixed;
@@ -511,7 +530,7 @@
 <body>
     <!-- Version badge -->
     <div class="version-badge">
-        v2.0 - Sidebar + IEBM
+        v2.1 - Checkboxes + Colores Regionales
     </div>
 
     <!-- Botón toggle sidebar -->
@@ -632,6 +651,17 @@
             'Cat.C1': 6, 'CALE.n_3': 6,
             'C2': 5, 'C3': 5, 'C4': 5, 'C5': 5
         };
+
+        // Paleta de 20 colores distintivos para las regiones
+        const COLORES_REGIONES = [
+            '#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6',
+            '#1abc9c', '#e67e22', '#34495e', '#16a085', '#27ae60',
+            '#2980b9', '#8e44ad', '#c0392b', '#d35400', '#7f8c8d',
+            '#95a5a6', '#f1c40f', '#e84393', '#00b894', '#0984e3'
+        ];
+
+        // Estado de selección de nodos
+        let nodosSeleccionados = new Set();
 
         // ============================================================================
         // FUNCIÓN: Parser TSV/CSV universal
@@ -944,12 +974,14 @@
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const toggle = document.getElementById('sidebar-toggle');
-            sidebar.classList.toggle('open');
+            const isOpen = sidebar.classList.contains('open');
 
-            if (sidebar.classList.contains('open')) {
-                toggle.textContent = '✕ CERRAR';
-            } else {
+            if (isOpen) {
+                sidebar.classList.remove('open');
                 toggle.textContent = 'FILTROS JERÁRQUICOS';
+            } else {
+                sidebar.classList.add('open');
+                toggle.textContent = '✕ CERRAR';
             }
         }
 
@@ -996,27 +1028,118 @@
                 .filter(([key, data]) => data.nodo !== null)
                 .sort((a, b) => b[1].demandaTotal - a[1].demandaTotal);
 
-            nodosOrdenados.forEach(([centroId, data]) => {
+            nodosOrdenados.forEach(([centroId, data], index) => {
                 const nodo = data.nodo;
                 const municipio = nodo.municipio || 'N/A';
                 const demanda = data.demandaTotal.toLocaleString();
+                const colorRegion = COLORES_REGIONES[index % COLORES_REGIONES.length];
+
+                // Contar satélites
+                const totalSatelites = Object.values(data.satelites).reduce((sum, arr) => sum + arr.length, 0);
 
                 html += `
                     <div class="tree-node">
-                        <div class="tree-item nivel-1" onclick="filtrarPorNodo('${centroId}')">
+                        <div class="tree-item nivel-1">
+                            <input type="checkbox"
+                                   class="tree-checkbox"
+                                   id="check-${centroId}"
+                                   onchange="toggleNodoSeleccion('${centroId}', this.checked)"
+                                   onclick="event.stopPropagation()">
                             <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}')">▶</span>
-                            <span class="tree-icon">📍</span>
-                            <span class="tree-label">${municipio}</span>
+                            <div class="region-color" style="background: ${colorRegion};"></div>
+                            <span class="tree-icon">🏛️</span>
+                            <span class="tree-label" onclick="centrarEnMarcador('${centroId}')">${municipio}</span>
                             <span class="tree-count">${demanda}</span>
                         </div>
                         <div class="tree-children" id="tree-${centroId}">
-                            <div class="tree-item nivel-iebm">
-                                <span class="tree-icon">🎓</span>
-                                <span class="tree-label">Ver IEBM del nodo</span>
+                `;
+
+                // Satélites CALE.n_2
+                if (data.satelites.n2.length > 0) {
+                    const demandaN2 = data.satelites.n2.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-2">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n2')">▶</span>
+                                <span class="tree-icon">🏫</span>
+                                <span class="tree-label">CALE.n_2 (${data.satelites.n2.length})</span>
+                                <span class="tree-count">${demandaN2.toLocaleString()}</span>
                             </div>
-                        </div>
+                            <div class="tree-children" id="tree-${centroId}-n2">
+                    `;
+                    data.satelites.n2.forEach(sat => {
+                        html += `
+                            <div class="tree-item nivel-2" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites CALE.n_3
+                if (data.satelites.n3.length > 0) {
+                    const demandaN3 = data.satelites.n3.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-3">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n3')">▶</span>
+                                <span class="tree-icon">🏢</span>
+                                <span class="tree-label">CALE.n_3 (${data.satelites.n3.length})</span>
+                                <span class="tree-count">${demandaN3.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n3">
+                    `;
+                    data.satelites.n3.forEach(sat => {
+                        html += `
+                            <div class="tree-item nivel-3" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites C2-C5
+                const satelitesC = [...data.satelites.c2, ...data.satelites.c3, ...data.satelites.c4, ...data.satelites.c5];
+                if (satelitesC.length > 0) {
+                    const demandaC = satelitesC.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-sat">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-c')">▶</span>
+                                <span class="tree-icon">🎯</span>
+                                <span class="tree-label">Satélites C2-C5 (${satelitesC.length})</span>
+                                <span class="tree-count">${demandaC.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-c">
+                    `;
+                    satelitesC.forEach(sat => {
+                        const cat = sat.categoria_cale || sat.categoria || '';
+                        html += `
+                            <div class="tree-item nivel-sat" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">${cat}</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // IEBM del nodo
+                html += `
+                    <div class="tree-item nivel-iebm" onclick="mostrarIEBMDelNodo('${centroId}')">
+                        <span class="tree-icon">🎓</span>
+                        <span class="tree-label">Ver IEBM del nodo</span>
                     </div>
                 `;
+
+                html += `</div></div>`;
             });
 
             treeContainer.innerHTML = html;
@@ -1033,42 +1156,92 @@
             }
         }
 
-        function filtrarPorNodo(centroId) {
-            console.log(`🔍 Filtrando por nodo: ${centroId}`);
+        function toggleNodoSeleccion(centroId, checked) {
+            console.log(`📌 Toggle nodo ${centroId}: ${checked ? 'seleccionado' : 'deseleccionado'}`);
 
-            // 1. Mostrar solo centros CALE del nodo
+            if (checked) {
+                nodosSeleccionados.add(centroId);
+            } else {
+                nodosSeleccionados.delete(centroId);
+            }
+
+            // Actualizar visualización del mapa
+            actualizarVisualizacionSeleccionados();
+        }
+
+        function actualizarVisualizacionSeleccionados() {
+            if (nodosSeleccionados.size === 0) {
+                // Si no hay nada seleccionado, mostrar todo
+                todosMarcadores.forEach(({ marker }) => {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                });
+
+                // Limpiar IEBM
+                marcadoresIEBM.forEach(marker => {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                });
+                marcadoresIEBM = [];
+
+                return;
+            }
+
+            // Mostrar solo los centros de los nodos seleccionados
             todosMarcadores.forEach(({ marker, centro }) => {
-                const esNodo = centro.centro_id === centroId;
-                const perteneceAlNodo = centro.nodo_principal === centroId;
+                let mostrar = false;
 
-                if (esNodo || perteneceAlNodo) {
+                // Verificar si el centro pertenece a algún nodo seleccionado
+                for (const nodoId of nodosSeleccionados) {
+                    const esElNodo = centro.centro_id === nodoId;
+                    const perteneceAlNodo = centro.nodo_principal === nodoId;
+
+                    if (esElNodo || perteneceAlNodo) {
+                        mostrar = true;
+                        break;
+                    }
+                }
+
+                if (mostrar) {
                     if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
                 } else {
                     if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
                 }
             });
 
-            // 2. Limpiar marcadores IEBM anteriores
+            // Mostrar IEBM de todos los nodos seleccionados
+            mostrarIEBMDeNodosSeleccionados();
+        }
+
+        function mostrarIEBMDeNodosSeleccionados() {
+            // Limpiar IEBM anteriores
             marcadoresIEBM.forEach(marker => {
                 if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
             });
             marcadoresIEBM = [];
 
-            // 3. Agregar marcadores IEBM del nodo
-            const centrosDelNodo = [centroId];
-            todosMarcadores.forEach(({ centro }) => {
-                if (centro.nodo_principal === centroId && centro.centro_id !== centroId) {
-                    centrosDelNodo.push(centro.centro_id);
-                }
+            if (nodosSeleccionados.size === 0) return;
+
+            // Recopilar todos los centros de los nodos seleccionados
+            const centrosSeleccionados = [];
+            for (const nodoId of nodosSeleccionados) {
+                centrosSeleccionados.push(nodoId);
+
+                // Agregar satélites
+                todosMarcadores.forEach(({ centro }) => {
+                    if (centro.nodo_principal === nodoId && centro.centro_id !== nodoId) {
+                        centrosSeleccionados.push(centro.centro_id);
+                    }
+                });
+            }
+
+            // Filtrar IEBM
+            const iebmFiltradas = iebmGlobal.filter(iebm => {
+                return centrosSeleccionados.includes(iebm.nodo_cale_mas_cercano);
             });
 
-            const iebmDelNodo = iebmGlobal.filter(iebm => {
-                return centrosDelNodo.includes(iebm.nodo_cale_mas_cercano);
-            });
+            console.log(`✓ Mostrando ${iebmFiltradas.length} IEBM para nodos seleccionados`);
 
-            console.log(`✓ Mostrando ${iebmDelNodo.length} IEBM para ${centroId}`);
-
-            iebmDelNodo.forEach(iebm => {
+            // Crear marcadores IEBM
+            iebmFiltradas.forEach(iebm => {
                 const latStr = (iebm.latitud || '').toString().replace(',', '.');
                 const lngStr = (iebm.longitud || '').toString().replace(',', '.');
                 const lat = parseFloat(latStr);
@@ -1091,9 +1264,6 @@
                         <p><strong>Municipio:</strong> ${iebm.municipio || 'N/A'}</p>
                         <p><strong>CALE asignado:</strong> ${iebm.nodo_cale_mas_cercano}</p>
                         <p><strong>Distancia:</strong> ${iebm.distancia_km} km</p>
-                        <p style="font-size:0.85em; color:#718096; margin-top:8px;">
-                            Estudiantes de media (datos pendientes)
-                        </p>
                     </div>
                 `;
 
@@ -1101,8 +1271,22 @@
                 marker.addTo(mapaGlobal);
                 marcadoresIEBM.push(marker);
             });
+        }
 
-            // 4. Centrar mapa en el nodo
+        function mostrarIEBMDelNodo(centroId) {
+            // Marcar solo este nodo
+            nodosSeleccionados.clear();
+            nodosSeleccionados.add(centroId);
+
+            // Actualizar checkbox
+            document.querySelectorAll('.tree-checkbox').forEach(cb => cb.checked = false);
+            const checkbox = document.getElementById(`check-${centroId}`);
+            if (checkbox) checkbox.checked = true;
+
+            // Actualizar visualización
+            actualizarVisualizacionSeleccionados();
+
+            // Centrar mapa
             const nodo = centrosGlobal.find(c => c.centro_id === centroId);
             if (nodo) {
                 const latStr = (nodo.latitud || '').toString().replace(',', '.');
@@ -1115,6 +1299,27 @@
                 }
             }
         }
+
+        function centrarEnMarcador(centroId) {
+            const centro = centrosGlobal.find(c => c.centro_id === centroId);
+            if (centro) {
+                const latStr = (centro.latitud || '').toString().replace(',', '.');
+                const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    mapaGlobal.setView([lat, lng], 12);
+
+                    // Abrir popup del marcador
+                    const marcador = todosMarcadores.find(m => m.centro.centro_id === centroId);
+                    if (marcador) {
+                        marcador.marker.openPopup();
+                    }
+                }
+            }
+        }
+
 
         // ============================================================================
         // INICIALIZACIÓN
