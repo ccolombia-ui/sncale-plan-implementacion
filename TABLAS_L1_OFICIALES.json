@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "documento": "MUNAY_5.2__anexo_b__DEFINITIVO",
+    "doc_id": "16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE",
+    "fecha_extraccion": "2025-11-03 13:15:09",
+    "total_componentes": 6,
+    "version": "1.0.0",
+    "notas": "Ensamblajes L1 - Componentes de infraestructura CORRECTOS (NO maniobras)"
+  },
+  "componentes": {
+    "BIM_L1_001": {
+      "bim_id": "BIM_L1_001",
+      "codigo": "L1.pista_motos_A1A2_completa",
+      "nombre": "Pista motos A1A2 completa",
+      "descripcion": "Infraestructura motocicletas ≤125cc y >125cc",
+      "cantidad": "1",
+      "unidad": "glb",
+      "valor_cop": 289805000,
+      "tipo": "CONSTRUCTOR",
+      "fuente": "Tabla #19, Fila 2",
+      "componentes_l0": [
+        "L0.IC_001",
+        "L0.DR_003",
+        "L0.ILU_001",
+        "L0.ILU_002",
+        "L0.VEH_001",
+        "L0.VEH_002"
+      ],
+      "maniobras_soportadas": [
+        "MANIOBRA_00: Estacionamiento en línea recta",
+        "MANIOBRA_01: Estacionamiento en batería",
+        "MANIOBRA_02: Estacionamiento paralelo",
+        "MANIOBRA_03: Circuito en ocho",
+        "MANIOBRA_04: Línea recta con cono",
+        "MANIOBRA_05: Slalom",
+        "MANIOBRA_06: Retroceso en línea",
+        "MANIOBRA_07: Frenado controlado",
+        "MANIOBRA_08: Giro cerrado",
+        "MANIOBRA_09: Ascenso pendiente",
+        "MANIOBRA_10: Descenso controlado",
+        "MANIOBRA_11: Esquiva de obstáculos",
+        "MANIOBRA_12: Arranque pendiente",
+        "MANIOBRA_13: Circuito completo"
+      ]
+    },
+    "BIM_L1_002": {
+      "bim_id": "BIM_L1_002",
+      "codigo": "L1.pista_carros_B1C1_completa",
+      "nombre": "Pista carros B1C1 completa",
+      "descripcion": "Infraestructura automóviles livianos",
+      "cantidad": "1",
+      "unidad": "glb",
+      "valor_cop": 431635000,
+      "tipo": "CONSTRUCTOR",
+      "fuente": "Tabla #19, Fila 3",
+      "componentes_l0": [
+        "L0.IC_002",
+        "L0.DR_003",
+        "L0.ILU_001",
+        "L0.ILU_002",
+        "L0.VEH_003"
+      ],
+      "maniobras_soportadas": [
+        "MANIOBRA_00: Estacionamiento en línea recta",
+        "MANIOBRA_01: Estacionamiento en batería",
+        "MANIOBRA_02: Estacionamiento paralelo",
+        "MANIOBRA_03: Circuito en ocho",
+        "MANIOBRA_04: Línea recta con cono",
+        "MANIOBRA_05: Slalom",
+        "MANIOBRA_06: Retroceso en línea",
+        "MANIOBRA_07: Frenado controlado",
+        "MANIOBRA_08: Giro cerrado",
+        "MANIOBRA_09: Ascenso pendiente",
+        "MANIOBRA_10: Descenso controlado",
+        "MANIOBRA_11: Esquiva de obstáculos",
+        "MANIOBRA_12: Arranque pendiente",
+        "MANIOBRA_13: Circuito completo"
+      ]
+    },
+    "BIM_L1_003": {
+      "bim_id": "BIM_L1_003",
+      "codigo": "L1.pista_camiones_B2C2_completa",
+      "nombre": "Pista camiones B2C2 completa",
+      "descripcion": "Infraestructura camiones rígidos",
+      "cantidad": "1",
+      "unidad": "glb",
+      "valor_cop": 685950000,
+      "tipo": "CONSTRUCTOR",
+      "fuente": "Tabla #20, Fila 3",
+      "componentes_l0": [],
+      "maniobras_soportadas": [
+        "MANIOBRA_00: Estacionamiento en línea recta",
+        "MANIOBRA_01: Estacionamiento en batería",
+        "MANIOBRA_02: Estacionamiento paralelo",
+        "MANIOBRA_03: Circuito en ocho",
+        "MANIOBRA_04: Línea recta con cono",
+        "MANIOBRA_05: Slalom",
+        "MANIOBRA_06: Retroceso en línea",
+        "MANIOBRA_07: Frenado controlado",
+        "MANIOBRA_08: Giro cerrado",
+        "MANIOBRA_09: Ascenso pendiente",
+        "MANIOBRA_10: Descenso controlado",
+        "MANIOBRA_11: Esquiva de obstáculos",
+        "MANIOBRA_12: Arranque pendiente",
+        "MANIOBRA_13: Circuito completo",
+        "MANIOBRA_14: Puente de equilibrio",
+        "MANIOBRA_15: Rampa de frenado",
+        "MANIOBRA_16: Rampa de arranque"
+      ]
+    },
+    "BIM_L1_004": {
+      "bim_id": "BIM_L1_004",
+      "codigo": "L1.pista_tractocamiones_B3C3_completa",
+      "nombre": "Pista tractocamiones B3C3 completa",
+      "descripcion": "Infraestructura tractocamiones articulados",
+      "cantidad": "1",
+      "unidad": "glb",
+      "valor_cop": 1192100000,
+      "tipo": "CONSTRUCTOR",
+      "fuente": "Tabla #21, Fila 3",
+      "componentes_l0": [],
+      "maniobras_soportadas": [
+        "MANIOBRA_00: Estacionamiento en línea recta",
+        "MANIOBRA_01: Estacionamiento en batería",
+        "MANIOBRA_02: Estacionamiento paralelo",
+        "MANIOBRA_03: Circuito en ocho",
+        "MANIOBRA_04: Línea recta con cono",
+        "MANIOBRA_05: Slalom",
+        "MANIOBRA_06: Retroceso en línea",
+        "MANIOBRA_07: Frenado controlado",
+        "MANIOBRA_08: Giro cerrado",
+        "MANIOBRA_09: Ascenso pendiente",
+        "MANIOBRA_10: Descenso controlado",
+        "MANIOBRA_11: Esquiva de obstáculos",
+        "MANIOBRA_12: Arranque pendiente",
+        "MANIOBRA_13: Circuito completo",
+        "MANIOBRA_14: Puente de equilibrio",
+        "MANIOBRA_15: Rampa de frenado",
+        "MANIOBRA_16: Rampa de arranque"
+      ]
+    },
+    "BIM_L1_REF_001": {
+      "bim_id": "BIM_L1_REF_001",
+      "codigo": "L1.pista_clase_I",
+      "nombre": "Pista Clase I completa",
+      "descripcion": "Infraestructura completa motos + carros (REFERENCIA a L2.pista_clase_I)",
+      "cantidad": "1",
+      "unidad": "glb",
+      "valor_cop": 721440000,
+      "tipo": "REFERENCIA",
+      "fuente": "Tabla #20, Fila 2",
+      "referencia_l2": "BIM_L2_001",
+      "resuelve_a": [
+        "BIM_L1_001",
+        "BIM_L1_002"
+      ]
+    },
+    "BIM_L1_REF_002": {
+      "bim_id": "BIM_L1_REF_002",
+      "codigo": "L1.pista_clase_II",
+      "nombre": "Pista Clase II completa",
+      "descripcion": "Infraestructura completa motos + carros + camiones (REFERENCIA a L2.pista_clase_II)",
+      "cantidad": "1",
+      "unidad": "glb",
+      "valor_cop": 1407390000,
+      "tipo": "REFERENCIA",
+      "fuente": "Tabla #21, Fila 2",
+      "referencia_l2": "BIM_L2_002",
+      "resuelve_a": [
+        "BIM_L2_001",
+        "BIM_L1_003"
+      ]
+    }
+  }
+}

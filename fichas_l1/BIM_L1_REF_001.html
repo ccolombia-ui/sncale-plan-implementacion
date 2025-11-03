@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIM_L1_003 - Pista camiones B2C2 completa</title>
+    <title>BIM_L1_REF_001 - Pista Clase I completa</title>
     <style>
         * {
             margin: 0;
@@ -193,9 +193,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>BIM_L1_003</h1>
-            <p class="subtitle">Pista camiones B2C2 completa</p>
-            <span class="badge constructor">CONSTRUCTOR</span>
+            <h1>BIM_L1_REF_001</h1>
+            <p class="subtitle">Pista Clase I completa</p>
+            <span class="badge referencia">REFERENCIA</span>
         </div>
         
         <div class="content">
@@ -205,83 +205,31 @@
                 <div class="info-grid">
                     <div class="info-card">
                         <div class="label">Código BIM</div>
-                        <div class="value">L1.pista_camiones_B2C2_completa</div>
+                        <div class="value">L1.pista_clase_I</div>
                     </div>
                     <div class="info-card">
                         <div class="label">Descripción</div>
-                        <div class="value">Infraestructura camiones rígidos</div>
+                        <div class="value">Infraestructura completa motos + carros (REFERENCIA a L2.pista_clase_I)</div>
                     </div>
                     <div class="info-card valor">
                         <div class="label">Valor Total</div>
-                        <div class="value">$685,950,000</div>
+                        <div class="value">$721,440,000</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Componentes L0 -->
+            <!-- Información de Referencia -->
             <div class="section">
-                <h2>⚙️ Componentes Atómicos (L0)</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>BIM ID</th>
-                            <th>Código</th>
-                            <th>Componente</th>
-                            <th>Descripción</th>
-                            <th>Unidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Maniobras Soportadas -->
-            <div class="section">
-                <div class="maniobras-list">
-                    <h3>🛣️ Maniobras Soportadas (Especificaciones Geométricas)</h3>
-                    <p style="margin-bottom: 15px; color: #856404;">
-                        <em>Nota: Las maniobras NO son componentes BIM independientes. Son especificaciones 
-                        geométricas embebidas en los componentes L0 (pavimentos, señalización, etc.)</em>
+                <div class="referencia-info">
+                    <h3>🔗 Componente de Referencia</h3>
+                    <p>Este es un componente de <strong>REFERENCIA</strong> que apunta a una configuración L2.</p>
+                    <p style="margin-top: 10px;">
+                        <strong>Referencia L2:</strong> BIM_L2_001<br>
+                        <strong>Resuelve a:</strong> BIM_L1_001, BIM_L1_002
                     </p>
-                    <ul>
-
-                        <li>MANIOBRA_00: Estacionamiento en línea recta</li>
-
-                        <li>MANIOBRA_01: Estacionamiento en batería</li>
-
-                        <li>MANIOBRA_02: Estacionamiento paralelo</li>
-
-                        <li>MANIOBRA_03: Circuito en ocho</li>
-
-                        <li>MANIOBRA_04: Línea recta con cono</li>
-
-                        <li>MANIOBRA_05: Slalom</li>
-
-                        <li>MANIOBRA_06: Retroceso en línea</li>
-
-                        <li>MANIOBRA_07: Frenado controlado</li>
-
-                        <li>MANIOBRA_08: Giro cerrado</li>
-
-                        <li>MANIOBRA_09: Ascenso pendiente</li>
-
-                        <li>MANIOBRA_10: Descenso controlado</li>
-
-                        <li>MANIOBRA_11: Esquiva de obstáculos</li>
-
-                        <li>MANIOBRA_12: Arranque pendiente</li>
-
-                        <li>MANIOBRA_13: Circuito completo</li>
-
-                        <li>MANIOBRA_14: Puente de equilibrio</li>
-
-                        <li>MANIOBRA_15: Rampa de frenado</li>
-
-                        <li>MANIOBRA_16: Rampa de arranque</li>
-
-                    </ul>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #0c5460;">
+                        Para ver los componentes L0 específicos, consulte la ficha del componente L2 correspondiente.
+                    </p>
                 </div>
             </div>
 
