@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pista de Conducción Clase III - BIM_L1_003 | SNCALE L1</title>
+    <title>CALE Teórico 24 Cubículos - BIM_L2_004 | SNCALE L2</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
             color: #333;
             line-height: 1.6;
         }
@@ -29,16 +29,16 @@
         
         /* Header con logo UPTC */
         .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
             color: white;
-            padding: 40px;
+            padding: 50px;
             position: relative;
         }
         
         .header-logo {
             position: absolute;
-            top: 20px;
-            right: 40px;
+            top: 25px;
+            right: 50px;
             width: 100px;
             height: 100px;
         }
@@ -53,22 +53,22 @@
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.8em;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .header .subtitle {
-            font-size: 1.2em;
+            font-size: 1.3em;
             opacity: 0.95;
             margin-bottom: 20px;
             font-weight: 500;
         }
         
         .header .description {
-            font-size: 1em;
+            font-size: 1.05em;
             opacity: 0.9;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             line-height: 1.8;
         }
         
@@ -80,9 +80,9 @@
         
         .badge {
             background: rgba(255,255,255,0.25);
-            padding: 10px 24px;
+            padding: 12px 28px;
             border-radius: 25px;
-            font-size: 0.95em;
+            font-size: 1em;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.3);
             font-weight: 500;
@@ -97,37 +97,37 @@
         }
         
         .section-title {
-            font-size: 2em;
-            color: #1e3c72;
-            margin-bottom: 25px;
+            font-size: 2.2em;
+            color: #0f2027;
+            margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #2a5298;
+            border-bottom: 3px solid #2c5364;
         }
         
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-bottom: 30px;
         }
         
         .info-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 25px;
+            padding: 30px;
             border-radius: 12px;
-            border-left: 5px solid #1e3c72;
+            border-left: 5px solid #0f2027;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         
         .info-card h3 {
-            color: #1e3c72;
-            margin-bottom: 12px;
-            font-size: 1.1em;
+            color: #0f2027;
+            margin-bottom: 15px;
+            font-size: 1.15em;
         }
         
         .info-card p {
             color: #495057;
-            font-size: 1.3em;
+            font-size: 1.4em;
             font-weight: 600;
         }
         
@@ -135,6 +135,24 @@
             font-size: 0.85em;
             color: #6c757d;
             font-weight: normal;
+        }
+        
+        .info-card.destacada {
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            color: white;
+            border-left: 5px solid white;
+        }
+        
+        .info-card.destacada h3 {
+            color: white;
+        }
+        
+        .info-card.destacada p {
+            color: white;
+        }
+        
+        .info-card.destacada .unit {
+            color: rgba(255,255,255,0.9);
         }
         
         /* Tabla de componentes */
@@ -151,15 +169,15 @@
         }
         
         thead {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
             color: white;
         }
         
         thead th {
-            padding: 18px 15px;
+            padding: 20px 15px;
             text-align: left;
             font-weight: 600;
-            font-size: 0.95em;
+            font-size: 1em;
             letter-spacing: 0.5px;
         }
         
@@ -173,23 +191,23 @@
         }
         
         tbody td {
-            padding: 16px 15px;
-            font-size: 0.9em;
+            padding: 18px 15px;
+            font-size: 0.95em;
         }
         
         tbody td code {
             background: #e9ecef;
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
-            color: #1e3c72;
+            color: #0f2027;
         }
         
         /* Footer */
         .footer {
             background: #f8f9fa;
-            padding: 30px 50px;
+            padding: 35px 50px;
             border-top: 1px solid #dee2e6;
         }
         
@@ -198,32 +216,32 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
         }
         
         .footer-info {
             color: #6c757d;
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
         
         .footer-info strong {
-            color: #1e3c72;
+            color: #0f2027;
         }
         
         .footer-links {
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
         
         .footer-links a {
-            color: #1e3c72;
+            color: #0f2027;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
         
         .footer-links a:hover {
-            color: #2a5298;
+            color: #2c5364;
         }
         
         /* Responsive */
@@ -233,7 +251,7 @@
             }
             
             .header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
             
             .header-logo {
@@ -247,7 +265,7 @@
             }
             
             .section-title {
-                font-size: 1.5em;
+                font-size: 1.6em;
             }
             
             .info-grid {
@@ -255,7 +273,7 @@
             }
             
             .footer {
-                padding: 20px;
+                padding: 25px 20px;
             }
             
             .footer-content {
@@ -279,14 +297,14 @@
             </div>
             
             <div class="header-content">
-                <h1>BIM_L1_003</h1>
-                <div class="subtitle">Pista de Conducción Clase III</div>
-                <div class="description">Circuito de evaluación avanzada que incluye todos los componentes de Clase II más 3 maniobras para vehículos pesados (MANIOBRA_17 a MANIOBRA_19). Incluye pavimento especializado, señalización avanzada y área de carga/descarga.</div>
+                <h1>BIM_L2_004</h1>
+                <div class="subtitle">CALE Teórico 24 Cubículos</div>
+                <div class="description">Configuración de centro teórico con capacidad para 24 cubículos simultáneos. Incluye edificación principal, aulas teóricas, batería de sanitarios, sistema de ventilación y aire acondicionado, mobiliario completo y tecnología educativa.</div>
                 
                 <div class="badges">
-                    <span class="badge">Nivel L1 - Ensamblaje</span>
-                    <span class="badge">7 Componentes</span>
-                    <span class="badge">Ensamblaje Avanzado - Categorías B1, C1</span>
+                    <span class="badge">Nivel L2 - Configuración Base</span>
+                    <span class="badge">0 Componentes L1</span>
+                    <span class="badge">Todas</span>
                     <span class="badge">Fuente: Google Doc Oficial</span>
                 </div>
             </div>
@@ -301,36 +319,36 @@
                 <div class="info-grid">
                     <div class="info-card">
                         <h3>Código BIM</h3>
-                        <p>BIM_L1_003</p>
+                        <p>BIM_L2_004</p>
                     </div>
                     
                     <div class="info-card">
                         <h3>Nivel</h3>
-                        <p>L1 - Ensamblaje</p>
+                        <p>L2 - Configuración Base</p>
                     </div>
                     
                     <div class="info-card">
-                        <h3>Componentes</h3>
-                        <p>7 <span class="unit">elementos</span></p>
+                        <h3>Componentes L1</h3>
+                        <p>0 <span class="unit">ensamblajes</span></p>
                     </div>
                     
-                    <div class="info-card">
-                        <h3>Valorización Aproximada</h3>
-                        <p>$1,850,000,000 <span class="unit">COP</span></p>
+                    <div class="info-card destacada">
+                        <h3>💰 Valorización Oficial</h3>
+                        <p>$243,063,465 <span class="unit">COP</span></p>
                     </div>
                 </div>
             </section>
             
-            <!-- Componentes del Ensamblaje -->
+            <!-- Componentes L1 del Ensamblaje -->
             <section class="section">
-                <h2 class="section-title">🔧 Componentes del Ensamblaje</h2>
+                <h2 class="section-title">🔧 Componentes L1 Incluidos</h2>
                 
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
                                 <th style="width: 60px;">#</th>
-                                <th style="width: 180px;">Componente</th>
+                                <th style="width: 200px;">Componente</th>
                                 <th>Descripción</th>
                                 <th style="width: 120px;">Categoría</th>
                                 <th style="width: 110px;">Tipo</th>
@@ -340,60 +358,10 @@
                         <tbody>
 
                         <tr>
-                            <td style="text-align: center;">1</td>
-                            <td><strong>MANIOBRA_17</strong></td>
-                            <td>Maniobra 17: Maniobras vehículos pesados</td>
-                            <td style="text-align: center;">B3,C3</td>
-                            <td style="text-align: center;">Avanzada</td>
-                            <td><code>L1.maniobra_17</code></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">2</td>
-                            <td><strong>MANIOBRA_18</strong></td>
-                            <td>Maniobra 18: Reversa vehículo articulado</td>
-                            <td style="text-align: center;">B3,C3</td>
-                            <td style="text-align: center;">Avanzada</td>
-                            <td><code>L1.maniobra_18</code></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">3</td>
-                            <td><strong>MANIOBRA_19</strong></td>
-                            <td>Maniobra 19: Maniobras en espacio reducido</td>
-                            <td style="text-align: center;">B3,C3</td>
-                            <td style="text-align: center;">Avanzada</td>
-                            <td><code>L1.maniobra_19</code></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">4</td>
-                            <td><strong>PAVIMENTO</strong></td>
-                            <td>Pavimento especial concreto Fc=35MPa</td>
-                            <td style="text-align: center;">Infraestructura</td>
-                            <td style="text-align: center;">Civil</td>
-                            <td><code>L0.pavimento_especial</code></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">5</td>
-                            <td><strong>SEÑALIZACION</strong></td>
-                            <td>Señalización horizontal y vertical</td>
-                            <td style="text-align: center;">Infraestructura</td>
-                            <td style="text-align: center;">Civil</td>
-                            <td><code>L0.señalizacion</code></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">6</td>
-                            <td><strong>INCLUYE_CLASE_II</strong></td>
-                            <td>+ Todas las maniobras de Clase II (14-16)</td>
-                            <td style="text-align: center;">B3,C3</td>
-                            <td style="text-align: center;">Referencia</td>
-                            <td><code>L2.pista_clase_II</code></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center;">7</td>
-                            <td><strong>INCLUYE_CLASE_I</strong></td>
-                            <td>+ Todas las maniobras de Clase I (0-13)</td>
-                            <td style="text-align: center;">B3,C3</td>
-                            <td style="text-align: center;">Referencia</td>
-                            <td><code>L2.pista_clase_I</code></td>
+                            <td colspan="6" style="text-align: center; padding: 40px; color: #6c757d;">
+                                <strong>Esta configuración L2 no incluye componentes L1 de pistas.</strong><br>
+                                <span style="font-size: 0.9em;">Corresponde a edificación teórica con componentes L0 directos.</span>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -409,7 +377,7 @@
                     <p style="font-size: 1em; font-weight: normal; margin-top: 10px;">
                         <strong>Título:</strong> MUNAY_5.2__anexo_b__DEFINITIVO<br>
                         <strong>Google Doc ID:</strong> 16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE<br>
-                        <strong>Tabla origen:</strong> #14 (Elemento índice 325)<br>
+                        <strong>Tabla valorización:</strong> #16 (Elemento índice 363)<br>
                         <strong>Fecha extracción:</strong> 2025-11-03<br>
                         <strong>Estado:</strong> ✅ Validado como única fuente de verdad
                     </p>
@@ -423,12 +391,12 @@
                 <div class="footer-info">
                     <strong>Sistema Nacional de Centros de Enseñanza Automovilística Certificados (SNCALE)</strong><br>
                     Universidad Pedagógica y Tecnológica de Colombia (UPTC)<br>
-                    Generado desde Google Doc oficial - Nivel L1
+                    Generado desde Google Doc oficial - Nivel L2
                 </div>
                 
                 <div class="footer-links">
                     <a href="../index.html">← Volver al Índice</a>
-                    <a href="../fichas_l2/BIM_L2_003.html">Ver Configuración L2 →</a>
+                    <a href="../fichas_l1/BIM_L1_004.html">Ver Ensamblaje L1</a>
                 </div>
             </div>
         </footer>

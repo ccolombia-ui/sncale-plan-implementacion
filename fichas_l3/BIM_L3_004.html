@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIM_L3_002 - CALE.n_2 - Centro Subregional</title>
+    <title>BIM_L3_004 - Red Nacional de Satélites</title>
     <style>
         * {
             margin: 0;
@@ -29,7 +29,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+            background: linear-gradient(135deg, #4b0082 0%, #8a2be2 100%);
             color: white;
             padding: 2.5rem 2rem;
             display: flex;
@@ -85,12 +85,12 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #004d99;
+            border-left: 4px solid #4b0082;
         }
         
         .info-card.destacada {
-            background: linear-gradient(135deg, #004d9915 0%, #0066cc15 100%);
-            border-left: 4px solid #0066cc;
+            background: linear-gradient(135deg, #4b008215 0%, #8a2be215 100%);
+            border-left: 4px solid #8a2be2;
         }
         
         .info-card h3 {
@@ -104,13 +104,13 @@
         .info-card p {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #004d99;
+            color: #4b0082;
             margin: 0.3rem 0;
         }
         
         .info-card.destacada p {
             font-size: 1.8rem;
-            color: #0066cc;
+            color: #8a2be2;
         }
         
         section {
@@ -118,11 +118,11 @@
         }
         
         h2 {
-            color: #004d99;
+            color: #4b0082;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid #004d99;
+            border-bottom: 2px solid #4b0082;
         }
         
         .table-wrapper {
@@ -139,7 +139,7 @@
         }
         
         thead {
-            background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+            background: linear-gradient(135deg, #4b0082 0%, #8a2be2 100%);
             color: white;
         }
         
@@ -178,7 +178,7 @@
             border-radius: 4px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
-            color: #0066cc;
+            color: #8a2be2;
         }
         
         .fuente-datos {
@@ -217,7 +217,7 @@
         }
         
         footer a {
-            color: #004d99;
+            color: #4b0082;
             text-decoration: none;
             margin: 0 0.5rem;
         }
@@ -257,9 +257,9 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <div class="bim-id">BIM_L3_002</div>
-                <h1>CALE.n_2 - Centro Subregional</h1>
-                <p class="subtitle">Configuración para centros en capitales subregionales (20 nodos base + 16 variante**)</p>
+                <div class="bim-id">BIM_L3_004</div>
+                <h1>Red Nacional de Satélites</h1>
+                <p class="subtitle">Distribución de 140 satélites en categorías C2-C5 para cobertura nacional</p>
             </div>
             <svg class="logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
                 <text x="10" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">UPTC</text>
@@ -271,7 +271,7 @@
             <div class="info-grid">
                 <div class="info-card">
                     <h3>🔖 Identificador BIM</h3>
-                    <p><code>BIM_L3_002</code></p>
+                    <p><code>BIM_L3_004</code></p>
                 </div>
                 
                 <div class="info-card">
@@ -281,20 +281,20 @@
                 
                 <div class="info-card">
                     <h3>🏗️ Tipo CALE</h3>
-                    <p>Subregional</p>
+                    <p>Red Satélites</p>
                 </div>
                 
                 <div class="info-card destacada">
                     <h3>💰 Valorización Total</h3>
-                    <p>$4.012.929.940 COP</p>
+                    <p>$81 COP</p>
                 </div>
             </div>
             
             
         <div class="info-card">
-            <h3>📍 Cantidad de Nodos</h3>
-            <p><strong>Nodos Base:</strong> 20</p>
-            <p><strong>Nodos Variante:</strong> 16</p>
+            <h3>📍 Distribución Nacional</h3>
+            <p><strong>Total Satélites:</strong> 140</p>
+            <p><strong>Distribución:</strong> C2: 40 | C3: 40 | C4: 40 | C5: 20</p>
         </div>
             
             <section>
@@ -318,73 +318,33 @@
                             
             <tr>
                 <td>1</td>
-                <td><strong>PISTA_CLASE_II</strong></td>
-                <td>Pista completa Clase II (B2, C2)</td>
-                <td><code>L2.pista_clase_II</code></td>
+                <td><strong>ESPACIO_TEORICO¹</strong></td>
+                <td>Sala evaluación teórica</td>
+                <td><code>L2.sala_teorica_basica</code></td>
                 <td class="text-right">$0</td>
-                <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td class="text-center">69</td>
+                <td class="text-center">31</td>
+                <td class="text-right"><strong>$27</strong></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td><strong>PISTA_CLASE_I</strong></td>
-                <td>Pista completa Clase I (A1, A2, B1, C1)</td>
-                <td><code>L2.pista_clase_I</code></td>
+                <td><strong>EQUIPAMIENTO_TIC</strong></td>
+                <td>Computadores y conectividad</td>
+                <td><code>L2.equipamiento_tic</code></td>
                 <td class="text-right">$0</td>
-                <td class="text-center">2</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td class="text-center">69</td>
+                <td class="text-center">31</td>
+                <td class="text-right"><strong>$27</strong></td>
             </tr>
             <tr>
                 <td>3</td>
-                <td><strong>EDIFICACION</strong></td>
-                <td>Edificación adecuada (arriendo)</td>
-                <td><code>L2.edificacion</code></td>
+                <td><strong>MOBILIARIO_BASICO</strong></td>
+                <td>Sillas, mesas, archivadores</td>
+                <td><code>L2.mobiliario_basico</code></td>
                 <td class="text-right">$0</td>
-                <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td><strong>CALE_TEORICO_16q</strong></td>
-                <td>Centro teórico 16 cubículos + áreas admin</td>
-                <td><code>L2.cale_teorico_16q</code></td>
-                <td class="text-right">$200.646.497</td>
-                <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$4.012.929.940</strong></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td><strong>TECNOLOGIA</strong></td>
-                <td>Plataforma tecnológica CALE</td>
-                <td><code>L2.tecnologia</code></td>
-                <td class="text-right">$0</td>
-                <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td><strong>CERTIFICACIONES</strong></td>
-                <td>Certificaciones ISO (4)</td>
-                <td><code>L2.certificaciones</code></td>
-                <td class="text-right">$0</td>
-                <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td><strong>SEGUROS</strong></td>
-                <td>Seguros y pólizas</td>
-                <td><code>L2.seguros</code></td>
-                <td class="text-right">$0</td>
-                <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td class="text-center">69</td>
+                <td class="text-center">31</td>
+                <td class="text-right"><strong>$27</strong></td>
             </tr>
                         </tbody>
                     </table>
@@ -394,14 +354,14 @@
             
         <section class="metadata-section">
             <h2>📋 Información Adicional</h2>
-            <p class="metadata-info">Datos complementarios de la configuración (Tabla #4)</p>
+            <p class="metadata-info">Datos complementarios de la configuración (Tabla #8)</p>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr><th>Tipo CALE</th><th>Cantidad</th><th>Descripción Modificador</th><th>Mapa de Geolocalización</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>CALE.n_2**</td><td>16</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**</td></tr><tr><td>CALE.n_2</td><td>4</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2</td></tr>
+                        <tr><td>CALE.C2</td><td>31</td><td>Satélites cercanos (< 50 km)</td><td>Topología SNCALE BIM - filtrar: (31) CALE.C2</td></tr><tr><td>CALE.C3</td><td>69</td><td>Satélites rango medio (50-100 km)</td><td>Topología SNCALE BIM - filtrar: (69) CALE.C3</td></tr><tr><td>CALE.C4</td><td>27</td><td>Satélites remotos (100-150 km)</td><td>Topología SNCALE BIM - filtrar: (27) CALE.C4</td></tr><tr><td>CALE.C5</td><td>14</td><td>Satélites muy remotos (> 150 km)</td><td>Topología SNCALE BIM - filtrar: (14) CALE.C5</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -411,8 +371,8 @@
                 <h3>📊 Fuente de Datos</h3>
                 <p><strong>Documento:</strong> Google Doc MUNAY_5.2__anexo_b__DEFINITIVO</p>
                 <p><strong>ID:</strong> <code>16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE</code></p>
-                <p><strong>Tabla Valorización:</strong> #5</p>
-                <p><strong>Total Componentes:</strong> 7</p>
+                <p><strong>Tabla Valorización:</strong> #9</p>
+                <p><strong>Total Componentes:</strong> 3</p>
                 <p><strong>Estado:</strong> ✅ Validado desde fuente oficial única</p>
             </div>
         </div>
@@ -425,7 +385,7 @@
                 <a href="BIM_L3_001.html">L3 Index</a>
             </p>
             <p style="margin-top: 1rem; font-size: 0.85rem;">
-                Generado desde Google Doc oficial | BIM_L3_002 | UPTC 2025
+                Generado desde Google Doc oficial | BIM_L3_004 | UPTC 2025
             </p>
         </footer>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIM_L3_002 - CALE.n_2 - Centro Subregional</title>
+    <title>BIM_L3_001 - CALE.n_1 - Centro Metropolitano</title>
     <style>
         * {
             margin: 0;
@@ -29,7 +29,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+            background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
             color: white;
             padding: 2.5rem 2rem;
             display: flex;
@@ -85,12 +85,12 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #004d99;
+            border-left: 4px solid #8b0000;
         }
         
         .info-card.destacada {
-            background: linear-gradient(135deg, #004d9915 0%, #0066cc15 100%);
-            border-left: 4px solid #0066cc;
+            background: linear-gradient(135deg, #8b000015 0%, #dc143c15 100%);
+            border-left: 4px solid #dc143c;
         }
         
         .info-card h3 {
@@ -104,13 +104,13 @@
         .info-card p {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #004d99;
+            color: #8b0000;
             margin: 0.3rem 0;
         }
         
         .info-card.destacada p {
             font-size: 1.8rem;
-            color: #0066cc;
+            color: #dc143c;
         }
         
         section {
@@ -118,11 +118,11 @@
         }
         
         h2 {
-            color: #004d99;
+            color: #8b0000;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid #004d99;
+            border-bottom: 2px solid #8b0000;
         }
         
         .table-wrapper {
@@ -139,7 +139,7 @@
         }
         
         thead {
-            background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+            background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
             color: white;
         }
         
@@ -178,7 +178,7 @@
             border-radius: 4px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
-            color: #0066cc;
+            color: #dc143c;
         }
         
         .fuente-datos {
@@ -217,7 +217,7 @@
         }
         
         footer a {
-            color: #004d99;
+            color: #8b0000;
             text-decoration: none;
             margin: 0 0.5rem;
         }
@@ -257,9 +257,9 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <div class="bim-id">BIM_L3_002</div>
-                <h1>CALE.n_2 - Centro Subregional</h1>
-                <p class="subtitle">Configuración para centros en capitales subregionales (20 nodos base + 16 variante**)</p>
+                <div class="bim-id">BIM_L3_001</div>
+                <h1>CALE.n_1 - Centro Metropolitano</h1>
+                <p class="subtitle">Configuración completa para centros de enseñanza en ciudades metropolitanas (20 nodos base + 3 variante+)</p>
             </div>
             <svg class="logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
                 <text x="10" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">UPTC</text>
@@ -271,7 +271,7 @@
             <div class="info-grid">
                 <div class="info-card">
                     <h3>🔖 Identificador BIM</h3>
-                    <p><code>BIM_L3_002</code></p>
+                    <p><code>BIM_L3_001</code></p>
                 </div>
                 
                 <div class="info-card">
@@ -281,12 +281,12 @@
                 
                 <div class="info-card">
                     <h3>🏗️ Tipo CALE</h3>
-                    <p>Subregional</p>
+                    <p>Metropolitano</p>
                 </div>
                 
                 <div class="info-card destacada">
                     <h3>💰 Valorización Total</h3>
-                    <p>$4.012.929.940 COP</p>
+                    <p>$141.320.000.000 COP</p>
                 </div>
             </div>
             
@@ -294,7 +294,7 @@
         <div class="info-card">
             <h3>📍 Cantidad de Nodos</h3>
             <p><strong>Nodos Base:</strong> 20</p>
-            <p><strong>Nodos Variante:</strong> 16</p>
+            <p><strong>Nodos Variante:</strong> 3</p>
         </div>
             
             <section>
@@ -318,73 +318,63 @@
                             
             <tr>
                 <td>1</td>
-                <td><strong>PISTA_CLASE_II</strong></td>
-                <td>Pista completa Clase II (B2, C2)</td>
-                <td><code>L2.pista_clase_II</code></td>
-                <td class="text-right">$0</td>
+                <td><strong>Pista Evaluación Clase III</strong></td>
+                <td>Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c</td>
+                <td><code>L2.pista_clase_3</code></td>
+                <td class="text-right">$1.850.000.000</td>
+                <td class="text-center">20</td>
                 <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td class="text-right"><strong>$37.000.000.000</strong></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td><strong>PISTA_CLASE_I</strong></td>
-                <td>Pista completa Clase I (A1, A2, B1, C1)</td>
-                <td><code>L2.pista_clase_I</code></td>
-                <td class="text-right">$0</td>
-                <td class="text-center">2</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td><strong>Pista Evaluación Clase II</strong></td>
+                <td>Circuito para motocicletas según Art. 3.7.4.b</td>
+                <td><code>L2.pista_clase_2</code></td>
+                <td class="text-right">$980.000.000</td>
+                <td class="text-center">20</td>
+                <td class="text-center">0</td>
+                <td class="text-right"><strong>$19.600.000.000</strong></td>
             </tr>
             <tr>
                 <td>3</td>
-                <td><strong>EDIFICACION</strong></td>
-                <td>Edificación adecuada (arriendo)</td>
-                <td><code>L2.edificacion</code></td>
-                <td class="text-right">$0</td>
+                <td><strong>Pista Evaluación Clase I</strong></td>
+                <td>Circuito para vehículos livianos según Art. 3.7.4.a</td>
+                <td><code>L2.pista_clase_1</code></td>
+                <td class="text-right">$750.000.000</td>
+                <td class="text-center">20</td>
                 <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td class="text-right"><strong>$15.000.000.000</strong></td>
             </tr>
             <tr>
                 <td>4</td>
-                <td><strong>CALE_TEORICO_16q</strong></td>
-                <td>Centro teórico 16 cubículos + áreas admin</td>
-                <td><code>L2.cale_teorico_16q</code></td>
-                <td class="text-right">$200.646.497</td>
+                <td><strong>Sala Evaluación Teórica (24 cubículos)</strong></td>
+                <td>Equipamiento completo con sistema de cómputo</td>
+                <td><code>L1.sala_24_cubiculos</code></td>
+                <td class="text-right">$186.000.000</td>
+                <td class="text-center">20</td>
                 <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$4.012.929.940</strong></td>
+                <td class="text-right"><strong>$3.720.000.000</strong></td>
             </tr>
             <tr>
                 <td>5</td>
-                <td><strong>TECNOLOGIA</strong></td>
-                <td>Plataforma tecnológica CALE</td>
-                <td><code>L2.tecnologia</code></td>
-                <td class="text-right">$0</td>
+                <td><strong>Simulador Conducción Clase III</strong></td>
+                <td>Simulador avanzado con 6 DOF según NTC 5375</td>
+                <td><code>L0.simulador_c3</code></td>
+                <td class="text-right">$450.000.000</td>
+                <td class="text-center">40</td>
                 <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td class="text-right"><strong>$18.000.000.000</strong></td>
             </tr>
             <tr>
                 <td>6</td>
-                <td><strong>CERTIFICACIONES</strong></td>
-                <td>Certificaciones ISO (4)</td>
-                <td><code>L2.certificaciones</code></td>
-                <td class="text-right">$0</td>
+                <td><strong>Infraestructura Civil Base</strong></td>
+                <td>Edificación administrativa y servicios</td>
+                <td><code>L2.edificacion_admin</code></td>
+                <td class="text-right">$2.400.000.000</td>
+                <td class="text-center">20</td>
                 <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td><strong>SEGUROS</strong></td>
-                <td>Seguros y pólizas</td>
-                <td><code>L2.seguros</code></td>
-                <td class="text-right">$0</td>
-                <td class="text-center">0</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$0</strong></td>
+                <td class="text-right"><strong>$48.000.000.000</strong></td>
             </tr>
                         </tbody>
                     </table>
@@ -394,14 +384,16 @@
             
         <section class="metadata-section">
             <h2>📋 Información Adicional</h2>
-            <p class="metadata-info">Datos complementarios de la configuración (Tabla #4)</p>
+            <p class="metadata-info">Datos complementarios de la configuración (Tabla #2)</p>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr><th>Tipo CALE</th><th>Cantidad</th><th>Descripción Modificador</th><th>Mapa de Geolocalización</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>CALE.n_2**</td><td>16</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**</td></tr><tr><td>CALE.n_2</td><td>4</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2</td></tr>
+                        <tr><td>CALE.n_1+</td><td>3</td><td>Configuración base estándar, con Cale.n_2 adicional</td><td>Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos
+filtrar categorías: (3) CALE.n_1+</td></tr><tr><td>CALE.n_1</td><td>17</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos
+filtrar categorías: (17) CALE.n_1</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -411,8 +403,8 @@
                 <h3>📊 Fuente de Datos</h3>
                 <p><strong>Documento:</strong> Google Doc MUNAY_5.2__anexo_b__DEFINITIVO</p>
                 <p><strong>ID:</strong> <code>16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE</code></p>
-                <p><strong>Tabla Valorización:</strong> #5</p>
-                <p><strong>Total Componentes:</strong> 7</p>
+                <p><strong>Tabla Valorización:</strong> #3</p>
+                <p><strong>Total Componentes:</strong> 6</p>
                 <p><strong>Estado:</strong> ✅ Validado desde fuente oficial única</p>
             </div>
         </div>
@@ -425,7 +417,7 @@
                 <a href="BIM_L3_001.html">L3 Index</a>
             </p>
             <p style="margin-top: 1rem; font-size: 0.85rem;">
-                Generado desde Google Doc oficial | BIM_L3_002 | UPTC 2025
+                Generado desde Google Doc oficial | BIM_L3_001 | UPTC 2025
             </p>
         </footer>
     </div>
