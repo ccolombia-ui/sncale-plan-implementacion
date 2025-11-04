@@ -1,0 +1,1116 @@
+{
+  "fuente": {
+    "documento": "MUNAY_5.2__anexo_b__DEFINITIVO",
+    "doc_id": "16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE",
+    "fecha_extraccion": "2025-11-03"
+  },
+  "estructura_correcta": {
+    "L3": "Configuraciones CALE (n_1, n_2, n_3, satélites)",
+    "L2": "Pistas completas (Clase I, II, III) y edificaciones",
+    "L1": "Componentes de infraestructura (pista_motos, pista_carros, pista_camiones, etc.)",
+    "L0": "Componentes atómicos (pavimentos, drenajes, señalización, mobiliario, etc.)"
+  },
+  "niveles": {
+    "L0": [
+      {
+        "bim_id": "BIM_L0_001",
+        "codigo_l0": "L0.IC_001",
+        "componente": "Pavimento flexible asfalto e=12cm",
+        "descripcion": "Carpeta asfáltica MDC-19 sobre base granular",
+        "unidad": "m²",
+        "usado_en": "L1.pista_motos_A1A2_completa",
+        "fuente": "Tabla #59, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_002",
+        "codigo_l0": "L0.IC_002",
+        "componente": "Pavimento rígido concreto Fc=21MPa e=15cm",
+        "descripcion": "Losa concreto hidráulico sobre subbase",
+        "unidad": "m²",
+        "usado_en": "L1.pista_carros_B1C1_completa, L1.parqueadero_*",
+        "fuente": "Tabla #59, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_003",
+        "codigo_l0": "L0.IC_003",
+        "componente": "Pavimento reforzado concreto Fc=28MPa e=20cm",
+        "descripcion": "Losa reforzada malla electrosoldada",
+        "unidad": "m²",
+        "usado_en": "L1.pista_camiones_B2C2_completa",
+        "fuente": "Tabla #59, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_004",
+        "codigo_l0": "L0.IC_004",
+        "componente": "Pavimento especial concreto Fc=35MPa e=25cm",
+        "descripcion": "Losa alta resistencia vehículos pesados",
+        "unidad": "m²",
+        "usado_en": "L1.pista_tractocamiones_B3C3_completa",
+        "fuente": "Tabla #59, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_005",
+        "codigo_l0": "L0.DR_001",
+        "componente": "Cuneta concreto perimetral",
+        "descripcion": "Cuneta tipo 1 sección 0.30×0.30m",
+        "unidad": "ml",
+        "usado_en": "L1.pista_clase_, L1.parqueadero_",
+        "fuente": "Tabla #60, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_006",
+        "codigo_l0": "L0.DR_002",
+        "componente": "Sistema drenaje pluvial",
+        "descripcion": "Rejillas + tubería PVC sanitaria",
+        "unidad": "ml",
+        "usado_en": "L1.parqueadero_*",
+        "fuente": "Tabla #60, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_007",
+        "codigo_l0": "L0.DR_003",
+        "componente": "Drenaje reforzado alta capacidad",
+        "descripcion": "Sistema para cargas pesadas",
+        "unidad": "ml",
+        "usado_en": "L1.pista_clase_II/III",
+        "fuente": "Tabla #60, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_008",
+        "codigo_l0": "L0.SV_001",
+        "componente": "Señalización horizontal termoplástica",
+        "descripcion": "Pintura termoplástica reflectiva blanca/amarilla",
+        "unidad": "ml",
+        "usado_en": "L1.pista_*",
+        "fuente": "Tabla #61, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_009",
+        "codigo_l0": "L0.SV_002",
+        "componente": "Demarcación espacio vehicular",
+        "descripcion": "Líneas demarcación parqueadero",
+        "unidad": "und",
+        "usado_en": "L1.parqueadero_*",
+        "fuente": "Tabla #61, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_010",
+        "codigo_l0": "L0.SV_003",
+        "componente": "Conos reflectivos 90cm",
+        "descripcion": "Conos viales reflectivos naranja",
+        "unidad": "und",
+        "usado_en": "L1.pista_*",
+        "fuente": "Tabla #62, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_011",
+        "codigo_l0": "L0.SV_004",
+        "componente": "Señalización vertical Tipo I",
+        "descripcion": "Señal reglamentaria/preventiva 0.75×0.75m",
+        "unidad": "und",
+        "usado_en": "L1.pista_, L1.parqueadero_",
+        "fuente": "Tabla #62, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_012",
+        "codigo_l0": "L0.SEG_001",
+        "componente": "Baranda metálica contención",
+        "descripcion": "Defensa metálica doble onda galvanizada",
+        "unidad": "ml",
+        "usado_en": "L1.pista_*",
+        "fuente": "Tabla #63, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_013",
+        "codigo_l0": "L0.SEG_002",
+        "componente": "Kit seguridad evaluación",
+        "descripcion": "Conos + señales + extintores + botiquín",
+        "unidad": "glb",
+        "usado_en": "L1.pista_*",
+        "fuente": "Tabla #63, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_014",
+        "codigo_l0": "L0.SEG_003",
+        "componente": "Sistema detección incendios",
+        "descripcion": "Detectores de humo + alarma + rociadores",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #63, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_015",
+        "codigo_l0": "L0.EDIF_001",
+        "componente": "Edificación principal CALE",
+        "descripcion": "Construcción permanente 250 m²",
+        "unidad": "glb",
+        "usado_en": "L1.edificacion_parametrica (NUEVA)",
+        "fuente": "Tabla #64, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_016",
+        "codigo_l0": "L0.MAT_001",
+        "componente": "Construcción área sanitarios",
+        "descripcion": "Mampostería + instalaciones + acabados",
+        "unidad": "m²",
+        "usado_en": "L1.sshh_completo",
+        "fuente": "Tabla #64, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_017",
+        "codigo_l0": "L0.MAT_002",
+        "componente": "Concreto premezclado 3000 PSI",
+        "descripcion": "Concreto estructural f'c=21MPa",
+        "unidad": "m³",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #64, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_018",
+        "codigo_l0": "L0.MAT_003",
+        "componente": "Acero estructural ASTM A36",
+        "descripcion": "Perfiles metálicos estructura",
+        "unidad": "Ton",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #64, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_019",
+        "codigo_l0": "L0.ADEC_001",
+        "componente": "Adecuaciones Drywall completas",
+        "descripcion": "Sistema liviano paredes + cielo + piso",
+        "unidad": "glb",
+        "usado_en": "L1.edificacion_parametrica (ADECUADA)",
+        "fuente": "Tabla #65, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_020",
+        "codigo_l0": "L0.ADEC_002",
+        "componente": "Drywall paredes y divisiones",
+        "descripcion": "Paneles yeso 1/2\" + perfilería metálica",
+        "unidad": "m²",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #65, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_021",
+        "codigo_l0": "L0.ADEC_003",
+        "componente": "Cielo raso suspendido",
+        "descripcion": "Cielo raso modular 0.60×0.60m",
+        "unidad": "m²",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #65, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_022",
+        "codigo_l0": "L0.ADEC_004",
+        "componente": "Piso vinílico LVT",
+        "descripcion": "Piso tipo LVT tráfico comercial",
+        "unidad": "m²",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #65, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_023",
+        "codigo_l0": "L0.ADEC_005",
+        "componente": "Cubículos evaluación",
+        "descripcion": "Cabinas individuales aislamiento acústico",
+        "unidad": "und",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #65, Fila 6"
+      },
+      {
+        "bim_id": "BIM_L0_024",
+        "codigo_l0": "L0.ELE_001",
+        "componente": "Acometida trifásica 220V 30A",
+        "descripcion": "Tablero + breakers + cableado",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #66, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_025",
+        "codigo_l0": "L0.ELE_002",
+        "componente": "Instalaciones eléctricas complementarias",
+        "descripcion": "Red eléctrica completa edificación",
+        "unidad": "glb",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #66, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_026",
+        "codigo_l0": "L0.ELE_003",
+        "componente": "Puesta tierra varilla 5/8\"×2.4m",
+        "descripcion": "Sistema puesta a tierra SPT",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #66, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_027",
+        "codigo_l0": "L0.ELE_004",
+        "componente": "Supresor de picos 6 tomas",
+        "descripcion": "Protector sobretensiones",
+        "unidad": "und",
+        "usado_en": "L1.estacion_trabajo",
+        "fuente": "Tabla #66, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_028",
+        "codigo_l0": "L0.ELE_006",
+        "componente": "UPS 10kVA doble conversión",
+        "descripcion": "Sistema alimentación ininterrumpida",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #66, Fila 6"
+      },
+      {
+        "bim_id": "BIM_L0_029",
+        "codigo_l0": "L0.ELE_007",
+        "componente": "Panel solar fotovoltaico 550Wp",
+        "descripcion": "Panel monocristalino PERC 550W",
+        "unidad": "und",
+        "usado_en": "L1.sistema_fotovoltaico_4h",
+        "fuente": "Tabla #67, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_030",
+        "codigo_l0": "L0.ELE_008",
+        "componente": "Inversor solar híbrido 10kW",
+        "descripcion": "Inversor on-grid/off-grid con MPPT",
+        "unidad": "und",
+        "usado_en": "L1.sistema_fotovoltaico_4h",
+        "fuente": "Tabla #67, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_031",
+        "codigo_l0": "L0.ELE_009",
+        "componente": "Batería litio 5kWh",
+        "descripcion": "Batería LiFePO4 ciclo profundo",
+        "unidad": "und",
+        "usado_en": "L1.sistema_fotovoltaico_4h",
+        "fuente": "Tabla #67, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_032",
+        "codigo_l0": "L0.ELE_010",
+        "componente": "Controlador de carga solar MPPT 60A",
+        "descripcion": "Controlador MPPT con display",
+        "unidad": "und",
+        "usado_en": "L1.sistema_fotovoltaico_4h",
+        "fuente": "Tabla #67, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_033",
+        "codigo_l0": "L0.ELE_011",
+        "componente": "Estructura montaje paneles solares",
+        "descripcion": "Estructura aluminio inclinación ajustable",
+        "unidad": "glb",
+        "usado_en": "L1.sistema_fotovoltaico_4h",
+        "fuente": "Tabla #67, Fila 6"
+      },
+      {
+        "bim_id": "BIM_L0_034",
+        "codigo_l0": "L0.ELE_012",
+        "componente": "Cableado DC fotovoltaico 6mm²",
+        "descripcion": "Cable solar UV resistente 1000V",
+        "unidad": "ml",
+        "usado_en": "L1.sistema_fotovoltaico_4h",
+        "fuente": "Tabla #67, Fila 7"
+      },
+      {
+        "bim_id": "BIM_L0_035",
+        "codigo_l0": "L0.ILU_001",
+        "componente": "Luminaria LED 150W poste 8m",
+        "descripcion": "Luminaria vial LED",
+        "unidad": "und",
+        "usado_en": "L1.pista_clase_I, L1.parqueadero_*",
+        "fuente": "Tabla #68, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_036",
+        "codigo_l0": "L0.ILU_002",
+        "componente": "Luminaria LED 200W poste 10m",
+        "descripcion": "Luminaria alta potencia pesados",
+        "unidad": "und",
+        "usado_en": "L1.pista_clase_II/III",
+        "fuente": "Tabla #68, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_040",
+        "codigo_l0": "L0.HVAC_001",
+        "componente": "Sistema HVAC precision datacenter",
+        "descripcion": "Aire acondicionado precisión 18-22°C",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #69, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_041",
+        "codigo_l0": "L0.HID_001",
+        "componente": "Tubería PVC + válvulas",
+        "descripcion": "Sistema hidráulico sanitario",
+        "unidad": "lote",
+        "usado_en": "L1.sshh_completo",
+        "fuente": "Tabla #69, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_042",
+        "codigo_l0": "L0.HID_002",
+        "componente": "Baño completo instalado",
+        "descripcion": "Sanitario + lavamanos + accesorios",
+        "unidad": "und",
+        "usado_en": "L1.sshh_completo",
+        "fuente": "Tabla #69, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_040",
+        "codigo_l0": "L0.HVAC_001",
+        "componente": "Sistema HVAC precision datacenter",
+        "descripcion": "Aire acondicionado precisión 18-22°C",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #70, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_041",
+        "codigo_l0": "L0.HID_001",
+        "componente": "Tubería PVC + válvulas",
+        "descripcion": "Sistema hidráulico sanitario",
+        "unidad": "lote",
+        "usado_en": "L1.sshh_completo",
+        "fuente": "Tabla #70, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_042",
+        "codigo_l0": "L0.HID_002",
+        "componente": "Baño completo instalado",
+        "descripcion": "Sanitario + lavamanos + accesorios",
+        "unidad": "und",
+        "usado_en": "L1.sshh_completo",
+        "fuente": "Tabla #70, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_037",
+        "codigo_l0": "L0.MOB_001",
+        "componente": "Escritorio ergonómico 1.20×0.60m",
+        "descripcion": "Mesa trabajo melamina 25mm",
+        "unidad": "und",
+        "usado_en": "L1.estacion_trabajo",
+        "fuente": "Tabla #71, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_038",
+        "codigo_l0": "L0.MOB_002",
+        "componente": "Silla ergonómica ajustable",
+        "descripcion": "Silla oficina respaldo alto",
+        "unidad": "und",
+        "usado_en": "L1.estacion_trabajo",
+        "fuente": "Tabla #71, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_039",
+        "codigo_l0": "L0.MOB_003",
+        "componente": "Sillas universitarias",
+        "descripcion": "Silla paleta universitaria",
+        "unidad": "und",
+        "usado_en": "L1.sala_formacion",
+        "fuente": "Tabla #71, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_040",
+        "codigo_l0": "L0.MOB_004",
+        "componente": "Tablero acrílico 3.0×1.5m",
+        "descripcion": "Tablero borrable marcador",
+        "unidad": "und",
+        "usado_en": "L1.sala_formacion",
+        "fuente": "Tabla #71, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_041",
+        "codigo_l0": "L0.MOB_005",
+        "componente": "Mobiliario completo CALE",
+        "descripcion": "Conjunto mobiliario salas + oficinas",
+        "unidad": "glb",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #71, Fila 6"
+      },
+      {
+        "bim_id": "BIM_L0_042",
+        "codigo_l0": "L0.MOB_006",
+        "componente": "Mobiliario aula informática",
+        "descripcion": "Mesas + sillas ergonómicas",
+        "unidad": "glb",
+        "usado_en": "L1.sala_informatica_parametrica",
+        "fuente": "Tabla #71, Fila 7"
+      },
+      {
+        "bim_id": "BIM_L0_043",
+        "codigo_l0": "L0.MOB_007",
+        "componente": "Mobiliario oficina director",
+        "descripcion": "Escritorio + silla ejecutiva + archivador",
+        "unidad": "set",
+        "usado_en": "L1.admin_parametrico (5 ofi)",
+        "fuente": "Tabla #72, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_044",
+        "codigo_l0": "L0.MOB_008",
+        "componente": "Mobiliario oficina subdirector",
+        "descripcion": "Escritorio + silla + archivador",
+        "unidad": "set",
+        "usado_en": "L1.admin_parametrico (5 ofi)",
+        "fuente": "Tabla #72, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_045",
+        "codigo_l0": "L0.MOB_009",
+        "componente": "Mobiliario oficina coordinador",
+        "descripcion": "Escritorio + silla + archivador",
+        "unidad": "set",
+        "usado_en": "L1.admin_parametrico, L1.zona_administrativa",
+        "fuente": "Tabla #72, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_046",
+        "codigo_l0": "L0.MOB_010",
+        "componente": "Mobiliario oficina operaciones",
+        "descripcion": "Escritorio + silla operativa",
+        "unidad": "set",
+        "usado_en": "L1.admin_parametrico (3 ofi), L1.zona_administrativa",
+        "fuente": "Tabla #72, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_047",
+        "codigo_l0": "L0.MOB_011",
+        "componente": "Mobiliario sala juntas",
+        "descripcion": "Mesa + 8 sillas + mueble credenza",
+        "unidad": "set",
+        "usado_en": "L1.admin_parametrico (5 ofi)",
+        "fuente": "Tabla #72, Fila 6"
+      },
+      {
+        "bim_id": "BIM_L0_048",
+        "codigo_l0": "L0.MOB_012",
+        "componente": "Archivo y bodega",
+        "descripcion": "Archivadores + estantería metálica",
+        "unidad": "set",
+        "usado_en": "L1.admin_parametrico",
+        "fuente": "Tabla #72, Fila 7"
+      },
+      {
+        "bim_id": "BIM_L0_049",
+        "codigo_l0": "L0.MOB_RECEPCION",
+        "componente": "Counter recepción CALE",
+        "descripcion": "Mostrador 2.5×0.8m + silla operativa",
+        "unidad": "set",
+        "usado_en": "L1.recepcion_sala_espera",
+        "fuente": "Tabla #73, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_050",
+        "codigo_l0": "L0.MOB_SILLAS_ESPERA",
+        "componente": "Sillas tandem sala espera",
+        "descripcion": "Sillas tandem 3-5 puestos metálicas",
+        "unidad": "und",
+        "usado_en": "L1.recepcion_sala_espera",
+        "fuente": "Tabla #73, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_051",
+        "codigo_l0": "L0.LOCKERS_ASPIRANTES",
+        "componente": "Locker metálico 12 puertas",
+        "descripcion": "Casillero metálico 12 compartimientos",
+        "unidad": "und",
+        "usado_en": "L1.almacenamiento_articulos",
+        "fuente": "Tabla #74, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_052",
+        "codigo_l0": "L0.ARCHIVO_ACTIVO",
+        "componente": "Estantería archivo rodante",
+        "descripcion": "Sistema archivo móvil alto tránsito",
+        "unidad": "ml",
+        "usado_en": "L1.archivo_documentacion",
+        "fuente": "Tabla #74, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_053",
+        "codigo_l0": "L0.ARCHIVADOR_VERTICAL",
+        "componente": "Archivador vertical 4 gavetas",
+        "descripcion": "Archivador metálico tamaño oficio",
+        "unidad": "und",
+        "usado_en": "L1.archivo_documentacion",
+        "fuente": "Tabla #74, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_054",
+        "codigo_l0": "L0.TEC_001",
+        "componente": "PC Desktop Core i5",
+        "descripcion": "CPU i5 11gen + 8GB RAM + 256GB SSD + W11 Pro",
+        "unidad": "und",
+        "usado_en": "L1.estacion_trabajo",
+        "fuente": "Tabla #75, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_055",
+        "codigo_l0": "L0.TEC_002",
+        "componente": "Monitor LED Full HD 24\"",
+        "descripcion": "Monitor 1920×1080 IPS 24\"",
+        "unidad": "und",
+        "usado_en": "L1.estacion_trabajo",
+        "fuente": "Tabla #75, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_056",
+        "codigo_l0": "L0.TEC_003",
+        "componente": "Teclado + Mouse USB",
+        "descripcion": "Teclado + mouse alambricos",
+        "unidad": "set",
+        "usado_en": "L1.estacion_trabajo",
+        "fuente": "Tabla #75, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_057",
+        "codigo_l0": "L0.AV_001",
+        "componente": "Video proyector 5000 lúmenes",
+        "descripcion": "Proyector WXGA 5000 ANSI",
+        "unidad": "und",
+        "usado_en": "L1.sala_formacion",
+        "fuente": "Tabla #76, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_058",
+        "codigo_l0": "L0.AV_002",
+        "componente": "Pantalla eléctrica 4.0×3.0m",
+        "descripcion": "Pantalla motorizada 4:3",
+        "unidad": "und",
+        "usado_en": "L1.sala_formacion",
+        "fuente": "Tabla #76, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_059",
+        "codigo_l0": "L0.AV_003",
+        "componente": "Sistema audio amplificado",
+        "descripcion": "Amplificador + parlantes + micrófonos",
+        "unidad": "set",
+        "usado_en": "L1.sala_formacion",
+        "fuente": "Tabla #76, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_060",
+        "codigo_l0": "L0.TEC_004",
+        "componente": "Rack servidor 42U",
+        "descripcion": "Gabinete 42U con PDU + ventilación",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #77, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_061",
+        "codigo_l0": "L0.TEC_005",
+        "componente": "Servidor HP ProLiant DL380 Gen10",
+        "descripcion": "2× Xeon Gold + 64GB RAM + storage",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #77, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_062",
+        "codigo_l0": "L0.TEC_006",
+        "componente": "Switch Gigabit 48 Puertos PoE+",
+        "descripcion": "Switch manageable L3 PoE+ 48p",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2",
+        "fuente": "Tabla #77, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_063",
+        "codigo_l0": "L0.TEC_009",
+        "componente": "Cámara IP Seguridad 4MP PoE",
+        "descripcion": "Cámara IP domo 4MP PoE",
+        "unidad": "und",
+        "usado_en": "L1.datacenter_12m2, L1.edificacion_*",
+        "fuente": "Tabla #77, Fila 5"
+      },
+      {
+        "bim_id": "BIM_L0_064",
+        "codigo_l0": "L0.SALA_CONTROL_TEORICO",
+        "componente": "Estación supervisión pruebas teóricas",
+        "descripcion": "PC + 2 monitores + software monitoreo",
+        "unidad": "set",
+        "usado_en": "L1.zona_administrativa",
+        "fuente": "Tabla #78, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_065",
+        "codigo_l0": "L0.SALA_CONTROL_PRACTICO",
+        "componente": "Centro control pruebas prácticas",
+        "descripcion": "Workstation + 4-6 monitores + NVR + software",
+        "unidad": "set",
+        "usado_en": "L1.zona_control_pruebas_practicas",
+        "fuente": "Tabla #78, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_066",
+        "codigo_l0": "L0.MONITOR_VIDEOWALL",
+        "componente": "Monitor LED 43\" videowall",
+        "descripcion": "Pantalla LED bisel delgado para muro",
+        "unidad": "und",
+        "usado_en": "L1.zona_control_pruebas_practicas",
+        "fuente": "Tabla #78, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_067",
+        "codigo_l0": "L0.PLAT_TEC",
+        "componente": "Plataforma tecnológica CALE completa",
+        "descripcion": "Software gestión + licencias + cloud",
+        "unidad": "glb",
+        "usado_en": "L1.tecnologia_cale",
+        "fuente": "Tabla #79, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_068",
+        "codigo_l0": "L0.ACC_001",
+        "componente": "Mousepad ergonómico",
+        "descripcion": "Pad reposamuñecas gel",
+        "unidad": "und",
+        "usado_en": "L1.estacion_trabajo",
+        "fuente": "Tabla #80, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_069",
+        "codigo_l0": "L0.ACC_002",
+        "componente": "Equipamiento sala teórica",
+        "descripcion": "Proyector + audio + tableros",
+        "unidad": "glb",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #80, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_070",
+        "codigo_l0": "L0.ACC_003",
+        "componente": "Señalización interior",
+        "descripcion": "Señalética completa + seguridad",
+        "unidad": "glb",
+        "usado_en": "L1.edificacion_parametrica",
+        "fuente": "Tabla #80, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_071",
+        "codigo_l0": "L0.VEH_001",
+        "componente": "Motocicleta ≤125cc adaptada",
+        "descripcion": "Moto escuela categoría A1",
+        "unidad": "und",
+        "usado_en": "L1.pista_motos_A1A2_completa",
+        "fuente": "Tabla #81, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_072",
+        "codigo_l0": "L0.VEH_002",
+        "componente": "Motocicleta >125cc adaptada",
+        "descripcion": "Moto escuela categoría A2",
+        "unidad": "und",
+        "usado_en": "L1.pista_motos_A1A2_completa",
+        "fuente": "Tabla #81, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_073",
+        "codigo_l0": "L0.VEH_003",
+        "componente": "Automóvil B1/C1 adaptado",
+        "descripcion": "Vehículo escuela automóvil",
+        "unidad": "und",
+        "usado_en": "L1.pista_carros_B1C1_completa",
+        "fuente": "Tabla #82, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_074",
+        "codigo_l0": "L0.VEH_004",
+        "componente": "Camión B2/C2 adaptado",
+        "descripcion": "Camión rígido escuela",
+        "unidad": "und",
+        "usado_en": "L1.pista_camiones_B2C2_completa",
+        "fuente": "Tabla #83, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_075",
+        "codigo_l0": "L0.VEH_005",
+        "componente": "Tractocamión B3/C3 articulado",
+        "descripcion": "Tractocamión articulado escuela",
+        "unidad": "und",
+        "usado_en": "L1.pista_tractocamiones_B3C3_completa",
+        "fuente": "Tabla #83, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_076",
+        "codigo_l0": "L0.SEG_100",
+        "componente": "Paquete seguros obligatorios",
+        "descripcion": "RC + Accidentes Personales",
+        "unidad": "año",
+        "usado_en": "L1.seguros_cale",
+        "fuente": "Tabla #84, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_077",
+        "codigo_l0": "L0.CERT_ISO",
+        "componente": "Paquete certificaciones ISO",
+        "descripcion": "ISO 9001 + 14001 + 45001 + 27001",
+        "unidad": "cert",
+        "usado_en": "L1.certificaciones_cale",
+        "fuente": "Tabla #85, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_078",
+        "codigo_l0": "L0.PASILLO_INTERNO",
+        "componente": "Pasillos interiores edificación",
+        "descripcion": "Corredor interno ancho mín 1.50m",
+        "unidad": "ml",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #86, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_079",
+        "codigo_l0": "L0.CIRCULACION_EXTERNA",
+        "componente": "Circulaciones exteriores",
+        "descripcion": "Andenes + caminos peatonales",
+        "unidad": "m²",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #86, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_080",
+        "codigo_l0": "L0.RAMPA_ACCESIBILIDAD",
+        "componente": "Rampa acceso universal",
+        "descripcion": "Rampa pendiente máx 8% + pasamanos",
+        "unidad": "ml",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #87, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_081",
+        "codigo_l0": "L0.ESCALERA_INTERNA",
+        "componente": "Escalera principal",
+        "descripcion": "Escalera concreto/metálica huella 28cm contrahuella 18cm",
+        "unidad": "ml",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #87, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_082",
+        "codigo_l0": "L0.ESCALERA_EMERGENCIA",
+        "componente": "Escalera emergencia",
+        "descripcion": "Escalera evacuación protegida",
+        "unidad": "ml",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #87, Fila 4"
+      },
+      {
+        "bim_id": "BIM_L0_080",
+        "codigo_l0": "L0.RAMPA_ACCESIBILIDAD",
+        "componente": "Rampa acceso universal",
+        "descripcion": "Rampa pendiente máx 8% + pasamanos",
+        "unidad": "ml",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #88, Fila 2"
+      },
+      {
+        "bim_id": "BIM_L0_081",
+        "codigo_l0": "L0.ESCALERA_INTERNA",
+        "componente": "Escalera principal",
+        "descripcion": "Escalera concreto/metálica huella 28cm contrahuella 18cm",
+        "unidad": "ml",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #88, Fila 3"
+      },
+      {
+        "bim_id": "BIM_L0_082",
+        "codigo_l0": "L0.ESCALERA_EMERGENCIA",
+        "componente": "Escalera emergencia",
+        "descripcion": "Escalera evacuación protegida",
+        "unidad": "ml",
+        "usado_en": "L1.areas_circulacion",
+        "fuente": "Tabla #88, Fila 4"
+      }
+    ],
+    "L1": {
+      "pista_clase_I": [
+        {
+          "numero": 1,
+          "componente": "Pista motos A1A2 completa",
+          "descripcion": "Infraestructura motocicletas ≤125cc y >125cc",
+          "cantidad": "1",
+          "unidad": "glb",
+          "codigo_l1": "L1.pista_motos_A1A2_completa",
+          "valor_cop": 289805000,
+          "fuente": "Tabla #19, Fila 2",
+          "componentes_l0": [
+            {
+              "bim_id": "BIM_L0_001",
+              "codigo_l0": "L0.IC_001",
+              "componente": "Pavimento flexible asfalto e=12cm",
+              "descripcion": "Carpeta asfáltica MDC-19 sobre base granular",
+              "unidad": "m²",
+              "usado_en": "L1.pista_motos_A1A2_completa",
+              "fuente": "Tabla #59, Fila 2"
+            },
+            {
+              "bim_id": "BIM_L0_007",
+              "codigo_l0": "L0.DR_003",
+              "componente": "Drenaje reforzado alta capacidad",
+              "descripcion": "Sistema para cargas pesadas",
+              "unidad": "ml",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #60, Fila 4"
+            },
+            {
+              "bim_id": "BIM_L0_035",
+              "codigo_l0": "L0.ILU_001",
+              "componente": "Luminaria LED 150W poste 8m",
+              "descripcion": "Luminaria vial LED",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_I, L1.parqueadero_*",
+              "fuente": "Tabla #68, Fila 2"
+            },
+            {
+              "bim_id": "BIM_L0_036",
+              "codigo_l0": "L0.ILU_002",
+              "componente": "Luminaria LED 200W poste 10m",
+              "descripcion": "Luminaria alta potencia pesados",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #68, Fila 3"
+            },
+            {
+              "bim_id": "BIM_L0_071",
+              "codigo_l0": "L0.VEH_001",
+              "componente": "Motocicleta ≤125cc adaptada",
+              "descripcion": "Moto escuela categoría A1",
+              "unidad": "und",
+              "usado_en": "L1.pista_motos_A1A2_completa",
+              "fuente": "Tabla #81, Fila 2"
+            },
+            {
+              "bim_id": "BIM_L0_072",
+              "codigo_l0": "L0.VEH_002",
+              "componente": "Motocicleta >125cc adaptada",
+              "descripcion": "Moto escuela categoría A2",
+              "unidad": "und",
+              "usado_en": "L1.pista_motos_A1A2_completa",
+              "fuente": "Tabla #81, Fila 3"
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "componente": "Pista carros B1C1 completa",
+          "descripcion": "Infraestructura automóviles livianos",
+          "cantidad": "1",
+          "unidad": "glb",
+          "codigo_l1": "L1.pista_carros_B1C1_completa",
+          "valor_cop": 431635000,
+          "fuente": "Tabla #19, Fila 3",
+          "componentes_l0": [
+            {
+              "bim_id": "BIM_L0_002",
+              "codigo_l0": "L0.IC_002",
+              "componente": "Pavimento rígido concreto Fc=21MPa e=15cm",
+              "descripcion": "Losa concreto hidráulico sobre subbase",
+              "unidad": "m²",
+              "usado_en": "L1.pista_carros_B1C1_completa, L1.parqueadero_*",
+              "fuente": "Tabla #59, Fila 3"
+            },
+            {
+              "bim_id": "BIM_L0_007",
+              "codigo_l0": "L0.DR_003",
+              "componente": "Drenaje reforzado alta capacidad",
+              "descripcion": "Sistema para cargas pesadas",
+              "unidad": "ml",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #60, Fila 4"
+            },
+            {
+              "bim_id": "BIM_L0_035",
+              "codigo_l0": "L0.ILU_001",
+              "componente": "Luminaria LED 150W poste 8m",
+              "descripcion": "Luminaria vial LED",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_I, L1.parqueadero_*",
+              "fuente": "Tabla #68, Fila 2"
+            },
+            {
+              "bim_id": "BIM_L0_036",
+              "codigo_l0": "L0.ILU_002",
+              "componente": "Luminaria LED 200W poste 10m",
+              "descripcion": "Luminaria alta potencia pesados",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #68, Fila 3"
+            },
+            {
+              "bim_id": "BIM_L0_073",
+              "codigo_l0": "L0.VEH_003",
+              "componente": "Automóvil B1/C1 adaptado",
+              "descripcion": "Vehículo escuela automóvil",
+              "unidad": "und",
+              "usado_en": "L1.pista_carros_B1C1_completa",
+              "fuente": "Tabla #82, Fila 2"
+            }
+          ]
+        }
+      ],
+      "pista_clase_II": [
+        {
+          "numero": 1,
+          "componente": "Pista Clase I completa",
+          "descripcion": "Infraestructura motos + carros livianos",
+          "cantidad": "1",
+          "unidad": "glb",
+          "codigo_l1": "L1.pista_clase_I",
+          "valor_cop": 721440000,
+          "fuente": "Tabla #20, Fila 2",
+          "componentes_l0": [
+            {
+              "bim_id": "BIM_L0_007",
+              "codigo_l0": "L0.DR_003",
+              "componente": "Drenaje reforzado alta capacidad",
+              "descripcion": "Sistema para cargas pesadas",
+              "unidad": "ml",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #60, Fila 4"
+            },
+            {
+              "bim_id": "BIM_L0_035",
+              "codigo_l0": "L0.ILU_001",
+              "componente": "Luminaria LED 150W poste 8m",
+              "descripcion": "Luminaria vial LED",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_I, L1.parqueadero_*",
+              "fuente": "Tabla #68, Fila 2"
+            },
+            {
+              "bim_id": "BIM_L0_036",
+              "codigo_l0": "L0.ILU_002",
+              "componente": "Luminaria LED 200W poste 10m",
+              "descripcion": "Luminaria alta potencia pesados",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #68, Fila 3"
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "componente": "Pista camiones B2C2 completa",
+          "descripcion": "Infraestructura camiones rígidos",
+          "cantidad": "1",
+          "unidad": "glb",
+          "codigo_l1": "L1.pista_camiones_B2C2_completa",
+          "valor_cop": 685950000,
+          "fuente": "Tabla #20, Fila 3",
+          "componentes_l0": [
+            {
+              "bim_id": "BIM_L0_003",
+              "codigo_l0": "L0.IC_003",
+              "componente": "Pavimento reforzado concreto Fc=28MPa e=20cm",
+              "descripcion": "Losa reforzada malla electrosoldada",
+              "unidad": "m²",
+              "usado_en": "L1.pista_camiones_B2C2_completa",
+              "fuente": "Tabla #59, Fila 4"
+            },
+            {
+              "bim_id": "BIM_L0_007",
+              "codigo_l0": "L0.DR_003",
+              "componente": "Drenaje reforzado alta capacidad",
+              "descripcion": "Sistema para cargas pesadas",
+              "unidad": "ml",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #60, Fila 4"
+            },
+            {
+              "bim_id": "BIM_L0_036",
+              "codigo_l0": "L0.ILU_002",
+              "componente": "Luminaria LED 200W poste 10m",
+              "descripcion": "Luminaria alta potencia pesados",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #68, Fila 3"
+            },
+            {
+              "bim_id": "BIM_L0_074",
+              "codigo_l0": "L0.VEH_004",
+              "componente": "Camión B2/C2 adaptado",
+              "descripcion": "Camión rígido escuela",
+              "unidad": "und",
+              "usado_en": "L1.pista_camiones_B2C2_completa",
+              "fuente": "Tabla #83, Fila 2"
+            }
+          ]
+        }
+      ],
+      "pista_clase_III": [
+        {
+          "numero": 1,
+          "componente": "Pista Clase II completa",
+          "descripcion": "Infraestructura motos + carros + camiones rígidos",
+          "cantidad": "1",
+          "unidad": "glb",
+          "codigo_l1": "L1.pista_clase_II",
+          "valor_cop": 1407390000,
+          "fuente": "Tabla #21, Fila 2",
+          "componentes_l0": [
+            {
+              "bim_id": "BIM_L0_007",
+              "codigo_l0": "L0.DR_003",
+              "componente": "Drenaje reforzado alta capacidad",
+              "descripcion": "Sistema para cargas pesadas",
+              "unidad": "ml",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #60, Fila 4"
+            },
+            {
+              "bim_id": "BIM_L0_036",
+              "codigo_l0": "L0.ILU_002",
+              "componente": "Luminaria LED 200W poste 10m",
+              "descripcion": "Luminaria alta potencia pesados",
+              "unidad": "und",
+              "usado_en": "L1.pista_clase_II/III",
+              "fuente": "Tabla #68, Fila 3"
+            }
+          ]
+        },
+        {
+          "numero": 2,
+          "componente": "Pista tractocamiones B3C3 completa",
+          "descripcion": "Infraestructura tractocamiones articulados",
+          "cantidad": "1",
+          "unidad": "glb",
+          "codigo_l1": "L1.pista_tractocamiones_B3C3_completa",
+          "valor_cop": 1192100000,
+          "fuente": "Tabla #21, Fila 3",
+          "componentes_l0": [
+            {
+              "bim_id": "BIM_L0_004",
+              "codigo_l0": "L0.IC_004",
+              "componente": "Pavimento especial concreto Fc=35MPa e=25cm",
+              "descripcion": "Losa alta resistencia vehículos pesados",
+              "unidad": "m²",
+              "usado_en": "L1.pista_tractocamiones_B3C3_completa",
+              "fuente": "Tabla #59, Fila 5"
+            },
+            {
+              "bim_id": "BIM_L0_075",
+              "codigo_l0": "L0.VEH_005",
+              "componente": "Tractocamión B3/C3 articulado",
+              "descripcion": "Tractocamión articulado escuela",
+              "unidad": "und",
+              "usado_en": "L1.pista_tractocamiones_B3C3_completa",
+              "fuente": "Tabla #83, Fila 3"
+            }
+          ]
+        }
+      ]
+    },
+    "L2": [],
+    "L3": []
+  }
+}

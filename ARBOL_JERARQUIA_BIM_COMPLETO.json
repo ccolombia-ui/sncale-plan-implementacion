@@ -1,0 +1,318 @@
+[
+  {
+    "bim_id": "BIM_L3_001",
+    "titulo": "CALE.n_1 - Centro Metropolitano",
+    "valor": "$141.320.000.000",
+    "nivel": "L3",
+    "componentes_directos": 6,
+    "hijos_l2": []
+  },
+  {
+    "bim_id": "BIM_L3_002",
+    "titulo": "CALE.n_2 - Centro Subregional",
+    "valor": "$4.012.929.940",
+    "nivel": "L3",
+    "componentes_directos": 7,
+    "hijos_l2": [
+      {
+        "bim_id": "BIM_L2_005",
+        "titulo": "CALE Teórico 16 Cubículos",
+        "valor": "$200,646,497",
+        "nivel": "L2",
+        "componentes_directos": 0,
+        "hijos_l1": []
+      },
+      {
+        "bim_id": "BIM_L2_001",
+        "titulo": "Pista de Conducción Clase I",
+        "valor": "$975,000,000",
+        "nivel": "L2",
+        "componentes_directos": 16,
+        "hijos_l1": [
+          {
+            "componente": "MANIOBRA_00",
+            "descripcion": "Maniobra 0: Arranque en pendiente",
+            "referencia": "L1.maniobra_00",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_01",
+            "descripcion": "Maniobra 1: Estacionamiento en paralelo",
+            "referencia": "L1.maniobra_01",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_02",
+            "descripcion": "Maniobra 2: Estacionamiento en batería",
+            "referencia": "L1.maniobra_02",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_03",
+            "descripcion": "Maniobra 3: Cambio de carril",
+            "referencia": "L1.maniobra_03",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_04",
+            "descripcion": "Maniobra 4: Giro a la derecha",
+            "referencia": "L1.maniobra_04",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_05",
+            "descripcion": "Maniobra 5: Giro a la izquierda",
+            "referencia": "L1.maniobra_05",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_06",
+            "descripcion": "Maniobra 6: Giro en U",
+            "referencia": "L1.maniobra_06",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_07",
+            "descripcion": "Maniobra 7: Paso por glorieta",
+            "referencia": "L1.maniobra_07",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_08",
+            "descripcion": "Maniobra 8: Frenado de emergencia",
+            "referencia": "L1.maniobra_08",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_09",
+            "descripcion": "Maniobra 9: Reversa controlada",
+            "referencia": "L1.maniobra_09",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_10",
+            "descripcion": "Maniobra 10: Estacionamiento en línea",
+            "referencia": "L1.maniobra_10",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_11",
+            "descripcion": "Maniobra 11: Slalom simple",
+            "referencia": "L1.maniobra_11",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_12",
+            "descripcion": "Maniobra 12: Paso por intersección",
+            "referencia": "L1.maniobra_12",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_13",
+            "descripcion": "Maniobra 13: Conducción en recta",
+            "referencia": "L1.maniobra_13",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          }
+        ]
+      },
+      {
+        "bim_id": "BIM_L2_001",
+        "titulo": "Pista de Conducción Clase I",
+        "valor": "$975,000,000",
+        "nivel": "L2",
+        "componentes_directos": 16,
+        "hijos_l1": [
+          {
+            "componente": "MANIOBRA_00",
+            "descripcion": "Maniobra 0: Arranque en pendiente",
+            "referencia": "L1.maniobra_00",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_01",
+            "descripcion": "Maniobra 1: Estacionamiento en paralelo",
+            "referencia": "L1.maniobra_01",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_02",
+            "descripcion": "Maniobra 2: Estacionamiento en batería",
+            "referencia": "L1.maniobra_02",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_03",
+            "descripcion": "Maniobra 3: Cambio de carril",
+            "referencia": "L1.maniobra_03",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_04",
+            "descripcion": "Maniobra 4: Giro a la derecha",
+            "referencia": "L1.maniobra_04",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_05",
+            "descripcion": "Maniobra 5: Giro a la izquierda",
+            "referencia": "L1.maniobra_05",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_06",
+            "descripcion": "Maniobra 6: Giro en U",
+            "referencia": "L1.maniobra_06",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_07",
+            "descripcion": "Maniobra 7: Paso por glorieta",
+            "referencia": "L1.maniobra_07",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_08",
+            "descripcion": "Maniobra 8: Frenado de emergencia",
+            "referencia": "L1.maniobra_08",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_09",
+            "descripcion": "Maniobra 9: Reversa controlada",
+            "referencia": "L1.maniobra_09",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_10",
+            "descripcion": "Maniobra 10: Estacionamiento en línea",
+            "referencia": "L1.maniobra_10",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_11",
+            "descripcion": "Maniobra 11: Slalom simple",
+            "referencia": "L1.maniobra_11",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_12",
+            "descripcion": "Maniobra 12: Paso por intersección",
+            "referencia": "L1.maniobra_12",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_13",
+            "descripcion": "Maniobra 13: Conducción en recta",
+            "referencia": "L1.maniobra_13",
+            "nivel": "L1",
+            "tipo": "Básica",
+            "hijos_l0": []
+          }
+        ]
+      },
+      {
+        "bim_id": "BIM_L2_002",
+        "titulo": "Pista de Conducción Clase II",
+        "valor": "$680,000,000",
+        "nivel": "L2",
+        "componentes_directos": 6,
+        "hijos_l1": [
+          {
+            "componente": "MANIOBRA_14",
+            "descripcion": "Maniobra 14: Maniobras con remolque",
+            "referencia": "L1.maniobra_14",
+            "nivel": "L1",
+            "tipo": "Intermedia",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_15",
+            "descripcion": "Maniobra 15: Reversa con remolque",
+            "referencia": "L1.maniobra_15",
+            "nivel": "L1",
+            "tipo": "Intermedia",
+            "hijos_l0": []
+          },
+          {
+            "componente": "MANIOBRA_16",
+            "descripcion": "Maniobra 16: Estacionamiento con remolque",
+            "referencia": "L1.maniobra_16",
+            "nivel": "L1",
+            "tipo": "Intermedia",
+            "hijos_l0": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "bim_id": "BIM_L3_003",
+    "titulo": "CALE.n_3 - Centro Local",
+    "valor": "$0",
+    "nivel": "L3",
+    "componentes_directos": 0,
+    "hijos_l2": []
+  },
+  {
+    "bim_id": "BIM_L3_004",
+    "titulo": "Red Nacional de Satélites",
+    "valor": "$81",
+    "nivel": "L3",
+    "componentes_directos": 3,
+    "hijos_l2": []
+  }
+]

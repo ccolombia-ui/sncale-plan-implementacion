@@ -1,0 +1,2428 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "fecha": "2025-11-04",
+    "descripcion": "Relaciones jerárquicas completas: 56 nodos principales → 141 satélites",
+    "total_nodos_principales": 56,
+    "total_satelites": 141,
+    "nodos_con_satelites": 51,
+    "nodos_sin_satelites": 5
+  },
+  "relaciones": {
+    "NODO_01": {
+      "info": {
+        "nombre": "BOGOTÁ SUR",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 80453,
+        "latitud": 4.649251,
+        "longitud": -74.106992
+      },
+      "subnodos": []
+    },
+    "NODO_02": {
+      "info": {
+        "nombre": "BOGOTÁ NORTE",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 70396,
+        "latitud": 4.649251,
+        "longitud": -74.106992
+      },
+      "subnodos": [
+        {
+          "id": "SAT_016",
+          "nombre": "FOSCA",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 4.339093,
+          "longitud": -73.93902,
+          "distancia_km": 0.0
+        }
+      ]
+    },
+    "NODO_03": {
+      "info": {
+        "nombre": "BUCARAMANGA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 68000,
+        "latitud": 7.11647,
+        "longitud": -73.132562
+      },
+      "subnodos": [
+        {
+          "id": "SAT_019",
+          "nombre": "MUTISCUA",
+          "departamento": "NORTE DE SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 7.300469,
+          "longitud": -72.747169,
+          "distancia_km": 10.53
+        },
+        {
+          "id": "SAT_018",
+          "nombre": "SABANA DE TORRES",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 7.391919,
+          "longitud": -73.49906,
+          "distancia_km": 40.6
+        }
+      ]
+    },
+    "NODO_04": {
+      "info": {
+        "nombre": "CALI",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 57318,
+        "latitud": 3.413686,
+        "longitud": -76.52133
+      },
+      "subnodos": [
+        {
+          "id": "SAT_090",
+          "nombre": "RESTREPO",
+          "departamento": "VALLE DEL CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 3.821351,
+          "longitud": -76.523329,
+          "distancia_km": 0.0
+        }
+      ]
+    },
+    "NODO_05": {
+      "info": {
+        "nombre": "IBAGUÉ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 55000,
+        "latitud": 4.432248,
+        "longitud": -75.19425
+      },
+      "subnodos": []
+    },
+    "NODO_06": {
+      "info": {
+        "nombre": "PASTO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 52000,
+        "latitud": 1.212352,
+        "longitud": -77.278795
+      },
+      "subnodos": []
+    },
+    "NODO_07": {
+      "info": {
+        "nombre": "MOSQUERA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 50283,
+        "latitud": 4.70653,
+        "longitud": -74.221154
+      },
+      "subnodos": [
+        {
+          "id": "SAT_057",
+          "nombre": "CHAGUANÍ",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 4.948916,
+          "longitud": -74.593455,
+          "distancia_km": 12.09
+        },
+        {
+          "id": "SAT_056",
+          "nombre": "GUADUAS",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 5.072076,
+          "longitud": -74.603402,
+          "distancia_km": 16.3
+        }
+      ]
+    },
+    "NODO_08": {
+      "info": {
+        "nombre": "VALLEDUPAR",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 40000,
+        "latitud": 10.460472,
+        "longitud": -73.259398
+      },
+      "subnodos": [
+        {
+          "id": "SAT_129",
+          "nombre": "SAN JUAN DEL CESAR",
+          "departamento": "LA GUAJIRA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1200,
+          "latitud": 10.769546,
+          "longitud": -73.000629,
+          "distancia_km": 93.18
+        }
+      ]
+    },
+    "NODO_09": {
+      "info": {
+        "nombre": "SAN JOSÉ DE CÚCUTA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 35320,
+        "latitud": 7.905725,
+        "longitud": -72.508178
+      },
+      "subnodos": [
+        {
+          "id": "SAT_084",
+          "nombre": "PAMPLONITA",
+          "departamento": "NORTE DE SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 7.436745,
+          "longitud": -72.639111,
+          "distancia_km": 23.12
+        },
+        {
+          "id": "SAT_085",
+          "nombre": "BUCARASICA",
+          "departamento": "NORTE DE SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 8.041299,
+          "longitud": -72.868231,
+          "distancia_km": 38.56
+        }
+      ]
+    },
+    "NODO_10": {
+      "info": {
+        "nombre": "MEDELLÍN",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 27733,
+        "latitud": 6.246631,
+        "longitud": -75.581775
+      },
+      "subnodos": []
+    },
+    "NODO_11": {
+      "info": {
+        "nombre": "BARRANQUILLA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 27550,
+        "latitud": 10.977961,
+        "longitud": -74.815546
+      },
+      "subnodos": [
+        {
+          "id": "SAT_014",
+          "nombre": "SALAMINA",
+          "departamento": "MAGDALENA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 10.491229,
+          "longitud": -74.794189,
+          "distancia_km": 14.57
+        },
+        {
+          "id": "SAT_015",
+          "nombre": "PIOJÓ",
+          "departamento": "ATLÁNTICO",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 10.749216,
+          "longitud": -75.107592,
+          "distancia_km": 15.71
+        }
+      ]
+    },
+    "NODO_12": {
+      "info": {
+        "nombre": "PEREIRA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 22368,
+        "latitud": 4.804985,
+        "longitud": -75.719711
+      },
+      "subnodos": [
+        {
+          "id": "SAT_063",
+          "nombre": "BUENAVISTA",
+          "departamento": "QUINDÍO",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 4.360029,
+          "longitud": -75.739572,
+          "distancia_km": 7.58
+        },
+        {
+          "id": "SAT_065",
+          "nombre": "APÍA",
+          "departamento": "RISARALDA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 5.106526,
+          "longitud": -75.942356,
+          "distancia_km": 8.86
+        },
+        {
+          "id": "SAT_064",
+          "nombre": "ARGELIA",
+          "departamento": "VALLE DEL CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 4.726945,
+          "longitud": -76.119905,
+          "distancia_km": 19.01
+        }
+      ]
+    },
+    "NODO_13": {
+      "info": {
+        "nombre": "CARTAGENA DE INDIAS",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 14021,
+        "latitud": 10.385126,
+        "longitud": -75.496269
+      },
+      "subnodos": [
+        {
+          "id": "SAT_021",
+          "nombre": "PROVIDENCIA",
+          "departamento": "ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 13.373185,
+          "longitud": -81.368386,
+          "distancia_km": 0.0
+        },
+        {
+          "id": "SAT_023",
+          "nombre": "SAN ANDRÉS",
+          "departamento": "ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 12.578108,
+          "longitud": -81.707181,
+          "distancia_km": 0.0
+        },
+        {
+          "id": "SAT_020",
+          "nombre": "SAN JUAN NEPOMUCENO",
+          "departamento": "BOLÍVAR",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 9.953751,
+          "longitud": -75.081761,
+          "distancia_km": 16.72
+        },
+        {
+          "id": "SAT_022",
+          "nombre": "SANTA LUCÍA",
+          "departamento": "ATLÁNTICO",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 6500,
+          "latitud": 10.324303,
+          "longitud": -74.959204,
+          "distancia_km": 21.39
+        }
+      ]
+    },
+    "NODO_14": {
+      "info": {
+        "nombre": "SOACHA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 13002,
+        "latitud": 4.579268,
+        "longitud": -74.215463
+      },
+      "subnodos": [
+        {
+          "id": "SAT_093",
+          "nombre": "ARBELÁEZ",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 4.272534,
+          "longitud": -74.414901,
+          "distancia_km": 29.71
+        }
+      ]
+    },
+    "NODO_15": {
+      "info": {
+        "nombre": "LA PAZ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 12407,
+        "latitud": 10.387552,
+        "longitud": -73.171365
+      },
+      "subnodos": [
+        {
+          "id": "SAT_036",
+          "nombre": "AGUSTÍN CODAZZI",
+          "departamento": "CESAR",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1750,
+          "latitud": 10.040454,
+          "longitud": -73.238389,
+          "distancia_km": 61.58
+        }
+      ]
+    },
+    "NODO_16": {
+      "info": {
+        "nombre": "YOPAL",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 11793,
+        "latitud": 5.327102,
+        "longitud": -72.396132
+      },
+      "subnodos": [
+        {
+          "id": "SAT_133",
+          "nombre": "TAURAMENA",
+          "departamento": "CASANARE",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 5.018977,
+          "longitud": -72.74662,
+          "distancia_km": 23.35
+        },
+        {
+          "id": "SAT_130",
+          "nombre": "SOCOTÁ",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 6.041162,
+          "longitud": -72.636653,
+          "distancia_km": 32.57
+        },
+        {
+          "id": "SAT_131",
+          "nombre": "PUERTO GAITÁN",
+          "departamento": "META",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 4.314905,
+          "longitud": -72.087649,
+          "distancia_km": 38.87
+        },
+        {
+          "id": "SAT_132",
+          "nombre": "PORE",
+          "departamento": "CASANARE",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 5.72773,
+          "longitud": -71.99286,
+          "distancia_km": 40.06
+        },
+        {
+          "id": "SAT_134",
+          "nombre": "OROCUÉ",
+          "departamento": "CASANARE",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 4.790258,
+          "longitud": -71.338533,
+          "distancia_km": 42.61
+        }
+      ]
+    },
+    "NODO_17": {
+      "info": {
+        "nombre": "MONTERÍA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 11628,
+        "latitud": 8.759789,
+        "longitud": -75.873096
+      },
+      "subnodos": [
+        {
+          "id": "SAT_045",
+          "nombre": "TIERRALTA",
+          "departamento": "CÓRDOBA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 8.170612,
+          "longitud": -76.059797,
+          "distancia_km": 8.92
+        },
+        {
+          "id": "SAT_046",
+          "nombre": "MONTELÍBANO",
+          "departamento": "CÓRDOBA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 7.973777,
+          "longitud": -75.416818,
+          "distancia_km": 23.51
+        },
+        {
+          "id": "SAT_044",
+          "nombre": "PUERTO ESCONDIDO",
+          "departamento": "CÓRDOBA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 9.005372,
+          "longitud": -76.260411,
+          "distancia_km": 29.57
+        },
+        {
+          "id": "SAT_043",
+          "nombre": "BUENAVISTA",
+          "departamento": "CÓRDOBA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 8.221187,
+          "longitud": -75.480897,
+          "distancia_km": 30.39
+        }
+      ]
+    },
+    "NODO_18": {
+      "info": {
+        "nombre": "SANTA MARTA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 7378,
+        "latitud": 11.204679,
+        "longitud": -74.199829
+      },
+      "subnodos": [
+        {
+          "id": "SAT_089",
+          "nombre": "ARACATACA",
+          "departamento": "MAGDALENA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 10.589791,
+          "longitud": -74.186702,
+          "distancia_km": 12.21
+        }
+      ]
+    },
+    "NODO_19": {
+      "info": {
+        "nombre": "BARRANCABERMEJA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 6345,
+        "latitud": 7.064857,
+        "longitud": -73.849243
+      },
+      "subnodos": [
+        {
+          "id": "SAT_013",
+          "nombre": "PUERTO PARRA",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1750,
+          "latitud": 6.650785,
+          "longitud": -74.056129,
+          "distancia_km": 52.43
+        },
+        {
+          "id": "SAT_012",
+          "nombre": "SEGOVIA",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1750,
+          "latitud": 7.079648,
+          "longitud": -74.701596,
+          "distancia_km": 54.49
+        }
+      ]
+    },
+    "NODO_20": {
+      "info": {
+        "nombre": "BUENAVENTURA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 2721,
+        "latitud": 3.875708,
+        "longitud": -77.01074
+      },
+      "subnodos": [
+        {
+          "id": "SAT_017",
+          "nombre": "EL LITORAL DEL SAN JUAN",
+          "departamento": "CHOCÓ",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 4.259564,
+          "longitud": -77.363702,
+          "distancia_km": 0.0
+        }
+      ]
+    },
+    "NODO_21": {
+      "info": {
+        "nombre": "BARBOSA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 33432,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_011",
+          "nombre": "YALÍ",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 6.676554,
+          "longitud": -74.840059,
+          "distancia_km": 15.58
+        },
+        {
+          "id": "SAT_009",
+          "nombre": "CAMPAMENTO",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 6.979771,
+          "longitud": -75.298091,
+          "distancia_km": 19.35
+        },
+        {
+          "id": "SAT_010",
+          "nombre": "CARACOLÍ",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 6.409829,
+          "longitud": -74.757421,
+          "distancia_km": 20.46
+        }
+      ]
+    },
+    "NODO_22": {
+      "info": {
+        "nombre": "SANTA FÉ DE ANTIOQUIA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 32510,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_087",
+          "nombre": "CÁCERES",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 7.578366,
+          "longitud": -75.35205,
+          "distancia_km": 3.54
+        },
+        {
+          "id": "SAT_088",
+          "nombre": "URAMITA",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 6.898393,
+          "longitud": -76.173284,
+          "distancia_km": 12.63
+        },
+        {
+          "id": "SAT_086",
+          "nombre": "TOLEDO",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 7.010328,
+          "longitud": -75.692281,
+          "distancia_km": 23.07
+        }
+      ]
+    },
+    "NODO_23": {
+      "info": {
+        "nombre": "VILLAVICENCIO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 30258,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_127",
+          "nombre": "MEDINA",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 4.506298,
+          "longitud": -73.348449,
+          "distancia_km": 21.31
+        },
+        {
+          "id": "SAT_125",
+          "nombre": "EL CASTILLO",
+          "departamento": "META",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4000,
+          "latitud": 3.563907,
+          "longitud": -73.794225,
+          "distancia_km": 25.68
+        },
+        {
+          "id": "SAT_126",
+          "nombre": "CABUYARO",
+          "departamento": "META",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 4.286705,
+          "longitud": -72.791768,
+          "distancia_km": 33.67
+        },
+        {
+          "id": "SAT_128",
+          "nombre": "FUENTE DE ORO",
+          "departamento": "META",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 3.462875,
+          "longitud": -73.618121,
+          "distancia_km": 40.53
+        }
+      ]
+    },
+    "NODO_24": {
+      "info": {
+        "nombre": "JAMUNDÍ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 24973,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_035",
+          "nombre": "TORIBÍO",
+          "departamento": "CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 2.953017,
+          "longitud": -76.270284,
+          "distancia_km": 0.0
+        }
+      ]
+    },
+    "NODO_25": {
+      "info": {
+        "nombre": "RIOHACHA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 22000,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_080",
+          "nombre": "URIBIA",
+          "departamento": "LA GUAJIRA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 11.711904,
+          "longitud": -72.265906,
+          "distancia_km": 24.78
+        },
+        {
+          "id": "SAT_079",
+          "nombre": "HATONUEVO",
+          "departamento": "LA GUAJIRA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 11.068864,
+          "longitud": -72.75904,
+          "distancia_km": 30.95
+        }
+      ]
+    },
+    "NODO_26": {
+      "info": {
+        "nombre": "ENVIGADO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 21571,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_024",
+          "nombre": "LA PINTADA",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 5.743808,
+          "longitud": -75.60781,
+          "distancia_km": 9.42
+        }
+      ]
+    },
+    "NODO_27": {
+      "info": {
+        "nombre": "IBAGUÉ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 20480,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_032",
+          "nombre": "LÉRIDA",
+          "departamento": "TOLIMA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 4.862046,
+          "longitud": -74.910716,
+          "distancia_km": 10.51
+        },
+        {
+          "id": "SAT_033",
+          "nombre": "SAN ANTONIO",
+          "departamento": "TOLIMA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 3.914146,
+          "longitud": -75.480074,
+          "distancia_km": 26.49
+        }
+      ]
+    },
+    "NODO_28": {
+      "info": {
+        "nombre": "GIRARDOT",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 16965,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_029",
+          "nombre": "AMBALEMA",
+          "departamento": "TOLIMA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 4.782682,
+          "longitud": -74.764429,
+          "distancia_km": 6.87
+        },
+        {
+          "id": "SAT_030",
+          "nombre": "VILLARRICA",
+          "departamento": "TOLIMA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 3.936902,
+          "longitud": -74.600285,
+          "distancia_km": 36.25
+        }
+      ]
+    },
+    "NODO_29": {
+      "info": {
+        "nombre": "RIONEGRO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 15461,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_078",
+          "nombre": "NARIÑO",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 5.610777,
+          "longitud": -75.176262,
+          "distancia_km": 28.13
+        },
+        {
+          "id": "SAT_077",
+          "nombre": "SAN LUIS",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 6.043017,
+          "longitud": -74.993619,
+          "distancia_km": 34.12
+        }
+      ]
+    },
+    "NODO_30": {
+      "info": {
+        "nombre": "EL PEÑÓN",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 15098,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_141",
+          "nombre": "LA DORADA",
+          "departamento": "CALDAS",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 5.460834,
+          "longitud": -74.668819,
+          "distancia_km": 1.14
+        },
+        {
+          "id": "SAT_138",
+          "nombre": "GAMA",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 4.763325,
+          "longitud": -73.611037,
+          "distancia_km": 7.16
+        },
+        {
+          "id": "SAT_139",
+          "nombre": "FÚQUENE",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 5.403997,
+          "longitud": -73.795855,
+          "distancia_km": 9.32
+        },
+        {
+          "id": "SAT_140",
+          "nombre": "LA PALMA",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 5.358816,
+          "longitud": -74.391022,
+          "distancia_km": 11.08
+        },
+        {
+          "id": "SAT_136",
+          "nombre": "GUATEQUE",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 5.007321,
+          "longitud": -73.471207,
+          "distancia_km": 11.59
+        },
+        {
+          "id": "SAT_137",
+          "nombre": "LA PEÑA",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 5.198945,
+          "longitud": -74.394105,
+          "distancia_km": 12.1
+        },
+        {
+          "id": "SAT_135",
+          "nombre": "MUZO",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4500,
+          "latitud": 5.532758,
+          "longitud": -74.10269,
+          "distancia_km": 15.9
+        }
+      ]
+    },
+    "NODO_31": {
+      "info": {
+        "nombre": "TUNJA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 14119,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_123",
+          "nombre": "ENCINO",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 6.137429,
+          "longitud": -73.098749,
+          "distancia_km": 0.0
+        },
+        {
+          "id": "SAT_122",
+          "nombre": "LANDÁZURI",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 6.218812,
+          "longitud": -73.811359,
+          "distancia_km": 0.0
+        },
+        {
+          "id": "SAT_113",
+          "nombre": "BELÉN",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 5.98923,
+          "longitud": -72.911641,
+          "distancia_km": 5.75
+        },
+        {
+          "id": "SAT_121",
+          "nombre": "BARBOSA",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 5.932531,
+          "longitud": -73.615965,
+          "distancia_km": 7.33
+        },
+        {
+          "id": "SAT_112",
+          "nombre": "CUÍTIVA",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 5.580367,
+          "longitud": -72.965923,
+          "distancia_km": 7.43
+        },
+        {
+          "id": "SAT_114",
+          "nombre": "FLORIÁN",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 5.804659,
+          "longitud": -73.97143,
+          "distancia_km": 7.65
+        },
+        {
+          "id": "SAT_107",
+          "nombre": "CORRALES",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 5.828064,
+          "longitud": -72.844795,
+          "distancia_km": 9.18
+        },
+        {
+          "id": "SAT_120",
+          "nombre": "SUSA",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 5.455291,
+          "longitud": -73.813938,
+          "distancia_km": 10.29
+        },
+        {
+          "id": "SAT_116",
+          "nombre": "NOBSA",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 5.768046,
+          "longitud": -72.937042,
+          "distancia_km": 10.32
+        },
+        {
+          "id": "SAT_119",
+          "nombre": "BOLÍVAR",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 5.988953,
+          "longitud": -73.771346,
+          "distancia_km": 10.7
+        },
+        {
+          "id": "SAT_115",
+          "nombre": "EL GUACAMAYO",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 6.245111,
+          "longitud": -73.496908,
+          "distancia_km": 10.78
+        },
+        {
+          "id": "SAT_118",
+          "nombre": "SAN LUIS DE GACENO",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 4.81976,
+          "longitud": -73.168076,
+          "distancia_km": 11.36
+        },
+        {
+          "id": "SAT_109",
+          "nombre": "GARAGOA",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4500,
+          "latitud": 5.083234,
+          "longitud": -73.364413,
+          "distancia_km": 11.98
+        },
+        {
+          "id": "SAT_108",
+          "nombre": "BRICEÑO",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 5.690879,
+          "longitud": -73.92326,
+          "distancia_km": 12.74
+        },
+        {
+          "id": "SAT_110",
+          "nombre": "SANTANA",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4000,
+          "latitud": 6.056866,
+          "longitud": -73.481639,
+          "distancia_km": 13.22
+        },
+        {
+          "id": "SAT_117",
+          "nombre": "GUACHETÁ",
+          "departamento": "CUNDINAMARCA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 5.383378,
+          "longitud": -73.686972,
+          "distancia_km": 13.74
+        },
+        {
+          "id": "SAT_111",
+          "nombre": "PÁEZ",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 5.097319,
+          "longitud": -73.052737,
+          "distancia_km": 14.39
+        }
+      ]
+    },
+    "NODO_32": {
+      "info": {
+        "nombre": "POPAYÁN",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 13741,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_066",
+          "nombre": "ISNOS",
+          "departamento": "HUILA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 1.929467,
+          "longitud": -76.217637,
+          "distancia_km": 20.75
+        },
+        {
+          "id": "SAT_067",
+          "nombre": "PATÍA",
+          "departamento": "CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 2.115875,
+          "longitud": -76.981075,
+          "distancia_km": 30.21
+        },
+        {
+          "id": "SAT_068",
+          "nombre": "LÓPEZ DE MICAY",
+          "departamento": "CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 2.846788,
+          "longitud": -77.247803,
+          "distancia_km": 30.71
+        },
+        {
+          "id": "SAT_069",
+          "nombre": "INZÁ",
+          "departamento": "CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 2.549183,
+          "longitud": -76.063503,
+          "distancia_km": 34.8
+        }
+      ]
+    },
+    "NODO_33": {
+      "info": {
+        "nombre": "NEIVA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 10427,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_060",
+          "nombre": "SAN VICENTE DEL CAGUÁN",
+          "departamento": "CAQUETÁ",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 2.119413,
+          "longitud": -74.767894,
+          "distancia_km": 0.0
+        },
+        {
+          "id": "SAT_058",
+          "nombre": "YAGUARÁ",
+          "departamento": "HUILA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4500,
+          "latitud": 2.664694,
+          "longitud": -75.518023,
+          "distancia_km": 28.46
+        },
+        {
+          "id": "SAT_061",
+          "nombre": "RIOBLANCO",
+          "departamento": "TOLIMA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 3.529932,
+          "longitud": -75.644069,
+          "distancia_km": 28.91
+        },
+        {
+          "id": "SAT_059",
+          "nombre": "COLOMBIA",
+          "departamento": "HUILA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 3.376745,
+          "longitud": -74.802815,
+          "distancia_km": 33.83
+        }
+      ]
+    },
+    "NODO_34": {
+      "info": {
+        "nombre": "MANIZALES",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 9541,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_040",
+          "nombre": "GUÁTICA",
+          "departamento": "RISARALDA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 5.315367,
+          "longitud": -75.799005,
+          "distancia_km": 10.55
+        },
+        {
+          "id": "SAT_042",
+          "nombre": "FALAN",
+          "departamento": "TOLIMA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 5.123104,
+          "longitud": -74.953007,
+          "distancia_km": 10.73
+        },
+        {
+          "id": "SAT_038",
+          "nombre": "MARMATO",
+          "departamento": "CALDAS",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 5.47422,
+          "longitud": -75.600049,
+          "distancia_km": 11.73
+        },
+        {
+          "id": "SAT_041",
+          "nombre": "VILLAHERMOSA",
+          "departamento": "TOLIMA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 5.030452,
+          "longitud": -75.117729,
+          "distancia_km": 12.15
+        },
+        {
+          "id": "SAT_039",
+          "nombre": "MARQUETALIA",
+          "departamento": "CALDAS",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 5.297525,
+          "longitud": -75.053097,
+          "distancia_km": 14.97
+        }
+      ]
+    },
+    "NODO_35": {
+      "info": {
+        "nombre": "TULUÁ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 9017,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_106",
+          "nombre": "GINEBRA",
+          "departamento": "VALLE DEL CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 3.724181,
+          "longitud": -76.268068,
+          "distancia_km": 5.29
+        },
+        {
+          "id": "SAT_105",
+          "nombre": "EL DOVIO",
+          "departamento": "VALLE DEL CAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 4.510452,
+          "longitud": -76.237084,
+          "distancia_km": 39.12
+        }
+      ]
+    },
+    "NODO_36": {
+      "info": {
+        "nombre": "ARMENIA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 8292,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_005",
+          "nombre": "PUEBLORRICO",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4000,
+          "latitud": 5.79158,
+          "longitud": -75.839903,
+          "distancia_km": 17.48
+        },
+        {
+          "id": "SAT_006",
+          "nombre": "URRAO",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 6.317343,
+          "longitud": -76.133951,
+          "distancia_km": 30.19
+        }
+      ]
+    },
+    "NODO_37": {
+      "info": {
+        "nombre": "PASTO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 7915,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_073",
+          "nombre": "SAN PABLO",
+          "departamento": "NARIÑO",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 1.669429,
+          "longitud": -77.013984,
+          "distancia_km": 10.01
+        },
+        {
+          "id": "SAT_072",
+          "nombre": "LA UNIÓN",
+          "departamento": "NARIÑO",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 1.600219,
+          "longitud": -77.131316,
+          "distancia_km": 11.67
+        },
+        {
+          "id": "SAT_071",
+          "nombre": "LOS ANDES",
+          "departamento": "NARIÑO",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 1.494587,
+          "longitud": -77.521303,
+          "distancia_km": 13.48
+        },
+        {
+          "id": "SAT_070",
+          "nombre": "EL ROSARIO",
+          "departamento": "NARIÑO",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 1.745309,
+          "longitud": -77.33417,
+          "distancia_km": 17.66
+        }
+      ]
+    },
+    "NODO_38": {
+      "info": {
+        "nombre": "FLORENCIA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 6635,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_025",
+          "nombre": "ELÍAS",
+          "departamento": "HUILA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 6500,
+          "latitud": 2.012854,
+          "longitud": -75.938301,
+          "distancia_km": 25.94
+        },
+        {
+          "id": "SAT_028",
+          "nombre": "CARTAGENA DEL CHAIRÁ",
+          "departamento": "CAQUETÁ",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 1.332371,
+          "longitud": -74.847867,
+          "distancia_km": 47.31
+        },
+        {
+          "id": "SAT_026",
+          "nombre": "SOLITA",
+          "departamento": "CAQUETÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2100,
+          "latitud": 0.87654,
+          "longitud": -75.619902,
+          "distancia_km": 52.29
+        },
+        {
+          "id": "SAT_027",
+          "nombre": "PUERTO LEGUÍZAMO",
+          "departamento": "PUTUMAYO",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 400,
+          "latitud": -0.192318,
+          "longitud": -74.781842,
+          "distancia_km": 80.82
+        }
+      ]
+    },
+    "NODO_39": {
+      "info": {
+        "nombre": "SINCELEJO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 2716,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_091",
+          "nombre": "LA UNIÓN",
+          "departamento": "SUCRE",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 8.853975,
+          "longitud": -75.276056,
+          "distancia_km": 21.61
+        },
+        {
+          "id": "SAT_092",
+          "nombre": "SAN ONOFRE",
+          "departamento": "SUCRE",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2100,
+          "latitud": 9.736955,
+          "longitud": -75.522398,
+          "distancia_km": 57.38
+        }
+      ]
+    },
+    "NODO_40": {
+      "info": {
+        "nombre": "AGUACHICA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 2591,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_004",
+          "nombre": "SAN MARTÍN DE LOBA",
+          "departamento": "BOLÍVAR",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 8.937485,
+          "longitud": -74.039134,
+          "distancia_km": 18.1
+        },
+        {
+          "id": "SAT_002",
+          "nombre": "CURUMANÍ",
+          "departamento": "CESAR",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 9.201716,
+          "longitud": -73.540843,
+          "distancia_km": 20.53
+        },
+        {
+          "id": "SAT_001",
+          "nombre": "ARENAL",
+          "departamento": "BOLÍVAR",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 8.458865,
+          "longitud": -73.941099,
+          "distancia_km": 29.3
+        },
+        {
+          "id": "SAT_003",
+          "nombre": "SANTA ROSA DEL SUR",
+          "departamento": "BOLÍVAR",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 7.963938,
+          "longitud": -74.052243,
+          "distancia_km": 30.67
+        }
+      ]
+    },
+    "NODO_41": {
+      "info": {
+        "nombre": "SAN MIGUEL",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 16000,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_098",
+          "nombre": "TAME",
+          "departamento": "ARAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 6.453324,
+          "longitud": -71.754427,
+          "distancia_km": 0.0
+        },
+        {
+          "id": "SAT_094",
+          "nombre": "EL ESPINO",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 6.483027,
+          "longitud": -72.497007,
+          "distancia_km": 8.78
+        },
+        {
+          "id": "SAT_103",
+          "nombre": "BOAVITA",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 6.330703,
+          "longitud": -72.584905,
+          "distancia_km": 9.9
+        },
+        {
+          "id": "SAT_101",
+          "nombre": "SAN JOAQUÍN",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 6.427548,
+          "longitud": -72.867638,
+          "distancia_km": 10.11
+        },
+        {
+          "id": "SAT_102",
+          "nombre": "OCAMONTE",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 6.339988,
+          "longitud": -73.122563,
+          "distancia_km": 10.23
+        },
+        {
+          "id": "SAT_100",
+          "nombre": "CABRERA",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4000,
+          "latitud": 6.592118,
+          "longitud": -73.246475,
+          "distancia_km": 10.41
+        },
+        {
+          "id": "SAT_095",
+          "nombre": "CONFINES",
+          "departamento": "SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3500,
+          "latitud": 6.357327,
+          "longitud": -73.240554,
+          "distancia_km": 13.24
+        },
+        {
+          "id": "SAT_097",
+          "nombre": "CÁCOTA",
+          "departamento": "NORTE DE SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 7.268705,
+          "longitud": -72.642059,
+          "distancia_km": 13.51
+        },
+        {
+          "id": "SAT_099",
+          "nombre": "JERICÓ",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 6.145735,
+          "longitud": -72.571122,
+          "distancia_km": 15.61
+        },
+        {
+          "id": "SAT_096",
+          "nombre": "CUBARÁ",
+          "departamento": "BOYACÁ",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 6.997275,
+          "longitud": -72.107939,
+          "distancia_km": 17.16
+        }
+      ]
+    },
+    "NODO_42": {
+      "info": {
+        "nombre": "ARAUCA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 14500,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_008",
+          "nombre": "PUERTO RONDÓN",
+          "departamento": "ARAUCA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 6.281461,
+          "longitud": -71.10339,
+          "distancia_km": 103.97
+        }
+      ]
+    },
+    "NODO_43": {
+      "info": {
+        "nombre": "MOCOA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 13500,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_055",
+          "nombre": "PUERTO CAICEDO",
+          "departamento": "PUTUMAYO",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2100,
+          "latitud": 0.687784,
+          "longitud": -76.606118,
+          "distancia_km": 56.74
+        }
+      ]
+    },
+    "NODO_44": {
+      "info": {
+        "nombre": "LETICIA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 12000,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_037",
+          "nombre": "PUERTO ARICA",
+          "departamento": "AMAZONAS",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 800,
+          "latitud": -2.147039,
+          "longitud": -71.752186,
+          "distancia_km": 209.27
+        }
+      ]
+    },
+    "NODO_45": {
+      "info": {
+        "nombre": "QUIBDÓ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 11200,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_074",
+          "nombre": "RÍO IRÓ",
+          "departamento": "CHOCÓ",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4500,
+          "latitud": 5.1863,
+          "longitud": -76.472925,
+          "distancia_km": 27.99
+        },
+        {
+          "id": "SAT_075",
+          "nombre": "BAHÍA SOLANO",
+          "departamento": "CHOCÓ",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 6.222807,
+          "longitud": -77.401359,
+          "distancia_km": 38.34
+        },
+        {
+          "id": "SAT_076",
+          "nombre": "MEDIO BAUDÓ",
+          "departamento": "CHOCÓ",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 5.192471,
+          "longitud": -76.950891,
+          "distancia_km": 38.61
+        }
+      ]
+    },
+    "NODO_46": {
+      "info": {
+        "nombre": "SAN JOSÉ DEL GUAVIARE",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 10500,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_104",
+          "nombre": "CALAMAR",
+          "departamento": "GUAVIARE",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 1.960982,
+          "longitud": -72.655197,
+          "distancia_km": 123.88
+        }
+      ]
+    },
+    "NODO_47": {
+      "info": {
+        "nombre": "PUERTO CARREÑO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 9800,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": []
+    },
+    "NODO_48": {
+      "info": {
+        "nombre": "APARTADÓ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 9500,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_007",
+          "nombre": "MUTATÁ",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 500,
+          "latitud": 7.242875,
+          "longitud": -76.435875,
+          "distancia_km": 0.0
+        }
+      ]
+    },
+    "NODO_49": {
+      "info": {
+        "nombre": "INÍRIDA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 9200,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_031",
+          "nombre": "CACAHUAL",
+          "departamento": "GUAINÍA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1200,
+          "latitud": 3.52617,
+          "longitud": -67.413312,
+          "distancia_km": 225.39
+        }
+      ]
+    },
+    "NODO_50": {
+      "info": {
+        "nombre": "IPIALES",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 8800,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_034",
+          "nombre": "MALLAMA",
+          "departamento": "NARIÑO",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 1.141037,
+          "longitud": -77.864549,
+          "distancia_km": 17.02
+        }
+      ]
+    },
+    "NODO_51": {
+      "info": {
+        "nombre": "SAN ANDRÉS DE TUMACO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 8500,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_083",
+          "nombre": "MAGÜÍ",
+          "departamento": "NARIÑO",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 1.765633,
+          "longitud": -78.182924,
+          "distancia_km": 9.49
+        },
+        {
+          "id": "SAT_082",
+          "nombre": "EL CHARCO",
+          "departamento": "NARIÑO",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 3000,
+          "latitud": 2.479688,
+          "longitud": -78.110217,
+          "distancia_km": 26.1
+        }
+      ]
+    },
+    "NODO_52": {
+      "info": {
+        "nombre": "OCAÑA",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 8200,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_062",
+          "nombre": "EL TARRA",
+          "departamento": "NORTE DE SANTANDER",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1050,
+          "latitud": 8.574281,
+          "longitud": -73.09614,
+          "distancia_km": 59.19
+        }
+      ]
+    },
+    "NODO_53": {
+      "info": {
+        "nombre": "MITÚ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 8100,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_054",
+          "nombre": "MORICHAL",
+          "departamento": "GUAINÍA",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 600,
+          "latitud": 2.265132,
+          "longitud": -69.919404,
+          "distancia_km": 91.86
+        },
+        {
+          "id": "SAT_053",
+          "nombre": "TARAIRA",
+          "departamento": "VAUPÉS",
+          "tipo": "SATELITE",
+          "categoria": "C5",
+          "color": "#6C757D",
+          "demanda": 600,
+          "latitud": -0.564984,
+          "longitud": -69.635497,
+          "distancia_km": 96.76
+        },
+        {
+          "id": "SAT_052",
+          "nombre": "MIRITÍ - PARANÁ",
+          "departamento": "AMAZONAS",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1200,
+          "latitud": -0.888833,
+          "longitud": -70.98893,
+          "distancia_km": 171.51
+        }
+      ]
+    },
+    "NODO_54": {
+      "info": {
+        "nombre": "MAGANGUÉ",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 7500,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_051",
+          "nombre": "ARIGUANÍ",
+          "departamento": "MAGDALENA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1500,
+          "latitud": 9.847047,
+          "longitud": -74.236515,
+          "distancia_km": 16.69
+        },
+        {
+          "id": "SAT_047",
+          "nombre": "TENERIFE",
+          "departamento": "MAGDALENA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2000,
+          "latitud": 9.898273,
+          "longitud": -74.859783,
+          "distancia_km": 19.88
+        },
+        {
+          "id": "SAT_048",
+          "nombre": "SAN BENITO ABAD",
+          "departamento": "SUCRE",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1000,
+          "latitud": 8.930108,
+          "longitud": -75.031089,
+          "distancia_km": 23.59
+        },
+        {
+          "id": "SAT_049",
+          "nombre": "GUAMAL",
+          "departamento": "MAGDALENA",
+          "tipo": "SATELITE",
+          "categoria": "C2",
+          "color": "#8338EC",
+          "demanda": 4500,
+          "latitud": 9.144354,
+          "longitud": -74.223689,
+          "distancia_km": 31.95
+        },
+        {
+          "id": "SAT_050",
+          "nombre": "SAN JACINTO DEL CAUCA",
+          "departamento": "BOLÍVAR",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 2500,
+          "latitud": 8.25158,
+          "longitud": -74.721156,
+          "distancia_km": 32.11
+        }
+      ]
+    },
+    "NODO_55": {
+      "info": {
+        "nombre": "TURBO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 7200,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_124",
+          "nombre": "NECOCLÍ",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C4",
+          "color": "#C77DFF",
+          "demanda": 1400,
+          "latitud": 8.434526,
+          "longitud": -76.787271,
+          "distancia_km": 51.29
+        }
+      ]
+    },
+    "NODO_56": {
+      "info": {
+        "nombre": "RIOSUCIO",
+        "categoria": "N/A",
+        "tipo_l3": "N/A",
+        "color": "#999",
+        "demanda": 6800,
+        "latitud": null,
+        "longitud": null
+      },
+      "subnodos": [
+        {
+          "id": "SAT_081",
+          "nombre": "MURINDÓ",
+          "departamento": "ANTIOQUIA",
+          "tipo": "SATELITE",
+          "categoria": "C3",
+          "color": "#A05EB5",
+          "demanda": 1750,
+          "latitud": 6.97771,
+          "longitud": -76.817485,
+          "distancia_km": 62.85
+        }
+      ]
+    }
+  }
+}

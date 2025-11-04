@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "fecha": "2025-11-03",
+    "descripcion": "Estructura jerárquica L3→L4 para mapa interactivo con sidebar",
+    "total_tipos": 8,
+    "total_nodos": 197,
+    "fuente": "https://docs.google.com/spreadsheets/d/1ibTlTyAELNoMg6eERPvddPBdsu-eRvWuXlIbI5kDFqU/"
+  },
+  "tipos_l3": [
+    {
+      "tipo_id": "L3.CALE.n_1.plus",
+      "nombre": "CALE Metropolitano Premium",
+      "categoria": "Cat.A+",
+      "color": "#E63946",
+      "icono": "🔴",
+      "orden": 1,
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "opex_mensual": 200000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "personal_total": 12
+      },
+      "cantidad_instancias": 3,
+      "metricas_agregadas": {
+        "capex_total": 11185020000,
+        "opex_anual_total": 7200000000,
+        "demanda_total": 218849,
+        "capacidad_total": 519120,
+        "personal_total": 36,
+        "municipios_cluster_total": 28
+      },
+      "instancias_l4": [
+        {
+          "nodo_id": "NODO_01",
+          "nombre": "BOGOTÁ SUR",
+          "codigo_dane": "11001",
+          "departamento": "BOGOTA, D.C.",
+          "coords": {
+            "lat": 4.649251,
+            "lon": -74.106992
+          },
+          "demanda_anual": 80453,
+          "cluster_municipios": 7,
+          "infraestructura": {
+            "direccion_teorica": "Cra. 71D #6-94 Sur, CC Plaza de las Américas, Kennedy",
+            "sede_real": {
+              "lat": 4.626889,
+              "lon": -74.144722
+            },
+            "espacio_practico": {
+              "direccion": "Calle 13 #68G-01, Zona Franca Fontibón",
+              "lat": 4.689722,
+              "lon": -74.145556
+            },
+            "area_m2": 3800,
+            "inmobiliaria": "CBRE Colombia",
+            "arriendo_mensual": 77000000,
+            "arriendo_anual": 924000000
+          },
+          "satelites_vinculados": ["SAT_016"],
+          "destacado": true,
+          "notas": "Mayor demanda nacional - Requiere configuración premium"
+        },
+        {
+          "nodo_id": "NODO_02",
+          "nombre": "BOGOTÁ NORTE",
+          "codigo_dane": "11001",
+          "departamento": "BOGOTA, D.C.",
+          "coords": {
+            "lat": 4.649251,
+            "lon": -74.106992
+          },
+          "demanda_anual": 70396,
+          "cluster_municipios": 7,
+          "infraestructura": {
+            "direccion_teorica": "Cra. 71D #6-94 Sur, CC Plaza de las Américas, Kennedy",
+            "sede_real": {
+              "lat": 4.626889,
+              "lon": -74.144722
+            },
+            "espacio_practico": {
+              "direccion": "Calle 13 #68G-01, Zona Franca Fontibón",
+              "lat": 4.689722,
+              "lon": -74.145556
+            },
+            "area_m2": 3800,
+            "inmobiliaria": "CBRE Colombia",
+            "arriendo_mensual": 77000000,
+            "arriendo_anual": 924000000
+          },
+          "satelites_vinculados": [],
+          "destacado": true
+        },
+        {
+          "nodo_id": "NODO_03",
+          "nombre": "BUCARAMANGA",
+          "codigo_dane": "68001",
+          "departamento": "SANTANDER",
+          "coords": {
+            "lat": 7.11647,
+            "lon": -73.132562
+          },
+          "demanda_anual": 68000,
+          "cluster_municipios": 14,
+          "infraestructura": {
+            "direccion_teorica": "Cra. 27 #42-27, CC Cacique",
+            "sede_real": {
+              "lat": 7.119444,
+              "lon": -73.122778
+            },
+            "espacio_practico": {
+              "direccion": "Km 4 Vía Girón, Parque Industrial Chimitá",
+              "lat": 7.115556,
+              "lon": -73.128611
+            },
+            "area_m2": 3500,
+            "inmobiliaria": "Lonja de Santander",
+            "arriendo_mensual": 66500000,
+            "arriendo_anual": 798000000
+          },
+          "satelites_vinculados": ["SAT_018", "SAT_019"],
+          "destacado": true
+        }
+      ]
+    },
+    {
+      "tipo_id": "L3.CALE.n_1.base",
+      "nombre": "CALE Metropolitano Base",
+      "categoria": "Cat.A",
+      "color": "#F77F00",
+      "icono": "🟠",
+      "orden": 2,
+      "valores_unitarios": {
+        "capex": 2818340000,
+        "opex_anual": 2400000000,
+        "opex_mensual": 200000000,
+        "capacidad_anual": 127644,
+        "cubiculos": 24,
+        "personal_total": 8
+      },
+      "cantidad_instancias": 17,
+      "metricas_agregadas": {
+        "capex_total": 47911780000,
+        "opex_anual_total": 40800000000,
+        "demanda_total": 387065,
+        "capacidad_total": 2169948,
+        "personal_total": 136,
+        "municipios_cluster_total": 120
+      },
+      "instancias_l4": [
+        {
+          "nodo_id": "NODO_04",
+          "nombre": "CALI",
+          "codigo_dane": "76001",
+          "departamento": "VALLE DEL CAUCA",
+          "coords": {"lat": 3.413686, "lon": -76.52133},
+          "demanda_anual": 57318,
+          "cluster_municipios": 10,
+          "destacado": true
+        },
+        {
+          "nodo_id": "NODO_05",
+          "nombre": "IBAGUÉ",
+          "codigo_dane": "73001",
+          "departamento": "TOLIMA",
+          "coords": {"lat": 4.432248, "lon": -75.19425},
+          "demanda_anual": 55000,
+          "cluster_municipios": 8
+        },
+        {
+          "nodo_id": "NODO_06",
+          "nombre": "PASTO",
+          "codigo_dane": "52001",
+          "departamento": "NARINO",
+          "coords": {"lat": 1.212352, "lon": -77.278795},
+          "demanda_anual": 52000,
+          "cluster_municipios": 23
+        },
+        {
+          "nodo_id": "NODO_07",
+          "nombre": "MOSQUERA",
+          "codigo_dane": "25473",
+          "departamento": "CUNDINAMARCA",
+          "coords": {"lat": 4.70653, "lon": -74.221154},
+          "demanda_anual": 50283,
+          "cluster_municipios": 18
+        },
+        {
+          "nodo_id": "NODO_08",
+          "nombre": "VALLEDUPAR",
+          "codigo_dane": "20001",
+          "departamento": "CESAR",
+          "coords": {"lat": 10.460472, "lon": -73.259398},
+          "demanda_anual": 40000,
+          "cluster_municipios": 2
+        },
+        {
+          "nodo_id": "NODO_09",
+          "nombre": "SAN JOSÉ DE CÚCUTA",
+          "codigo_dane": "54001",
+          "departamento": "NORTE DE SANTANDER",
+          "coords": {"lat": 7.905725, "lon": -72.508178},
+          "demanda_anual": 35320,
+          "cluster_municipios": 14
+        },
+        {
+          "nodo_id": "NODO_10",
+          "nombre": "MEDELLÍN",
+          "codigo_dane": "05001",
+          "departamento": "ANTIOQUIA",
+          "coords": {"lat": 6.246631, "lon": -75.581775},
+          "demanda_anual": 27733,
+          "cluster_municipios": 5
+        },
+        {
+          "nodo_id": "NODO_11",
+          "nombre": "BARRANQUILLA",
+          "codigo_dane": "08001",
+          "departamento": "ATLANTICO",
+          "coords": {"lat": 10.977961, "lon": -74.815546},
+          "demanda_anual": 27550,
+          "cluster_municipios": 16
+        },
+        {
+          "nodo_id": "NODO_12",
+          "nombre": "PEREIRA",
+          "codigo_dane": "66001",
+          "departamento": "RISARALDA",
+          "coords": {"lat": 4.804985, "lon": -75.719711},
+          "demanda_anual": 22368,
+          "cluster_municipios": 23
+        },
+        {
+          "nodo_id": "NODO_13",
+          "nombre": "CARTAGENA DE INDIAS",
+          "codigo_dane": "13001",
+          "departamento": "BOLIVAR",
+          "coords": {"lat": 10.385126, "lon": -75.496269},
+          "demanda_anual": 14021,
+          "cluster_municipios": 10
+        },
+        {
+          "nodo_id": "NODO_14",
+          "nombre": "SOACHA",
+          "codigo_dane": "25754",
+          "departamento": "CUNDINAMARCA",
+          "coords": {"lat": 4.579268, "lon": -74.215463},
+          "demanda_anual": 13002,
+          "cluster_municipios": 12
+        },
+        {
+          "nodo_id": "NODO_15",
+          "nombre": "LA PAZ",
+          "codigo_dane": "68397",
+          "departamento": "CESAR",
+          "coords": {"lat": 10.387552, "lon": -73.171365},
+          "demanda_anual": 12407,
+          "cluster_municipios": 6
+        },
+        {
+          "nodo_id": "NODO_16",
+          "nombre": "YOPAL",
+          "codigo_dane": "85001",
+          "departamento": "CASANARE",
+          "coords": {"lat": 5.327102, "lon": -72.396132},
+          "demanda_anual": 11793,
+          "cluster_municipios": 5
+        },
+        {
+          "nodo_id": "NODO_17",
+          "nombre": "MONTERÍA",
+          "codigo_dane": "23001",
+          "departamento": "CORDOBA",
+          "coords": {"lat": 8.759789, "lon": -75.873096},
+          "demanda_anual": 11628,
+          "cluster_municipios": 6
+        },
+        {
+          "nodo_id": "NODO_18",
+          "nombre": "SANTA MARTA",
+          "codigo_dane": "47001",
+          "departamento": "MAGDALENA",
+          "coords": {"lat": 11.204679, "lon": -74.199829},
+          "demanda_anual": 7378,
+          "cluster_municipios": 3
+        },
+        {
+          "nodo_id": "NODO_19",
+          "nombre": "BARRANCABERMEJA",
+          "codigo_dane": "68081",
+          "departamento": "SANTANDER",
+          "coords": {"lat": 7.064857, "lon": -73.849243},
+          "demanda_anual": 6345,
+          "cluster_municipios": 4
+        },
+        {
+          "nodo_id": "NODO_20",
+          "nombre": "BUENAVENTURA",
+          "codigo_dane": "76109",
+          "departamento": "VALLE DEL CAUCA",
+          "coords": {"lat": 3.875708, "lon": -77.01074},
+          "demanda_anual": 2721,
+          "cluster_municipios": 1
+        }
+      ]
+    },
+    {
+      "tipo_id": "L3.CALE.n_2.star",
+      "nombre": "CALE Regional Plus",
+      "categoria": "Cat.B**",
+      "color": "#FCBF49",
+      "icono": "🟡",
+      "orden": 3,
+      "valores_unitarios": {
+        "capex": 2196000000,
+        "opex_anual": 1600000000,
+        "capacidad_anual": 107520,
+        "cubiculos": 16,
+        "personal_total": 8
+      },
+      "cantidad_instancias": 16,
+      "metricas_agregadas": {
+        "capex_total": 35136000000,
+        "opex_anual_total": 25600000000,
+        "demanda_total": 289243,
+        "capacidad_total": 1720320
+      },
+      "instancias_l4": [
+        {"nodo_id": "NODO_21", "nombre": "BARBOSA", "departamento": "ANTIOQUIA", "coords": {"lat": 6.439195, "lon": -75.331627}, "demanda_anual": 33432, "cluster_municipios": 13},
+        {"nodo_id": "NODO_22", "nombre": "SANTA FÉ DE ANTIOQUIA", "departamento": "ANTIOQUIA", "coords": {"lat": 6.556484, "lon": -75.826648}, "demanda_anual": 32510, "cluster_municipios": 13},
+        {"nodo_id": "NODO_23", "nombre": "VILLAVICENCIO", "departamento": "META", "coords": {"lat": 4.126369, "lon": -73.622601}, "demanda_anual": 30258, "cluster_municipios": 10},
+        {"nodo_id": "NODO_24", "nombre": "JAMUNDÍ", "departamento": "VALLE DEL CAUCA", "coords": {"lat": 3.258751, "lon": -76.538472}, "demanda_anual": 24973, "cluster_municipios": 11},
+        {"nodo_id": "NODO_25", "nombre": "RIOHACHA", "departamento": "LA GUAJIRA", "coords": {"lat": 11.528588, "lon": -72.911795}, "demanda_anual": 22000, "cluster_municipios": 1},
+        {"nodo_id": "NODO_26", "nombre": "ENVIGADO", "departamento": "ANTIOQUIA", "coords": {"lat": 6.166695, "lon": -75.582192}, "demanda_anual": 21571, "cluster_municipios": 8},
+        {"nodo_id": "NODO_27", "nombre": "IBAGUÉ", "departamento": "TOLIMA", "coords": {"lat": 4.432248, "lon": -75.19425}, "demanda_anual": 20480, "cluster_municipios": 0},
+        {"nodo_id": "NODO_28", "nombre": "GIRARDOT", "departamento": "CUNDINAMARCA", "coords": {"lat": 4.313069, "lon": -74.798201}, "demanda_anual": 16965, "cluster_municipios": 21},
+        {"nodo_id": "NODO_29", "nombre": "RIONEGRO", "departamento": "ANTIOQUIA", "coords": {"lat": 6.147148, "lon": -75.377316}, "demanda_anual": 15461, "cluster_municipios": 12},
+        {"nodo_id": "NODO_30", "nombre": "EL PEÑÓN", "departamento": "CUNDINAMARCA", "coords": {"lat": 5.025477, "lon": -73.994444}, "demanda_anual": 15098, "cluster_municipios": 24},
+        {"nodo_id": "NODO_31", "nombre": "TUNJA", "departamento": "BOYACA", "coords": {"lat": 5.53988, "lon": -73.355539}, "demanda_anual": 14119, "cluster_municipios": 36},
+        {"nodo_id": "NODO_32", "nombre": "POPAYÁN", "departamento": "CAUCA", "coords": {"lat": 2.459641, "lon": -76.599377}, "demanda_anual": 13741, "cluster_municipios": 12},
+        {"nodo_id": "NODO_33", "nombre": "NEIVA", "departamento": "HUILA", "coords": {"lat": 2.935432, "lon": -75.277327}, "demanda_anual": 10427, "cluster_municipios": 9},
+        {"nodo_id": "NODO_34", "nombre": "MANIZALES", "departamento": "CALDAS", "coords": {"lat": 5.057657, "lon": -75.491025}, "demanda_anual": 9541, "cluster_municipios": 13},
+        {"nodo_id": "NODO_35", "nombre": "TULUÁ", "departamento": "VALLE DEL CAUCA", "coords": {"lat": 4.085399, "lon": -76.197731}, "demanda_anual": 9017, "cluster_municipios": 13},
+        {"nodo_id": "NODO_36", "nombre": "ARMENIA", "departamento": "ANTIOQUIA", "coords": {"lat": 6.155667, "lon": -75.786647}, "demanda_anual": 8292, "cluster_municipios": 13}
+      ]
+    },
+    {
+      "tipo_id": "L3.CALE.n_2.base",
+      "nombre": "CALE Regional Base",
+      "categoria": "Cat.B",
+      "color": "#06D6A0",
+      "icono": "🟢",
+      "orden": 4,
+      "valores_unitarios": {
+        "capex": 1856000000,
+        "opex_anual": 1600000000,
+        "capacidad_anual": 71676,
+        "cubiculos": 16,
+        "personal_total": 6
+      },
+      "cantidad_instancias": 4,
+      "metricas_agregadas": {
+        "capex_total": 7424000000,
+        "opex_anual_total": 6400000000,
+        "demanda_total": 19857,
+        "capacidad_total": 286704
+      },
+      "instancias_l4": [
+        {"nodo_id": "NODO_37", "nombre": "PASTO", "departamento": "NARINO", "coords": {"lat": 1.212352, "lon": -77.278795}, "demanda_anual": 7915},
+        {"nodo_id": "NODO_38", "nombre": "FLORENCIA", "departamento": "CAQUETA", "coords": {"lat": 1.618196, "lon": -75.609831}, "demanda_anual": 6635, "cluster_municipios": 8},
+        {"nodo_id": "NODO_39", "nombre": "SINCELEJO", "departamento": "SUCRE", "coords": {"lat": 9.302322, "lon": -75.395445}, "demanda_anual": 2716, "cluster_municipios": 21},
+        {"nodo_id": "NODO_40", "nombre": "AGUACHICA", "departamento": "CESAR", "coords": {"lat": 8.306811, "lon": -73.614027}, "demanda_anual": 2591, "cluster_municipios": 4}
+      ]
+    },
+    {
+      "tipo_id": "L3.CALE.n_3.base",
+      "nombre": "CALE Provincial",
+      "categoria": "Cat.C1",
+      "color": "#118AB2",
+      "icono": "🔵",
+      "orden": 5,
+      "valores_unitarios": {
+        "capex": 1228000000,
+        "opex_anual": 800000000,
+        "capacidad_anual": 40960,
+        "cubiculos": 8,
+        "personal_total": 5
+      },
+      "cantidad_instancias": 16,
+      "metricas_agregadas": {
+        "capex_total": 19648000000,
+        "opex_anual_total": 12800000000,
+        "demanda_total": 162300,
+        "capacidad_total": 655360
+      },
+      "instancias_l4": [
+        {"nodo_id": "NODO_41", "nombre": "SAN MIGUEL", "departamento": "SANTANDER", "coords": {"lat": 6.811511, "lon": -72.848864}, "demanda_anual": 16000, "cluster_municipios": 18},
+        {"nodo_id": "NODO_42", "nombre": "ARAUCA", "departamento": "ARAUCA", "coords": {"lat": 7.072726, "lon": -70.747408}, "demanda_anual": 14500, "cluster_municipios": 1},
+        {"nodo_id": "NODO_43", "nombre": "MOCOA", "departamento": "PUTUMAYO", "coords": {"lat": 1.151172, "lon": -76.654238}, "demanda_anual": 13500, "cluster_municipios": 6},
+        {"nodo_id": "NODO_44", "nombre": "LETICIA", "departamento": "AMAZONAS", "coords": {"lat": -4.19895, "lon": -69.941721}, "demanda_anual": 12000, "cluster_municipios": 1},
+        {"nodo_id": "NODO_45", "nombre": "QUIBDÓ", "departamento": "CHOCO", "coords": {"lat": 5.682166, "lon": -76.638144}, "demanda_anual": 11200, "cluster_municipios": 6},
+        {"nodo_id": "NODO_46", "nombre": "SAN JOSÉ DEL GUAVIARE", "departamento": "GUAVIARE", "coords": {"lat": 2.565932, "lon": -72.639254}, "demanda_anual": 10500, "cluster_municipios": 3},
+        {"nodo_id": "NODO_47", "nombre": "PUERTO CARREÑO", "departamento": "VICHADA", "coords": {"lat": 6.186636, "lon": -67.487095}, "demanda_anual": 9800, "cluster_municipios": 1},
+        {"nodo_id": "NODO_48", "nombre": "APARTADÓ", "departamento": "ANTIOQUIA", "coords": {"lat": 7.882968, "lon": -76.625279}, "demanda_anual": 9500, "cluster_municipios": 3},
+        {"nodo_id": "NODO_49", "nombre": "INÍRIDA", "departamento": "GUAINIA", "coords": {"lat": 3.866764, "lon": -67.918613}, "demanda_anual": 9200, "cluster_municipios": 1},
+        {"nodo_id": "NODO_50", "nombre": "IPIALES", "departamento": "NARINO", "coords": {"lat": 0.827732, "lon": -77.646367}, "demanda_anual": 8800, "cluster_municipios": 16},
+        {"nodo_id": "NODO_51", "nombre": "SAN ANDRÉS DE TUMACO", "departamento": "NARINO", "coords": {"lat": 1.807399, "lon": -78.764073}, "demanda_anual": 8500, "cluster_municipios": 2},
+        {"nodo_id": "NODO_52", "nombre": "OCAÑA", "departamento": "NORTE DE SANTANDER", "coords": {"lat": 8.248574, "lon": -73.35607}, "demanda_anual": 8200, "cluster_municipios": 10},
+        {"nodo_id": "NODO_53", "nombre": "MITÚ", "departamento": "VAUPES", "coords": {"lat": 1.253151, "lon": -70.232641}, "demanda_anual": 8100, "cluster_municipios": 1},
+        {"nodo_id": "NODO_54", "nombre": "MAGANGUÉ", "departamento": "BOLIVAR", "coords": {"lat": 9.263799, "lon": -74.766742}, "demanda_anual": 7500, "cluster_municipios": 12},
+        {"nodo_id": "NODO_55", "nombre": "TURBO", "departamento": "ANTIOQUIA", "coords": {"lat": 8.089929, "lon": -76.728858}, "demanda_anual": 7200, "cluster_municipios": 1},
+        {"nodo_id": "NODO_56", "nombre": "RIOSUCIO", "departamento": "CHOCO", "coords": {"lat": 7.436704, "lon": -77.113156}, "demanda_anual": 6800, "cluster_municipios": 2}
+      ]
+    },
+    {
+      "tipo_id": "L3.SATELITE.c2",
+      "nombre": "Satélite C2",
+      "categoria": "Cat.C2",
+      "color": "#8338EC",
+      "icono": "⬤",
+      "orden": 6,
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 400000000,
+        "capacidad_anual": 10240,
+        "cubiculos": 8
+      },
+      "cantidad_instancias": 50,
+      "metricas_agregadas": {
+        "capex_total": 40000000000,
+        "opex_anual_total": 20000000000,
+        "demanda_total": 185000,
+        "capacidad_total": 512000
+      },
+      "instancias_l4": "Ver archivo separado satelites_c2.json (50 nodos)"
+    },
+    {
+      "tipo_id": "L3.SATELITE.c3",
+      "nombre": "Satélite C3",
+      "categoria": "Cat.C3",
+      "color": "#A05EB5",
+      "icono": "⬤",
+      "orden": 7,
+      "valores_unitarios": {
+        "capex": 600000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 5120,
+        "cubiculos": 4
+      },
+      "cantidad_instancias": 45,
+      "metricas_agregadas": {
+        "capex_total": 27000000000,
+        "opex_anual_total": 13500000000,
+        "demanda_total": 90000,
+        "capacidad_total": 230400
+      },
+      "instancias_l4": "Ver archivo separado satelites_c3.json (45 nodos)"
+    },
+    {
+      "tipo_id": "L3.SATELITE.c4_c5",
+      "nombre": "Satélite C4/C5",
+      "categoria": "Cat.C4 + C5",
+      "color": "#6C757D",
+      "icono": "⬤",
+      "orden": 8,
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 200000000,
+        "capacidad_anual": 2560,
+        "cubiculos": 2
+      },
+      "cantidad_instancias": 46,
+      "nota": "30 Cat.C4 + 16 Cat.C5",
+      "metricas_agregadas": {
+        "capex_total": 18400000000,
+        "opex_anual_total": 9200000000,
+        "demanda_total": 46000,
+        "capacidad_total": 117760
+      },
+      "instancias_l4": "Ver archivo separado satelites_c4_c5.json (46 nodos)"
+    }
+  ],
+  "resumen_nacional_l5": {
+    "total_nodos": 197,
+    "nodos_principales": 56,
+    "satelites": 141,
+    "financiero": {
+      "capex_total": 206704800000,
+      "opex_anual_total": 135500000000,
+      "presupuesto_5_anios": 884204800000
+    },
+    "capacidad": {
+      "demanda_total": 1398314,
+      "capacidad_total": 2565072,
+      "tasa_cobertura": 1.83
+    },
+    "distribucion_geografica": {
+      "departamentos": 32,
+      "municipios": 197
+    }
+  },
+  "indices_busqueda": {
+    "por_departamento": {
+      "BOGOTA, D.C.": ["NODO_01", "NODO_02"],
+      "SANTANDER": ["NODO_03", "NODO_19", "NODO_41"],
+      "VALLE DEL CAUCA": ["NODO_04", "NODO_20", "NODO_24", "NODO_35"],
+      "ANTIOQUIA": ["NODO_10", "NODO_21", "NODO_22", "NODO_26", "NODO_29", "NODO_36", "NODO_48", "NODO_55"]
+    },
+    "por_categoria": {
+      "Cat.A+": ["NODO_01", "NODO_02", "NODO_03"],
+      "Cat.A": ["NODO_04", "NODO_05", "NODO_06", "NODO_07", "NODO_08", "NODO_09", "NODO_10", "NODO_11", "NODO_12", "NODO_13", "NODO_14", "NODO_15", "NODO_16", "NODO_17", "NODO_18", "NODO_19", "NODO_20"],
+      "Cat.B**": ["NODO_21", "NODO_22", "NODO_23", "NODO_24", "NODO_25", "NODO_26", "NODO_27", "NODO_28", "NODO_29", "NODO_30", "NODO_31", "NODO_32", "NODO_33", "NODO_34", "NODO_35", "NODO_36"],
+      "Cat.B": ["NODO_37", "NODO_38", "NODO_39", "NODO_40"],
+      "Cat.C1": ["NODO_41", "NODO_42", "NODO_43", "NODO_44", "NODO_45", "NODO_46", "NODO_47", "NODO_48", "NODO_49", "NODO_50", "NODO_51", "NODO_52", "NODO_53", "NODO_54", "NODO_55", "NODO_56"]
+    },
+    "destacados": ["NODO_01", "NODO_02", "NODO_03", "NODO_04"]
+  }
+}

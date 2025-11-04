@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM_L0_012 - Baranda metálica contención</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+            color: white;
+            padding: 40px;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .badges { margin-top: 15px; }
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+        }
+        .content { padding: 40px; }
+        .section { margin-bottom: 40px; }
+        .section h2 {
+            color: #c0392b;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        .info-box h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .info-box p {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .specs-table {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .specs-table h3 {
+            color: #c0392b;
+            margin-bottom: 15px;
+        }
+        .specs-table ul {
+            list-style: none;
+            padding: 0;
+        }
+        .specs-table li {
+            padding: 10px;
+            border-bottom: 1px solid #bdc3c7;
+            display: flex;
+            justify-content: space-between;
+        }
+        .specs-table li:last-child { border-bottom: none; }
+        .specs-table li strong {
+            color: #2c3e50;
+        }
+        .normatividad-box {
+            background: #ecf0f1;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        .normatividad-box h3 {
+            color: #c0392b;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .norma-requisito {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        .norma-requisito strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .norma-requisito ul {
+            margin-left: 20px;
+        }
+        .norma-requisito li {
+            margin: 8px 0;
+            color: #555;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-right: 10px;
+        }
+        .btn-back:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔬 Baranda metálica contención</h1>
+            <div class="subtitle">BIM_L0_012 · L0.SEG_001</div>
+            <div class="badges">
+                <span class="badge">Nivel BIM: L0 - Atómico</span>
+                <span class="badge">Categoría: Seguridad</span>
+                <span class="badge">Unidad: ml</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📊 Información General</h2>
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h3>🔖 BIM ID</h3>
+                        <p>BIM_L0_012</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>🏷️ Código L0</h3>
+                        <p>L0.SEG_001</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>📦 Unidad</h3>
+                        <p>ml</p>
+                    </div>
+                </div>
+                <p><strong>Descripción:</strong> Defensa metálica doble onda galvanizada</p>
+                <p><strong>Usado en:</strong> L1.pista_*</p>
+                <p><strong>Fuente:</strong> Tabla #63, Fila 2</p>
+            </div>
+            
+            <div class="section">
+                <h2>🔧 Especificaciones Técnicas</h2>
+                <div class="specs-table">
+                    <h3>Características del Componente</h3>
+                    <ul>
+                        <li><strong>Nombre:</strong> <span>Baranda metálica contención</span></li>
+                        <li><strong>Descripción Técnica:</strong> <span>Defensa metálica doble onda galvanizada</span></li>
+                        <li><strong>Unidad de Medida:</strong> <span>ml</span></li>
+                        <li><strong>Nivel BIM:</strong> <span>L0 - Elemento Atómico</span></li>
+                        <li><strong>Código:</strong> <span>L0.SEG_001</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🔗 Relaciones en Modelo BIM</h2>
+                <div class="specs-table">
+                    <h3>Componentes Superiores que Usan este Elemento</h3>
+                    <p><strong>Usado en:</strong> L1.pista_*</p>
+                    <p style="margin-top: 15px; color: #7f8c8d;">
+                        Este elemento L0 es utilizado como componente atómico en la construcción de ensamblajes de nivel superior (L1).
+                        Ver fichas L1 correspondientes para más detalles.
+                    </p>
+                </div>
+            </div>
+            
+
+        <div class="section">
+            <h2>📋 Marco Normativo</h2>
+            
+            <div class="normatividad-box">
+                <h3>⚖️ Resolución 20253040037125 de 2025</h3>
+                <p><strong>Artículo 3.7.1.6 - Elementos Atómicos:</strong></p>
+                <ul>
+                    <li>Especificaciones técnicas según fabricante certificado</li>
+                    <li>Trazabilidad de suministro (proveedor, lote, fecha)</li>
+                    <li>Certificados de calidad y conformidad</li>
+                    <li>Vida útil mínima garantizada según normatividad</li>
+                    <li>Cumplimiento estándares INVIAS y NTC aplicables</li>
+                </ul>
+            </div>
+            
+            <div class="normatividad-box">
+                <h3>🛠️ Normas Técnicas Colombianas</h3>
+                <div class="norma-requisito">
+                    <strong>NTC 4595 - Señalización Vial:</strong>
+                    <ul>
+                        <li>Señales verticales: lámina reflectiva Tipo IV (alta intensidad)</li>
+                        <li>Postes soporte: acero galvanizado o aluminio anodizado</li>
+                        <li>Resistencia viento: 120 km/h (zona urbana), 150 km/h (rural)</li>
+                        <li>Retro-reflectividad mínima: 250 cd/lx/m² (blanca), 170 cd/lx/m² (amarilla)</li>
+                    </ul>
+                </div>
+                
+                <div class="norma-requisito">
+                    <strong>NTC 1360 - Pintura para Demarcación:</strong>
+                    <ul>
+                        <li>Pintura termoplástica con microesferas de vidrio</li>
+                        <li>Espesor mínimo aplicado: 2.5 mm (húmedo), 1.5 mm (seco)</li>
+                        <li>Durabilidad mínima: 24 meses en zona urbana</li>
+                        <li>Coeficiente reflectividad inicial ≥300 mcd/lx/m²</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="normatividad-box">
+                <h3>🏗️ Especificaciones INVIAS</h3>
+                <div class="norma-requisito">
+                    <strong>Artículo 450 - Pavimentos Asfálticos:</strong>
+                    <ul>
+                        <li>MDC-3 (Mezcla Densa en Caliente tipo III)</li>
+                        <li>Asfalto clasificación PG 64-22 o superior</li>
+                        <li>Agregado pétreo granulometría según tabla INV E-213</li>
+                        <li>Compactación mínima 98% Marshall</li>
+                    </ul>
+                </div>
+                
+                <div class="norma-requisito">
+                    <strong>Artículo 500 - Concreto Hidráulico:</strong>
+                    <ul>
+                        <li>Resistencia: f'c=21 MPa (clase I), 28 MPa (clase II), 35 MPa (clase III)</li>
+                        <li>Cemento Portland tipo I o III</li>
+                        <li>Relación agua/cemento máxima: 0.45</li>
+                        <li>Asentamiento: 75±25 mm</li>
+                        <li>Curado húmedo mínimo: 7 días</li>
+                    </ul>
+                </div>
+                
+                <div class="norma-requisito">
+                    <strong>Artículo 673 - Drenajes:</strong>
+                    <ul>
+                        <li>Cunetas concreto f'c=21 MPa acabado formaleteado</li>
+                        <li>Tubería PVC sanitaria NTC 1339 (norma serie 1)</li>
+                        <li>Rejillas fundición gris según ASTM A48</li>
+                        <li>Pendiente mínima cunetas: 0.5%</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="normatividad-box">
+                <h3>⚡ RETIE - Reglamento Técnico de Instalaciones Eléctricas</h3>
+                <p><strong>Sistemas de iluminación (si aplica):</strong></p>
+                <ul>
+                    <li>Luminarias LED certificadas para tránsito vehicular</li>
+                    <li>Grado de protección: IP65 mínimo (polvo y agua)</li>
+                    <li>Resistencia impactos: IK08 mínimo</li>
+                    <li>Sistema puesta a tierra: resistencia <25 Ω</li>
+                    <li>Altura montaje: 6-8 m en pistas, 4-6 m en parqueaderos</li>
+                    <li>Uniformidad iluminación: U0 ≥0.4</li>
+                </ul>
+            </div>
+            
+            <div class="normatividad-box">
+                <h3>🌍 ISO 14001:2015 - Gestión Ambiental</h3>
+                <p><strong>Aplicación a elementos L0:</strong></p>
+                <ul>
+                    <li>Materiales reciclables preferentemente (concreto, asfalto recuperado)</li>
+                    <li>Pinturas y recubrimientos con bajo VOC (<50 g/L)</li>
+                    <li>Drenajes con sistema separación sedimentos</li>
+                    <li>Disposición final residuos según normatividad ambiental</li>
+                    <li>Certificación ambiental proveedores preferente</li>
+                </ul>
+            </div>
+        </div>
+
+            
+            <div class="section">
+                <a href="../index.html" class="btn-back">← Volver al Inicio</a>
+                <a href="index_l0.html" class="btn-back">📋 Índice L0</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

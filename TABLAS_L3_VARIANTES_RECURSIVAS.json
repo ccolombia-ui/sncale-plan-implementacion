@@ -1,0 +1,481 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "fecha_creacion": "2025-11-03",
+    "descripcion": "Configuraciones L3 CALE con recursividad L3→L3 (BASE + VARIANTES)",
+    "cambio_implementado": "CAMBIO 1",
+    "patron": "HERENCIA_CONFIGURACION",
+    "recursividad": "L3→L3 habilitada",
+    "total_configuraciones": 4,
+    "configuraciones": {
+      "base": 2,
+      "extendidas": 2
+    }
+  },
+
+  "BIM_L3_001_BASE": {
+    "bim_id": "BIM_L3_001_BASE",
+    "codigo": "L3.CALE.n_1.base",
+    "nombre": "CALE.n_1 Metropolitano - Configuración Base",
+    "version": "2.0",
+    "fecha_actualizacion": "2025-11-03",
+    
+    "tipo": "CONFIGURACION_BASE",
+    "categoria": "METROPOLITANO",
+    "nivel_bim": "L3",
+    "fase_despliegue": 1,
+    
+    "nodos_aplicables": 20,
+    "ciudades_objetivo": [
+      "Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena",
+      "Bucaramanga", "Cúcuta", "Pereira", "Santa Marta", "Ibagué",
+      "Pasto", "Manizales", "Villavicencio", "Montería", "Valledupar",
+      "Neiva", "Armenia", "Popayán", "Sincelejo", "Tunja"
+    ],
+    
+    "componentes_l2": [
+      {
+        "tipo": "L2",
+        "bim_id": "BIM_L2_003",
+        "codigo": "L2.pista_clase_III",
+        "nombre": "Pista Clase III Completa",
+        "cantidad": 1,
+        "valor_unitario": 2093340000,
+        "valor_total": 2093340000,
+        "categorias_practicas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"],
+        "justificacion": "Evaluación práctica todas las categorías (A1-C3 completo)"
+      },
+      {
+        "tipo": "L3",
+        "bim_id": "BIM_L3_010",
+        "codigo": "L3.CALE_TEORICO.24q",
+        "nombre": "CALE Teórico 24 Cubículos",
+        "cantidad": 1,
+        "valor_unitario": 645000000,
+        "valor_total": 645000000,
+        "capacidad_mes": 8557,
+        "justificacion": "Evaluación teórica máxima capacidad (v2.0 corregido sin parqueadero)"
+      },
+      {
+        "tipo": "L2",
+        "bim_id": "BIM_L2_007",
+        "codigo": "L2.parqueadero",
+        "nombre": "Parqueadero Vehicular 50 Vehículos",
+        "cantidad": 1,
+        "valor_unitario": 80000000,
+        "valor_total": 80000000,
+        "capacidad_vehiculos": 50,
+        "justificacion": "Parqueadero propio (construcción nueva, no arrendado)"
+      }
+    ],
+    
+    "valor_total_capex": 2818340000,
+    "nota_capex": "CAPEX total BASE: $2,818,340,000 (Pista III + CALE Teórico 24q + Parqueadero)",
+    
+    "capacidad": {
+      "evaluaciones_teoricas_mes": 8557,
+      "evaluaciones_practicas_mes": 2080,
+      "total_evaluaciones_mes": 10637,
+      "total_evaluaciones_anual": 127644,
+      "categorias_teoricas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"],
+      "categorias_practicas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"]
+    },
+    
+    "opex_anual": {
+      "cale_teorico_24q": 405188640,
+      "pista_clase_III": 250000000,
+      "parqueadero": 10000000,
+      "adicional_metropolitano": 15000000,
+      "total": 680188640
+    },
+    
+    "recursos": {
+      "personal_total": 12,
+      "personal_teorico": 4,
+      "personal_practico": 6,
+      "personal_admin": 2,
+      "area_total_m2": 4150,
+      "area_teorica_m2": 370,
+      "area_pistas_m2": 3500,
+      "area_parqueadero_m2": 280
+    },
+    
+    "timing": {
+      "metodo": "PARALELO: CALE Teórico + Pistas simultáneas",
+      "cale_teorico_dias": 136,
+      "pistas_dias": 270,
+      "total_dias": 300,
+      "total_meses": 10,
+      "contingencia": "15%",
+      "total_con_contingencia_dias": 345,
+      "total_con_contingencia_meses": 11.5
+    },
+    
+    "financiero": {
+      "capex_total": 2818340000,
+      "opex_anual": 680188640,
+      "costo_primer_ano": 3498528640,
+      "costo_evaluacion_promedio": 55000,
+      "roi_estimado_anos": 3.8
+    }
+  },
+
+  "BIM_L3_001_PLUS": {
+    "bim_id": "BIM_L3_001_PLUS",
+    "codigo": "L3.CALE.n_1.plus",
+    "nombre": "CALE.n_1+ Metropolitano - Variante Extendida",
+    "version": "2.0",
+    "fecha_actualizacion": "2025-11-03",
+    
+    "tipo": "CONFIGURACION_EXTENDIDA",
+    "categoria": "METROPOLITANO_PLUS",
+    "nivel_bim": "L3",
+    "fase_despliegue": 2,
+    
+    "nodos_aplicables": 3,
+    "ciudades_objetivo": [
+      "Bogotá (Zona Norte - adicional)",
+      "Medellín (Zona Sur - adicional)",
+      "Cali (Zona Norte - adicional)"
+    ],
+    
+    "recursividad_l3": {
+      "patron": "HERENCIA_CONFIGURACION",
+      "referencia_base": "BIM_L3_001_BASE",
+      "hereda_todos_componentes": true,
+      "metodo": "resolver_l3_recursivo(BIM_L3_001_BASE) + componentes_adicionales",
+      
+      "componentes_adicionales": [
+        {
+          "tipo": "L2",
+          "bim_id": "BIM_L2_009",
+          "codigo": "L2.edificacion_adecuada",
+          "nombre": "Edificación Adicional Adecuada",
+          "cantidad": 1,
+          "valor_unitario": 300000000,
+          "valor_total": 300000000,
+          "area_m2": 500,
+          "justificacion": "Espacio adicional: salas espera, oficinas, servicios para alta demanda"
+        },
+        {
+          "tipo": "L2",
+          "bim_id": "BIM_L2_008",
+          "codigo": "L2.datacenter",
+          "nombre": "Datacenter Ampliado",
+          "cantidad": 1,
+          "valor_unitario": 150000000,
+          "valor_total": 150000000,
+          "capacidad_racks": 6,
+          "justificacion": "Mayor capacidad procesamiento y almacenamiento para alta demanda metropolitana"
+        },
+        {
+          "tipo": "L3",
+          "bim_id": "BIM_L3_011",
+          "codigo": "L3.CALE_TEORICO.16q",
+          "nombre": "CALE Teórico 16 Cubículos Adicional",
+          "cantidad": 1,
+          "valor_unitario": 460000000,
+          "valor_total": 460000000,
+          "capacidad_mes": 5705,
+          "justificacion": "Duplicar capacidad teórica en ciudades metropolitanas con alta demanda"
+        }
+      ]
+    },
+    
+    "valor_incremental": 910000000,
+    "valor_total_capex": 3728340000,
+    "nota_capex": "CAPEX total = BASE ($2,818M) heredado + INCREMENTAL ($910M) = $3,728M",
+    
+    "capacidad": {
+      "evaluaciones_teoricas_mes": 14262,
+      "evaluaciones_practicas_mes": 2080,
+      "total_evaluaciones_mes": 16342,
+      "total_evaluaciones_anual": 196104,
+      "incremento_vs_base": "53.7%",
+      "categorias_teoricas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"],
+      "categorias_practicas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"]
+    },
+    
+    "opex_anual": {
+      "cale_teorico_24q_heredado": 405188640,
+      "pista_clase_III_heredado": 250000000,
+      "parqueadero_heredado": 10000000,
+      "cale_teorico_16q_nuevo": 308609720,
+      "edificacion_adicional": 15000000,
+      "datacenter_ampliado": 20000000,
+      "total": 1008798360
+    },
+    
+    "recursos": {
+      "personal_total": 17,
+      "personal_teorico": 7,
+      "personal_practico": 6,
+      "personal_admin": 4,
+      "area_total_m2": 5150,
+      "area_teorica_m2": 660,
+      "area_pistas_m2": 3500,
+      "area_parqueadero_m2": 280,
+      "area_adicional_m2": 500,
+      "datacenter_racks": 6
+    },
+    
+    "timing": {
+      "metodo": "SECUENCIAL: BASE (11.5m) + Adicionales (4m)",
+      "base_meses": 11.5,
+      "adicionales_meses": 4,
+      "solapamiento_meses": 1.5,
+      "total_meses": 14,
+      "contingencia": "15%",
+      "total_con_contingencia_meses": 16
+    },
+    
+    "financiero": {
+      "capex_base_heredado": 2818340000,
+      "capex_incremental": 910000000,
+      "capex_total": 3728340000,
+      "opex_anual": 1008798360,
+      "costo_primer_ano": 4737138360,
+      "costo_evaluacion_promedio": 48000,
+      "roi_estimado_anos": 4.2
+    },
+    
+    "validaciones": {
+      "herencia_base": "✅ Hereda 3 componentes L2/L3 de BIM_L3_001_BASE",
+      "componentes_totales": 6,
+      "componentes_heredados": 3,
+      "componentes_nuevos": 3,
+      "ciclos_detectados": 0,
+      "integridad_referencias": "OK",
+      "valor_agregado": "✅ $2,818M + $910M = $3,728M",
+      "capacidad_agregada": "✅ 10,637 + 5,705 = 16,342 eval/mes"
+    }
+  },
+
+  "BIM_L3_002_BASE": {
+    "bim_id": "BIM_L3_002_BASE",
+    "codigo": "L3.CALE.n_2.base",
+    "nombre": "CALE.n_2 Intermedio - Configuración Base",
+    "version": "2.0",
+    "fecha_actualizacion": "2025-11-03",
+    
+    "tipo": "CONFIGURACION_BASE",
+    "categoria": "INTERMEDIO",
+    "nivel_bim": "L3",
+    "fase_despliegue": 1,
+    
+    "nodos_aplicables": 20,
+    "ciudades_objetivo": [
+      "Riohacha", "Quibdó", "Mocoa", "Puerto Carreño", "Mitú",
+      "Leticia", "Inírida", "San José del Guaviare", "Arauca", "Yopal",
+      "Florencia", "San Andrés", "Tumaco", "Ipiales", "Apartadó",
+      "Sogamoso", "Girardot", "Tuluá", "Palmira", "Magangué"
+    ],
+    
+    "componentes_l2": [
+      {
+        "tipo": "L2",
+        "bim_id": "BIM_L2_002",
+        "codigo": "L2.pista_clase_II",
+        "nombre": "Pista Clase II Completa",
+        "cantidad": 1,
+        "valor_unitario": 1407390000,
+        "valor_total": 1407390000,
+        "categorias_practicas": ["A1", "A2", "B1", "B2", "C1", "C2"],
+        "justificacion": "Evaluación práctica categorías A1-C2 (sin tractocamiones B3/C3)"
+      },
+      {
+        "tipo": "L3",
+        "bim_id": "BIM_L3_011",
+        "codigo": "L3.CALE_TEORICO.16q",
+        "nombre": "CALE Teórico 16 Cubículos",
+        "cantidad": 1,
+        "valor_unitario": 460000000,
+        "valor_total": 460000000,
+        "capacidad_mes": 5705,
+        "justificacion": "Evaluación teórica capacidad media (v2.0 corregido sin parqueadero)"
+      },
+      {
+        "tipo": "L2",
+        "bim_id": "BIM_L2_007",
+        "codigo": "L2.parqueadero",
+        "nombre": "Parqueadero Vehicular 30 Vehículos",
+        "cantidad": 1,
+        "valor_unitario": 60000000,
+        "valor_total": 60000000,
+        "capacidad_vehiculos": 30,
+        "justificacion": "Parqueadero propio escala intermedia"
+      }
+    ],
+    
+    "valor_total_capex": 1927390000,
+    "nota_capex": "CAPEX total BASE: $1,927,390,000 (Pista II + CALE Teórico 16q + Parqueadero)",
+    
+    "capacidad": {
+      "evaluaciones_teoricas_mes": 5705,
+      "evaluaciones_practicas_mes": 3440,
+      "total_evaluaciones_mes": 9145,
+      "total_evaluaciones_anual": 109740,
+      "categorias_teoricas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"],
+      "categorias_practicas": ["A1", "A2", "B1", "B2", "C1", "C2"],
+      "categorias_practicas_NO": ["B3", "C3"]
+    },
+    
+    "opex_anual": {
+      "cale_teorico_16q": 308609720,
+      "pista_clase_II": 220000000,
+      "parqueadero": 8000000,
+      "adicional_intermedio": 10000000,
+      "total": 546609720
+    },
+    
+    "recursos": {
+      "personal_total": 9,
+      "personal_teorico": 3,
+      "personal_practico": 5,
+      "personal_admin": 1,
+      "area_total_m2": 3790,
+      "area_teorica_m2": 290,
+      "area_pistas_m2": 3300,
+      "area_parqueadero_m2": 200
+    },
+    
+    "timing": {
+      "metodo": "PARALELO: CALE Teórico + Pistas simultáneas",
+      "cale_teorico_dias": 132,
+      "pistas_dias": 240,
+      "total_dias": 270,
+      "total_meses": 9,
+      "contingencia": "15%",
+      "total_con_contingencia_dias": 310,
+      "total_con_contingencia_meses": 10.3
+    },
+    
+    "financiero": {
+      "capex_total": 1927390000,
+      "opex_anual": 546609720,
+      "costo_primer_ano": 2473999720,
+      "costo_evaluacion_promedio": 45000,
+      "roi_estimado_anos": 4.5
+    }
+  },
+
+  "BIM_L3_002_STAR": {
+    "bim_id": "BIM_L3_002_STAR",
+    "codigo": "L3.CALE.n_2.star",
+    "nombre": "CALE.n_2** Intermedio - Variante Extendida",
+    "version": "2.0",
+    "fecha_actualizacion": "2025-11-03",
+    
+    "tipo": "CONFIGURACION_EXTENDIDA",
+    "categoria": "INTERMEDIO_STAR",
+    "nivel_bim": "L3",
+    "fase_despliegue": 2,
+    
+    "nodos_aplicables": 16,
+    "ciudades_objetivo": [
+      "Duitama", "Cartago", "Buga", "Ciénaga", "Maicao",
+      "Rionegro", "Turbo", "Bello", "Envigado", "Itagüí",
+      "Soledad", "Malambo", "Soacha", "Funza", "Chía",
+      "Zipaquirá"
+    ],
+    
+    "recursividad_l3": {
+      "patron": "HERENCIA_CONFIGURACION",
+      "referencia_base": "BIM_L3_002_BASE",
+      "hereda_todos_componentes": true,
+      "metodo": "resolver_l3_recursivo(BIM_L3_002_BASE) + componentes_adicionales",
+      
+      "componentes_adicionales": [
+        {
+          "tipo": "L2",
+          "bim_id": "BIM_L2_001",
+          "codigo": "L2.pista_clase_I",
+          "nombre": "Pista Clase I Adicional",
+          "cantidad": 1,
+          "valor_unitario": 721440000,
+          "valor_total": 721440000,
+          "categorias_practicas": ["A1", "A2", "B1", "C1"],
+          "justificacion": "Capacidad adicional para categorías A1/A2 (alta demanda motos en ciudades intermedias)"
+        },
+        {
+          "tipo": "L2",
+          "bim_id": "BIM_L2_005",
+          "codigo": "L2.sala_formacion",
+          "nombre": "Sala Formación",
+          "cantidad": 1,
+          "valor_unitario": 30000000,
+          "valor_total": 30000000,
+          "capacidad_personas": 20,
+          "justificacion": "Capacitación continua evaluadores y actualización normativa"
+        }
+      ]
+    },
+    
+    "valor_incremental": 751440000,
+    "valor_total_capex": 2678830000,
+    "nota_capex": "CAPEX total = BASE ($1,927M) heredado + INCREMENTAL ($751M) = $2,679M",
+    
+    "capacidad": {
+      "evaluaciones_teoricas_mes": 5705,
+      "evaluaciones_practicas_mes": 5520,
+      "total_evaluaciones_mes": 11225,
+      "total_evaluaciones_anual": 134700,
+      "incremento_vs_base": "22.7%",
+      "categorias_teoricas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"],
+      "categorias_practicas": ["A1", "A2", "B1", "B2", "C1", "C2"],
+      "categorias_practicas_NO": ["B3", "C3"]
+    },
+    
+    "opex_anual": {
+      "cale_teorico_16q_heredado": 308609720,
+      "pista_clase_II_heredado": 220000000,
+      "parqueadero_heredado": 8000000,
+      "pista_clase_I_nuevo": 204072000,
+      "sala_formacion": 5000000,
+      "total": 745681720
+    },
+    
+    "recursos": {
+      "personal_total": 12,
+      "personal_teorico": 3,
+      "personal_practico": 8,
+      "personal_admin": 1,
+      "area_total_m2": 4580,
+      "area_teorica_m2": 290,
+      "area_pistas_m2": 4000,
+      "area_parqueadero_m2": 200,
+      "area_formacion_m2": 90
+    },
+    
+    "timing": {
+      "metodo": "SECUENCIAL: BASE (10.3m) + Adicionales (3m)",
+      "base_meses": 10.3,
+      "adicionales_meses": 3,
+      "solapamiento_meses": 1,
+      "total_meses": 12.3,
+      "contingencia": "15%",
+      "total_con_contingencia_meses": 14
+    },
+    
+    "financiero": {
+      "capex_base_heredado": 1927390000,
+      "capex_incremental": 751440000,
+      "capex_total": 2678830000,
+      "opex_anual": 745681720,
+      "costo_primer_ano": 3424511720,
+      "costo_evaluacion_promedio": 51000,
+      "roi_estimado_anos": 4.7
+    },
+    
+    "validaciones": {
+      "herencia_base": "✅ Hereda 3 componentes L2/L3 de BIM_L3_002_BASE",
+      "componentes_totales": 5,
+      "componentes_heredados": 3,
+      "componentes_nuevos": 2,
+      "ciclos_detectados": 0,
+      "integridad_referencias": "OK",
+      "valor_agregado": "✅ $1,927M + $751M = $2,679M",
+      "capacidad_agregada": "✅ 9,145 + 2,080 = 11,225 eval/mes"
+    }
+  }
+}

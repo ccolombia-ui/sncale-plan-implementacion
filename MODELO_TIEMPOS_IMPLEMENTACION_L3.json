@@ -1,0 +1,789 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "fecha_creacion": "2025-11-03",
+    "descripcion": "Modelo de Tiempos de Implementación CALE Teórico - Método de Ruta Crítica",
+    "metodo": "MAX(adquisicion) + MAX(instalacion + prereqs) + MAX(entrenamiento + prereqs)",
+    "unidad_tiempo": "dias_calendario",
+    "autor": "Modelo BIM 5D SNCALE"
+  },
+
+  "criterios_calculo": {
+    "adquisicion": "MAX(tiempo_adquisicion_subcomponentes_L2)",
+    "instalacion": "MAX(tiempo_instalacion_subcomponente_L2) + prerequisitos(otros_sistemas)",
+    "entrenamiento": "MAX(tiempo_entrenamiento_subcomponente) + prerequisito(talento_humano)",
+    "tiempo_total": "adquisicion + instalacion + entrenamiento",
+    "factor_riesgo": 1.15,
+    "descripcion": "Se aplica 15% contingencia por imprevistos contractuales, logísticos y aprendizaje"
+  },
+
+  "prerequisitos_globales": {
+    "arrendamiento_inmueble": {
+      "tiempo_dias": 14,
+      "actividades": ["Selección 3 opciones pre-aprobadas", "Negociación", "Firma contrato"],
+      "ruta_critica": true
+    },
+    "licencias_permisos": {
+      "tiempo_dias": 7,
+      "actividades": ["Permiso obra menor (adecuaciones)", "Certificado bomberos", "Conexión servicios públicos"],
+      "ruta_critica": false,
+      "paralelo_con": "arrendamiento_inmueble"
+    },
+    "seleccion_rrhh": {
+      "tiempo_dias": 21,
+      "actividades": ["Publicación convocatoria", "Entrevistas", "Vinculación laboral"],
+      "prerequisito_para": "entrenamiento"
+    }
+  },
+
+  "componentes_l2_tiempos": {
+    
+    "L2.sala_24_cubiculos": {
+      "bim_id": "BIM_L2_004",
+      "adquisicion": {
+        "computadores_24": {
+          "tiempo_dias": 21,
+          "proveedor": "Dell/HP/Lenovo - Colombia",
+          "ruta_critica": true
+        },
+        "mobiliario_24": {
+          "tiempo_dias": 28,
+          "proveedor": "Fabricante nacional",
+          "ruta_critica": true
+        },
+        "divisiones_modulares": {
+          "tiempo_dias": 14,
+          "proveedor": "Local",
+          "ruta_critica": false
+        }
+      },
+      "instalacion": {
+        "cableado_estructurado": {
+          "tiempo_dias": 7,
+          "prerequisito": ["electricidad_estabilizada"],
+          "ruta_critica": true
+        },
+        "montaje_mobiliario": {
+          "tiempo_dias": 3,
+          "prerequisito": ["obra_civil_terminada"],
+          "ruta_critica": false
+        },
+        "instalacion_equipos": {
+          "tiempo_dias": 2,
+          "prerequisito": ["cableado_estructurado", "montaje_mobiliario"],
+          "ruta_critica": true
+        },
+        "configuracion_red": {
+          "tiempo_dias": 2,
+          "prerequisito": ["datacenter_operativo"],
+          "ruta_critica": true
+        }
+      },
+      "entrenamiento": {
+        "capacitacion_software_eval": {
+          "tiempo_dias": 5,
+          "prerequisito": ["personal_contratado", "sistema_munay_instalado"],
+          "ruta_critica": true
+        }
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 28,
+        "instalacion_max": 14,
+        "entrenamiento_max": 5,
+        "subtotal": 47
+      }
+    },
+
+    "L2.sala_formacion": {
+      "bim_id": "BIM_L2_005",
+      "adquisicion": {
+        "sillas_universitarias_30": {
+          "tiempo_dias": 14,
+          "proveedor": "Proveedor local",
+          "ruta_critica": false
+        },
+        "proyector_tablero_digital": {
+          "tiempo_dias": 21,
+          "proveedor": "Importado (Epson/BenQ)",
+          "ruta_critica": false
+        },
+        "aire_acondicionado_18000btu": {
+          "tiempo_dias": 7,
+          "proveedor": "Local (LG/Samsung)",
+          "ruta_critica": false
+        }
+      },
+      "instalacion": {
+        "montaje_sillas": {
+          "tiempo_dias": 1,
+          "prerequisito": ["obra_civil_terminada"],
+          "ruta_critica": false
+        },
+        "instalacion_proyector": {
+          "tiempo_dias": 1,
+          "prerequisito": ["electricidad_estabilizada"],
+          "ruta_critica": false
+        },
+        "instalacion_ac": {
+          "tiempo_dias": 2,
+          "prerequisito": ["electricidad_estabilizada"],
+          "ruta_critica": false
+        }
+      },
+      "entrenamiento": {
+        "capacitacion_instructor": {
+          "tiempo_dias": 3,
+          "prerequisito": ["personal_contratado"],
+          "ruta_critica": false
+        }
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 21,
+        "instalacion_max": 4,
+        "entrenamiento_max": 3,
+        "subtotal": 28
+      }
+    },
+
+    "L2.zona_administrativa": {
+      "bim_id": "BIM_L2_008",
+      "adquisicion": {
+        "mobiliario_oficinas_3": {
+          "tiempo_dias": 21,
+          "proveedor": "Nacional",
+          "ruta_critica": false
+        },
+        "computadores_admin_3": {
+          "tiempo_dias": 14,
+          "proveedor": "Dell/HP - Colombia",
+          "ruta_critica": false
+        },
+        "sistema_biometrico": {
+          "tiempo_dias": 14,
+          "proveedor": "ZKTeco/Suprema",
+          "ruta_critica": false
+        }
+      },
+      "instalacion": {
+        "montaje_mobiliario": {
+          "tiempo_dias": 2,
+          "prerequisito": ["obra_civil_terminada"],
+          "ruta_critica": false
+        },
+        "instalacion_pcs": {
+          "tiempo_dias": 1,
+          "prerequisito": ["cableado_estructurado"],
+          "ruta_critica": false
+        },
+        "configuracion_biometrico": {
+          "tiempo_dias": 1,
+          "prerequisito": ["datacenter_operativo"],
+          "ruta_critica": false
+        }
+      },
+      "entrenamiento": {
+        "capacitacion_erp_aleya": {
+          "tiempo_dias": 5,
+          "prerequisito": ["personal_contratado", "sistema_aleya_instalado"],
+          "ruta_critica": true
+        }
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 21,
+        "instalacion_max": 4,
+        "entrenamiento_max": 5,
+        "subtotal": 30
+      }
+    },
+
+    "L2.datacenter": {
+      "bim_id": "BIM_L2_006",
+      "adquisicion": {
+        "servidor_aplicaciones": {
+          "tiempo_dias": 28,
+          "proveedor": "Dell PowerEdge / HP ProLiant",
+          "ruta_critica": true
+        },
+        "ups_10kva": {
+          "tiempo_dias": 21,
+          "proveedor": "APC/Eaton",
+          "ruta_critica": true
+        },
+        "rack_42u": {
+          "tiempo_dias": 14,
+          "proveedor": "Nacional",
+          "ruta_critica": false
+        },
+        "ac_precision_12000btu": {
+          "tiempo_dias": 14,
+          "proveedor": "Liebert/Emerson",
+          "ruta_critica": false
+        },
+        "switch_core_48p": {
+          "tiempo_dias": 21,
+          "proveedor": "Cisco/HP",
+          "ruta_critica": true
+        }
+      },
+      "instalacion": {
+        "obra_civil_datacenter": {
+          "tiempo_dias": 14,
+          "prerequisito": ["arrendamiento_firmado", "permiso_obra"],
+          "ruta_critica": true,
+          "descripcion": "Piso técnico, falso techo, ductos, tierra física"
+        },
+        "instalacion_electrica_dedicada": {
+          "tiempo_dias": 7,
+          "prerequisito": ["obra_civil_datacenter"],
+          "ruta_critica": true,
+          "descripcion": "Tablero dedicado, circuitos estabilizados, tierra física"
+        },
+        "montaje_rack_ups": {
+          "tiempo_dias": 2,
+          "prerequisito": ["obra_civil_datacenter", "instalacion_electrica_dedicada"],
+          "ruta_critica": true
+        },
+        "instalacion_servidor": {
+          "tiempo_dias": 3,
+          "prerequisito": ["montaje_rack_ups"],
+          "ruta_critica": true
+        },
+        "configuracion_red_core": {
+          "tiempo_dias": 3,
+          "prerequisito": ["instalacion_servidor"],
+          "ruta_critica": true
+        },
+        "instalacion_software_base": {
+          "tiempo_dias": 5,
+          "prerequisito": ["configuracion_red_core"],
+          "ruta_critica": true,
+          "descripcion": "Ubuntu Server, Docker, PostgreSQL, Redis"
+        }
+      },
+      "entrenamiento": {
+        "capacitacion_admin_sistemas": {
+          "tiempo_dias": 7,
+          "prerequisito": ["personal_contratado", "datacenter_operativo"],
+          "ruta_critica": true
+        }
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 28,
+        "instalacion_max": 34,
+        "entrenamiento_max": 7,
+        "subtotal": 69
+      }
+    },
+
+    "L2.servicios_publicos": {
+      "bim_id": "BIM_L2_011",
+      "adquisicion": {
+        "medidores_energia": {
+          "tiempo_dias": 14,
+          "proveedor": "Empresa servicios públicos",
+          "ruta_critica": false
+        },
+        "internet_dedicado_100mbps": {
+          "tiempo_dias": 21,
+          "proveedor": "ISP (ETB/Claro/Movistar)",
+          "ruta_critica": true
+        }
+      },
+      "instalacion": {
+        "acometida_electrica": {
+          "tiempo_dias": 14,
+          "prerequisito": ["arrendamiento_firmado"],
+          "ruta_critica": true,
+          "descripcion": "Actualización acometida a 75 kVA trifásica"
+        },
+        "instalacion_internet": {
+          "tiempo_dias": 7,
+          "prerequisito": ["obra_civil_terminada"],
+          "ruta_critica": true
+        },
+        "pruebas_servicios": {
+          "tiempo_dias": 3,
+          "prerequisito": ["acometida_electrica", "instalacion_internet"],
+          "ruta_critica": true
+        }
+      },
+      "entrenamiento": {
+        "no_aplica": 0
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 21,
+        "instalacion_max": 24,
+        "entrenamiento_max": 0,
+        "subtotal": 45
+      }
+    },
+
+    "L2.edificacion_adecuada": {
+      "bim_id": "BIM_L2_010",
+      "adquisicion": {
+        "materiales_construccion": {
+          "tiempo_dias": 7,
+          "proveedor": "Depósito local",
+          "ruta_critica": false
+        }
+      },
+      "instalacion": {
+        "obra_civil_divisiones": {
+          "tiempo_dias": 21,
+          "prerequisito": ["arrendamiento_firmado", "permiso_obra"],
+          "ruta_critica": true,
+          "descripcion": "Drywall oficinas, baños, zonas comunes"
+        },
+        "instalacion_electrica_general": {
+          "tiempo_dias": 14,
+          "prerequisito": ["obra_civil_divisiones"],
+          "ruta_critica": true,
+          "descripcion": "Cableado, iluminación LED, tomas reguladas"
+        },
+        "instalacion_hidrosanitaria": {
+          "tiempo_dias": 7,
+          "prerequisito": ["obra_civil_divisiones"],
+          "ruta_critica": false,
+          "descripcion": "Baños, puntos agua, desagües"
+        },
+        "acabados_pintura": {
+          "tiempo_dias": 7,
+          "prerequisito": ["instalacion_electrica_general", "instalacion_hidrosanitaria"],
+          "ruta_critica": false
+        }
+      },
+      "entrenamiento": {
+        "no_aplica": 0
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 7,
+        "instalacion_max": 42,
+        "entrenamiento_max": 0,
+        "subtotal": 49
+      }
+    },
+
+    "SOFTWARE.ALEYA": {
+      "tipo": "software",
+      "adquisicion": {
+        "licencias_aleya": {
+          "tiempo_dias": 7,
+          "proveedor": "HUB Central UPTC",
+          "ruta_critica": false,
+          "descripcion": "Licencias asignadas desde Etapa 0"
+        },
+        "licencias_base_datos": {
+          "tiempo_dias": 7,
+          "proveedor": "PostgreSQL (open source)",
+          "ruta_critica": false
+        }
+      },
+      "instalacion": {
+        "despliegue_aleya_nodo": {
+          "tiempo_dias": 3,
+          "prerequisito": ["datacenter_operativo", "internet_operativo"],
+          "ruta_critica": true,
+          "descripcion": "Contenedores Docker, configuración BD, sincronización HUB"
+        },
+        "pruebas_integracion": {
+          "tiempo_dias": 3,
+          "prerequisito": ["despliegue_aleya_nodo"],
+          "ruta_critica": true
+        }
+      },
+      "entrenamiento": {
+        "capacitacion_aleya_usuarios": {
+          "tiempo_dias": 5,
+          "prerequisito": ["personal_contratado", "pruebas_integracion"],
+          "ruta_critica": true,
+          "descripcion": "ERP, inventarios, dashboards, reportes"
+        }
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 7,
+        "instalacion_max": 6,
+        "entrenamiento_max": 5,
+        "subtotal": 18
+      }
+    },
+
+    "SOFTWARE.MUNAY": {
+      "tipo": "software",
+      "adquisicion": {
+        "licencias_munay": {
+          "tiempo_dias": 7,
+          "proveedor": "Desarrollo SNCALE",
+          "ruta_critica": false,
+          "descripcion": "Sistema en testing Días 60-80"
+        }
+      },
+      "instalacion": {
+        "despliegue_munay_nodo": {
+          "tiempo_dias": 5,
+          "prerequisito": ["datacenter_operativo", "aleya_operativo"],
+          "ruta_critica": true,
+          "descripcion": "3 subsistemas: INTEROPERABILIDAD, GESTIÓN, ALMACENAMIENTO"
+        },
+        "configuracion_apis_runt": {
+          "tiempo_dias": 3,
+          "prerequisito": ["despliegue_munay_nodo"],
+          "ruta_critica": true
+        },
+        "carga_banco_preguntas": {
+          "tiempo_dias": 2,
+          "prerequisito": ["despliegue_munay_nodo"],
+          "ruta_critica": true,
+          "descripcion": "Categorías A1-C3, preguntas validadas MEN"
+        },
+        "pruebas_integrales": {
+          "tiempo_dias": 5,
+          "prerequisito": ["configuracion_apis_runt", "carga_banco_preguntas"],
+          "ruta_critica": true
+        }
+      },
+      "entrenamiento": {
+        "capacitacion_munay_evaluadores": {
+          "tiempo_dias": 7,
+          "prerequisito": ["personal_contratado", "pruebas_integrales"],
+          "ruta_critica": true,
+          "descripcion": "Protocolo evaluación, sistema certificación"
+        },
+        "simulacros_evaluacion": {
+          "tiempo_dias": 3,
+          "prerequisito": ["capacitacion_munay_evaluadores"],
+          "ruta_critica": true
+        }
+      },
+      "tiempo_total_max": {
+        "adquisicion_max": 7,
+        "instalacion_max": 15,
+        "entrenamiento_max": 10,
+        "subtotal": 32
+      }
+    }
+  },
+
+  "calculo_ruta_critica_l3": {
+    
+    "BIM_L3_010_CALE_TEORICO_24q": {
+      
+      "fase_1_prerequisitos_globales": {
+        "arrendamiento_inmueble": 14,
+        "licencias_permisos": 0,
+        "subtotal_dias": 14
+      },
+
+      "fase_2_adquisicion": {
+        "metodo": "MAX(tiempo_adquisicion_L2)",
+        "componentes": {
+          "L2.datacenter": 28,
+          "L2.sala_24_cubiculos": 28,
+          "L2.servicios_publicos": 21,
+          "L2.zona_administrativa": 21,
+          "L2.sala_formacion": 21,
+          "L2.edificacion_adecuada": 7,
+          "SOFTWARE.ALEYA": 7,
+          "SOFTWARE.MUNAY": 7
+        },
+        "tiempo_maximo_dias": 28,
+        "componente_critico": "L2.datacenter (servidor aplicaciones)",
+        "nota": "Adquisiciones pueden iniciar en paralelo desde Día 1 post-arrendamiento"
+      },
+
+      "fase_3_instalacion": {
+        "metodo": "MAX(ruta_critica_instalacion_L2 + prerequisitos)",
+        "rutas_criticas": {
+          "ruta_1_datacenter": {
+            "secuencia": [
+              "obra_civil_datacenter: 14 días",
+              "instalacion_electrica_dedicada: 7 días",
+              "montaje_rack_ups: 2 días",
+              "instalacion_servidor: 3 días",
+              "configuracion_red_core: 3 días",
+              "instalacion_software_base: 5 días"
+            ],
+            "total_dias": 34,
+            "prerequisito": "acometida_electrica (14 días en paralelo con obra_civil_datacenter)"
+          },
+          "ruta_2_edificacion": {
+            "secuencia": [
+              "obra_civil_divisiones: 21 días",
+              "instalacion_electrica_general: 14 días",
+              "instalacion_hidrosanitaria: 7 días (paralelo)",
+              "acabados_pintura: 7 días"
+            ],
+            "total_dias": 42,
+            "prerequisito": "ninguno (inicia con arrendamiento)"
+          },
+          "ruta_3_software_aleya": {
+            "secuencia": [
+              "despliegue_aleya_nodo: 3 días",
+              "pruebas_integracion: 3 días"
+            ],
+            "total_dias": 6,
+            "prerequisito": "datacenter_operativo (día 34)"
+          },
+          "ruta_4_software_munay": {
+            "secuencia": [
+              "despliegue_munay_nodo: 5 días",
+              "configuracion_apis_runt: 3 días",
+              "carga_banco_preguntas: 2 días (paralelo)",
+              "pruebas_integrales: 5 días"
+            ],
+            "total_dias": 15,
+            "prerequisito": "aleya_operativo (día 40)"
+          },
+          "ruta_5_sala_evaluacion": {
+            "secuencia": [
+              "cableado_estructurado: 7 días",
+              "montaje_mobiliario: 3 días",
+              "instalacion_equipos: 2 días",
+              "configuracion_red: 2 días"
+            ],
+            "total_dias": 14,
+            "prerequisito": "obra_civil_terminada (día 42) + datacenter_operativo (día 34)"
+          }
+        },
+        "tiempo_maximo_dias": 55,
+        "ruta_critica": "edificacion (42d) → sala_evaluacion (14d) → software_munay (15d desde día 40) = 55 días",
+        "nota": "MUNAY requiere ALEYA operativo (día 40), finaliza día 55"
+      },
+
+      "fase_4_entrenamiento": {
+        "metodo": "MAX(tiempo_entrenamiento_L2) + prerequisito(personal_contratado)",
+        "prerequisito_personal": {
+          "seleccion_rrhh": 21,
+          "inicio_paralelo": "Día 1 (simultáneo con adquisiciones)",
+          "personal_disponible_dia": 21
+        },
+        "entrenamientos": {
+          "capacitacion_munay_evaluadores": 7,
+          "capacitacion_aleya_usuarios": 5,
+          "capacitacion_admin_sistemas": 7,
+          "simulacros_evaluacion": 3
+        },
+        "secuencia_critica": [
+          "capacitacion_aleya_usuarios: 5 días (inicio día 40, ALEYA operativo)",
+          "capacitacion_munay_evaluadores: 7 días (inicio día 55, MUNAY operativo)",
+          "simulacros_evaluacion: 3 días (inicio día 62)"
+        ],
+        "tiempo_maximo_dias": 15,
+        "inicio_dia": 55,
+        "fin_dia": 70,
+        "ruta_critica": "MUNAY operativo (día 55) → capacitación (7d) → simulacros (3d) = 15 días"
+      },
+
+      "fase_5_pruebas_inauguracion": {
+        "pruebas_finales": 3,
+        "certificaciones": 2,
+        "inauguracion": 1,
+        "total_dias": 6
+      },
+
+      "calculo_final": {
+        "prerequisitos": 14,
+        "adquisicion": 28,
+        "instalacion": 55,
+        "entrenamiento": 15,
+        "pruebas_inauguracion": 6,
+        "subtotal_dias": 118,
+        "factor_riesgo_15pct": 18,
+        "total_dias_calendario": 136,
+        "total_meses": 4.5,
+        "dia_inicio": 1,
+        "dia_fin": 136
+      },
+
+      "hitos_criticos": [
+        {"dia": 1, "hito": "Firma arrendamiento + Inicio adquisiciones + Selección RRHH"},
+        {"dia": 14, "hito": "Arrendamiento activo + Permisos aprobados"},
+        {"dia": 21, "hito": "Personal contratado (RRHH)"},
+        {"dia": 28, "hito": "Adquisiciones completadas (servidor, mobiliario)"},
+        {"dia": 34, "hito": "Datacenter operativo (hardware + red)"},
+        {"dia": 40, "hito": "ALEYA operativo + Capacitación ALEYA inicia"},
+        {"dia": 42, "hito": "Obra civil terminada (edificación)"},
+        {"dia": 55, "hito": "MUNAY operativo + Instalación completa"},
+        {"dia": 62, "hito": "Capacitación MUNAY completada"},
+        {"dia": 65, "hito": "Simulacros evaluación"},
+        {"dia": 70, "hito": "Entrenamiento completo"},
+        {"dia": 76, "hito": "Pruebas finales + Certificaciones"},
+        {"dia": 136, "hito": "INAUGURACIÓN (con factor riesgo 15%)"}
+      ],
+
+      "consumo_energia": {
+        "componentes": {
+          "sala_24_cubiculos": {
+            "computadores_24": {"watts": 4800, "horas_dia": 16, "kwh_mes": 1997},
+            "iluminacion_led": {"watts": 720, "horas_dia": 16, "kwh_mes": 300},
+            "total_kwh_mes": 2297
+          },
+          "sala_formacion": {
+            "proyector": {"watts": 350, "horas_dia": 4, "kwh_mes": 46},
+            "iluminacion_led": {"watts": 600, "horas_dia": 8, "kwh_mes": 158},
+            "ac_18000btu": {"watts": 1500, "horas_dia": 8, "kwh_mes": 395},
+            "total_kwh_mes": 599
+          },
+          "zona_administrativa": {
+            "computadores_3": {"watts": 600, "horas_dia": 8, "kwh_mes": 158},
+            "iluminacion_led": {"watts": 900, "horas_dia": 10, "kwh_mes": 296},
+            "total_kwh_mes": 454
+          },
+          "datacenter": {
+            "servidores": {"watts": 500, "horas_dia": 24, "kwh_mes": 395},
+            "ups_consumo": {"watts": 150, "horas_dia": 24, "kwh_mes": 118},
+            "ac_precision_12000btu": {"watts": 1200, "horas_dia": 24, "kwh_mes": 947},
+            "switch_core": {"watts": 200, "horas_dia": 24, "kwh_mes": 158},
+            "total_kwh_mes": 1618
+          },
+          "general": {
+            "iluminacion_pasillos": {"watts": 500, "horas_dia": 12, "kwh_mes": 197},
+            "camaras_seguridad_6": {"watts": 60, "horas_dia": 24, "kwh_mes": 47},
+            "total_kwh_mes": 244
+          }
+        },
+        "total_kwh_mes": 5212,
+        "costo_kwh_colombia": 550,
+        "costo_energia_mes_cop": 2866600,
+        "costo_energia_anual_cop": 34399200
+      },
+
+      "consumo_agua": {
+        "personal_4_personas": {"litros_dia": 200, "dias_mes": 26, "m3_mes": 5.2},
+        "sanitarios": {"litros_dia": 100, "dias_mes": 26, "m3_mes": 2.6},
+        "limpieza": {"litros_dia": 50, "dias_mes": 26, "m3_mes": 1.3},
+        "total_m3_mes": 9.1,
+        "costo_m3_colombia": 3200,
+        "costo_agua_mes_cop": 29120,
+        "costo_agua_anual_cop": 349440
+      },
+
+      "internet_telecomunicaciones": {
+        "internet_dedicado_100mbps": {"costo_mes_cop": 500000, "costo_anual_cop": 6000000},
+        "telefonia_ip_4_lineas": {"costo_mes_cop": 120000, "costo_anual_cop": 1440000},
+        "total_mes_cop": 620000,
+        "total_anual_cop": 7440000
+      },
+
+      "arrendamiento": {
+        "area_m2": 370,
+        "costo_m2_mes_cop": 25000,
+        "costo_mes_cop": 9250000,
+        "costo_anual_cop": 111000000,
+        "nota": "Edificación arrendada, zona comercial, adecuada para CALE"
+      },
+
+      "resumen_costos": {
+        "capex_total_cop": 645000000,
+        "capex_nota": "Sin parqueadero (-$80M vs versión anterior)",
+        "opex_anual_cop": {
+          "software_aleya_munay": 42000000,
+          "rrhh_4_personas": 198000000,
+          "energia_electrica": 34399200,
+          "agua": 349440,
+          "internet_telecomunicaciones": 7440000,
+          "arrendamiento": 111000000,
+          "mantenimiento_equipos": 12000000,
+          "total": 405188640
+        }
+      }
+    },
+
+    "BIM_L3_011_CALE_TEORICO_16q": {
+      "calculo_final": {
+        "prerequisitos": 14,
+        "adquisicion": 28,
+        "instalacion": 52,
+        "entrenamiento": 15,
+        "pruebas_inauguracion": 6,
+        "subtotal_dias": 115,
+        "factor_riesgo_15pct": 17,
+        "total_dias_calendario": 132,
+        "total_meses": 4.4
+      },
+      "consumo_energia": {
+        "total_kwh_mes": 3847,
+        "costo_energia_mes_cop": 2115850,
+        "costo_energia_anual_cop": 25390200
+      },
+      "consumo_agua": {
+        "total_m3_mes": 7.8,
+        "costo_agua_mes_cop": 24960,
+        "costo_agua_anual_cop": 299520
+      },
+      "internet_telecomunicaciones": {
+        "total_mes_cop": 550000,
+        "total_anual_cop": 6600000
+      },
+      "arrendamiento": {
+        "area_m2": 290,
+        "costo_mes_cop": 7250000,
+        "costo_anual_cop": 87000000
+      },
+      "resumen_costos": {
+        "capex_total_cop": 440000000,
+        "opex_anual_cop": {
+          "total": 305289720
+        }
+      }
+    },
+
+    "BIM_L3_012_CALE_TEORICO_4q": {
+      "calculo_final": {
+        "prerequisitos": 14,
+        "adquisicion": 21,
+        "instalacion": 42,
+        "entrenamiento": 12,
+        "pruebas_inauguracion": 5,
+        "subtotal_dias": 94,
+        "factor_riesgo_15pct": 14,
+        "total_dias_calendario": 108,
+        "total_meses": 3.6
+      },
+      "consumo_energia": {
+        "total_kwh_mes": 2134,
+        "costo_energia_mes_cop": 1173700,
+        "costo_energia_anual_cop": 14084400
+      },
+      "consumo_agua": {
+        "total_m3_mes": 5.2,
+        "costo_agua_mes_cop": 16640,
+        "costo_agua_anual_cop": 199680
+      },
+      "internet_telecomunicaciones": {
+        "total_mes_cop": 450000,
+        "total_anual_cop": 5400000
+      },
+      "arrendamiento": {
+        "area_m2": 110,
+        "costo_mes_cop": 2750000,
+        "costo_anual_cop": 33000000
+      },
+      "resumen_costos": {
+        "capex_total_cop": 175000000,
+        "opex_anual_cop": {
+          "total": 151684080
+        }
+      }
+    }
+  },
+
+  "observaciones_criticas": [
+    "✅ ARRENDAMIENTO agregado a OPEX (28-32% del total)",
+    "✅ Consumo energía calculado por componente (5,212 kWh/mes en 24q)",
+    "✅ Tiempo implementación con ruta crítica (136 días = 4.5 meses con contingencia)",
+    "✅ Parqueadero ELIMINADO (no aplica para CALE Teórico arrendado)",
+    "✅ CAPEX corregido: $725M → $645M (24q), $520M → $440M (16q), $255M → $175M (4q)",
+    "⚠️ Factor riesgo 15% aplicado (imprevistos contractuales, logísticos)",
+    "⚠️ Ruta crítica: MUNAY depende de ALEYA (6 días), ambos dependen de datacenter (34 días)",
+    "⚠️ Entrenamiento requiere personal contratado (21 días desde inicio)",
+    "📊 OPEX total 24q: $405M/año (vs $240M anterior, incremento +69%)"
+  ],
+
+  "formulas_aplicadas": {
+    "energia_kwh_mes": "(Watts × Horas/Día × Días/Mes) / 1000",
+    "agua_m3_mes": "(Litros/Día × Días/Mes) / 1000",
+    "tiempo_total": "MAX(adquisicion) + MAX(instalacion + prereqs) + MAX(entrenamiento + prereqs) + pruebas",
+    "factor_riesgo": "subtotal × 1.15",
+    "arrendamiento_mes": "Area_m2 × $25,000/m²"
+  }
+}

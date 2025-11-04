@@ -1,0 +1,6917 @@
+{
+  "documento_id": "16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE",
+  "titulo": "MUNAY_5.2__anexo_b__DEFINITIVO",
+  "total_tablas": 89,
+  "clasificacion": {
+    "L0 - Componentes Atómicos": 0,
+    "L1 - Ensamblaje": 1,
+    "L2 - Configuración Base": 39,
+    "L3 - Especialización CALE": 12,
+    "L3 - Metadatos": 7,
+    "Otra/Administrativa": 30
+  },
+  "tablas": {
+    "L0 - Componentes Atómicos": [],
+    "L1 - Ensamblaje": [
+      {
+        "numero": 89,
+        "elemento_index": 1486,
+        "filas": 11,
+        "columnas": 4,
+        "encabezados": [
+          "Categoría",
+          "BIM_ID Range",
+          "Cantidad",
+          "% Total"
+        ],
+        "ejemplo_fila2": [
+          "L0.1 - Infraestructura Civil",
+          "BIM_L0_001 - BIM_L0_007",
+          "7",
+          "7.7%"
+        ],
+        "todas_filas": [
+          [
+            "Categoría",
+            "BIM_ID Range",
+            "Cantidad",
+            "% Total"
+          ],
+          [
+            "L0.1 - Infraestructura Civil",
+            "BIM_L0_001 - BIM_L0_007",
+            "7",
+            "7.7%"
+          ],
+          [
+            "L0.2 - Señalización y Seguridad",
+            "BIM_L0_008 - BIM_L0_014",
+            "7",
+            "7.7%"
+          ],
+          [
+            "L0.3 - Edificaciones y Acabados",
+            "BIM_L0_015 - BIM_L0_023",
+            "9",
+            "9.9%"
+          ],
+          [
+            "L0.4 - Instalaciones",
+            "BIM_L0_024 - BIM_L0_042",
+            "19",
+            "20.9%"
+          ],
+          [
+            "L0.5 - Mobiliario",
+            "BIM_L0_043 - BIM_L0_059",
+            "17",
+            "18.7%"
+          ],
+          [
+            "L0.6 - Tecnología y Equipamiento",
+            "BIM_L0_060 - BIM_L0_076",
+            "17",
+            "18.7%"
+          ],
+          [
+            "L0.7 - Vehículos",
+            "BIM_L0_077 - BIM_L0_081",
+            "5",
+            "5.5%"
+          ],
+          [
+            "L0.8 - Seguros y Certificaciones",
+            "BIM_L0_082 - BIM_L0_083",
+            "2",
+            "2.2%"
+          ],
+          [
+            "L0.9 - Circulación y Accesibilidad",
+            "BIM_L0_084 - BIM_L0_091",
+            "8",
+            "8.8%"
+          ],
+          [
+            "TOTAL",
+            "-",
+            "91",
+            "100%"
+          ]
+        ]
+      }
+    ],
+    "L2 - Configuración Base": [
+      {
+        "numero": 10,
+        "elemento_index": 265,
+        "filas": 17,
+        "columnas": 6,
+        "encabezados": [
+          "#",
+          "Componente",
+          "Descripción",
+          "Categoría",
+          "Tipo",
+          "Referencia"
+        ],
+        "ejemplo_fila2": [
+          "1",
+          "MANIOBRA_00",
+          "Maniobra 0: Arranque en pendiente",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_00"
+        ],
+        "todas_filas": [
+          [
+            "#",
+            "Componente",
+            "Descripción",
+            "Categoría",
+            "Tipo",
+            "Referencia"
+          ],
+          [
+            "1",
+            "MANIOBRA_00",
+            "Maniobra 0: Arranque en pendiente",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_00"
+          ],
+          [
+            "2",
+            "MANIOBRA_01",
+            "Maniobra 1: Estacionamiento en paralelo",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_01"
+          ],
+          [
+            "3",
+            "MANIOBRA_02",
+            "Maniobra 2: Estacionamiento en batería",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_02"
+          ],
+          [
+            "4",
+            "MANIOBRA_03",
+            "Maniobra 3: Cambio de carril",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_03"
+          ],
+          [
+            "5",
+            "MANIOBRA_04",
+            "Maniobra 4: Giro a la derecha",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_04"
+          ],
+          [
+            "6",
+            "MANIOBRA_05",
+            "Maniobra 5: Giro a la izquierda",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_05"
+          ],
+          [
+            "7",
+            "MANIOBRA_06",
+            "Maniobra 6: Giro en U",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_06"
+          ],
+          [
+            "8",
+            "MANIOBRA_07",
+            "Maniobra 7: Paso por glorieta",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_07"
+          ],
+          [
+            "9",
+            "MANIOBRA_08",
+            "Maniobra 8: Frenado de emergencia",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_08"
+          ],
+          [
+            "10",
+            "MANIOBRA_09",
+            "Maniobra 9: Reversa controlada",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_09"
+          ],
+          [
+            "11",
+            "MANIOBRA_10",
+            "Maniobra 10: Estacionamiento en línea",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_10"
+          ],
+          [
+            "12",
+            "MANIOBRA_11",
+            "Maniobra 11: Slalom simple",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_11"
+          ],
+          [
+            "13",
+            "MANIOBRA_12",
+            "Maniobra 12: Paso por intersección",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_12"
+          ],
+          [
+            "14",
+            "MANIOBRA_13",
+            "Maniobra 13: Conducción en recta",
+            "A1,A2,B1,C1",
+            "Básica",
+            "L1.maniobra_13"
+          ],
+          [
+            "15",
+            "PAVIMENTO",
+            "Pavimento flexible asfalto",
+            "Infraestructura",
+            "Civil",
+            "L0.pavimento_flexible"
+          ],
+          [
+            "16",
+            "SEÑALIZACION",
+            "Señalización horizontal y vertical",
+            "Infraestructura",
+            "Civil",
+            "L0.señalizacion"
+          ]
+        ]
+      },
+      {
+        "numero": 12,
+        "elemento_index": 295,
+        "filas": 7,
+        "columnas": 6,
+        "encabezados": [
+          "#",
+          "Componente",
+          "Descripción",
+          "Categoría",
+          "Tipo",
+          "Referencia"
+        ],
+        "ejemplo_fila2": [
+          "1",
+          "MANIOBRA_14",
+          "Maniobra 14: Maniobras con remolque",
+          "B2,C2",
+          "Intermedia",
+          "L1.maniobra_14"
+        ],
+        "todas_filas": [
+          [
+            "#",
+            "Componente",
+            "Descripción",
+            "Categoría",
+            "Tipo",
+            "Referencia"
+          ],
+          [
+            "1",
+            "MANIOBRA_14",
+            "Maniobra 14: Maniobras con remolque",
+            "B2,C2",
+            "Intermedia",
+            "L1.maniobra_14"
+          ],
+          [
+            "2",
+            "MANIOBRA_15",
+            "Maniobra 15: Reversa con remolque",
+            "B2,C2",
+            "Intermedia",
+            "L1.maniobra_15"
+          ],
+          [
+            "3",
+            "MANIOBRA_16",
+            "Maniobra 16: Estacionamiento con remolque",
+            "B2,C2",
+            "Intermedia",
+            "L1.maniobra_16"
+          ],
+          [
+            "4",
+            "PAVIMENTO",
+            "Pavimento reforzado concreto",
+            "Infraestructura",
+            "Civil",
+            "L0.pavimento_reforzado"
+          ],
+          [
+            "5",
+            "SEÑALIZACION",
+            "Señalización horizontal y vertical",
+            "Infraestructura",
+            "Civil",
+            "L0.señalizacion"
+          ],
+          [
+            "6",
+            "INCLUYE_CLASE_I",
+            "#ERROR!",
+            "B2,C2",
+            "Referencia",
+            "L2.pista_clase_I"
+          ]
+        ]
+      },
+      {
+        "numero": 14,
+        "elemento_index": 325,
+        "filas": 8,
+        "columnas": 6,
+        "encabezados": [
+          "#",
+          "Componente",
+          "Descripción",
+          "Categoría",
+          "Tipo",
+          "Referencia"
+        ],
+        "ejemplo_fila2": [
+          "1",
+          "MANIOBRA_17",
+          "Maniobra 17: Maniobras vehículos pesados",
+          "B3,C3",
+          "Avanzada",
+          "L1.maniobra_17"
+        ],
+        "todas_filas": [
+          [
+            "#",
+            "Componente",
+            "Descripción",
+            "Categoría",
+            "Tipo",
+            "Referencia"
+          ],
+          [
+            "1",
+            "MANIOBRA_17",
+            "Maniobra 17: Maniobras vehículos pesados",
+            "B3,C3",
+            "Avanzada",
+            "L1.maniobra_17"
+          ],
+          [
+            "2",
+            "MANIOBRA_18",
+            "Maniobra 18: Reversa vehículo articulado",
+            "B3,C3",
+            "Avanzada",
+            "L1.maniobra_18"
+          ],
+          [
+            "3",
+            "MANIOBRA_19",
+            "Maniobra 19: Maniobras en espacio reducido",
+            "B3,C3",
+            "Avanzada",
+            "L1.maniobra_19"
+          ],
+          [
+            "4",
+            "PAVIMENTO",
+            "Pavimento especial concreto Fc=35MPa",
+            "Infraestructura",
+            "Civil",
+            "L0.pavimento_especial"
+          ],
+          [
+            "5",
+            "SEÑALIZACION",
+            "Señalización horizontal y vertical",
+            "Infraestructura",
+            "Civil",
+            "L0.señalizacion"
+          ],
+          [
+            "6",
+            "INCLUYE_CLASE_II",
+            "+ Todas las maniobras de Clase II (14-16)",
+            "B3,C3",
+            "Referencia",
+            "L2.pista_clase_II"
+          ],
+          [
+            "7",
+            "INCLUYE_CLASE_I",
+            "+ Todas las maniobras de Clase I (0-13)",
+            "B3,C3",
+            "Referencia",
+            "L2.pista_clase_I"
+          ]
+        ]
+      },
+      {
+        "numero": 19,
+        "elemento_index": 657,
+        "filas": 4,
+        "columnas": 6,
+        "encabezados": [
+          "Componente L1",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L1",
+          "SUBTOTAL ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pista motos A1A2 completa",
+          "Infraestructura motocicletas ≤125cc y >125cc",
+          "1",
+          "glb",
+          "L1.pista_motos_A1A2_completa",
+          "$289.805.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L1",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L1",
+            "SUBTOTAL ($)"
+          ],
+          [
+            "Pista motos A1A2 completa",
+            "Infraestructura motocicletas ≤125cc y >125cc",
+            "1",
+            "glb",
+            "L1.pista_motos_A1A2_completa",
+            "$289.805.000"
+          ],
+          [
+            "Pista carros B1C1 completa",
+            "Infraestructura automóviles livianos",
+            "1",
+            "glb",
+            "L1.pista_carros_B1C1_completa",
+            "$431.635.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.pista_clase_I",
+            "$721.440.000"
+          ]
+        ]
+      },
+      {
+        "numero": 20,
+        "elemento_index": 672,
+        "filas": 4,
+        "columnas": 6,
+        "encabezados": [
+          "Componente L1",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L1",
+          "SUBTOTAL ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pista Clase I completa",
+          "Infraestructura motos + carros livianos",
+          "1",
+          "glb",
+          "L1.pista_clase_I",
+          "$721.440.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L1",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L1",
+            "SUBTOTAL ($)"
+          ],
+          [
+            "Pista Clase I completa",
+            "Infraestructura motos + carros livianos",
+            "1",
+            "glb",
+            "L1.pista_clase_I",
+            "$721.440.000"
+          ],
+          [
+            "Pista camiones B2C2 completa",
+            "Infraestructura camiones rígidos",
+            "1",
+            "glb",
+            "L1.pista_camiones_B2C2_completa",
+            "$685.950.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.pista_clase_II",
+            "$1.407.390.000"
+          ]
+        ]
+      },
+      {
+        "numero": 21,
+        "elemento_index": 687,
+        "filas": 4,
+        "columnas": 6,
+        "encabezados": [
+          "Componente L1",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L1",
+          "SUBTOTAL ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pista Clase II completa",
+          "Infraestructura motos + carros + camiones rígidos",
+          "1",
+          "glb",
+          "L1.pista_clase_II",
+          "$1.407.390.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L1",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L1",
+            "SUBTOTAL ($)"
+          ],
+          [
+            "Pista Clase II completa",
+            "Infraestructura motos + carros + camiones rígidos",
+            "1",
+            "glb",
+            "L1.pista_clase_II",
+            "$1.407.390.000"
+          ],
+          [
+            "Pista tractocamiones B3C3 completa",
+            "Infraestructura tractocamiones articulados",
+            "1",
+            "glb",
+            "L1.pista_tractocamiones_B3C3_completa",
+            "$1.192.100.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.pista_clase_III",
+            "$2.599.490.000"
+          ]
+        ]
+      },
+      {
+        "numero": 35,
+        "elemento_index": 912,
+        "filas": 5,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Estación de trabajo completa",
+          "L1.estacion_trabajo (escritorio + silla + PC + monitor + accesorios)",
+          "16",
+          "und",
+          "L1.estacion_trabajo",
+          "$5.020.000",
+          "$80.320.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Estación de trabajo completa",
+            "L1.estacion_trabajo (escritorio + silla + PC + monitor + accesorios)",
+            "16",
+            "und",
+            "L1.estacion_trabajo",
+            "$5.020.000",
+            "$80.320.000"
+          ],
+          [
+            "Mobiliario aula informática",
+            "Mesas + sillas ergonómicas complementarias",
+            "1",
+            "glb",
+            "L0.MOB_006",
+            "$25.000.000",
+            "$25.000.000"
+          ],
+          [
+            "Switch Gigabit 48 Puertos PoE+",
+            "Switch manageable L3 PoE+ 48p",
+            "1",
+            "und",
+            "L0.TEC_006",
+            "$8.500.000",
+            "$8.500.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.sala_informatica_parametrica (16q)",
+            "",
+            "$113.820.000"
+          ]
+        ]
+      },
+      {
+        "numero": 36,
+        "elemento_index": 918,
+        "filas": 5,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Estación de trabajo completa",
+          "L1.estacion_trabajo (escritorio + silla + PC + monitor + accesorios)",
+          "24",
+          "und",
+          "L1.estacion_trabajo",
+          "$5.020.000",
+          "$120.480.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Estación de trabajo completa",
+            "L1.estacion_trabajo (escritorio + silla + PC + monitor + accesorios)",
+            "24",
+            "und",
+            "L1.estacion_trabajo",
+            "$5.020.000",
+            "$120.480.000"
+          ],
+          [
+            "Mobiliario aula informática",
+            "Mesas + sillas ergonómicas complementarias",
+            "1",
+            "glb",
+            "L0.MOB_006",
+            "$25.000.000",
+            "$25.000.000"
+          ],
+          [
+            "Switch Gigabit 48 Puertos PoE+",
+            "Switch manageable L3 PoE+ 48p",
+            "1",
+            "und",
+            "L0.TEC_006",
+            "$8.500.000",
+            "$8.500.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.sala_informatica_parametrica (24q)",
+            "",
+            "$153.980.000"
+          ]
+        ]
+      },
+      {
+        "numero": 57,
+        "elemento_index": 1261,
+        "filas": 7,
+        "columnas": 4,
+        "encabezados": [
+          "Componente L1",
+          "Fundamento Legal",
+          "Área aprox.",
+          "Categoría"
+        ],
+        "ejemplo_fila2": [
+          "L1.recepcion_sala_espera",
+          "Art. 1.1.1 b) y 2.1.1 c)",
+          "30-50 m²",
+          "Recepción"
+        ],
+        "todas_filas": [
+          [
+            "Componente L1",
+            "Fundamento Legal",
+            "Área aprox.",
+            "Categoría"
+          ],
+          [
+            "L1.recepcion_sala_espera",
+            "Art. 1.1.1 b) y 2.1.1 c)",
+            "30-50 m²",
+            "Recepción"
+          ],
+          [
+            "L1.zona_administrativa",
+            "Nota 1 Art. 1.1.1",
+            "40-60 m²",
+            "Administración"
+          ],
+          [
+            "L1.archivo_documentacion",
+            "Nota 1 Art. 1.1.1",
+            "8-12 m²",
+            "Archivo"
+          ],
+          [
+            "L1.almacenamiento_articulos",
+            "Nota 1 Art. 1.1.1",
+            "10-15 m²",
+            "Almacenamiento"
+          ],
+          [
+            "L1.zona_control_pruebas_practicas",
+            "Art. 2.1.1 b)",
+            "15-20 m²",
+            "Control"
+          ],
+          [
+            "L1.areas_circulacion",
+            "Nota 1 (NTC 4595)",
+            "15-20% área total",
+            "Circulación"
+          ]
+        ]
+      },
+      {
+        "numero": 59,
+        "elemento_index": 1351,
+        "filas": 5,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_001",
+          "L0.IC_001",
+          "Pavimento flexible asfalto e=12cm",
+          "Carpeta asfáltica MDC-19 sobre base granular",
+          "m²",
+          "INVIAS Art. 450",
+          "$85.000",
+          "APU_IC_001",
+          "[Ver ficha]",
+          "L1.pista_motos_A1A2_completa"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_001",
+            "L0.IC_001",
+            "Pavimento flexible asfalto e=12cm",
+            "Carpeta asfáltica MDC-19 sobre base granular",
+            "m²",
+            "INVIAS Art. 450",
+            "$85.000",
+            "APU_IC_001",
+            "[Ver ficha]",
+            "L1.pista_motos_A1A2_completa"
+          ],
+          [
+            "BIM_L0_002",
+            "L0.IC_002",
+            "Pavimento rígido concreto Fc=21MPa e=15cm",
+            "Losa concreto hidráulico sobre subbase",
+            "m²",
+            "INVIAS Art. 500, NSR-10",
+            "$95.000",
+            "APU_IC_002",
+            "[Ver ficha]",
+            "L1.pista_carros_B1C1_completa, L1.parqueadero_*"
+          ],
+          [
+            "BIM_L0_003",
+            "L0.IC_003",
+            "Pavimento reforzado concreto Fc=28MPa e=20cm",
+            "Losa reforzada malla electrosoldada",
+            "m²",
+            "INVIAS Art. 501",
+            "$115.000",
+            "APU_IC_003",
+            "[Ver ficha]",
+            "L1.pista_camiones_B2C2_completa"
+          ],
+          [
+            "BIM_L0_004",
+            "L0.IC_004",
+            "Pavimento especial concreto Fc=35MPa e=25cm",
+            "Losa alta resistencia vehículos pesados",
+            "m²",
+            "INVIAS Art. 502",
+            "$145.000",
+            "APU_IC_004",
+            "[Ver ficha]",
+            "L1.pista_tractocamiones_B3C3_completa"
+          ]
+        ]
+      },
+      {
+        "numero": 60,
+        "elemento_index": 1354,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_005",
+          "L0.DR_001",
+          "Cuneta concreto perimetral",
+          "Cuneta tipo 1 sección 0.30×0.30m",
+          "ml",
+          "NTC 4509",
+          "$35.000",
+          "APU_DR_001",
+          "[Ver ficha]",
+          "L1.pista_clase_, L1.parqueadero_"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_005",
+            "L0.DR_001",
+            "Cuneta concreto perimetral",
+            "Cuneta tipo 1 sección 0.30×0.30m",
+            "ml",
+            "NTC 4509",
+            "$35.000",
+            "APU_DR_001",
+            "[Ver ficha]",
+            "L1.pista_clase_, L1.parqueadero_"
+          ],
+          [
+            "BIM_L0_006",
+            "L0.DR_002",
+            "Sistema drenaje pluvial",
+            "Rejillas + tubería PVC sanitaria",
+            "ml",
+            "NTC 1762",
+            "$55.000",
+            "APU_DR_002",
+            "[Ver ficha]",
+            "L1.parqueadero_*"
+          ],
+          [
+            "BIM_L0_007",
+            "L0.DR_003",
+            "Drenaje reforzado alta capacidad",
+            "Sistema para cargas pesadas",
+            "ml",
+            "NTC 4509",
+            "$75.000",
+            "APU_DR_003",
+            "[Ver ficha]",
+            "L1.pista_clase_II/III"
+          ]
+        ]
+      },
+      {
+        "numero": 61,
+        "elemento_index": 1360,
+        "filas": 3,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_008",
+          "L0.SV_001",
+          "Señalización horizontal termoplástica",
+          "Pintura termoplástica reflectiva blanca/amarilla",
+          "ml",
+          "NTC 4744, Manual Señalizacion MINTRANSPORTE",
+          "$45.000",
+          "APU_SV_001",
+          "[Ver ficha]",
+          "L1.pista_*"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_008",
+            "L0.SV_001",
+            "Señalización horizontal termoplástica",
+            "Pintura termoplástica reflectiva blanca/amarilla",
+            "ml",
+            "NTC 4744, Manual Señalizacion MINTRANSPORTE",
+            "$45.000",
+            "APU_SV_001",
+            "[Ver ficha]",
+            "L1.pista_*"
+          ],
+          [
+            "BIM_L0_009",
+            "L0.SV_002",
+            "Demarcación espacio vehicular",
+            "Líneas demarcación parqueadero",
+            "und",
+            "NTC 4695",
+            "$25.000",
+            "APU_SV_002",
+            "[Ver ficha]",
+            "L1.parqueadero_*"
+          ]
+        ]
+      },
+      {
+        "numero": 62,
+        "elemento_index": 1363,
+        "filas": 3,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_010",
+          "L0.SV_003",
+          "Conos reflectivos 90cm",
+          "Conos viales reflectivos naranja",
+          "und",
+          "NTC 4695",
+          "$85.000",
+          "APU_SV_003",
+          "[Ver ficha]",
+          "L1.pista_*"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_010",
+            "L0.SV_003",
+            "Conos reflectivos 90cm",
+            "Conos viales reflectivos naranja",
+            "und",
+            "NTC 4695",
+            "$85.000",
+            "APU_SV_003",
+            "[Ver ficha]",
+            "L1.pista_*"
+          ],
+          [
+            "BIM_L0_011",
+            "L0.SV_004",
+            "Señalización vertical Tipo I",
+            "Señal reglamentaria/preventiva 0.75×0.75m",
+            "und",
+            "NTC 4744",
+            "$450.000",
+            "APU_SV_004",
+            "[Ver ficha]",
+            "L1.pista_, L1.parqueadero_"
+          ]
+        ]
+      },
+      {
+        "numero": 63,
+        "elemento_index": 1366,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_012",
+          "L0.SEG_001",
+          "Baranda metálica contención",
+          "Defensa metálica doble onda galvanizada",
+          "ml",
+          "INVIAS Art. 640",
+          "$125.000",
+          "APU_SEG_001",
+          "[Ver ficha]",
+          "L1.pista_*"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_012",
+            "L0.SEG_001",
+            "Baranda metálica contención",
+            "Defensa metálica doble onda galvanizada",
+            "ml",
+            "INVIAS Art. 640",
+            "$125.000",
+            "APU_SEG_001",
+            "[Ver ficha]",
+            "L1.pista_*"
+          ],
+          [
+            "BIM_L0_013",
+            "L0.SEG_002",
+            "Kit seguridad evaluación",
+            "Conos + señales + extintores + botiquín",
+            "glb",
+            "Res. 160/2017",
+            "$3.500.000",
+            "APU_SEG_002",
+            "[Ver ficha]",
+            "L1.pista_*"
+          ],
+          [
+            "BIM_L0_014",
+            "L0.SEG_003",
+            "Sistema detección incendios",
+            "Detectores de humo + alarma + rociadores",
+            "und",
+            "NTC 2885, NFPA 72",
+            "$850.000",
+            "APU_SEG_003",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ]
+        ]
+      },
+      {
+        "numero": 64,
+        "elemento_index": 1371,
+        "filas": 5,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario \n(COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_015",
+          "L0.EDIF_001",
+          "Edificación principal CALE",
+          "Construcción permanente 250 m²",
+          "glb",
+          "NSR-10, NTC 4595",
+          "$650.000.000",
+          "APU_EDIF_001",
+          "[Ver ficha]",
+          "L1.edificacion_parametrica (NUEVA)"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario \n(COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_015",
+            "L0.EDIF_001",
+            "Edificación principal CALE",
+            "Construcción permanente 250 m²",
+            "glb",
+            "NSR-10, NTC 4595",
+            "$650.000.000",
+            "APU_EDIF_001",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica (NUEVA)"
+          ],
+          [
+            "BIM_L0_016",
+            "L0.MAT_001",
+            "Construcción área sanitarios",
+            "Mampostería + instalaciones + acabados",
+            "m²",
+            "NSR-10",
+            "$1.850.000",
+            "APU_MAT_001",
+            "[Ver ficha]",
+            "L1.sshh_completo"
+          ],
+          [
+            "BIM_L0_017",
+            "L0.MAT_002",
+            "Concreto premezclado 3000 PSI",
+            "Concreto estructural f'c=21MPa",
+            "m³",
+            "NTC 3318",
+            "$480.000",
+            "APU_MAT_002",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_018",
+            "L0.MAT_003",
+            "Acero estructural ASTM A36",
+            "Perfiles metálicos estructura",
+            "Ton",
+            "NSR-10 Título F",
+            "$8.500.000",
+            "APU_MAT_003",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ]
+        ]
+      },
+      {
+        "numero": 65,
+        "elemento_index": 1374,
+        "filas": 6,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_019",
+          "L0.ADEC_001",
+          "Adecuaciones Drywall completas",
+          "Sistema liviano paredes + cielo + piso",
+          "glb",
+          "NTC 4017",
+          "$85.000.000",
+          "APU_ADEC_001",
+          "[Ver ficha]",
+          "L1.edificacion_parametrica (ADECUADA)"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_019",
+            "L0.ADEC_001",
+            "Adecuaciones Drywall completas",
+            "Sistema liviano paredes + cielo + piso",
+            "glb",
+            "NTC 4017",
+            "$85.000.000",
+            "APU_ADEC_001",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica (ADECUADA)"
+          ],
+          [
+            "BIM_L0_020",
+            "L0.ADEC_002",
+            "Drywall paredes y divisiones",
+            "Paneles yeso 1/2\" + perfilería metálica",
+            "m²",
+            "NTC 4017",
+            "$155.000",
+            "APU_ADEC_002",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ],
+          [
+            "BIM_L0_021",
+            "L0.ADEC_003",
+            "Cielo raso suspendido",
+            "Cielo raso modular 0.60×0.60m",
+            "m²",
+            "NTC 4017",
+            "$65.000",
+            "APU_ADEC_003",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ],
+          [
+            "BIM_L0_022",
+            "L0.ADEC_004",
+            "Piso vinílico LVT",
+            "Piso tipo LVT tráfico comercial",
+            "m²",
+            "NTC 1252",
+            "$125.000",
+            "APU_ADEC_004",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ],
+          [
+            "BIM_L0_023",
+            "L0.ADEC_005",
+            "Cubículos evaluación",
+            "Cabinas individuales aislamiento acústico",
+            "und",
+            "NTC 4610",
+            "$4.500.000",
+            "APU_ADEC_005",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ]
+        ]
+      },
+      {
+        "numero": 66,
+        "elemento_index": 1380,
+        "filas": 6,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_024",
+          "L0.ELE_001",
+          "Acometida trifásica 220V 30A",
+          "Tablero + breakers + cableado",
+          "und",
+          "NTC 2050, RETIE",
+          "$8.500.000",
+          "APU_ELE_001",
+          "[Ver ficha]",
+          "L1.datacenter_12m2"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_024",
+            "L0.ELE_001",
+            "Acometida trifásica 220V 30A",
+            "Tablero + breakers + cableado",
+            "und",
+            "NTC 2050, RETIE",
+            "$8.500.000",
+            "APU_ELE_001",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_025",
+            "L0.ELE_002",
+            "Instalaciones eléctricas complementarias",
+            "Red eléctrica completa edificación",
+            "glb",
+            "NTC 2050",
+            "$45.000.000",
+            "APU_ELE_002",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ],
+          [
+            "BIM_L0_026",
+            "L0.ELE_003",
+            "Puesta tierra varilla 5/8\"×2.4m",
+            "Sistema puesta a tierra SPT",
+            "und",
+            "RETIE",
+            "$1.200.000",
+            "APU_ELE_003",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_027",
+            "L0.ELE_004",
+            "Supresor de picos 6 tomas",
+            "Protector sobretensiones",
+            "und",
+            "NTC 2050",
+            "$350.000",
+            "APU_ELE_004",
+            "[Ver ficha]",
+            "L1.estacion_trabajo"
+          ],
+          [
+            "BIM_L0_028",
+            "L0.ELE_006",
+            "UPS 10kVA doble conversión",
+            "Sistema alimentación ininterrumpida",
+            "und",
+            "IEEE 519",
+            "$18.500.000",
+            "APU_ELE_006",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ]
+        ]
+      },
+      {
+        "numero": 67,
+        "elemento_index": 1382,
+        "filas": 7,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_029",
+          "L0.ELE_007",
+          "Panel solar fotovoltaico 550Wp",
+          "Panel monocristalino PERC 550W",
+          "und",
+          "NTC 2050, RETIE, Ley 1715/2014",
+          "$850.000",
+          "APU_ELE_007",
+          "[Ver ficha]",
+          "L1.sistema_fotovoltaico_4h"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_029",
+            "L0.ELE_007",
+            "Panel solar fotovoltaico 550Wp",
+            "Panel monocristalino PERC 550W",
+            "und",
+            "NTC 2050, RETIE, Ley 1715/2014",
+            "$850.000",
+            "APU_ELE_007",
+            "[Ver ficha]",
+            "L1.sistema_fotovoltaico_4h"
+          ],
+          [
+            "BIM_L0_030",
+            "L0.ELE_008",
+            "Inversor solar híbrido 10kW",
+            "Inversor on-grid/off-grid con MPPT",
+            "und",
+            "NTC 2050, RETIE, IEC 62109",
+            "$12.500.000",
+            "APU_ELE_008",
+            "[Ver ficha]",
+            "L1.sistema_fotovoltaico_4h"
+          ],
+          [
+            "BIM_L0_031",
+            "L0.ELE_009",
+            "Batería litio 5kWh",
+            "Batería LiFePO4 ciclo profundo",
+            "und",
+            "NTC 2050, IEC 62619",
+            "$8.500.000",
+            "APU_ELE_009",
+            "[Ver ficha]",
+            "L1.sistema_fotovoltaico_4h"
+          ],
+          [
+            "BIM_L0_032",
+            "L0.ELE_010",
+            "Controlador de carga solar MPPT 60A",
+            "Controlador MPPT con display",
+            "und",
+            "NTC 2050, IEC 62109",
+            "$1.800.000",
+            "APU_ELE_010",
+            "[Ver ficha]",
+            "L1.sistema_fotovoltaico_4h"
+          ],
+          [
+            "BIM_L0_033",
+            "L0.ELE_011",
+            "Estructura montaje paneles solares",
+            "Estructura aluminio inclinación ajustable",
+            "glb",
+            "NSR-10, RETIE",
+            "$4.500.000",
+            "APU_ELE_011",
+            "[Ver ficha]",
+            "L1.sistema_fotovoltaico_4h"
+          ],
+          [
+            "BIM_L0_034",
+            "L0.ELE_012",
+            "Cableado DC fotovoltaico 6mm²",
+            "Cable solar UV resistente 1000V",
+            "ml",
+            "NTC 2050, RETIE",
+            "$15.000",
+            "APU_ELE_012",
+            "[Ver ficha]",
+            "L1.sistema_fotovoltaico_4h"
+          ]
+        ]
+      },
+      {
+        "numero": 68,
+        "elemento_index": 1385,
+        "filas": 3,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_035",
+          "L0.ILU_001",
+          "Luminaria LED 150W poste 8m",
+          "Luminaria vial LED",
+          "und",
+          "NTC 900, NTC 6519-2",
+          "$2.850.000",
+          "APU_ILU_001",
+          "[Ver ficha]",
+          "L1.pista_clase_I, L1.parqueadero_*"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_035",
+            "L0.ILU_001",
+            "Luminaria LED 150W poste 8m",
+            "Luminaria vial LED",
+            "und",
+            "NTC 900, NTC 6519-2",
+            "$2.850.000",
+            "APU_ILU_001",
+            "[Ver ficha]",
+            "L1.pista_clase_I, L1.parqueadero_*"
+          ],
+          [
+            "BIM_L0_036",
+            "L0.ILU_002",
+            "Luminaria LED 200W poste 10m",
+            "Luminaria alta potencia pesados",
+            "und",
+            "NTC 900",
+            "$3.450.000",
+            "APU_ILU_002",
+            "[Ver ficha]",
+            "L1.pista_clase_II/III"
+          ]
+        ]
+      },
+      {
+        "numero": 69,
+        "elemento_index": 1389,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_040",
+          "L0.HVAC_001",
+          "Sistema HVAC precision datacenter",
+          "Aire acondicionado precisión 18-22°C",
+          "und",
+          "ASHRAE 90.1",
+          "$25.000.000",
+          "APU_HVAC_001",
+          "[Ver ficha]",
+          "L1.datacenter_12m2"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_040",
+            "L0.HVAC_001",
+            "Sistema HVAC precision datacenter",
+            "Aire acondicionado precisión 18-22°C",
+            "und",
+            "ASHRAE 90.1",
+            "$25.000.000",
+            "APU_HVAC_001",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_041",
+            "L0.HID_001",
+            "Tubería PVC + válvulas",
+            "Sistema hidráulico sanitario",
+            "lote",
+            "NTC 1762",
+            "$12.000.000",
+            "APU_HID_001",
+            "[Ver ficha]",
+            "L1.sshh_completo"
+          ],
+          [
+            "BIM_L0_042",
+            "L0.HID_002",
+            "Baño completo instalado",
+            "Sanitario + lavamanos + accesorios",
+            "und",
+            "NTC 920",
+            "$2.500.000",
+            "APU_HID_002",
+            "[Ver ficha]",
+            "L1.sshh_completo"
+          ]
+        ]
+      },
+      {
+        "numero": 70,
+        "elemento_index": 1392,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_040",
+          "L0.HVAC_001",
+          "Sistema HVAC precision datacenter",
+          "Aire acondicionado precisión 18-22°C",
+          "und",
+          "ASHRAE 90.1",
+          "$25.000.000",
+          "APU_HVAC_001",
+          "[Ver ficha]",
+          "L1.datacenter_12m2"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_040",
+            "L0.HVAC_001",
+            "Sistema HVAC precision datacenter",
+            "Aire acondicionado precisión 18-22°C",
+            "und",
+            "ASHRAE 90.1",
+            "$25.000.000",
+            "APU_HVAC_001",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_041",
+            "L0.HID_001",
+            "Tubería PVC + válvulas",
+            "Sistema hidráulico sanitario",
+            "lote",
+            "NTC 1762",
+            "$12.000.000",
+            "APU_HID_001",
+            "[Ver ficha]",
+            "L1.sshh_completo"
+          ],
+          [
+            "BIM_L0_042",
+            "L0.HID_002",
+            "Baño completo instalado",
+            "Sanitario + lavamanos + accesorios",
+            "und",
+            "NTC 920",
+            "$2.500.000",
+            "APU_HID_002",
+            "[Ver ficha]",
+            "L1.sshh_completo"
+          ]
+        ]
+      },
+      {
+        "numero": 71,
+        "elemento_index": 1398,
+        "filas": 7,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_037",
+          "L0.MOB_001",
+          "Escritorio ergonómico 1.20×0.60m",
+          "Mesa trabajo melamina 25mm",
+          "und",
+          "NTC 5655",
+          "$450.000",
+          "APU_MOB_001",
+          "[Ver ficha]",
+          "L1.estacion_trabajo"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_037",
+            "L0.MOB_001",
+            "Escritorio ergonómico 1.20×0.60m",
+            "Mesa trabajo melamina 25mm",
+            "und",
+            "NTC 5655",
+            "$450.000",
+            "APU_MOB_001",
+            "[Ver ficha]",
+            "L1.estacion_trabajo"
+          ],
+          [
+            "BIM_L0_038",
+            "L0.MOB_002",
+            "Silla ergonómica ajustable",
+            "Silla oficina respaldo alto",
+            "und",
+            "NTC 5655",
+            "$650.000",
+            "APU_MOB_002",
+            "[Ver ficha]",
+            "L1.estacion_trabajo"
+          ],
+          [
+            "BIM_L0_039",
+            "L0.MOB_003",
+            "Sillas universitarias",
+            "Silla paleta universitaria",
+            "und",
+            "NTC 4730",
+            "$280.000",
+            "APU_MOB_003",
+            "[Ver ficha]",
+            "L1.sala_formacion"
+          ],
+          [
+            "BIM_L0_040",
+            "L0.MOB_004",
+            "Tablero acrílico 3.0×1.5m",
+            "Tablero borrable marcador",
+            "und",
+            "NTC 4731",
+            "$850.000",
+            "APU_MOB_004",
+            "[Ver ficha]",
+            "L1.sala_formacion"
+          ],
+          [
+            "BIM_L0_041",
+            "L0.MOB_005",
+            "Mobiliario completo CALE",
+            "Conjunto mobiliario salas + oficinas",
+            "glb",
+            "NTC 5655",
+            "$75.000.000",
+            "APU_MOB_005",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ],
+          [
+            "BIM_L0_042",
+            "L0.MOB_006",
+            "Mobiliario aula informática",
+            "Mesas + sillas ergonómicas",
+            "glb",
+            "NTC 5655",
+            "$25.000.000",
+            "APU_MOB_006",
+            "[Ver ficha]",
+            "L1.sala_informatica_parametrica"
+          ]
+        ]
+      },
+      {
+        "numero": 72,
+        "elemento_index": 1401,
+        "filas": 7,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_043",
+          "L0.MOB_007",
+          "Mobiliario oficina director",
+          "Escritorio + silla ejecutiva + archivador",
+          "set",
+          "NTC 5655",
+          "$5.500.000",
+          "APU_MOB_007",
+          "[Ver ficha]",
+          "L1.admin_parametrico (5 ofi)"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_043",
+            "L0.MOB_007",
+            "Mobiliario oficina director",
+            "Escritorio + silla ejecutiva + archivador",
+            "set",
+            "NTC 5655",
+            "$5.500.000",
+            "APU_MOB_007",
+            "[Ver ficha]",
+            "L1.admin_parametrico (5 ofi)"
+          ],
+          [
+            "BIM_L0_044",
+            "L0.MOB_008",
+            "Mobiliario oficina subdirector",
+            "Escritorio + silla + archivador",
+            "set",
+            "NTC 5655",
+            "$4.200.000",
+            "APU_MOB_008",
+            "[Ver ficha]",
+            "L1.admin_parametrico (5 ofi)"
+          ],
+          [
+            "BIM_L0_045",
+            "L0.MOB_009",
+            "Mobiliario oficina coordinador",
+            "Escritorio + silla + archivador",
+            "set",
+            "NTC 5655",
+            "$3.800.000",
+            "APU_MOB_009",
+            "[Ver ficha]",
+            "L1.admin_parametrico, L1.zona_administrativa"
+          ],
+          [
+            "BIM_L0_046",
+            "L0.MOB_010",
+            "Mobiliario oficina operaciones",
+            "Escritorio + silla operativa",
+            "set",
+            "NTC 5655",
+            "$2.500.000",
+            "APU_MOB_010",
+            "[Ver ficha]",
+            "L1.admin_parametrico (3 ofi), L1.zona_administrativa"
+          ],
+          [
+            "BIM_L0_047",
+            "L0.MOB_011",
+            "Mobiliario sala juntas",
+            "Mesa + 8 sillas + mueble credenza",
+            "set",
+            "NTC 5655",
+            "$8.500.000",
+            "APU_MOB_011",
+            "[Ver ficha]",
+            "L1.admin_parametrico (5 ofi)"
+          ],
+          [
+            "BIM_L0_048",
+            "L0.MOB_012",
+            "Archivo y bodega",
+            "Archivadores + estantería metálica",
+            "set",
+            "NTC 2050",
+            "$6.000.000",
+            "APU_MOB_012",
+            "[Ver ficha]",
+            "L1.admin_parametrico"
+          ]
+        ]
+      },
+      {
+        "numero": 73,
+        "elemento_index": 1404,
+        "filas": 3,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_049",
+          "L0.MOB_RECEPCION",
+          "Counter recepción CALE",
+          "Mostrador 2.5×0.8m + silla operativa",
+          "set",
+          "NTC 5655",
+          "$3.200.000",
+          "APU_MOB_RECEPCION",
+          "[Ver ficha]",
+          "L1.recepcion_sala_espera"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_049",
+            "L0.MOB_RECEPCION",
+            "Counter recepción CALE",
+            "Mostrador 2.5×0.8m + silla operativa",
+            "set",
+            "NTC 5655",
+            "$3.200.000",
+            "APU_MOB_RECEPCION",
+            "[Ver ficha]",
+            "L1.recepcion_sala_espera"
+          ],
+          [
+            "BIM_L0_050",
+            "L0.MOB_SILLAS_ESPERA",
+            "Sillas tandem sala espera",
+            "Sillas tandem 3-5 puestos metálicas",
+            "und",
+            "NTC 4730",
+            "$1.450.000",
+            "APU_MOB_SILLAS_ESPERA",
+            "[Ver ficha]",
+            "L1.recepcion_sala_espera"
+          ]
+        ]
+      },
+      {
+        "numero": 74,
+        "elemento_index": 1408,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_051",
+          "L0.LOCKERS_ASPIRANTES",
+          "Locker metálico 12 puertas",
+          "Casillero metálico 12 compartimientos",
+          "und",
+          "NTC 2050",
+          "$1.800.000",
+          "APU_LOCKERS_ASPIRANTES",
+          "[Ver ficha]",
+          "L1.almacenamiento_articulos"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_051",
+            "L0.LOCKERS_ASPIRANTES",
+            "Locker metálico 12 puertas",
+            "Casillero metálico 12 compartimientos",
+            "und",
+            "NTC 2050",
+            "$1.800.000",
+            "APU_LOCKERS_ASPIRANTES",
+            "[Ver ficha]",
+            "L1.almacenamiento_articulos"
+          ],
+          [
+            "BIM_L0_052",
+            "L0.ARCHIVO_ACTIVO",
+            "Estantería archivo rodante",
+            "Sistema archivo móvil alto tránsito",
+            "ml",
+            "NTC 2050",
+            "$850.000",
+            "APU_ARCHIVO_ACTIVO",
+            "[Ver ficha]",
+            "L1.archivo_documentacion"
+          ],
+          [
+            "BIM_L0_053",
+            "L0.ARCHIVADOR_VERTICAL",
+            "Archivador vertical 4 gavetas",
+            "Archivador metálico tamaño oficio",
+            "und",
+            "NTC 2050",
+            "$1.200.000",
+            "APU_ARCHIVADOR_VERTICAL",
+            "[Ver ficha]",
+            "L1.archivo_documentacion"
+          ]
+        ]
+      },
+      {
+        "numero": 75,
+        "elemento_index": 1414,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_054",
+          "L0.TEC_001",
+          "PC Desktop Core i5",
+          "CPU i5 11gen + 8GB RAM + 256GB SSD + W11 Pro",
+          "und",
+          "ISO/IEC 14764",
+          "$2.800.000",
+          "APU_TEC_001",
+          "[Ver ficha]",
+          "L1.estacion_trabajo"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_054",
+            "L0.TEC_001",
+            "PC Desktop Core i5",
+            "CPU i5 11gen + 8GB RAM + 256GB SSD + W11 Pro",
+            "und",
+            "ISO/IEC 14764",
+            "$2.800.000",
+            "APU_TEC_001",
+            "[Ver ficha]",
+            "L1.estacion_trabajo"
+          ],
+          [
+            "BIM_L0_055",
+            "L0.TEC_002",
+            "Monitor LED Full HD 24\"",
+            "Monitor 1920×1080 IPS 24\"",
+            "und",
+            "ISO/IEC 9241",
+            "$650.000",
+            "APU_TEC_002",
+            "[Ver ficha]",
+            "L1.estacion_trabajo"
+          ],
+          [
+            "BIM_L0_056",
+            "L0.TEC_003",
+            "Teclado + Mouse USB",
+            "Teclado + mouse alambricos",
+            "set",
+            "ISO/IEC 9995",
+            "$95.000",
+            "APU_TEC_003",
+            "[Ver ficha]",
+            "L1.estacion_trabajo"
+          ]
+        ]
+      },
+      {
+        "numero": 76,
+        "elemento_index": 1418,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_057",
+          "L0.AV_001",
+          "Video proyector 5000 lúmenes",
+          "Proyector WXGA 5000 ANSI",
+          "und",
+          "ISO/IEC 61947-1",
+          "$4.500.000",
+          "APU_AV_001",
+          "[Ver ficha]",
+          "L1.sala_formacion"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_057",
+            "L0.AV_001",
+            "Video proyector 5000 lúmenes",
+            "Proyector WXGA 5000 ANSI",
+            "und",
+            "ISO/IEC 61947-1",
+            "$4.500.000",
+            "APU_AV_001",
+            "[Ver ficha]",
+            "L1.sala_formacion"
+          ],
+          [
+            "BIM_L0_058",
+            "L0.AV_002",
+            "Pantalla eléctrica 4.0×3.0m",
+            "Pantalla motorizada 4:3",
+            "und",
+            "-",
+            "$2.200.000",
+            "APU_AV_002",
+            "[Ver ficha]",
+            "L1.sala_formacion"
+          ],
+          [
+            "BIM_L0_059",
+            "L0.AV_003",
+            "Sistema audio amplificado",
+            "Amplificador + parlantes + micrófonos",
+            "set",
+            "IEC 60268",
+            "$3.800.000",
+            "APU_AV_003",
+            "[Ver ficha]",
+            "L1.sala_formacion"
+          ]
+        ]
+      },
+      {
+        "numero": 77,
+        "elemento_index": 1422,
+        "filas": 5,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_060",
+          "L0.TEC_004",
+          "Rack servidor 42U",
+          "Gabinete 42U con PDU + ventilación",
+          "und",
+          "TIA-942",
+          "$12.500.000",
+          "APU_TEC_004",
+          "[Ver ficha]",
+          "L1.datacenter_12m2"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_060",
+            "L0.TEC_004",
+            "Rack servidor 42U",
+            "Gabinete 42U con PDU + ventilación",
+            "und",
+            "TIA-942",
+            "$12.500.000",
+            "APU_TEC_004",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_061",
+            "L0.TEC_005",
+            "Servidor HP ProLiant DL380 Gen10",
+            "2× Xeon Gold + 64GB RAM + storage",
+            "und",
+            "ISO/IEC 27001",
+            "$45.000.000",
+            "APU_TEC_005",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_062",
+            "L0.TEC_006",
+            "Switch Gigabit 48 Puertos PoE+",
+            "Switch manageable L3 PoE+ 48p",
+            "und",
+            "IEEE 802.3af/at",
+            "$8.500.000",
+            "APU_TEC_006",
+            "[Ver ficha]",
+            "L1.datacenter_12m2"
+          ],
+          [
+            "BIM_L0_063",
+            "L0.TEC_009",
+            "Cámara IP Seguridad 4MP PoE",
+            "Cámara IP domo 4MP PoE",
+            "und",
+            "ONVIF Profile S",
+            "$1.200.000",
+            "APU_TEC_009",
+            "[Ver ficha]",
+            "L1.datacenter_12m2, L1.edificacion_*"
+          ]
+        ]
+      },
+      {
+        "numero": 78,
+        "elemento_index": 1426,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_064",
+          "L0.SALA_CONTROL_TEORICO",
+          "Estación supervisión pruebas teóricas",
+          "PC + 2 monitores + software monitoreo",
+          "set",
+          "ISO/IEC 27001",
+          "$6.500.000",
+          "APU_SALA_CONTROL_TEORICO",
+          "[Ver ficha]",
+          "L1.zona_administrativa"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_064",
+            "L0.SALA_CONTROL_TEORICO",
+            "Estación supervisión pruebas teóricas",
+            "PC + 2 monitores + software monitoreo",
+            "set",
+            "ISO/IEC 27001",
+            "$6.500.000",
+            "APU_SALA_CONTROL_TEORICO",
+            "[Ver ficha]",
+            "L1.zona_administrativa"
+          ],
+          [
+            "BIM_L0_065",
+            "L0.SALA_CONTROL_PRACTICO",
+            "Centro control pruebas prácticas",
+            "Workstation + 4-6 monitores + NVR + software",
+            "set",
+            "ISO/IEC 27001, Res. 20253040037125 Art. 2.1.1 b)",
+            "$35.000.000",
+            "APU_SALA_CONTROL_PRACTICO",
+            "[Ver ficha]",
+            "L1.zona_control_pruebas_practicas"
+          ],
+          [
+            "BIM_L0_066",
+            "L0.MONITOR_VIDEOWALL",
+            "Monitor LED 43\" videowall",
+            "Pantalla LED bisel delgado para muro",
+            "und",
+            "ISO/IEC 9241",
+            "$2.800.000",
+            "APU_MONITOR_VIDEOWALL",
+            "[Ver ficha]",
+            "L1.zona_control_pruebas_practicas"
+          ]
+        ]
+      },
+      {
+        "numero": 79,
+        "elemento_index": 1430,
+        "filas": 2,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_067",
+          "L0.PLAT_TEC",
+          "Plataforma tecnológica CALE completa",
+          "Software gestión + licencias + cloud",
+          "glb",
+          "ISO/IEC 25010",
+          "$180.000.000",
+          "APU_PLAT_TEC",
+          "[Ver ficha]",
+          "L1.tecnologia_cale"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_067",
+            "L0.PLAT_TEC",
+            "Plataforma tecnológica CALE completa",
+            "Software gestión + licencias + cloud",
+            "glb",
+            "ISO/IEC 25010",
+            "$180.000.000",
+            "APU_PLAT_TEC",
+            "[Ver ficha]",
+            "L1.tecnologia_cale"
+          ]
+        ]
+      },
+      {
+        "numero": 80,
+        "elemento_index": 1434,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_068",
+          "L0.ACC_001",
+          "Mousepad ergonómico",
+          "Pad reposamuñecas gel",
+          "und",
+          "NTC 5655",
+          "$25.000",
+          "APU_ACC_001",
+          "[Ver ficha]",
+          "L1.estacion_trabajo"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_068",
+            "L0.ACC_001",
+            "Mousepad ergonómico",
+            "Pad reposamuñecas gel",
+            "und",
+            "NTC 5655",
+            "$25.000",
+            "APU_ACC_001",
+            "[Ver ficha]",
+            "L1.estacion_trabajo"
+          ],
+          [
+            "BIM_L0_069",
+            "L0.ACC_002",
+            "Equipamiento sala teórica",
+            "Proyector + audio + tableros",
+            "glb",
+            "-",
+            "$18.000.000",
+            "APU_ACC_002",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ],
+          [
+            "BIM_L0_070",
+            "L0.ACC_003",
+            "Señalización interior",
+            "Señalética completa + seguridad",
+            "glb",
+            "NTC 1461",
+            "$8.500.000",
+            "APU_ACC_003",
+            "[Ver ficha]",
+            "L1.edificacion_parametrica"
+          ]
+        ]
+      },
+      {
+        "numero": 81,
+        "elemento_index": 1440,
+        "filas": 3,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_071",
+          "L0.VEH_001",
+          "Motocicleta ≤125cc adaptada",
+          "Moto escuela categoría A1",
+          "und",
+          "Res. 160/2017",
+          "$15.000.000",
+          "APU_VEH_001",
+          "[Ver ficha]",
+          "L1.pista_motos_A1A2_completa"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_071",
+            "L0.VEH_001",
+            "Motocicleta ≤125cc adaptada",
+            "Moto escuela categoría A1",
+            "und",
+            "Res. 160/2017",
+            "$15.000.000",
+            "APU_VEH_001",
+            "[Ver ficha]",
+            "L1.pista_motos_A1A2_completa"
+          ],
+          [
+            "BIM_L0_072",
+            "L0.VEH_002",
+            "Motocicleta >125cc adaptada",
+            "Moto escuela categoría A2",
+            "und",
+            "Res. 160/2017",
+            "$22.000.000",
+            "APU_VEH_002",
+            "[Ver ficha]",
+            "L1.pista_motos_A1A2_completa"
+          ]
+        ]
+      },
+      {
+        "numero": 82,
+        "elemento_index": 1444,
+        "filas": 2,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_073",
+          "L0.VEH_003",
+          "Automóvil B1/C1 adaptado",
+          "Vehículo escuela automóvil",
+          "und",
+          "Res. 160/2017",
+          "$85.000.000",
+          "APU_VEH_003",
+          "[Ver ficha]",
+          "L1.pista_carros_B1C1_completa"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_073",
+            "L0.VEH_003",
+            "Automóvil B1/C1 adaptado",
+            "Vehículo escuela automóvil",
+            "und",
+            "Res. 160/2017",
+            "$85.000.000",
+            "APU_VEH_003",
+            "[Ver ficha]",
+            "L1.pista_carros_B1C1_completa"
+          ]
+        ]
+      },
+      {
+        "numero": 83,
+        "elemento_index": 1448,
+        "filas": 3,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_074",
+          "L0.VEH_004",
+          "Camión B2/C2 adaptado",
+          "Camión rígido escuela",
+          "und",
+          "Res. 160/2017",
+          "$180.000.000",
+          "APU_VEH_004",
+          "[Ver ficha]",
+          "L1.pista_camiones_B2C2_completa"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_074",
+            "L0.VEH_004",
+            "Camión B2/C2 adaptado",
+            "Camión rígido escuela",
+            "und",
+            "Res. 160/2017",
+            "$180.000.000",
+            "APU_VEH_004",
+            "[Ver ficha]",
+            "L1.pista_camiones_B2C2_completa"
+          ],
+          [
+            "BIM_L0_075",
+            "L0.VEH_005",
+            "Tractocamión B3/C3 articulado",
+            "Tractocamión articulado escuela",
+            "und",
+            "Res. 160/2017",
+            "$350.000.000",
+            "APU_VEH_005",
+            "[Ver ficha]",
+            "L1.pista_tractocamiones_B3C3_completa"
+          ]
+        ]
+      },
+      {
+        "numero": 84,
+        "elemento_index": 1454,
+        "filas": 2,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_076",
+          "L0.SEG_100",
+          "Paquete seguros obligatorios",
+          "RC + Accidentes Personales",
+          "año",
+          "Código Comercio",
+          "$45.000.000",
+          "APU_SEG_100",
+          "[Ver ficha]",
+          "L1.seguros_cale"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_076",
+            "L0.SEG_100",
+            "Paquete seguros obligatorios",
+            "RC + Accidentes Personales",
+            "año",
+            "Código Comercio",
+            "$45.000.000",
+            "APU_SEG_100",
+            "[Ver ficha]",
+            "L1.seguros_cale"
+          ]
+        ]
+      },
+      {
+        "numero": 85,
+        "elemento_index": 1458,
+        "filas": 2,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_077",
+          "L0.CERT_ISO",
+          "Paquete certificaciones ISO",
+          "ISO 9001 + 14001 + 45001 + 27001",
+          "cert",
+          "ISO/IEC 17021",
+          "$95.000.000",
+          "APU_CERT_ISO",
+          "[Ver ficha]",
+          "L1.certificaciones_cale"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_077",
+            "L0.CERT_ISO",
+            "Paquete certificaciones ISO",
+            "ISO 9001 + 14001 + 45001 + 27001",
+            "cert",
+            "ISO/IEC 17021",
+            "$95.000.000",
+            "APU_CERT_ISO",
+            "[Ver ficha]",
+            "L1.certificaciones_cale"
+          ]
+        ]
+      },
+      {
+        "numero": 86,
+        "elemento_index": 1464,
+        "filas": 3,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_078",
+          "L0.PASILLO_INTERNO",
+          "Pasillos interiores edificación",
+          "Corredor interno ancho mín 1.50m",
+          "ml",
+          "NTC 4595, NTC 6047, Res. 20253040037125 Nota 1",
+          "$185.000",
+          "APU_PASILLO_INTERNO",
+          "[Ver ficha]",
+          "L1.areas_circulacion"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_078",
+            "L0.PASILLO_INTERNO",
+            "Pasillos interiores edificación",
+            "Corredor interno ancho mín 1.50m",
+            "ml",
+            "NTC 4595, NTC 6047, Res. 20253040037125 Nota 1",
+            "$185.000",
+            "APU_PASILLO_INTERNO",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ],
+          [
+            "BIM_L0_079",
+            "L0.CIRCULACION_EXTERNA",
+            "Circulaciones exteriores",
+            "Andenes + caminos peatonales",
+            "m²",
+            "NTC 4279, NTC 6047",
+            "$145.000",
+            "APU_CIRCULACION_EXTERNA",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ]
+        ]
+      },
+      {
+        "numero": 87,
+        "elemento_index": 1468,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_080",
+          "L0.RAMPA_ACCESIBILIDAD",
+          "Rampa acceso universal",
+          "Rampa pendiente máx 8% + pasamanos",
+          "ml",
+          "NTC 6047, Ley 361/1997, Res. 20253040037125 Nota 1",
+          "$850.000",
+          "APU_RAMPA_ACCESIBILIDAD",
+          "[Ver ficha]",
+          "L1.areas_circulacion"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_080",
+            "L0.RAMPA_ACCESIBILIDAD",
+            "Rampa acceso universal",
+            "Rampa pendiente máx 8% + pasamanos",
+            "ml",
+            "NTC 6047, Ley 361/1997, Res. 20253040037125 Nota 1",
+            "$850.000",
+            "APU_RAMPA_ACCESIBILIDAD",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ],
+          [
+            "BIM_L0_081",
+            "L0.ESCALERA_INTERNA",
+            "Escalera principal",
+            "Escalera concreto/metálica huella 28cm contrahuella 18cm",
+            "ml",
+            "NSR-10 K.3.3, NTC 1700",
+            "$1.200.000",
+            "APU_ESCALERA_INTERNA",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ],
+          [
+            "BIM_L0_082",
+            "L0.ESCALERA_EMERGENCIA",
+            "Escalera emergencia",
+            "Escalera evacuación protegida",
+            "ml",
+            "NSR-10 J.4, NTC 1700",
+            "$1.450.000",
+            "APU_ESCALERA_EMERGENCIA",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ]
+        ]
+      },
+      {
+        "numero": 88,
+        "elemento_index": 1472,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "BIM_ID",
+          "Código",
+          "Componente",
+          "Descripción",
+          "Unidad",
+          "Normatividad",
+          "Valor Unitario (COP)",
+          "Referencia APU",
+          "Ficha Técnica",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "BIM_L0_080",
+          "L0.RAMPA_ACCESIBILIDAD",
+          "Rampa acceso universal",
+          "Rampa pendiente máx 8% + pasamanos",
+          "ml",
+          "NTC 6047, Ley 361/1997, Res. 20253040037125 Nota 1",
+          "$850.000",
+          "APU_RAMPA_ACCESIBILIDAD",
+          "[Ver ficha]",
+          "L1.areas_circulacion"
+        ],
+        "todas_filas": [
+          [
+            "BIM_ID",
+            "Código",
+            "Componente",
+            "Descripción",
+            "Unidad",
+            "Normatividad",
+            "Valor Unitario (COP)",
+            "Referencia APU",
+            "Ficha Técnica",
+            "Usado en"
+          ],
+          [
+            "BIM_L0_080",
+            "L0.RAMPA_ACCESIBILIDAD",
+            "Rampa acceso universal",
+            "Rampa pendiente máx 8% + pasamanos",
+            "ml",
+            "NTC 6047, Ley 361/1997, Res. 20253040037125 Nota 1",
+            "$850.000",
+            "APU_RAMPA_ACCESIBILIDAD",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ],
+          [
+            "BIM_L0_081",
+            "L0.ESCALERA_INTERNA",
+            "Escalera principal",
+            "Escalera concreto/metálica huella 28cm contrahuella 18cm",
+            "ml",
+            "NSR-10 K.3.3, NTC 1700",
+            "$1.200.000",
+            "APU_ESCALERA_INTERNA",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ],
+          [
+            "BIM_L0_082",
+            "L0.ESCALERA_EMERGENCIA",
+            "Escalera emergencia",
+            "Escalera evacuación protegida",
+            "ml",
+            "NSR-10 J.4, NTC 1700",
+            "$1.450.000",
+            "APU_ESCALERA_EMERGENCIA",
+            "[Ver ficha]",
+            "L1.areas_circulacion"
+          ]
+        ]
+      }
+    ],
+    "L3 - Especialización CALE": [
+      {
+        "numero": 1,
+        "elemento_index": 58,
+        "filas": 7,
+        "columnas": 9,
+        "encabezados": [
+          "Categoría",
+          "Cant.",
+          "Componente Teórico",
+          "Componente Práctico",
+          "Vr Unit Teórico",
+          "Vr Unit Práctico",
+          "Vr Unit Inversión",
+          "Vr Total",
+          "% Total"
+        ],
+        "ejemplo_fila2": [
+          "CALE.n_1+",
+          "3",
+          "CALE-T-24q + 7 satélites C2-C5",
+          "CALE-P.C3 (Clase I+II+III)\n& (Clase II)",
+          "243.063.465",
+          "22.633.895.800",
+          "22.876.959.265",
+          "68.630.877.795",
+          "8,06%"
+        ],
+        "todas_filas": [
+          [
+            "Categoría",
+            "Cant.",
+            "Componente Teórico",
+            "Componente Práctico",
+            "Vr Unit Teórico",
+            "Vr Unit Práctico",
+            "Vr Unit Inversión",
+            "Vr Total",
+            "% Total"
+          ],
+          [
+            "CALE.n_1+",
+            "3",
+            "CALE-T-24q + 7 satélites C2-C5",
+            "CALE-P.C3 (Clase I+II+III)\n& (Clase II)",
+            "243.063.465",
+            "22.633.895.800",
+            "22.876.959.265",
+            "68.630.877.795",
+            "8,06%"
+          ],
+          [
+            "CALE.n_1",
+            "17",
+            "CALE-T-24q + 7 satélites C2-C5",
+            "CALE-P.C3 (Clase I+II+III)",
+            "243.063.465",
+            "17.068.936.100",
+            "17.311.999.565",
+            "294.303.992.605",
+            "34,57%"
+          ],
+          [
+            "CALE.n_2**",
+            "16",
+            "CALE-T-16q",
+            "CALE-P.C2 (Clase I+II) &\n2x(Clase I)",
+            "200.646.497",
+            "21.886.938.800",
+            "22.087.585.297",
+            "353.401.364.752",
+            "41,51%"
+          ],
+          [
+            "CALE.n_2**",
+            "4",
+            "CALE-T-16q",
+            "CALE-P.C2 (Clase I+II)",
+            "200.646.497",
+            "11.005.619.400",
+            "11.206.265.897",
+            "44.825.063.588",
+            "5,26%"
+          ],
+          [
+            "CALE.n_3",
+            "16",
+            "CALE-T-16q",
+            "CALE-P.C1 (Clase I)",
+            "200.646.497",
+            "5.440.659.700",
+            "5.641.306.197",
+            "90.260.899.152",
+            "10,60%"
+          ],
+          [
+            "TOTAL INVERSIÓN",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "851.422.197.892",
+            "100,00%"
+          ]
+        ]
+      },
+      {
+        "numero": 3,
+        "elemento_index": 78,
+        "filas": 7,
+        "columnas": 7,
+        "encabezados": [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. Variante+",
+          "Cant. Base",
+          "Vr. Total (COP)"
+        ],
+        "ejemplo_fila2": [
+          "Pista Evaluación Clase III",
+          "Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c",
+          "L2.pista_clase_3",
+          "$1,850,000,000",
+          "0",
+          "20",
+          "$37,000,000,000"
+        ],
+        "todas_filas": [
+          [
+            "Componente",
+            "Descripción",
+            "Referencia BIM",
+            "Vr. Unitario (COP)",
+            "Cant. Variante+",
+            "Cant. Base",
+            "Vr. Total (COP)"
+          ],
+          [
+            "Pista Evaluación Clase III",
+            "Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c",
+            "L2.pista_clase_3",
+            "$1,850,000,000",
+            "0",
+            "20",
+            "$37,000,000,000"
+          ],
+          [
+            "Pista Evaluación Clase II",
+            "Circuito para motocicletas según Art. 3.7.4.b",
+            "L2.pista_clase_2",
+            "$980,000,000",
+            "0",
+            "20",
+            "$19,600,000,000"
+          ],
+          [
+            "Pista Evaluación Clase I",
+            "Circuito para vehículos livianos según Art. 3.7.4.a",
+            "L2.pista_clase_1",
+            "$750,000,000",
+            "0",
+            "20",
+            "$15,000,000,000"
+          ],
+          [
+            "Sala Evaluación Teórica (24 cubículos)",
+            "Equipamiento completo con sistema de cómputo",
+            "L1.sala_24_cubiculos",
+            "$186,000,000",
+            "0",
+            "20",
+            "$3,720,000,000"
+          ],
+          [
+            "Simulador Conducción Clase III",
+            "Simulador avanzado con 6 DOF según NTC 5375",
+            "L0.simulador_c3",
+            "$450,000,000",
+            "0",
+            "40",
+            "$18,000,000,000"
+          ],
+          [
+            "Infraestructura Civil Base",
+            "Edificación administrativa y servicios",
+            "L2.edificacion_admin",
+            "$2,400,000,000",
+            "0",
+            "20",
+            "$48,000,000,000"
+          ]
+        ]
+      },
+      {
+        "numero": 5,
+        "elemento_index": 107,
+        "filas": 8,
+        "columnas": 7,
+        "encabezados": [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. Base",
+          "Cant. **",
+          "Vr. Total Base (COP)"
+        ],
+        "ejemplo_fila2": [
+          "PISTA_CLASE_II",
+          "Pista completa Clase II (B2, C2)",
+          "L2.pista_clase_II",
+          "Ver L2",
+          "1",
+          "0",
+          "Ver detalle L2"
+        ],
+        "todas_filas": [
+          [
+            "Componente",
+            "Descripción",
+            "Referencia BIM",
+            "Vr. Unitario (COP)",
+            "Cant. Base",
+            "Cant. **",
+            "Vr. Total Base (COP)"
+          ],
+          [
+            "PISTA_CLASE_II",
+            "Pista completa Clase II (B2, C2)",
+            "L2.pista_clase_II",
+            "Ver L2",
+            "1",
+            "0",
+            "Ver detalle L2"
+          ],
+          [
+            "PISTA_CLASE_I",
+            "Pista completa Clase I (A1, A2, B1, C1)",
+            "L2.pista_clase_I",
+            "Ver L2",
+            "1",
+            "2",
+            "Ver detalle L2"
+          ],
+          [
+            "EDIFICACION",
+            "Edificación adecuada (arriendo)",
+            "L2.edificacion",
+            "Ver L2",
+            "1",
+            "0",
+            "Ver detalle L2"
+          ],
+          [
+            "CALE_TEORICO_16q",
+            "Centro teórico 16 cubículos + áreas admin",
+            "L2.cale_teorico_16q",
+            "$200,646,497",
+            "1",
+            "0",
+            "$4,012,929,940"
+          ],
+          [
+            "TECNOLOGIA",
+            "Plataforma tecnológica CALE",
+            "L2.tecnologia",
+            "Ver L2",
+            "1",
+            "0",
+            "Ver detalle L2"
+          ],
+          [
+            "CERTIFICACIONES",
+            "Certificaciones ISO (4)",
+            "L2.certificaciones",
+            "Ver L2",
+            "1",
+            "0",
+            "Ver detalle L2"
+          ],
+          [
+            "SEGUROS",
+            "Seguros y pólizas",
+            "L2.seguros",
+            "Ver L2",
+            "1",
+            "0",
+            "Ver detalle L2"
+          ]
+        ]
+      },
+      {
+        "numero": 7,
+        "elemento_index": 144,
+        "filas": 7,
+        "columnas": 6,
+        "encabezados": [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. Base",
+          "Vr. Total (COP)"
+        ],
+        "ejemplo_fila2": [
+          "PISTA_CLASE_I",
+          "Pista completa Clase I (A1, A2, B1, C1)",
+          "L2.pista_clase_I",
+          "Ver L2",
+          "16",
+          "Ver detalle L2"
+        ],
+        "todas_filas": [
+          [
+            "Componente",
+            "Descripción",
+            "Referencia BIM",
+            "Vr. Unitario (COP)",
+            "Cant. Base",
+            "Vr. Total (COP)"
+          ],
+          [
+            "PISTA_CLASE_I",
+            "Pista completa Clase I (A1, A2, B1, C1)",
+            "L2.pista_clase_I",
+            "Ver L2",
+            "16",
+            "Ver detalle L2"
+          ],
+          [
+            "EDIFICACION",
+            "Edificación adecuada (arriendo)",
+            "L2.edificacion",
+            "Ver L2",
+            "16",
+            "Ver detalle L2"
+          ],
+          [
+            "CALE_TEORICO_16q",
+            "Centro teórico 16 cubículos + áreas admin",
+            "L2.cale_teorico_16q",
+            "$200,646,497",
+            "16",
+            "$3,210,343,952"
+          ],
+          [
+            "TECNOLOGIA",
+            "Plataforma tecnológica CALE",
+            "L2.tecnologia",
+            "Ver L2",
+            "16",
+            "Ver detalle L2"
+          ],
+          [
+            "CERTIFICACIONES",
+            "Certificaciones ISO (4)",
+            "L2.certificaciones",
+            "Ver L2",
+            "16",
+            "Ver detalle L2"
+          ],
+          [
+            "SEGUROS",
+            "Seguros y pólizas",
+            "L2.seguros",
+            "Ver L2",
+            "16",
+            "Ver detalle L2"
+          ]
+        ]
+      },
+      {
+        "numero": 9,
+        "elemento_index": 188,
+        "filas": 4,
+        "columnas": 10,
+        "encabezados": [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. C2",
+          "Cant. C3",
+          "Cant. C4",
+          "Cant. C5",
+          "Total",
+          "Vr. Total (COP)"
+        ],
+        "ejemplo_fila2": [
+          "ESPACIO_TEORICO¹",
+          "Sala evaluación teórica",
+          "L2.sala_teorica_basica",
+          "Ver L2",
+          "31",
+          "69",
+          "27",
+          "14",
+          "141",
+          "Ver detalle L2"
+        ],
+        "todas_filas": [
+          [
+            "Componente",
+            "Descripción",
+            "Referencia BIM",
+            "Vr. Unitario (COP)",
+            "Cant. C2",
+            "Cant. C3",
+            "Cant. C4",
+            "Cant. C5",
+            "Total",
+            "Vr. Total (COP)"
+          ],
+          [
+            "ESPACIO_TEORICO¹",
+            "Sala evaluación teórica",
+            "L2.sala_teorica_basica",
+            "Ver L2",
+            "31",
+            "69",
+            "27",
+            "14",
+            "141",
+            "Ver detalle L2"
+          ],
+          [
+            "EQUIPAMIENTO_TIC",
+            "Computadores y conectividad",
+            "L2.equipamiento_tic",
+            "Ver L2",
+            "31",
+            "69",
+            "27",
+            "14",
+            "141",
+            "Ver detalle L2"
+          ],
+          [
+            "MOBILIARIO_BASICO",
+            "Sillas, mesas, archivadores",
+            "L2.mobiliario_basico",
+            "Ver L2",
+            "31",
+            "69",
+            "27",
+            "14",
+            "141",
+            "Ver detalle L2"
+          ]
+        ]
+      },
+      {
+        "numero": 11,
+        "elemento_index": 276,
+        "filas": 2,
+        "columnas": 2,
+        "encabezados": [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        "ejemplo_fila2": [
+          "Total L2.pista_clase_I",
+          "$975,000,000"
+        ],
+        "todas_filas": [
+          [
+            "Concepto",
+            "Valor (COP)"
+          ],
+          [
+            "Total L2.pista_clase_I",
+            "$975,000,000"
+          ]
+        ]
+      },
+      {
+        "numero": 13,
+        "elemento_index": 306,
+        "filas": 2,
+        "columnas": 2,
+        "encabezados": [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        "ejemplo_fila2": [
+          "Total L2.pista_clase_II",
+          "$680,000,000"
+        ],
+        "todas_filas": [
+          [
+            "Concepto",
+            "Valor (COP)"
+          ],
+          [
+            "Total L2.pista_clase_II",
+            "$680,000,000"
+          ]
+        ]
+      },
+      {
+        "numero": 15,
+        "elemento_index": 336,
+        "filas": 2,
+        "columnas": 2,
+        "encabezados": [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        "ejemplo_fila2": [
+          "Total L2.pista_clase_III",
+          "$1,850,000,000"
+        ],
+        "todas_filas": [
+          [
+            "Concepto",
+            "Valor (COP)"
+          ],
+          [
+            "Total L2.pista_clase_III",
+            "$1,850,000,000"
+          ]
+        ]
+      },
+      {
+        "numero": 16,
+        "elemento_index": 363,
+        "filas": 2,
+        "columnas": 2,
+        "encabezados": [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        "ejemplo_fila2": [
+          "Total L2.cale_teorico_24q",
+          "$243,063,465"
+        ],
+        "todas_filas": [
+          [
+            "Concepto",
+            "Valor (COP)"
+          ],
+          [
+            "Total L2.cale_teorico_24q",
+            "$243,063,465"
+          ]
+        ]
+      },
+      {
+        "numero": 17,
+        "elemento_index": 389,
+        "filas": 2,
+        "columnas": 2,
+        "encabezados": [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        "ejemplo_fila2": [
+          "Total L2.cale_teorico_16q",
+          "$200,646,497"
+        ],
+        "todas_filas": [
+          [
+            "Concepto",
+            "Valor (COP)"
+          ],
+          [
+            "Total L2.cale_teorico_16q",
+            "$200,646,497"
+          ]
+        ]
+      },
+      {
+        "numero": 18,
+        "elemento_index": 626,
+        "filas": 15,
+        "columnas": 4,
+        "encabezados": [
+          "#",
+          "Componente L2",
+          "Vr. Unitario (COP)",
+          "Observaciones"
+        ],
+        "ejemplo_fila2": [
+          "1",
+          "L2.pista_clase_I",
+          "$975,000,000",
+          "Valorizado"
+        ],
+        "todas_filas": [
+          [
+            "#",
+            "Componente L2",
+            "Vr. Unitario (COP)",
+            "Observaciones"
+          ],
+          [
+            "1",
+            "L2.pista_clase_I",
+            "$975,000,000",
+            "Valorizado"
+          ],
+          [
+            "2",
+            "L2.pista_clase_II",
+            "$680,000,000",
+            "Valorizado"
+          ],
+          [
+            "3",
+            "L2.pista_clase_III",
+            "$1,850,000,000",
+            "Valorizado"
+          ],
+          [
+            "4",
+            "L2.cale_teorico_24q",
+            "$243,063,465",
+            "Valorizado"
+          ],
+          [
+            "5",
+            "L2.cale_teorico_16q",
+            "$200,646,497",
+            "Valorizado"
+          ],
+          [
+            "6",
+            "L2.edificacion",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "7",
+            "L2.tecnologia",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "8",
+            "L2.certificaciones",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "9",
+            "L2.seguros",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "10",
+            "L2.sala_teorica_basica",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "11",
+            "L2.equipamiento_tic",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "12",
+            "L2.mobiliario_basico",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "13",
+            "L2.sala_24_cubiculos",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ],
+          [
+            "14",
+            "L2.sala_formacion",
+            "Ver componentes L1/L0",
+            "Requiere cálculo"
+          ]
+        ]
+      },
+      {
+        "numero": 30,
+        "elemento_index": 768,
+        "filas": 5,
+        "columnas": 6,
+        "encabezados": [
+          "Componente L1",
+          "Categorías",
+          "Pavimento (m²)",
+          "Componentes L0 Atómicos",
+          "Maniobras Soportadas",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "L1.pista_motos_A1A2_completa",
+          "A1, A2",
+          "1633 m²",
+          "10",
+          "7 (M00-M06)",
+          "L2.pista_clase_I"
+        ],
+        "todas_filas": [
+          [
+            "Componente L1",
+            "Categorías",
+            "Pavimento (m²)",
+            "Componentes L0 Atómicos",
+            "Maniobras Soportadas",
+            "Usado en"
+          ],
+          [
+            "L1.pista_motos_A1A2_completa",
+            "A1, A2",
+            "1633 m²",
+            "10",
+            "7 (M00-M06)",
+            "L2.pista_clase_I"
+          ],
+          [
+            "L1.pista_carros_B1C1_completa",
+            "B1, C1",
+            "1208 m²",
+            "9",
+            "7 (A07-A13)",
+            "L2.pista_clase_I"
+          ],
+          [
+            "L1.pista_camiones_B2C2_completa",
+            "B2, C2",
+            "1850 m²",
+            "9",
+            "10 (A07-A13 + C14-C16)",
+            "L2.pista_clase_II"
+          ],
+          [
+            "L1.pista_tractocamiones_B3C3_completa",
+            "B3, C3",
+            "2450 m²",
+            "9",
+            "14 (A07-A13 + C14-C16 + T17-T20)",
+            "L2.pista_clase_III"
+          ]
+        ]
+      }
+    ],
+    "L3 - Metadatos": [
+      {
+        "numero": 2,
+        "elemento_index": 68,
+        "filas": 3,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "ejemplo_fila2": [
+          "CALE.n_1+",
+          "3",
+          "Configuración base estándar, con Cale.n_2 adicional",
+          "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: "
+        ],
+        "todas_filas": [
+          [
+            "Tipo CALE",
+            "Cantidad",
+            "Descripción Modificador",
+            "Mapa de Geolocalización"
+          ],
+          [
+            "CALE.n_1+",
+            "3",
+            "Configuración base estándar, con Cale.n_2 adicional",
+            "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (3) CALE.n_1+"
+          ],
+          [
+            "CALE.n_1",
+            "17",
+            "Configuración base estándar",
+            "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (17) CALE.n_1"
+          ]
+        ]
+      },
+      {
+        "numero": 4,
+        "elemento_index": 98,
+        "filas": 3,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "ejemplo_fila2": [
+          "CALE.n_2**",
+          "16",
+          "Configuración base estándar",
+          "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría:"
+        ],
+        "todas_filas": [
+          [
+            "Tipo CALE",
+            "Cantidad",
+            "Descripción Modificador",
+            "Mapa de Geolocalización"
+          ],
+          [
+            "CALE.n_2**",
+            "16",
+            "Configuración base estándar",
+            "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**"
+          ],
+          [
+            "CALE.n_2",
+            "4",
+            "Configuración base estándar",
+            "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2"
+          ]
+        ]
+      },
+      {
+        "numero": 6,
+        "elemento_index": 136,
+        "filas": 2,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "ejemplo_fila2": [
+          "CALE.n_3",
+          "16",
+          "Configuración base estándar",
+          "Topología SNCALE BIM - filtrar: (16) CALE.n_3"
+        ],
+        "todas_filas": [
+          [
+            "Tipo CALE",
+            "Cantidad",
+            "Descripción Modificador",
+            "Mapa de Geolocalización"
+          ],
+          [
+            "CALE.n_3",
+            "16",
+            "Configuración base estándar",
+            "Topología SNCALE BIM - filtrar: (16) CALE.n_3"
+          ]
+        ]
+      },
+      {
+        "numero": 31,
+        "elemento_index": 835,
+        "filas": 3,
+        "columnas": 6,
+        "encabezados": [
+          "Tipo",
+          "Estrategia",
+          "Área (m²)",
+          "Descripción",
+          "Usado en",
+          "GID Fuente"
+        ],
+        "ejemplo_fila2": [
+          "ADECUADA",
+          "Adecuación infraestructura existente",
+          "200",
+          "Adaptación de edificación preexistente con drywall, instalaciones, mobiliario",
+          "CALE.n_2, CALE.n_3, Satélites",
+          "724436831"
+        ],
+        "todas_filas": [
+          [
+            "Tipo",
+            "Estrategia",
+            "Área (m²)",
+            "Descripción",
+            "Usado en",
+            "GID Fuente"
+          ],
+          [
+            "ADECUADA",
+            "Adecuación infraestructura existente",
+            "200",
+            "Adaptación de edificación preexistente con drywall, instalaciones, mobiliario",
+            "CALE.n_2, CALE.n_3, Satélites",
+            "724436831"
+          ],
+          [
+            "NUEVA",
+            "Construcción nueva específica CALE",
+            "250",
+            "Edificación permanente diseñada para operación CALE",
+            "CALE.n_1",
+            "356923120"
+          ]
+        ]
+      },
+      {
+        "numero": 34,
+        "elemento_index": 908,
+        "filas": 3,
+        "columnas": 5,
+        "encabezados": [
+          "Capacidad",
+          "Área (m²)",
+          "Equipos",
+          "Usado en",
+          "Descripción"
+        ],
+        "ejemplo_fila2": [
+          "16q",
+          "60",
+          "16",
+          "CALE.n_2, CALE.n_3",
+          "Sala informática nivel subregional/local"
+        ],
+        "todas_filas": [
+          [
+            "Capacidad",
+            "Área (m²)",
+            "Equipos",
+            "Usado en",
+            "Descripción"
+          ],
+          [
+            "16q",
+            "60",
+            "16",
+            "CALE.n_2, CALE.n_3",
+            "Sala informática nivel subregional/local"
+          ],
+          [
+            "24q",
+            "80",
+            "24",
+            "CALE.n_1",
+            "Sala informática nivel metropolitano"
+          ]
+        ]
+      },
+      {
+        "numero": 37,
+        "elemento_index": 932,
+        "filas": 3,
+        "columnas": 5,
+        "encabezados": [
+          "Configuración",
+          "Oficinas",
+          "Área Total (m²)",
+          "Usado en",
+          "Composición"
+        ],
+        "ejemplo_fila2": [
+          "BASICO_3",
+          "3",
+          "43",
+          "CALE.n_3, Satélites",
+          "1 Coordinador + 2 Operaciones + Archivo"
+        ],
+        "todas_filas": [
+          [
+            "Configuración",
+            "Oficinas",
+            "Área Total (m²)",
+            "Usado en",
+            "Composición"
+          ],
+          [
+            "BASICO_3",
+            "3",
+            "43",
+            "CALE.n_3, Satélites",
+            "1 Coordinador + 2 Operaciones + Archivo"
+          ],
+          [
+            "COMPLETO_5",
+            "5",
+            "88",
+            "CALE.n_1, CALE.n_2",
+            "Director + Subdirector + 3 Coordinadores + Sala Juntas + Archivo"
+          ]
+        ]
+      },
+      {
+        "numero": 42,
+        "elemento_index": 994,
+        "filas": 3,
+        "columnas": 7,
+        "encabezados": [
+          "Capacidad",
+          "Área (m²)",
+          "Espacios",
+          "Señales Vert.",
+          "Luminarias",
+          "Drenaje (ml)",
+          "Usado en"
+        ],
+        "ejemplo_fila2": [
+          "40",
+          "1000",
+          "40",
+          "8",
+          "10",
+          "150",
+          "CALE.n_2, CALE.n_3"
+        ],
+        "todas_filas": [
+          [
+            "Capacidad",
+            "Área (m²)",
+            "Espacios",
+            "Señales Vert.",
+            "Luminarias",
+            "Drenaje (ml)",
+            "Usado en"
+          ],
+          [
+            "40",
+            "1000",
+            "40",
+            "8",
+            "10",
+            "150",
+            "CALE.n_2, CALE.n_3"
+          ],
+          [
+            "60",
+            "1500",
+            "60",
+            "12",
+            "15",
+            "200",
+            "CALE.n_1"
+          ]
+        ]
+      }
+    ],
+    "Otra/Administrativa": [
+      {
+        "numero": 8,
+        "elemento_index": 170,
+        "filas": 5,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "ejemplo_fila2": [
+          "CALE.C2",
+          "31",
+          "Satélites cercanos (< 50 km)",
+          "Topología SNCALE BIM - filtrar: (31) CALE.C2"
+        ],
+        "todas_filas": [
+          [
+            "Tipo CALE",
+            "Cantidad",
+            "Descripción Modificador",
+            "Mapa de Geolocalización"
+          ],
+          [
+            "CALE.C2",
+            "31",
+            "Satélites cercanos (< 50 km)",
+            "Topología SNCALE BIM - filtrar: (31) CALE.C2"
+          ],
+          [
+            "CALE.C3",
+            "69",
+            "Satélites rango medio (50-100 km)",
+            "Topología SNCALE BIM - filtrar: (69) CALE.C3"
+          ],
+          [
+            "CALE.C4",
+            "27",
+            "Satélites remotos (100-150 km)",
+            "Topología SNCALE BIM - filtrar: (27) CALE.C4"
+          ],
+          [
+            "CALE.C5",
+            "14",
+            "Satélites muy remotos (> 150 km)",
+            "Topología SNCALE BIM - filtrar: (14) CALE.C5"
+          ]
+        ]
+      },
+      {
+        "numero": 22,
+        "elemento_index": 709,
+        "filas": 12,
+        "columnas": 8,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Categoría",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pavimento Flexible Asfalto e=12cm",
+          "Carpeta asfáltica MDC-19 sobre base granular",
+          "Infraestructura",
+          "1633",
+          "m²",
+          "L0.IC_001",
+          "$85.000",
+          "$138.805.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Categoría",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Pavimento Flexible Asfalto e=12cm",
+            "Carpeta asfáltica MDC-19 sobre base granular",
+            "Infraestructura",
+            "1633",
+            "m²",
+            "L0.IC_001",
+            "$85.000",
+            "$138.805.000"
+          ],
+          [
+            "Señalización Horizontal Termoplástica",
+            "Pintura termoplástica reflectiva blanca/amarilla",
+            "Señalización",
+            "250",
+            "ml",
+            "L0.SV_001",
+            "$45.000",
+            "$11.250.000"
+          ],
+          [
+            "Señalización Vertical Tipo I",
+            "Señal reglamentaria/preventiva 0.75×0.75m",
+            "Señalización",
+            "15",
+            "und",
+            "L0.SV_004",
+            "$450.000",
+            "$6.750.000"
+          ],
+          [
+            "Conos Reflectivos 90cm",
+            "Conos viales reflectivos naranja",
+            "Señalización",
+            "45",
+            "und",
+            "L0.SV_003",
+            "$85.000",
+            "$3.825.000"
+          ],
+          [
+            "Luminaria LED 150W Poste 8m",
+            "Luminaria vial LED",
+            "Iluminación",
+            "12",
+            "und",
+            "L0.ILU_001",
+            "$2.850.000",
+            "$34.200.000"
+          ],
+          [
+            "Cuneta Concreto Perimetral",
+            "Cuneta tipo 1 sección 0.30×0.30m",
+            "Drenaje",
+            "210",
+            "ml",
+            "L0.DR_001",
+            "$35.000",
+            "$7.350.000"
+          ],
+          [
+            "Baranda Metálica Contención",
+            "Defensa metálica doble onda galvanizada",
+            "Seguridad",
+            "95",
+            "ml",
+            "L0.SEG_001",
+            "$125.000",
+            "$11.875.000"
+          ],
+          [
+            "Kit Seguridad Evaluación",
+            "Conos + señales + extintores + botiquín",
+            "Seguridad",
+            "0,5",
+            "glb",
+            "L0.SEG_002",
+            "$3.500.000",
+            "$1.750.000"
+          ],
+          [
+            "Motocicleta ≤125cc Adaptada",
+            "Moto escuela categoría A1",
+            "Vehículos",
+            "2",
+            "und",
+            "L0.VEH_001",
+            "$15.000.000",
+            "$30.000.000"
+          ],
+          [
+            "Motocicleta >125cc Adaptada",
+            "Moto escuela categoría A2",
+            "Vehículos",
+            "2",
+            "und",
+            "L0.VEH_002",
+            "$22.000.000",
+            "$44.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.pista_motos_A1A2_completa",
+            "",
+            "$289.805.000"
+          ]
+        ]
+      },
+      {
+        "numero": 23,
+        "elemento_index": 714,
+        "filas": 8,
+        "columnas": 5,
+        "encabezados": [
+          "Código",
+          "Nombre",
+          "Descripción Técnica",
+          "Área (m)",
+          "Normatividad"
+        ],
+        "ejemplo_fila2": [
+          "M00",
+          "Carreteo moto",
+          "Desplazar moto apagada 4×5m sin motor",
+          "4×5",
+          "Art. 2.3.1.1.1"
+        ],
+        "todas_filas": [
+          [
+            "Código",
+            "Nombre",
+            "Descripción Técnica",
+            "Área (m)",
+            "Normatividad"
+          ],
+          [
+            "M00",
+            "Carreteo moto",
+            "Desplazar moto apagada 4×5m sin motor",
+            "4×5",
+            "Art. 2.3.1.1.1"
+          ],
+          [
+            "M01",
+            "Velocidad limitada + Franja estrecha",
+            "8×5m + franja 6×0.25m a baja velocidad",
+            "14×5",
+            "Art. 2.3.1.1.2"
+          ],
+          [
+            "M02",
+            "Eslalon baja velocidad",
+            "Zigzag 5 conos c/4m (A1: 3.5m ancho / A2: 5m)",
+            "20×3.5/5",
+            "Art. 2.3.1.1.3"
+          ],
+          [
+            "M03",
+            "Aceleración + Frenado",
+            "Acelerar 21.5m + frenar en 0.5×1.3m (máx 5 seg)",
+            "22×5",
+            "Art. 2.3.1.1.4"
+          ],
+          [
+            "M04",
+            "Curva cerrada derecha",
+            "Curva 90° radio 3.5m sin apoyar pies",
+            "7×7",
+            "Art. 2.3.1.1.5"
+          ],
+          [
+            "M05",
+            "Curva cerrada izquierda + Frenado",
+            "Curva 90° + frenar 0.5×1.3m",
+            "15×5",
+            "Art. 2.3.1.1.6"
+          ],
+          [
+            "M06",
+            "Curva + Frenado + Giro en U",
+            "Combina M04, M05 y giro 180°",
+            "25×10",
+            "Art. 2.3.1.1.7"
+          ]
+        ]
+      },
+      {
+        "numero": 24,
+        "elemento_index": 724,
+        "filas": 11,
+        "columnas": 8,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Categoría",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pavimento Rígido Concreto Fc=21MPa e=15cm",
+          "Losa concreto hidráulico sobre subbase",
+          "Infraestructura",
+          "1208",
+          "m²",
+          "L0.IC_002",
+          "$95.000",
+          "$114.760.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Categoría",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Pavimento Rígido Concreto Fc=21MPa e=15cm",
+            "Losa concreto hidráulico sobre subbase",
+            "Infraestructura",
+            "1208",
+            "m²",
+            "L0.IC_002",
+            "$95.000",
+            "$114.760.000"
+          ],
+          [
+            "Señalización Horizontal Termoplástica",
+            "Pintura termoplástica reflectiva blanca/amarilla",
+            "Señalización",
+            "180",
+            "ml",
+            "L0.SV_001",
+            "$45.000",
+            "$8.100.000"
+          ],
+          [
+            "Señalización Vertical Tipo I",
+            "Señal reglamentaria/preventiva 0.75×0.75m",
+            "Señalización",
+            "12",
+            "und",
+            "L0.SV_004",
+            "$450.000",
+            "$5.400.000"
+          ],
+          [
+            "Conos Reflectivos 90cm",
+            "Conos viales reflectivos naranja",
+            "Señalización",
+            "35",
+            "und",
+            "L0.SV_003",
+            "$85.000",
+            "$2.975.000"
+          ],
+          [
+            "Luminaria LED 150W Poste 8m",
+            "Luminaria vial LED",
+            "Iluminación",
+            "10",
+            "und",
+            "L0.ILU_001",
+            "$2.850.000",
+            "$28.500.000"
+          ],
+          [
+            "Cuneta Concreto Perimetral",
+            "Cuneta tipo 1 sección 0.30×0.30m",
+            "Drenaje",
+            "165",
+            "ml",
+            "L0.DR_001",
+            "$35.000",
+            "$5.775.000"
+          ],
+          [
+            "Baranda Metálica Contención",
+            "Defensa metálica doble onda galvanizada",
+            "Seguridad",
+            "75",
+            "ml",
+            "L0.SEG_001",
+            "$125.000",
+            "$9.375.000"
+          ],
+          [
+            "Kit Seguridad Evaluación",
+            "Conos + señales + extintores + botiquín",
+            "Seguridad",
+            "0,5",
+            "glb",
+            "L0.SEG_002",
+            "$3.500.000",
+            "$1.750.000"
+          ],
+          [
+            "Automóvil B1/C1 Adaptado",
+            "Vehículo escuela automóvil",
+            "Vehículos",
+            "3",
+            "und",
+            "L0.VEH_003",
+            "$85.000.000",
+            "$255.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.pista_carros_B1C1_completa",
+            "",
+            "$431.635.000"
+          ]
+        ]
+      },
+      {
+        "numero": 25,
+        "elemento_index": 728,
+        "filas": 8,
+        "columnas": 5,
+        "encabezados": [
+          "Código",
+          "Nombre",
+          "Descripción Técnica",
+          "Área (m)",
+          "Normatividad"
+        ],
+        "ejemplo_fila2": [
+          "A07",
+          "Arranque en pendiente",
+          "Arranque rampa 15% sin retroceso",
+          "25×5",
+          "Art. 2.3.1.2.1"
+        ],
+        "todas_filas": [
+          [
+            "Código",
+            "Nombre",
+            "Descripción Técnica",
+            "Área (m)",
+            "Normatividad"
+          ],
+          [
+            "A07",
+            "Arranque en pendiente",
+            "Arranque rampa 15% sin retroceso",
+            "25×5",
+            "Art. 2.3.1.2.1"
+          ],
+          [
+            "A08",
+            "Estacionamiento perpendicular",
+            "Reversa ingreso 90° entre líneas",
+            "16×11",
+            "Art. 2.3.1.2.2"
+          ],
+          [
+            "A09",
+            "Estacionamiento paralelo",
+            "Maniobra paralelo máx 2 movimientos",
+            "18×5",
+            "Art. 2.3.1.2.3"
+          ],
+          [
+            "A10",
+            "Estacionamiento en batería",
+            "Ingreso diagonal 45° reversa",
+            "20×8",
+            "Art. 2.3.1.2.4"
+          ],
+          [
+            "A11",
+            "Reversa línea recta",
+            "Reversa 20m línea recta máx 30cm borde",
+            "25×5",
+            "Art. 2.3.1.2.5"
+          ],
+          [
+            "A12",
+            "Eslalon caja",
+            "Zigzag 5 conos en caja 40×10m",
+            "40×10",
+            "Art. 2.3.1.2.6"
+          ],
+          [
+            "A13",
+            "Curva pronunciada",
+            "Giro cerrado sin tocar líneas",
+            "15×10",
+            "Art. 2.3.1.2.7"
+          ]
+        ]
+      },
+      {
+        "numero": 26,
+        "elemento_index": 738,
+        "filas": 11,
+        "columnas": 8,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Categoría",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pavimento Reforzado Concreto Fc=28MPa e=20cm",
+          "Losa reforzada malla electrosoldada",
+          "Infraestructura",
+          "1850",
+          "m²",
+          "L0.IC_003",
+          "$115.000",
+          "$212.750.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Categoría",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Pavimento Reforzado Concreto Fc=28MPa e=20cm",
+            "Losa reforzada malla electrosoldada",
+            "Infraestructura",
+            "1850",
+            "m²",
+            "L0.IC_003",
+            "$115.000",
+            "$212.750.000"
+          ],
+          [
+            "Señalización Horizontal Termoplástica",
+            "Pintura termoplástica reflectiva blanca/amarilla",
+            "Señalización",
+            "280",
+            "ml",
+            "L0.SV_001",
+            "$45.000",
+            "$12.600.000"
+          ],
+          [
+            "Señalización Vertical Tipo I",
+            "Señal reglamentaria/preventiva 0.75×0.75m",
+            "Señalización",
+            "18",
+            "und",
+            "L0.SV_004",
+            "$450.000",
+            "$8.100.000"
+          ],
+          [
+            "Conos Reflectivos 90cm",
+            "Conos viales reflectivos naranja",
+            "Señalización",
+            "50",
+            "und",
+            "L0.SV_003",
+            "$85.000",
+            "$4.250.000"
+          ],
+          [
+            "Luminaria LED 200W Poste 10m",
+            "Luminaria alta potencia pesados",
+            "Iluminación",
+            "15",
+            "und",
+            "L0.ILU_002",
+            "$3.450.000",
+            "$51.750.000"
+          ],
+          [
+            "Drenaje Reforzado Alta Capacidad",
+            "Sistema para cargas pesadas",
+            "Drenaje",
+            "240",
+            "ml",
+            "L0.DR_003",
+            "$75.000",
+            "$18.000.000"
+          ],
+          [
+            "Baranda Metálica Contención",
+            "Defensa metálica doble onda galvanizada",
+            "Seguridad",
+            "120",
+            "ml",
+            "L0.SEG_001",
+            "$125.000",
+            "$15.000.000"
+          ],
+          [
+            "Kit Seguridad Evaluación",
+            "Conos + señales + extintores + botiquín",
+            "Seguridad",
+            "1",
+            "glb",
+            "L0.SEG_002",
+            "$3.500.000",
+            "$3.500.000"
+          ],
+          [
+            "Camión B2/C2 Adaptado",
+            "Camión rígido escuela",
+            "Vehículos",
+            "2",
+            "und",
+            "L0.VEH_004",
+            "$180.000.000",
+            "$360.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.pista_camiones_B2C2_completa",
+            "",
+            "$685.950.000"
+          ]
+        ]
+      },
+      {
+        "numero": 27,
+        "elemento_index": 743,
+        "filas": 4,
+        "columnas": 5,
+        "encabezados": [
+          "Código",
+          "Nombre",
+          "Descripción Técnica",
+          "Área (m)",
+          "Normatividad"
+        ],
+        "ejemplo_fila2": [
+          "C14",
+          "Conducción remolque ligero",
+          "Manejo vehículo + remolque en recta/curvas",
+          "90×10",
+          "Art. 2.3.1.3.1"
+        ],
+        "todas_filas": [
+          [
+            "Código",
+            "Nombre",
+            "Descripción Técnica",
+            "Área (m)",
+            "Normatividad"
+          ],
+          [
+            "C14",
+            "Conducción remolque ligero",
+            "Manejo vehículo + remolque en recta/curvas",
+            "90×10",
+            "Art. 2.3.1.3.1"
+          ],
+          [
+            "C15",
+            "Reversa con remolque",
+            "Reversa 15m con remolque acoplado",
+            "30×10",
+            "Art. 2.3.1.3.2"
+          ],
+          [
+            "C16",
+            "Estacionamiento remolque",
+            "Ubicar vehículo+remolque en zona 30cm",
+            "35×12",
+            "Art. 2.3.1.3.3"
+          ]
+        ]
+      },
+      {
+        "numero": 28,
+        "elemento_index": 755,
+        "filas": 11,
+        "columnas": 8,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Categoría",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pavimento Especial Concreto Fc=35MPa e=25cm",
+          "Losa alta resistencia vehículos pesados",
+          "Infraestructura",
+          "2450",
+          "m²",
+          "L0.IC_004",
+          "$145.000",
+          "$355.250.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Categoría",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Pavimento Especial Concreto Fc=35MPa e=25cm",
+            "Losa alta resistencia vehículos pesados",
+            "Infraestructura",
+            "2450",
+            "m²",
+            "L0.IC_004",
+            "$145.000",
+            "$355.250.000"
+          ],
+          [
+            "Señalización Horizontal Termoplástica",
+            "Pintura termoplástica reflectiva blanca/amarilla",
+            "Señalización",
+            "350",
+            "ml",
+            "L0.SV_001",
+            "$45.000",
+            "$15.750.000"
+          ],
+          [
+            "Señalización Vertical Tipo I",
+            "Señal reglamentaria/preventiva 0.75×0.75m",
+            "Señalización",
+            "22",
+            "und",
+            "L0.SV_004",
+            "$450.000",
+            "$9.900.000"
+          ],
+          [
+            "Conos Reflectivos 90cm",
+            "Conos viales reflectivos naranja",
+            "Señalización",
+            "60",
+            "und",
+            "L0.SV_003",
+            "$85.000",
+            "$5.100.000"
+          ],
+          [
+            "Luminaria LED 200W Poste 10m",
+            "Luminaria alta potencia pesados",
+            "Iluminación",
+            "18",
+            "und",
+            "L0.ILU_002",
+            "$3.450.000",
+            "$62.100.000"
+          ],
+          [
+            "Drenaje Reforzado Alta Capacidad",
+            "Sistema para cargas pesadas",
+            "Drenaje",
+            "290",
+            "ml",
+            "L0.DR_003",
+            "$75.000",
+            "$21.750.000"
+          ],
+          [
+            "Baranda Metálica Contención",
+            "Defensa metálica doble onda galvanizada",
+            "Seguridad",
+            "150",
+            "ml",
+            "L0.SEG_001",
+            "$125.000",
+            "$18.750.000"
+          ],
+          [
+            "Kit Seguridad Evaluación",
+            "Conos + señales + extintores + botiquín",
+            "Seguridad",
+            "1",
+            "glb",
+            "L0.SEG_002",
+            "$3.500.000",
+            "$3.500.000"
+          ],
+          [
+            "Tractocamión B3/C3 Articulado",
+            "Tractocamión articulado escuela",
+            "Vehículos",
+            "2",
+            "und",
+            "L0.VEH_005",
+            "$350.000.000",
+            "$700.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.pista_tractocamiones_B3C3_completa",
+            "",
+            "$1.192.100.000"
+          ]
+        ]
+      },
+      {
+        "numero": 29,
+        "elemento_index": 761,
+        "filas": 5,
+        "columnas": 5,
+        "encabezados": [
+          "Código",
+          "Nombre",
+          "Descripción Técnica",
+          "Área (m)",
+          "Normatividad"
+        ],
+        "ejemplo_fila2": [
+          "T17",
+          "Conducción articulado recto",
+          "Control tractocamión recta 90m",
+          "90×10",
+          "Art. 2.3.1.4.1"
+        ],
+        "todas_filas": [
+          [
+            "Código",
+            "Nombre",
+            "Descripción Técnica",
+            "Área (m)",
+            "Normatividad"
+          ],
+          [
+            "T17",
+            "Conducción articulado recto",
+            "Control tractocamión recta 90m",
+            "90×10",
+            "Art. 2.3.1.4.1"
+          ],
+          [
+            "T18",
+            "Reversa articulado",
+            "Reversa vehículo articulado 33m",
+            "33×10",
+            "Art. 2.3.1.4.2"
+          ],
+          [
+            "T19",
+            "Alineación articulado",
+            "Alinear cabina+semiremolque diagonal",
+            "40×12",
+            "Art. 2.3.1.4.3"
+          ],
+          [
+            "T20",
+            "Maniobra espacio reducido",
+            "Girar 180° en espacio limitado",
+            "50×15",
+            "Art. 2.3.1.4.4"
+          ]
+        ]
+      },
+      {
+        "numero": 32,
+        "elemento_index": 844,
+        "filas": 10,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Adecuaciones Drywall completas",
+          "Sistema liviano paredes + cielo + piso 200m²",
+          "1",
+          "glb",
+          "L0.ADEC_001",
+          "$85.000.000",
+          "$85.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Adecuaciones Drywall completas",
+            "Sistema liviano paredes + cielo + piso 200m²",
+            "1",
+            "glb",
+            "L0.ADEC_001",
+            "$85.000.000",
+            "$85.000.000"
+          ],
+          [
+            "Instalaciones eléctricas complementarias",
+            "Red eléctrica completa edificación",
+            "1",
+            "glb",
+            "L0.ELE_002",
+            "$45.000.000",
+            "$45.000.000"
+          ],
+          [
+            "Red y datos Cat6A",
+            "Cableado estructurado Cat6A completo",
+            "1",
+            "glb",
+            "L0.TEL_001",
+            "$35.000.000",
+            "$35.000.000"
+          ],
+          [
+            "Sistema CCTV interior",
+            "8 cámaras IP + NVR + cableado",
+            "1",
+            "glb",
+            "L0.TEL_002",
+            "$28.000.000",
+            "$28.000.000"
+          ],
+          [
+            "Control acceso biométrico",
+            "Torniquetes + lector huella + software",
+            "1",
+            "glb",
+            "L0.TEL_003",
+            "$45.000.000",
+            "$45.000.000"
+          ],
+          [
+            "Mobiliario completo CALE",
+            "Conjunto mobiliario salas + oficinas",
+            "1",
+            "glb",
+            "L0.MOB_005",
+            "$75.000.000",
+            "$75.000.000"
+          ],
+          [
+            "Equipamiento sala teórica",
+            "Proyector + audio + tableros",
+            "1",
+            "glb",
+            "L0.ACC_002",
+            "$18.000.000",
+            "$18.000.000"
+          ],
+          [
+            "Señalización interior",
+            "Señalética completa + seguridad",
+            "1",
+            "glb",
+            "L0.ACC_003",
+            "$8.500.000",
+            "$8.500.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.edificacion_parametrica (ADECUADA)",
+            "",
+            "$339.500.000"
+          ]
+        ]
+      },
+      {
+        "numero": 33,
+        "elemento_index": 856,
+        "filas": 10,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Edificación principal CALE",
+          "Construcción permanente 250m²",
+          "1",
+          "glb",
+          "L0.EDIF_001",
+          "$650.000.000",
+          "$650.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Edificación principal CALE",
+            "Construcción permanente 250m²",
+            "1",
+            "glb",
+            "L0.EDIF_001",
+            "$650.000.000",
+            "$650.000.000"
+          ],
+          [
+            "Red y datos Cat6A",
+            "Cableado estructurado Cat6A completo",
+            "1",
+            "glb",
+            "L0.TEL_001",
+            "$35.000.000",
+            "$35.000.000"
+          ],
+          [
+            "Sistema CCTV interior",
+            "8 cámaras IP + NVR + cableado",
+            "1",
+            "glb",
+            "L0.TEL_002",
+            "$28.000.000",
+            "$28.000.000"
+          ],
+          [
+            "Control acceso biométrico",
+            "Torniquetes + lector huella + software",
+            "1",
+            "glb",
+            "L0.TEL_003",
+            "$45.000.000",
+            "$45.000.000"
+          ],
+          [
+            "Mobiliario completo CALE",
+            "Conjunto mobiliario salas + oficinas",
+            "1",
+            "glb",
+            "L0.MOB_005",
+            "$75.000.000",
+            "$75.000.000"
+          ],
+          [
+            "Equipamiento sala teórica",
+            "Proyector + audio + tableros",
+            "1",
+            "glb",
+            "L0.ACC_002",
+            "$18.000.000",
+            "$18.000.000"
+          ],
+          [
+            "Señalización interior",
+            "Señalética completa + seguridad",
+            "1",
+            "glb",
+            "L0.ACC_003",
+            "$8.500.000",
+            "$8.500.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.edificacion_parametrica (NUEVA)",
+            "",
+            "$859.500.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.edificacion_parametrica (ADECUADA)",
+            "",
+            "$339.500.000"
+          ]
+        ]
+      },
+      {
+        "numero": 38,
+        "elemento_index": 934,
+        "filas": 6,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Mobiliario oficina coordinador",
+          "Escritorio + silla ejecutiva + archivador",
+          "1",
+          "set",
+          "L0.MOB_009",
+          "$3.800.000",
+          "$3.800.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Mobiliario oficina coordinador",
+            "Escritorio + silla ejecutiva + archivador",
+            "1",
+            "set",
+            "L0.MOB_009",
+            "$3.800.000",
+            "$3.800.000"
+          ],
+          [
+            "Mobiliario oficina operaciones",
+            "Escritorio + silla operativa",
+            "2",
+            "set",
+            "L0.MOB_010",
+            "$2.500.000",
+            "$5.000.000"
+          ],
+          [
+            "Archivo y bodega",
+            "Archivadores + estantería metálica",
+            "1",
+            "set",
+            "L0.MOB_012",
+            "$6.000.000",
+            "$6.000.000"
+          ],
+          [
+            "Estación de trabajo completa",
+            "L1.estacion_trabajo (PC + monitor + accesorios)",
+            "3",
+            "und",
+            "L1.estacion_trabajo",
+            "$5.020.000",
+            "$15.060.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.admin_parametrico (BASICO_3)",
+            "",
+            "$29.860.000"
+          ]
+        ]
+      },
+      {
+        "numero": 39,
+        "elemento_index": 939,
+        "filas": 8,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Mobiliario oficina director",
+          "Escritorio + silla ejecutiva + archivador",
+          "1",
+          "set",
+          "L0.MOB_007",
+          "$5.500.000",
+          "$5.500.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Mobiliario oficina director",
+            "Escritorio + silla ejecutiva + archivador",
+            "1",
+            "set",
+            "L0.MOB_007",
+            "$5.500.000",
+            "$5.500.000"
+          ],
+          [
+            "Mobiliario oficina subdirector",
+            "Escritorio + silla + archivador",
+            "1",
+            "set",
+            "L0.MOB_008",
+            "$4.200.000",
+            "$4.200.000"
+          ],
+          [
+            "Mobiliario oficina coordinador",
+            "Escritorio + silla ejecutiva + archivador",
+            "3",
+            "set",
+            "L0.MOB_009",
+            "$3.800.000",
+            "$11.400.000"
+          ],
+          [
+            "Mobiliario sala juntas",
+            "Mesa + 8 sillas + mueble credenza",
+            "1",
+            "set",
+            "L0.MOB_011",
+            "$8.500.000",
+            "$8.500.000"
+          ],
+          [
+            "Archivo y bodega",
+            "Archivadores + estantería metálica",
+            "1",
+            "set",
+            "L0.MOB_012",
+            "$6.000.000",
+            "$6.000.000"
+          ],
+          [
+            "Estación de trabajo completa",
+            "L1.estacion_trabajo (PC + monitor + accesorios)",
+            "5",
+            "und",
+            "L1.estacion_trabajo",
+            "$5.020.000",
+            "$25.100.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.admin_parametrico (COMPLETO_5)",
+            "",
+            "$60.700.000"
+          ]
+        ]
+      },
+      {
+        "numero": 40,
+        "elemento_index": 947,
+        "filas": 7,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Sillas universitarias",
+          "Silla paleta universitaria",
+          "40",
+          "und",
+          "L0.MOB_003",
+          "$280.000",
+          "$11.200.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Sillas universitarias",
+            "Silla paleta universitaria",
+            "40",
+            "und",
+            "L0.MOB_003",
+            "$280.000",
+            "$11.200.000"
+          ],
+          [
+            "Tablero acrílico 3.0×1.5m",
+            "Tablero borrable marcador",
+            "2",
+            "und",
+            "L0.MOB_004",
+            "$850.000",
+            "$1.700.000"
+          ],
+          [
+            "Video proyector 5000 lúmenes",
+            "Proyector WXGA 5000 ANSI",
+            "1",
+            "und",
+            "L0.AV_001",
+            "$4.500.000",
+            "$4.500.000"
+          ],
+          [
+            "Pantalla eléctrica 4.0×3.0m",
+            "Pantalla motorizada 4:3",
+            "1",
+            "und",
+            "L0.AV_002",
+            "$2.200.000",
+            "$2.200.000"
+          ],
+          [
+            "Sistema audio amplificado",
+            "Amplificador + parlantes + micrófonos",
+            "1",
+            "set",
+            "L0.AV_003",
+            "$3.800.000",
+            "$3.800.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.sala_formacion",
+            "",
+            "$23.400.000"
+          ]
+        ]
+      },
+      {
+        "numero": 41,
+        "elemento_index": 956,
+        "filas": 5,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Baño completo instalado",
+          "Sanitario + lavamanos + accesorios",
+          "6",
+          "und",
+          "L0.HID_002",
+          "$2.500.000",
+          "$15.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Baño completo instalado",
+            "Sanitario + lavamanos + accesorios",
+            "6",
+            "und",
+            "L0.HID_002",
+            "$2.500.000",
+            "$15.000.000"
+          ],
+          [
+            "Construcción área sanitarios",
+            "Mampostería + instalaciones + acabados",
+            "12",
+            "m²",
+            "L0.MAT_001",
+            "$1.850.000",
+            "$22.200.000"
+          ],
+          [
+            "Tubería PVC + válvulas",
+            "Sistema hidráulico sanitario",
+            "1",
+            "lote",
+            "L0.HID_001",
+            "$12.000.000",
+            "$12.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.sshh_completo",
+            "",
+            "$49.200.000"
+          ]
+        ]
+      },
+      {
+        "numero": 43,
+        "elemento_index": 1002,
+        "filas": 7,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pavimento Rígido Concreto Fc=21MPa e=15cm",
+          "Losa concreto hidráulico sobre subbase",
+          "1000",
+          "m²",
+          "L0.IC_002",
+          "$95.000",
+          "$95.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Pavimento Rígido Concreto Fc=21MPa e=15cm",
+            "Losa concreto hidráulico sobre subbase",
+            "1000",
+            "m²",
+            "L0.IC_002",
+            "$95.000",
+            "$95.000.000"
+          ],
+          [
+            "Demarcación espacio vehicular",
+            "Líneas demarcación parqueadero",
+            "40",
+            "und",
+            "L0.SV_002",
+            "$25.000",
+            "$1.000.000"
+          ],
+          [
+            "Señalización Vertical Tipo I",
+            "Señal reglamentaria/preventiva 0.75×0.75m",
+            "8",
+            "und",
+            "L0.SV_004",
+            "$450.000",
+            "$3.600.000"
+          ],
+          [
+            "Luminaria LED 150W Poste 8m",
+            "Luminaria vial LED",
+            "10",
+            "und",
+            "L0.ILU_001",
+            "$2.850.000",
+            "$28.500.000"
+          ],
+          [
+            "Sistema Drenaje Pluvial",
+            "Rejillas + tubería PVC sanitaria",
+            "150",
+            "ml",
+            "L0.DR_002",
+            "$55.000",
+            "$8.250.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.parqueadero_parametrico (40 veh)",
+            "",
+            "$136.350.000"
+          ]
+        ]
+      },
+      {
+        "numero": 44,
+        "elemento_index": 1006,
+        "filas": 7,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pavimento Rígido Concreto Fc=21MPa e=15cm",
+          "Losa concreto hidráulico sobre subbase",
+          "1500",
+          "m²",
+          "L0.IC_002",
+          "$95.000",
+          "$142.500.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Pavimento Rígido Concreto Fc=21MPa e=15cm",
+            "Losa concreto hidráulico sobre subbase",
+            "1500",
+            "m²",
+            "L0.IC_002",
+            "$95.000",
+            "$142.500.000"
+          ],
+          [
+            "Demarcación espacio vehicular",
+            "Líneas demarcación parqueadero",
+            "60",
+            "und",
+            "L0.SV_002",
+            "$25.000",
+            "$1.500.000"
+          ],
+          [
+            "Señalización Vertical Tipo I",
+            "Señal reglamentaria/preventiva 0.75×0.75m",
+            "12",
+            "und",
+            "L0.SV_004",
+            "$450.000",
+            "$5.400.000"
+          ],
+          [
+            "Luminaria LED 150W Poste 8m",
+            "Luminaria vial LED",
+            "15",
+            "und",
+            "L0.ILU_001",
+            "$2.850.000",
+            "$42.750.000"
+          ],
+          [
+            "Sistema Drenaje Pluvial",
+            "Rejillas + tubería PVC sanitaria",
+            "200",
+            "ml",
+            "L0.DR_002",
+            "$55.000",
+            "$11.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.parqueadero_parametrico (60 veh)",
+            "",
+            "$203.150.000"
+          ]
+        ]
+      },
+      {
+        "numero": 45,
+        "elemento_index": 1048,
+        "filas": 9,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Escritorio ergonómico 1.20×0.60m",
+          "Mesa trabajo melamina 25mm",
+          "1",
+          "und",
+          "L0.MOB_001",
+          "$450.000",
+          "$450.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Escritorio ergonómico 1.20×0.60m",
+            "Mesa trabajo melamina 25mm",
+            "1",
+            "und",
+            "L0.MOB_001",
+            "$450.000",
+            "$450.000"
+          ],
+          [
+            "Silla ergonómica ajustable",
+            "Silla oficina respaldo alto",
+            "1",
+            "und",
+            "L0.MOB_002",
+            "$650.000",
+            "$650.000"
+          ],
+          [
+            "PC Desktop Core i5",
+            "CPU i5 11gen + 8GB RAM + 256GB SSD + W11 Pro",
+            "1",
+            "und",
+            "L0.TEC_001",
+            "$2.800.000",
+            "$2.800.000"
+          ],
+          [
+            "Monitor LED Full HD 24\"",
+            "Monitor 1920×1080 IPS 24\"",
+            "1",
+            "und",
+            "L0.TEC_002",
+            "$650.000",
+            "$650.000"
+          ],
+          [
+            "Teclado + Mouse USB",
+            "Teclado + mouse alambricos",
+            "1",
+            "set",
+            "L0.TEC_003",
+            "$95.000",
+            "$95.000"
+          ],
+          [
+            "Mousepad ergonómico",
+            "Pad reposamuñecas gel",
+            "1",
+            "und",
+            "L0.ACC_001",
+            "$25.000",
+            "$25.000"
+          ],
+          [
+            "Supresor de picos 6 tomas",
+            "Protector sobretensiones",
+            "1",
+            "und",
+            "L0.ELE_004",
+            "$350.000",
+            "$350.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.estacion_trabajo",
+            "",
+            "$5.020.000"
+          ]
+        ]
+      },
+      {
+        "numero": 46,
+        "elemento_index": 1059,
+        "filas": 13,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Concreto Premezclado 3000 PSI",
+          "Concreto estructural f'c=21MPa",
+          "12",
+          "m³",
+          "L0.MAT_002",
+          "$480.000",
+          "$5.760.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Concreto Premezclado 3000 PSI",
+            "Concreto estructural f'c=21MPa",
+            "12",
+            "m³",
+            "L0.MAT_002",
+            "$480.000",
+            "$5.760.000"
+          ],
+          [
+            "Acero Estructural ASTM A36",
+            "Perfiles metálicos estructura",
+            "0,5",
+            "Ton",
+            "L0.MAT_003",
+            "$8.500.000",
+            "$4.250.000"
+          ],
+          [
+            "Rack Servidor 42U",
+            "Gabinete 42U con PDU + ventilación",
+            "2",
+            "und",
+            "L0.TEC_004",
+            "$12.500.000",
+            "$25.000.000"
+          ],
+          [
+            "Servidor HP ProLiant DL380 Gen10",
+            "2× Xeon Gold + 64GB RAM + storage",
+            "2",
+            "und",
+            "L0.TEC_005",
+            "$45.000.000",
+            "$90.000.000"
+          ],
+          [
+            "Switch Gigabit 48 Puertos PoE+",
+            "Switch manageable L3 PoE+ 48p",
+            "2",
+            "und",
+            "L0.TEC_006",
+            "$8.500.000",
+            "$17.000.000"
+          ],
+          [
+            "UPS 10kVA Doble Conversión",
+            "Sistema alimentación ininterrumpida",
+            "1",
+            "und",
+            "L0.ELE_006",
+            "$18.500.000",
+            "$18.500.000"
+          ],
+          [
+            "Acometida Trifásica 220V 30A",
+            "Tablero + breakers + cableado",
+            "1",
+            "und",
+            "L0.ELE_001",
+            "$8.500.000",
+            "$8.500.000"
+          ],
+          [
+            "Puesta Tierra Varilla 5/8\"×2.4m",
+            "Sistema puesta a tierra SPT",
+            "1",
+            "und",
+            "L0.ELE_003",
+            "$1.200.000",
+            "$1.200.000"
+          ],
+          [
+            "Sistema HVAC Precision Datacenter",
+            "Aire acondicionado precisión 18-22°C",
+            "1",
+            "und",
+            "L0.HVAC_001",
+            "$25.000.000",
+            "$25.000.000"
+          ],
+          [
+            "Cámara IP Seguridad 4MP PoE",
+            "Cámara IP domo 4MP PoE",
+            "4",
+            "und",
+            "L0.TEC_009",
+            "$1.200.000",
+            "$4.800.000"
+          ],
+          [
+            "Sistema Detección Incendios",
+            "Detectores de humo + alarma + rociadores",
+            "1",
+            "und",
+            "L0.SEG_003",
+            "$850.000",
+            "$850.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.datacenter_12m2",
+            "",
+            "$200.860.000"
+          ]
+        ]
+      },
+      {
+        "numero": 47,
+        "elemento_index": 1073,
+        "filas": 3,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Plataforma Tecnológica CALE completa",
+          "Software gestión + licencias + cloud",
+          "1",
+          "glb",
+          "L0.PLAT_TEC",
+          "$180.000.000",
+          "$180.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Plataforma Tecnológica CALE completa",
+            "Software gestión + licencias + cloud",
+            "1",
+            "glb",
+            "L0.PLAT_TEC",
+            "$180.000.000",
+            "$180.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.tecnologia_cale",
+            "",
+            "$180.000.000"
+          ]
+        ]
+      },
+      {
+        "numero": 48,
+        "elemento_index": 1091,
+        "filas": 7,
+        "columnas": 8,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Categoría",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "L0.ELE_007",
+          "Panel solar fotovoltaico 550Wp",
+          "Energías Renovables",
+          "20",
+          "und",
+          "L0.ELE_007",
+          "$850.000",
+          "$17.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Categoría",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "L0.ELE_007",
+            "Panel solar fotovoltaico 550Wp",
+            "Energías Renovables",
+            "20",
+            "und",
+            "L0.ELE_007",
+            "$850.000",
+            "$17.000.000"
+          ],
+          [
+            "L0.ELE_008",
+            "Inversor solar híbrido 10kW",
+            "Energías Renovables",
+            "1",
+            "und",
+            "L0.ELE_008",
+            "$12.500.000",
+            "$12.500.000"
+          ],
+          [
+            "L0.ELE_009",
+            "Batería litio 5kWh",
+            "Energías Renovables",
+            "8",
+            "und",
+            "L0.ELE_009",
+            "$8.500.000",
+            "$68.000.000"
+          ],
+          [
+            "L0.ELE_010",
+            "Controlador de carga solar MPPT 60A",
+            "Energías Renovables",
+            "1",
+            "und",
+            "L0.ELE_010",
+            "$1.800.000",
+            "$1.800.000"
+          ],
+          [
+            "L0.ELE_011",
+            "Estructura montaje paneles solares",
+            "Energías Renovables",
+            "1",
+            "glb",
+            "L0.ELE_011",
+            "$4.500.000",
+            "$4.500.000"
+          ],
+          [
+            "L0.ELE_012",
+            "Cableado DC fotovoltaico 6mm²",
+            "Energías Renovables",
+            "150",
+            "ml",
+            "L0.ELE_012",
+            "$15.000",
+            "$2.250.000"
+          ]
+        ]
+      },
+      {
+        "numero": 49,
+        "elemento_index": 1143,
+        "filas": 3,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Paquete seguros obligatorios",
+          "RC Extracontractual + Accidentes Personales",
+          "1",
+          "año",
+          "L0.SEG_100",
+          "$45.000.000",
+          "$45.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Paquete seguros obligatorios",
+            "RC Extracontractual + Accidentes Personales",
+            "1",
+            "año",
+            "L0.SEG_100",
+            "$45.000.000",
+            "$45.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.seguros_cale",
+            "",
+            "$45.000.000"
+          ]
+        ]
+      },
+      {
+        "numero": 50,
+        "elemento_index": 1158,
+        "filas": 3,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Paquete certificaciones ISO",
+          "ISO 9001 + 14001 + 45001 + 27001",
+          "1",
+          "cert",
+          "L0.CERT_ISO",
+          "$95.000.000",
+          "$95.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Paquete certificaciones ISO",
+            "ISO 9001 + 14001 + 45001 + 27001",
+            "1",
+            "cert",
+            "L0.CERT_ISO",
+            "$95.000.000",
+            "$95.000.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.certificaciones_cale",
+            "",
+            "$95.000.000"
+          ]
+        ]
+      },
+      {
+        "numero": 51,
+        "elemento_index": 1183,
+        "filas": 5,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Counter recepción CALE",
+          "Mostrador 2.5×0.8m + silla operativa",
+          "1",
+          "set",
+          "L0.MOB_RECEPCION",
+          "$3.200.000",
+          "$3.200.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Counter recepción CALE",
+            "Mostrador 2.5×0.8m + silla operativa",
+            "1",
+            "set",
+            "L0.MOB_RECEPCION",
+            "$3.200.000",
+            "$3.200.000"
+          ],
+          [
+            "Sillas tandem sala espera",
+            "Sillas tandem 3-5 puestos metálicas",
+            "8",
+            "und",
+            "L0.MOB_SILLAS_ESPERA",
+            "$1.450.000",
+            "$11.600.000"
+          ],
+          [
+            "Señalización interior",
+            "Señalética informativa + turnos",
+            "1",
+            "glb",
+            "L0.ACC_003",
+            "$8.500.000",
+            "$8.500.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.recepcion_sala_espera",
+            "",
+            "$23.300.000"
+          ]
+        ]
+      },
+      {
+        "numero": 52,
+        "elemento_index": 1197,
+        "filas": 6,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Mobiliario oficina coordinador",
+          "Escritorio + silla ejecutiva + archivador",
+          "1",
+          "set",
+          "L0.MOB_009",
+          "$3.800.000",
+          "$3.800.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Mobiliario oficina coordinador",
+            "Escritorio + silla ejecutiva + archivador",
+            "1",
+            "set",
+            "L0.MOB_009",
+            "$3.800.000",
+            "$3.800.000"
+          ],
+          [
+            "Mobiliario oficina operaciones",
+            "Escritorio + silla operativa",
+            "1",
+            "set",
+            "L0.MOB_010",
+            "$2.500.000",
+            "$2.500.000"
+          ],
+          [
+            "Estación supervisión pruebas teóricas",
+            "PC + 2 monitores + software monitoreo",
+            "1",
+            "set",
+            "L0.SALA_CONTROL_TEORICO",
+            "$6.500.000",
+            "$6.500.000"
+          ],
+          [
+            "Estación de trabajo completa",
+            "L1.estacion_trabajo (PC + monitor + accesorios)",
+            "2",
+            "und",
+            "L1.estacion_trabajo",
+            "$5.020.000",
+            "$10.040.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.zona_administrativa",
+            "",
+            "$22.840.000"
+          ]
+        ]
+      },
+      {
+        "numero": 53,
+        "elemento_index": 1209,
+        "filas": 5,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Estantería archivo rodante",
+          "Sistema archivo móvil alto tránsito",
+          "10",
+          "ml",
+          "L0.ARCHIVO_ACTIVO",
+          "$850.000",
+          "$8.500.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Estantería archivo rodante",
+            "Sistema archivo móvil alto tránsito",
+            "10",
+            "ml",
+            "L0.ARCHIVO_ACTIVO",
+            "$850.000",
+            "$8.500.000"
+          ],
+          [
+            "Escritorio ergonómico 1.20×0.60m",
+            "Mesa trabajo consulta documentos",
+            "1",
+            "und",
+            "L0.MOB_001",
+            "$450.000",
+            "$450.000"
+          ],
+          [
+            "Silla ergonómica ajustable",
+            "Silla oficina respaldo alto",
+            "2",
+            "und",
+            "L0.MOB_002",
+            "$650.000",
+            "$1.300.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.archivo_documentacion",
+            "",
+            "$10.250.000"
+          ]
+        ]
+      },
+      {
+        "numero": 54,
+        "elemento_index": 1223,
+        "filas": 4,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Locker metálico 12 puertas",
+          "Casillero metálico 12 compartimientos",
+          "5",
+          "und",
+          "L0.LOCKERS_ASPIRANTES",
+          "$1.800.000",
+          "$9.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Locker metálico 12 puertas",
+            "Casillero metálico 12 compartimientos",
+            "5",
+            "und",
+            "L0.LOCKERS_ASPIRANTES",
+            "$1.800.000",
+            "$9.000.000"
+          ],
+          [
+            "Sillas universitarias",
+            "Silla paleta universitaria (banco vestidor)",
+            "6",
+            "und",
+            "L0.MOB_003",
+            "$280.000",
+            "$1.680.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.almacenamiento_articulos",
+            "",
+            "$10.680.000"
+          ]
+        ]
+      },
+      {
+        "numero": 55,
+        "elemento_index": 1236,
+        "filas": 5,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Centro control pruebas prácticas",
+          "Workstation + 4-6 monitores + NVR + software",
+          "1",
+          "set",
+          "L0.SALA_CONTROL_PRACTICO",
+          "$35.000.000",
+          "$35.000.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Centro control pruebas prácticas",
+            "Workstation + 4-6 monitores + NVR + software",
+            "1",
+            "set",
+            "L0.SALA_CONTROL_PRACTICO",
+            "$35.000.000",
+            "$35.000.000"
+          ],
+          [
+            "Monitor LED 43\" videowall",
+            "Pantalla LED bisel delgado para muro",
+            "8",
+            "und",
+            "L0.MONITOR_VIDEOWALL",
+            "$2.800.000",
+            "$22.400.000"
+          ],
+          [
+            "Estación de trabajo completa",
+            "L1.estacion_trabajo para operadores",
+            "3",
+            "und",
+            "L1.estacion_trabajo",
+            "$5.020.000",
+            "$15.060.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.zona_control_pruebas_practicas",
+            "",
+            "$72.460.000"
+          ]
+        ]
+      },
+      {
+        "numero": 56,
+        "elemento_index": 1251,
+        "filas": 6,
+        "columnas": 7,
+        "encabezados": [
+          "Componente L0",
+          "Descripción",
+          "Cantidad",
+          "Unidad",
+          "Código L0",
+          "Valor Unitario ($)",
+          "Valor Parcial ($)"
+        ],
+        "ejemplo_fila2": [
+          "Pasillos interiores edificación",
+          "Corredor interno ancho mín 1.50m",
+          "80",
+          "ml",
+          "L0.PASILLO_INTERNO",
+          "$185.000",
+          "$14.800.000"
+        ],
+        "todas_filas": [
+          [
+            "Componente L0",
+            "Descripción",
+            "Cantidad",
+            "Unidad",
+            "Código L0",
+            "Valor Unitario ($)",
+            "Valor Parcial ($)"
+          ],
+          [
+            "Pasillos interiores edificación",
+            "Corredor interno ancho mín 1.50m",
+            "80",
+            "ml",
+            "L0.PASILLO_INTERNO",
+            "$185.000",
+            "$14.800.000"
+          ],
+          [
+            "Rampa acceso universal",
+            "Rampa pendiente máx 8% + pasamanos",
+            "12",
+            "ml",
+            "L0.RAMPA_ACCESIBILIDAD",
+            "$850.000",
+            "$10.200.000"
+          ],
+          [
+            "Escalera emergencia",
+            "Escalera evacuación protegida",
+            "8",
+            "ml",
+            "L0.ESCALERA_EMERGENCIA",
+            "$1.450.000",
+            "$11.600.000"
+          ],
+          [
+            "Circulaciones exteriores",
+            "Andenes + caminos peatonales",
+            "150",
+            "m²",
+            "L0.CIRCULACION_EXTERNA",
+            "$145.000",
+            "$21.750.000"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "SUBTOTAL L1.areas_circulacion",
+            "",
+            "$58.350.000"
+          ]
+        ]
+      },
+      {
+        "numero": 58,
+        "elemento_index": 1282,
+        "filas": 9,
+        "columnas": 5,
+        "encabezados": [
+          "Bloque",
+          "Descripción",
+          "Antes",
+          "Después",
+          "Reducción"
+        ],
+        "ejemplo_fila2": [
+          "B60.1",
+          "Pistas evaluación",
+          "3",
+          "3",
+          "0% (mantener herencia)"
+        ],
+        "todas_filas": [
+          [
+            "Bloque",
+            "Descripción",
+            "Antes",
+            "Después",
+            "Reducción"
+          ],
+          [
+            "B60.1",
+            "Pistas evaluación",
+            "3",
+            "3",
+            "0% (mantener herencia)"
+          ],
+          [
+            "B60.2",
+            "Maniobras",
+            "20",
+            "1",
+            "95%"
+          ],
+          [
+            "B60.3",
+            "Edificaciones",
+            "3",
+            "1",
+            "67%"
+          ],
+          [
+            "B60.4",
+            "Espacios funcionales",
+            "9",
+            "4",
+            "56%"
+          ],
+          [
+            "B60.5",
+            "Parqueaderos",
+            "2",
+            "1",
+            "50%"
+          ],
+          [
+            "B60.6",
+            "Tecnología",
+            "9",
+            "4",
+            "56% (agregado sistema fotovoltaico)"
+          ],
+          [
+            "B60.7",
+            "Servicios recurrentes",
+            "9",
+            "2",
+            "78%"
+          ],
+          [
+            "TOTAL",
+            "Componentes L1",
+            "55",
+            "18",
+            "67%"
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Técnica - CALE.n_2** Intermedio - Variante Extendida</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .codigo {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        .badge.base {
+            background: #10b981;
+            color: white;
+        }
+        
+        .badge.extendida {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-card {
+            background: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-card h3 {
+            color: #667eea;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card .value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .info-card .unit {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .herencia-section {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #f59e0b;
+            margin-bottom: 2rem;
+        }
+        
+        .herencia-section h3 {
+            color: #d97706;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .herencia-arrow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .herencia-box {
+            flex: 1;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid #d97706;
+        }
+        
+        .herencia-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .arrow {
+            font-size: 2rem;
+            color: #d97706;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f3f4f6;
+            color: #667eea;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:hover {
+            background: #f9fafb;
+        }
+        
+        .component-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .component-type.heredado {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .component-type.adicional {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .money {
+            color: #059669;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: #f3f4f6;
+            padding: 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .comparacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .comparacion-card {
+            background: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .comparacion-card h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .delta {
+            color: #059669;
+            font-weight: bold;
+        }
+        
+        .delta.negative {
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CALE.n_2** Intermedio - Variante Extendida</h1>
+            <div class="codigo">L3.CALE.n_2.star</div>
+            <div class="badge extendida">
+                CONFIGURACION EXTENDIDA
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- RESUMEN EJECUTIVO -->
+            <div class="section">
+                <h2>📊 Resumen Ejecutivo</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>BIM ID</h3>
+                        <div class="value">BIM_L3_002_STAR</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Nodos Aplicables</h3>
+                        <div class="value">16</div>
+                        <div class="unit">nodos en red</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>CAPEX Total</h3>
+                        <div class="value money">$2,678,830,000</div>
+                        <div class="unit">COP</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Capacidad Mensual</h3>
+                        <div class="value">11,225</div>
+                        <div class="unit">evaluaciones/mes</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Personal Requerido</h3>
+                        <div class="value">12</div>
+                        <div class="unit">personas/nodo</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Componentes L2</h3>
+                        <div class="value">5</div>
+                        <div class="unit">componentes</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HERENCIA L3→L3 -->
+            <div class="section">
+                <h2>🔗 Recursividad L3→L3</h2>
+                <div class="herencia-section">
+                    <h3>
+                        ⚡ Herencia de Configuración
+                    </h3>
+                    <p>Esta configuración <strong>hereda todos los componentes</strong> de la configuración base y agrega componentes adicionales.</p>
+                    
+                    <div class="herencia-arrow">
+                        <div class="herencia-box">
+                            <strong>BASE:</strong>
+                            L3.CALE.n_2.base<br>
+                            <small>CALE.n_2 Intermedio - Configuración Base</small><br>
+                            <div class="money" style="margin-top: 0.5rem;">$1,927,390,000</div>
+                        </div>
+                        <div class="arrow">→</div>
+                        <div class="herencia-box">
+                            <strong>EXTENDIDA:</strong>
+                            L3.CALE.n_2.star<br>
+                            <small>CALE.n_2** Intermedio - Variante Extendida</small><br>
+                            <div class="money" style="margin-top: 0.5rem;">$2,678,830,000</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparacion">
+                        <div class="comparacion-card">
+                            <h4>💰 Incremento CAPEX</h4>
+                            <div class="value delta" style="font-size: 1.5rem;">
+                                +$751,440,000
+                            </div>
+                            <div class="unit">+39.0% sobre base</div>
+                        </div>
+                        <div class="comparacion-card">
+                            <h4>📈 Incremento Capacidad</h4>
+                            <div class="value delta" style="font-size: 1.5rem;">
+                                +2,080 eval/mes
+                            </div>
+                            <div class="unit">+22.7% sobre base</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPONENTES L2 -->
+            <div class="section">
+                <h2>🧩 Componentes L2</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Código L2</th>
+                            <th>Descripción</th>
+                            <th>Valor Unitario (COP)</th>
+
+                            <th>Tipo</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td><code>L2.pista_clase_II</code></td>
+                            <td>Pista Clase II Completa</td>
+                            <td class="money">$1,407,390,000</td>
+                            <td><span class="component-type heredado">HEREDADO</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td><code>L3.CALE_TEORICO.16q</code></td>
+                            <td>CALE Teórico 16 Cubículos</td>
+                            <td class="money">$460,000,000</td>
+                            <td><span class="component-type heredado">HEREDADO</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td><code>L2.parqueadero</code></td>
+                            <td>Parqueadero Vehicular 30 Vehículos</td>
+                            <td class="money">$60,000,000</td>
+                            <td><span class="component-type heredado">HEREDADO</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td><code>L2.pista_clase_I</code></td>
+                            <td>Pista Clase I Adicional</td>
+                            <td class="money">$721,440,000</td>
+                            <td><span class="component-type adicional">ADICIONAL</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td><code>L2.sala_formacion</code></td>
+                            <td>Sala Formación</td>
+                            <td class="money">$30,000,000</td>
+                            <td><span class="component-type adicional">ADICIONAL</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CARACTERÍSTICAS ESPACIALES -->
+            <div class="section">
+                <h2>📐 Características Espaciales</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Área Total</h3>
+                        <div class="value">4,580</div>
+                        <div class="unit">m²</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Área Teórica</h3>
+                        <div class="value">290</div>
+                        <div class="unit">m²</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Área Pistas</h3>
+                        <div class="value">4,000</div>
+                        <div class="unit">m²</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>Área Parqueadero</h3>
+                        <div class="value">200</div>
+                        <div class="unit">m²</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- METADATOS -->
+            <div class="section">
+                <h2>ℹ️ Metadatos</h2>
+                <table>
+                    <tr>
+                        <th>Versión</th>
+                        <td>{config['metadata']['version']}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha Creación</th>
+                        <td>{config['metadata']['fecha_creacion']}</td>
+                    </tr>
+                    <tr>
+                        <th>Autor</th>
+                        <td>{config['metadata']['autor']}</td>
+                    </tr>
+                    <tr>
+                        <th>Patrón</th>
+                        <td><code>{config['metadata']['patron']}</code></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>CAMBIO 1 - Recursividad L3→L3 para Variantes CALE</strong></p>
+            <p>Generado automáticamente por generar_fichas_l3_variantes.py</p>
+            <p>BIM 5D Munay - Sistema Nacional CALE</p>
+        </div>
+    </div>
+</body>
+</html>

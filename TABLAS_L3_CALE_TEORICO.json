@@ -1,0 +1,1049 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "fecha_creacion": "2025-11-03",
+    "fecha_actualizacion": "2025-11-03",
+    "descripcion": "Configuraciones CALE Teórico CORREGIDAS - Centros de Evaluación Fase 1 (Solo Teórico)",
+    "nivel": "L3",
+    "tipo": "CALE_TEORICO_FASE_1",
+    "autor": "Modelo BIM 5D SNCALE",
+    "total_configuraciones": 3,
+    "fuente_valores": "MUNAY_5.2 - Tablas #16, #17",
+    "correcciones_v2": [
+      "❌ ELIMINADO: Parqueadero (no aplica para arrendamiento)",
+      "✅ CAPEX reducido: $725M→$645M (24q), $520M→$440M (16q), $255M→$175M (4q)",
+      "✅ Capacidad corregida: fórmula (puestos × 16h × 26d / 1.17h)",
+      "✅ OPEX completo: + Energía + Agua + Internet + ARRENDAMIENTO",
+      "✅ Tiempos implementación: Método ruta crítica",
+      "✅ Consumo energía calculado por componente"
+    ]
+  },
+  "componentes": {
+    "BIM_L3_010": {
+      "bim_id": "BIM_L3_010",
+      "codigo": "L3.CALE_TEORICO.24q",
+      "nombre": "CALE Teórico - 24 Cubículos (Primera Fase)",
+      "version": "1.0",
+      "descripcion": "Centro completo para evaluación TEÓRICA únicamente - Despliegue Fase 1. No incluye infraestructura de pistas para evaluación práctica.",
+      "tipo": "CALE_TEORICO_FASE_1",
+      "categoria": "CENTRO_EVALUACION_TEORICO",
+      "fase_despliegue": 1,
+      "capacidad": {
+        "cubiculos_evaluacion": 24,
+        "sala_formacion_pax": 30,
+        "oficinas_administrativas": 3,
+        "parqueadero_vehiculos": 0,
+        "evaluaciones_teoricas_mes": 8557,
+        "evaluaciones_teoricas_dia": 329,
+        "evaluaciones_practicas_mes": 0,
+        "formula_capacidad": "(24 puestos × 16h × 26d) / 1.17h/eval",
+        "horas_operacion_dia": 16,
+        "duracion_evaluacion_teorica_minutos": 70
+      },
+      "categorias_soportadas": {
+        "evaluacion_teorica": [
+          "TODAS (A1, A2, B1, B2, B3, C1, C2, C3)"
+        ],
+        "evaluacion_practica": []
+      },
+      "componentes_l2": [
+        {
+          "bim_id": "BIM_L2_004",
+          "codigo": "L2.sala_24_cubiculos",
+          "nombre": "Sala Teórica 24 Cubículos",
+          "variante": "24q",
+          "descripcion": "24 estaciones de evaluación digital con computadores, sillas ergonómicas, divisiones, cableado estructurado",
+          "cantidad": 1,
+          "valor_unitario": 180000000,
+          "valor_total": 180000000,
+          "categoria": "INFRAESTRUCTURA_TEORICA",
+          "metros_cuadrados": 72
+        },
+        {
+          "bim_id": "BIM_L2_005",
+          "codigo": "L2.sala_formacion",
+          "nombre": "Sala Formación 30 PAX",
+          "variante": "30_pax",
+          "descripcion": "Sala de capacitación con 30 sillas universitarias, tablero digital, proyector, aire acondicionado",
+          "cantidad": 1,
+          "valor_unitario": 45000000,
+          "valor_total": 45000000,
+          "categoria": "INFRAESTRUCTURA_TEORICA",
+          "metros_cuadrados": 60
+        },
+        {
+          "bim_id": "BIM_L2_008",
+          "codigo": "L2.zona_administrativa",
+          "nombre": "Zona Administrativa 3 Oficinas",
+          "variante": "3_oficinas",
+          "descripcion": "Área administrativa con 3 oficinas (coordinador, auxiliar administrativo, archivo), recepción, sala de espera",
+          "cantidad": 1,
+          "valor_unitario": 120000000,
+          "valor_total": 120000000,
+          "categoria": "ADMINISTRATIVA",
+          "metros_cuadrados": 90
+        },
+        {
+          "bim_id": "BIM_L2_006",
+          "codigo": "L2.datacenter",
+          "nombre": "Datacenter 12m²",
+          "variante": "12m2",
+          "descripcion": "Cuarto de servidores con aire acondicionado de precisión, UPS, rack, servidor aplicaciones, switch core",
+          "cantidad": 1,
+          "valor_unitario": 65000000,
+          "valor_total": 65000000,
+          "categoria": "TECNOLOGIA",
+          "metros_cuadrados": 12
+        },
+        {
+          "bim_id": "BIM_L2_010",
+          "codigo": "L2.edificacion_adecuada",
+          "nombre": "Edificación Adecuada (Arrendamiento + Adecuación)",
+          "descripcion": "Adecuación de edificación ARRENDADA (no construcción nueva): obra civil, instalaciones eléctricas, hidrosanitarias, acabados",
+          "cantidad": 1,
+          "valor_unitario": 200000000,
+          "valor_total": 200000000,
+          "categoria": "CIVIL",
+          "metros_cuadrados": 370,
+          "nota": "Área total sin parqueadero (arrendamiento incluye estacionamiento existente)"
+        },
+        {
+          "bim_id": "BIM_L2_011",
+          "codigo": "L2.servicios_publicos",
+          "nombre": "Servicios Públicos y Telecomunicaciones",
+          "descripcion": "Acometidas (energía, agua, alcantarillado, gas), internet dedicado 100Mbps, telefonía, alarmas, CCTV",
+          "cantidad": 1,
+          "valor_unitario": 35000000,
+          "valor_total": 35000000,
+          "categoria": "SERVICIOS",
+          "nota": "Instalación inicial, OPEX no incluido"
+        }
+      ],
+      "valor_total_capex": 645000000,
+      "nota_capex": "Reducido -$80,000,000 vs v1.0: Parqueadero eliminado",
+      "actores_espaciales": {
+        "software": [
+          {
+            "codigo": "L0.SISTEMA.ALEYA",
+            "funcionalidad": "Módulo evaluación teórica digital (24 puestos simultáneos)",
+            "espacios_activacion": [
+              "L2.sala_24_cubiculos",
+              "L2.zona_administrativa"
+            ],
+            "costo_mensual": 2000000,
+            "costo_anual": 24000000
+          },
+          {
+            "codigo": "L0.SISTEMA.MUNAY",
+            "funcionalidad": "Check-in biométrico + Agenda + Reportes administrativos",
+            "espacios_activacion": [
+              "L1.recepcion",
+              "L2.zona_administrativa"
+            ],
+            "costo_mensual": 1500000,
+            "costo_anual": 18000000
+          }
+        ],
+        "rrhh": [
+          {
+            "codigo": "RRHH.coordinador_cale",
+            "cargo": "Coordinador CALE Teórico",
+            "cantidad": 1,
+            "costo_mensual": 6500000,
+            "costo_anual": 78000000
+          },
+          {
+            "codigo": "RRHH.auxiliar_administrativo",
+            "cargo": "Auxiliar Administrativo",
+            "cantidad": 2,
+            "costo_mensual": 7000000,
+            "costo_anual": 84000000
+          },
+          {
+            "codigo": "RRHH.recepcionista",
+            "cargo": "Recepcionista",
+            "cantidad": 1,
+            "costo_mensual": 3000000,
+            "costo_anual": 36000000
+          }
+        ]
+      },
+      "valor_total_opex_anual": 405188640,
+      "valor_total_opex_mensual": 33765720,
+      "opex_detallado": {
+        "software": {
+          "total_anual": 42000000
+        },
+        "rrhh": {
+          "total_anual": 198000000
+        },
+        "servicios": {
+          "energia_electrica": {
+            "kwh_mes": 5212,
+            "costo_kwh_cop": 550,
+            "costo_mes_cop": 2866600,
+            "costo_anual_cop": 34399200
+          },
+          "agua": {
+            "m3_mes": 9.1,
+            "costo_mes_cop": 29120,
+            "costo_anual_cop": 349440
+          },
+          "internet_telecomunicaciones": {
+            "total_mes_cop": 620000,
+            "total_anual_cop": 7440000
+          },
+          "arrendamiento": {
+            "area_m2": 370,
+            "costo_m2_mes_cop": 25000,
+            "costo_mes_cop": 9250000,
+            "costo_anual_cop": 111000000
+          },
+          "mantenimiento_equipos": {
+            "costo_anual_cop": 12000000
+          },
+          "total_servicios_anual": 165188640
+        },
+        "total_opex_anual": 405188640
+      },
+      "resumen_financiero": {
+        "capex_inicial": 645000000,
+        "opex_anual_software": 42000000,
+        "opex_anual_rrhh": 198000000,
+        "opex_anual_servicios": 165188640,
+        "opex_anual_total": 405188640,
+        "ratio_opex_capex": "62.8%",
+        "costo_total_primer_ano": 1050188640
+      },
+      "caracteristicas": {
+        "evaluacion_practica": false,
+        "evaluacion_teorica": true,
+        "categorias_todas_teorico": true,
+        "requiere_pistas": false,
+        "requiere_vehiculos_evaluacion": false,
+        "area_construida_total_m2": 370,
+        "area_directa_m2": 234,
+        "area_circulacion_servicios_m2": 136,
+        "personal_total": 4,
+        "modelo_infraestructura": "ARRENDAMIENTO + ADECUACIÓN (no construcción)"
+      },
+      "upgrade_path": {
+        "a_cale_n3": {
+          "descripcion": "Agregar L2.pista_clase_I para habilitar evaluación práctica A1/A2/B1",
+          "componente_adicional": "BIM_L2_001",
+          "incremento_capex": 721440000,
+          "incremento_opex_anual": 164160000,
+          "nuevas_categorias_practicas": [
+            "A1",
+            "A2",
+            "B1"
+          ]
+        },
+        "a_cale_n2": {
+          "descripcion": "Agregar L2.pista_clase_II para habilitar evaluación práctica hasta C1",
+          "componente_adicional": "BIM_L2_002",
+          "incremento_capex": 886440000,
+          "incremento_opex_anual": 206160000,
+          "nuevas_categorias_practicas": [
+            "A1",
+            "A2",
+            "B1",
+            "B2",
+            "C1"
+          ]
+        },
+        "a_cale_n1": {
+          "descripcion": "Agregar L2.pista_clase_III para habilitar evaluación práctica completa (A1-C3)",
+          "componente_adicional": "BIM_L2_003",
+          "incremento_capex": 1266440000,
+          "incremento_opex_anual": 248160000,
+          "nuevas_categorias_practicas": [
+            "TODAS (A1-C3)"
+          ]
+        }
+      },
+      "nodos_aplicables": {
+        "descripcion": "Nodos donde se puede desplegar CALE Teórico 24q",
+        "tipo_nodos": [
+          "Capitales departamentales",
+          "Ciudades intermedias >100K habitantes"
+        ],
+        "cantidad_estimada": 30
+      },
+      "timing": {
+        "metodo_calculo": "RUTA CRÍTICA: MAX(adquisicion) + MAX(instalacion + prereqs) + MAX(entrenamiento + prereqs)",
+        "factor_riesgo": "15% contingencia",
+        "fase_1_prerequisitos": {
+          "arrendamiento_inmueble": {
+            "dias": 14,
+            "actividades": [
+              "Selección 3 opciones pre-aprobadas",
+              "Negociación contrato",
+              "Firma legal"
+            ],
+            "ruta_critica": true
+          },
+          "licencias_permisos": {
+            "dias": 7,
+            "actividades": [
+              "Permiso obra menor",
+              "Certificado bomberos",
+              "Conexión servicios"
+            ],
+            "paralelo_con": "arrendamiento_inmueble"
+          },
+          "seleccion_rrhh": {
+            "dias": 21,
+            "actividades": [
+              "Publicación convocatoria",
+              "Entrevistas",
+              "Vinculación"
+            ],
+            "inicio_paralelo": "Día 1",
+            "prerequisito_para": "entrenamiento"
+          }
+        },
+        "fase_2_adquisicion": {
+          "metodo": "MAX(tiempo_adquisicion_componentes_L2)",
+          "datacenter_servidor": {
+            "dias": 28,
+            "critico": true
+          },
+          "mobiliario_24_cubiculos": {
+            "dias": 28,
+            "critico": true
+          },
+          "servicios_internet": {
+            "dias": 21,
+            "critico": false
+          },
+          "zona_administrativa": {
+            "dias": 21,
+            "critico": false
+          },
+          "sala_formacion": {
+            "dias": 21,
+            "critico": false
+          },
+          "materiales_construccion": {
+            "dias": 7,
+            "critico": false
+          },
+          "software_licencias": {
+            "dias": 7,
+            "critico": false
+          },
+          "tiempo_maximo_dias": 28,
+          "componente_critico": "Datacenter (servidor aplicaciones Dell/HP)",
+          "inicio": "Día 1 post-arrendamiento",
+          "nota": "Adquisiciones en paralelo"
+        },
+        "fase_3_instalacion": {
+          "metodo": "MAX(ruta_critica_instalacion + prerequisitos)",
+          "rutas": {
+            "ruta_1_datacenter": {
+              "secuencia": [
+                "obra_civil_datacenter: 14d",
+                "instalacion_electrica: 7d",
+                "montaje_rack_ups: 2d",
+                "servidor: 3d",
+                "red_core: 3d",
+                "software_base: 5d"
+              ],
+              "total_dias": 34,
+              "prerequisito": "acometida_electrica (14d paralelo obra_civil)"
+            },
+            "ruta_2_edificacion": {
+              "secuencia": [
+                "obra_civil_divisiones: 21d",
+                "electrica_general: 14d",
+                "hidrosanitaria: 7d paralelo",
+                "acabados: 7d"
+              ],
+              "total_dias": 42,
+              "prerequisito": "arrendamiento_firmado"
+            },
+            "ruta_3_software_aleya": {
+              "secuencia": [
+                "despliegue_aleya: 3d",
+                "pruebas_integracion: 3d"
+              ],
+              "total_dias": 6,
+              "prerequisito": "datacenter_operativo (día 34)"
+            },
+            "ruta_4_software_munay": {
+              "secuencia": [
+                "despliegue_munay: 5d",
+                "apis_runt: 3d",
+                "banco_preguntas: 2d paralelo",
+                "pruebas: 5d"
+              ],
+              "total_dias": 15,
+              "prerequisito": "aleya_operativo (día 40)"
+            },
+            "ruta_5_sala_evaluacion": {
+              "secuencia": [
+                "cableado: 7d",
+                "mobiliario: 3d",
+                "equipos: 2d",
+                "red: 2d"
+              ],
+              "total_dias": 14,
+              "prerequisito": "obra_civil_terminada (día 42) + datacenter (día 34)"
+            }
+          },
+          "tiempo_maximo_dias": 55,
+          "ruta_critica_descripcion": "Edificación (42d) → Sala evaluación (14d) → MUNAY (15d desde día 40) = 55 días total",
+          "nota": "MUNAY depende de ALEYA (día 40), finaliza día 55"
+        },
+        "fase_4_entrenamiento": {
+          "metodo": "MAX(tiempo_entrenamiento) + prerequisito(personal_contratado día 21)",
+          "capacitacion_aleya": {
+            "dias": 5,
+            "inicio": "Día 40 (ALEYA operativo)",
+            "prerequisito": [
+              "personal_contratado",
+              "aleya_operativo"
+            ]
+          },
+          "capacitacion_munay": {
+            "dias": 7,
+            "inicio": "Día 55 (MUNAY operativo)",
+            "prerequisito": [
+              "personal_contratado",
+              "munay_operativo"
+            ]
+          },
+          "capacitacion_admin_sistemas": {
+            "dias": 7,
+            "inicio": "Día 34 (datacenter operativo)",
+            "prerequisito": [
+              "personal_contratado",
+              "datacenter_operativo"
+            ],
+            "paralelo": true
+          },
+          "simulacros_evaluacion": {
+            "dias": 3,
+            "inicio": "Día 62",
+            "prerequisito": [
+              "capacitacion_munay_completa"
+            ]
+          },
+          "tiempo_maximo_dias": 15,
+          "ruta_critica": "MUNAY operativo (día 55) → capacitación MUNAY (7d) → simulacros (3d) = 15 días"
+        },
+        "fase_5_pruebas_inauguracion": {
+          "pruebas_finales": 3,
+          "certificaciones": 2,
+          "inauguracion": 1,
+          "total_dias": 6
+        },
+        "calculo_total": {
+          "prerequisitos": 14,
+          "adquisicion": 28,
+          "instalacion": 55,
+          "entrenamiento": 15,
+          "pruebas_inauguracion": 6,
+          "subtotal_dias": 118,
+          "factor_riesgo_15pct": 18,
+          "total_dias_calendario": 136,
+          "total_semanas": 19.4,
+          "total_meses": 4.5
+        },
+        "hitos_criticos": [
+          {
+            "dia": 1,
+            "hito": "Firma arrendamiento + Inicio adquisiciones + Selección RRHH"
+          },
+          {
+            "dia": 14,
+            "hito": "Arrendamiento activo + Permisos aprobados"
+          },
+          {
+            "dia": 21,
+            "hito": "Personal contratado (4 personas)"
+          },
+          {
+            "dia": 28,
+            "hito": "Adquisiciones completadas (servidor, mobiliario)"
+          },
+          {
+            "dia": 34,
+            "hito": "Datacenter operativo + Capacitación admin inicia"
+          },
+          {
+            "dia": 40,
+            "hito": "ALEYA operativo + Capacitación ALEYA inicia"
+          },
+          {
+            "dia": 42,
+            "hito": "Obra civil terminada (edificación)"
+          },
+          {
+            "dia": 55,
+            "hito": "MUNAY operativo + Instalación completa"
+          },
+          {
+            "dia": 62,
+            "hito": "Capacitación MUNAY completada"
+          },
+          {
+            "dia": 65,
+            "hito": "Simulacros evaluación finalizados"
+          },
+          {
+            "dia": 70,
+            "hito": "Entrenamiento completo"
+          },
+          {
+            "dia": 76,
+            "hito": "Pruebas finales + Certificaciones"
+          },
+          {
+            "dia": 136,
+            "hito": "🎉 INAUGURACIÓN CALE TEÓRICO (con contingencia 15%)"
+          }
+        ]
+      },
+      "validaciones": {
+        "fuente_valores": "MUNAY_5.2 - Tabla #16/#17 (L3.CALE_TEORICO.24q)",
+        "valor_munay_v1": 725000000,
+        "valor_bim_v2_corregido": 645000000,
+        "diferencia": -80000000,
+        "razon": "Parqueadero eliminado (no aplica para arrendamiento)",
+        "estado": "CORREGIDO_V2"
+      },
+      "timing_resumen": {
+        "metodo": "RUTA CRÍTICA: MAX(adq) + MAX(inst+prereq) + MAX(entrena+prereq)",
+        "prerequisitos_dias": 14,
+        "adquisicion_dias": 28,
+        "instalacion_dias": 55,
+        "entrenamiento_dias": 15,
+        "pruebas_dias": 6,
+        "subtotal_dias": 118,
+        "factor_riesgo_15pct_dias": 18,
+        "total_dias_calendario": 136,
+        "total_meses": 4.5,
+        "nota": "Ver MODELO_TIEMPOS_IMPLEMENTACION_L3.json para detalle completo ruta crítica"
+      }
+    },
+    "BIM_L3_011": {
+      "bim_id": "BIM_L3_011",
+      "codigo": "L3.CALE_TEORICO.16q",
+      "nombre": "CALE Teórico - 16 Cubículos (Primera Fase)",
+      "version": "1.0",
+      "descripcion": "Centro compacto para evaluación TEÓRICA - Despliegue Fase 1 en ciudades intermedias. No incluye infraestructura de pistas.",
+      "tipo": "CALE_TEORICO_FASE_1",
+      "categoria": "CENTRO_EVALUACION_TEORICO",
+      "fase_despliegue": 1,
+      "capacidad": {
+        "cubiculos_evaluacion": 16,
+        "sala_formacion_pax": 20,
+        "oficinas_administrativas": 2,
+        "parqueadero_vehiculos": 0,
+        "evaluaciones_teoricas_mes": 5705,
+        "evaluaciones_practicas_mes": 0,
+        "evaluaciones_teoricas_dia": 219,
+        "formula_capacidad": "(16 puestos × 16h × 26d) / 1.17h/eval"
+      },
+      "categorias_soportadas": {
+        "evaluacion_teorica": [
+          "TODAS (A1, A2, B1, B2, B3, C1, C2, C3)"
+        ],
+        "evaluacion_practica": []
+      },
+      "componentes_l2": [
+        {
+          "bim_id": "BIM_L2_004",
+          "codigo": "L2.sala_24_cubiculos",
+          "nombre": "Sala Teórica 16 Cubículos",
+          "variante": "16q",
+          "descripcion": "16 estaciones de evaluación digital con computadores, sillas ergonómicas, divisiones",
+          "cantidad": 1,
+          "valor_unitario": 120000000,
+          "valor_total": 120000000,
+          "categoria": "INFRAESTRUCTURA_TEORICA",
+          "metros_cuadrados": 48
+        },
+        {
+          "bim_id": "BIM_L2_005",
+          "codigo": "L2.sala_formacion",
+          "nombre": "Sala Formación 20 PAX",
+          "variante": "20_pax",
+          "descripcion": "Sala de capacitación con 20 sillas universitarias, tablero, proyector",
+          "cantidad": 1,
+          "valor_unitario": 30000000,
+          "valor_total": 30000000,
+          "categoria": "INFRAESTRUCTURA_TEORICA",
+          "metros_cuadrados": 40
+        },
+        {
+          "bim_id": "BIM_L2_008",
+          "codigo": "L2.zona_administrativa",
+          "nombre": "Zona Administrativa 2 Oficinas",
+          "variante": "2_oficinas",
+          "descripcion": "Área administrativa con 2 oficinas, recepción, sala de espera reducida",
+          "cantidad": 1,
+          "valor_unitario": 80000000,
+          "valor_total": 80000000,
+          "categoria": "ADMINISTRATIVA",
+          "metros_cuadrados": 60
+        },
+        {
+          "bim_id": "BIM_L2_006",
+          "codigo": "L2.datacenter",
+          "nombre": "Datacenter 12m²",
+          "variante": "12m2",
+          "descripcion": "Cuarto de servidores con aire acondicionado, UPS, servidor, switch",
+          "cantidad": 1,
+          "valor_unitario": 65000000,
+          "valor_total": 65000000,
+          "categoria": "TECNOLOGIA",
+          "metros_cuadrados": 12
+        },
+        {
+          "bim_id": "BIM_L2_010",
+          "codigo": "L2.edificacion_adecuada",
+          "nombre": "Edificación Adecuada",
+          "descripcion": "Adecuación de edificación existente (obra civil, instalaciones, acabados)",
+          "cantidad": 1,
+          "valor_unitario": 140000000,
+          "valor_total": 140000000,
+          "categoria": "CIVIL",
+          "metros_cuadrados": 460
+        },
+        {
+          "bim_id": "BIM_L2_011",
+          "codigo": "L2.servicios_publicos",
+          "nombre": "Servicios Públicos y Telecomunicaciones",
+          "descripcion": "Acometidas, internet 50Mbps, telefonía, CCTV básico",
+          "cantidad": 1,
+          "valor_unitario": 25000000,
+          "valor_total": 25000000,
+          "categoria": "SERVICIOS"
+        }
+      ],
+      "valor_total_capex": 460000000,
+      "actores_espaciales": {
+        "software": [
+          {
+            "codigo": "L0.SISTEMA.ALEYA",
+            "funcionalidad": "Módulo evaluación teórica digital (16 puestos)",
+            "espacios_activacion": [
+              "L2.sala_24_cubiculos",
+              "L2.zona_administrativa"
+            ],
+            "costo_mensual": 1500000,
+            "costo_anual": 18000000
+          },
+          {
+            "codigo": "L0.SISTEMA.MUNAY",
+            "funcionalidad": "Check-in + Reportes",
+            "espacios_activacion": [
+              "L1.recepcion",
+              "L2.zona_administrativa"
+            ],
+            "costo_mensual": 1000000,
+            "costo_anual": 12000000
+          }
+        ],
+        "rrhh": [
+          {
+            "codigo": "RRHH.coordinador_cale",
+            "cargo": "Coordinador CALE Teórico",
+            "cantidad": 1,
+            "costo_mensual": 6000000,
+            "costo_anual": 72000000
+          },
+          {
+            "codigo": "RRHH.auxiliar_administrativo",
+            "cargo": "Auxiliar Administrativo",
+            "cantidad": 1,
+            "costo_mensual": 3500000,
+            "costo_anual": 42000000
+          },
+          {
+            "codigo": "RRHH.recepcionista",
+            "cargo": "Recepcionista",
+            "cantidad": 1,
+            "costo_mensual": 3000000,
+            "costo_anual": 36000000
+          }
+        ]
+      },
+      "valor_total_opex_anual": 308609720,
+      "valor_total_opex_mensual": 25717476,
+      "resumen_financiero": {
+        "capex_inicial": 460000000,
+        "opex_anual_software": 30000000,
+        "opex_anual_rrhh": 150000000,
+        "opex_anual_servicios": 128609720,
+        "opex_anual_total": 308609720,
+        "ratio_opex_capex": "67.1%",
+        "costo_total_primer_ano": 768609720
+      },
+      "caracteristicas": {
+        "evaluacion_practica": false,
+        "evaluacion_teorica": true,
+        "categorias_todas_teorico": true,
+        "requiere_pistas": false,
+        "requiere_vehiculos_evaluacion": false,
+        "area_construida_total_m2": 290,
+        "personal_total": 3,
+        "area_directa_m2": 160,
+        "area_circulacion_servicios_m2": 130
+      },
+      "upgrade_path": {
+        "a_cale_n3": {
+          "descripcion": "Agregar L2.pista_clase_I para convertir en CALE.n_3 completo",
+          "componente_adicional": "BIM_L2_001",
+          "incremento_capex": 721440000,
+          "incremento_opex_anual": 164160000,
+          "bim_resultante": "BIM_L3_003",
+          "nuevas_categorias_practicas": [
+            "A1",
+            "A2",
+            "B1"
+          ]
+        }
+      },
+      "nodos_aplicables": {
+        "descripcion": "Nodos donde se puede desplegar CALE Teórico 16q",
+        "tipo_nodos": [
+          "Ciudades intermedias 50K-100K habitantes",
+          "Cabeceras municipales"
+        ],
+        "cantidad_estimada": 56
+      },
+      "timing": {
+        "total_dias": 270,
+        "total_meses": 9,
+        "nota": "Tiempos similares a 24q pero con menor complejidad en obra civil"
+      },
+      "validaciones": {
+        "fuente_valores": "MUNAY_5.2 - Tabla #16/#17 (L3.CALE_TEORICO.16q)",
+        "valor_munay_v1": 520000000,
+        "valor_bim_v2_corregido": 460000000,
+        "diferencia": -60000000,
+        "razon": "Parqueadero eliminado (no aplica para arrendamiento)",
+        "estado": "CORREGIDO_V2"
+      },
+      "nota_capex": "Reducido -$60,000,000 vs v1.0: Parqueadero eliminado",
+      "opex_detallado": {
+        "software": {
+          "total_anual": 30000000
+        },
+        "rrhh": {
+          "total_anual": 150000000
+        },
+        "servicios": {
+          "energia_electrica": {
+            "kwh_mes": 4047,
+            "costo_kwh_cop": 550,
+            "costo_mes_cop": 2225850,
+            "costo_anual_cop": 26710200
+          },
+          "agua": {
+            "m3_mes": 7.8,
+            "costo_mes_cop": 24960,
+            "costo_anual_cop": 299520
+          },
+          "internet_telecomunicaciones": {
+            "total_mes_cop": 550000,
+            "total_anual_cop": 6600000
+          },
+          "arrendamiento": {
+            "area_m2": 290,
+            "costo_m2_mes_cop": 25000,
+            "costo_mes_cop": 7250000,
+            "costo_anual_cop": 87000000
+          },
+          "mantenimiento_equipos": {
+            "costo_anual_cop": 8000000
+          },
+          "total_servicios_anual": 128609720
+        },
+        "total_opex_anual": 308609720
+      },
+      "timing_resumen": {
+        "metodo": "RUTA CRÍTICA: MAX(adq) + MAX(inst+prereq) + MAX(entrena+prereq)",
+        "prerequisitos_dias": 14,
+        "adquisicion_dias": 28,
+        "instalacion_dias": 52,
+        "entrenamiento_dias": 15,
+        "pruebas_dias": 6,
+        "subtotal_dias": 115,
+        "factor_riesgo_15pct_dias": 17,
+        "total_dias_calendario": 132,
+        "total_meses": 4.4,
+        "nota": "Ver MODELO_TIEMPOS_IMPLEMENTACION_L3.json para detalle completo ruta crítica"
+      }
+    },
+    "BIM_L3_012": {
+      "bim_id": "BIM_L3_012",
+      "codigo": "L3.CALE_TEORICO.4q",
+      "nombre": "CALE Teórico - 4 Cubículos (Primera Fase)",
+      "version": "1.0",
+      "descripcion": "Centro básico para evaluación TEÓRICA en municipios pequeños - Despliegue Fase 1. Configuración mínima viable.",
+      "tipo": "CALE_TEORICO_FASE_1",
+      "categoria": "CENTRO_EVALUACION_TEORICO",
+      "fase_despliegue": 1,
+      "capacidad": {
+        "cubiculos_evaluacion": 4,
+        "sala_formacion_pax": 10,
+        "oficinas_administrativas": 1,
+        "parqueadero_vehiculos": 0,
+        "evaluaciones_teoricas_mes": 1426,
+        "evaluaciones_practicas_mes": 0,
+        "evaluaciones_teoricas_dia": 54,
+        "formula_capacidad": "(4 puestos × 16h × 26d) / 1.17h/eval"
+      },
+      "categorias_soportadas": {
+        "evaluacion_teorica": [
+          "TODAS (A1, A2, B1, B2, B3, C1, C2, C3)"
+        ],
+        "evaluacion_practica": []
+      },
+      "componentes_l2": [
+        {
+          "bim_id": "BIM_L2_004",
+          "codigo": "L2.sala_24_cubiculos",
+          "nombre": "Sala Teórica 4 Cubículos",
+          "variante": "4q",
+          "descripcion": "4 estaciones de evaluación digital básicas",
+          "cantidad": 1,
+          "valor_unitario": 40000000,
+          "valor_total": 40000000,
+          "categoria": "INFRAESTRUCTURA_TEORICA",
+          "metros_cuadrados": 16
+        },
+        {
+          "bim_id": "BIM_L2_005",
+          "codigo": "L2.sala_formacion",
+          "nombre": "Sala Formación 10 PAX",
+          "variante": "10_pax",
+          "descripcion": "Sala básica con 10 sillas, tablero",
+          "cantidad": 1,
+          "valor_unitario": 15000000,
+          "valor_total": 15000000,
+          "categoria": "INFRAESTRUCTURA_TEORICA",
+          "metros_cuadrados": 20
+        },
+        {
+          "bim_id": "BIM_L2_008",
+          "codigo": "L2.zona_administrativa",
+          "nombre": "Zona Administrativa 1 Oficina",
+          "variante": "1_oficina",
+          "descripcion": "Oficina multiusos + recepción básica",
+          "cantidad": 1,
+          "valor_unitario": 40000000,
+          "valor_total": 40000000,
+          "categoria": "ADMINISTRATIVA",
+          "metros_cuadrados": 30
+        },
+        {
+          "bim_id": "BIM_L2_006",
+          "codigo": "L2.datacenter",
+          "nombre": "Cuarto Técnico 6m²",
+          "variante": "6m2",
+          "descripcion": "Cuarto técnico básico con servidor y UPS",
+          "cantidad": 1,
+          "valor_unitario": 35000000,
+          "valor_total": 35000000,
+          "categoria": "TECNOLOGIA",
+          "metros_cuadrados": 6
+        },
+        {
+          "bim_id": "BIM_L2_010",
+          "codigo": "L2.edificacion_adecuada",
+          "nombre": "Edificación Adecuada Básica",
+          "descripcion": "Adecuación mínima de edificación existente",
+          "cantidad": 1,
+          "valor_unitario": 80000000,
+          "valor_total": 80000000,
+          "categoria": "CIVIL",
+          "metros_cuadrados": 220
+        },
+        {
+          "bim_id": "BIM_L2_011",
+          "codigo": "L2.servicios_publicos",
+          "nombre": "Servicios Públicos Básicos",
+          "descripcion": "Acometidas básicas, internet 20Mbps",
+          "cantidad": 1,
+          "valor_unitario": 15000000,
+          "valor_total": 15000000,
+          "categoria": "SERVICIOS"
+        }
+      ],
+      "valor_total_capex": 175000000,
+      "actores_espaciales": {
+        "software": [
+          {
+            "codigo": "L0.SISTEMA.ALEYA",
+            "funcionalidad": "Módulo evaluación teórica digital (4 puestos)",
+            "espacios_activacion": [
+              "L2.sala_24_cubiculos"
+            ],
+            "costo_mensual": 800000,
+            "costo_anual": 9600000
+          },
+          {
+            "codigo": "L0.SISTEMA.MUNAY",
+            "funcionalidad": "Check-in básico",
+            "espacios_activacion": [
+              "L1.recepcion"
+            ],
+            "costo_mensual": 500000,
+            "costo_anual": 6000000
+          }
+        ],
+        "rrhh": [
+          {
+            "codigo": "RRHH.coordinador_cale",
+            "cargo": "Coordinador CALE (medio tiempo)",
+            "cantidad": 1,
+            "costo_mensual": 3500000,
+            "costo_anual": 42000000
+          },
+          {
+            "codigo": "RRHH.auxiliar_administrativo",
+            "cargo": "Auxiliar Administrativo",
+            "cantidad": 1,
+            "costo_mensual": 3000000,
+            "costo_anual": 36000000
+          }
+        ]
+      },
+      "valor_total_opex_anual": 179756600,
+      "valor_total_opex_mensual": 14979716,
+      "resumen_financiero": {
+        "capex_inicial": 175000000,
+        "opex_anual_software": 24000000,
+        "opex_anual_rrhh": 99600000,
+        "opex_anual_servicios": 56156600,
+        "opex_anual_total": 179756600,
+        "ratio_opex_capex": "102.7%",
+        "costo_total_primer_ano": 354756600
+      },
+      "caracteristicas": {
+        "evaluacion_practica": false,
+        "evaluacion_teorica": true,
+        "categorias_todas_teorico": true,
+        "requiere_pistas": false,
+        "requiere_vehiculos_evaluacion": false,
+        "area_construida_total_m2": 110,
+        "personal_total": 2,
+        "area_directa_m2": 51,
+        "area_circulacion_servicios_m2": 59
+      },
+      "upgrade_path": {
+        "a_cale_teorico_16q": {
+          "descripcion": "Ampliar a 16 cubículos para mayor capacidad",
+          "bim_resultante": "BIM_L3_011",
+          "incremento_capex": 265000000
+        }
+      },
+      "nodos_aplicables": {
+        "descripcion": "Nodos donde se puede desplegar CALE Teórico 4q",
+        "tipo_nodos": [
+          "Municipios pequeños <50K habitantes",
+          "Zonas rurales con demanda baja"
+        ],
+        "cantidad_estimada": 100
+      },
+      "timing": {
+        "total_dias": 180,
+        "total_meses": 6,
+        "nota": "Configuración simplificada con tiempos reducidos"
+      },
+      "validaciones": {
+        "fuente_valores": "MUNAY_5.2 - Tabla #16/#17 (L3.CALE_TEORICO.4q)",
+        "valor_munay_v1": 255000000,
+        "valor_bim_v2_corregido": 175000000,
+        "diferencia": -80000000,
+        "razon": "Parqueadero eliminado (no aplica para arrendamiento)",
+        "estado": "CORREGIDO_V2"
+      },
+      "nota_capex": "Reducido -$80,000,000 vs v1.0: Parqueadero eliminado",
+      "opex_detallado": {
+        "software": {
+          "total_anual": 24000000
+        },
+        "rrhh": {
+          "total_anual": 99600000
+        },
+        "servicios": {
+          "energia_electrica": {
+            "kwh_mes": 1895,
+            "costo_kwh_cop": 550,
+            "costo_mes_cop": 1042250,
+            "costo_anual_cop": 12507000
+          },
+          "agua": {
+            "m3_mes": 6.5,
+            "costo_mes_cop": 20800,
+            "costo_anual_cop": 249600
+          },
+          "internet_telecomunicaciones": {
+            "total_mes_cop": 450000,
+            "total_anual_cop": 5400000
+          },
+          "arrendamiento": {
+            "area_m2": 110,
+            "costo_m2_mes_cop": 25000,
+            "costo_mes_cop": 2750000,
+            "costo_anual_cop": 33000000
+          },
+          "mantenimiento_equipos": {
+            "costo_anual_cop": 5000000
+          },
+          "total_servicios_anual": 56156600
+        },
+        "total_opex_anual": 179756600
+      },
+      "timing_resumen": {
+        "metodo": "RUTA CRÍTICA: MAX(adq) + MAX(inst+prereq) + MAX(entrena+prereq)",
+        "prerequisitos_dias": 14,
+        "adquisicion_dias": 21,
+        "instalacion_dias": 42,
+        "entrenamiento_dias": 12,
+        "pruebas_dias": 5,
+        "subtotal_dias": 94,
+        "factor_riesgo_15pct_dias": 14,
+        "total_dias_calendario": 108,
+        "total_meses": 3.6,
+        "nota": "Ver MODELO_TIEMPOS_IMPLEMENTACION_L3.json para detalle completo ruta crítica"
+      }
+    }
+  },
+  "resumen_catalogo": {
+    "total_configuraciones": 3,
+    "rango_capex": {
+      "minimo": 255000000,
+      "maximo": 725000000
+    },
+    "rango_opex_anual": {
+      "minimo": 93600000,
+      "maximo": 240000000
+    },
+    "capacidad_total_red": {
+      "configuracion_24q": {
+        "nodos": 30,
+        "evaluaciones_mes_nodo": 600,
+        "evaluaciones_mes_total": 18000
+      },
+      "configuracion_16q": {
+        "nodos": 56,
+        "evaluaciones_mes_nodo": 400,
+        "evaluaciones_mes_total": 22400
+      },
+      "configuracion_4q": {
+        "nodos": 100,
+        "evaluaciones_mes_nodo": 100,
+        "evaluaciones_mes_total": 10000
+      },
+      "evaluaciones_teoricas_mes_red_completa": 50400
+    }
+  }
+}
