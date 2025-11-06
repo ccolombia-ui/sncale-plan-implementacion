@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIM_L3_003 - CALE.n_3 - Centro Local</title>
+    <title>BIM_L3_002b - CALE.n_2** - Centro Subregional Plus</title>
     <style>
         * {
             margin: 0;
@@ -29,7 +29,7 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c28 100%);
+            background: linear-gradient(135deg, #006600 0%, #009900 100%);
             color: white;
             padding: 2.5rem 2rem;
             display: flex;
@@ -85,12 +85,12 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #2d5016;
+            border-left: 4px solid #006600;
         }
         
         .info-card.destacada {
-            background: linear-gradient(135deg, #2d501615 0%, #4a7c2815 100%);
-            border-left: 4px solid #4a7c28;
+            background: linear-gradient(135deg, #00660015 0%, #00990015 100%);
+            border-left: 4px solid #009900;
         }
         
         .info-card h3 {
@@ -104,13 +104,13 @@
         .info-card p {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #2d5016;
+            color: #006600;
             margin: 0.3rem 0;
         }
         
         .info-card.destacada p {
             font-size: 1.8rem;
-            color: #4a7c28;
+            color: #009900;
         }
         
         section {
@@ -118,11 +118,11 @@
         }
         
         h2 {
-            color: #2d5016;
+            color: #006600;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid #2d5016;
+            border-bottom: 2px solid #006600;
         }
         
         .table-wrapper {
@@ -139,7 +139,7 @@
         }
         
         thead {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c28 100%);
+            background: linear-gradient(135deg, #006600 0%, #009900 100%);
             color: white;
         }
         
@@ -178,7 +178,7 @@
             border-radius: 4px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
-            color: #4a7c28;
+            color: #009900;
         }
         
         .fuente-datos {
@@ -207,6 +207,17 @@
             margin-bottom: 1rem;
         }
         
+        .badge-variante {
+            display: inline-block;
+            background: #ffc107;
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
         footer {
             background: #f8f9fa;
             padding: 1.5rem 2.5rem;
@@ -217,7 +228,7 @@
         }
         
         footer a {
-            color: #2d5016;
+            color: #006600;
             text-decoration: none;
             margin: 0 0.5rem;
         }
@@ -257,9 +268,9 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <div class="bim-id">BIM_L3_003</div>
-                <h1>CALE.n_3 - Centro Básico</h1>
-                <p class="subtitle">Configuración esencial para municipios pequeños (16 municipios) (VALORES UNITARIOS - 1 unidad)</p>
+                <div class="bim-id">BIM_L3_002b <span class="badge-variante">VARIANTE++</span></div>
+                <h1>CALE.n_2** - Centro Subregional Plus</h1>
+                <p class="subtitle">Configuración reforzada con 2 pistas adicionales Clase I (16 municipios) (VALORES UNITARIOS - 1 unidad)</p>
             </div>
             <svg class="logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
                 <text x="10" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">UPTC</text>
@@ -271,7 +282,7 @@
             <div class="info-grid">
                 <div class="info-card">
                     <h3>🔖 Identificador BIM</h3>
-                    <p><code>BIM_L3_003</code></p>
+                    <p><code>BIM_L3_002b</code></p>
                 </div>
                 
                 <div class="info-card">
@@ -281,12 +292,12 @@
                 
                 <div class="info-card">
                     <h3>🏗️ Tipo CALE</h3>
-                    <p>Local</p>
+                    <p>Subregional Plus (n_2**)</p>
                 </div>
                 
                 <div class="info-card destacada">
                     <h3>💰 Valorización Total</h3>
-                    <p>$5.641.306.197 COP</p>
+                    <p>$22.087.585.297 COP</p>
                 </div>
             </div>
             
@@ -299,7 +310,7 @@
             
             <section>
                 <h2>🔧 Componentes de la Configuración</h2>
-                <p class="metadata-info">Desglose completo de componentes con valores unitarios y totales</p>
+                <p class="metadata-info">Configuración base CALE.n_2 + 2 pistas Clase I adicionales</p>
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -318,16 +329,36 @@
                             
             <tr>
                 <td>1</td>
+                <td><strong>PISTA_CLASE_II</strong></td>
+                <td>Pista completa Clase II (B2, C2)</td>
+                <td><code>L2.pista_clase_II</code></td>
+                <td class="text-right">$980.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$980.000.000</strong></td>
+            </tr>
+            <tr style="background-color: #fff3cd;">
+                <td>2</td>
                 <td><strong>PISTA_CLASE_I</strong></td>
-                <td>Pista completa Clase I (A1, A2, B1, C1)</td>
+                <td>Pista Clase I adicional #1 (A1, A2, B1, C1)</td>
                 <td><code>L2.pista_clase_I</code></td>
                 <td class="text-right">$750.000.000</td>
+                <td class="text-center">0</td>
                 <td class="text-center">1</td>
+                <td class="text-right"><strong>$750.000.000</strong></td>
+            </tr>
+            <tr style="background-color: #fff3cd;">
+                <td>3</td>
+                <td><strong>PISTA_CLASE_I</strong></td>
+                <td>Pista Clase I adicional #2 (A1, A2, B1, C1)</td>
+                <td><code>L2.pista_clase_I</code></td>
+                <td class="text-right">$750.000.000</td>
+                <td class="text-center">0</td>
                 <td class="text-center">1</td>
                 <td class="text-right"><strong>$750.000.000</strong></td>
             </tr>
             <tr>
-                <td>2</td>
+                <td>4</td>
                 <td><strong>SALA_12_CUBICULOS</strong></td>
                 <td>Sala de formación 12 puestos</td>
                 <td><code>L2.sala_12_cubiculos</code></td>
@@ -337,81 +368,99 @@
                 <td class="text-right"><strong>$93.000.000</strong></td>
             </tr>
             <tr>
-                <td>3</td>
-                <td><strong>EDIFICACION_ADMIN</strong></td>
-                <td>Edificación administrativa básica</td>
-                <td><code>L2.edificacion</code></td>
-                <td class="text-right">$1.500.000.000</td>
-                <td class="text-center">1</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$1.500.000.000</strong></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td><strong>CALE_T_BASICO</strong></td>
-                <td>Centro teórico 12 cubículos (básico)</td>
-                <td><code>L2.cale_teorico_12q</code></td>
-                <td class="text-right">$79.531.733</td>
-                <td class="text-center">1</td>
-                <td class="text-center">1</td>
-                <td class="text-right"><strong>$79.531.733</strong></td>
-            </tr>
-            <tr>
                 <td>5</td>
-                <td><strong>SENALIZACION_VIAL</strong></td>
-                <td>Señalización vial básica</td>
-                <td><code>L2.senalizacion</code></td>
-                <td class="text-right">$1.400.000.000</td>
+                <td><strong>EDIFICACION_ADMIN</strong></td>
+                <td>Edificación administrativa ampliada</td>
+                <td><code>L2.edificacion</code></td>
+                <td class="text-right">$2.800.000.000</td>
                 <td class="text-center">1</td>
                 <td class="text-center">1</td>
-                <td class="text-right"><strong>$1.400.000.000</strong></td>
+                <td class="text-right"><strong>$2.800.000.000</strong></td>
             </tr>
             <tr>
                 <td>6</td>
-                <td><strong>SISTEMA_TECNOLOGICO</strong></td>
-                <td>Sistema tecnológico simplificado</td>
-                <td><code>L2.tecnologia</code></td>
-                <td class="text-right">$875.000.000</td>
+                <td><strong>CALE_T_AJUSTADO</strong></td>
+                <td>Centro teórico 12 cubículos (proporcional reforzado)</td>
+                <td><code>L2.cale_teorico_12q</code></td>
+                <td class="text-right">$159.063.465</td>
                 <td class="text-center">1</td>
                 <td class="text-center">1</td>
-                <td class="text-right"><strong>$875.000.000</strong></td>
+                <td class="text-right"><strong>$159.063.465</strong></td>
             </tr>
             <tr>
                 <td>7</td>
-                <td><strong>MOBILIARIO</strong></td>
-                <td>Mobiliario esencial</td>
-                <td><code>L2.mobiliario</code></td>
-                <td class="text-right">$450.000.000</td>
+                <td><strong>SENALIZACION_VIAL</strong></td>
+                <td>Señalización vial reforzada (3 pistas)</td>
+                <td><code>L2.senalizacion</code></td>
+                <td class="text-right">$3.500.000.000</td>
                 <td class="text-center">1</td>
                 <td class="text-center">1</td>
-                <td class="text-right"><strong>$450.000.000</strong></td>
+                <td class="text-right"><strong>$3.500.000.000</strong></td>
             </tr>
             <tr>
                 <td>8</td>
+                <td><strong>SISTEMA_TECNOLOGICO</strong></td>
+                <td>Sistema tecnológico ampliado</td>
+                <td><code>L2.tecnologia</code></td>
+                <td class="text-right">$4.375.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$4.375.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><strong>MOBILIARIO</strong></td>
+                <td>Mobiliario y equipamiento</td>
+                <td><code>L2.mobiliario</code></td>
+                <td class="text-right">$2.250.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$2.250.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><strong>INSTALACIONES_ESPECIALES</strong></td>
+                <td>Instalaciones especiales reforzadas</td>
+                <td><code>L2.instalaciones</code></td>
+                <td class="text-right">$2.500.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$2.500.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>11</td>
                 <td><strong>OBRAS_EXTERIORES</strong></td>
-                <td>Obras exteriores básicas</td>
+                <td>Obras exteriores y urbanismo ampliado</td>
                 <td><code>L2.obras_exteriores</code></td>
-                <td class="text-right">$493.774.464</td>
+                <td class="text-right">$1.130.521.832</td>
                 <td class="text-center">1</td>
                 <td class="text-center">1</td>
-                <td class="text-right"><strong>$493.774.464</strong></td>
+                <td class="text-right"><strong>$1.130.521.832</strong></td>
             </tr>
                         </tbody>
                     </table>
+                </div>
+                
+                <div class="info-card destacada" style="margin-top: 1.5rem;">
+                    <h3>🎯 Diferenciador Clave</h3>
+                    <p style="font-size: 1.1rem;">Esta variante añade <strong>2 pistas Clase I</strong> a la configuración base CALE.n_2</p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                        Base CALE.n_2: $11.206M + Pistas adicionales: $1.500M + Componentes reforzados: $9.382M = <strong>$22.088M</strong>
+                    </p>
                 </div>
             </section>
             
             
         <section class="metadata-section">
             <h2>📋 Información Adicional</h2>
-            <p class="metadata-info">Datos complementarios de la configuración (Tabla #6)</p>
+            <p class="metadata-info">Datos complementarios de la configuración (Tabla #4)</p>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr><th>Tipo CALE</th><th>Cantidad</th><th>Descripción Modificador</th><th>Mapa de Geolocalización</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>CALE.n_3</td><td>16</td><td>Configuración base estándar</td><td>Topología SNCALE BIM - filtrar: (16) CALE.n_3</td></tr>
+                        <tr><td>CALE.n_2**</td><td>16</td><td>Configuración reforzada con 2 pistas adicionales Clase I</td><td>Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -422,7 +471,7 @@
                 <p><strong>Documento:</strong> Google Doc MUNAY_5.2__anexo_b__DEFINITIVO</p>
                 <p><strong>ID:</strong> <code>16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE</code></p>
                 <p><strong>Tabla Valorización:</strong> #5</p>
-                <p><strong>Total Componentes:</strong> 8</p>
+                <p><strong>Total Componentes:</strong> 11 (Base: 9 + Adicionales: 2 pistas)</p>
                 <p><strong>Estado:</strong> ✅ Validado desde fuente oficial única</p>
             </div>
             
@@ -443,56 +492,11 @@
                         <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">"Ley Julián Esteban" - Crea el Sistema Nacional CALE</p>
                     </div>
                     
-                    <div class="info-card">
-                        <h3>🚗 Código de Tránsito</h3>
-                        <p style="font-size: 1rem; color: #333;">Ley 769 de 2002</p>
-                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Código Nacional de Tránsito Terrestre</p>
-                    </div>
-                    
                     <div class="info-card destacada">
                         <h3>🏷️ Clasificación CALE</h3>
-                        <p style="font-size: 1rem;">Clase I - Básica</p>
-                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Autorizado para categorías A1, A2, B1, C1</p>
+                        <p style="font-size: 1rem;">Clase I + Clase II</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Autorizado para TODAS las categorías (A1, A2, B1, B2, C1, C2)</p>
                     </div>
-                </div>
-                
-                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">✅ Certificaciones ISO Obligatorias (Art. 3.7.1.1 #4)</h3>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>🏆 ISO 9001:2015</h3>
-                        <p style="font-size: 0.9rem; color: #333;">Sistema de Gestión de Calidad</p>
-                    </div>
-                    
-                    <div class="info-card">
-                        <h3>🌿 ISO 14001:2015</h3>
-                        <p style="font-size: 0.9rem; color: #333;">Sistema de Gestión Ambiental</p>
-                    </div>
-                    
-                    <div class="info-card">
-                        <h3>⚕️ ISO 45001:2018</h3>
-                        <p style="font-size: 0.9rem; color: #333;">Seguridad y Salud en el Trabajo</p>
-                    </div>
-                </div>
-                
-                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">🛡️ Seguros Obligatorios (Art. 3.7.1.3 #3)</h3>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>💼 Responsabilidad Civil</h3>
-                        <p style="font-size: 0.9rem; color: #333;">Póliza de Responsabilidad Civil Extracontractual (renovación anual)</p>
-                    </div>
-                    
-                    <div class="info-card">
-                        <h3>🩹 Accidentes Personales</h3>
-                        <p style="font-size: 0.9rem; color: #333;">Seguro de Accidentes Personales para evaluados (renovación anual)</p>
-                    </div>
-                </div>
-                
-                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">🔍 Supervisión y Control</h3>
-                <div class="info-card" style="background: linear-gradient(135deg, #28a74515 0%, #20c99715 100%); border-left: 4px solid #28a745;">
-                    <h3 style="color: #28a745;">Entidad Supervisora</h3>
-                    <p style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;"><strong>Superintendencia de Transporte</strong></p>
-                    <p style="font-size: 0.9rem; color: #666;">Sistema: <strong>SICOV</strong> (Sistema de Control y Vigilancia)</p>
-                    <p style="font-size: 0.9rem; color: #666;">Frecuencia de inspección: Mínimo 1 visita técnica anual</p>
                 </div>
             </section>
         </div>
@@ -500,12 +504,12 @@
         <footer>
             <p>Sistema Nacional de Centros de Apoyo Logístico de Evaluación - SNCALE | UPTC</p>
             <p>
-                <a href="../fichas_l1/BIM_L1_001.html">← Fichas L1</a> |
-                <a href="../fichas_l2/BIM_L2_001.html">← Fichas L2</a> |
-                <a href="BIM_L3_001.html">L3 Index</a>
+                <a href="BIM_L3_002.html">← CALE.n_2 Base</a> |
+                <a href="BIM_L3_001.html">L3 Index</a> |
+                <a href="BIM_L3_003.html">CALE.n_3 →</a>
             </p>
             <p style="margin-top: 1rem; font-size: 0.85rem;">
-                Generado desde Google Doc oficial | BIM_L3_003 | UPTC 2025
+                Generado desde Google Doc oficial | BIM_L3_002b | UPTC 2025
             </p>
         </footer>
     </div>
