@@ -1,0 +1,37 @@
+{
+  "source": "TABLAS_L5_RESUMEN_NACIONAL.json",
+  "capex_total": 206704800000,
+  "opex_anual_base": 135500000000,
+  "capacidad_anual_total": 2565072,
+  "annualization_assumptions": {
+    "interest_nominal": 0.08,
+    "n_years_5": 5,
+    "n_years_6": 6
+  },
+  "annualized_capex": {
+    "5_years": 51783046000,
+    "6_years": 44754000000
+  },
+  "opex_adjusted": {
+    "with_5_years": 187283046000,
+    "with_6_years": 180254000000
+  },
+  "utilization_scenarios": {
+    "prudente_pct": 0.65,
+    "evaluation_prudente": 1667297
+  },
+  "tariff_scenarios": {
+    "prudente_tariff": 180000,
+    "anexo_tariff_avg": 200333
+  },
+  "revenues": {
+    "prudente_tariff_65pct": 300113460000,
+    "anexo_tariff_65pct": 334300000000
+  },
+  "margins": {
+    "prudente_5y_margin": 112830414000,
+    "anexo_5y_margin": 147017000000
+  },
+  "opex_per_evaluation_adjusted": 112300,
+  "notes": "Anualidades y escenarios calculados con supuestos r=8%. Ajustar tasa/plazo/tarifa según condiciones reales."
+}

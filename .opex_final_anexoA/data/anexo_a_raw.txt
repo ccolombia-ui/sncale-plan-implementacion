@@ -1,0 +1,4020 @@
+ANEXO A Solución Integral y Modelo Operativo
+
+A10: Análisis y Descripción
+A20: Blueprint Talento Humano
+A30: Blueprint Plataforma Tecnológica (MUNAY + ALEIA)
+A40: PRESUPUESTO OpEx
+
+
+
+
+
+
+
+
+MOVILIZACIÓN UNIVERSITARIA NACIONAL PARA EL APRENDIZAJE Y LA SEGURIDAD VIALMUNAY
+
+
+
+
+
+
+
+
+TUNJA, OCTUBRE 2025
+
+
+TABLA DE CONTENIDO
+
+
+A00: RESUMEN EJECUTIVO
+A00.1 Contexto y Justificación Estratégica
+
+A00.2 Solución Propuesta: Sistema Nacional CALE
+A00.3 Modelo de Coordinación Multinivel VSM
+
+A10: ANÁLISIS Y DESCRIPCIÓN DE LA SOLUCIÓN
+A10.1 Criterio Técnico de Priorización
+La decisión técnica, fundamentada en datos objetivos y no en criterios político-administrativos, estableció un criterio multifactorial que considera:
+Siniestralidad Vial (60%): Tasa de accidentes por cada 100,000 habitantes, utilizando datos de la Agencia Nacional de Seguridad Vial (ANSV) y el Registro Único Nacional de Tránsito (RUNT).
+Demanda Proyectada (30%): Número de conductores a certificar, basado en proyecciones poblacionales.
+Equidad Territorial (10%): Garantía de presencia en los 32 departamentos del país.
+
+Criterio
+Peso
+Descripción
+🔴 SINIESTRALIDAD VIAL
+60%
+Tasa de accidentes por 100,000 habitantes (datos ANSV/RUNT)
+🔵 DEMANDA PROYECTADA
+30%
+Conductores a certificar según proyección poblacional
+🟢 EQUIDAD TERRITORIAL
+10%
+Presencia garantizada en 32/32 departamentos
+
+A10.2 Análisis de Siniestralidad por Departamento
+La siguiente tabla presenta un análisis completo de las 32 jurisdicciones, detallando las tasas de siniestralidad por cada 100,000 habitantes, el total de accidentes registrados, la clasificación por percentiles (P75, P50, P25).
+DEPARTAMENTO
+TOTAL_ACCIDENTES
+POBLACION
+TASA_100K
+CLASIFICACION
+ANTIOQUIA
+152365
+6407000
+2378.1
+MUY ALTA
+RISARALDA
+9189
+975000
+942.5
+MUY ALTA
+VALLE DEL CAUCA
+41660
+4660000
+894
+MUY ALTA
+QUINDIO
+4613
+570000
+809.3
+MUY ALTA
+META
+7183
+1035000
+694
+MUY ALTA
+SANTANDER
+14303
+2105000
+679.5
+MUY ALTA
+TOLIMA
+9240
+1408000
+656.2
+MUY ALTA
+CALDAS
+6427
+1015000
+633.2
+ALTA
+CASANARE
+2266
+403000
+562.3
+ALTA
+ATLANTICO
+11598
+2535000
+457.5
+ALTA
+HUILA
+4483
+1180000
+379.9
+ALTA
+CUNDINAMARCA
+10232
+2919000
+350.5
+ALTA
+BOYACA
+3826
+1240000
+308.5
+ALTA
+BOLIVAR
+6454
+2180000
+296.1
+ALTA
+GUAVIARE
+264
+111000
+237.8
+MEDIA
+NORTE DE SANTANDER
+3066
+1410000
+217.4
+MEDIA
+MAGDALENA
+2663
+1307000
+203.7
+MEDIA
+CORDOBA
+3596
+1825000
+197
+MEDIA
+CAQUETA
+936
+480000
+195
+MEDIA
+CAUCA
+2720
+1460000
+186.3
+MEDIA
+ARAUCA
+434
+272000
+159.6
+MEDIA
+GUAINIA
+67
+48000
+139.6
+BAJA
+CESAR
+1373
+1095000
+125.4
+BAJA
+PUTUMAYO
+397
+358000
+110.9
+BAJA
+CHOCO
+415
+534000
+77.7
+BAJA
+SUCRE
+696
+926000
+75.2
+BAJA
+LA GUAJIRA
+688
+957000
+71.9
+BAJA
+VICHADA
+2
+112000
+1.8
+BAJA
+ARCHIPIELAGO DE SAN ANDRES, PROVIDENCIA
+281
+
+
+BAJA
+BOGOTA D.C.
+60198
+
+
+BAJA
+NARINO
+3872
+
+
+BAJA
+
+Los departamentos con muy alta accidentalidad, con tasas por cada 100 mil habitantes, son Antioquia (2378.1), Risaralda (942.5), Valle del Cauca (894), Quindío (809.3), Meta (694), Santander (679.5) y Tolima (656.2). En contraste, los departamentos con baja accidentalidad incluyen Guainía (139.6), Cesar (125.4), Putumayo (110.9), Chocó (77.7), Sucre (75.2), La Guajira (71.9) y Vichada (1.8).
+A10.3 Análisis de Impacto del Criterio Seleccionado
+La propuesta de la Universidad prioriza el despliegue según zonas de mayor accidentalidad (datos ANSV/RUNT - Ley 2251/2022). Análisis de 365,507 accidentes registrados identifica que:
+
+
+
+Este anexo presenta TRES configuraciones validadas del Sistema Nacional CALE basadas en análisis geoespacial de 1,122 municipios colombianos. Se recomienda implementar Configuración 197 (EQUILIBRIO) por optimización costo-beneficio y flexibilidad operativa.  Sin embargo, el escenario definitivo dependerá de las disposiciones finales que el Ministerio establezca para la UPTC como operador.
+
+A10.3 Análisis de Escenarios
+
+Aspecto
+Config 127 (MÍNIMO)
+Config 197 (EQUILIBRIO) ⭐
+Config 283 (MÁXIMO)
+Nodos Principales
+56 CALE (Cat.A, B, C1)
+56 CALE (Cat.A, B, C1)
+56 CALE (Cat.A, B, C1)
+Satélites Fijos
+71 (óptimo geográfico)
+141 (64 C2 + 40 C3 + 37 C4)
+283 (115 C2 + 75 C3 + 71 C4 + 22 C5)
+Unidades Itinerantes
+43 C5 para zonas remotas
+43 C5 para 43 municipios remotos
+0 (cobertura 100% fija)
+Cobertura Territorial
+83.5% principales + 16.5% satélites
+83.5% principales + 12.6% satélites + 3.83% itinerante
+100% fija ≤50km
+Municipios Atendidos
+1,122 (100% con solución mínima)
+1,122 (100% con solución optimizada)
+1,122 (100% infraestructura fija)
+CAPEX Total
+$11,502M
+$12,787M (+11.2%)
+$14,107M (+22.6%)
+OPEX Anual
+$158,750M/año
+$180,250M/año (+13.5%)
+$228,150M/año (+43.7%)
+Costo Total 10 años
+$1,599,002M
+$1,815,287M (+13.5%)
+$2,295,607M (+43.6%)
+Ahorro vs Config 283
+$696,605M (43.6%)
+$480,320M (26.5%)
+Línea base
+Flexibilidad Operativa
+Alta (71 satélites básicos)
+Muy Alta (141 satélites balanceados)
+Baja (283 infraestructura fija)
+Riesgo de Subutilización
+Bajo (demanda mínima cubierta)
+Muy Bajo (demanda proyectada)
+Alto (sobredimensionamiento remoto)
+Capacidad de Expansión
+Limitada (requiere nuevas sedes)
+Óptima (permite duplicar capacidad)
+Saturada (sin margen)
+Sostenibilidad Financiera
+Básica (ROI limitado)
+Superior (ROI proyectado 18%)
+Comprometida (ROI <10%)
+
+Se recomienda Implementar CONFIGURACIÓN 197 (EQUILIBRIO) por las siguientes razones:
+Ahorro sustancial: $480,320M en 10 años vs Config 283 (26.5% reducción)
+Cobertura efectiva 100%: 96.17% con infraestructura fija + 3.83% con soluciones itinerantes adaptadas
+Flexibilidad estratégica: 141 satélites permiten reasignación según evolución real de demanda
+Evita sobrecostos: No invierte en infraestructura fija para municipios con <200 eval/año
+ROI superior: Retorno de inversión 18% vs 9.8% de Config 283
+Margen de expansión: Config 127 (mínimo) no permite crecimiento futuro; Config 197 permite doblar capacidad sin nueva inversión CAPEX.  
+CALE SUPERIOR. Permite implementar la estrategia CALE-Superior sin CAPEX administrativo o de TIC.
+
+A10.4 Arquitectura de Red Nacional
+El Plan de Implementación propone un Sistema Nacional de 56 CALE con 197 sedes totales, estructurado como red integrada con HUB Central, que garantiza:
+✅ Cobertura 100% territorio nacional (32 departamentos, 1,122 municipios)
+✅ Acceso universal con distancias <50 km desde cualquier municipio
+✅ Capacidad proyectada: 1.22M evaluaciones/año (teóricas + prácticas)
+✅ Operación como "Colmena" (red integrada con asignación dinámica)
+
+El sistema de codificación diferencia tipos base según capacidad teórica y variantes según capacidad práctica (pistas):
+Estructura código: CAT.[Letra][Modificador]
+Elemento
+Significado
+Cantidad
+CAT.A
+Cale Base con:
+- Teórico 24 cubículos o más,
+- Práctico Clase III
+20
+CAT.B
+Cale Base con:
+- Teórico 16 cubículos o más,
+- Práctico Clase II
+20
+CAT.C1
+Cale Base con:
+- Teórico 16 cubículos o más,
+- Práctico Clase I
+16
+Cat.C2, C3, C4, C5
+No es un Cale independiente sino una sede permanente de una Cale Cat.A donde se ofrecen evaluaciones teóricas por demanda.
+Total 141:
++ C2= 50,
++ C3= 45,
++ C4= 30,
++ C5= 16
++
+Tiene una pista Clase II adicional
+
+*
+Tiene una pista Clase I adicional (A1/A2 + B1/C1)
+
+^
+Tiene servicios de CALE-Superior según su categoría
+
+
+CATEGORÍA A - Coordinadores Regionales (20 CALE)
+#
+Categoría
+Departamento
+Descripción (Municipio)
+Municipios Cobertura
+Capacidad Instalada (eval/año)
+Siniestralidad Zona
+1
+Cat.A+
+Bogotá D.C.
+Bogotá Sur (Kennedy/Bosa/Usme)
+8 localidades sur
+120,000
+MUY ALTA*
+2
+Cat.A+
+Bogotá D.C.
+Bogotá Norte (Usaquén/Suba/Chapinero)
+7 localidades norte
+120,000
+MUY ALTA*
+3
+Cat.A+
+Santander
+Bucaramanga (Área Metropolitana)
+4 (Bucaramanga, Floridablanca, Girón, Piedecuesta)
+105,000
+MUY ALTA (14,303 acc/año)
+4
+Cat.A
+Valle del Cauca
+Cali
+7 (Cali + área metropolitana)
+90,000
+MUY ALTA (41,660 acc/año)
+5
+Cat.A
+Tolima
+Ibagué
+12 (Ibagué + provincia)
+90,000
+MUY ALTA (9,240 acc/año)
+6
+Cat.A
+Nariño
+Pasto
+18 (Nariño zona andina)
+75,000
+MEDIA*
+7
+Cat.A
+Cundinamarca
+Mosquera (Sabana Occidente)
+9 (Mosquera, Funza, Madrid, Facatativá, etc.)
+90,000
+ALTA (10,232 acc/año)
+8
+Cat.A
+Cesar
+Valledupar
+14 (Cesar norte-centro)
+75,000
+BAJA (1,373 acc/año)
+9
+Cat.A
+Norte de Santander
+Cúcuta
+11 (Cúcuta + área metropolitana)
+90,000
+MEDIA (3,066 acc/año)
+10
+Cat.A
+Antioquia
+Medellín
+10 (Medellín + valle de Aburrá)
+75,000
+MUY ALTA (152,365 acc/año)
+11
+Cat.A
+Atlántico
+Barranquilla
+8 (Área metropolitana Barranquilla)
+75,000
+ALTA (11,598 acc/año)
+12
+Cat.A
+Risaralda
+Pereira
+9 (Pereira + área metropolitana)
+75,000
+MUY ALTA (9,189 acc/año)
+13
+Cat.A
+Bolívar
+Cartagena
+12 (Cartagena + zona norte Bolívar)
+75,000
+ALTA (6,454 acc/año)
+14
+Cat.A
+Cundinamarca
+Soacha (Sabana Sur)
+6 (Soacha, Sibaté, Granada, etc.)
+75,000
+ALTA (10,232 acc/año)
+15
+Cat.A
+Cesar
+La Paz (Cesar Sur)
+11 (Cesar sur)
+75,000
+BAJA (1,373 acc/año)
+16
+Cat.A
+Casanare
+Yopal
+16 (Todo Casanare + Arauca norte)
+75,000
+ALTA (2,266 acc/año)
+17
+Cat.A
+Córdoba
+Montería
+15 (Córdoba centro-norte)
+75,000
+MEDIA (3,596 acc/año)
+18
+Cat.A
+Magdalena
+Santa Marta
+13 (Magdalena norte)
+75,000
+MEDIA (2,663 acc/año)
+19
+Cat.A
+Santander
+Barrancabermeja
+8 (Zona Magdalena Medio)
+60,000
+MUY ALTA (14,303 acc/año)
+20
+Cat.A
+Valle del Cauca
+Buenaventura
+6 (Litoral Pacífico Valle)
+60,000
+MUY ALTA (41,660 acc/año)
+CATEGORÍA B - Subregionales (20 CALE)
+#
+Categoría
+Departamento
+Descripción (Municipio)
+Municipios Cobertura
+Capacidad Instalada (eval/año)
+Siniestralidad Zona
+21
+Cat.B**
+Antioquia
+Barbosa (Norte Antioquia)
+12 (Norte de Antioquia)
+55,000
+MUY ALTA (152,365 acc/año)
+22
+Cat.B**
+Antioquia
+Santafé de Antioquia (Occidente)
+9 (Occidente Antioquia)
+55,000
+MUY ALTA (152,365 acc/año)
+23
+Cat.B**
+Meta
+Villavicencio
+18 (Meta completo + Vichada oeste)
+55,000
+MUY ALTA (7,183 acc/año)
+24
+Cat.B**
+Valle del Cauca
+Jamundí (Sur Cali)
+8 (Sur Valle del Cauca)
+55,000
+MUY ALTA (41,660 acc/año)
+25
+Cat.B**
+La Guajira
+Riohacha
+14 (La Guajira completo)
+55,000
+BAJA (688 acc/año)
+26
+Cat.B**
+Antioquia
+Envigado (Sur valle Aburrá)
+6 (Sur valle de Aburrá)
+55,000
+MUY ALTA (152,365 acc/año)
+27
+Cat.B**
+Tolima
+Ibagué (nodo complementario)
+9 (Tolima norte)
+55,000
+MUY ALTA (9,240 acc/año)
+28
+Cat.B**
+Cundinamarca
+Girardot (Alto Magdalena)
+11 (Alto Magdalena)
+55,000
+ALTA (10,232 acc/año)
+29
+Cat.B**
+Antioquia
+Rionegro (Oriente Antioquia)
+14 (Oriente Antioqueño)
+55,000
+MUY ALTA (152,365 acc/año)
+30
+Cat.B**
+Cundinamarca
+Zipaquirá (Sabana Norte)
+10 (Sabana Norte)
+55,000
+ALTA (10,232 acc/año)
+31
+Cat.B**
+Boyacá
+Tunja
+22 (Boyacá centro-norte)
+55,000
+ALTA (3,826 acc/año)
+32
+Cat.B**
+Cauca
+Popayán
+16 (Cauca andino)
+55,000
+MEDIA (2,720 acc/año)
+33
+Cat.B**
+Huila
+Neiva
+19 (Huila completo)
+55,000
+ALTA (4,483 acc/año)
+34
+Cat.B**
+Caldas
+Manizales
+13 (Caldas completo)
+55,000
+ALTA (6,427 acc/año)
+35
+Cat.B**
+Valle del Cauca
+Tuluá (Centro Valle)
+12 (Centro Valle del Cauca)
+55,000
+MUY ALTA (41,660 acc/año)
+36
+Cat.B**
+Quindío
+Armenia
+10 (Quindío completo)
+55,000
+MUY ALTA (4,613 acc/año)
+37
+Cat.B
+Nariño
+Pasto (nodo complementario)
+12 (Nariño sur)
+45,000
+MEDIA*
+38
+Cat.B
+Caquetá
+Florencia
+14 (Caquetá completo)
+45,000
+MEDIA (936 acc/año)
+39
+Cat.B
+Sucre
+Sincelejo
+17 (Sucre completo)
+45,000
+BAJA (696 acc/año)
+40
+Cat.B
+Cesar
+Aguachica (Sur Cesar)
+8 (Cesar sur-este)
+45,000
+BAJA (1,373 acc/año)
+CATEGORÍA C1 - Micro-regionales (16 CALE)
+#
+Categoría
+Departamento
+Descripción (Municipio)
+Municipios Cobertura
+Capacidad Instalada (eval/año)
+Siniestralidad Zona
+41
+Cat.C1
+San Andrés y Providencia
+San Andrés (Isla)
+2 (San Andrés, Providencia)
+32,000
+N/D (insular)
+42
+Cat.C1
+Arauca
+Arauca
+7 (Arauca completo)
+32,000
+MEDIA (434 acc/año)
+43
+Cat.C1
+Putumayo
+Mocoa
+12 (Putumayo andino)
+32,000
+BAJA (397 acc/año)
+44
+Cat.C1
+Amazonas
+Leticia (Frontera triple)
+2 (Amazonas sur)
+32,000
+BAJA*
+45
+Cat.C1
+Chocó
+Quibdó
+18 (Chocó centro-sur)
+32,000
+BAJA (415 acc/año)
+46
+Cat.C1
+Guaviare
+San José del Guaviare
+4 (Guaviare completo)
+32,000
+BAJA*
+47
+Cat.C1
+Vichada
+Puerto Carreño
+4 (Vichada centro-este)
+32,000
+BAJA*
+48
+Cat.C1
+Antioquia
+Apartadó (Urabá)
+8 (Urabá antioqueño)
+32,000
+MUY ALTA (152,365 acc/año)
+49
+Cat.C1
+Guainía
+Puerto Inírida
+1 (Guainía completo)
+32,000
+BAJA*
+50
+Cat.C1
+Nariño
+Ipiales (Frontera Ecuador)
+9 (Nariño frontera)
+32,000
+MEDIA*
+51
+Cat.C1
+Nariño
+Tumaco (Litoral Pacífico)
+7 (Nariño Pacífico)
+32,000
+MEDIA*
+52
+Cat.C1
+Norte de Santander
+Ocaña (Catatumbo)
+8 (Catatumbo)
+32,000
+MEDIA (3,066 acc/año)
+53
+Cat.C1
+Vaupés
+Mitú
+3 (Vaupés completo)
+32,000
+BAJA*
+54
+Cat.C1
+Bolívar
+Magangué (Sur Bolívar)
+11 (Sur Bolívar)
+32,000
+ALTA (6,454 acc/año)
+55
+Cat.C1
+Antioquia
+Turbo (Urabá costa)
+6 (Urabá chocoano-costero)
+32,000
+MUY ALTA (152,365 acc/año)
+56
+Cat.C1
+Chocó
+Riosucio (Frontera Panamá)
+9 (Chocó norte-Darién)
+32,000
+BAJA (415 acc/año)
+
+Sedes Teóricas Permanente de Cat.C2
+#
+Categoría
+Departamento
+Descripción
+Municipios Cobertura
+Cant.
+Capacidad
+Demanda
+Balance
+Siniestralidad
+57
+C2
+ANTIOQUIA
+CAMPAMENTO (Satélite)
+AMALFI, ANGOSTURA, ANORÍ (+3 más)
+6
+10.000
+3.000
++7.000
+MUY ALTA (152.365 acc/año)
+58
+C2
+ANTIOQUIA
+NARIÑO (Satélite)
+ABEJORRAL, AGUADAS, ARGELIA (+3 más)
+6
+10.000
+3.000
++7.000
+MUY ALTA (152.365 acc/año)
+59
+C2
+ANTIOQUIA
+PUEBLORRICO (Satélite)
+ANDES, BETANIA, CIUDAD BOLÍVAR (+5 más)
+8
+10.000
+4.000
++6.000
+MUY ALTA (152.365 acc/año)
+60
+C2
+ANTIOQUIA
+TOLEDO (Satélite)
+BRICEÑO, ITUANGO, PEQUE (+3 más)
+6
+10.000
+3.000
++7.000
+MUY ALTA (152.365 acc/año)
+61
+C2
+ATLÁNTICO
+SANTA LUCÍA (Satélite)
+ARROYOHONDO, CALAMAR, CERRO DE SAN ANTONIO (+10 más)
+13
+10.000
+6.500
++3.500
+ALTA (11.598 acc/año)
+62
+C2
+BOLÍVAR
+ARENAL (Satélite)
+ARENAL, LA GLORIA, NOROSÍ (+4 más)
+7
+10.000
+3.500
++6.500
+ALTA (10.677 acc/año)
+63
+C2
+BOYACÁ
+CORRALES (Satélite)
+BETÉITIVA, BUSBANZÁ, CORRALES (+4 más)
+7
+10.000
+3.500
++6.500
+ALTA (3.826 acc/año)
+64
+C2
+BOYACÁ
+EL ESPINO (Satélite)
+CHISCAS, EL COCUY, EL ESPINO (+4 más)
+7
+10.000
+3.500
++6.500
+ALTA (3.826 acc/año)
+65
+C2
+BOYACÁ
+GARAGOA (Satélite)
+ALMEIDA, CHINAVITA, GARAGOA (+6 más)
+9
+10.000
+4.500
++5.500
+ALTA (3.826 acc/año)
+66
+C2
+BOYACÁ
+GUATEQUE (Satélite)
+CHIVOR, GUATEQUE, GUAYATÁ (+3 más)
+6
+10.000
+3.000
++7.000
+ALTA (3.826 acc/año)
+67
+C2
+BOYACÁ
+MUZO (Satélite)
+BUENAVISTA, COPER, LA VICTORIA (+6 más)
+9
+10.000
+4.500
++5.500
+ALTA (3.826 acc/año)
+68
+C2
+BOYACÁ
+NOBSA (Satélite)
+DUITAMA, FLORESTA, NOBSA (+3 más)
+6
+10.000
+3.000
++7.000
+ALTA (3.826 acc/año)
+69
+C2
+BOYACÁ
+SANTANA (Satélite)
+CHIPATÁ, CHITARAQUE, GÁMBITA (+5 más)
+8
+10.000
+4.000
++6.000
+ALTA (3.826 acc/año)
+70
+C2
+BOYACÁ
+SOCOTÁ (Satélite)
+LA SALINA, MONGUA, PAZ DE RÍO (+4 más)
+7
+10.000
+3.500
++6.500
+ALTA (3.826 acc/año)
+71
+C2
+CASANARE
+PORE (Satélite)
+HATO COROZAL, NUNCHÍA, PAZ DE ARIPORO (+4 más)
+7
+10.000
+3.500
++6.500
+ALTA (2.266 acc/año)
+72
+C2
+CAUCA
+PATÍA (Satélite)
+ALMAGUER, ARGELIA, BALBOA (+4 más)
+7
+10.000
+3.500
++6.500
+MEDIA (2.720 acc/año)
+73
+C2
+CHOCÓ
+RÍO IRÓ (Satélite)
+BAGADÓ, CONDOTO, EL CANTÓN DEL SAN PABLO (+6 más)
+9
+10.000
+4.500
++5.500
+BAJA (415 acc/año)
+74
+C2
+CUNDINAMARCA
+LA PEÑA (Satélite)
+EL PEÑÓN, LA PEÑA, NIMAIMA (+3 más)
+6
+10.000
+3.000
++7.000
+ALTA (10.232 acc/año)
+75
+C2
+CÓRDOBA
+PUERTO ESCONDIDO (Satélite)
+ARBOLETES, CANALETE, LOS CÓRDOBAS (+3 más)
+6
+10.000
+3.000
++7.000
+MEDIA (3.596 acc/año)
+76
+C2
+HUILA
+ELÍAS (Satélite)
+AGRADO, ALTAMIRA, ELÍAS (+10 más)
+13
+10.000
+6.500
++3.500
+ALTA (5.258 acc/año)
+77
+C2
+HUILA
+YAGUARÁ (Satélite)
+ALGECIRAS, GIGANTE, HOBO (+6 más)
+9
+10.000
+4.500
++5.500
+ALTA (5.258 acc/año)
+78
+C2
+MAGDALENA
+GUAMAL (Satélite)
+ASTREA, BARRANCO DE LOBA, CHIMICHAGUA (+6 más)
+9
+10.000
+4.500
++5.500
+ALTA (3.724 acc/año)
+79
+C2
+META
+EL CASTILLO (Satélite)
+CUBARRAL, EL CASTILLO, EL DORADO (+5 más)
+8
+10.000
+4.000
++6.000
+MUY ALTA (7.183 acc/año)
+80
+C2
+NARIÑO
+EL CHARCO (Satélite)
+EL CHARCO, GUAPI, LA TOLA (+3 más)
+6
+10.000
+3.000
++7.000
+MEDIA (3.872 acc/año)
+81
+C2
+NARIÑO
+SAN PABLO (Satélite)
+BELÉN, BOLÍVAR, COLÓN (+3 más)
+6
+10.000
+3.000
++7.000
+MEDIA (3.872 acc/año)
+82
+C2
+SANTANDER
+BOLÍVAR (Satélite)
+BOLÍVAR, EL PEÑÓN, GUAVATÁ (+3 más)
+6
+10.000
+3.000
++7.000
+MUY ALTA (14.303 acc/año)
+83
+C2
+SANTANDER
+CABRERA (Satélite)
+BARICHARA, CABRERA, GALÁN (+5 más)
+8
+10.000
+4.000
++6.000
+MUY ALTA (14.303 acc/año)
+84
+C2
+SANTANDER
+CONFINES (Satélite)
+CHIMA, CONFINES, GUAPOTÁ (+4 más)
+7
+10.000
+3.500
++6.500
+MUY ALTA (14.303 acc/año)
+85
+C2
+SANTANDER
+EL GUACAMAYO (Satélite)
+AGUADA, CONTRATACIÓN, EL GUACAMAYO (+3 más)
+6
+10.000
+3.000
++7.000
+MUY ALTA (14.303 acc/año)
+86
+C2
+TOLIMA
+VILLARRICA (Satélite)
+CABRERA, PRADO, PURIFICACIÓN (+4 más)
+7
+10.000
+3.500
++6.500
+MUY ALTA (9.240 acc/año)
+87
+C2
+VALLE DEL CAUCA
+EL DOVIO (Satélite)
+CAICEDONIA, EL DOVIO, GÉNOVA (+3 más)
+6
+10.000
+3.000
++7.000
+MUY ALTA (41.660 acc/año)
+
+
+Sedes Teóricas Permanente de Cat.C3
+#
+Categoría
+Departamento
+Descripción
+Municipios Cobertura
+Cant.
+Capacidad
+Demanda
+Balance
+Siniestralidad
+88
+C3
+ANTIOQUIA
+MURINDÓ (Satélite)
+BOJAYÁ, JURADÓ, MURINDÓ (+2 más)
+5
+8.000
+1.750
++6.250
+MUY ALTA (152.365 acc/año)
+89
+C3
+ANTIOQUIA
+SAN LUIS (Satélite)
+PUERTO BOYACÁ, PUERTO TRIUNFO, SAN CARLOS (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (152.365 acc/año)
+90
+C3
+ANTIOQUIA
+SEGOVIA (Satélite)
+EL BAGRE, REMEDIOS, SAN PABLO (+2 más)
+5
+8.000
+1.750
++6.250
+MUY ALTA (152.365 acc/año)
+91
+C3
+ANTIOQUIA
+URAMITA (Satélite)
+DABEIBA, FRONTINO, URAMITA
+3
+8.000
+1.500
++6.500
+MUY ALTA (152.365 acc/año)
+92
+C3
+ANTIOQUIA
+YALÍ (Satélite)
+MACEO, VEGACHÍ, YALÍ (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (152.365 acc/año)
+93
+C3
+BOLÍVAR
+SAN JACINTO DEL CAUCA (Satélite)
+ACHÍ, GUARANDA, MAJAGUAL (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (10.677 acc/año)
+94
+C3
+BOLÍVAR
+SAN JUAN NEPOMUCENO (Satélite)
+EL GUAMO, MARÍA LA BAJA, SAN JUAN NEPOMUCENO
+3
+8.000
+1.500
++6.500
+ALTA (10.677 acc/año)
+95
+C3
+BOLÍVAR
+SAN MARTÍN DE LOBA (Satélite)
+ALTOS DEL ROSARIO, EL BANCO, EL PEÑÓN (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (10.677 acc/año)
+96
+C3
+BOLÍVAR
+SANTA ROSA DEL SUR (Satélite)
+MONTECRISTO, SANTA ROSA DEL SUR, SIMITÍ
+3
+8.000
+1.500
++6.500
+ALTA (10.677 acc/año)
+97
+C3
+BOYACÁ
+BELÉN (Satélite)
+BELÉN, CERINZA, TUTAZÁ
+3
+8.000
+1.500
++6.500
+ALTA (3.826 acc/año)
+98
+C3
+BOYACÁ
+BOAVITA (Satélite)
+BOAVITA, LA UVITA, SAN MATEO (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (3.826 acc/año)
+99
+C3
+BOYACÁ
+BRICEÑO (Satélite)
+BRICEÑO, CHIQUINQUIRÁ, PAUNA (+1 más)
+4
+8.000
+2.000
++6.000
+ALTA (3.826 acc/año)
+100
+C3
+BOYACÁ
+CUÍTIVA (Satélite)
+AQUITANIA, CUÍTIVA, FIRAVITOBA (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (3.826 acc/año)
+101
+C3
+BOYACÁ
+JERICÓ (Satélite)
+CHITA, JERICÓ, SATIVANORTE (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (3.826 acc/año)
+102
+C3
+BOYACÁ
+PÁEZ (Satélite)
+BERBEO, CAMPOHERMOSO, MIRAFLORES (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (3.826 acc/año)
+103
+C3
+BOYACÁ
+SAN LUIS DE GACENO (Satélite)
+SABANALARGA, SAN LUIS DE GACENO, SANTA MARÍA
+3
+8.000
+1.500
++6.500
+ALTA (3.826 acc/año)
+104
+C3
+CALDAS
+MARMATO (Satélite)
+CARAMANTA, MARMATO, PÁCORA (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (6.427 acc/año)
+105
+C3
+CALDAS
+MARQUETALIA (Satélite)
+MANZANARES, MARQUETALIA, PENSILVANIA (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (6.427 acc/año)
+106
+C3
+CAQUETÁ
+SOLITA (Satélite)
+ALBANIA, CURILLO, SAN JOSÉ DEL FRAGUA (+3 más)
+6
+8.000
+2.100
++5.900
+MEDIA (936 acc/año)
+107
+C3
+CASANARE
+TAURAMENA (Satélite)
+CHÁMEZA, MONTERREY, RECETOR (+1 más)
+4
+8.000
+2.000
++6.000
+ALTA (2.266 acc/año)
+108
+C3
+CAUCA
+INZÁ (Satélite)
+CALDONO, INZÁ, JAMBALÓ (+2 más)
+5
+8.000
+2.500
++5.500
+MEDIA (2.720 acc/año)
+109
+C3
+CESAR
+AGUSTÍN CODAZZI (Satélite)
+AGUSTÍN CODAZZI, BECERRIL, EL MOLINO (+2 más)
+5
+8.000
+1.750
++6.250
+MEDIA (2.447 acc/año)
+110
+C3
+CESAR
+CURUMANÍ (Satélite)
+CHIRIGUANÁ, CURUMANÍ, PAILITAS
+3
+8.000
+1.500
++6.500
+MEDIA (2.447 acc/año)
+
+#
+Categoría
+Departamento
+Descripción
+Municipios Cobertura
+Cant.
+Capacidad
+Demanda
+Balance
+Siniestralidad
+111
+C3
+CHOCÓ
+MEDIO BAUDÓ (Satélite)
+ALTO BAUDÓ, BAJO BAUDÓ, MEDIO BAUDÓ
+3
+8.000
+1.500
++6.500
+BAJA (415 acc/año)
+112
+C3
+CUNDINAMARCA
+CHAGUANÍ (Satélite)
+BITUIMA, CHAGUANÍ, SAN JUAN DE RIOSECO (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (10.232 acc/año)
+113
+C3
+CUNDINAMARCA
+GAMA (Satélite)
+GACHETÁ, GAMA, JUNÍN (+1 más)
+4
+8.000
+2.000
++6.000
+ALTA (10.232 acc/año)
+114
+C3
+CUNDINAMARCA
+GUADUAS (Satélite)
+GUADUAS, HONDA, QUEBRADANEGRA
+3
+8.000
+1.500
++6.500
+ALTA (10.232 acc/año)
+115
+C3
+CUNDINAMARCA
+LA PALMA (Satélite)
+CAPARRAPÍ, LA PALMA, TOPAIPÍ (+1 más)
+4
+8.000
+2.000
++6.000
+ALTA (10.232 acc/año)
+116
+C3
+CUNDINAMARCA
+MEDINA (Satélite)
+GACHALÁ, MEDINA, PARATEBUENO
+3
+8.000
+1.500
++6.500
+ALTA (10.232 acc/año)
+117
+C3
+CUNDINAMARCA
+SUSA (Satélite)
+CALDAS, SAN MIGUEL DE SEMA, SIMIJACA (+1 más)
+4
+8.000
+2.000
++6.000
+ALTA (10.232 acc/año)
+118
+C3
+CÓRDOBA
+BUENAVISTA (Satélite)
+AYAPEL, BUENAVISTA, PLANETA RICA (+1 más)
+4
+8.000
+2.000
++6.000
+MEDIA (3.596 acc/año)
+119
+C3
+CÓRDOBA
+MONTELÍBANO (Satélite)
+CAUCASIA, LA APARTADA, MONTELÍBANO (+2 más)
+5
+8.000
+2.500
++5.500
+MEDIA (3.596 acc/año)
+120
+C3
+HUILA
+COLOMBIA (Satélite)
+ALPUJARRA, COLOMBIA, DOLORES (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (5.258 acc/año)
+121
+C3
+HUILA
+ISNOS (Satélite)
+ISNOS, LA ARGENTINA, SAN AGUSTÍN
+3
+8.000
+1.500
++6.500
+ALTA (5.258 acc/año)
+122
+C3
+LA GUAJIRA
+HATONUEVO (Satélite)
+ALBANIA, BARRANCAS, DIBULLA (+1 más)
+4
+8.000
+2.000
++6.000
+BAJA (688 acc/año)
+123
+C3
+LA GUAJIRA
+URIBIA (Satélite)
+MAICAO, MANAURE, URIBIA
+3
+8.000
+1.500
++6.500
+BAJA (688 acc/año)
+124
+C3
+MAGDALENA
+ARACATACA (Satélite)
+ARACATACA, EL RETÉN, FUNDACIÓN (+1 más)
+4
+8.000
+2.000
++6.000
+ALTA (3.724 acc/año)
+125
+C3
+MAGDALENA
+ARIGUANÍ (Satélite)
+ARIGUANÍ, NUEVA GRANADA, SABANAS DE SAN ÁNGEL
+3
+8.000
+1.500
++6.500
+ALTA (3.724 acc/año)
+126
+C3
+MAGDALENA
+SALAMINA (Satélite)
+CAMPO DE LA CRUZ, CANDELARIA, EL PIÑÓN (+2 más)
+5
+8.000
+2.500
++5.500
+ALTA (3.724 acc/año)
+127
+C3
+MAGDALENA
+TENERIFE (Satélite)
+CHIVOLO, PLATO, TENERIFE (+1 más)
+4
+8.000
+2.000
++6.000
+ALTA (3.724 acc/año)
+128
+C3
+META
+CABUYARO (Satélite)
+BARRANCA DE UPÍA, CABUYARO, PUERTO LÓPEZ (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (7.183 acc/año)
+129
+C3
+META
+FUENTE DE ORO (Satélite)
+FUENTE DE ORO, PUERTO LLERAS, SAN CARLOS DE GUAROA (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (7.183 acc/año)
+130
+C3
+NARIÑO
+EL ROSARIO (Satélite)
+EL ROSARIO, LEIVA, MERCADERES
+3
+8.000
+1.500
++6.500
+MEDIA (3.872 acc/año)
+
+
+
+#
+Categoría
+Departamento
+Descripción
+Municipios Cobertura
+Cant.
+Capacidad
+Demanda
+Balance
+Siniestralidad
+131
+C3
+NARIÑO
+LA UNIÓN (Satélite)
+LA UNIÓN, SAN BERNARDO, SAN PEDRO DE CARTAGO (+1 más)
+4
+8.000
+2.000
++6.000
+MEDIA (3.872 acc/año)
+132
+C3
+NARIÑO
+LOS ANDES (Satélite)
+CUMBITARA, LA LLANADA, LOS ANDES (+1 más)
+4
+8.000
+2.000
++6.000
+MEDIA (3.872 acc/año)
+133
+C3
+NARIÑO
+MAGÜÍ (Satélite)
+BARBACOAS, MAGÜÍ, ROBERTO PAYÁN
+3
+8.000
+1.500
++6.500
+MEDIA (3.872 acc/año)
+134
+C3
+NARIÑO
+MALLAMA (Satélite)
+MALLAMA, RICAURTE, SANTACRUZ
+3
+8.000
+1.500
++6.500
+MEDIA (3.872 acc/año)
+135
+C3
+NORTE DE SANTANDER
+BUCARASICA (Satélite)
+BUCARASICA, CÁCHIRA, PUERTO SANTANDER (+1 más)
+4
+8.000
+2.000
++6.000
+MEDIA (3.066 acc/año)
+136
+C3
+NORTE DE SANTANDER
+CÁCOTA (Satélite)
+CHITAGÁ, CÁCOTA, LABATECA
+3
+8.000
+1.500
++6.500
+MEDIA (3.066 acc/año)
+137
+C3
+NORTE DE SANTANDER
+MUTISCUA (Satélite)
+MUTISCUA, PAMPLONA, SILOS
+3
+8.000
+1.500
++6.500
+MEDIA (3.066 acc/año)
+138
+C3
+NORTE DE SANTANDER
+PAMPLONITA (Satélite)
+ARBOLEDAS, CUCUTILLA, HERRÁN (+2 más)
+5
+8.000
+2.500
++5.500
+MEDIA (3.066 acc/año)
+139
+C3
+PUTUMAYO
+PUERTO CAICEDO (Satélite)
+ORITO, PUERTO ASÍS, PUERTO CAICEDO (+3 más)
+6
+8.000
+2.100
++5.900
+BAJA (397 acc/año)
+140
+C3
+QUINDÍO
+BUENAVISTA (Satélite)
+BUENAVISTA, CÓRDOBA, LA TEBAIDA (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (4.613 acc/año)
+141
+C3
+RISARALDA
+APÍA (Satélite)
+APÍA, PUEBLO RICO, SANTUARIO
+3
+8.000
+1.500
++6.500
+MUY ALTA (9.189 acc/año)
+142
+C3
+RISARALDA
+GUÁTICA (Satélite)
+BELÉN DE UMBRÍA, GUÁTICA, MISTRATÓ (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (9.189 acc/año)
+143
+C3
+SANTANDER
+BARBOSA (Satélite)
+BARBOSA, MONIQUIRÁ, PUENTE NACIONAL
+3
+8.000
+1.500
++6.500
+MUY ALTA (14.303 acc/año)
+144
+C3
+SANTANDER
+FLORIÁN (Satélite)
+ALBANIA, FLORIÁN, LA BELLEZA (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (14.303 acc/año)
+145
+C3
+SANTANDER
+OCAMONTE (Satélite)
+CHARALÁ, COROMORO, OCAMONTE (+2 más)
+5
+8.000
+2.500
++5.500
+MUY ALTA (14.303 acc/año)
+146
+C3
+SANTANDER
+PUERTO PARRA (Satélite)
+CIMITARRA, EL CARMEN DE CHUCURÍ, PUERTO BERRÍO (+2 más)
+5
+8.000
+1.750
++6.250
+MUY ALTA (14.303 acc/año)
+147
+C3
+SANTANDER
+SABANA DE TORRES (Satélite)
+EL PLAYÓN, LA ESPERANZA, SABANA DE TORRES (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (14.303 acc/año)
+148
+C3
+SANTANDER
+SAN JOAQUÍN (Satélite)
+MOGOTES, ONZAGA, SAN JOAQUÍN
+3
+8.000
+1.500
++6.500
+MUY ALTA (14.303 acc/año)
+149
+C3
+SUCRE
+LA UNIÓN (Satélite)
+CAIMITO, LA UNIÓN, SAHAGÚN (+1 más)
+4
+8.000
+2.000
++6.000
+BAJA (696 acc/año)
+150
+C3
+SUCRE
+SAN ONOFRE (Satélite)
+EL CARMEN DE BOLÍVAR, LORICA, SAN ANTERO (+3 más)
+6
+8.000
+2.100
++5.900
+BAJA (696 acc/año)
+151
+C3
+TOLIMA
+AMBALEMA (Satélite)
+AMBALEMA, BELTRÁN, PULÍ
+3
+8.000
+1.500
++6.500
+MUY ALTA (9.240 acc/año)
+152
+C3
+TOLIMA
+FALAN (Satélite)
+ARMERO, FALAN, FRESNO (+2 más)
+5
+8.000
+2.500
++5.500
+MUY ALTA (9.240 acc/año)
+153
+C3
+TOLIMA
+RIOBLANCO (Satélite)
+ATACO, PLANADAS, RIOBLANCO
+3
+8.000
+1.500
++6.500
+MUY ALTA (9.240 acc/año)
+154
+C3
+TOLIMA
+SAN ANTONIO (Satélite)
+CHAPARRAL, COYAIMA, ORTEGA (+2 más)
+5
+8.000
+2.500
++5.500
+MUY ALTA (9.240 acc/año)
+155
+C3
+TOLIMA
+VILLAHERMOSA (Satélite)
+CASABIANCA, LÍBANO, MURILLO (+1 más)
+4
+8.000
+2.000
++6.000
+MUY ALTA (9.240 acc/año)
+156
+C3
+VALLE DEL CAUCA
+ARGELIA (Satélite)
+ARGELIA, EL CAIRO, LA VICTORIA (+2 más)
+5
+8.000
+2.500
++5.500
+MUY ALTA (41.660 acc/año)
+
+Sedes Teóricas Permanente de Cat.C4
+#
+Categoría
+Departamento
+Descripción
+Municipios Cobertura
+Cant.
+Capacidad
+Demanda
+Balance
+Siniestralidad
+157
+C4
+AMAZONAS
+MIRITÍ - PARANÁ (Satélite)
+CARURÚ, LA CHORRERA, LA VICTORIA (+3 más)
+6
+6.000
+1.200
++4.800
+BAJA
+158
+C4
+AMAZONAS
+PUERTO ARICA (Satélite)
+EL ENCANTO, PUERTO ARICA, PUERTO NARIÑO (+1 más)
+4
+6.000
+800
++5.200
+BAJA
+159
+C4
+ANTIOQUIA
+CARACOLÍ (Satélite)
+CARACOLÍ, PUERTO NARE
+2
+6.000
+1.000
++5.000
+MUY ALTA (152.365 acc/año)
+160
+C4
+ANTIOQUIA
+CÁCERES (Satélite)
+CÁCERES, TARAZÁ
+2
+6.000
+1.000
++5.000
+MUY ALTA (152.365 acc/año)
+161
+C4
+ANTIOQUIA
+LA PINTADA (Satélite)
+LA PINTADA, VALPARAÍSO
+2
+6.000
+1.000
++5.000
+MUY ALTA (152.365 acc/año)
+162
+C4
+ANTIOQUIA
+NECOCLÍ (Satélite)
+ACANDÍ, NECOCLÍ, SAN PEDRO DE URABÁ (+1 más)
+4
+6.000
+1.400
++4.600
+MUY ALTA (152.365 acc/año)
+163
+C4
+ANTIOQUIA
+URRAO (Satélite)
+EL CARMEN DE ATRATO, URRAO
+2
+6.000
+1.000
++5.000
+MUY ALTA (152.365 acc/año)
+164
+C4
+ARAUCA
+PUERTO RONDÓN (Satélite)
+ARAUQUITA, CRAVO NORTE, FORTUL (+2 más)
+5
+6.000
+1.000
++5.000
+MEDIA (434 acc/año)
+165
+C4
+ATLÁNTICO
+PIOJÓ (Satélite)
+PIOJÓ, SABANALARGA
+2
+6.000
+1.000
++5.000
+ALTA (11.598 acc/año)
+166
+C4
+BOYACÁ
+CUBARÁ (Satélite)
+CUBARÁ, SARAVENA
+2
+6.000
+1.000
++5.000
+ALTA (3.826 acc/año)
+167
+C4
+CALDAS
+LA DORADA (Satélite)
+LA DORADA, PUERTO SALGAR
+2
+6.000
+1.000
++5.000
+ALTA (6.427 acc/año)
+168
+C4
+CAQUETÁ
+CARTAGENA DEL CHAIRÁ (Satélite)
+CARTAGENA DEL CHAIRÁ, PUERTO RICO
+2
+6.000
+1.000
++5.000
+MEDIA (936 acc/año)
+169
+C4
+CASANARE
+OROCUÉ (Satélite)
+OROCUÉ, SANTA ROSALÍA
+2
+6.000
+1.000
++5.000
+ALTA (2.266 acc/año)
+170
+C4
+CAUCA
+LÓPEZ DE MICAY (Satélite)
+LÓPEZ DE MICAY, TIMBIQUÍ
+2
+6.000
+1.000
++5.000
+MEDIA (2.720 acc/año)
+171
+C4
+CHOCÓ
+BAHÍA SOLANO (Satélite)
+BAHÍA SOLANO, NUQUÍ
+2
+6.000
+1.000
++5.000
+BAJA (415 acc/año)
+172
+C4
+CUNDINAMARCA
+ARBELÁEZ (Satélite)
+ARBELÁEZ, GUTIÉRREZ
+2
+6.000
+1.000
++5.000
+ALTA (10.232 acc/año)
+173
+C4
+CUNDINAMARCA
+FÚQUENE (Satélite)
+FÚQUENE, LENGUAZAQUE
+2
+6.000
+1.000
++5.000
+ALTA (10.232 acc/año)
+174
+C4
+CUNDINAMARCA
+GUACHETÁ (Satélite)
+GUACHETÁ, VILLAPINZÓN
+2
+6.000
+1.000
++5.000
+ALTA (10.232 acc/año)
+175
+C4
+CÓRDOBA
+TIERRALTA (Satélite)
+TIERRALTA, VALENCIA
+2
+6.000
+1.000
++5.000
+MEDIA (3.596 acc/año)
+176
+C4
+GUAINÍA
+CACAHUAL (Satélite)
+BARRANCOMINAS, CACAHUAL, CUMARIBO (+3 más)
+6
+6.000
+1.200
++4.800
+BAJA (67 acc/año)
+177
+C4
+GUAVIARE
+CALAMAR (Satélite)
+CALAMAR, LA MACARENA, MAPIRIPÁN (+2 más)
+5
+6.000
+1.000
++5.000
+MEDIA (264 acc/año)
+178
+C4
+LA GUAJIRA
+SAN JUAN DEL CESAR (Satélite)
+ALGARROBO, BOSCONIA, DISTRACCIÓN (+3 más)
+6
+6.000
+1.200
++4.800
+BAJA (688 acc/año)
+179
+C4
+META
+PUERTO GAITÁN (Satélite)
+MANÍ, PUERTO GAITÁN
+2
+6.000
+1.000
++5.000
+MUY ALTA (7.183 acc/año)
+180
+C4
+NORTE DE SANTANDER
+EL TARRA (Satélite)
+EL TARRA, SAN ALBERTO, TIBÚ
+3
+6.000
+1.050
++4.950
+MEDIA (3.066 acc/año)
+181
+C4
+SUCRE
+SAN BENITO ABAD (Satélite)
+SAN BENITO ABAD, SUCRE
+2
+6.000
+1.000
++5.000
+BAJA (696 acc/año)
+182
+C4
+TOLIMA
+LÉRIDA (Satélite)
+LÉRIDA, VENADILLO
+2
+6.000
+1.000
++5.000
+MUY ALTA (9.240 acc/año)
+183
+C4
+VALLE DEL CAUCA
+GINEBRA (Satélite)
+GINEBRA, GUACARÍ
+2
+6.000
+1.000
++5.000
+MUY ALTA (41.660 acc/año)
+
+
+Sedes Teóricas Permanente de Cat.C5
+#
+Categoría
+Departamento
+Descripción
+Municipios Cobertura
+Cant.
+Capacidad
+Demanda
+Balance
+Siniestralidad
+184
+C5
+ANTIOQUIA
+MUTATÁ (Satélite)
+MUTATÁ
+1
+4.000
+500
++3.500
+MUY ALTA (152.365 acc/año)
+185
+C5
+ARAUCA
+TAME (Satélite)
+TAME
+1
+4.000
+500
++3.500
+MEDIA (434 acc/año)
+186
+C5
+ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA
+PROVIDENCIA (Satélite)
+PROVIDENCIA
+1
+4.000
+500
++3.500
+N/D
+187
+C5
+ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA
+SAN ANDRÉS (Satélite)
+SAN ANDRÉS
+1
+4.000
+500
++3.500
+N/D
+188
+C5
+CAQUETÁ
+SAN VICENTE DEL CAGUÁN (Satélite)
+SAN VICENTE DEL CAGUÁN
+1
+4.000
+500
++3.500
+MEDIA (936 acc/año)
+189
+C5
+CAUCA
+TORIBÍO (Satélite)
+TORIBÍO
+1
+4.000
+500
++3.500
+MEDIA (2.720 acc/año)
+190
+C5
+CHOCÓ
+EL LITORAL DEL SAN JUAN (Satélite)
+EL LITORAL DEL SAN JUAN
+1
+4.000
+500
++3.500
+BAJA (415 acc/año)
+191
+C5
+CUNDINAMARCA
+FOSCA (Satélite)
+FOSCA
+1
+4.000
+500
++3.500
+ALTA (10.232 acc/año)
+192
+C5
+GUAINÍA
+MORICHAL (Satélite)
+MORICHAL, PANA PANA, PAPUNAHUA
+3
+4.000
+600
++3.400
+BAJA (67 acc/año)
+193
+C5
+PUTUMAYO
+PUERTO LEGUÍZAMO (Satélite)
+PUERTO ALEGRÍA, PUERTO LEGUÍZAMO
+2
+4.000
+400
++3.600
+BAJA (397 acc/año)
+194
+C5
+SANTANDER
+ENCINO (Satélite)
+ENCINO
+1
+4.000
+500
++3.500
+MUY ALTA (14.303 acc/año)
+195
+C5
+SANTANDER
+LANDÁZURI (Satélite)
+LANDÁZURI
+1
+4.000
+500
++3.500
+MUY ALTA (14.303 acc/año)
+196
+C5
+VALLE DEL CAUCA
+RESTREPO (Satélite)
+RESTREPO
+1
+4.000
+500
++3.500
+MUY ALTA (41.660 acc/año)
+197
+C5
+VAUPÉS
+TARAIRA (Satélite)
+LA PEDRERA, TARAIRA, YAVARATÉ
+3
+4.000
+600
++3.400
+BAJA
+
+A10.5. Aporte Estratégico de la UPTC: CALE-SUPERIOR
+El SNCALE está diseñado para restringir las licencias a ciudadanos que aún no han logrado las competencias para transitar con estos vehículos en la vía pública, reduciendo en un 25% la siniestralidad en las vías. Sin embargo, es posible complementar esta tarea con servicios de ciencia, tecnología e innovación, por ejemplo, IoT para identificar problemas en las vías, como falta de señalización, huecos, etc, atacando directamente las causas no humanas.  Para esto, se propone implementar una serie de Laboratorios Especializados que fomenten la seguridad vial desde diferentes perspectivas de intervención. Estos servicios complementarios a los CALE se activarán como una capa adicional al portafolio de los CALE ya definidos.  En tercer lugar, con la estrategia de ampliación de cupos, se promoverá una oferta de educación técnológica superior para impulsar a las comunidades locales su transición a una movilidad responsable y sostenible, aprendiendo a ensamblar, reparar y/o mantener vehículos sostenibles.
+
+
+
+El Sistema Nacional CALE Integrado constituye una infraestructura de propósito dual que articula la función primaria con la gestión de conocimiento desde las universidades para atender la seguridad vial en Colombia:
+FUNCIÓN PRIMARIA (Competencia MinTransporte):Red nacional de 197 sedes para evaluación teórica y práctica de conductores, con capacidad proyectada de 1.22 millones de evaluaciones anuales, distribuidas según criterio técnico multi-factorial que prioriza jurisdicciones con mayor siniestralidad vial (60%), demanda proyectada (30%) y equidad territorial (10%).
+AMPLIACIÓN EN EDUCACIÓN SUPERIOR (Articulación MinTransporte-MinEducación-MinCiencias):Conversión progresiva de 197 nodos CALE en plataforma descentralizada de educación superior mediante dos componentes complementarios:
+Componente A (Cat.A^): 20 centros de excelencia científica con laboratorios de investigación aplicada en movilidad sostenible, gestionados por grupos A1 de universidades públicas acreditadas.
+Componente B (Cat.B^/C1^/C2-C5^): 177 nodos de formación tecnológica territorial que activan infraestructura educativa básica y media (IEBM) oficial bajo pedagogía MINGA KAWSAY, con capacidad de ampliación de hasta 474,600 cupos anuales en programas tecnológicos de 2 años.
+La conversión de nodos CALE en plataforma educativa NO constituye cambio de objeto social de MinTransporte, sino articulación interinstitucional para uso compartido de infraestructura pública subutilizada:
+Los CALE operan 16 horas/día en licenciamiento vehicular (función primaria)
+Activan una MAN (Metropolitan Area Network)  que conecta las sedes de educación básicas y media donde se pueda activar al menos una jornada escolar.  Esta conectividad y la gestión OPEX de las las salas de informática operadas con el mismo modelo de CALE, permite ampliar la cobertura de educación en dichas sedes.  Permitiendo la complementariedad de CALE con COLEGIO-UNIVERSIDAD.  Logrando una mayor cobertura de COLEGIO-UNIVERSIDAD, pero al tiempo una mayor capacidad de apropiación social y logro de los resultados últimos de los CALE.
+
+A10.5.1 Componente A: Cat.A^ - Excelencia Científica
+
+Los Cat.A^ (Cat.A potenciados) son nodos CALE que, además de su función primaria en evaluación de conductores, operan como centros de excelencia científica mediante los convenios activados de la UPTC con universidades públicas acreditadas que poseen grupos de investigación con clasificación A1 de MinCiencias.
+LAB 1: VEHÍCULOS ELÉCTRICOS ⚡
+Equipamiento principal:
+Estación de carga DC 150 kW (conectores CCS2 + CHAdeMO)
+Banco diagnóstico baterías (5 puestos, osciloscopio, software OEM)
+Banco pruebas motores (dinamómetro 200 kW, torque 0-500 Nm)
+Herramientas seguridad alta tensión (400-800V)
+Servicios ofrecidos:
+Evaluación estado de salud (SOH) y carga (SOC) baterías
+Diagnóstico BMS (Battery Management System)
+Pruebas rendimiento motores eléctricos
+Certificación técnica de conversiones VE
+Capacitación técnicos especializados (40 horas)
+Aliados estratégicos:
+Grupos A1 Universidades (línea movilidad eléctrica)
+Fabricantes VE (Tesla, BYD, Renault)
+Talleres de conversión
+Flotas eléctricas (TransMilenio, Metro)
+LAB 2: HIDRÓGENO VERDE 🌬️
+Equipamiento principal:
+Estación H2 350 bar con sistema seguridad
+Banco pruebas PEM (stacks 1-10 kW, curvas polarización)
+Cromatógrafo de gases (pureza H2, detección ppm)
+Líneas de investigación:
+Viabilidad H2 verde en transporte pesado (camiones >20 ton)
+Mezclas H2-GNC (HCNG) en buses urbanos (10-20% H2)
+Logística H2 en topografía andina
+Seguridad operativa (normativa colombiana)
+Aliados clave:
+ECOPETROL (producción H2 verde)
+MinEnergía (política nacional H2)
+PROMIGAS (infraestructura gas)
+Transportadores de carga
+Proyectos prioritarios:
+H2 en transporte intermunicipal carga (viabilidad técnica-económica)
+HCNG buses urbanos (mezclas 10-20% H2 en GNC)
+LAB 3: BIOCOMBUSTIBLES & EMISIONES 🌿
+Equipamiento principal:
+Analizador de gases (5 componentes: CO, CO2, HC, NOx, O2)
+Dinamómetro de chasis (2WD y 4WD, hasta 300 HP)
+Banco pruebas biocombustibles (mezclas B5-B100, etanol E10-E85)
+Líneas de investigación regional:
+Biodiesel de palma africana (B20-B50 motores diesel)
+Bioetanol de caña de azúcar (motos y autos gasolina)
+HVO de aceites vegetales (flotas transporte)
+Impacto en emisiones GEI por tipo de biocombustible
+Especialización regional:
+Región
+Universidad A1
+Especialización
+Valle del Cauca
+U. del Valle (Cali)
+Bioetanol caña + Biodiesel
+Santander
+UIS (Bucaramanga)
+Biodiesel palma + HVO
+Eje Cafetero
+U. Caldas (Manizales)
+Biocombustibles 2G (residuos café)
+Llanos
+U. Tolima (Ibagué)
+Biodiesel palma + arroz
+
+Aliados sectoriales:
+FEDEPALMA (biodiesel palma)
+ASOCAÑA (bioetanol caña)
+ECOPETROL (mezclas comerciales)
+MinAgricultura (producción sostenible)
+
+LAB 4: SENSÓRICA IoT & MONITOREO VÍAS 📡
+Equipamiento principal:
+Sistema telemetría OBD-II avanzado (GPS RTK + Cellular 5G)
+50 dashcams con IA (YOLOv8 detección, clasificación + profundidad)
+Plataforma cloud (AWS/Azure) con ML + dashboard geoespacial
+Sistema piloto monitoreo departamental:
+50 vehículos evaluadores (200 km/día c/u)
+Detección automática: baches, grietas, hundimientos, señalización deteriorada
+Clasificación severidad: Bajo/Medio/Alto/Crítico (GPS ±2m RTK)
+Reporte diario a ANI/Alcaldías (tickets automáticos)
+Cobertura piloto:
+10,000 km vías monitoreadas/día
+3.6 millones km/año cobertura
+~80% red vial departamental revisada 1x/semana
+Servicios ofrecidos:
+Servicio
+Cliente
+Tarifa
+Ingresos/Año Estimados
+Suscripción monitoreo vías
+30 municipios
+$15M/mes/municipio
+$5,400M
+Telemetría flotas
+500 vehículos
+$50k/veh/mes
+$300M
+Capacitación V2X
+80 técnicos
+$1.8M/participante
+$144M
+Software personalizado
+2 proyectos/año
+$40M/proyecto
+$80M
+
+Clientes potenciales:
+ANI (Agencia Nacional Infraestructura)
+INVÍAS (Instituto Nacional Vías)
+Alcaldías (mantenimiento vías municipales)
+Concesionarios 4G (monitoreo continuo)
+Gestión centralizada S4 HUB DAATH:
+El Sistema 4 (S4) del HUB Central DAATH en Bogotá coordina la red nacional de laboratorios Cat.A^ mediante:
+
+Funciones del S4:
+Coordinación Nacional de I+D: Red colaborativa de laboratorios para evitar duplicación de esfuerzos y compartir mejores prácticas.
+Asignación Estratégica de Proyectos: Balance de carga entre laboratorios con especialización regional.
+Gestión de Convenios: Convenio marco nacional con SUE (Sistema Universitario Estatal) y convenios específicos por proyecto.
+Monitoreo de Impacto:
+Papers publicados (indexados)
+Patentes solicitadas/otorgadas
+Transferencia tecnológica (spin-offs, licenciamiento)
+Formación de talento (técnicos certificados)
+Cofinanciación Inteligente: CALE aporta 30-50% presupuesto proyecto, universidad aporta talento humano + laboratorios, empresa privada aporta 20-30% (opcional).
+Indicadores de desempeño (KPIs) por laboratorio/año:
+Papers científicos: 5-10
+Patentes solicitadas: 2-3
+Proyectos I+D activos: 3-5
+Técnicos certificados: 100-200
+Ingresos por servicios: Variable según especialización
+Impacto nacional esperado (20 Cat.A^):
+120 papers/año
+50 patentes/año
+80 proyectos I+D
+3,000 técnicos certificados/año
+A10.5.2 Componente B: Cat.B/C1/C2-C5 - Formación Territorial
+Definición:Los nodos Cat.B, Cat.C1 y satélites C2-C5 ampliados constituyen plataforma descentralizada de formación tecnológica territorial mediante activación de infraestructura educativa básica y media (IEBM) oficial bajo modelo pedagógico MINGA KAWSAY.
+Criterio técnico de activación:
+
+Infraestructura educativa disponible (datos DANE-SISE):
+2,522 IEBM en municipios con CALE (56 principales + 141 satélites)
+1,540 IEBM sector oficial (61.1%)
+587 IEBM con educación secundaria completa
+Modelo operativo IEBM-satélite:
+Cada IEBM oficial habilitada opera como sede satélite de IES pública bajo convenio tripartito (MinTransporte-MinEducación-IES):
+Horario: 2 turnos diarios (mañana 6-12h, tarde 14-18h)
+Capacidad: 75 estudiantes de media × 2 turnos = 150 cupos ES/año por IEBM
+Programas: Tecnológicos de 2 años (4 semestres)
+Docentes: Docentes IES + Profesionales de la región + docentes IEBM certificados
+Capacidad nacional calculada:
+Categoría
+Nodos
+IEBM/nodo
+Cupos/IEBM
+Capacidad Máxima Total
+Cat.B
+20
+4
+150
+12,000
+Cat.C1
+16
+4
+150
+9,600
+Cat.C2-C5
+141
+2
+120
+33,840
+TOTAL
+177
+-
+-
+55,440
+
+Esta oferta de ampliación de cobertura de educación superior tiene dos etapas, 2026 se ofrecerán los programas de educación superior propios y/o en alianza con las IES acreditadas que sean pertinentes a los intereses de cada territorio.  En la segunda etapa, se ofrecerán los programas de educación superior diseñados para promover el Crecimiento Verde Soberano en los Territorios, en cuyo eje central están las competencias para lograr una movilidad sostenible, responsable y segura, a continuación se describen los programas que serán diseñados para consolidar dicha oferta.
+MISIÓN 1: SOBERANÍA ALIMENTARIA 🌱
+Programa académico: Tecnología en Producción Agrícola Sostenible (2 años)
+Contenido curricular:
+Semestre 1: Diagnóstico territorial + Agroecología básica
+Semestre 2: Sistemas productivos ancestrales + Huertas comunitarias
+Semestre 3: Biotecnología vegetal + Manejo integrado plagas
+Semestre 4: Proyecto aplicado territorial (producción alimentos 500 familias)
+Modelo pedagógico: Aprendizaje situado en territorio
+Estudiantes trabajan con agricultores locales
+Recuperación semillas nativas
+Implementación sistemas agroforestales
+Comercialización directa productor-consumidor
+Aliados:
+MinAgricultura
+Corporaciones Autónomas Regionales (CAR)
+Resguardos indígenas
+Asociaciones campesinas
+MISIÓN 2: ENERGÍAS RENOVABLES COMUNITARIAS ⚡
+Programa académico: Tecnología en Energías Renovables (2 años)
+Contenido curricular:
+Semestre 1: Fundamentos energéticos + Auditoría energética comunitaria
+Semestre 2: Sistemas fotovoltaicos + Aerogeneradores
+Semestre 3: Biogás y biomasa + Microredes
+Semestre 4: Proyecto aplicado territorial (electrificación 200 viviendas rurales)
+Modelo pedagógico: Co-diseño tecnológico comunitario
+Estudiantes instalan paneles solares en viviendas rurales
+Biodigestores familiares (residuos → gas cocina)
+Microredes eléctricas comunitarias
+Mantenimiento preventivo por técnicos formados
+Aliados:
+MinEnergía (Programa FAZNI - Zonas No Interconectadas)
+Empresas de energía renovable (EPM, ECOPETROL)
+Cooperativas de energía
+MISIÓN 3: SALUD PREVENTIVA Y MENTAL COMUNITARIA 🏥
+Programa académico: Tecnología en Atención Primaria en Salud (2 años)
+Contenido curricular:
+Semestre 1: Diagnóstico epidemiológico territorial + Primeros auxilios
+Semestre 2: Promoción salud mental + Medicina tradicional
+Semestre 3: Salud sexual y reproductiva + Nutrición comunitaria
+Semestre 4: Proyecto aplicado territorial (brigadas salud 1,000 personas)
+Modelo pedagógico: Salud con enfoque territorial
+Estudiantes realizan brigadas de salud rural
+Talleres salud mental comunitaria
+Articulación medicina occidental + saberes ancestrales
+Telemedicina para zonas remotas
+Aliados:
+MinSalud
+EPS públicas
+Asociaciones médicas
+Cabildos indígenas (médicos tradicionales)
+
+MISIÓN 4: HÁBITAT SOSTENIBLE 🏡
+Programa académico: Tecnología en Construcción Sostenible (2 años)
+Contenido curricular:
+Semestre 1: Arquitectura bioclimática + Materiales locales
+Semestre 2: Construcción con tierra + Bambú
+Semestre 3: Gestión integral residuos + Saneamiento básico
+Semestre 4: Proyecto aplicado territorial (mejoramiento 50 viviendas)
+Modelo pedagógico: Construcción colaborativa (Minga)
+Estudiantes mejoran viviendas en comunidad
+Técnicas construcción con materiales locales (adobe, bahareque, bambú)
+Sistemas de recolección agua lluvia
+Baños secos ecológicos
+Aliados:
+MinVivienda
+Cajas de Compensación Familiar
+ONG construcción sostenible (Un Techo Para Mi País)
+
+A10.6 Cronograma de Implementación
+Etapa 0: Pre-alistamiento (Antes firma contrato)
+36 inmuebles arrendables pre-seleccionados para CALE-T iniciales
+Diseño BIM paramétrico CALE-T-24q finalizado con planos de adecuación
+Convenios marco con proveedores (obra civil, TI, mobiliario, seguridad)
+Plataforma Multiservicios operativa en entorno de pruebas
+Etapa 1: Despliegue Mínimo Normativo (Días 1-90)
+Días 1-45: Despliegue inicial de 18 nodos CALE-T (9× CALE-T-24q + 9× CALE-T-16q)
+Días 46-90: Despliegue final de 18 nodos CALE-T adicionales (9× CALE-T-24q + 9× CALE-T-16q)
+Días 60-80: Activación y configuración de Plataforma Multiservicios
+Días 80-90: Pruebas integrales y certificación RETIE/NTC 4143
+Día 91: 36 CALEs teóricos operativos con cobertura departamental nacional
+Etapa 2: Densificación y Expansión de Formación (Días 91-150)
+Días 91-120: Evaluación de demanda regional y análisis costo-beneficio
+Días 121-150: Implementación de salas de formación especializada en nodos justificados
+Activación según demanda regional y justificación financiera
+Etapa 3: Solución Energética (Años 2-3)
+Implementación diferida según análisis costo-beneficio operativo
+Licitación nacional para sistemas de energía renovable
+Instalación de sistemas solares en CALEs seleccionados
+Etapa 4: Despliegue de Nodos CALE Prácticos (Mes 6 - Mes 18)
+Mes 6-9: Selección y contratación de operadores especializados "llave en mano"
+Mes 7-15: Implementación de infraestructura práctica (pistas de destreza, dotación vehicular)
+Mes 16-17: Pruebas integrales y certificación de CALE Prácticos
+Mes 18: Nodos CALE Prácticos operativos para evaluación de destrezas en pista y vía
+IMPORTANTE: Las etapas de implementación teórica y práctica se desarrollan EN PARALELO desde el inicio del proyecto, conforme al modelo VSM y metodología Agile-Lean establecida en el Plan de implementación.
+
+
+A20: BLUEPRINT TALENTO HUMANO
+A20.1 Dimensionamiento Nacional
+El Sistema Nacional CALE requiere un equipo de 1,657 personas distribuidas estratégicamente en perfiles especializados para garantizar la operación eficiente de la red nacional de evaluación.
+Categoría
+Cantidad Nodos
+Personal/Nodo
+Total Nacional
+OPEX Integral/Año
+OPEX/Nodo/Año
+Componentes OPEX
+HUB DAATH Bogotá
+1
+25
+25
+$1,950M
+$1,950M
+Talento Humano únicamente
+Cat.A
+20
+32
+640
+$48,000M
+$2,400M
+TH: ParseError: KaTeX parse error: Expected 'EOF', got '&' at position 13: 1,613M + Tec&̲Op:787M
+Cat.B
+20
+24
+480
+$32,000M
+$1,600M
+TH: ParseError: KaTeX parse error: Expected 'EOF', got '&' at position 13: 1,094M + Tec&̲Op:506M
+Cat.C1
+16
+16
+256
+$20,800M
+$1,300M
+TH: ParseError: KaTeX parse error: Expected 'EOF', got '&' at position 11: 614M + Tec&̲Op:686M
+Equipos Itinerantes (Satélite)
+16 equipos
+16
+256
+$10,752M
+$672M/equipo
+Talento Humano + logística
+TOTAL NACIONAL
+56 + 16 equipos
+-
+1,657
+$113,502M
+-
+OPEX completo sistema
+
+A20.2 Desglose por Nivel Jerárquico
+A20.2.1 HUB Central DAATH (Bogotá) - 25 personas
+Perfil
+Cantidad
+Salario Mensual
+Salario Anual
+Función
+Director Nacional CALE
+1
+$12,000k
+$144,000k
+Dirección estratégica
+Coordinador Tecnología
+1
+$10,000k
+$120,000k
+Gestión plataformas MUNAY/ALEIA
+Coordinador Operaciones
+1
+$9,000k
+$108,000k
+Supervisión 56 nodos
+Coordinador Financiero
+1
+$9,000k
+$108,000k
+Gestión presupuesto
+Coordinador Talento Humano
+1
+$8,000k
+$96,000k
+Gestión 1,657 personas
+Analistas Senior
+5
+$7,000k
+$84,000k
+Análisis, BI, reportes
+Analistas Junior
+8
+$4,500k
+$54,000k
+Soporte operativo
+Administrativos
+7
+$3,500k
+$42,000k
+Soporte administrativo
+TOTAL HUB
+25
+-
+-
+OPEX: $1,950M/año
+
+A20.2.2 Cat.A - Coordinadores Regionales (20 nodos × 32 personas = 640 personas)
+Perfil
+Cantidad/Nodo
+Salario Mensual
+Función
+Coordinador Regional
+1
+$7,000k
+Dirección nodo, supervisión región
+Coordinador Operativo
+1
+$5,500k
+Operación diaria del CALE
+Evaluadores Teóricos
+12
+$4,000k
+Evaluación teórica (24 cubículos × 2 turnos)
+Evaluadores Prácticos
+8
+$4,500k
+Evaluación práctica (pista + simulador)
+Técnico TI
+2
+$4,000k
+Soporte técnico plataforma MUNAY
+Recepcionistas
+3
+$2,800k
+Atención ciudadanos, agendamiento
+Personal Seguridad
+3
+$2,500k
+Vigilancia instalaciones
+Personal Servicios Generales
+2
+$2,200k
+Limpieza, mantenimiento
+TOTAL Cat.A/Nodo
+32
+-
+OPEX/nodo: $1,612.8M/año
+
+A20.2.3 Cat.B - Subregionales (20 nodos × 24 personas = 480 personas)
+Perfil
+Cantidad/Nodo
+Salario Mensual
+Función
+Coordinador Local
+1
+$5,000k
+Dirección nodo
+Evaluadores Teóricos
+8
+$3,800k
+Evaluación teórica (16 cubículos × 2 turnos)
+Evaluadores Prácticos
+6
+$4,200k
+Evaluación práctica
+Técnico TI
+1
+$3,800k
+Soporte técnico
+Recepcionistas
+2
+$2,800k
+Atención ciudadanos
+Personal Seguridad
+2
+$2,500k
+Vigilancia
+Personal Servicios Generales
+1
+$2,200k
+Limpieza
+Auxiliar Administrativo
+3
+$2,600k
+Soporte administrativo
+TOTAL Cat.B/Nodo
+24
+-
+OPEX/nodo: $1,094.4M/año
+
+A20.2.4 Cat.C1 - Micro-regionales (16 nodos × 16 personas = 256 personas)
+Perfil
+Cantidad/Nodo
+Salario Mensual
+Función
+Coordinador Local
+1
+$4,500k
+Dirección nodo
+Evaluadores Teóricos
+6
+$3,200k
+Evaluación teórica
+Evaluadores Prácticos
+4
+$3,500k
+Evaluación práctica
+Técnico TI
+1
+$3,200k
+Soporte técnico
+Recepcionista
+1
+$2,800k
+Atención ciudadanos
+Personal Seguridad
+2
+$2,500k
+Vigilancia
+Personal Servicios Generales
+1
+$2,200k
+Limpieza
+TOTAL Cat.C1/Nodo
+16
+-
+OPEX/nodo: $614.4M/año
+
+A20.2.5 Equipos Itinerantes - Sedes Satélite (16 equipos × 16 personas = 256 personas)
+Perfil
+Cantidad/Equipo
+Salario Mensual
+Función
+Coordinador Itinerante
+1
+$4,000k
+Coordinación circuito satélites
+Evaluadores Teóricos
+8
+$3,500k
+Evaluación teórica itinerante
+Técnico TI
+2
+$3,200k
+Soporte técnico móvil
+Conductores-Logísticos
+3
+$2,800k
+Transporte equipos/personal
+Auxiliares Administrativos
+2
+$2,600k
+Soporte administrativo
+TOTAL Equipo Itinerante
+16
+-
+OPEX/equipo: $672M/año
+IMPORTANTE: Cada equipo itinerante atiende aproximadamente 9 sedes satélite (141 satélites / 16 equipos ≈ 9 satélites/equipo).
+A20.2 Perfiles y Funciones por Tipo de CALE
+A20.2.1 Requisitos Generales de Contratación
+Evaluadores Teóricos:
+Formación: Profesional en educación, psicología, ingeniería o afines
+Experiencia: Mínimo 2 años en evaluación o docencia
+Certificación: Curso especializado en evaluación de conductores (80 horas)
+Requisitos: Antecedentes judiciales/disciplinarios/fiscales limpios
+Evaluadores Prácticos:
+Formación: Licencia de conducción categoría C3 vigente + curso SENA instructor conducción
+Experiencia: Mínimo 5 años como conductor profesional
+Certificación: Instructor de conducción certificado MinTransporte
+Requisitos: 0 comparendos últimos 3 años, curso primeros auxilios
+Técnicos TI:
+Formación: Técnico/tecnólogo en sistemas, redes o telecomunicaciones
+Experiencia: Mínimo 2 años en soporte técnico
+Certificaciones: CompTIA A+, Network+ o equivalente
+Conocimientos: Linux, redes, troubleshooting hardware/software
+Personal Administrativo:
+Formación: Bachiller académico mínimo, deseable técnico/tecnólogo administrativo
+Experiencia: Mínimo 1 año en atención al público o funciones administrativas
+Competencias: Servicio al cliente, Office básico, resolución de conflictos
+
+
+
+A30: BLUEPRINT PLATAFORMA TECNOLÓGICA MUNAY 1.0
+Este capítulo consolida la especificación técnica, procesos, épicas y cronograma para la plataforma MUNAY, cubriendo tanto la evaluación teórica (CALE-T) como la práctica (CALE-P). Las matrices y tablas presentadas incluyen todos los procesos, requisitos y funcionalidades necesarias para ambos tipos de evaluación, manteniendo claridad y enfoque minimalista. La diferenciación entre funcionalidades teóricas y prácticas se refleja en el cronograma y en los requisitos técnicos específicos.
+
+Esta sección resume los requisitos funcionales y no funcionales de MUNAY v1.0, organizados en una matriz operacional que cubre habilitación, prestación del servicio y soporte, con trazabilidad normativa y actores clave, haciendo evidente las necesidades de especificación que se describen en la sección 3.2
+
+A30.1 Diseño de Blueprint por Procesos y Pasos Principales definidos en la resolución
+La matriz operacional y los pasos detallados cubren el ciclo completo de evaluación, desde agendamiento y validación de prerrequisitos, hasta la certificación y registro en RUNT, incluyendo los procesos específicos para pruebas prácticas y telemetría.
+A30.1.1 Matriz de Procesos
+ID
+Nombre del Proceso
+Descripción Breve
+Referencia Normativa Principal
+Actores Clave (VSM)
+Entrada Principal
+Salida Principal
+A. Procesos de Habilitación e Implementación del Sistema
+
+
+
+
+
+
+A-01
+Habilitación Normativa y Contractual de la Red
+Proceso para presentar el Plan de Implementación, obtener el Acto Administrativo y suscribir el contrato/convenio con MinTransporte.
+Art. 3.7.1.1, Art. 3.7.1.2, Art. 3.7.5.1
+Red IES (core_snCALE), MinTransporte
+Decisión estratégica
+Red autorizada para operar
+A-02
+Implementación y Puesta en Marcha de Nodos CALE
+Proceso de despliegue físico y técnico de una sede (adecuación, dotación, personal) hasta dejarla lista para el registro.
+Art. 3.7.1.3 (Requisitos previos)
+HUB (PMO, Logística), Nodo
+Plan de Despliegue (Ola)
+Nodo listo para registro
+A-03
+Registro Inicial de un Nodo CALE en RUNT
+Proceso para registrar formalmente una sede operativa individual en el RUNT, una vez que está implementada y cumple los requisitos.
+Art. 3.7.1.3, Art. 3.7.1.4
+HUB (Soporte), Nodo, RUNT
+Nodo con Puesta en Marcha
+Nodo registrado en RUNT
+B. Procesos de Prestación del Servicio de Evaluación (Ciclo del Aspirante)
+
+
+
+
+
+
+B-01
+Agendar Cita para Examen
+El aspirante solicita y obtiene un turno, previa validación de prerrequisitos (CRC, CEA) contra RUNT.
+Anexo 60 (1.4.2), Art. 3.7.3.2
+Aspirante, Plataforma MUNAY, RUNT
+Solicitud del aspirante
+Turno confirmado
+B-02
+Gestionar Facturación y Recaudo
+Expedición de factura, recaudo a través de operador financiero y dispersión automática de los recursos.
+Art. 3.7.2.4
+Aspirante, Plataforma MUNAY, Operador Financiero
+Agendamiento de cita
+Pago confirmado
+B-03
+Realizar Check-in y Validación Biométrica
+Verificación de la identidad del aspirante en el CALE a través de los sistemas requeridos (SICOV).
+Art. 3.7.3.2 (b), Anexo 60 (1.4.3)
+Aspirante, Personal de Nodo, SICOV
+Aspirante se presenta
+Aspirante validado
+B-04
+Realizar Examen Teórico
+Ejecución supervisada de la prueba teórica en la plataforma tecnológica.
+Anexo 60 (1.4.5), Art. 3.7.3.1.3
+Aspirante, Personal de Nodo, Plataforma MUNAY
+Aspirante validado
+Resultado de examen teórico
+B-05
+Realizar Alistamiento de Vehículo y Pista
+Verificación técnica de vehículos y condiciones de la pista antes de las pruebas prácticas.
+Anexo 60 (2.2.7)
+Personal de Nodo (Técnico, Evaluador)
+Agendamiento de prueba práctica
+Vehículo y pista listos
+B-06
+Realizar Prueba de Destreza Individual
+Ejecución de maniobras en pista cerrada, con calificación automatizada o asistida.
+Anexo 60 (2.3.1)
+Aspirante, Plataforma MUNAY, (Evaluador op.)
+Examen teórico aprobado
+Resultado de prueba de destreza
+B-07
+Realizar Prueba de Maniobras en Vía Pública
+Ejecución de recorrido en vías públicas, con calificación en tiempo real por parte del evaluador.
+Anexo 60 (2.3.2)
+Aspirante, Evaluador, Plataforma MUNAY
+Prueba de destreza aprobada
+Resultado de prueba en vía
+B-08
+Registrar Resultado y Emitir Certificado
+Consolidación de resultados, cargue automático a RUNT y generación del número de certificado de aprobación.
+Art. 3.7.4.1, Art. 3.7.4.2
+Plataforma MUNAY, RUNT
+Todas las pruebas aprobadas
+Certificado registrado en RUNT
+C. Procesos de Gestión y Soporte a la Operación
+
+
+
+
+
+
+C-01
+Gestión de Registros y Novedades de la Red
+Proceso para actualizar la información de sedes, personal, vehículos, etc., ante el RUNT y otros sistemas.
+Art. 3.7.1.6, Anexo 60 (4)
+HUB (Soporte), Nodo
+Necesidad de actualización
+Registro modificado
+C-02
+Soporte a Entidades de IVC
+Atención a requerimientos de información y visitas de la SuperTransporte y otros entes de control.
+Art. 3.7.5.5
+HUB (S3), Nodo, SuperTransporte
+Requerimiento de auditoría
+Informe de auditoría atendido
+C-03
+Gestión de Peticiones, Quejas y Reclamos (PQR)
+Proceso para recibir, gestionar y dar respuesta a las PQR de los usuarios del servicio.
+Art. 3.7.1.5 (f)
+HUB (Soporte), Nodo, Aspirante
+PQR del usuario
+Respuesta a PQR
+D. Procesos de Gobernanza y Mejora Continua
+
+
+
+
+
+
+D-01
+Gobernanza Financiera y de Tarifas
+Proceso para registrar, publicar y actualizar las tarifas, y presentar los estados financieros requeridos.
+Art. 3.7.2.2
+HUB (S3, S5), SuperTransporte
+Modelo financiero
+Tarifas publicadas, EEFF presentados
+D-02
+Monitoreo de Calidad y Satisfacción del Usuario
+Aplicación de encuestas, análisis de resultados y publicación para la mejora del servicio.
+Art. 3.7.3.6
+HUB (S4), Nodo, ANSV
+Finalización del servicio
+Informes de satisfacción publicados
+D-03
+Evaluación de Impacto en la Seguridad Vial
+Medición de la incidencia del snCALE en la reducción de la siniestralidad, en conjunto con la ANSV.
+Art. 3.7.5.6
+HUB (S4), ANSV, MinTransporte
+Datos de siniestralidad
+Recomendaciones de mejora
+
+A30.1.2 Pasos por Proceso
+Esta sección detalla los pasos específicos (sub-procesos) requeridos para ejecutar cada proceso definido en la matriz A.1. Asocia cada paso con los recursos y sistemas necesarios para su correcta implementación.
+
+Proceso ID
+Paso ID
+Paso / Sub-proceso
+A-01
+A-01.1
+Consolidar la capacidad institucional de la Red
+A-01
+A-01.2
+Formular el Plan Financiero y Modelo de Sostenibilidad
+A-01
+A-01.3
+Redactar el Plan Maestro Técnico y sus Anexos
+A-01
+A-01.4
+Suscribir el convenio/contrato con MinTransporte
+A-02
+A-02.1
+Planificar la adecuación de infraestructura del nodo
+A-02
+A-02.2
+Ejecutar obra civil y recibir instalaciones
+A-02
+A-02.3
+Ensamblar y despachar el "Kit de Dotación" desde el HUB
+A-02
+A-02.4
+Instalar y realizar pruebas de aceptación (SAT) de la dotación
+A-02
+A-02.5
+Seleccionar, capacitar y certificar al personal del nodo
+A-03
+A-03.1
+Compilar Dossier de Habilitación del Nodo
+A-03
+A-03.2
+Radicar Solicitud de Registro en Plataforma RUNT
+A-03
+A-03.3
+Recibir y Validar Constancia de Registro
+A-03
+A-03.4
+Actualizar Estado del Nodo y Notificar a la PMO
+B-01
+B-01.1
+Aspirante solicita turno a través del portal web
+B-01
+B-01.2
+Sistema valida vigencia de CRC y CEA contra RUNT
+B-01
+B-01.3
+Sistema confirma y notifica el turno al aspirante
+B-02
+B-02.1
+Plataforma genera orden de pago con valor discriminado
+B-02
+B-02.2
+Aspirante realiza pago a través de la pasarela integrada
+B-03
+B-03.1
+Personal de recepción verifica documento de identidad físico
+B-03
+B-03.2
+Realizar validación biométrica de identidad contra SICOV
+B-04
+B-04.3
+Supervisar sesión de examen a través del sistema de monitoreo
+B-06
+B-06.2
+Aspirante ejecuta maniobras en pista
+B-04
+B-04.2
+Plataforma selecciona y despliega 40 preguntas aleatorias
+C-01
+C-01.1
+Gestionar solicitud de modificación de registro de un nodo
+C-02
+C-02.1
+Extraer evidencia digital para entes de control
+C-03
+C-03.1
+Registrar PQR del usuario en el sistema de gestión
+D-01
+D-01.1
+Registrar tarifas ante la SuperTransporte
+D-02
+D-02.2
+Analizar datos de satisfacción y generar reportes
+D-03
+D-03.1
+Extraer y anonimizar datos de operación para la ANSV
+
+
+A30.1.3 Macroproceso de atención al Aspirante
+El siguiente diagrama ilustra el flujo de agendamiento de cita para examen, integrando validaciones normativas y confirmación al usuario.
+
+
+
+A30.2 MCP (Épicas / Estimaciones)
+Esta sección presenta las épicas funcionales y técnicas clave para la implementación de MUNAY v1.0, con estimaciones de esfuerzo y tipo de entrega.
+A partir del Diseño Basado en Procesos Modelo Operativo de Procesos (MOP - Anexo A),, se estableció una Matriz de Cobertura de Proceso (MCP - Anexo C), asegurando que cada requerimiento reflejado en un proceso tenga sea una respuesta directa y trazable mapeando uno a uno, los procesos a épicas y sus pasos a features.
+Proceso (Épica)
+Qué hace MUNAY
+Secuencia del Proceso
+Agendar Cita para Examen:
+El aspirante solicita y obtiene un turno, previa validación de prerrequisitos (CRC, CEA) contra RUNT.
+Ref. Norma: Anexo 60 (1.4.2), Art. 3.7.3.2
+MUNAY gestiona el flujo de agendamiento, validando prerrequisitos y notificando al aspirante.
+
+Gestionar Facturación y Recaudo:
+Expedición de factura, recaudo a través de operador financiero y dispersión automática de los recursos.
+Ref. Norma: Art. 3.7.2.4
+MUNAY genera orden de pago, integra pasarela y almacena comprobante.
+
+Realizar Check-in y Validación Biométrica:
+Verificación de la identidad del aspirante en el CALE a través de los sistemas requeridos (SICOV).
+Ref. Norma: Art. 3.7.3.2 (b), Anexo 60 (1.4.3)
+MUNAY coordina registro de llegada y validación biométrica con SICOV.
+
+Realizar Examen Teórico:
+Ejecución supervisada de la prueba teórica en la plataforma tecnológica.
+Ref. Norma: Anexo 60 (1.4.5), Art. 3.7.3.1.3
+MUNAY administra el banco de preguntas, supervisa y almacena resultados.
+
+Realizar Alistamiento de Vehículo y Pista:
+Verificación técnica de vehículos y condiciones de la pista antes de las pruebas prácticas.
+Ref. Norma: Anexo 60 (2.2.7)
+MUNAY registra checklist técnico y habilita pista.
+
+Realizar Prueba de Destreza Individual:
+Ejecución de maniobras en pista cerrada, con calificación automatizada o asistida.
+Ref. Norma: Anexo 60 (2.3.1)
+MUNAY integra sensores, almacena datos y calificación, y notifica resultado.
+
+Realizar Prueba de Maniobras en Vía Pública:
+Ejecución de recorrido en vías públicas, con calificación en tiempo real por parte del evaluador.
+Ref. Norma: Anexo 60 (2.3.2)
+MUNAY integra sensores, registra calificación y notifica resultado.
+
+Registrar Resultado y Emitir Certificado:
+Consolidación de resultados, cargue automático a RUNT y generación del número de certificado de aprobación.
+Ref. Norma: Art. 3.7.4.1, Art. 3.7.4.2
+MUNAY consolida resultados, genera certificado y lo carga a RUNT.
+
+
+
+A30.2.1 Subsistema de Gestión de la Evaluación
+Las Features (Características) de este Subsistema pueden observarse en la siguiente tabla:
+
+Épica
+Feature
+Historia (Resumen)
+T-Shirt
+dias lab (estimados)
+Tipo
+Proceso
+Gestionar Agendamiento de Citas
+Calendario y Reglas de Capacidad
+Configuración de horarios y cupos por nodo
+S
+1
+<deploy>
+B-01
+Gestionar Agendamiento de Citas
+Motor de Reservas
+Creación, modificación y cancelación de citas
+S
+1
+<deploy>
+B-01
+Gestionar Agendamiento de Citas
+Portal Público de Agendamiento
+Interfaz de usuario para reserva de turnos
+S
+1
+<deploy>
+B-01
+Gestionar Facturación y Recaudo
+Motor de Cálculo de Tarifas
+Cálculo de tarifas y emisión de orden de pago
+S
+1
+<deploy>
+B-02
+Gestionar Examen Teórico
+Gestión del Banco de Preguntas
+Configuración de selección aleatoria y segura de preguntas
+M
+15
+<deploy>
+B-04
+Gestionar Examen Teórico
+Check-in del Aspirante
+Configuración de validación de identidad con interoperabilidad SICOV
+S
+6
+<deploy>
+B-03
+Gestionar Examen Teórico
+Sesión de Evaluación
+Configuración de presentación del examen, temporizador y recolección de respuestas
+M
+15
+<deploy>
+B-04
+Gestionar Examen Teórico
+Calificación y Cierre
+Configuración de calificación automática y resultado final
+XS
+4
+<deploy>
+B-04
+Gestionar Examen Teórico
+Propagación de Resultados
+Configuración de registro y notificación de resultados
+S
+9
+<deploy>
+B-04, B-08
+Gestionar Encuestas de Satisfacción
+Aplicación de Encuesta
+Presentación de encuesta de satisfacción
+S
+8
+<deploy>
+D-02
+Gestionar Encuestas de Satisfacción
+Recolección y Almacenamiento
+Almacenamiento seguro de respuestas
+S
+6
+<deploy>
+D-02
+Gestionar Inventario de Hardware
+Registro de Inventario de Hardware
+Registro de MAC/IP de equipos
+S
+9
+<deploy>
+C-01
+Gestionar Inventario de Hardware
+Reporte de Inventario a RUNT
+Configuración de envío de información a sistemas requeridos
+M
+13
+<deploy>
+C-01
+
+Este subsistema gestiona el núcleo de valor de este resultado final, orquesta el exámen teórico como se observa en el siguiente diagrama.
+
+A30.2.2 Subsistema de Interoperabilidad
+Épica
+Feature
+Historia (Resumen)
+T-Shirt
+Horas Estimadas
+Tipo
+Integrar con RUNT
+Servicio de Consulta de Prerrequisitos
+Adaptación del servicio de consulta en tiempo real de certificados CRC y CEA
+S
+1
+<adapt>
+Integrar con RUNT
+Servicio de Registro de Certificados
+Adaptación del servicio de registro de resultados en RUNT
+M
+20
+<adapt>
+Integrar con SICOV
+Servicio de Validación Biométrica
+Adaptación del servicio de validación de identidad en check-in
+L
+25
+<adapt>
+Integrar con Pasarela de Pagos
+Redirección a Pasarela
+Configuración de generación de sesión de pago y redirección
+S
+6
+<deploy>
+Integrar con Pasarela de Pagos
+Confirmación Asíncrona (Webhook)
+Configuración de procesamiento de notificaciones de pago
+M
+10
+<deploy>
+Integrar con Pasarela de Pagos
+Validación de Notificaciones
+Configuración de validación de autenticidad de notificaciones
+S
+3
+<deploy>
+
+A30.2.3 Subsistema de Almacenamiento
+Épica
+Feature
+Historia (Resumen)
+T-Shirt
+Horas Estimadas
+Tipo
+Implementar Pista de Auditoría y Retención
+Motor de Retención de Evidencias
+Configuración de almacenamiento seguro y política de retención
+M
+18
+<deploy>
+Gestionar Base de Datos Transaccional
+Esquema y Migraciones de Base de Datos
+Definición y gestión de estructura de datos
+XS
+4
+<deploy>
+Gestionar Base de Datos Transaccional
+Rendimiento y Optimización
+Indexación y optimización de consultas
+S
+5
+<deploy>
+Gestionar Base de Datos Transaccional
+Alta Disponibilidad y Recuperación de Desastres
+Configuración de replicación y backup
+M
+10
+<deploy>
+
+
+A30.3 Cronograma por Épicas
+
+A30.4 Condiciones de Operación y SLA
+Estas especificaciones no fucncionales se presentan como recomendaciones, sin embargo, serán ajustadas en el proceso de especificación para cada una de las fucnionales anteriormente descritas.
+
+Métrica / SLA
+Valor / Umbral
+P95 API
+<500ms
+RUNT P95
+<1500ms
+Uptime
+≥99.7%
+RTO
+<1h
+RPO
+<15min
+Retención de evidencia
+5 años
+
+
+*********************************+ hasta aquí…. montar esto manualmente… 
+
+
+
+
+
+A40: PRESUPUESTO OpEx CONSOLIDADO
+A40.1 Talento Humano ($76,676M/año - 67.5%)
+Alcance: 1,657 personas (56 CALE Principales + HUB Central + 16 Equipos Itinerantes)Fuente: MUNAY 5.0 Sección 6 + Validación V18.0
+Composición del Gasto en Talento Humano
+Componente
+Monto Anual
+% TH
+Descripción
+Salarios Base
+$52,900M
+69.0%
+Remuneración mensual básica 1,657 personas
+Prestaciones Sociales
+$23,804M
+31.0%
+Prima, cesantías, vacaciones, pensión, salud (45% salario base)
+TOTAL TALENTO HUMANO
+$76,676M
+100%
+OpEx recurrente anual
+Capacitación continua, bonificaciones por desempeño y dotación se incluyen dentro de "Operación & Mantenimiento" (A40.3).
+Distribución por Nivel Jerárquico VSM
+Nivel
+Categoría
+Cantidad sedes
+Personal/Nodo
+Total Personal
+OpEx TH/Año
+% del Total TH
+Sistema 5
+HUB Central
+1
+15
+15
+$1,950M
+2.5%
+Sistema 4
+Cat.A
+20
+29.6
+592
+$32,227M
+42.0%
+Sistema 4
+Cat.B
+20
+20.0
+400
+$21,888M
+28.5%
+Sistema 4
+Cat.C1
+16
+15.7
+256
+$9,856M
+12.9%
+Sistema 1
+Equipos Itinerantes
+16
+24.6
+394
+$10,752M
+14.0%
+TOTAL
+-
+56+1+16
+-
+1,657
+$76,676M
+100%
+NOTA CRÍTICA: Este presupuesto OpEx NO incluye el equipamiento TIC adquirido (CAPEX en ANEXO B secciones B30-B40). Aquí se presupuesta únicamente el mantenimiento, licencias y operación de dichos equipos.
+
+A40.2 Tecnología y Equipamiento ($25,275M/año - 22.3%)
+Alcance: Licencias software, mantenimiento TIC, conectividad, soporte técnicoFuente: MUNAY 5.0 Sección 6 + Actualización tecnológica V18.0Referencia CAPEX: Ver ANEXO B secciones B30 (Equipamiento TIC) y B40 (Equipamiento Operacional) para especificaciones técnicas y localización en los componentes.
+Bajo el esquema de integración vertical, los equipos TIC activos (servidores, switches, firewall) se trasladan a OPEX, mientras que la infraestructura pasiva y energética permanece en CAPEX.
+Sub-componente
+Descripción Técnica
+Función
+Costo
+Sistema Energía Renovable
+Paneles solares fotovoltaicos 5kW + Baterías litio 10kWh + Inversor híbrido
+Autonomía energética 8h, reducción OPEX energía eléctrica
+$12,000,000
+UPS 10kVA
+Sistema de respaldo ininterrumpido doble conversión, autonomía 20 min
+Protección infraestructura crítica TIC
+$3,500,000
+Cableado Estructurado Cat6A
+Cableado pasivo certificado 500m, patch panels, jacks, ductos
+Infraestructura de red física
+$1,500,000
+Rack 19" 42U
+Rack estándar con ventilación, PDU, organizadores cables
+Alojamiento equipamiento TIC
+$980,00
+TOTAL COMPONENTE 1
+
+
+$17,980,000
+
+Equipamiento de TIC que se incluye en el servicios PaaS de Plataformas Tecnológicos (ver Anexo A - A50 - Modelo Financiero para Operación)
+Equipo TIC Activo
+Justificación OPEX
+Costo OPEX Anual Estimado
+Servidor aplicaciones (Intel Xeon Silver, 64GB RAM, 2TB SSD)
+Depreciación 36 meses, mantenimiento, actualizaciones
+$5,000,000/año
+Firewall empresarial (1 Gbps throughput, VPN, IPS/IDS)
+Licencias de seguridad, actualizaciones firmware
+$2,833,333/año
+Switch core 48 puertos (PoE+ managed, 96 Gbps backplane)
+Depreciación 36 meses, licencias gestión
+$1,166,667/año
+Access Points WiFi 6 (802.11ax, gestión centralizada) × 3
+Depreciación, licencias gestión cloud
+$400,000/año
+
+Justificación técnica del modelo:
+El modelo de integración vertical separa la infraestructura física (CAPEX) del equipamiento tecnológico activo (OPEX). Esto permite:
+Flexibilidad tecnológica: Actualización de equipos TIC cada 3 años sin impactar CAPEX inicial
+Mantenimiento eficiente: Contratos de servicio integral incluyen reemplazo de equipos defectuosos
+Escalabilidad: Ajuste de capacidad TIC según demanda sin obra civil
+Coherencia financiera: CAPEX para infraestructura duradera (10+ años), OPEX para tecnología (3-5 años)
+Desglose Detallado Tecnología & Equipamiento
+Sub-componente
+OpEx Anual
+% Tecnología
+Descripción
+Referencia CAPEX
+A40.2.1 Conectividad Dedicada
+$6,720M
+26.6%
+Fibra óptica 100 Mbps × 197 sedes × $2.85M/mes × 12
+-
+A40.2.2 Licencias Software
+$7,840M
+31.0%
+MUNAY + ALEIA + Office 365 + Antivirus + otros
+-
+A40.2.3 Mantenimiento Equipos Biométricos
+$3,360M
+13.3%
+Lectores huella, iris, facial (197 sedes × $1.42M/mes)
+Ver B30
+A40.2.4 Mantenimiento Estaciones de Trabajo
+$4,200M
+16.6%
+1,415 eval + 562 admin = 1,977 PC (@ $2.1M/año/unidad)
+Ver B30.1
+A40.2.5 Mantenimiento Servidores DAATH
+$2,100M
+8.3%
+57 servidores locales × $36.8M/año (20% valor CAPEX)
+Ver B30.2
+A40.2.6 Soporte Técnico Especializado
+$1,055M
+4.2%
+Contratos soporte L3, repuestos, actualizaciones HW/SW
+Ver B30
+TOTAL TECNOLOGÍA
+$25,275M
+100%
+OpEx tecnológico recurrente
+-
+A40.2.2 Detalle Licencias Software ($ 7,840M/año)
+Plataforma/Servicio
+Cantidad
+Costo Unitario/Año
+Costo Total Anual
+Descripción
+MUNAY 1.0 SaaS
+197 sedes
+$17.8M/sede
+$3,500M
+Plataforma evaluación teórica/práctica (licenciamiento por sede)
+ALEIA Sync RUNT
+197 sedes
+$14.2M/sede
+$2,800M
+Motor sincronización DAATH-RUNT (API transaccional)
+Microsoft 365 E3
+1,657 usuarios
+$507k/usuario
+$840M
+Office, Teams, OneDrive, Exchange (suscripción anual)
+Kaspersky Total Security
+1,977 endpoints
+$354k/equipo
+$700M
+Antivirus, anti-ransomware, firewall (licenciamiento empresarial)
+SUBTOTAL Licencias
+-
+-
+$7,840M
+Componente software recurrente
+NOTA: Licencias se facturan anualmente. Costos incluyen soporte técnico nivel 1-2 del proveedor.
+
+A40.3 Operación y Mantenimiento ($11,551M/año - 10.2%)
+Alcance: Servicios públicos, mantenimiento infraestructura/vehículos/simuladores, seguros, consumiblesFuente: MUNAY 5.0 Sección 6 + Actualización V18.0Referencia CAPEX: Ver ANEXO B secciones B10-B20 (infraestructura), B40 (vehículos)
+Desglose Detallado Operación & Mantenimiento
+Sub-componente
+OpEx Anual
+% Op&Mant
+Descripción
+Referencia CAPEX
+A40.3.1 Servicios Públicos
+$4,464M
+38.6%
+Energía + Agua + Gas + Telefonía (197 sedes)
+-
+A40.3.2 Mantenimiento Infraestructura
+$3,360M
+29.1%
+Preventivo/correctivo edificaciones, pistas, contenedores
+Ver B10-B20
+A40.3.3 Mantenimiento Simuladores VR
+$2,240M
+19.4%
+56 CALE × $40M/año (contratos mantenimiento especializado)
+Ver B20 (pistas)
+A40.3.4 Mantenimiento Vehículos
+$840M
+7.3%
+40 admin + 47 4×4 = 87 vehículos × $9.7M/año
+Ver B40.1-B40.2
+A40.3.5 Seguros Integrales
+$504M
+4.4%
+RC profesional, incendio, robo, vehículos, equipos
+-
+A40.3.6 Insumos & Consumibles
+$143M
+1.2%
+Papelería, tóner, EPP, materiales operacionales
+Ver B40.3
+TOTAL OPERACIÓN
+$11,551M
+100%
+OpEx operativo recurrente
+-
+A40.3.1 Detalle Servicios Públicos ($4,464M/año)
+Servicio
+Cantidad Sedes
+Costo Promedio/Sede/Mes
+Costo Total Anual
+Descripción
+Energía Eléctrica
+197
+$1.18M
+$2,800M
+Consumo iluminación, equipos, climatización
+Agua y Alcantarillado
+197
+$284k
+$672M
+Consumo baños, aseo, riego
+Gas Natural
+56 (principales)
+$750k
+$504M
+Calefacción, agua caliente (solo CALE principales)
+Telefonía Fija/Móvil
+197
+$206k
+$488M
+Líneas administrativas, móviles directivos
+TOTAL SERVICIOS
+-
+-
+$4,464M
+Servicios recurrentes anuales
+NOTA: Costos basados en tarifas promedio nacionales 2025, sujetos a variación por región y regulación.
+A40.3.2 Detalle Mantenimiento Infraestructura ($3,360M/año)
+Tipo Infraestructura
+Cantidad
+Costo Mantenimiento/Año
+Costo Total Anual
+Referencia CAPEX
+Cat.A (edificaciones permanentes)
+20
+$112M/nodo
+$2,240M
+Ver B10.1 + B20.1
+Cat.B (contenedores modulares)
+20
+$35M/nodo
+$700M
+Ver B10.2 + B20.2
+Cat.C1 (contenedores modulares)
+16
+$26M/nodo
+$420M
+Ver B10.3 + B20.3
+TOTAL MANTENIMIENTO INFRAESTRUCTURA
+56
+-
+$3,360M
+Mantenimiento preventivo/correctivo
+Incluye: Pintura, reparaciones menores, jardinería, aseo especializado, mantenimiento pistas (señalización, reparcheo), sistemas eléctricos/hidráulicos.
+
+A40.4 Proyección OpEx 10 Años (2025-2034)
+Método: Proyección con inflación promedio 3% anual (conservadora)Alcance: Todos los componentes OpEx (A40.1 + A40.2 + A40.3)
+Tabla Proyección Decenal
+Año
+OpEx Base
+Inflación Acumulada
+OpEx Ajustado
+OpEx Acumulado
+2025 (Oct-Dic)
+$28,376M
+0% (3 meses)
+$28,376M
+$28,376M
+2026
+$113,502M
+3.0%
+$116,907M
+$145,283M
+2027
+$113,502M
+6.09%
+$120,414M
+$265,697M
+2028
+$113,502M
+9.27%
+$124,026M
+$389,723M
+2029
+$113,502M
+12.55%
+$127,747M
+$517,470M
+2030
+$113,502M
+15.93%
+$131,579M
+$649,049M
+2031
+$113,502M
+19.41%
+$135,527M
+$784,576M
+2032
+$113,502M
+22.99%
+$139,593M
+$924,169M
+2033
+$113,502M
+26.68%
+$143,781M
+$1,067,950M
+2034
+$113,502M
+30.48%
+$148,094M
+$1,216,044M
+TOTAL 10 AÑOS
+-
+-
+$1,216,044M
+-
+Desglose OpEx 2025 (Oct-Dic): 
+113,502M/12×3meses=
+113,502M/12×3meses=28,376M
+Distribución OpEx Promedio Anual (Régimen Permanente)
+Componente
+OpEx Anual (Base)
+% Total
+Talento Humano
+$76,676M
+67.5%
+Tecnología & Equipamiento
+$25,275M
+22.3%
+Operación & Mantenimiento
+$11,551M
+10.2%
+TOTAL
+$113,502M
+100%
+VALIDACIÓN: OpEx total 10 años = 
+1,216,044M∗∗≈∗∗
+1,216,044M∗∗≈∗∗1.22 billones (inflación 3% anual promedio)
+
+A40.5 Cronograma de Implementación (18 meses)
+Fuente: MUNAY 5.0 Sección 6 + Resolución 20253040037125/2025 Art. 3.7.5.2Alcance: Despliegue operativo completo del sistema (teórico + práctico)
+Hitos Críticos del Proyecto
+Hito
+Día
+Fecha Estimada
+Descripción
+Impacto OpEx
+Firma Convenio
+Día 0
+2025-10-01
+Inicio oficial del proyecto
+0% OpEx
+36 CALE Teóricos Operativos
+Día 91
+2025-12-30
+Primera fase operativa (20% cobertura)
+35% OpEx activo
+197 CALE Teóricos Completos
+Día 150
+2026-03-01
+Sistema teórico nacional completo
+65% OpEx activo
+EXIGIBILIDAD NACIONAL
+Día 180
+2026-04-01
+Obligatoriedad examen teórico
+100% OpEx activo
+56 CALE Prácticos Completos
+Día 540
+2026-09-30
+Sistema completo (teórico + práctico)
+100% OpEx + expansión
+NOTA: Las fases teórica (Día 0-180) y práctica (Día 0-540) son PARALELAS desde el inicio. El OpEx crece gradualmente según sedes operativas.
+Ramp-up de Personal y OpEx
+Fase
+Período
+Personal Activo
+OpEx TH Activo
+OpEx Total Activo
+% del Total
+Fase 0
+Día 0 - Día 30
+150 (HUB + nucleares)
+$7,150M/año
+$11,500M/año
+10%
+Fase 1
+Día 31 - Día 91
+672 (36 CALE)
+$26,836M/año
+$39,725M/año
+35%
+Fase 2
+Día 92 - Día 150
+1,250 (197 CALE teóricos)
+$49,740M/año
+$73,776M/año
+65%
+Exigibilidad
+Día 180+
+1,657 (total)
+$76,676M/año
+$113,502M/año
+100%
+Implicación Financiera: El OpEx NO es constante desde Día 0. Se activa gradualmente según personal contratado y sedes operativas. Proyección 2025 (Oct-Dic) considera solo 3 meses × 10-35% ramp-up ≈ $28,376M.
+
+A40.6 Fuentes de Financiamiento OpEx
+Modelo Sostenible: OpEx financiado por ingresos recurrentes (tarifas evaluaciones) + transferencias presupuesto nacional (si déficit inicial)
+Proyección Ingresos vs OpEx (Años 1-3)
+Año
+Demanda Evaluaciones
+Tarifa Promedio
+Ingresos Brutos
+OpEx Total
+Balance Neto
+Financiamiento Externo Requerido
+2026 (Año 1)
+600,000
+$115,000
+$69,000M
+$116,907M
+-$47,907M
+$47,907M (subsidio estatal)
+2027 (Año 2)
+900,000
+$115,000
+$103,500M
+$120,414M
+-$16,914M
+$16,914M (subsidio estatal)
+2028 (Año 3+)
+1,220,000
+$115,000
+$140,300M
+$124,026M
++$16,274M
+$0 (autosostenible) ✅
+Tarifas Proyectadas:
+Evaluación Teórica: $80,000
+Evaluación Práctica: $150,000
+Tarifa Promedio Ponderada: $115,000 por evaluación completa
+Fuentes de Financiamiento OpEx (Déficit Años 1-2)
+Fuente
+Monto
+% Déficit
+Mecanismo
+Presupuesto General de la Nación
+$40,000M
+61.8%
+Transferencias directas MinTransporte → Operador CALE
+Recursos Propios RUNT
+$15,000M
+23.2%
+Destinación específica ingresos RUNT para financiar evaluaciones
+Crédito Transitorio Banca Multilateral
+$9,821M
+15.0%
+Línea BID/CAF para capital de trabajo (reembolsable año 3+)
+TOTAL FINANCIAMIENTO DÉFICIT
+$64,821M
+100%
+Cobertura déficit años 1-2
+Estrategia de Sostenibilidad:
+Año 1-2: Financiamiento mixto (58% tarifas + 42% subsidio estatal)
+Año 3+: Autosostenible (ingresos > OpEx)
+Año 4+: Excedentes para reposición equipos (depreciación), expansión satélites, innovación
+Sensibilidad: Escenarios de Tarifa
+Escenario
+Tarifa Promedio
+Ingresos Año 3
+Balance Neto
+Punto Equilibrio
+Optimista
+$140,000
+$170,800M
++$46,774M
+Año 2 (900k eval)
+Base
+$115,000
+$140,300M
++$16,274M
+Año 3 (1.22M eval) ✅
+Pesimista
+$95,000
+$115,900M
+-$8,126M
+Año 4 (1.5M eval)
+Conclusión: Con tarifa base $115,000, el sistema alcanza autosostenibilidad en Año 3 (2028). Tarifas optimizadas (+22%) permiten autosostenibilidad desde Año 2.
+
+A50: REFERENCIAS Y CONTROL DE VERSIONES
+A50.1 Normativa Aplicable
+Fuente: MUNAY 5.0 Sección 6 + Resolución 20253040037125/2025 Art. 3.7.5.2
+Hitos Críticos
+Hito
+Día
+Fecha Estimada
+Descripción
+Fuente
+Firma Convenio
+Día 0
+2025-10-01
+Inicio oficial del proyecto
+MUNAY 5.0
+36 CALE Teóricos Operativos
+Día 91
+2025-12-30
+Primera fase operativa (20% cobertura)
+MUNAY 5.0
+197 CALE Teóricos Completos
+Día 150
+2026-03-01
+Sistema teórico nacional completo
+MUNAY 5.0
+EXIGIBILIDAD NACIONAL
+Día 180
+2026-04-01
+Obligatoriedad examen teórico
+Resolución Art. 3.7.5.2.a
+56 CALE Prácticos Completos
+Día 540
+2026-09-30
+Sistema completo (teórico + práctico)
+MUNAY 5.0
+CRÍTICO: Las fases teórica (Día 0-180) y práctica (Día 0-540) son PARALELAS desde el inicio. NO son secuenciales.
+Diagrama Temporal (Gantt Simplificado)
+2025-10-012025-11-012025-12-012026-01-012026-02-012026-03-012026-04-012026-05-012026-06-012026-07-012026-08-012026-09-01Firma ConvenioCat.A (20 sedes)MUNAY v1.0 DesarrolloCat.B (20 sedes)MobiliarioCat.C1 (16 sedes)SimuladoresConvocatoriaSatélite (141 sedes)Vehículos36 CALE TeóricosSelecciónMUNAY v1.0 TestingInducción197 CALE TeóricosMUNAY v1.0 ProducciónExigibilidad Nacional56 CALE PrácticosFase TeóricaFase Práctica (Paralela)ConstrucciónEquipamientoPlataforma MUNAYTalento HumanoCronograma Implementación Sistema Nacional CALE
+
+6.2 Fases de Despliegue Detalladas
+FASE 1: Día 0 - Día 91 (Preparación y Primeros 36 CALE)
+Objetivo: Poner en operación 36 CALE teóricos (20% cobertura inicial)
+Actividades Críticas:
+Construcción/Adecuación Infraestructura:
+10 Cat.A (edificación permanente)
+15 Cat.B (contenedores modulares)
+11 Cat.C1 (contenedores modulares)
+CAPEX Fase 1: Aprox. 35% del total
+Desarrollo MUNAY v1.0:
+Módulos: Registro, Agendamiento, Evaluación Teórica, Pagos
+Testing completo con pilotos
+Homologación MinTransporte
+Contratación Talento Humano:
+Convocatoria pública
+Selección 672 personas (Fase 1)
+Inducción y capacitación 80 horas
+Equipamiento Inicial:
+864 estaciones de trabajo (36 CALE × 24 cubículos promedio)
+Mobiliario básico
+Conectividad y telecomunicaciones
+Entregable Día 91: 36 CALE teóricos operativos + MUNAY v1.0 en producción
+
+FASE 2: Día 92 - Día 150 (Completar 197 CALE Teóricos)
+Objetivo: Desplegar 161 CALE adicionales (36 + 161 = 197 total)
+Actividades Críticas:
+Infraestructura Complementaria:
+10 Cat.A adicionales
+5 Cat.B adicionales
+5 Cat.C1 adicionales
+141 Sedes Satélite (espacios adaptados/alquilados)
+CAPEX Fase 2: Aprox. 25% del total
+Equipamiento Satélites:
+564 cubículos móviles (141 satélites × 4 cubículos)
+Equipos portátiles
+Kits evaluación itinerante
+Talento Humano Complementario:
+256 personas equipos itinerantes
+Capacitación equipos satélite
+Logística circuitos itinerantes
+Optimización MUNAY v1.0:
+Mejoras basadas en retroalimentación Fase 1
+Escalamiento infraestructura AWS
+Soporte 24/7
+Entregable Día 150: 197 CALE teóricos completos (56 Principales + 141 Satélite)
+
+FASE 3: Día 151 - Día 540 (Implementación Evaluación Práctica)
+Objetivo: Completar 56 CALE Principales con evaluación práctica (simulador + pista)
+Actividades Críticas:
+Infraestructura Práctica:
+Pistas Clase I, II, III en 56 CALE Principales
+Salas de simuladores
+Talleres de mantenimiento vehículos
+CAPEX Fase 3: Aprox. 40% del total
+Equipamiento Práctico:
+56 simuladores VR avanzados (categorías B2, B3, C2, C3)
+280 vehículos evaluación (A1, A2, B1, C1)
+Conos, señalización, equipos pista
+Cámaras, GPS, sensores IoT
+Módulo MUNAY v2.0 - Evaluación Práctica:
+Integración simuladores
+Integración sistema pista
+Calificación automática maniobras
+Machine Learning trayectorias
+Talento Humano Evaluadores Prácticos:
+Contratación 448 evaluadores prácticos
+Certificación instructores conducción
+Capacitación avanzada 120 horas
+Pruebas Piloto:
+10,000 evaluaciones prácticas piloto
+Ajustes protocolos
+Homologación final MinTransporte
+Entregable Día 540: Sistema Nacional CALE 100% operativo (197 CALE: 56 teórico+práctico + 141 teórico)
+A50.2 Documentos Soporte
+MUNAY 5.0 - Plan Maestro Técnico
+Alianza MUNAY (Google Doc)
+Especificación completa del sistema CALE
+Arquitectura técnica, dimensionamiento, presupuesto validado
+enfoque_consolidador_munay_6.0.md
+Lineamientos metodológicos Arquitectura Opción C
+Reglas de coherencia presupuestal CAPEX/OpEx
+Estructura de anexos y nomenclatura
+ANEXO B: Infraestructura Física y Equipamiento (V18.0)
+Presupuesto CAPEX completo ($10,710,891,400)
+Especificaciones infraestructura (B10-B20)
+Equipamiento TIC y Operacional (B30-B40)
+ANEXO C: Especificaciones Técnicas y Planos
+Fichas técnicas equipamiento (33 fichas)
+Planos arquitectónicos y de pistas
+Cronograma detallado construcción
+A50.3 Fuentes de Datos
+Datos RUNT 2.0 (2024-2025)
+2,859,984 trámites en 28 meses
+Distribución geográfica por departamento/municipio
+Proyección demanda anual: 1.22M evaluaciones/año
+DANE - Proyecciones de Población 2018-2035
+Población urbana/rural por municipio
+Jerarquía urbana (categorías 1-6)
+Indicadores demográficos y de movilidad
+ANSV - Observatorio Nacional de Seguridad Vial
+Estadísticas de siniestralidad vial por departamento
+Criterios de priorización territorial para despliegue
+Indicadores de impacto en seguridad vial
+A50.4 Historial de Cambios (V18.0)
+Versión
+Fecha
+Cambios Principales
+Responsable
+V1.0
+2025-10-21
+Versión inicial ANEXO A
+Alianza MUNAY
+V18.0
+2025-10-28
+Reestructuración Arquitectura Opción C
+Consolidador MUNAY 6.0
+

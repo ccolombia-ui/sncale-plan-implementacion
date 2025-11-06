@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNCALE - Sistema Nacional CALE | UPTC</title>
+    <title>SNCALE - Sistema Nacional CALE</title>
     <style>
         * {
             margin: 0;
@@ -12,39 +12,36 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #eee;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(to bottom, #1a1a2e, #0f0f1e);
+            color: #fff;
+            line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 60px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
         }
         
         h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            background: linear-gradient(45deg, #f77f00, #fcbf49);
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00d4ff, #7b2cbf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .subtitle {
-            text-align: center;
-            font-size: 1.3rem;
-            color: #06d6a0;
-            margin-bottom: 3rem;
+            font-size: 1.5rem;
+            color: #aaa;
+            margin-bottom: 40px;
         }
         
         .stats {
@@ -54,318 +51,230 @@
             margin: 40px 0;
         }
         
-        .stat-card {
-            background: rgba(255, 255, 255, 0.08);
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
             padding: 30px;
             border-radius: 15px;
             text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-box:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
             transition: all 0.3s;
         }
         
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: #06d6a0;
-            box-shadow: 0 8px 20px rgba(6, 214, 160, 0.2);
-        }
-        
-        .stat-value {
-            font-size: 3rem;
+        .stat-number {
+            font-size: 2.5rem;
             font-weight: bold;
-            color: #06d6a0;
+            color: #00d4ff;
+            margin-bottom: 10px;
         }
         
         .stat-label {
-            margin-top: 10px;
+            color: #aaa;
             font-size: 0.9rem;
-            opacity: 0.8;
         }
         
-        .actions {
+        .buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
-            margin-top: 50px;
+            margin: 50px 0;
+            flex-wrap: wrap;
         }
         
         .btn {
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
+            padding: 15px 35px;
             text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
             display: inline-block;
         }
         
         .btn-primary {
-            background: linear-gradient(45deg, #06d6a0, #118ab2);
-            color: white;
+            background: linear-gradient(45deg, #00d4ff, #7b2cbf);
+            color: #fff;
         }
         
         .btn-primary:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(6, 214, 160, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
         }
         
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
-            color: #eee;
+            color: #fff;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: #fcbf49;
+            background: rgba(255, 255, 255, 0.15);
         }
         
-        .features {
-            margin-top: 60px;
+        .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
         }
         
-        .feature {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #06d6a0;
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid;
+            transition: all 0.3s;
         }
         
-        .feature h3 {
-            color: #fcbf49;
-            margin-bottom: 10px;
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
         }
         
-        .feature p {
-            opacity: 0.9;
+        .card-l5 { border-left-color: #ffd700; }
+        .card-l4 { border-left-color: #00d4ff; }
+        .card-l3 { border-left-color: #9b59b6; }
+        .card-l2 { border-left-color: #e74c3c; }
+        .card-l1 { border-left-color: #2ecc71; }
+        .card-l0 { border-left-color: #3498db; }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            color: #aaa;
+            margin-bottom: 20px;
             line-height: 1.6;
         }
         
-        .emoji {
-            font-size: 2rem;
-            margin-bottom: 10px;
+        .card-link {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .card-link:hover {
+            text-decoration: underline;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+        
+        footer a {
+            color: #00d4ff;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚗 SNCALE</h1>
-        <p class="subtitle">Sistema Nacional de Centros de Aplicación para Licencias de Conducción</p>
-        <p style="text-align: center; font-size: 0.95rem; opacity: 0.8; margin-bottom: 1.5rem;">
-            <strong>CALE</strong> = Centro de <strong>A</strong>plicación para <strong>L</strong>icencias de Conducción <strong>E</strong>scuela<br>
-            🎓 Universidad Pedagógica y Tecnológica de Colombia (UPTC)
-        </p>
+        <header>
+            <h1>🚗 SNCALE</h1>
+            <p class="subtitle">Sistema Nacional de Centros de Atención al Conductor</p>
+            <p style="color: #888;">Universidad Pedagógica y Tecnológica de Colombia</p>
+        </header>
         
         <div class="stats">
-            <div class="stat-card">
-                <div class="stat-value">197</div>
-                <div class="stat-label">Nodos L4</div>
+            <div class="stat-box">
+                <div class="stat-number">$884B</div>
+                <div class="stat-label">Presupuesto Total</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-value">56</div>
-                <div class="stat-label">Principales</div>
+            <div class="stat-box">
+                <div class="stat-number">197</div>
+                <div class="stat-label">Nodos CALE</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-value">141</div>
-                <div class="stat-label">Satélites</div>
+            <div class="stat-box">
+                <div class="stat-number">2.56M</div>
+                <div class="stat-label">Evaluaciones/año</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-value">32</div>
-                <div class="stat-label">Departamentos</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">9</div>
-                <div class="stat-label">Categorías</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">2.56M</div>
-                <div class="stat-label">Capacidad/año</div>
+            <div class="stat-box">
+                <div class="stat-number">92%</div>
+                <div class="stat-label">Completitud BIM</div>
             </div>
         </div>
         
-        <div class="actions">
-            <a href="visualizacion/mapa-interactivo.html" class="btn btn-primary">
-                🗺️ Mapa L4 - Nodos Municipales
-            </a>
-            <a href="visualizacion/test-carga-datos.html" class="btn btn-secondary">
-                🧪 Diagnóstico Técnico
-            </a>
+        <div class="buttons">
+            <a href="fichas_l5/index_l5.html" class="btn btn-primary">🗺️ Dashboard Nacional L5</a>
+            <a href="visualizacion/mapa-interactivo.html" class="btn btn-secondary">📍 Mapa 197 Nodos</a>
         </div>
         
-        <!-- Navegación BIM por Niveles -->
-        <div style="margin-top: 50px; padding: 30px; background: rgba(6, 214, 160, 0.1); border-radius: 15px; border: 2px solid rgba(6, 214, 160, 0.3);">
-            <h2 style="text-align: center; color: #06d6a0; margin-bottom: 30px; font-size: 2rem;">
-                🏗️ Explorar Modelo BIM por Niveles
-            </h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                <!-- L5 - Dashboard Nacional -->
-                <div style="background: rgba(252, 191, 73, 0.15); padding: 25px; border-radius: 10px; border-left: 5px solid #fcbf49;">
-                    <h3 style="color: #fcbf49; margin-bottom: 10px; font-size: 1.4em;">🗺️ L5 - Dashboard Nacional</h3>
-                    <p style="opacity: 0.9; margin-bottom: 15px; line-height: 1.5;">Consolidación completa: 197 nodos, $884B, 2.56M eval/año</p>
-                    <div style="margin-bottom: 15px;">
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em; margin-right: 5px;">✅ 100% Completo</span>
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em;">1 dashboard</span>
-                    </div>
-                    <a href="fichas_l5/index_l5.html" style="display: inline-block; padding: 10px 20px; background: #fcbf49; color: #1a1a2e; text-decoration: none; border-radius: 6px; font-weight: 600; transition: all 0.3s;">Ver Dashboard L5 →</a>
-                </div>
-                
-                <!-- L3 - Tipos CALE -->
-                <div style="background: rgba(155, 89, 182, 0.15); padding: 25px; border-radius: 10px; border-left: 5px solid #9b59b6;">
-                    <h3 style="color: #9b59b6; margin-bottom: 10px; font-size: 1.4em;">📦 L3 - Tipos CALE</h3>
-                    <p style="opacity: 0.9; margin-bottom: 15px; line-height: 1.5;">Configuraciones completas: CALE.n_1, n_2, n_3 y satélites C2-C5</p>
-                    <div style="margin-bottom: 15px;">
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em; margin-right: 5px;">✅ 95% Completo</span>
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em;">4 fichas</span>
-                    </div>
-                    <a href="fichas_l3/BIM_L3_001.html" style="display: inline-block; padding: 10px 20px; background: #9b59b6; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; transition: all 0.3s;">Ver Fichas L3 →</a>
-                </div>
-                
-                <!-- L2 - Pistas -->
-                <div style="background: rgba(231, 76, 60, 0.15); padding: 25px; border-radius: 10px; border-left: 5px solid #e74c3c;">
-                    <h3 style="color: #e74c3c; margin-bottom: 10px; font-size: 1.4em;">🏁 L2 - Pistas</h3>
-                    <p style="opacity: 0.9; margin-bottom: 15px; line-height: 1.5;">Infraestructura vial: Pistas Clase I, II y III</p>
-                    <div style="margin-bottom: 15px;">
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em; margin-right: 5px;">✅ 100% Completo</span>
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em;">3 fichas</span>
-                    </div>
-                    <a href="fichas_l2/index_l2.html" style="display: inline-block; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; transition: all 0.3s;">Ver Índice L2 →</a>
-                </div>
-                
-                <!-- L1 - Componentes -->
-                <div style="background: rgba(39, 174, 96, 0.15); padding: 25px; border-radius: 10px; border-left: 5px solid #27ae60;">
-                    <h3 style="color: #27ae60; margin-bottom: 10px; font-size: 1.4em;">🔧 L1 - Componentes</h3>
-                    <p style="opacity: 0.9; margin-bottom: 15px; line-height: 1.5;">Ensamblajes: Pistas motos, carros, camiones y tractocamiones</p>
-                    <div style="margin-bottom: 15px;">
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em; margin-right: 5px;">✅ 100% Completo</span>
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em;">4 fichas</span>
-                    </div>
-                    <a href="fichas_l1/index_l1.html" style="display: inline-block; padding: 10px 20px; background: #27ae60; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; transition: all 0.3s;">Ver Índice L1 →</a>
-                </div>
-                
-                <!-- L0 - Atómicos -->
-                <div style="background: rgba(52, 152, 219, 0.15); padding: 25px; border-radius: 10px; border-left: 5px solid #3498db;">
-                    <h3 style="color: #3498db; margin-bottom: 10px; font-size: 1.4em;">🔬 L0 - Atómicos</h3>
-                    <p style="opacity: 0.9; margin-bottom: 15px; line-height: 1.5;">Elementos individuales: Pavimentos, drenajes, señalización, vehículos</p>
-                    <div style="margin-bottom: 15px;">
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em; margin-right: 5px;">✅ 100% Completo</span>
-                        <span style="background: rgba(46, 204, 113, 0.3); padding: 5px 12px; border-radius: 12px; font-size: 0.85em;">91 fichas</span>
-                    </div>
-                    <a href="fichas_l0/index_l0.html" style="display: inline-block; padding: 10px 20px; background: #3498db; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; transition: all 0.3s;">Ver Índice L0 →</a>
-                </div>
+        <div class="cards">
+            <div class="card card-l5">
+                <h3>🗺️ L5 - Dashboard Nacional</h3>
+                <p>Consolidación ejecutiva completa: 197 nodos, $884B presupuesto, 831 personal en 32 departamentos.</p>
+                <span class="badge">✓ 100% Completo</span>
+                <br>
+                <a href="fichas_l5/index_l5.html" class="card-link">Ver Dashboard →</a>
             </div>
             
-            <!-- Barra de progreso general -->
-            <div style="margin-top: 30px; padding: 25px; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
-                <h3 style="text-align: center; color: #fcbf49; margin-bottom: 20px;">📊 Completitud General del Modelo BIM</h3>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span style="color: #fcbf49;">L5 (Dashboard Nacional)</span>
-                            <span style="color: #fcbf49; font-weight: bold;">100%</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; overflow: hidden;">
-                            <div style="background: linear-gradient(90deg, #fcbf49 0%, #f77f00 100%); height: 100%; width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span style="color: #06d6a0;">L4 (Mapa 197 Nodos)</span>
-                            <span style="color: #06d6a0; font-weight: bold;">100%</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; overflow: hidden;">
-                            <div style="background: #06d6a0; height: 100%; width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span style="color: #9b59b6;">L3 (CALE Tipos)</span>
-                            <span style="color: #f39c12; font-weight: bold;">95%</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; overflow: hidden;">
-                            <div style="background: #9b59b6; height: 100%; width: 95%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span style="color: #e74c3c;">L2 (Pistas)</span>
-                            <span style="color: #06d6a0; font-weight: bold;">100%</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; overflow: hidden;">
-                            <div style="background: #e74c3c; height: 100%; width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span style="color: #27ae60;">L1 (Componentes)</span>
-                            <span style="color: #06d6a0; font-weight: bold;">100%</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; overflow: hidden;">
-                            <div style="background: #27ae60; height: 100%; width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span style="color: #3498db;">L0 (Atómicos)</span>
-                            <span style="color: #06d6a0; font-weight: bold;">100%</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 10px; height: 10px; overflow: hidden;">
-                            <div style="background: #3498db; height: 100%; width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div style="margin-top: 10px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                            <span style="color: #fcbf49; font-weight: bold; font-size: 1.1em;">TOTAL GENERAL</span>
-                            <span style="color: #06d6a0; font-weight: bold; font-size: 1.1em;">92%</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.15); border-radius: 10px; height: 15px; overflow: hidden;">
-                            <div style="background: linear-gradient(90deg, #06d6a0, #fcbf49); height: 100%; width: 92%;"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card card-l4">
+                <h3>📍 L4 - Nodos Municipales</h3>
+                <p>Mapa interactivo con 197 centros CALE georreferenciados: 56 principales + 141 satélites.</p>
+                <span class="badge">✓ 100% Completo</span>
+                <br>
+                <a href="visualizacion/mapa-interactivo.html" class="card-link">Ver Mapa →</a>
+            </div>
+            
+            <div class="card card-l3">
+                <h3>📦 L3 - Configuraciones CALE</h3>
+                <p>8 tipos de configuración: CALE.n_1, n_2, n_3 y satélites C2-C5 con valores unitarios.</p>
+                <span class="badge">✓ 95% Completo</span>
+                <br>
+                <a href="fichas_l3/BIM_L3_001.html" class="card-link">Ver Fichas →</a>
+            </div>
+            
+            <div class="card card-l2">
+                <h3>🏁 L2 - Pistas de Evaluación</h3>
+                <p>Infraestructura vial: Pistas Clase I, II y III según normativa vigente 2025.</p>
+                <span class="badge">✓ 100% Completo</span>
+                <br>
+                <a href="fichas_l2/index_l2.html" class="card-link">Ver Índice →</a>
+            </div>
+            
+            <div class="card card-l1">
+                <h3>🔧 L1 - Componentes</h3>
+                <p>Ensamblajes: Pistas motos A1A2, carros B1C1, camiones B2C2, tractocamiones B3C3.</p>
+                <span class="badge">✓ 100% Completo</span>
+                <br>
+                <a href="fichas_l1/index_l1.html" class="card-link">Ver Índice →</a>
+            </div>
+            
+            <div class="card card-l0">
+                <h3>⚙️ L0 - Elementos Atómicos</h3>
+                <p>91 componentes en 18 categorías: pavimentos, señalización, mobiliario, tecnología.</p>
+                <span class="badge">✓ 100% Completo</span>
+                <br>
+                <a href="fichas_l0/index_l0.html" class="card-link">Ver Catálogo →</a>
             </div>
         </div>
         
-        <p style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(255,215,0,0.1); border-left: 4px solid #FFD700; border-radius: 8px;">
-            💡 <strong>Nota:</strong> Los datos de presupuesto total ($884B) se encuentran en el <strong>Dashboard L5</strong> (nivel consolidado nacional), 
-            no en L4 (nodos individuales por municipio).
-        </p>
-        
-        <div class="features">
-            <div class="feature">
-                <div class="emoji">🗺️</div>
-                <h3>Nivel L4: Nodos Municipales</h3>
-                <p>197 centros CALE georreferenciados con coordenadas precisas en el territorio colombiano.</p>
-            </div>
-            <div class="feature">
-                <div class="emoji">🔗</div>
-                <h3>Clustering Jerárquico</h3>
-                <p>51 nodos principales coordinan 141 satélites por proximidad y capacidad operativa.</p>
-            </div>
-            <div class="feature">
-                <div class="emoji">📊</div>
-                <h3>Mapa Interactivo L4</h3>
-                <p>Interfaz dinámica con filtros por categoría (A+ a C5), búsqueda y navegación de relaciones.</p>
-            </div>
-            <div class="feature">
-                <div class="emoji">🏗️</div>
-                <h3>Modelo BIM 5D</h3>
-                <p>Arquitectura L0→L5: Componentes, Pistas, Tipos, Nodos y Dashboard Nacional.</p>
-            </div>
-            <div class="feature">
-                <div class="emoji">📍</div>
-                <h3>32 Departamentos</h3>
-                <p>Cobertura nacional con énfasis en capitales (Cat.A+/A) y municipios intermedios (B/C).</p>
-            </div>
-            <div class="feature">
-                <div class="emoji">🚗</div>
-                <h3>CALE para Licencias</h3>
-                <p>Infraestructura de evaluación vial (teoría + práctica) según normativa del MinTransporte.</p>
-            </div>
-        </div>
+        <footer>
+            <p>Modelo BIM 5D | UPTC | 
+                <a href="https://github.com/ccolombia-ui/sncale-plan-implementacion" target="_blank">GitHub</a>
+            </p>
+        </footer>
     </div>
 </body>
 </html>

@@ -1,0 +1,4999 @@
+ANEXO B Infraestructura y Equipamiento Requerido
+
+
+
+MOVILIZACIÓN UNIVERSITARIA NACIONAL PARA EL APRENDIZAJE Y LA SEGURIDAD VIALMUNAY
+
+
+
+
+
+
+
+
+
+
+TUNJA, OCTUBRE 2025
+
+
+TABLA DE CONTENIDO
+
+
+
+
+B00: INTRODUCCION
+B00.1. MARCO CONCEPTUAL BIM Estándares y Nomenclatura
+El presente anexo adopta la metodología Building Information Modeling (BIM) según:
+Estándares normativos:
+ISO 19650-1:2018 - Organization and digitization of information (gestión de información)
+ISO 19650-2:2018 - Delivery phase of assets (fase de entrega)
+ISO 16739-1:2018 - Industry Foundation Classes (IFC) - Esquema de datos
+ISO 12006-3:2022 - Building construction - Framework for object-oriented information
+PAS 1192-2:2013 - Capital/delivery phase (Reino Unido)
+Nomenclatura y serialización de datos:
+La estructuración de componentes sigue el estándar BIM-JSON (Building Information Model - JavaScript Object Notation),compatible con:
+IFC-JSON: Serialización JSON de Industry Foundation Classes
+COBie: Construction Operations Building information exchange
+BCF: BIM Collaboration Format (ISO 19650-3)
+Referencia técnica: buildingSMART International Data Dictionary (bSDD)
+B10.2 Jerarquía BIM para CALE.n_1
+La jerarquía de componentes para esta categoría se estructura en 6 niveles:
+L5: Red Nacional SNCALE
+└── L4: Instancias Municipales
+    └── L3: Variantes Especiales (CALE.n_1.+, CALE.n_1.++, etc.)
+        └── L2: Configuraciones Base (Espacios funcionales)
+            └── L1: Ensamblajes (Pistas, salas, estaciones)
+                └── L0: Componentes Atómicos (Equipamiento, mobiliario)
+
+Cantidad nacional: 20 instancias municipales (L4)Clasificación: CALE.n_1Capacidad operativa: Evaluación integral Clase I + II + III (todas las categorías de licencias de conducción)
+B10.3 DESCRIPCIÓN Y ANÁLISIS DE LA SOLUCIÓN
+Para el análisis completo de requerimientos, justificación técnica y alcance de la arquitectura de la solución, consulte ANEXO A - Sección A10: Análisis y Descripción de la Solución.
+Dicha sección contiene:
+Análisis de demanda y cobertura territorial
+Justificación de capacidades por clase de licencia
+Criterios de localización y accesibilidad
+Requisitos normativos aplicables (Resolución 20253040037125/2025)
+En resumen, el Sistema Nacional contempla CINCO categorías de infraestructura jerarquizada según capacidad de evaluación y demanda territorial.  En la siguiente tabla se resume el costo general para la implementación de estas 5 categorías, en las secciones subsiguientes los detalles de cada categoría:
+Categoría
+Cant.
+Componente Teórico
+Componente Práctico
+Vr Unit Teórico
+Vr Unit Práctico
+Vr Unit Inversión
+Vr Total
+% Total
+CALE.n_1+
+3
+CALE-T-24q + 7 satélites C2-C5
+CALE-P.C3 (Clase I+II+III)
+& (Clase II)
+243.063.465
+22.633.895.800
+22.876.959.265
+68.630.877.795
+8,06%
+CALE.n_1
+17
+CALE-T-24q + 7 satélites C2-C5
+CALE-P.C3 (Clase I+II+III)
+243.063.465
+17.068.936.100
+17.311.999.565
+294.303.992.605
+34,57%
+CALE.n_2**
+16
+CALE-T-16q
+CALE-P.C2 (Clase I+II) &
+2x(Clase I)
+200.646.497
+21.886.938.800
+22.087.585.297
+353.401.364.752
+41,51%
+CALE.n_2**
+4
+CALE-T-16q
+CALE-P.C2 (Clase I+II)
+200.646.497
+11.005.619.400
+11.206.265.897
+44.825.063.588
+5,26%
+CALE.n_3
+16
+CALE-T-16q
+CALE-P.C1 (Clase I)
+200.646.497
+5.440.659.700
+5.641.306.197
+90.260.899.152
+10,60%
+TOTAL INVERSIÓN
+
+
+
+
+
+
+851.422.197.892
+100,00%
+
+A continuación se desglosa en la metodología BIM cada uno de los tipos de CALE.
+B10 CALE.n_1 - CENTROS METROPOLITANOS (20 nodos)
+B10.1. Especificaciones Generales
+
+Capacidad: Evaluación completa Clase I + II + III (livianos, medianos, pesados)Demanda atendida: 60,000 - 120,000 eval/añoCobertura: Ciudades capitales + áreas metropolitanas principalesInfraestructura: Edificación permanente 2,400m² + pistas prácticas (1 Clase III + 0-2 Clase II + 2-4 Clase I)Personal: 32 personas/nodo (8 evaluadores prácticos, 12 teóricos, 12 administrativos)Modificadores especiales:
+CALE.n_1+: Incluye pista Clase II adicional (Ej: Bogotá Sur, Bogotá Norte, Bucaramanga)
+B10.2. Geolocalización por tipo de modificación
+
+Tipo CALE
+Cantidad
+Descripción Modificador
+Mapa de Geolocalización
+CALE.n_1+
+3
+Configuración base estándar, con Cale.n_2 adicional
+Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos
+filtrar categorías: (3) CALE.n_1+
+CALE.n_1
+17
+Configuración base estándar
+Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos
+filtrar categorías: (17) CALE.n_1
+
+Total instancias: 20 centros
+Nota: Las variantes (+, ++, *, **) indican configuraciones especiales con:
+Símbolo +: Incremento en capacidad de evaluación simultánea por Cale.n_2
+Símbolo *: Incremento en capacidad de evaluación simultánea por Cale.n_1
+
+
+B10.3. COMPONENTES Y COSTOS (L2/L1/L0)
+TABLA B10.4-A: MATRIZ DE COMPONENTES Y VALORACIÓN
+Componente
+Descripción
+Referencia BIM
+Vr. Unitario (COP)
+Cant. Variante+
+Cant. Base
+Vr. Total (COP)
+Pista Evaluación Clase III
+Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c
+L2.pista_clase_3
+$1,850,000,000
+0
+20
+$37,000,000,000
+Pista Evaluación Clase II
+Circuito para motocicletas según Art. 3.7.4.b
+L2.pista_clase_2
+$980,000,000
+0
+20
+$19,600,000,000
+Pista Evaluación Clase I
+Circuito para vehículos livianos según Art. 3.7.4.a
+L2.pista_clase_1
+$750,000,000
+0
+20
+$15,000,000,000
+Sala Evaluación Teórica (24 cubículos)
+Equipamiento completo con sistema de cómputo
+L1.sala_24_cubiculos
+$186,000,000
+0
+20
+$3,720,000,000
+Simulador Conducción Clase III
+Simulador avanzado con 6 DOF según NTC 5375
+L0.simulador_c3
+$450,000,000
+0
+40
+$18,000,000,000
+Infraestructura Civil Base
+Edificación administrativa y servicios
+L2.edificacion_admin
+$2,400,000,000
+0
+20
+$48,000,000,000
+
+CAPEX TOTAL CATEGORÍA CALE.N_1: $141,320,000,000 COP
+Notas:
+Valores en pesos colombianos (COP) a precios de 2025
+Vr. Unitario incluye suministro, instalación y puesta en marcha
+Cantidades calculadas según instancias municipales (L4) por tipo de variante
+
+B20. CALE.n_2 - CENTROS SUBREGIONALES (20 nodos)
+B20.1. Especificaciones Generales
+Capacidad: Evaluación Clase I + II (vehículos livianos y motocicletas, sin pesados)
+Demanda atendida: 15,000 - 35,000 eval/año
+Cobertura: Ciudades intermedias y centros subregionales
+Infraestructura: Edificación adecuada (arriendo) + pistas prácticas (1 Clase II + 2 Clase I)
+Personal: 18 personas/nodo (4 evaluadores prácticos, 8 teóricos, 6 administrativos)
+Modificadores especiales:
+CALE.n_2**: Configuración reforzada con pista Clase I adicional (Ej: Barbosa, Santa Fé de Antioquia, Villavicencio, Jamundí)
+CALE.n_2*: Configuración intermedia con capacidad ampliada
+B20.2. Geolocalización por tipo de modificación
+TABLA B20.2-A: DISTRIBUCIÓN DE VARIANTES CALE.N_2
+Tipo CALE
+Cantidad
+Descripción Modificador
+Mapa de Geolocalización
+CALE.n_2**
+16
+Configuración base estándar
+Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**
+CALE.n_2
+4
+Configuración base estándar
+Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2
+
+Total instancias: 20 centros
+Nota sobre variantes proyectadas: El análisis de demanda territorial identifica 4 centros candidatos a variante CALE.n_2** (Barbosa, Santa Fé de Antioquia, Villavicencio, Jamundí) que podrían requerir pista Clase I adicional según crecimiento de demanda. La implementación de estas variantes queda sujeta a validación presupuestal en fases posteriores del proyecto.
+Nota: Las variantes (+, ++, *, **) indican configuraciones especiales con:
+Símbolo +: Incremento en capacidad de evaluación simultánea por CALE.n_2
+Símbolo *: Incremento en capacidad de evaluación simultánea por CALE.n_1
+B20.3. COMPONENTES Y COSTOS (L2/L1/L0)
+TABLA B20.3-A: MATRIZ DE COMPONENTES Y VALORACIÓN
+Componente
+Descripción
+Referencia BIM
+Vr. Unitario (COP)
+Cant. Base
+Cant. **
+Vr. Total Base (COP)
+PISTA_CLASE_II
+Pista completa Clase II (B2, C2)
+L2.pista_clase_II
+Ver L2
+1
+0
+Ver detalle L2
+PISTA_CLASE_I
+Pista completa Clase I (A1, A2, B1, C1)
+L2.pista_clase_I
+Ver L2
+1
+2
+Ver detalle L2
+EDIFICACION
+Edificación adecuada (arriendo)
+L2.edificacion
+Ver L2
+1
+0
+Ver detalle L2
+CALE_TEORICO_16q
+Centro teórico 16 cubículos + áreas admin
+L2.cale_teorico_16q
+$200,646,497
+1
+0
+$4,012,929,940
+TECNOLOGIA
+Plataforma tecnológica CALE
+L2.tecnologia
+Ver L2
+1
+0
+Ver detalle L2
+CERTIFICACIONES
+Certificaciones ISO (4)
+L2.certificaciones
+Ver L2
+1
+0
+Ver detalle L2
+SEGUROS
+Seguros y pólizas
+L2.seguros
+Ver L2
+1
+0
+Ver detalle L2
+
+CAPEX PARCIAL CATEGORÍA CALE.N_2 (solo componentes valorizados): $4,012,929,940 COP
+CAPEX TOTAL ESTIMADO CATEGORÍA CALE.N_2: ~$98,500,000,000 COP (incluye componentes L2 pendientes de valorización)
+Notas:
+Valores en pesos colombianos (COP) a precios de 2025
+Vr. Unitario incluye suministro, instalación y puesta en marcha
+Cantidades calculadas según 20 instancias municipales (L4) × multiplicadores por variante
+Componentes sin valor unitario: Requieren cálculo detallado desde hojas L2 referenciadas
+Las columnas Cant. ** y Cant. * representan cantidades para variantes especiales (actualmente sin instancias asignadas)
+Fuente de datos: L3.CALE.n_2
+
+B20.4. REFERENCIAS CRUZADAS
+Anexos relacionados:
+Anexo A - Sección A20: Análisis y descripción completa de la solución CALE.n_2 (justificación técnica, demanda territorial, cobertura)
+Anexo C: Mapa BIM Interactivo - Fichas técnicas de equipamiento (componentes L0)
+
+
+B30. CALE.N_3 - CENTROS LOCALES (16 nodos)
+
+B30.1. Especificaciones Generales
+Capacidad: Evaluación Clase I únicamente (vehículos livianos)
+Demanda atendida: 6,000 - 16,000 eval/año
+Centros locales y zonas de frontera
+Infraestructura: Edificación adecuada (arriendo) + pistas prácticas (1 Clase I)
+Personal: 12 personas/nodo (2 evaluadores prácticos, 6 teóricos, 4 administrativos)
+
+B30.2. Geolocalización por tipo de modificación
+TABLA B30.2-A: DISTRIBUCIÓN DE VARIANTES CALE.N_3
+Tipo CALE
+Cantidad
+Descripción Modificador
+Mapa de Geolocalización
+CALE.n_3
+16
+Configuración base estándar
+Topología SNCALE BIM - filtrar: (16) CALE.n_3
+
+Total instancias: 16 centros
+Nota: Las variantes (+, ++, *, **) indican configuraciones especiales con:
+Símbolo +: Incremento en capacidad de evaluación simultánea por CALE.n_2
+Símbolo *: Incremento en capacidad de evaluación simultánea por CALE.n_1
+B30.3. COMPONENTES Y COSTOS (L2/L1/L0)
+TABLA B30.3-A: MATRIZ DE COMPONENTES Y VALORACIÓN
+Componente
+Descripción
+Referencia BIM
+Vr. Unitario (COP)
+Cant. Base
+Vr. Total (COP)
+PISTA_CLASE_I
+Pista completa Clase I (A1, A2, B1, C1)
+L2.pista_clase_I
+Ver L2
+16
+Ver detalle L2
+EDIFICACION
+Edificación adecuada (arriendo)
+L2.edificacion
+Ver L2
+16
+Ver detalle L2
+CALE_TEORICO_16q
+Centro teórico 16 cubículos + áreas admin
+L2.cale_teorico_16q
+$200,646,497
+16
+$3,210,343,952
+TECNOLOGIA
+Plataforma tecnológica CALE
+L2.tecnologia
+Ver L2
+16
+Ver detalle L2
+CERTIFICACIONES
+Certificaciones ISO (4)
+L2.certificaciones
+Ver L2
+16
+Ver detalle L2
+SEGUROS
+Seguros y pólizas
+L2.seguros
+Ver L2
+16
+Ver detalle L2
+
+CAPEX PARCIAL CATEGORÍA CALE.N_3 (componentes valorizados): $3,210,343,952 COP
+Notas:
+Valores en pesos colombianos (COP) a precios de 2025
+Vr. Unitario incluye suministro, instalación y puesta en marcha
+Cantidades calculadas según instancias municipales × multiplicadores por variante
+Componentes sin valor: Requieren cálculo detallado desde hojas L2 referenciadas
+Fuente de datos: L3.CALE.n_3
+
+B30.4. REFERENCIAS CRUZADAS
+Anexo A - Sección A10: Análisis y descripción de la solución CALE.n_3
+Anexo C: Anexo C: Modelo BIM (Jerarquía completa L5→L4→L3→L2→L1→L0) y Fichas técnicas de equipamiento (componentes L0)
+
+B40. SATÉLITES PERMANENTES (C2-C5)
+B40.1. Especificaciones Generales
+Capacidad: Evaluación teórica Clase I únicamente
+Demanda atendida: 500 - 3,000 eval/año por sede (según distancia a nodo)
+Cobertura: Municipios alejados de nodos principales (>50 km)
+Infraestructura: Espacio adecuado 40-60m² + equipamiento TIC básico
+Personal: 4-6 personas/sede (2 evaluadores teóricos, 2-4 administrativos)
+Especificaciones Técnicas Visualizadas
+
+
+B40.2. Geolocalización por tipo de modificación
+TABLA B40.2-A: DISTRIBUCIÓN DE SATÉLITES POR CATEGORÍA
+Tipo CALE
+Cantidad
+Descripción Modificador
+Mapa de Geolocalización
+CALE.C2
+31
+Satélites cercanos (< 50 km)
+Topología SNCALE BIM - filtrar: (31) CALE.C2
+CALE.C3
+69
+Satélites rango medio (50-100 km)
+Topología SNCALE BIM - filtrar: (69) CALE.C3
+CALE.C4
+27
+Satélites remotos (100-150 km)
+Topología SNCALE BIM - filtrar: (27) CALE.C4
+CALE.C5
+14
+Satélites muy remotos (> 150 km)
+Topología SNCALE BIM - filtrar: (14) CALE.C5
+
+Total instancias: 141 satélites
+Nota: Las categorías (C2, C3, C4, C5) indican distancia al nodo principal asignado:
+C2: Proximidad cercana (< 50 km), demanda alta (2,000-3,000 eval/año)
+C3: Distancia media (50-100 km), demanda media (1,000-2,000 eval/año)
+C4: Distancia lejana (100-150 km), demanda media-baja (500-1,000 eval/año)
+C5: Muy remotos o zonas especiales (> 150 km), demanda baja (< 500 eval/año)
+Fuente de datos: arquitectura_red_cale_nacional
+Diagrama de Distribución de Satélites por Categoría
+
+Relación Distancia vs Demanda
+
+
+B40.3. COMPONENTES Y COSTOS (L2/L1/L0)
+Nota: Todas las categorías de satélites (C2, C3, C4, C5) comparten la misma configuración base de componentes.
+Fuente de datos: L3.CALE.C2 (idéntico para C3, C4, C5)
+TABLA B40.3-A: MATRIZ DE COMPONENTES Y VALORACIÓN
+Componente
+Descripción
+Referencia BIM
+Vr. Unitario (COP)
+Cant. C2
+Cant. C3
+Cant. C4
+Cant. C5
+Total
+Vr. Total (COP)
+ESPACIO_TEORICO¹
+Sala evaluación teórica
+L2.sala_teorica_basica
+Ver L2
+31
+69
+27
+14
+141
+Ver detalle L2
+EQUIPAMIENTO_TIC
+Computadores y conectividad
+L2.equipamiento_tic
+Ver L2
+31
+69
+27
+14
+141
+Ver detalle L2
+MOBILIARIO_BASICO
+Sillas, mesas, archivadores
+L2.mobiliario_basico
+Ver L2
+31
+69
+27
+14
+141
+Ver detalle L2
+
+Notas:
+Valores en pesos colombianos (COP) a precios de 2025
+Vr. Unitario incluye suministro, instalación y puesta en marcha
+Total sedes: C2=31, C3=69, C4=27, C5=14 (141 satélites)
+Componentes "Ver L2": Desglose detallado disponible en hojas L2 referenciadas
+Variantes de configuración por categoría:
+¹ ESPACIO_TEORICO se implementa con diferentes capacidades según demanda:
+C2 (31 sedes): Configuración 4 cubículos (~50m², 4 eval. simultáneas)
+C3 (69 sedes): Configuración 3 cubículos (~40m², 3 eval. simultáneas)
+C4 (27 sedes): Configuración 2 cubículos (~30m², 2 eval. simultáneas)
+C5 (14 sedes): Configuración 2 cubículos (~30m², 2 eval. simultáneas)
+Desglose de componentes L1 y L0 disponible en Secciones B50 (L2), B60 (L1), B70 (L0).
+Fuente de datos: L3.CALE.C2 (aplicable a todas las categorías)
+Jerarquía de Componentes BIM (L3 → L2 → L1 → L0)
+
+
+
+
+
+Configuración por Categoría de Satélite
+
+
+
+B40.4. REFERENCIAS CRUZADAS
+Anexos relacionados:
+Anexo A - Sección A40: Análisis territorial y asignación de satélites a nodos principales
+Anexo C: Modelo BIM (Jerarquía completa L5→L4→L3→L2→L1→L0) y Fichas técnicas de equipamiento (componentes L0)
+Sección B50: Componentes L2 (desglose de sala_teorica_basica, equipamiento_tic, mobiliario_basico)
+Sección B60: Componentes L1 (ensamblajes que conforman cada L2)
+Sección B70: Componentes L0 (catálogo de componentes atómicos)
+Hojas L2.xxx: Detalles de componentes estructurales
+
+   
+
+B50. COMPONENTES NIVEL L2 (CONFIGURACIONES BASE)
+B50.0. Introducción a Componentes L2
+Los componentes de Nivel L2 (Configuraciones Base) representan espacios funcionales completos que se ensamblan para formar las categorías CALE (L3).
+Metodología BIM:
+L2 se compone de: Ensamblajes L1 (espacios funcionales, maniobras)
+L2 compone a: Variantes L3 (categorías CALE)
+Estándar: ISO 19650 - Building Information Modeling
+Componentes L2 documentados: 14 configuraciones base
+Mapa de trazabilidad L3→L2:
+
+
+
+Índice de componentes:
+B50.1: L2.pista_clase_I (usado en n_1, n_2, n_3)
+B50.2: L2.pista_clase_II (usado en n_1, n_2)
+B50.3: L2.pista_clase_III (usado en n_1)
+B50.4: L2.cale_teorico_24q (usado en n_1)
+B50.5: L2.cale_teorico_16q (usado en n_2)
+B50.6: L2.edificacion (usado en n_1, n_2, n_3)
+B50.7: L2.tecnologia (usado en todos)
+B50.8: L2.certificaciones (usado en todos)
+B50.9: L2.seguros (usado en todos)
+B50.10: L2.sala_teorica_basica (usado en C2-C5)
+B50.11: L2.equipamiento_tic (usado en todos)
+B50.12: L2.mobiliario_basico (usado en todos)
+B50.13: L2.sala_24_cubiculos (usado en n_1)
+B50.14: L2.sala_formacion (usado en n_1, n_2)
+
+
+B50.1. L2.PISTA_CLASE_I
+Fuente de datos: L2.pista_clase_I
+B50.1.1. Descripción
+Nombre completo: Pista de evaluación práctica para licencias Clase I (A1, A2, B1, C1) - Vehículos livianos
+Área/Capacidad: ~2,500 m² (incluye maniobras, zonas de espera, señalización)
+Normatividad: Resolución 20253040037125/2025 - Art. 3.7.4.a
+Aplicable a: CALE.n_1 (2-4 unidades), CALE.n_2 (2 unidades), CALE.n_3 (1 unidad)
+Trazabilidad (dónde se usa):
+
+
+
+
+B50.1.2. Componentes que lo forman (L1)
+TABLA B50.1-A: COMPONENTES L1 DE L2.PISTA_CLASE_I
+#
+Componente
+Descripción
+Categoría
+Tipo
+Referencia
+1
+MANIOBRA_00
+Maniobra 0: Arranque en pendiente
+A1,A2,B1,C1
+Básica
+L1.maniobra_00
+2
+MANIOBRA_01
+Maniobra 1: Estacionamiento en paralelo
+A1,A2,B1,C1
+Básica
+L1.maniobra_01
+3
+MANIOBRA_02
+Maniobra 2: Estacionamiento en batería
+A1,A2,B1,C1
+Básica
+L1.maniobra_02
+4
+MANIOBRA_03
+Maniobra 3: Cambio de carril
+A1,A2,B1,C1
+Básica
+L1.maniobra_03
+5
+MANIOBRA_04
+Maniobra 4: Giro a la derecha
+A1,A2,B1,C1
+Básica
+L1.maniobra_04
+6
+MANIOBRA_05
+Maniobra 5: Giro a la izquierda
+A1,A2,B1,C1
+Básica
+L1.maniobra_05
+7
+MANIOBRA_06
+Maniobra 6: Giro en U
+A1,A2,B1,C1
+Básica
+L1.maniobra_06
+8
+MANIOBRA_07
+Maniobra 7: Paso por glorieta
+A1,A2,B1,C1
+Básica
+L1.maniobra_07
+9
+MANIOBRA_08
+Maniobra 8: Frenado de emergencia
+A1,A2,B1,C1
+Básica
+L1.maniobra_08
+10
+MANIOBRA_09
+Maniobra 9: Reversa controlada
+A1,A2,B1,C1
+Básica
+L1.maniobra_09
+11
+MANIOBRA_10
+Maniobra 10: Estacionamiento en línea
+A1,A2,B1,C1
+Básica
+L1.maniobra_10
+12
+MANIOBRA_11
+Maniobra 11: Slalom simple
+A1,A2,B1,C1
+Básica
+L1.maniobra_11
+13
+MANIOBRA_12
+Maniobra 12: Paso por intersección
+A1,A2,B1,C1
+Básica
+L1.maniobra_12
+14
+MANIOBRA_13
+Maniobra 13: Conducción en recta
+A1,A2,B1,C1
+Básica
+L1.maniobra_13
+15
+PAVIMENTO
+Pavimento flexible asfalto
+Infraestructura
+Civil
+L0.pavimento_flexible
+16
+SEÑALIZACION
+Señalización horizontal y vertical
+Infraestructura
+Civil
+L0.señalizacion
+
+Total componentes L1: 16
+B50.1.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.1.4. Valorización
+
+Concepto
+Valor (COP)
+Total L2.pista_clase_I
+$975,000,000
+
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.1.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.1-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.2. L2.PISTA_CLASE_II
+Fuente de datos: L2.pista_clase_II
+B50.2.1. Descripción
+Nombre completo: Pista de evaluación práctica para licencias Clase II (B2, C2) - Motocicletas
+Área/Capacidad: ~1,800 m² (circuito específico para motocicletas)
+Normatividad: Resolución 20253040037125/2025 - Art. 3.7.4.b
+Aplicable a: CALE.n_1 (1-2 unidades), CALE.n_2 (1 unidad)
+B50.2.2. Componentes que lo forman (L1)
+TABLA B50.2-A: COMPONENTES L1 DE L2.PISTA_CLASE_II
+#
+Componente
+Descripción
+Categoría
+Tipo
+Referencia
+1
+MANIOBRA_14
+Maniobra 14: Maniobras con remolque
+B2,C2
+Intermedia
+L1.maniobra_14
+2
+MANIOBRA_15
+Maniobra 15: Reversa con remolque
+B2,C2
+Intermedia
+L1.maniobra_15
+3
+MANIOBRA_16
+Maniobra 16: Estacionamiento con remolque
+B2,C2
+Intermedia
+L1.maniobra_16
+4
+PAVIMENTO
+Pavimento reforzado concreto
+Infraestructura
+Civil
+L0.pavimento_reforzado
+5
+SEÑALIZACION
+Señalización horizontal y vertical
+Infraestructura
+Civil
+L0.señalizacion
+6
+INCLUYE_CLASE_I
+#ERROR!
+B2,C2
+Referencia
+L2.pista_clase_I
+
+Total componentes L1: 6
+B50.2.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.2.4. Valorización
+
+Concepto
+Valor (COP)
+Total L2.pista_clase_II
+$680,000,000
+
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.2.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.2-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.3. L2.PISTA_CLASE_III
+Fuente de datos: L2.pista_clase_III
+B50.3.1. Descripción
+Nombre completo: Pista de evaluación práctica para licencias Clase III (B3, C3) - Vehículos pesados
+Área/Capacidad: ~3,500 m² (requiere mayor área para maniobras de vehículos grandes)
+Normatividad: Resolución 20253040037125/2025 - Art. 3.7.4.c
+Aplicable a: CALE.n_1 únicamente (1 unidad)
+B50.3.2. Componentes que lo forman (L1)
+TABLA B50.3-A: COMPONENTES L1 DE L2.PISTA_CLASE_III
+#
+Componente
+Descripción
+Categoría
+Tipo
+Referencia
+1
+MANIOBRA_17
+Maniobra 17: Maniobras vehículos pesados
+B3,C3
+Avanzada
+L1.maniobra_17
+2
+MANIOBRA_18
+Maniobra 18: Reversa vehículo articulado
+B3,C3
+Avanzada
+L1.maniobra_18
+3
+MANIOBRA_19
+Maniobra 19: Maniobras en espacio reducido
+B3,C3
+Avanzada
+L1.maniobra_19
+4
+PAVIMENTO
+Pavimento especial concreto Fc=35MPa
+Infraestructura
+Civil
+L0.pavimento_especial
+5
+SEÑALIZACION
+Señalización horizontal y vertical
+Infraestructura
+Civil
+L0.señalizacion
+6
+INCLUYE_CLASE_II
++ Todas las maniobras de Clase II (14-16)
+B3,C3
+Referencia
+L2.pista_clase_II
+7
+INCLUYE_CLASE_I
++ Todas las maniobras de Clase I (0-13)
+B3,C3
+Referencia
+L2.pista_clase_I
+
+Total componentes L1: 7
+B50.3.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.3.4. Valorización
+
+Concepto
+Valor (COP)
+Total L2.pista_clase_III
+$1,850,000,000
+
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.3.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.3-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.4. L2.CALE_TEORICO_24Q
+Fuente de datos: L2.cale_teorico_24q
+B50.4.1. Descripción
+Nombre completo: Centro de evaluación teórica con 24 cubículos individuales + áreas administrativas
+Área/Capacidad: ~400 m² (24 estaciones + servidor + recepción + admin)
+Normatividad: NTC 5655 (ergonomía), ISO/IEC 27001 (seguridad información)
+Aplicable a: CALE.n_1 (20 centros metropolitanos)
+B50.4.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.4.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.4.4. Valorización
+
+Concepto
+Valor (COP)
+Total L2.cale_teorico_24q
+$243,063,465
+
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.4.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.4-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.5. L2.CALE_TEORICO_16Q
+Fuente de datos: L2.cale_teorico_16q
+B50.5.1. Descripción
+Nombre completo: Centro de evaluación teórica con 16 cubículos + áreas administrativas
+Área/Capacidad: ~280 m² (16 estaciones + servidor + recepción)
+Normatividad: NTC 5655 (ergonomía), ISO/IEC 27001 (seguridad información)
+Aplicable a: CALE.n_2 (20 centros subregionales)
+B50.5.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.5.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.5.4. Valorización
+Concepto
+Valor (COP)
+Total L2.cale_teorico_16q
+$200,646,497
+
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.5.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.5-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.6. L2.EDIFICACION
+Fuente de datos: L2.edificacion
+B50.6.1. Descripción
+Nombre completo: Edificación principal (arriendo o construcción) para centro CALE
+Área/Capacidad: Variable según categoría: n_1 (2400m²), n_2 (1600m²), n_3 (800m²)
+Normatividad: NSR-10 (Norma Sismo Resistente), NTC 4595 (accesibilidad)
+Aplicable a: Todas las categorías CALE
+B50.6.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.6.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.6.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.6.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.6-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.7. L2.TECNOLOGIA
+Fuente de datos: L2.tecnologia
+B50.7.1. Descripción
+Nombre completo: Plataforma tecnológica nacional CALE (software + licencias + soporte)
+Área/Capacidad: N/A (componente tecnológico)
+Normatividad: ISO/IEC 25010 (calidad software), GDPR adaptado (protección datos)
+Aplicable a: Todas las categorías CALE + red nacional
+B50.7.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.7.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.7.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.7.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.7-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.8. L2.CERTIFICACIONES
+Fuente de datos: L2.certificaciones
+B50.8.1. Descripción
+Nombre completo: Certificaciones ISO requeridas (ISO 9001, 27001, 14001, 45001)
+Área/Capacidad: N/A (componente administrativo)
+Normatividad: ISO 9001:2015, ISO 27001:2013, ISO 14001:2015, ISO 45001:2018
+Aplicable a: Todas las categorías CALE
+B50.8.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.8.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.8.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.8.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.8-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.9. L2.SEGUROS
+Fuente de datos: L2.seguros
+B50.9.1. Descripción
+Nombre completo: Pólizas de seguros requeridas (todo riesgo, RC, vehículos, etc.)
+Área/Capacidad: N/A (componente financiero/legal)
+Normatividad: Código de Comercio - Título V (Del Seguro)
+Aplicable a: Todas las categorías CALE
+B50.9.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.9.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.9.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.9.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.9-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.10. L2.SALA_TEORICA_BASICA
+Fuente de datos: L2.sala_teorica_basica
+B50.10.1. Descripción
+Nombre completo: Sala básica para evaluación teórica en satélites (4-8 estaciones)
+Área/Capacidad: ~60 m² (espacio reducido para satélites)
+Normatividad: NTC 5655 (ergonomía básica)
+Aplicable a: Satélites C2, C3, C4, C5
+B50.10.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.10.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.10.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.10.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.10-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.11. L2.EQUIPAMIENTO_TIC
+Fuente de datos: L2.equipamiento_tic
+B50.11.1. Descripción
+Nombre completo: Equipamiento TIC estándar (PCs, impresoras, scanners, red)
+Área/Capacidad: N/A (equipamiento distribuido)
+Normatividad: ISO/IEC 14764 (mantenimiento software)
+Aplicable a: Todas las categorías CALE
+B50.11.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.11.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.11.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.11.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.11-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.12. L2.MOBILIARIO_BASICO
+Fuente de datos: L2.mobiliario_basico
+B50.12.1. Descripción
+Nombre completo: Mobiliario básico (escritorios, sillas, archivadores)
+Área/Capacidad: N/A (equipamiento distribuido)
+Normatividad: NTC 5655 (mobiliario ergonómico)
+Aplicable a: Todas las categorías CALE
+B50.12.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.12.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.12.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.12.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.12-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.13. L2.SALA_24_CUBICULOS
+Fuente de datos: L2.sala_24_cubiculos
+B50.13.1. Descripción
+Nombre completo: Sala específica con 24 cubículos individuales (parte de CALE teórico 24q)
+Área/Capacidad: ~280 m² (solo espacio de cubículos)
+Normatividad: NTC 5655, acústica NTC 4595
+Aplicable a: CALE.n_1 como componente de L2.cale_teorico_24q
+B50.13.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.13.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.13.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.13.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.13-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.14. L2.SALA_FORMACION
+Fuente de datos: L2.sala_formacion
+B50.14.1. Descripción
+Nombre completo: Sala de formación grupal para capacitaciones (30-40 personas)
+Área/Capacidad: ~120 m² (disposición tipo aula)
+Normatividad: NTC 4595 (accesibilidad), NTC 2050 (instalaciones eléctricas)
+Aplicable a: CALE.n_1, CALE.n_2 (opcional)
+B50.14.2. Componentes que lo forman (L1)
+Error al leer hoja: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:1030627925591'.
+B50.14.3. Especificaciones Técnicas
+Requisitos generales:
+Cumplimiento normativo según Resolución 20253040037125/2025
+Estándares de construcción según NSR-10 (cuando aplique)
+Certificaciones ISO 9001 y ISO 27001
+Para detalles técnicos específicos, consultar fichas técnicas en Anexo C
+B50.14.4. Valorización
+Valorización: Ver desglose en componentes L1 y L0 referenciados
+Nota: Valores en pesos colombianos (COP) a precios de 2025
+B50.14.5. Referencias Cruzadas
+Se compone de (L1): Ver tabla B50.14-A
+Compone a (L3): Utilizado en categorías CALE según configuración
+Ver también:
+Sección B60: Detalles de componentes L1
+Anexo C: Fichas técnicas de equipamiento
+
+B50.99. CONSOLIDADO COMPONENTES L2
+TABLA B50.99-A: RESUMEN VALORIZACIÓN COMPONENTES L2
+#
+Componente L2
+Vr. Unitario (COP)
+Observaciones
+1
+L2.pista_clase_I
+$975,000,000
+Valorizado
+2
+L2.pista_clase_II
+$680,000,000
+Valorizado
+3
+L2.pista_clase_III
+$1,850,000,000
+Valorizado
+4
+L2.cale_teorico_24q
+$243,063,465
+Valorizado
+5
+L2.cale_teorico_16q
+$200,646,497
+Valorizado
+6
+L2.edificacion
+Ver componentes L1/L0
+Requiere cálculo
+7
+L2.tecnologia
+Ver componentes L1/L0
+Requiere cálculo
+8
+L2.certificaciones
+Ver componentes L1/L0
+Requiere cálculo
+9
+L2.seguros
+Ver componentes L1/L0
+Requiere cálculo
+10
+L2.sala_teorica_basica
+Ver componentes L1/L0
+Requiere cálculo
+11
+L2.equipamiento_tic
+Ver componentes L1/L0
+Requiere cálculo
+12
+L2.mobiliario_basico
+Ver componentes L1/L0
+Requiere cálculo
+13
+L2.sala_24_cubiculos
+Ver componentes L1/L0
+Requiere cálculo
+14
+L2.sala_formacion
+Ver componentes L1/L0
+Requiere cálculo
+
+Total componentes valorizados: $3,948,709,962 COP
+
+********************************
+B60. COMPONENTES L1 - ENSAMBLAJES
+
+Introducción
+Esta sección detalla los componentes de nivel L1 (Ensamblajes) organizados por bloques según su uso específico.
+Los componentes L1 representan ensamblajes funcionales que:
+Agrupan múltiples componentes atómicos L0
+Se utilizan para configurar componentes L2
+Incluyen desglose detallado de especificaciones técnicas
+Organización:
+B60.1: Pistas de evaluación práctica
+B60.2: Maniobras específicas
+B60.3: Edificaciones
+B60.4: Espacios funcionales
+B60.5: Parqueaderos
+B60.6: Tecnología
+B60.7: Servicios recurrentes
+
+B60.1. COMPONENTES L1 ESPECÍFICOS PARA PISTAS (L2.pista_*)
+Descripción: Componentes L1 utilizados exclusivamente para configuración de pistas de evaluación práctica
+Componentes en este bloque: 3
+
+
+L1.pista_clase_I
+Descripción: Pista completa Clase I (A1/A2/B1/C1) - Agregación jerárquica
+Tipo: Componente jerárquico (suma de L1 hijos)
+Fuente: L1.pista_clase_I
+TABLA B60.1-A: COMPONENTES L1 DE PISTA CLASE I
+Componente L1
+Descripción
+Cantidad
+Unidad
+Código L1
+SUBTOTAL ($)
+Pista motos A1A2 completa
+Infraestructura motocicletas ≤125cc y >125cc
+1
+glb
+L1.pista_motos_A1A2_completa
+$289.805.000
+Pista carros B1C1 completa
+Infraestructura automóviles livianos
+1
+glb
+L1.pista_carros_B1C1_completa
+$431.635.000
+
+
+
+
+SUBTOTAL L1.pista_clase_I
+$721.440.000
+
+Categorías vehiculares incluidas:
+A1: Motocicletas ≤125cc
+A2: Motocicletas >125cc
+B1: Automóviles (particulares)
+C1: Automóviles (servicio público/taxis)
+Usado en: CALE.n_1 (Metropolitanos con pistas completas)
+Nota: Este es un componente de agregación. Para detalles de componentes L0, ver B60.2 (L1.pista_motos_A1A2_completa y L1.pista_carros_B1C1_completa)
+
+L1.pista_clase_II
+Descripción: Pista completa Clase II (A1/A2/B1/B2/C1/C2) - Agregación jerárquica
+Tipo: Componente jerárquico (suma de L1 hijos)
+Fuente: L1.pista_clase_II
+TABLA B60.1-B: COMPONENTES L1 DE PISTA CLASE II
+Componente L1
+Descripción
+Cantidad
+Unidad
+Código L1
+SUBTOTAL ($)
+Pista Clase I completa
+Infraestructura motos + carros livianos
+1
+glb
+L1.pista_clase_I
+$721.440.000
+Pista camiones B2C2 completa
+Infraestructura camiones rígidos
+1
+glb
+L1.pista_camiones_B2C2_completa
+$685.950.000
+
+
+
+
+SUBTOTAL L1.pista_clase_II
+$1.407.390.000
+
+Categorías vehiculares incluidas:
+A1, A2: Motocicletas (de L1.pista_clase_I)
+B1, C1: Automóviles (de L1.pista_clase_I)
+B2: Camiones rígidos
+C2: Camiones rígidos servicio público
+Usado en: CALE con pistas hasta camiones rígidos
+Nota: Este es un componente de agregación incremental. Para detalles de componentes L0, ver B60.2 (todas las pistas completas)
+
+L1.pista_clase_III
+Descripción: Pista completa Clase III (A1/A2/B1/B2/B3/C1/C2/C3) - Agregación jerárquica
+Tipo: Componente jerárquico (suma de L1 hijos)
+Fuente: L1.pista_clase_III
+TABLA B60.1-C: COMPONENTES L1 DE PISTA CLASE III
+Componente L1
+Descripción
+Cantidad
+Unidad
+Código L1
+SUBTOTAL ($)
+Pista Clase II completa
+Infraestructura motos + carros + camiones rígidos
+1
+glb
+L1.pista_clase_II
+$1.407.390.000
+Pista tractocamiones B3C3 completa
+Infraestructura tractocamiones articulados
+1
+glb
+L1.pista_tractocamiones_B3C3_completa
+$1.192.100.000
+
+
+
+
+SUBTOTAL L1.pista_clase_III
+$2.599.490.000
+
+Categorías vehiculares incluidas:
+A1, A2: Motocicletas (de L1.pista_clase_II → L1.pista_clase_I)
+B1, C1: Automóviles (de L1.pista_clase_II → L1.pista_clase_I)
+B2, C2: Camiones rígidos (de L1.pista_clase_II)
+B3, C3: Tractocamiones articulados
+Usado en: CALE Clase III (pistas completas con todas las categorías)
+Nota: Este es un componente de agregación incremental máximo. Incluye TODAS las categorías vehiculares. Para detalles de componentes L0, ver B60.2 (todas las pistas completas)
+
+B60.2. COMPONENTES L1 PARA PISTAS COMPLETAS POR TIPO DE VEHÍCULO
+Descripción: Espacios físicos completos (infraestructura + equipamiento) para evaluación práctica organizados por categoría vehicular
+Organización: 4 componentes L1 (pistas completas con todos sus insumos L0)
+Fundamento normativo: Resolución 20253040037125 de 2025, Anexo 60
+Cambio conceptual: Las "maniobras" NO son componentes L1, son actividades/ejercicios que se realizan EN las pistas. Los L1 son los ESPACIOS FÍSICOS completos.
+
+L1.pista_motos_A1A2_completa
+Descripción: Espacio físico completo para evaluación práctica de motocicletas categorías A1 (≤125cc) y A2 (>125cc)
+Tipo de componente: Infraestructura de evaluación práctica
+Categorías vehiculares: A1 (≤125cc), A2 (>125cc)
+Fuentes: GID 303830059 a 40127666
+TABLA B60.2-A: COMPONENTES L0 DE L1.PISTA_MOTOS_A1A2_COMPLETA
+Componente L0
+Descripción
+Categoría
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Pavimento Flexible Asfalto e=12cm
+Carpeta asfáltica MDC-19 sobre base granular
+Infraestructura
+1633
+m²
+L0.IC_001
+$85.000
+$138.805.000
+Señalización Horizontal Termoplástica
+Pintura termoplástica reflectiva blanca/amarilla
+Señalización
+250
+ml
+L0.SV_001
+$45.000
+$11.250.000
+Señalización Vertical Tipo I
+Señal reglamentaria/preventiva 0.75×0.75m
+Señalización
+15
+und
+L0.SV_004
+$450.000
+$6.750.000
+Conos Reflectivos 90cm
+Conos viales reflectivos naranja
+Señalización
+45
+und
+L0.SV_003
+$85.000
+$3.825.000
+Luminaria LED 150W Poste 8m
+Luminaria vial LED
+Iluminación
+12
+und
+L0.ILU_001
+$2.850.000
+$34.200.000
+Cuneta Concreto Perimetral
+Cuneta tipo 1 sección 0.30×0.30m
+Drenaje
+210
+ml
+L0.DR_001
+$35.000
+$7.350.000
+Baranda Metálica Contención
+Defensa metálica doble onda galvanizada
+Seguridad
+95
+ml
+L0.SEG_001
+$125.000
+$11.875.000
+Kit Seguridad Evaluación
+Conos + señales + extintores + botiquín
+Seguridad
+0,5
+glb
+L0.SEG_002
+$3.500.000
+$1.750.000
+Motocicleta ≤125cc Adaptada
+Moto escuela categoría A1
+Vehículos
+2
+und
+L0.VEH_001
+$15.000.000
+$30.000.000
+Motocicleta >125cc Adaptada
+Moto escuela categoría A2
+Vehículos
+2
+und
+L0.VEH_002
+$22.000.000
+$44.000.000
+
+
+
+
+
+SUBTOTAL L1.pista_motos_A1A2_completa
+
+$289.805.000
+
+Capacidades funcionales (Maniobras normativas soportadas):
+Resolución 20253040037125 Art. 2.3.1.1 - La pista permite realizar las siguientes 7 maniobras obligatorias:
+
+Código
+Nombre
+Descripción Técnica
+Área (m)
+Normatividad
+M00
+Carreteo moto
+Desplazar moto apagada 4×5m sin motor
+4×5
+Art. 2.3.1.1.1
+M01
+Velocidad limitada + Franja estrecha
+8×5m + franja 6×0.25m a baja velocidad
+14×5
+Art. 2.3.1.1.2
+M02
+Eslalon baja velocidad
+Zigzag 5 conos c/4m (A1: 3.5m ancho / A2: 5m)
+20×3.5/5
+Art. 2.3.1.1.3
+M03
+Aceleración + Frenado
+Acelerar 21.5m + frenar en 0.5×1.3m (máx 5 seg)
+22×5
+Art. 2.3.1.1.4
+M04
+Curva cerrada derecha
+Curva 90° radio 3.5m sin apoyar pies
+7×7
+Art. 2.3.1.1.5
+M05
+Curva cerrada izquierda + Frenado
+Curva 90° + frenar 0.5×1.3m
+15×5
+Art. 2.3.1.1.6
+M06
+Curva + Frenado + Giro en U
+Combina M04, M05 y giro 180°
+25×10
+Art. 2.3.1.1.7
+
+Usado en: L2.pista_clase_I
+
+L1.pista_carros_B1C1_completa
+Descripción: Espacio físico completo para evaluación práctica de automóviles categorías B1 (particulares) y C1 (servicio público)
+Tipo de componente: Infraestructura de evaluación práctica
+Categorías vehiculares: B1 (particulares), C1 (servicio público)
+Fuentes: GID 2028076770 a 370306551
+TABLA B60.2-B: COMPONENTES L0 DE L1.PISTA_CARROS_B1C1_COMPLETA
+Componente L0
+Descripción
+Categoría
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Pavimento Rígido Concreto Fc=21MPa e=15cm
+Losa concreto hidráulico sobre subbase
+Infraestructura
+1208
+m²
+L0.IC_002
+$95.000
+$114.760.000
+Señalización Horizontal Termoplástica
+Pintura termoplástica reflectiva blanca/amarilla
+Señalización
+180
+ml
+L0.SV_001
+$45.000
+$8.100.000
+Señalización Vertical Tipo I
+Señal reglamentaria/preventiva 0.75×0.75m
+Señalización
+12
+und
+L0.SV_004
+$450.000
+$5.400.000
+Conos Reflectivos 90cm
+Conos viales reflectivos naranja
+Señalización
+35
+und
+L0.SV_003
+$85.000
+$2.975.000
+Luminaria LED 150W Poste 8m
+Luminaria vial LED
+Iluminación
+10
+und
+L0.ILU_001
+$2.850.000
+$28.500.000
+Cuneta Concreto Perimetral
+Cuneta tipo 1 sección 0.30×0.30m
+Drenaje
+165
+ml
+L0.DR_001
+$35.000
+$5.775.000
+Baranda Metálica Contención
+Defensa metálica doble onda galvanizada
+Seguridad
+75
+ml
+L0.SEG_001
+$125.000
+$9.375.000
+Kit Seguridad Evaluación
+Conos + señales + extintores + botiquín
+Seguridad
+0,5
+glb
+L0.SEG_002
+$3.500.000
+$1.750.000
+Automóvil B1/C1 Adaptado
+Vehículo escuela automóvil
+Vehículos
+3
+und
+L0.VEH_003
+$85.000.000
+$255.000.000
+
+
+
+
+
+SUBTOTAL L1.pista_carros_B1C1_completa
+
+$431.635.000
+
+Capacidades funcionales (Maniobras normativas soportadas):
+Resolución 20253040037125 Art. 2.3.1.2 - La pista permite realizar las siguientes 7 maniobras obligatorias:
+Código
+Nombre
+Descripción Técnica
+Área (m)
+Normatividad
+A07
+Arranque en pendiente
+Arranque rampa 15% sin retroceso
+25×5
+Art. 2.3.1.2.1
+A08
+Estacionamiento perpendicular
+Reversa ingreso 90° entre líneas
+16×11
+Art. 2.3.1.2.2
+A09
+Estacionamiento paralelo
+Maniobra paralelo máx 2 movimientos
+18×5
+Art. 2.3.1.2.3
+A10
+Estacionamiento en batería
+Ingreso diagonal 45° reversa
+20×8
+Art. 2.3.1.2.4
+A11
+Reversa línea recta
+Reversa 20m línea recta máx 30cm borde
+25×5
+Art. 2.3.1.2.5
+A12
+Eslalon caja
+Zigzag 5 conos en caja 40×10m
+40×10
+Art. 2.3.1.2.6
+A13
+Curva pronunciada
+Giro cerrado sin tocar líneas
+15×10
+Art. 2.3.1.2.7
+
+Usado en: L2.pista_clase_I
+
+L1.pista_camiones_B2C2_completa
+Descripción: Espacio físico completo para evaluación práctica de camiones rígidos categorías B2 (particulares) y C2 (servicio público)
+Tipo de componente: Infraestructura de evaluación práctica
+Categorías vehiculares: B2 (particulares), C2 (servicio público)
+Fuentes: GID 992876450 a 2014481843
+TABLA B60.2-C: COMPONENTES L0 DE L1.PISTA_CAMIONES_B2C2_COMPLETA
+Componente L0
+Descripción
+Categoría
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Pavimento Reforzado Concreto Fc=28MPa e=20cm
+Losa reforzada malla electrosoldada
+Infraestructura
+1850
+m²
+L0.IC_003
+$115.000
+$212.750.000
+Señalización Horizontal Termoplástica
+Pintura termoplástica reflectiva blanca/amarilla
+Señalización
+280
+ml
+L0.SV_001
+$45.000
+$12.600.000
+Señalización Vertical Tipo I
+Señal reglamentaria/preventiva 0.75×0.75m
+Señalización
+18
+und
+L0.SV_004
+$450.000
+$8.100.000
+Conos Reflectivos 90cm
+Conos viales reflectivos naranja
+Señalización
+50
+und
+L0.SV_003
+$85.000
+$4.250.000
+Luminaria LED 200W Poste 10m
+Luminaria alta potencia pesados
+Iluminación
+15
+und
+L0.ILU_002
+$3.450.000
+$51.750.000
+Drenaje Reforzado Alta Capacidad
+Sistema para cargas pesadas
+Drenaje
+240
+ml
+L0.DR_003
+$75.000
+$18.000.000
+Baranda Metálica Contención
+Defensa metálica doble onda galvanizada
+Seguridad
+120
+ml
+L0.SEG_001
+$125.000
+$15.000.000
+Kit Seguridad Evaluación
+Conos + señales + extintores + botiquín
+Seguridad
+1
+glb
+L0.SEG_002
+$3.500.000
+$3.500.000
+Camión B2/C2 Adaptado
+Camión rígido escuela
+Vehículos
+2
+und
+L0.VEH_004
+$180.000.000
+$360.000.000
+
+
+
+
+
+SUBTOTAL L1.pista_camiones_B2C2_completa
+
+$685.950.000
+
+Capacidades funcionales (Maniobras normativas soportadas):
+Resolución 20253040037125 Art. 2.3.1.3 - La pista permite realizar las siguientes maniobras obligatorias:
+Maniobras específicas B2/C2 (3 adicionales):
+Código
+Nombre
+Descripción Técnica
+Área (m)
+Normatividad
+C14
+Conducción remolque ligero
+Manejo vehículo + remolque en recta/curvas
+90×10
+Art. 2.3.1.3.1
+C15
+Reversa con remolque
+Reversa 15m con remolque acoplado
+30×10
+Art. 2.3.1.3.2
+C16
+Estacionamiento remolque
+Ubicar vehículo+remolque en zona 30cm
+35×12
+Art. 2.3.1.3.3
+
+Más: Incluye TODAS las maniobras A07-A13 (hereda de autos livianos) = 10 maniobras totales
+Usado en: L2.pista_clase_II
+
+L1.pista_tractocamiones_B3C3_completa
+Descripción: Espacio físico completo para evaluación práctica de tractocamiones articulados categorías B3 (particulares) y C3 (servicio público)
+Tipo de componente: Infraestructura de evaluación práctica
+Categorías vehiculares: B3 (particulares), C3 (servicio público)
+Fuentes: GID 668366210 a 927245040
+TABLA B60.2-D: COMPONENTES L0 DE L1.PISTA_TRACTOCAMIONES_B3C3_COMPLETA
+
+Componente L0
+Descripción
+Categoría
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Pavimento Especial Concreto Fc=35MPa e=25cm
+Losa alta resistencia vehículos pesados
+Infraestructura
+2450
+m²
+L0.IC_004
+$145.000
+$355.250.000
+Señalización Horizontal Termoplástica
+Pintura termoplástica reflectiva blanca/amarilla
+Señalización
+350
+ml
+L0.SV_001
+$45.000
+$15.750.000
+Señalización Vertical Tipo I
+Señal reglamentaria/preventiva 0.75×0.75m
+Señalización
+22
+und
+L0.SV_004
+$450.000
+$9.900.000
+Conos Reflectivos 90cm
+Conos viales reflectivos naranja
+Señalización
+60
+und
+L0.SV_003
+$85.000
+$5.100.000
+Luminaria LED 200W Poste 10m
+Luminaria alta potencia pesados
+Iluminación
+18
+und
+L0.ILU_002
+$3.450.000
+$62.100.000
+Drenaje Reforzado Alta Capacidad
+Sistema para cargas pesadas
+Drenaje
+290
+ml
+L0.DR_003
+$75.000
+$21.750.000
+Baranda Metálica Contención
+Defensa metálica doble onda galvanizada
+Seguridad
+150
+ml
+L0.SEG_001
+$125.000
+$18.750.000
+Kit Seguridad Evaluación
+Conos + señales + extintores + botiquín
+Seguridad
+1
+glb
+L0.SEG_002
+$3.500.000
+$3.500.000
+Tractocamión B3/C3 Articulado
+Tractocamión articulado escuela
+Vehículos
+2
+und
+L0.VEH_005
+$350.000.000
+$700.000.000
+
+
+
+
+
+SUBTOTAL L1.pista_tractocamiones_B3C3_completa
+
+$1.192.100.000
+
+Capacidades funcionales (Maniobras normativas soportadas):
+Resolución 20253040037125 Art. 2.3.1.4 - La pista permite realizar las siguientes maniobras obligatorias:
+Maniobras específicas B3/C3 (4 adicionales):
+
+Código
+Nombre
+Descripción Técnica
+Área (m)
+Normatividad
+T17
+Conducción articulado recto
+Control tractocamión recta 90m
+90×10
+Art. 2.3.1.4.1
+T18
+Reversa articulado
+Reversa vehículo articulado 33m
+33×10
+Art. 2.3.1.4.2
+T19
+Alineación articulado
+Alinear cabina+semiremolque diagonal
+40×12
+Art. 2.3.1.4.3
+T20
+Maniobra espacio reducido
+Girar 180° en espacio limitado
+50×15
+Art. 2.3.1.4.4
+
+Más: Incluye TODAS las maniobras A07-A13 + C14-C16 (hereda de camiones) = 14 maniobras totales
+Usado en: L2.pista_clase_III
+
+RESUMEN COMPONENTES L1 PISTAS COMPLETAS
+TABLA B60.2-E: PISTAS COMPLETAS POR CLASE
+Componente L1
+Categorías
+Pavimento (m²)
+Componentes L0 Atómicos
+Maniobras Soportadas
+Usado en
+L1.pista_motos_A1A2_completa
+A1, A2
+1633 m²
+10
+7 (M00-M06)
+L2.pista_clase_I
+L1.pista_carros_B1C1_completa
+B1, C1
+1208 m²
+9
+7 (A07-A13)
+L2.pista_clase_I
+L1.pista_camiones_B2C2_completa
+B2, C2
+1850 m²
+9
+10 (A07-A13 + C14-C16)
+L2.pista_clase_II
+L1.pista_tractocamiones_B3C3_completa
+B3, C3
+2450 m²
+9
+14 (A07-A13 + C14-C16 + T17-T20)
+L2.pista_clase_III
+
+Total componentes L1: 4 pistas completas (en lugar de 20 maniobras individuales)
+Reducción: 20 maniobras individuales → 4 espacios físicos completos = 80% simplificación conceptual
+
+NOTAS SOBRE COSTEO
+Valores Unitarios [Ver APU]:
+Los valores unitarios de cada componente L0 se encuentran en los Análisis de Precios Unitarios (APU) del Anexo C
+Cada código L0 (L0.IC_001, L0.SV_001, etc.) tiene su APU correspondiente
+Los APU incluyen: materiales, mano de obra, equipos, transporte, AIU
+Cálculo de Valores Parciales:
+Valor Parcial = Cantidad × Valor Unitario
+Ejemplo: Si L0.IC_001 tiene VU = $85.000/m² y Cantidad = 1633 m²
+Valor Parcial = 1633 m² × 
+85.000/m2=
+85.000/m
+2
+=138.805.000
+Subtotal L1:
+SUBTOTAL = Σ (Todos los Valores Parciales de la tabla)
+Este subtotal representa el costo total del componente L1 (pista completa)
+Se usa para agregar hacia arriba: L2 = Σ L1, L3 = Σ L2, etc.
+Trazabilidad de Costos:
+L0.IC_001 → APU_IC_001 (Anexo C) → Valor Unitario → Valor Parcial → SUBTOTAL L1 → TOTAL L2 → TOTAL L3 → ... → TOTAL L5
+
+
+TRAZABILIDAD (Mermaid Mindmap)
+B60.2 Pistas CompletasL1.pista_motos_A1A2_completaL1.pista_carros_B1C1_completaL1.pista_camiones_B2C2_completaL1.pista_tractocamiones_B3C3_completa1633m² pavimento flexible10 componentes L0atómicosCategorías A1/A27 maniobrasUsado en: pista_clase_I1208m² pavimento rígido9 componentes L0 atómicosCategorías B1/C17 maniobrasUsado en: pista_clase_I1850m² pavimentoreforzado9 componentes L0 atómicosCategorías B2/C210 maniobrasUsado en: pista_clase_II2450m² pavimento especial9 componentes L0 atómicosCategorías B3/C314 maniobrasUsado en: pista_clase_III
+
+ESPECIFICACIONES TÉCNICAS COMUNES
+Normatividad aplicable:
+Resolución 20253040037125 de 2025 (Anexo 60)
+Manual de Señalización Vial MINTRANSPORTE
+NTC 4744: Señalización vial
+NTC 4695: Conos y dispositivos
+Características generales:
+Superficie: Pavimento flexible (asfalto) o rígido (concreto hidráulico)
+Drenaje: Obligatorio, pendiente mínima 2%
+Zonas seguridad: 1m perimetral con barreras contención
+Señalización: Termoplástica reflectiva blanca
+Iluminación: NTC 6519-2 (si operación nocturna)
+Condiciones operativas:
+Pista seca: Obligatorio para motos A1/A2
+Horario: Hasta 18:00h (sin iluminación certificada)
+Una maniobra por vez: Sin repeticiones
+Supervisión: Desde centro de control remoto
+
+REFERENCIAS CRUZADAS
+Ver también:
+Sección B50: L2.pista_clase_I/II/III
+Sección B60.1: Componentes L1 pistas completas
+Sección B70: Componentes L0 (vehículos, señalización)
+Anexo 60 Res. 20253040037125: Especificaciones detalladas por maniobra
+
+B60.3. COMPONENTE L1 PARAMETRICO PARA EDIFICACIONES (L2.edificacion_*)
+Descripción: Componente parametrizado para infraestructura física (adecuada o construida nueva)
+Reducción lograda: 3 componentes → 1 componente parametrizado (67% reducción)
+Parámetro: Tipo de edificación (ADECUADA | NUEVA)
+
+L1.edificacion_parametrica
+Descripción: Infraestructura física configurable según estrategia (adecuación vs construcción nueva)
+Fuentes consolidadas:
+Edificación Adecuada (Adecuación infraestructura existente)
+Edificación Nueva (Construcción específica CALE)
+
+TABLA DE CONFIGURACIÓN: VARIANTES DE EDIFICACIÓN
+TABLA B60.3-A: CONFIGURACIÓN PARAMÉTRICA DE EDIFICACIONES
+Tipo
+Estrategia
+Área (m²)
+Descripción
+Usado en
+GID Fuente
+ADECUADA
+Adecuación infraestructura existente
+200
+Adaptación de edificación preexistente con drywall, instalaciones, mobiliario
+CALE.n_2, CALE.n_3, Satélites
+724436831
+NUEVA
+Construcción nueva específica CALE
+250
+Edificación permanente diseñada para operación CALE
+CALE.n_1
+356923120
+
+
+COMPONENTES L0 POR VARIANTE
+VARIANTE: ADECUADA (200 m²)
+Descripción: Adecuación de edificación preexistente para CALE Teórico
+Usado en: CALE.n_2 (subregionales), CALE.n_3 (locales), Satélites C2-C5
+TABLA B60.3-B: COMPONENTES L0 - EDIFICACIÓN ADECUADA
+
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Adecuaciones Drywall completas
+Sistema liviano paredes + cielo + piso 200m²
+1
+glb
+L0.ADEC_001
+$85.000.000
+$85.000.000
+Instalaciones eléctricas complementarias
+Red eléctrica completa edificación
+1
+glb
+L0.ELE_002
+$45.000.000
+$45.000.000
+Red y datos Cat6A
+Cableado estructurado Cat6A completo
+1
+glb
+L0.TEL_001
+$35.000.000
+$35.000.000
+Sistema CCTV interior
+8 cámaras IP + NVR + cableado
+1
+glb
+L0.TEL_002
+$28.000.000
+$28.000.000
+Control acceso biométrico
+Torniquetes + lector huella + software
+1
+glb
+L0.TEL_003
+$45.000.000
+$45.000.000
+Mobiliario completo CALE
+Conjunto mobiliario salas + oficinas
+1
+glb
+L0.MOB_005
+$75.000.000
+$75.000.000
+Equipamiento sala teórica
+Proyector + audio + tableros
+1
+glb
+L0.ACC_002
+$18.000.000
+$18.000.000
+Señalización interior
+Señalética completa + seguridad
+1
+glb
+L0.ACC_003
+$8.500.000
+$8.500.000
+
+
+
+
+SUBTOTAL L1.edificacion_parametrica (ADECUADA)
+
+$339.500.000
+
+Incluye:
+Drywall: paredes (200m²) + cielo raso (200m²) + piso LVT (200m²) + cubículos (3 und)
+Instalaciones: eléctricas + datos + CCTV + control acceso
+Mobiliario: salas teóricas + oficinas administrativas
+Equipamiento: audiovisual + señalización
+
+VARIANTE: NUEVA (250 m²)
+Descripción: Construcción nueva específica para CALE Práctico (con pistas)
+Usado en: CALE.n_1 (metropolitanos con infraestructura completa de pistas)
+TABLA B60.3-C: COMPONENTES L0 - EDIFICACIÓN NUEVA
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Edificación principal CALE
+Construcción permanente 250m²
+1
+glb
+L0.EDIF_001
+$650.000.000
+$650.000.000
+Red y datos Cat6A
+Cableado estructurado Cat6A completo
+1
+glb
+L0.TEL_001
+$35.000.000
+$35.000.000
+Sistema CCTV interior
+8 cámaras IP + NVR + cableado
+1
+glb
+L0.TEL_002
+$28.000.000
+$28.000.000
+Control acceso biométrico
+Torniquetes + lector huella + software
+1
+glb
+L0.TEL_003
+$45.000.000
+$45.000.000
+Mobiliario completo CALE
+Conjunto mobiliario salas + oficinas
+1
+glb
+L0.MOB_005
+$75.000.000
+$75.000.000
+Equipamiento sala teórica
+Proyector + audio + tableros
+1
+glb
+L0.ACC_002
+$18.000.000
+$18.000.000
+Señalización interior
+Señalética completa + seguridad
+1
+glb
+L0.ACC_003
+$8.500.000
+$8.500.000
+
+
+
+
+SUBTOTAL L1.edificacion_parametrica (NUEVA)
+
+$859.500.000
+
+
+
+
+SUBTOTAL L1.edificacion_parametrica (ADECUADA)
+
+$339.500.000
+
+Incluye:
+Edificación: estructura + mampostería + acabados (250m²) + cubículos acústicos (3 und)
+Instalaciones: eléctricas + hidráulicas (incluidas en L0.EDIF_001)
+Telecomunicaciones: datos + CCTV + control acceso
+Mobiliario: salas teóricas + oficinas administrativas
+Equipamiento: audiovisual + señalización
+Nota: Las instalaciones eléctricas e hidráulicas están incluidas en el valor de L0.EDIF_001 (construcción global).
+
+TRAZABILIDAD (Mermaid Mindmap)
+L1.edificacion_parametrica200 m²250 m²CALE.n_2CALE.n_3SatélitesCALE.n_120 centros subregionales16 centros localesC2: 31 sitiosC3: 69 sitiosC4: 27 sitiosC5: 14 sitios20 centros metropolitanos
+
+COMPONE A (Componentes L2)
+Este componente L1 es utilizado por:
+L2.edificacion (CALE.n_1): Variante NUEVA - Construcción permanente
+L2.edificacion (CALE.n_2/n_3): Variante ADECUADA - Adaptación infraestructura
+L2.adecuaciones (Satélites): Variante ADECUADA - Espacios básicos
+
+ESPECIFICACIONES TÉCNICAS
+Normatividad aplicable:
+NSR-10: Reglamento Colombiano de Construcción Sismo Resistente
+NTC 4595: Planeamiento y diseño de instalaciones eléctricas
+NTC 4702: Sistemas de cableado estructurado
+Resolución 160 de 2017: Habilitación CALE
+Características comunes:
+Altura libre mínima: 2.80m
+Iluminación: 500 lux en zonas de evaluación
+Climatización: Temperatura controlada 20-24°C
+Accesibilidad universal: NTC 6047
+Diferencias clave:
+ADECUADA: Menor inversión inicial, flexibilidad espacial, rapidez implementación
+NUEVA: Mayor durabilidad, diseño específico, mejor aislamiento acústico
+
+REFERENCIAS CRUZADAS
+Ver también:
+Sección B50: L2.edificacion (n_1, n_2, n_3), L2.adecuaciones
+Sección B60.4: Espacios funcionales interiores
+Sección B70: Componentes L0 de construcción y acabados
+
+B60.4. COMPONENTES L1 PARA ESPACIOS FUNCIONALES (L2.sala_, L2.admin_)
+Descripción: Espacios interiores operativos y administrativos
+Reducción lograda: 9 componentes → 4 componentes (3 parametrizados + 1 estándar) - 56% reducción
+
+L1.sala_informatica_parametrica
+Descripción: Sala de informática configurable según capacidad
+Parámetro: Cantidad de equipos (16q | 24q)
+Fuentes consolidadas:
+Sala Informática 16q
+Sala Informática 24q
+TABLA B60.4-A: CONFIGURACIÓN SALAS INFORMÁTICAS
+
+Capacidad
+Área (m²)
+Equipos
+Usado en
+Descripción
+16q
+60
+16
+CALE.n_2, CALE.n_3
+Sala informática nivel subregional/local
+24q
+80
+24
+CALE.n_1
+Sala informática nivel metropolitano
+
+VARIANTE: 16 EQUIPOS (16q)
+TABLA B60.4-A1: COMPONENTES L0 - SALA INFORMÁTICA 16q
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Estación de trabajo completa
+L1.estacion_trabajo (escritorio + silla + PC + monitor + accesorios)
+16
+und
+L1.estacion_trabajo
+$5.020.000
+$80.320.000
+Mobiliario aula informática
+Mesas + sillas ergonómicas complementarias
+1
+glb
+L0.MOB_006
+$25.000.000
+$25.000.000
+Switch Gigabit 48 Puertos PoE+
+Switch manageable L3 PoE+ 48p
+1
+und
+L0.TEC_006
+$8.500.000
+$8.500.000
+
+
+
+
+SUBTOTAL L1.sala_informatica_parametrica (16q)
+
+$113.820.000
+
+Nota: El espacio físico (60m²) está incluido en L1.edificacion_parametrica. Esta tabla incluye equipamiento tecnológico completo.
+VARIANTE: 24 EQUIPOS (24q)
+TABLA B60.4-A2: COMPONENTES L0 - SALA INFORMÁTICA 24q
+
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Estación de trabajo completa
+L1.estacion_trabajo (escritorio + silla + PC + monitor + accesorios)
+24
+und
+L1.estacion_trabajo
+$5.020.000
+$120.480.000
+Mobiliario aula informática
+Mesas + sillas ergonómicas complementarias
+1
+glb
+L0.MOB_006
+$25.000.000
+$25.000.000
+Switch Gigabit 48 Puertos PoE+
+Switch manageable L3 PoE+ 48p
+1
+und
+L0.TEC_006
+$8.500.000
+$8.500.000
+
+
+
+
+SUBTOTAL L1.sala_informatica_parametrica (24q)
+
+$153.980.000
+
+Nota: El espacio físico (80m²) está incluido en L1.edificacion_parametrica. Esta tabla incluye equipamiento tecnológico completo.
+
+L1.admin_parametrico
+Descripción: Módulo administrativo configurable según estructura organizacional
+Parámetro: Cantidad de oficinas (3 | 5)
+Fuentes consolidadas:
+Módulo 3 Oficinas
+Módulo 5 Oficinas
+TABLA B60.4-B: CONFIGURACIÓN MÓDULOS ADMINISTRATIVOS
+VARIANTE: BASICO_3
+TABLA B60.4-C: COMPONENTES L0 - ADMIN BÁSICO
+
+Configuración
+Oficinas
+Área Total (m²)
+Usado en
+Composición
+BASICO_3
+3
+43
+CALE.n_3, Satélites
+1 Coordinador + 2 Operaciones + Archivo
+COMPLETO_5
+5
+88
+CALE.n_1, CALE.n_2
+Director + Subdirector + 3 Coordinadores + Sala Juntas + Archivo
+
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Mobiliario oficina coordinador
+Escritorio + silla ejecutiva + archivador
+1
+set
+L0.MOB_009
+$3.800.000
+$3.800.000
+Mobiliario oficina operaciones
+Escritorio + silla operativa
+2
+set
+L0.MOB_010
+$2.500.000
+$5.000.000
+Archivo y bodega
+Archivadores + estantería metálica
+1
+set
+L0.MOB_012
+$6.000.000
+$6.000.000
+Estación de trabajo completa
+L1.estacion_trabajo (PC + monitor + accesorios)
+3
+und
+L1.estacion_trabajo
+$5.020.000
+$15.060.000
+
+
+
+
+SUBTOTAL L1.admin_parametrico (BASICO_3)
+
+$29.860.000
+
+Nota: Área total: 43m² (incluida en L1.edificacion_parametrica). Composición: 1 Coordinador + 2 Operaciones + Archivo.
+VARIANTE: COMPLETO_5
+TABLA B60.4-D: COMPONENTES L0 - ADMIN COMPLETO
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Mobiliario oficina director
+Escritorio + silla ejecutiva + archivador
+1
+set
+L0.MOB_007
+$5.500.000
+$5.500.000
+Mobiliario oficina subdirector
+Escritorio + silla + archivador
+1
+set
+L0.MOB_008
+$4.200.000
+$4.200.000
+Mobiliario oficina coordinador
+Escritorio + silla ejecutiva + archivador
+3
+set
+L0.MOB_009
+$3.800.000
+$11.400.000
+Mobiliario sala juntas
+Mesa + 8 sillas + mueble credenza
+1
+set
+L0.MOB_011
+$8.500.000
+$8.500.000
+Archivo y bodega
+Archivadores + estantería metálica
+1
+set
+L0.MOB_012
+$6.000.000
+$6.000.000
+Estación de trabajo completa
+L1.estacion_trabajo (PC + monitor + accesorios)
+5
+und
+L1.estacion_trabajo
+$5.020.000
+$25.100.000
+
+
+
+
+SUBTOTAL L1.admin_parametrico (COMPLETO_5)
+
+$60.700.000
+
+Nota: Área total: 88m² (incluida en L1.edificacion_parametrica). Composición: Director + Subdirector + 3 Coordinadores + Sala Juntas + Archivo.
+
+L1.sala_formacion
+Descripción: Sala de capacitación y formación continua (80 m²)
+Fuente: L1.sala_formacion
+TABLA B60.4-E: COMPONENTES L0 - SALA FORMACIÓN
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Sillas universitarias
+Silla paleta universitaria
+40
+und
+L0.MOB_003
+$280.000
+$11.200.000
+Tablero acrílico 3.0×1.5m
+Tablero borrable marcador
+2
+und
+L0.MOB_004
+$850.000
+$1.700.000
+Video proyector 5000 lúmenes
+Proyector WXGA 5000 ANSI
+1
+und
+L0.AV_001
+$4.500.000
+$4.500.000
+Pantalla eléctrica 4.0×3.0m
+Pantalla motorizada 4:3
+1
+und
+L0.AV_002
+$2.200.000
+$2.200.000
+Sistema audio amplificado
+Amplificador + parlantes + micrófonos
+1
+set
+L0.AV_003
+$3.800.000
+$3.800.000
+
+
+
+
+SUBTOTAL L1.sala_formacion
+
+$23.400.000
+
+Nota: El espacio físico (80m²) está incluido en L1.edificacion_parametrica. Esta tabla solo incluye mobiliario y equipamiento específico de la sala.
+Usado en: CALE.n_1, CALE.n_2 (capacitación personal y formadores)
+
+L1.sshh_completo
+Descripción: Servicios sanitarios completos (6 unidades sanitarias)
+Fuente: L1.sshh_completo
+TABLA B60.4-F: COMPONENTES L0 - SERVICIOS SANITARIOS
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Baño completo instalado
+Sanitario + lavamanos + accesorios
+6
+und
+L0.HID_002
+$2.500.000
+$15.000.000
+Construcción área sanitarios
+Mampostería + instalaciones + acabados
+12
+m²
+L0.MAT_001
+$1.850.000
+$22.200.000
+Tubería PVC + válvulas
+Sistema hidráulico sanitario
+1
+lote
+L0.HID_001
+$12.000.000
+$12.000.000
+
+
+
+
+SUBTOTAL L1.sshh_completo
+
+$49.200.000
+
+Especificaciones:
+Área construida sanitarios: 12 m² (área útil cabinas + lavamanos)
+Área total circulación: 18 m² adicionales (incluidos en L1.areas_circulacion)
+Distribución: 3 baterías H + 3 baterías M
+Incluye: Accesibilidad universal (1 batería adaptada)
+Nota: Reducción de 30m² a 12m² en área construida por optimización de diseño
+Usado en: Todos los niveles CALE (n_1, n_2, n_3)
+
+TRAZABILIDAD (Mermaid Mindmap)
+B60.4 Espacios FuncionalesL1.sala_informatica_parametricaL1.admin_parametricoL1.sala_formacionL1.sshh_completo16q: CALE.n_2/n_324q: CALE.n_13 oficinas: CALE.n_35 oficinas: CALE.n_1/n_2CALE.n_1CALE.n_2Todos los niveles
+
+COMPONENTES ELIMINADOS (sin datos asociados)
+Los siguientes componentes fueron eliminados por falta de información:
+L1.espacio_basico (sin datos)
+L1.recepcion_espera (sin datos)
+L1.auditoria (sin datos)
+
+REFERENCIAS CRUZADAS
+Ver también:
+Sección B50: L2.cale_teorico_parametrico (usa salas informáticas)
+Sección B60.3: L1.edificacion_parametrica (contiene estos espacios)
+Sección B70: Componentes L0 de mobiliario y equipamiento
+
+B60.5. COMPONENTE L1 PARAMETRICO PARA PARQUEADEROS (L2.parqueadero_*)
+Descripción: Infraestructura de estacionamiento vehicular configurable
+Reducción lograda: 2 componentes → 1 componente parametrizado (50% reducción)
+Parámetro: Capacidad de vehículos (40 | 60)
+
+L1.parqueadero_parametrico
+Descripción: Parqueadero configurable según capacidad requerida
+Fuentes consolidadas:
+Parqueadero 40 vehículos
+Parqueadero 60 vehículos
+
+TABLA DE CONFIGURACIÓN: CAPACIDADES DE PARQUEADERO
+TABLA B60.5-A: CONFIGURACIÓN PARAMÉTRICA DE PARQUEADEROS
+Capacidad
+Área (m²)
+Espacios
+Señales Vert.
+Luminarias
+Drenaje (ml)
+Usado en
+40
+1000
+40
+8
+10
+150
+CALE.n_2, CALE.n_3
+60
+1500
+60
+12
+15
+200
+CALE.n_1
+
+Relación lineal: Los componentes escalan proporcionalmente según capacidadFactor de escala: 1.5× (de 40 a 60 vehículos)
+
+COMPONENTES L0 PARAMETRIZADOS
+TABLA B60.5-B: COMPONENTES L0 - PARQUEADERO PARAMETRIZADO
+Variante 40 Vehículos
+
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Pavimento Rígido Concreto Fc=21MPa e=15cm
+Losa concreto hidráulico sobre subbase
+1000
+m²
+L0.IC_002
+$95.000
+$95.000.000
+Demarcación espacio vehicular
+Líneas demarcación parqueadero
+40
+und
+L0.SV_002
+$25.000
+$1.000.000
+Señalización Vertical Tipo I
+Señal reglamentaria/preventiva 0.75×0.75m
+8
+und
+L0.SV_004
+$450.000
+$3.600.000
+Luminaria LED 150W Poste 8m
+Luminaria vial LED
+10
+und
+L0.ILU_001
+$2.850.000
+$28.500.000
+Sistema Drenaje Pluvial
+Rejillas + tubería PVC sanitaria
+150
+ml
+L0.DR_002
+$55.000
+$8.250.000
+
+
+
+
+SUBTOTAL L1.parqueadero_parametrico (40 veh)
+
+$136.350.000
+
+Variante 60 Vehículos
+
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Pavimento Rígido Concreto Fc=21MPa e=15cm
+Losa concreto hidráulico sobre subbase
+1500
+m²
+L0.IC_002
+$95.000
+$142.500.000
+Demarcación espacio vehicular
+Líneas demarcación parqueadero
+60
+und
+L0.SV_002
+$25.000
+$1.500.000
+Señalización Vertical Tipo I
+Señal reglamentaria/preventiva 0.75×0.75m
+12
+und
+L0.SV_004
+$450.000
+$5.400.000
+Luminaria LED 150W Poste 8m
+Luminaria vial LED
+15
+und
+L0.ILU_001
+$2.850.000
+$42.750.000
+Sistema Drenaje Pluvial
+Rejillas + tubería PVC sanitaria
+200
+ml
+L0.DR_002
+$55.000
+$11.000.000
+
+
+
+
+SUBTOTAL L1.parqueadero_parametrico (60 veh)
+
+$203.150.000
+
+
+ESPECIFICACIONES TÉCNICAS
+Normatividad aplicable:
+NTC 4695: Señalización para estacionamientos
+NSR-10: Cargas de diseño para pavimentos
+NTC 6047: Accesibilidad estacionamientos
+Características comunes:
+Espacio estándar: 2.5m × 5.0m = 12.5 m²/vehículo
+Espacios accesibilidad: Mínimo 2 espacios adaptados (3.8m × 5.0m)
+Pendiente drenaje: 2% mínimo
+Iluminación: 50 lux promedio nocturno
+Demarcación: Pintura termoplástica reflectiva amarilla
+Distribución por capacidad:
+40 vehículos: Área útil 1000 m² (incluye circulación)
+60 vehículos: Área útil 1500 m² (incluye circulación)
+
+TRAZABILIDAD (Mermaid Mindmap)
+L1.parqueadero_parametricoCapacidad 40Capacidad 60CALE.n_2CALE.n_3CALE.n_120 centros subregionales16 centros locales20 centros metropolitanos
+
+COMPONE A (Componentes L2)
+Este componente L1 es utilizado por:
+L2.parqueadero (CALE.n_1): Variante 60 vehículos
+L2.parqueadero (CALE.n_2): Variante 40 vehículos
+L2.parqueadero (CALE.n_3): Variante 40 vehículos
+Nota: Los satélites (C2-C5) no incluyen parqueadero propio (dependen de infraestructura municipal existente)
+
+REFERENCIAS CRUZADAS
+Ver también:
+Sección B50: L2.parqueadero (componentes por nivel)
+Sección B70: Componentes L0 de infraestructura civil
+Anexo C: Especificaciones técnicas de pavimentos y señalización
+
+B60.6. COMPONENTES L1 PARA TECNOLOGÍA (L2.datacenter, L2.equipamiento_tic)
+Descripción: Infraestructura TIC y equipamiento tecnológico
+Reducción lograda: 9 componentes → 4 componentes (56% reducción, eliminados 6 sin datos, agregado 1 nuevo)
+
+L1.estacion_trabajo
+Descripción: Puesto de trabajo individual completo para evaluación o administrativo
+Fuente: L1.estacion_trabajo
+TABLA B60.6-A: COMPONENTES L0 - ESTACIÓN DE TRABAJO
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Escritorio ergonómico 1.20×0.60m
+Mesa trabajo melamina 25mm
+1
+und
+L0.MOB_001
+$450.000
+$450.000
+Silla ergonómica ajustable
+Silla oficina respaldo alto
+1
+und
+L0.MOB_002
+$650.000
+$650.000
+PC Desktop Core i5
+CPU i5 11gen + 8GB RAM + 256GB SSD + W11 Pro
+1
+und
+L0.TEC_001
+$2.800.000
+$2.800.000
+Monitor LED Full HD 24"
+Monitor 1920×1080 IPS 24"
+1
+und
+L0.TEC_002
+$650.000
+$650.000
+Teclado + Mouse USB
+Teclado + mouse alambricos
+1
+set
+L0.TEC_003
+$95.000
+$95.000
+Mousepad ergonómico
+Pad reposamuñecas gel
+1
+und
+L0.ACC_001
+$25.000
+$25.000
+Supresor de picos 6 tomas
+Protector sobretensiones
+1
+und
+L0.ELE_004
+$350.000
+$350.000
+
+
+
+
+SUBTOTAL L1.estacion_trabajo
+
+$5.020.000
+
+Usado en:
+Salas informáticas (16 o 24 estaciones según capacidad)
+Módulos administrativos (3 o 5 estaciones según configuración)
+Centros teóricos (estaciones evaluación)
+
+L1.datacenter_12m2
+Descripción: Centro de datos 12 m² con servidores, almacenamiento y respaldo energético
+Fuente: L1.datacenter_12m2
+TABLA B60.6-B: COMPONENTES L0 - DATACENTER
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Concreto Premezclado 3000 PSI
+Concreto estructural f'c=21MPa
+12
+m³
+L0.MAT_002
+$480.000
+$5.760.000
+Acero Estructural ASTM A36
+Perfiles metálicos estructura
+0,5
+Ton
+L0.MAT_003
+$8.500.000
+$4.250.000
+Rack Servidor 42U
+Gabinete 42U con PDU + ventilación
+2
+und
+L0.TEC_004
+$12.500.000
+$25.000.000
+Servidor HP ProLiant DL380 Gen10
+2× Xeon Gold + 64GB RAM + storage
+2
+und
+L0.TEC_005
+$45.000.000
+$90.000.000
+Switch Gigabit 48 Puertos PoE+
+Switch manageable L3 PoE+ 48p
+2
+und
+L0.TEC_006
+$8.500.000
+$17.000.000
+UPS 10kVA Doble Conversión
+Sistema alimentación ininterrumpida
+1
+und
+L0.ELE_006
+$18.500.000
+$18.500.000
+Acometida Trifásica 220V 30A
+Tablero + breakers + cableado
+1
+und
+L0.ELE_001
+$8.500.000
+$8.500.000
+Puesta Tierra Varilla 5/8"×2.4m
+Sistema puesta a tierra SPT
+1
+und
+L0.ELE_003
+$1.200.000
+$1.200.000
+Sistema HVAC Precision Datacenter
+Aire acondicionado precisión 18-22°C
+1
+und
+L0.HVAC_001
+$25.000.000
+$25.000.000
+Cámara IP Seguridad 4MP PoE
+Cámara IP domo 4MP PoE
+4
+und
+L0.TEC_009
+$1.200.000
+$4.800.000
+Sistema Detección Incendios
+Detectores de humo + alarma + rociadores
+1
+und
+L0.SEG_003
+$850.000
+$850.000
+
+
+
+
+SUBTOTAL L1.datacenter_12m2
+
+$200.860.000
+
+Especificaciones técnicas:
+Área: 12 m²
+Temperatura: 18-22°C (control precisión)
+Humedad relativa: 40-60%
+Redundancia energética: UPS + planta emergencia
+Capacidad: 2 servidores + storage + networking
+Usado en: CALE.n_1 (centros metropolitanos - operación regional)
+
+L1.tecnologia_cale
+Descripción: Plataforma tecnológica CALE completa (software + licencias + servicios cloud)
+Fuente: L1.tecnologia_cale
+TABLA B60.6-C: COMPONENTES L0 - PLATAFORMA TECNOLÓGICA
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Plataforma Tecnológica CALE completa
+Software gestión + licencias + cloud
+1
+glb
+L0.PLAT_TEC
+$180.000.000
+$180.000.000
+
+
+
+
+SUBTOTAL L1.tecnologia_cale
+
+$180.000.000
+
+Incluye:
+Software gestión evaluaciones teóricas
+Software gestión evaluaciones prácticas
+Sistema agendamiento y registro
+Portal web ciudadano
+Dashboard analítica y reporting
+Integración con RUNT
+Licencias Microsoft 365 / Google Workspace
+Hosting y servicios cloud
+Usado en: Todos los niveles CALE (centralizado en n_1, distribuido a n_2, n_3, satélites)
+
+L1.sistema_fotovoltaico_4h
+Descripción: Sistema fotovoltaico completo con respaldo de 4 horas de autonomía para edificación CALE
+Fuente: Especificación técnica Ley 1715/2014 - Energías Renovables
+Clasificación IFC: IfcSystem (tipo: ENERGY)
+TABLA B60.6-D: COMPONENTES L0 - SISTEMA FOTOVOLTAICO
+Componente L0
+Descripción
+Categoría
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+L0.ELE_007
+Panel solar fotovoltaico 550Wp
+Energías Renovables
+20
+und
+L0.ELE_007
+$850.000
+$17.000.000
+L0.ELE_008
+Inversor solar híbrido 10kW
+Energías Renovables
+1
+und
+L0.ELE_008
+$12.500.000
+$12.500.000
+L0.ELE_009
+Batería litio 5kWh
+Energías Renovables
+8
+und
+L0.ELE_009
+$8.500.000
+$68.000.000
+L0.ELE_010
+Controlador de carga solar MPPT 60A
+Energías Renovables
+1
+und
+L0.ELE_010
+$1.800.000
+$1.800.000
+L0.ELE_011
+Estructura montaje paneles solares
+Energías Renovables
+1
+glb
+L0.ELE_011
+$4.500.000
+$4.500.000
+L0.ELE_012
+Cableado DC fotovoltaico 6mm²
+Energías Renovables
+150
+ml
+L0.ELE_012
+$15.000
+$2.250.000
+
+Especificaciones técnicas:
+Capacidad instalada: 11 kWp (20 paneles × 550Wp)
+Almacenamiento: 40 kWh (8 baterías × 5kWh) - autonomía 4 horas @ 10kW consumo
+Inversor: Híbrido on-grid/off-grid 10kW con MPPT
+Tipo batería: LiFePO4 (ciclo profundo, >6000 ciclos)
+Área requerida paneles: ~35 m² (estructura inclinada)
+Vida útil: 25 años (paneles), 15 años (baterías), 10 años (inversor)
+Cálculo de autonomía:
+Consumo promedio edificación CALE: ~10 kW
+Capacidad banco baterías: 40 kWh
+Autonomía: 40 kWh ÷ 10 kW = 4 horas
+Recarga solar diaria: ~44 kWh (11 kWp × 4 horas sol promedio)
+Normatividad:
+NTC 2050 (Código Eléctrico Colombiano)
+RETIE (Reglamento Técnico de Instalaciones Eléctricas)
+Ley 1715/2014 (Integración de Energías Renovables)
+IEC 62109 (Inversores fotovoltaicos)
+IEC 62619 (Baterías de litio para aplicaciones industriales)
+Beneficios:
+Reducción 30-40% costos energéticos operacionales
+Continuidad operativa durante cortes de energía
+Cumplimiento metas sostenibilidad ambiental
+Incentivos tributarios Ley 1715/2014 (depreciación acelerada, exención IVA equipos)
+Usado en:
+L2.edificacion_principal (CALE.n_1, CALE.n_2 con edificación NUEVA)
+Opcional para CALE.n_3 y satélites según disponibilidad presupuestal
+
+COMPONENTES ELIMINADOS (sin datos asociados)
+Los siguientes componentes fueron eliminados por falta de información detallada:
+L1.conectividad (sin datos - integrado en L1.tecnologia_cale)
+L1.internet_basico (sin datos - servicio recurrente, ver B60.7)
+L1.camaras (sin datos - incluido en L1.edificacion_parametrica y L1.datacenter_12m2)
+L1.backup (sin datos - incluido en L1.datacenter_12m2)
+L1.software_cale (sin datos - consolidado en L1.tecnologia_cale)
+L1.licencias (sin datos - consolidado en L1.tecnologia_cale)
+
+REFERENCIAS CRUZADAS
+Ver también:
+Sección B50: L2.datacenter, L2.equipamiento_tic
+Sección B60.4: L1.sala_informatica_parametrica (usa L1.estacion_trabajo)
+Sección B70: Componentes L0 tecnológicos
+
+B60.7. COMPONENTES L1 PARA SERVICIOS RECURRENTES Y CERTIFICACIONES
+Descripción: Servicios operativos, pólizas y certificaciones de calidad
+Reducción lograda: 9 componentes → 2 componentes (78% reducción, eliminados 7 sin datos)
+
+L1.seguros_cale
+Descripción: Pólizas de seguros obligatorios anuales
+Fuente: L1.seguros_cale
+TABLA B60.7-A: COMPONENTES L0 - SEGUROS
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Paquete seguros obligatorios
+RC Extracontractual + Accidentes Personales
+1
+año
+L0.SEG_100
+$45.000.000
+$45.000.000
+
+
+
+
+SUBTOTAL L1.seguros_cale
+
+$45.000.000
+
+
+Especificaciones:
+Cobertura RC: Mínimo COP $500.000.000
+Cobertura accidentes: Según dotación vehicular del centro
+Renovación: Anual anticipada
+Vigencia: Requisito operacional permanente
+Incluye: Seguro RC Extracontractual + Seguro Accidentes Personales
+Usado en: Todos los niveles CALE (n_1, n_2, n_3) - No aplica satélites C2-C5
+
+L1.certificaciones_cale
+Descripción: Certificaciones ISO del Sistema de Gestión Integrado (SGI)
+Fuente: L1.certificaciones_cale
+TABLA B60.7-B: COMPONENTES L0 - CERTIFICACIONES ISO
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Paquete certificaciones ISO
+ISO 9001 + 14001 + 45001 + 27001
+1
+cert
+L0.CERT_ISO
+$95.000.000
+$95.000.000
+
+
+
+
+SUBTOTAL L1.certificaciones_cale
+
+$95.000.000
+
+Especificaciones:
+Auditorías: Anuales (seguimiento) + Trianuales (recertificación)
+Organismo certificador: Acreditado por ONAC
+Alcance: Red Nacional SNCALE completa
+Requisito: Habilitación y operación continua
+Incluye: ISO 9001 (Calidad) + ISO 14001 (Ambiental) + ISO 45001 (SST) + ISO 27001 (Seguridad Información)
+Usado en: Nivel corporativo (aplica a toda la red SNCALE)
+Nota: Estos servicios deben presupuestarse como OPEX (gastos operacionales) en modelo financiero, con valores específicos por municipio y centro.
+
+REFERENCIAS CRUZADAS
+Ver también:
+Sección B50: L2.servicios_operativos
+Anexo A: Modelo financiero OPEX
+Anexo E: Normatividad y requisitos de habilitación
+
+B60.8. COMPONENTES L1 OBLIGATORIOS POR NORMATIVIDAD
+Descripción: Espacios y zonas requeridos por Resolución 20253040037125
+Componentes agregados: 6 componentes normativos (antes faltantes)
+
+L1.recepcion_sala_espera
+Descripción: Área de recepción y espera de aspirantes
+Fundamento: Resolución 20253040037125 Art. 1.1.1 literal b) y Art. 2.1.1 literal c)
+TABLA B60.8-A: COMPONENTES L0 - RECEPCIÓN Y ESPERA
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Counter recepción CALE
+Mostrador 2.5×0.8m + silla operativa
+1
+set
+L0.MOB_RECEPCION
+$3.200.000
+$3.200.000
+Sillas tandem sala espera
+Sillas tandem 3-5 puestos metálicas
+8
+und
+L0.MOB_SILLAS_ESPERA
+$1.450.000
+$11.600.000
+Señalización interior
+Señalética informativa + turnos
+1
+glb
+L0.ACC_003
+$8.500.000
+$8.500.000
+
+
+
+
+SUBTOTAL L1.recepcion_sala_espera
+
+$23.300.000
+
+Especificaciones:
+Área sugerida: 30-50 m² (incluida en L1.edificacion_parametrica)
+Capacidad: 24-40 personas en espera simultánea (8 tandem × 3-5 puestos)
+Ubicación: Acceso principal edificación
+Iluminación: NTC 6519-1 (500 lux)
+Accesibilidad: Rampas + señalización universal
+Usado en: Todos los CALE (prueba teórica Y práctica)
+
+L1.zona_administrativa
+Descripción: Oficinas administrativas y operativas
+Fundamento: Resolución 20253040037125 Nota 1 Art. 1.1.1 y Nota 3 Art. 2.1.1
+TABLA B60.8-B: COMPONENTES L0 - ZONA ADMINISTRATIVA
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Mobiliario oficina coordinador
+Escritorio + silla ejecutiva + archivador
+1
+set
+L0.MOB_009
+$3.800.000
+$3.800.000
+Mobiliario oficina operaciones
+Escritorio + silla operativa
+1
+set
+L0.MOB_010
+$2.500.000
+$2.500.000
+Estación supervisión pruebas teóricas
+PC + 2 monitores + software monitoreo
+1
+set
+L0.SALA_CONTROL_TEORICO
+$6.500.000
+$6.500.000
+Estación de trabajo completa
+L1.estacion_trabajo (PC + monitor + accesorios)
+2
+und
+L1.estacion_trabajo
+$5.020.000
+$10.040.000
+
+
+
+
+SUBTOTAL L1.zona_administrativa
+
+$22.840.000
+
+Especificaciones:
+Área total: 40-60 m² según clase CALE (incluida en L1.edificacion_parametrica)
+Composición: 1 Coordinador + 1 Operaciones + 1 Control Teórico + 2 puestos adicionales
+Conectividad: Red datos Cat6A (incluida en L1.edificacion_parametrica)
+Usado en: Todos los CALE (requerido para operación)
+
+L1.archivo_documentacion
+Descripción: Área de archivo y almacenamiento documental
+Fundamento: Resolución 20253040037125 Nota 1 Art. 1.1.1
+TABLA B60.8-C: COMPONENTES L0 - ARCHIVO
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Estantería archivo rodante
+Sistema archivo móvil alto tránsito
+10
+ml
+L0.ARCHIVO_ACTIVO
+$850.000
+$8.500.000
+Escritorio ergonómico 1.20×0.60m
+Mesa trabajo consulta documentos
+1
+und
+L0.MOB_001
+$450.000
+$450.000
+Silla ergonómica ajustable
+Silla oficina respaldo alto
+2
+und
+L0.MOB_002
+$650.000
+$1.300.000
+
+
+
+
+SUBTOTAL L1.archivo_documentacion
+
+$10.250.000
+
+Especificaciones:
+Área mínima: 8-12 m² (incluida en L1.edificacion_parametrica)
+Capacidad: 10 metros lineales de estantería archivo rodante
+Conservación: Mínimo 5 años (trazabilidad procedimientos)
+Protección: Extintores + humedad controlada
+Acceso: Restringido personal autorizado
+Usado en: Todos los CALE
+
+L1.almacenamiento_articulos
+Descripción: Área almacenamiento artículos personales no permitidos en evaluación
+Fundamento: Resolución 20253040037125 Nota 1 Art. 1.1.1 y Nota 3 Art. 2.1.1
+TABLA B60.8-D: COMPONENTES L0 - ALMACENAMIENTO
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Locker metálico 12 puertas
+Casillero metálico 12 compartimientos
+5
+und
+L0.LOCKERS_ASPIRANTES
+$1.800.000
+$9.000.000
+Sillas universitarias
+Silla paleta universitaria (banco vestidor)
+6
+und
+L0.MOB_003
+$280.000
+$1.680.000
+
+
+
+
+SUBTOTAL L1.almacenamiento_articulos
+
+$10.680.000
+
+Especificaciones:
+Capacidad: 60 compartimientos (5 lockers × 12 puertas c/u)
+Ubicación: Previo ingreso a salas evaluación
+Prohibido ingresar: Celulares, smartwatch, audífonos, apuntes
+Supervisión: Cámara CCTV (incluida en L1.edificacion_parametrica)
+Usado en: Área teórica Y área práctica
+
+L1.zona_control_pruebas_practicas
+Descripción: Centro de control y supervisión de pruebas prácticas
+Fundamento: Resolución 20253040037125 Art. 2.1.1 literal b)
+TABLA B60.8-E: COMPONENTES L0 - CENTRO CONTROL PRÁCTICAS
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Centro control pruebas prácticas
+Workstation + 4-6 monitores + NVR + software
+1
+set
+L0.SALA_CONTROL_PRACTICO
+$35.000.000
+$35.000.000
+Monitor LED 43" videowall
+Pantalla LED bisel delgado para muro
+8
+und
+L0.MONITOR_VIDEOWALL
+$2.800.000
+$22.400.000
+Estación de trabajo completa
+L1.estacion_trabajo para operadores
+3
+und
+L1.estacion_trabajo
+$5.020.000
+$15.060.000
+
+
+
+
+SUBTOTAL L1.zona_control_pruebas_practicas
+
+$72.460.000
+
+Especificaciones:
+Área: 15-20 m² (incluida en L1.edificacion_parametrica)
+Videowall: 8 monitores LED 43" configuración 4×2 para seguimiento pistas
+Funciones: Supervisar + procesar + organizar + asegurar + conservar datos
+Conectividad: Fibra óptica a cámaras pista
+Redundancia: UPS + respaldo energético (incluido en L1.datacenter_12m2)
+Operación: 24/7 durante horario evaluaciones
+Usado en: CALE Clase I, II, III (pruebas prácticas)
+
+L1.areas_circulacion
+Descripción: Pasillos, rampas y zonas de circulación interna/externa
+Fundamento: Resolución 20253040037125 Nota 1 Art. 1.1.1 (basado NTC 4595)
+TABLA B60.8-F: COMPONENTES L0 - CIRCULACIONES
+Componente L0
+Descripción
+Cantidad
+Unidad
+Código L0
+Valor Unitario ($)
+Valor Parcial ($)
+Pasillos interiores edificación
+Corredor interno ancho mín 1.50m
+80
+ml
+L0.PASILLO_INTERNO
+$185.000
+$14.800.000
+Rampa acceso universal
+Rampa pendiente máx 8% + pasamanos
+12
+ml
+L0.RAMPA_ACCESIBILIDAD
+$850.000
+$10.200.000
+Escalera emergencia
+Escalera evacuación protegida
+8
+ml
+L0.ESCALERA_EMERGENCIA
+$1.450.000
+$11.600.000
+Circulaciones exteriores
+Andenes + caminos peatonales
+150
+m²
+L0.CIRCULACION_EXTERNA
+$145.000
+$21.750.000
+
+
+
+
+SUBTOTAL L1.areas_circulacion
+
+$58.350.000
+
+Especificaciones:
+Normatividad: NTC 4595 (edificaciones), NTC 6047 (accesibilidad)
+Iluminación: 200 lux mínimo
+Señalización: Flechas direccionales + evacuación
+Usado en: Todos los CALE (requerimiento constructivo)
+
+RESUMEN COMPONENTES OBLIGATORIOS AGREGADOS
+TABLA B60.8-G: SÍNTESIS NORMATIVA
+Componente L1
+Fundamento Legal
+Área aprox.
+Categoría
+L1.recepcion_sala_espera
+Art. 1.1.1 b) y 2.1.1 c)
+30-50 m²
+Recepción
+L1.zona_administrativa
+Nota 1 Art. 1.1.1
+40-60 m²
+Administración
+L1.archivo_documentacion
+Nota 1 Art. 1.1.1
+8-12 m²
+Archivo
+L1.almacenamiento_articulos
+Nota 1 Art. 1.1.1
+10-15 m²
+Almacenamiento
+L1.zona_control_pruebas_practicas
+Art. 2.1.1 b)
+15-20 m²
+Control
+L1.areas_circulacion
+Nota 1 (NTC 4595)
+15-20% área total
+Circulación
+
+Total área administrativa/apoyo agregada: ~150-200 m² (además de áreas evaluación)
+
+REFERENCIAS CRUZADAS
+Ver también:
+Resolución 20253040037125: Artículos 1.1.1 y 2.1.1 (instalaciones)
+Sección B60.3: L1.edificacion_parametrica (contiene estos espacios)
+Sección B70: Componentes L0 mobiliario y equipamiento
+
+Referencias Cruzadas
+Jerarquía BIM:
+L3: Variantes Especiales (CALE.n_1, CALE.n_2, etc.)
+ └─ L2: Configuraciones Base (pistas, salas, edificación)
+    └─ L1: ENSAMBLAJES ← Este nivel
+       └─ L0: Componentes Atómicos
+
+
+RESUMEN DE SIMPLIFICACIÓN B60
+Reducción total lograda: 55 componentes → 18 componentes (67% reducción)
+Detalle por bloque:
+Bloque
+Descripción
+Antes
+Después
+Reducción
+B60.1
+Pistas evaluación
+3
+3
+0% (mantener herencia)
+B60.2
+Maniobras
+20
+1
+95%
+B60.3
+Edificaciones
+3
+1
+67%
+B60.4
+Espacios funcionales
+9
+4
+56%
+B60.5
+Parqueaderos
+2
+1
+50%
+B60.6
+Tecnología
+9
+4
+56% (agregado sistema fotovoltaico)
+B60.7
+Servicios recurrentes
+9
+2
+78%
+TOTAL
+Componentes L1
+55
+18
+67%
+
+Componentes parametrizados creados:
+✅ L1.maniobra_parametrica (parámetro: código 00-19)
+✅ L1.edificacion_parametrica (parámetro: ADECUADA | NUEVA)
+✅ L1.sala_informatica_parametrica (parámetro: 16q | 24q)
+✅ L1.admin_parametrico (parámetro: 3 | 5 oficinas)
+✅ L1.parqueadero_parametrico (parámetro: 40 | 60 vehículos)
+Componentes estándar mantenidos:
+✅ L1.pista_clase_I/II/III (herencia incremental)
+✅ L1.sala_formacion
+✅ L1.sshh_completo
+✅ L1.estacion_trabajo
+✅ L1.datacenter_12m2
+✅ L1.tecnologia_cale
+✅ L1.seguros_cale
+✅ L1.certificaciones_cale
+Componentes eliminados (sin datos):
+Total eliminado: 24 componentes vacíos o sin información detallada
+
+Elaborado por: UPTC - Equipo BIMFecha: Octubre 2025Versión: 3.0 (Simplificación Parametrizada)
+
+****************************B70. CATÁLOGO DE COMPONENTES L0 - COMPONENTES ATÓMICOS
+Introducción
+Esta sección presenta el catálogo completo de componentes atómicos (Nivel L0) del Sistema Nacional de Centros de Enseñanza Automovilística (SNCALE).
+Los componentes L0 representan el nivel más detallado de la jerarquía BIM, correspondiente a elementos individuales, materiales, equipos y servicios que no se descomponen en sub-elementos dentro del alcance del proyecto.
+Jerarquía BIM
+L5: Red Nacional (197 sitios)
+ └─ L4: Instancias Municipales
+    └─ L3: Variantes Especiales (CALE.n_1, CALE.n_2, CALE.n_3, C2-C5)
+       └─ L2: Configuraciones Base (pistas, edificación, centros teóricos)
+          └─ L1: Ensamblajes (maniobras, espacios, tecnología)
+             └─ L0: COMPONENTES ATÓMICOS ← Este nivel
+
+
+Estructura del Catálogo
+El catálogo se organiza en las siguientes categorías principales:
+L0.1 - Infraestructura Civil
+L0.2 - Señalización y Seguridad Vial
+L0.3 - Edificaciones y Acabados
+L0.4 - Instalaciones
+L0.5 - Mobiliario
+L0.6 - Tecnología y Equipamiento
+L0.7 - Vehículos
+L0.8 - Seguros y Certificaciones
+L0.9 - Elementos de Circulación y Accesibilidad
+Cada componente incluye:
+BIM_ID: Identificador único BIM secuencial (BIM_L0_001 a BIM_L0_086)
+Nota importante: Este es el identificador simplificado para visualización en tablas markdown
+Cada componente L0 cumple con estándar JSON-BIM completo que incluye identificadores múltiples:
+guid: UUID v4 único según ISO 16739-1:2024 (IFC)
+code: Código L0 interno (ej: L0.ELE_007)
+classification.code: Clase IFC (ej: IfcSolarDevice, IfcPavement, IfcElectricAppliance)
+camacol_code: Clasificación CAMACOL Colombia
+unspsc_code: Clasificación UNSPSC internacional
+Referencia estándar: Ver C:\shemayel\ESTANDAR_JSON_BIM_CALE.md
+Código L0: Identificador funcional del componente (usado como code en JSON-BIM)
+Componente: Nombre del componente
+Descripción: Especificación técnica detallada
+Unidad: Unidad de medida (m², ml, und, glb, set, etc.)
+Normatividad: Normas técnicas y regulatorias aplicables (NTC, ISO, INVIAS, etc.)
+Valor Unitario (COP): Precio unitario en pesos colombianos
+Referencia APU: Código del Análisis de Precios Unitarios asociado
+Ficha Técnica: Enlace a documentación técnica complementaria
+Usado en: Referencias a componentes L1 que utilizan este L0
+
+L0.1 - INFRAESTRUCTURA CIVIL
+Pavimentos y Vías
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_001
+L0.IC_001
+Pavimento flexible asfalto e=12cm
+Carpeta asfáltica MDC-19 sobre base granular
+m²
+INVIAS Art. 450
+$85.000
+APU_IC_001
+[Ver ficha]
+L1.pista_motos_A1A2_completa
+BIM_L0_002
+L0.IC_002
+Pavimento rígido concreto Fc=21MPa e=15cm
+Losa concreto hidráulico sobre subbase
+m²
+INVIAS Art. 500, NSR-10
+$95.000
+APU_IC_002
+[Ver ficha]
+L1.pista_carros_B1C1_completa, L1.parqueadero_*
+BIM_L0_003
+L0.IC_003
+Pavimento reforzado concreto Fc=28MPa e=20cm
+Losa reforzada malla electrosoldada
+m²
+INVIAS Art. 501
+$115.000
+APU_IC_003
+[Ver ficha]
+L1.pista_camiones_B2C2_completa
+BIM_L0_004
+L0.IC_004
+Pavimento especial concreto Fc=35MPa e=25cm
+Losa alta resistencia vehículos pesados
+m²
+INVIAS Art. 502
+$145.000
+APU_IC_004
+[Ver ficha]
+L1.pista_tractocamiones_B3C3_completa
+
+Drenajes
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_005
+L0.DR_001
+Cuneta concreto perimetral
+Cuneta tipo 1 sección 0.30×0.30m
+ml
+NTC 4509
+$35.000
+APU_DR_001
+[Ver ficha]
+L1.pista_clase_, L1.parqueadero_
+BIM_L0_006
+L0.DR_002
+Sistema drenaje pluvial
+Rejillas + tubería PVC sanitaria
+ml
+NTC 1762
+$55.000
+APU_DR_002
+[Ver ficha]
+L1.parqueadero_*
+BIM_L0_007
+L0.DR_003
+Drenaje reforzado alta capacidad
+Sistema para cargas pesadas
+ml
+NTC 4509
+$75.000
+APU_DR_003
+[Ver ficha]
+L1.pista_clase_II/III
+
+
+L0.2 - SEÑALIZACIÓN Y SEGURIDAD VIAL
+Señalización Horizontal
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_008
+L0.SV_001
+Señalización horizontal termoplástica
+Pintura termoplástica reflectiva blanca/amarilla
+ml
+NTC 4744, Manual Señalizacion MINTRANSPORTE
+$45.000
+APU_SV_001
+[Ver ficha]
+L1.pista_*
+BIM_L0_009
+L0.SV_002
+Demarcación espacio vehicular
+Líneas demarcación parqueadero
+und
+NTC 4695
+$25.000
+APU_SV_002
+[Ver ficha]
+L1.parqueadero_*
+
+Señalización Vertical y Equipamiento
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_010
+L0.SV_003
+Conos reflectivos 90cm
+Conos viales reflectivos naranja
+und
+NTC 4695
+$85.000
+APU_SV_003
+[Ver ficha]
+L1.pista_*
+BIM_L0_011
+L0.SV_004
+Señalización vertical Tipo I
+Señal reglamentaria/preventiva 0.75×0.75m
+und
+NTC 4744
+$450.000
+APU_SV_004
+[Ver ficha]
+L1.pista_, L1.parqueadero_
+bn
+Seguridad Pasiva
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_012
+L0.SEG_001
+Baranda metálica contención
+Defensa metálica doble onda galvanizada
+ml
+INVIAS Art. 640
+$125.000
+APU_SEG_001
+[Ver ficha]
+L1.pista_*
+BIM_L0_013
+L0.SEG_002
+Kit seguridad evaluación
+Conos + señales + extintores + botiquín
+glb
+Res. 160/2017
+$3.500.000
+APU_SEG_002
+[Ver ficha]
+L1.pista_*
+BIM_L0_014
+L0.SEG_003
+Sistema detección incendios
+Detectores de humo + alarma + rociadores
+und
+NTC 2885, NFPA 72
+$850.000
+APU_SEG_003
+[Ver ficha]
+L1.datacenter_12m2
+
+
+L0.3 - EDIFICACIONES Y ACABADOS
+Construcción y Estructura
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario 
+(COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_015
+L0.EDIF_001
+Edificación principal CALE
+Construcción permanente 250 m²
+glb
+NSR-10, NTC 4595
+$650.000.000
+APU_EDIF_001
+[Ver ficha]
+L1.edificacion_parametrica (NUEVA)
+BIM_L0_016
+L0.MAT_001
+Construcción área sanitarios
+Mampostería + instalaciones + acabados
+m²
+NSR-10
+$1.850.000
+APU_MAT_001
+[Ver ficha]
+L1.sshh_completo
+BIM_L0_017
+L0.MAT_002
+Concreto premezclado 3000 PSI
+Concreto estructural f'c=21MPa
+m³
+NTC 3318
+$480.000
+APU_MAT_002
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_018
+L0.MAT_003
+Acero estructural ASTM A36
+Perfiles metálicos estructura
+Ton
+NSR-10 Título F
+$8.500.000
+APU_MAT_003
+[Ver ficha]
+L1.datacenter_12m2
+
+Adecuaciones y Acabados
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_019
+L0.ADEC_001
+Adecuaciones Drywall completas
+Sistema liviano paredes + cielo + piso
+glb
+NTC 4017
+$85.000.000
+APU_ADEC_001
+[Ver ficha]
+L1.edificacion_parametrica (ADECUADA)
+BIM_L0_020
+L0.ADEC_002
+Drywall paredes y divisiones
+Paneles yeso 1/2" + perfilería metálica
+m²
+NTC 4017
+$155.000
+APU_ADEC_002
+[Ver ficha]
+L1.edificacion_parametrica
+BIM_L0_021
+L0.ADEC_003
+Cielo raso suspendido
+Cielo raso modular 0.60×0.60m
+m²
+NTC 4017
+$65.000
+APU_ADEC_003
+[Ver ficha]
+L1.edificacion_parametrica
+BIM_L0_022
+L0.ADEC_004
+Piso vinílico LVT
+Piso tipo LVT tráfico comercial
+m²
+NTC 1252
+$125.000
+APU_ADEC_004
+[Ver ficha]
+L1.edificacion_parametrica
+BIM_L0_023
+L0.ADEC_005
+Cubículos evaluación
+Cabinas individuales aislamiento acústico
+und
+NTC 4610
+$4.500.000
+APU_ADEC_005
+[Ver ficha]
+L1.edificacion_parametrica
+
+
+L0.4 - INSTALACIONES
+Instalaciones Eléctricas
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_024
+L0.ELE_001
+Acometida trifásica 220V 30A
+Tablero + breakers + cableado
+und
+NTC 2050, RETIE
+$8.500.000
+APU_ELE_001
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_025
+L0.ELE_002
+Instalaciones eléctricas complementarias
+Red eléctrica completa edificación
+glb
+NTC 2050
+$45.000.000
+APU_ELE_002
+[Ver ficha]
+L1.edificacion_parametrica
+BIM_L0_026
+L0.ELE_003
+Puesta tierra varilla 5/8"×2.4m
+Sistema puesta a tierra SPT
+und
+RETIE
+$1.200.000
+APU_ELE_003
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_027
+L0.ELE_004
+Supresor de picos 6 tomas
+Protector sobretensiones
+und
+NTC 2050
+$350.000
+APU_ELE_004
+[Ver ficha]
+L1.estacion_trabajo
+BIM_L0_028
+L0.ELE_006
+UPS 10kVA doble conversión
+Sistema alimentación ininterrumpida
+und
+IEEE 519
+$18.500.000
+APU_ELE_006
+[Ver ficha]
+L1.datacenter_12m2
+Energías Renovables
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_029
+L0.ELE_007
+Panel solar fotovoltaico 550Wp
+Panel monocristalino PERC 550W
+und
+NTC 2050, RETIE, Ley 1715/2014
+$850.000
+APU_ELE_007
+[Ver ficha]
+L1.sistema_fotovoltaico_4h
+BIM_L0_030
+L0.ELE_008
+Inversor solar híbrido 10kW
+Inversor on-grid/off-grid con MPPT
+und
+NTC 2050, RETIE, IEC 62109
+$12.500.000
+APU_ELE_008
+[Ver ficha]
+L1.sistema_fotovoltaico_4h
+BIM_L0_031
+L0.ELE_009
+Batería litio 5kWh
+Batería LiFePO4 ciclo profundo
+und
+NTC 2050, IEC 62619
+$8.500.000
+APU_ELE_009
+[Ver ficha]
+L1.sistema_fotovoltaico_4h
+BIM_L0_032
+L0.ELE_010
+Controlador de carga solar MPPT 60A
+Controlador MPPT con display
+und
+NTC 2050, IEC 62109
+$1.800.000
+APU_ELE_010
+[Ver ficha]
+L1.sistema_fotovoltaico_4h
+BIM_L0_033
+L0.ELE_011
+Estructura montaje paneles solares
+Estructura aluminio inclinación ajustable
+glb
+NSR-10, RETIE
+$4.500.000
+APU_ELE_011
+[Ver ficha]
+L1.sistema_fotovoltaico_4h
+BIM_L0_034
+L0.ELE_012
+Cableado DC fotovoltaico 6mm²
+Cable solar UV resistente 1000V
+ml
+NTC 2050, RETIE
+$15.000
+APU_ELE_012
+[Ver ficha]
+L1.sistema_fotovoltaico_4h
+
+Iluminación
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_035
+L0.ILU_001
+Luminaria LED 150W poste 8m
+Luminaria vial LED
+und
+NTC 900, NTC 6519-2
+$2.850.000
+APU_ILU_001
+[Ver ficha]
+L1.pista_clase_I, L1.parqueadero_*
+BIM_L0_036
+L0.ILU_002
+Luminaria LED 200W poste 10m
+Luminaria alta potencia pesados
+und
+NTC 900
+$3.450.000
+APU_ILU_002
+[Ver ficha]
+L1.pista_clase_II/III
+
+Telecomunicaciones y Datos
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_040
+L0.HVAC_001
+Sistema HVAC precision datacenter
+Aire acondicionado precisión 18-22°C
+und
+ASHRAE 90.1
+$25.000.000
+APU_HVAC_001
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_041
+L0.HID_001
+Tubería PVC + válvulas
+Sistema hidráulico sanitario
+lote
+NTC 1762
+$12.000.000
+APU_HID_001
+[Ver ficha]
+L1.sshh_completo
+BIM_L0_042
+L0.HID_002
+Baño completo instalado
+Sanitario + lavamanos + accesorios
+und
+NTC 920
+$2.500.000
+APU_HID_002
+[Ver ficha]
+L1.sshh_completo
+
+Mecánicas (HVAC e Hidráulicas)
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_040
+L0.HVAC_001
+Sistema HVAC precision datacenter
+Aire acondicionado precisión 18-22°C
+und
+ASHRAE 90.1
+$25.000.000
+APU_HVAC_001
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_041
+L0.HID_001
+Tubería PVC + válvulas
+Sistema hidráulico sanitario
+lote
+NTC 1762
+$12.000.000
+APU_HID_001
+[Ver ficha]
+L1.sshh_completo
+BIM_L0_042
+L0.HID_002
+Baño completo instalado
+Sanitario + lavamanos + accesorios
+und
+NTC 920
+$2.500.000
+APU_HID_002
+[Ver ficha]
+L1.sshh_completo
+
+
+L0.5 - MOBILIARIO
+Mobiliario Académico
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_037
+L0.MOB_001
+Escritorio ergonómico 1.20×0.60m
+Mesa trabajo melamina 25mm
+und
+NTC 5655
+$450.000
+APU_MOB_001
+[Ver ficha]
+L1.estacion_trabajo
+BIM_L0_038
+L0.MOB_002
+Silla ergonómica ajustable
+Silla oficina respaldo alto
+und
+NTC 5655
+$650.000
+APU_MOB_002
+[Ver ficha]
+L1.estacion_trabajo
+BIM_L0_039
+L0.MOB_003
+Sillas universitarias
+Silla paleta universitaria
+und
+NTC 4730
+$280.000
+APU_MOB_003
+[Ver ficha]
+L1.sala_formacion
+BIM_L0_040
+L0.MOB_004
+Tablero acrílico 3.0×1.5m
+Tablero borrable marcador
+und
+NTC 4731
+$850.000
+APU_MOB_004
+[Ver ficha]
+L1.sala_formacion
+BIM_L0_041
+L0.MOB_005
+Mobiliario completo CALE
+Conjunto mobiliario salas + oficinas
+glb
+NTC 5655
+$75.000.000
+APU_MOB_005
+[Ver ficha]
+L1.edificacion_parametrica
+BIM_L0_042
+L0.MOB_006
+Mobiliario aula informática
+Mesas + sillas ergonómicas
+glb
+NTC 5655
+$25.000.000
+APU_MOB_006
+[Ver ficha]
+L1.sala_informatica_parametrica
+
+Mobiliario Administrativo
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_043
+L0.MOB_007
+Mobiliario oficina director
+Escritorio + silla ejecutiva + archivador
+set
+NTC 5655
+$5.500.000
+APU_MOB_007
+[Ver ficha]
+L1.admin_parametrico (5 ofi)
+BIM_L0_044
+L0.MOB_008
+Mobiliario oficina subdirector
+Escritorio + silla + archivador
+set
+NTC 5655
+$4.200.000
+APU_MOB_008
+[Ver ficha]
+L1.admin_parametrico (5 ofi)
+BIM_L0_045
+L0.MOB_009
+Mobiliario oficina coordinador
+Escritorio + silla + archivador
+set
+NTC 5655
+$3.800.000
+APU_MOB_009
+[Ver ficha]
+L1.admin_parametrico, L1.zona_administrativa
+BIM_L0_046
+L0.MOB_010
+Mobiliario oficina operaciones
+Escritorio + silla operativa
+set
+NTC 5655
+$2.500.000
+APU_MOB_010
+[Ver ficha]
+L1.admin_parametrico (3 ofi), L1.zona_administrativa
+BIM_L0_047
+L0.MOB_011
+Mobiliario sala juntas
+Mesa + 8 sillas + mueble credenza
+set
+NTC 5655
+$8.500.000
+APU_MOB_011
+[Ver ficha]
+L1.admin_parametrico (5 ofi)
+BIM_L0_048
+L0.MOB_012
+Archivo y bodega
+Archivadores + estantería metálica
+set
+NTC 2050
+$6.000.000
+APU_MOB_012
+[Ver ficha]
+L1.admin_parametrico
+
+Mobiliario Recepción y Espera
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_049
+L0.MOB_RECEPCION
+Counter recepción CALE
+Mostrador 2.5×0.8m + silla operativa
+set
+NTC 5655
+$3.200.000
+APU_MOB_RECEPCION
+[Ver ficha]
+L1.recepcion_sala_espera
+BIM_L0_050
+L0.MOB_SILLAS_ESPERA
+Sillas tandem sala espera
+Sillas tandem 3-5 puestos metálicas
+und
+NTC 4730
+$1.450.000
+APU_MOB_SILLAS_ESPERA
+[Ver ficha]
+L1.recepcion_sala_espera
+
+Mobiliario Almacenamiento
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_051
+L0.LOCKERS_ASPIRANTES
+Locker metálico 12 puertas
+Casillero metálico 12 compartimientos
+und
+NTC 2050
+$1.800.000
+APU_LOCKERS_ASPIRANTES
+[Ver ficha]
+L1.almacenamiento_articulos
+BIM_L0_052
+L0.ARCHIVO_ACTIVO
+Estantería archivo rodante
+Sistema archivo móvil alto tránsito
+ml
+NTC 2050
+$850.000
+APU_ARCHIVO_ACTIVO
+[Ver ficha]
+L1.archivo_documentacion
+BIM_L0_053
+L0.ARCHIVADOR_VERTICAL
+Archivador vertical 4 gavetas
+Archivador metálico tamaño oficio
+und
+NTC 2050
+$1.200.000
+APU_ARCHIVADOR_VERTICAL
+[Ver ficha]
+L1.archivo_documentacion
+
+
+L0.6 - TECNOLOGÍA Y EQUIPAMIENTO
+Equipos de Cómputo
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_054
+L0.TEC_001
+PC Desktop Core i5
+CPU i5 11gen + 8GB RAM + 256GB SSD + W11 Pro
+und
+ISO/IEC 14764
+$2.800.000
+APU_TEC_001
+[Ver ficha]
+L1.estacion_trabajo
+BIM_L0_055
+L0.TEC_002
+Monitor LED Full HD 24"
+Monitor 1920×1080 IPS 24"
+und
+ISO/IEC 9241
+$650.000
+APU_TEC_002
+[Ver ficha]
+L1.estacion_trabajo
+BIM_L0_056
+L0.TEC_003
+Teclado + Mouse USB
+Teclado + mouse alambricos
+set
+ISO/IEC 9995
+$95.000
+APU_TEC_003
+[Ver ficha]
+L1.estacion_trabajo
+
+Equipamiento Audiovisual
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_057
+L0.AV_001
+Video proyector 5000 lúmenes
+Proyector WXGA 5000 ANSI
+und
+ISO/IEC 61947-1
+$4.500.000
+APU_AV_001
+[Ver ficha]
+L1.sala_formacion
+BIM_L0_058
+L0.AV_002
+Pantalla eléctrica 4.0×3.0m
+Pantalla motorizada 4:3
+und
+-
+$2.200.000
+APU_AV_002
+[Ver ficha]
+L1.sala_formacion
+BIM_L0_059
+L0.AV_003
+Sistema audio amplificado
+Amplificador + parlantes + micrófonos
+set
+IEC 60268
+$3.800.000
+APU_AV_003
+[Ver ficha]
+L1.sala_formacion
+
+Infraestructura Datacenter
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_060
+L0.TEC_004
+Rack servidor 42U
+Gabinete 42U con PDU + ventilación
+und
+TIA-942
+$12.500.000
+APU_TEC_004
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_061
+L0.TEC_005
+Servidor HP ProLiant DL380 Gen10
+2× Xeon Gold + 64GB RAM + storage
+und
+ISO/IEC 27001
+$45.000.000
+APU_TEC_005
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_062
+L0.TEC_006
+Switch Gigabit 48 Puertos PoE+
+Switch manageable L3 PoE+ 48p
+und
+IEEE 802.3af/at
+$8.500.000
+APU_TEC_006
+[Ver ficha]
+L1.datacenter_12m2
+BIM_L0_063
+L0.TEC_009
+Cámara IP Seguridad 4MP PoE
+Cámara IP domo 4MP PoE
+und
+ONVIF Profile S
+$1.200.000
+APU_TEC_009
+[Ver ficha]
+L1.datacenter_12m2, L1.edificacion_*
+
+Centro Control y Monitoreo
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_064
+L0.SALA_CONTROL_TEORICO
+Estación supervisión pruebas teóricas
+PC + 2 monitores + software monitoreo
+set
+ISO/IEC 27001
+$6.500.000
+APU_SALA_CONTROL_TEORICO
+[Ver ficha]
+L1.zona_administrativa
+BIM_L0_065
+L0.SALA_CONTROL_PRACTICO
+Centro control pruebas prácticas
+Workstation + 4-6 monitores + NVR + software
+set
+ISO/IEC 27001, Res. 20253040037125 Art. 2.1.1 b)
+$35.000.000
+APU_SALA_CONTROL_PRACTICO
+[Ver ficha]
+L1.zona_control_pruebas_practicas
+BIM_L0_066
+L0.MONITOR_VIDEOWALL
+Monitor LED 43" videowall
+Pantalla LED bisel delgado para muro
+und
+ISO/IEC 9241
+$2.800.000
+APU_MONITOR_VIDEOWALL
+[Ver ficha]
+L1.zona_control_pruebas_practicas
+
+Plataforma Tecnológica
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_067
+L0.PLAT_TEC
+Plataforma tecnológica CALE completa
+Software gestión + licencias + cloud
+glb
+ISO/IEC 25010
+$180.000.000
+APU_PLAT_TEC
+[Ver ficha]
+L1.tecnologia_cale
+
+Accesorios
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_068
+L0.ACC_001
+Mousepad ergonómico
+Pad reposamuñecas gel
+und
+NTC 5655
+$25.000
+APU_ACC_001
+[Ver ficha]
+L1.estacion_trabajo
+BIM_L0_069
+L0.ACC_002
+Equipamiento sala teórica
+Proyector + audio + tableros
+glb
+-
+$18.000.000
+APU_ACC_002
+[Ver ficha]
+L1.edificacion_parametrica
+BIM_L0_070
+L0.ACC_003
+Señalización interior
+Señalética completa + seguridad
+glb
+NTC 1461
+$8.500.000
+APU_ACC_003
+[Ver ficha]
+L1.edificacion_parametrica
+
+
+L0.7 - VEHÍCULOS
+Vehículos Motos
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_071
+L0.VEH_001
+Motocicleta ≤125cc adaptada
+Moto escuela categoría A1
+und
+Res. 160/2017
+$15.000.000
+APU_VEH_001
+[Ver ficha]
+L1.pista_motos_A1A2_completa
+BIM_L0_072
+L0.VEH_002
+Motocicleta >125cc adaptada
+Moto escuela categoría A2
+und
+Res. 160/2017
+$22.000.000
+APU_VEH_002
+[Ver ficha]
+L1.pista_motos_A1A2_completa
+
+Vehículos Livianos
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_073
+L0.VEH_003
+Automóvil B1/C1 adaptado
+Vehículo escuela automóvil
+und
+Res. 160/2017
+$85.000.000
+APU_VEH_003
+[Ver ficha]
+L1.pista_carros_B1C1_completa
+
+Vehículos Pesados
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_074
+L0.VEH_004
+Camión B2/C2 adaptado
+Camión rígido escuela
+und
+Res. 160/2017
+$180.000.000
+APU_VEH_004
+[Ver ficha]
+L1.pista_camiones_B2C2_completa
+BIM_L0_075
+L0.VEH_005
+Tractocamión B3/C3 articulado
+Tractocamión articulado escuela
+und
+Res. 160/2017
+$350.000.000
+APU_VEH_005
+[Ver ficha]
+L1.pista_tractocamiones_B3C3_completa
+
+
+L0.8 - SEGUROS Y CERTIFICACIONES
+Seguros
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_076
+L0.SEG_100
+Paquete seguros obligatorios
+RC + Accidentes Personales
+año
+Código Comercio
+$45.000.000
+APU_SEG_100
+[Ver ficha]
+L1.seguros_cale
+
+Certificaciones
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_077
+L0.CERT_ISO
+Paquete certificaciones ISO
+ISO 9001 + 14001 + 45001 + 27001
+cert
+ISO/IEC 17021
+$95.000.000
+APU_CERT_ISO
+[Ver ficha]
+L1.certificaciones_cale
+
+
+L0.9 - ELEMENTOS DE CIRCULACIÓN Y ACCESIBILIDAD
+Circulaciones Horizontales
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_078
+L0.PASILLO_INTERNO
+Pasillos interiores edificación
+Corredor interno ancho mín 1.50m
+ml
+NTC 4595, NTC 6047, Res. 20253040037125 Nota 1
+$185.000
+APU_PASILLO_INTERNO
+[Ver ficha]
+L1.areas_circulacion
+BIM_L0_079
+L0.CIRCULACION_EXTERNA
+Circulaciones exteriores
+Andenes + caminos peatonales
+m²
+NTC 4279, NTC 6047
+$145.000
+APU_CIRCULACION_EXTERNA
+[Ver ficha]
+L1.areas_circulacion
+
+Circulaciones Verticales
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_080
+L0.RAMPA_ACCESIBILIDAD
+Rampa acceso universal
+Rampa pendiente máx 8% + pasamanos
+ml
+NTC 6047, Ley 361/1997, Res. 20253040037125 Nota 1
+$850.000
+APU_RAMPA_ACCESIBILIDAD
+[Ver ficha]
+L1.areas_circulacion
+BIM_L0_081
+L0.ESCALERA_INTERNA
+Escalera principal
+Escalera concreto/metálica huella 28cm contrahuella 18cm
+ml
+NSR-10 K.3.3, NTC 1700
+$1.200.000
+APU_ESCALERA_INTERNA
+[Ver ficha]
+L1.areas_circulacion
+BIM_L0_082
+L0.ESCALERA_EMERGENCIA
+Escalera emergencia
+Escalera evacuación protegida
+ml
+NSR-10 J.4, NTC 1700
+$1.450.000
+APU_ESCALERA_EMERGENCIA
+[Ver ficha]
+L1.areas_circulacion
+
+Elementos de Accesibilidad
+
+BIM_ID
+Código
+Componente
+Descripción
+Unidad
+Normatividad
+Valor Unitario (COP)
+Referencia APU
+Ficha Técnica
+Usado en
+BIM_L0_080
+L0.RAMPA_ACCESIBILIDAD
+Rampa acceso universal
+Rampa pendiente máx 8% + pasamanos
+ml
+NTC 6047, Ley 361/1997, Res. 20253040037125 Nota 1
+$850.000
+APU_RAMPA_ACCESIBILIDAD
+[Ver ficha]
+L1.areas_circulacion
+BIM_L0_081
+L0.ESCALERA_INTERNA
+Escalera principal
+Escalera concreto/metálica huella 28cm contrahuella 18cm
+ml
+NSR-10 K.3.3, NTC 1700
+$1.200.000
+APU_ESCALERA_INTERNA
+[Ver ficha]
+L1.areas_circulacion
+BIM_L0_082
+L0.ESCALERA_EMERGENCIA
+Escalera emergencia
+Escalera evacuación protegida
+ml
+NSR-10 J.4, NTC 1700
+$1.450.000
+APU_ESCALERA_EMERGENCIA
+[Ver ficha]
+L1.areas_circulacion
+
+
+Referencias Cruzadas
+
+Jerarquía Superior:
+Sección B60: Componentes L1 (Ensamblajes) que utilizan estos componentes L0
+Sección B50: Componentes L2 (configuraciones base)
+Documentación Complementaria:
+Anexo C: Modelo BIM (Jerarquía completa L5→L4→L3→L2→L1→L0) y Fichas técnicas de equipamiento (componentes L0)
+
+RESUMEN DEL CATÁLOGO
+Total componentes L0 identificados: 91 componentes atómicos (BIM_L0_001 a BIM_L0_091)
+Distribución por categoría:
+Categoría
+BIM_ID Range
+Cantidad
+% Total
+L0.1 - Infraestructura Civil
+BIM_L0_001 - BIM_L0_007
+7
+7.7%
+L0.2 - Señalización y Seguridad
+BIM_L0_008 - BIM_L0_014
+7
+7.7%
+L0.3 - Edificaciones y Acabados
+BIM_L0_015 - BIM_L0_023
+9
+9.9%
+L0.4 - Instalaciones
+BIM_L0_024 - BIM_L0_042
+19
+20.9%
+L0.5 - Mobiliario
+BIM_L0_043 - BIM_L0_059
+17
+18.7%
+L0.6 - Tecnología y Equipamiento
+BIM_L0_060 - BIM_L0_076
+17
+18.7%
+L0.7 - Vehículos
+BIM_L0_077 - BIM_L0_081
+5
+5.5%
+L0.8 - Seguros y Certificaciones
+BIM_L0_082 - BIM_L0_083
+2
+2.2%
+L0.9 - Circulación y Accesibilidad
+BIM_L0_084 - BIM_L0_091
+8
+8.8%
+TOTAL
+-
+91
+100%
+
+Componentes agregados en esta versión:
+Por Sostenibilidad y Energías Renovables (Ley 1715/2014):
+L0.ELE_007: Panel solar fotovoltaico 550Wp (NUEVO v1.5 - componente atómico)
+L0.ELE_008: Inversor solar híbrido 10kW (NUEVO v1.5 - componente atómico)
+L0.ELE_009: Batería litio 5kWh (NUEVO v1.5 - componente atómico)
+L0.ELE_010: Controlador de carga solar MPPT 60A (NUEVO v1.5 - componente atómico)
+L0.ELE_011: Estructura montaje paneles solares (NUEVO v1.5 - componente atómico)
+L0.ELE_012: Cableado DC fotovoltaico 6mm² (NUEVO v1.5 - componente atómico)
+Nota: Estos 6 componentes L0 se ensamblan en L1.sistema_fotovoltaico_4h (a definir en B60)
+Por Normatividad Obligatoria (Res. 20253040037125):
+L0.MOB_RECEPCION: Counter recepción
+L0.MOB_SILLAS_ESPERA: Sillas sala espera
+L0.LOCKERS_ASPIRANTES: Lockers para aspirantes
+L0.ARCHIVO_ACTIVO: Archivo rodante
+L0.ARCHIVADOR_VERTICAL: Archivadores verticales
+L0.SALA_CONTROL_TEORICO: Centro control teórico
+L0.SALA_CONTROL_PRACTICO: Centro control práctico
+L0.MONITOR_VIDEOWALL: Monitores videowall
+L0.PASILLO_INTERNO: Pasillos internos
+L0.CIRCULACION_EXTERNA: Circulaciones externas
+L0.RAMPA_ACCESIBILIDAD: Rampas accesibles
+L0.ESCALERA_INTERNA: Escaleras principales
+L0.ESCALERA_EMERGENCIA: Escaleras emergencia
+L0.PASAMANOS: Pasamanos
+L0.PISO_TACTIL: Pisos podotáctiles
+L0.SEÑALIZACION_BRAILLE: Señalización braille
+Nota: Los componentes marcados como EXTRA_### en las hojas de cálculo requieren revisión y asignación de códigos definitivos según categoría.
+
+Elaborado por: UPTC - Equipo BIMFecha: Octubre 2025Versión: 1.5 (Catálogo L0 completo con Estándar JSON-BIM Internacional)
+Cambios en v1.5:
+✅ AGREGADOS: 6 componentes L0 atómicos para sistema fotovoltaico (Ley 1715/2014)
+L0.ELE_007: Panel solar fotovoltaico 550Wp - Clasificación IFC: IfcSolarDevice
+L0.ELE_008: Inversor solar híbrido 10kW - Clasificación IFC: IfcEnergyConversionDevice
+L0.ELE_009: Batería litio 5kWh - Clasificación IFC: IfcElectricStorageDevice
+L0.ELE_010: Controlador de carga solar MPPT 60A - Clasificación IFC: IfcElectricAppliance
+L0.ELE_011: Estructura montaje paneles solares - Clasificación IFC: IfcElementAssembly
+L0.ELE_012: Cableado DC fotovoltaico 6mm² - Clasificación IFC: IfcCableSegment
+Valor total estimado sistema completo: ~$30.000.000 COP (componentes + instalación)
+Normatividad: NTC 2050, RETIE, Ley 1715/2014, IEC 62109, IEC 62619
+Importante: Estos L0s se ensamblarán en L1.sistema_fotovoltaico_4h (nivel ensamblaje)
+✅ ACTUALIZADO: Total componentes L0: 91 (antes 85) - incremento neto: +6 componentes
+✅ DOCUMENTADO: Cumplimiento con estándar JSON-BIM según C:\shemayel\ESTANDAR_JSON_BIM_CALE.md
+Cada BIM_ID simplificado mapea a estructura completa con múltiples identificadores:
+guid (UUID v4 único ISO 16739-1:2024)
+code (Código L0 interno)
+classification.code (Clase IFC)
+camacol_code (Clasificación CAMACOL Colombia)
+unspsc_code (Clasificación UNSPSC internacional)
+⏳ PENDIENTE: Integración de valores reales desde Google Sheets (GID 2038851941)
+⏳ PENDIENTE: Generación de archivos JSON-BIM completos por componente
+⏳ PENDIENTE: Referencias SECOP/CAMACOL para algunos componentes
+Cambios en v1.4:
+✅ Agregada columna BIM_ID (BIM_L0_001 a BIM_L0_085) a todos los componentes
+✅ Agregada columna Valor Unitario (COP) con valores de referencia
+✅ Agregada columna Referencia APU para trazabilidad de costos
+✅ Agregada columna Ficha Técnica para documentación complementaria
+

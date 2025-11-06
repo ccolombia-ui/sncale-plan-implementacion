@@ -1,0 +1,1770 @@
+Modelo IO - Sistema Nacional de CALEs Teórico/Prácticos
+MOVILIZACIÓN UNIVERSITARIA NACIONAL PARA EL APRENDIZAJE Y LA SEGURIDAD VIALMUNAY/ALEIA
+
+
+TABLA DE CONTENIDOS
+
+
+Lista de Anexos
+Anexo A: Plataformas Tecnológicas
+Anexo B: Especificaciones CALE Teórico Práctico
+Anexo C: Fichas Técnicas
+
+
+PARTE I: MARCO ESTRATÉGICO Y CONCEPTUAL
+1.0 Resumen Ejecutivo
+
+1.1 Propósito y Mandato a la Academia
+El presente Plan Maestro Técnico define la hoja de ruta para implementar el Sistema Nacional de Centros de Apoyo Logístico de Evaluación (SNCALE) bajo el modelo de la Alianza MUNAY. En respuesta a la crisis de salud pública por la siniestralidad vial, la Ley 2251 de 2022 asigna a las Instituciones de Educación Superior (IES) públicas la responsabilidad de transformar la evaluación de conductores. Este documento articula nuestra solución integral —académica, técnica y financiera— para cumplir este mandato con un estándar de excelencia y rigor sin precedentes.
+1.2 El Problema de Salud Pública y el Mandato Normativo a la Academia
+Colombia enfrenta una crisis de salud pública derivada de la siniestralidad vial, con indicadores que exigen una intervención estructural inmediata en el proceso de licenciamiento. La Ley 2251 de 2022 y la Resolución 20253040037125 establecen un nuevo paradigma, transfiriendo la responsabilidad de evaluar la idoneidad de los nuevos conductores a las IES públicas. Este mandato reconoce que la solución no es meramente logística, sino fundamentalmente educativa y ética. Las universidades aliadas están llamadas a liderar esta transformación, aportando su capacidad académica y su legitimidad social para garantizar que solo conductores competentes transiten por las vías del país.
+1.3 La Solución Conjunta: Un Ecosistema de Valor Diferenciado
+La Universidad Pedagógica y Tecnológica de Colombia (UPTC) ratifica su compromiso con la implementación y administración de la red de Centros de Apoyo Logístico y de Evaluación (CALE). Este compromiso se sustenta en un estricto código de profesionalismo técnico, rigor académico y cumplimiento normativo.
+Para garantizar el éxito y la sostenibilidad del proyecto, la UPTC activará su capacidad institucional a través de:
+Recurso Humano de Alto Nivel: Asignará personal cualificado en áreas académica (ingeniería y pedagogía), técnica, administrativa y financiera para liderar la gestión, asegurar la calidad y operar diariamente los CALE.
+Autonomía Financiera: Utilizará su potestad de autogestión para garantizar el flujo de recursos económicos y operativos, mediante la apropiación de fondos propios, la exploración de alianzas estratégicas con actores públicos y privados, y el uso de figuras legales y financieras vigentes.
+El objetivo principal de esta movilización institucional es asegurar la implementación eficaz, la operación oportuna y el mantenimiento de los más altos estándares de calidad en el servicio de evaluación de conductores, contribuyendo así al fortalecimiento de la seguridad vial y la estandarización de las competencias de conducción en Colombia.
+Es importante señalar que les UPTC asegura la conceptualización proyecto en fase 3 de ejecución, lo que implica el diseño completo de los blueprint tal como se describe en el presente documento.
+1.4 Estrategia de Implementación
+La implementación nacional de los Centros de Apoyo Logístico para la Evaluación Teórica de Conductores (CALE-T), selecciona el Escenario 3 - Instalación Acelerada. Este modelo permite la puesta en marcha de 36 centros en 90 días, cumpliendo el plazo normativo y optimizando la inversión mediante una estrategia incremental por etapas. 20 centros en los 60 días siguientes (tal como se puede analizar en el anexo B. Por otra parte, los CALE Prácticos se ponen en marcha entre el mes 6 y el mes 18.
+Las capacidades de los CALE-T se adaptan a la demanda regional, con configuraciones de alta (24 puestos, 181 m²) y media capacidad (16 puestos, 132 m²). La flexibilidad operativa se logra mediante cubículos armables reconfigurables, permitiendo duplicar la capacidad de atención o diversificar servicios según necesidades específicas de cada territorio.
+La inversión inicial contempla componentes esenciales como centro de cómputo, sala de evaluación, oficinas, recepción, servicios generales, señalización y plataforma multiservicios. El modelo incremental distribuye el CAPEX en tres etapas: mínimo normativo, expansión de formación y solución energética, activadas según demanda y análisis costo-beneficio.
+El modelo financiero proyecta ingresos anuales superiores al OPEX, asegurando el punto de equilibrio desde el mes 25 de operación. La estrategia de economías de escala, mediante compra centralizada y licitación marco nacional, reduce costos y riesgos, asegurando la viabilidad y replicabilidad en los 36 CALEs.
+1.5 Gobernanza y Gestión del Riesgo: Un Diseño Predictivo y Adaptativo
+Nuestra principal estrategia de gestión de riesgos no es un plan de contingencia, sino la arquitectura misma del sistema, diseñada para ser predictiva y proactiva. Se basa en dos pilares sinérgicos:
+Gobernanza Metodológica (VSM/RBM/AGILe-LEAN): La estructura organizacional (HUB-Nodos) y la gestión por resultados aseguran la trazabilidad normativa, previenen la desviación del propósito y garantizan el control y la resiliencia de una red distribuida. AGILe-Lean, actúa como ell motor de ejecución para la entrega de productos, aplicando Scrum para el desarrollo de software, Lean Construction/BIM para la infraestructura, y Lean/SCOR para la cadena de suministro.
+Orquestación Tecnológica (ALEIA y MUNAY): La red es instrumentada por una plataforma dual. MUNAY es el sistema transaccional que opera el servicio al ciudadano de forma estandarizada y segura. ALEIA es el "cerebro" del HUB, un orquestador que gestiona el despliegue, monitorea la operación en tiempo real y, mediante analítica avanzada e IA, provee inteligencia predictiva para anticipar riesgos operativos, logísticos y de calidad. 
+1.5 Estructura de la Intervención por Fases (RBM)
+
+1.6 Gobernanza y Orquestación Tecnológica
+La red es gestionada por el HUB Nacional, cuya operación está instrumentada por una plataforma tecnológica de doble componente:
+ALEIA: Es el orquestador programático y sistema de inteligencia del HUB. Materializa las funciones de Estrategia (S4), Control (S3) y Coordinación (S2) del VSM para gestionar el despliegue de la red y proveer inteligencia de negocio.
+MUNAY: Es la plataforma transaccional que presta el servicio CALE al ciudadano. Materializa las funciones de Operación (S1) del VSM, ejecutando los procesos de agendamiento, evaluación e interoperabilidad con RUNT/SICOV.
+1.7 Viabilidad y Sostenibilidad
+La iniciativa está diseñada para ser financieramente sostenible a largo plazo. El modelo financiero del proyecto, basado en un análisis de mercado y una estructura de costos optimizada, demuestra un Valor Actual Neto (VAN) positivo, garantizando la viabilidad de la operación sin depender de recursos presupuestales continuos del Estado.
+La sostenibilidad del SNCALE no se basa en la viabilidad aislada de cada centro, sino en la gestión integrada de toda la red. El sistema está concebido como una red interconectada con resiliencia sistémica; si un nodo enfrenta un riesgo económico, técnico o administrativo, este puede ser mitigado desde el HUB con el apoyo coordinado de los nodos aliados. No es una suma de partes, sino un sistema unificado que garantiza la continuidad y estabilidad del servicio a nivel nacional.
+Para materializar esta visión, y si bien la resolución exige dos tipos de CALE (Teórico y Práctico), el modelo MUNAY propone una estructura de tres niveles que asegura tanto el cumplimiento normativo como la generación de valor superior:
+1. CALE Teórico:
+Misión: Evaluación estandarizada y masiva.
+Función Principal: Dedicado exclusivamente a la aplicación rigurosa y transparente de la prueba teórica de conducción. Su propósito es garantizar una cobertura nacional rápida y eficiente, asegurando un estándar de conocimiento mínimo para todos los aspirantes.
+2. CALE Práctico:
+Misión: Cumplimiento normativo de la evaluación de habilidades.
+Función Principal: Este CALE cuenta con la pista de destreza y la flota vehicular necesaria para ejecutar la evaluación práctica conforme a las especificaciones de la resolución. Su objetivo es certificar la pericia y las habilidades de conducción del aspirante en un entorno controlado y en la vía pública.
+3. CALE Práctico-Superior:
+Misión: Ser un ecosistema de innovación y formación avanzada en seguridad vial.
+Función Principal: Este es el modelo insignia de la alianza MUNAY. Además de cumplir con todas las funciones de un CALE Práctico, incorpora un centro de formación especializada, liderado y operado académicamente por la IES aliada. Este centro ofrecerá programas de alto valor que no compiten con las escuelas de conducción, sino que profesionalizan y sofistican el ecosistema de la movilidad.Por ejemplo, en los CALE Práctico-Superior, las universidades aliadas podrán diseñar e impartir:
+Programas de posgrado (especializaciones, maestrías) para la profesionalización de los directores y formadores de las escuelas de conducción (CEAs) del territorio, enfocados en pedagogía, nuevas tecnologías vehiculares y gestión de la seguridad vial.
+Certificaciones avanzadas para cuerpos de emergencia (policía, bomberos, defensa civil) en técnicas de conducción de vehículos de respuesta rápida y gestión de escenas de siniestros.
+Diplomados en analítica de datos y  aplicados a la planeación de la movilidad y la reducción de la siniestralidad, dirigidos a funcionarios de secretarías de tránsito y planeación.
+Laboratorios de investigación aplicada para estudiar el comportamiento de los conductores, probar nuevas tecnologías de seguridad vehicular y generar recomendaciones de política pública basadas en evidencia.
+Es crucial destacar que el CALE Práctico-Superior es un modelo que va más allá del estricto cumplimiento normativo. Representa el compromiso proactivo y el valor agregado diferencial que la UPTC y sus IES Aliadas aportan a este proceso, buscando no solo evaluar, sino transformar de raíz la idoneidad, la cultura y la inteligencia de la seguridad vial en Colombia.
+1.8 Aporte de la universidad
+Aportes de la Universidad: 
+Garantía de Ejecución
+Plan de Implementación: fase de ejecución
+
+
+
+2.0 Análisis del Contexto y Justificación de la Intervención
+2.1 Planteamiento del Problema: La Siniestralidad Vial como Prioridad Nacional
+La seguridad vial es una prioridad estratégica para Colombia. La problemática ha sido reconocida formalmente como un problema de salud pública, con estadísticas que evidencian su gravedad. Según datos consolidados, en el año 2024 se registraron 8,271 muertes y 29,345 lesionados en siniestros viales. El factor humano es la causa predominante, asociado a la impericia y al desconocimiento normativo. El SNCALE está diseñado para impactar este factor de manera directa, asegurando que todo nuevo conductor posea y demuestre las competencias requeridas para una conducción segura.
+2.2 Marco Normativo Habilitante
+El proyecto SNCALE se origina y legitima en el siguiente marco jurídico:
+ Ley 2251 de 2022 ("Ley Julián Esteban"): Asigna la competencia primaria para la realización de los exámenes de conducción a las Instituciones de Educación Superior de Naturaleza Pública (IESP), condicionada a la garantía de cobertura nacional.
+Resolución 20253040037125: Reglamenta las condiciones operativas, técnicas y administrativas que deben cumplir los CALE. Este documento es el referente formal e ineludible que fundamenta el Diseño Basado en Procesos de toda la solución técnica y operativa.
+ 2.3 Definición Normativa: Centros de Apoyo Logístico para la Evaluación (CALE)
+Conforme al Artículo 3.7.1 de la Resolución, los CALE son los organismos de apoyo a las autoridades de tránsito designados para la realización de los exámenes teórico y práctico de conducción. Su misión fundamental es garantizar la idoneidad de los aspirantes a obtener o recategorizar una licencia de conducción mediante la aplicación de un modelo de evaluación estandarizado, objetivo y riguroso.
+Para cumplir su misión, los CALE prestan dos servicios centrales (requerimientos funcionales) y operan bajo un conjunto de condiciones transversales (requerimientos no funcionales), todos derivados de la normativa.
+Servicio de Examen Teórico: Proceso estandarizado para verificar los conocimientos del aspirante. Sus funcionalidades mínimas requeridas son:
+Gestión de Citas: Programación de turnos a través de la plataforma tecnológica. (Anexo 60, 1.4.2).
+Validación de Identidad: Verificación biométrica del aspirante, integrada con SICOV y RUNT. (Anexo 60, 1.4.3).
+Aplicación de Pruebas Estandarizadas: Realización de exámenes en cubículos que garantizan privacidad y monitoreo. (Anexo 60, 1.1.1.a).
+Generación Aleatoria de Exámenes: Empleo de algoritmos que aseguran la aleatoriedad de las preguntas. (Art. 3.7.3.1.3).
+Monitoreo y Supervisión: Supervisión continua durante la prueba mediante cámaras de video. (Anexo 60, 3.2.4.c).
+Registro y Notificación de Resultados: Calificación automática y envío de comunicaciones al aspirante. (Art. 3.7.3.1.4).
+Servicio de Examen Práctico: Proceso estandarizado para evaluar las competencias del aspirante en pista y en vía. Sus funcionalidades clave son:
+Alistamiento del Vehículo: Verificación técnica diaria de la flota. (Anexo 60, 2.2.7).
+Aplicación de Pruebas Estandarizadas: Ejecución de maniobras de destreza en pista y comportamiento en vía pública. (Anexo 60, 2.3.1 y 2.3.2).
+Asignación Aleatoria de Rutas: Utilización de algoritmos para la selección de rutas para la prueba en vía. (Anexo 60, 2.3.2, Nota 7).
+Calificación en Tiempo Real: Uso de dispositivos móviles por parte de los evaluadores para registrar el desempeño. (Anexo 60, 2.3.2).
+Registro de Resultados y Certificación: Cargue automático de resultados al RUNT para la generación del certificado. (Art. 3.7.4.1).
+La operación del CALE está regida por un conjunto de condiciones no negociables que garantizan la calidad y confiabilidad del sistema:
+Estandarización y Objetividad: Aplicar procedimientos uniformes y criterios de evaluación claros para eliminar sesgos.
+Infraestructura Tecnológica Avanzada: Contar con sistemas de validación biométrica, cámaras y telemetría. (Anexo 60, 3.2).
+Personal Calificado y Certificado: Disponer de talento humano que cumpla estrictamente con los perfiles definidos. (Art. 3.7.3.2.2).
+Instalaciones Adecuadas: Proveer la infraestructura física (cubículos, pistas) conforme a las especificaciones. (Anexo 60, 1.1 y 2.1).
+Interoperabilidad Garantizada: Mantener una conexión segura y eficiente con el RUNT y SICOV. (Anexo 60, 3.2.2).
+Transparencia y Trazabilidad: Registrar todas las etapas del proceso para garantizar la auditabilidad. (Art. 3.7.1.5.c).
+Mejora Continua: Recopilar encuestas de satisfacción y colaborar con la ANSV en la evaluación del impacto. (Art. 3.7.3.6 y 3.7.5.6).
+
+
+2.4 Fases Normativas de Entrada en Operación
+El Artículo 3.7.5.1 de la Resolución define una secuencia de fases para la habilitación del snCALE, la cual constituye la hoja de ruta para el despliegue del proyecto.
+
+2.5 Flujo de Evaluación del Aspirante
+El macroproceso central que debe ejecutar cada CALE está definido por el orden secuencial y prerrequisito de las pruebas de evaluación, según el Artículo 3.7.3.4 de la Resolución.
+
+La totalidad de los requerimientos, obligaciones y procedimientos inferidos de la Resolución y su Anexo 60 han sido deconstruidos y sistematizados en un Modelo Operativo de Procesos (MOP). Este modelo es la base para el diseño de la plataforma tecnológica, la definición de los roles de talento humano y la configuración de la infraestructura.
+El MOP clasifica los procesos del SNCALE en cuatro macro-categorías funcionales que reflejan su ciclo de vida lógico:
+A. Habilitación e Implementación del Sistema:Contiene los procesos fundacionales y de ejecución única que establecen la capacidad inicial de la red. Abarca desde la obtención del permiso para operar hasta la puesta en marcha de cada centro de evaluación en el territorio.
+Procesos clave incluidos: A-01: Habilitación Normativa de la Red, A-02: Implementación y Puesta en Marcha de Nodos, A-03: Registro Inicial de Nodos en RUNT.
+B. Prestación del Servicio de Evaluación:Describe el flujo de valor central y repetible del sistema: el ciclo completo del aspirante. Detalla cada interacción desde que el ciudadano agenda una cita hasta que su resultado es certificado y registrado en RUNT.
+Procesos clave incluidos: B-01: Agendar Cita, B-02: Gestionar Facturación, B-03: Realizar Check-in, B-04: Realizar Examen Teórico, B-05: Alistamiento de Vehículos, B-06: Realizar Prueba de Destreza, B-07: Realizar Prueba en Vía, B-08: Registrar Certificado.
+C. Gestión y Soporte a la Operación:Agrupa los procesos continuos que aseguran el funcionamiento diario, la integridad y el cumplimiento de la red. Son las funciones que mantienen la operación estable y responden a las necesidades de los usuarios y entes de control.
+Procesos clave incluidos: C-01: Gestión de Novedades de la Red, C-02: Soporte a Entidades de IVC, C-03: Gestión de PQR.
+D. Gobernanza y Mejora Continua:Establece los procesos estratégicos de alto nivel que supervisan la salud del sistema, aseguran su sostenibilidad financiera y lo guían hacia la consecución del impacto en la seguridad vial.
+Procesos clave incluidos: -01: Gobernanza Financiera y de Tarifas, D-02: Monitoreo de Calidad y Satisfacción, D-03: Evaluación de Impacto.
+El desglose completo de cada proceso en sus pasos constituyentes, junto con los requerimientos específicos de talento humano, equipamiento e infraestructura TIC, se encuentra documentado en el Anexo A de este Plan Maestro.
+
+3.0 Marco Conceptual y Metodológico
+El presente capítulo establece el marco conceptual y metodológico que sustenta el Plan Maestro Técnico para la implementación del Sistema Nacional de Centros de Apoyo Logístico y Evaluación (SNCALE). Este marco proporciona las bases teóricas y prácticas para comprender y ejecutar la iniciativa, definiendo los conceptos clave, la arquitectura metodológica, el modelo lógico del proyecto y la estructura de gobernanza que orientan su desarrollo.
+
+3.1. Arquitectura Metodológica Integrada
+El diseño y la gestión del SNCALE se rigen por la integración sinérgica de cuatro marcos de referencia. Esta arquitectura no es una simple colección de herramientas, sino un sistema cohesivo diseñado para gestionar la complejidad del proyecto, asegurar la trazabilidad normativa y maximizar el impacto. A continuación, se describe el propósito y el ámbito de aplicación de cada marco:
+3.1.1 Diseño Basado en Procesos: La Fuente que describe la necesidad
+Este marco asegura que cada componente de la solución (infraestructura, software, personal) se derive directamente de la necesidad de ejecutar un proceso operativo dictado por la Resolución y su Anexo 60. Es la "fuente de la verdad" que conecta la ley con el diseño técnico.
+Aplicación: Se materializa en la especificacion de los requerimientos para las plataformas tecnológicos (Anexo A), donde se deconstruye la normativa en un inventario de procesos y una matriz de requerimientos detallada.
+
+3.1.2 Gestión Basada en Resultados (RBM): La Estrategia para Medir el Éxito
+RBM define la jerarquía de objetivos del proyecto, desde las actividades y productos hasta los resultados e impacto final. Proporciona el marco para definir qué es el éxito, cómo se medirá (indicadores) y cómo se rendirá cuentas sobre su logro. Es el mapa estratégico del "qué" y el "porqué".
+Aplicación: Se materializa en la Sección 3.3 (Cadena de Resultados) y en el Anexo B - Especificación Técnica y Plan de Implementación de lo CALE Teóricos y Prácticos.
+
+3.1.3 Modelo de Sistema Viable (VSM): La Arquitectura para la Gobernanza y la Sostenibilidad
+VSM se utiliza para diseñar una estructura de gobernanza adaptativa que sea capaz de gestionar la complejidad de una red nacional distribuida. Define los roles, responsabilidades y canales de comunicación para asegurar la viabilidad, la coordinación y la mejora continua del sistema. Es el "quién" de la organización.
+Aplicación: Se materializa en la Sección 3.4 (Gobernanza del Sistema) y en el plan de implementación y operación.
+
+3.1.4 Gestión Ágil (Agile): El Motor para la Implementación
+Se emplea como el marco para la planificación y ejecución del desarrollo de componentes tecnológicos (software) y el despliegue de infraestructura. Utiliza conceptos como Épicas y Paquetes de Trabajo para gestionar la complejidad, permitir la adaptación y entregar valor de forma incremental. Es el “cómo” del proyecto.
+Aplicación: Se materializa en la Estructura de Desglose del Trabajo (EDT/WBS) para cada producto, detallada en el Plan de Implementación (Parte III, Sección 6).
+
+3.2 El Modelo Lógico del Proyecto: La Cadena de Resultados (RBM)
+
+3.2.1 El Ápice de la Estrategia: El Impacto del Proyecto
+
+El objetivo último del proyecto, definido en su arquitectura RBM, es: 
+Contribución a la Seguridad Vial Nacional Mejorada
+
+La teoría de cambio postula que la implementación de un sistema de evaluación riguroso y estandarizado (materializado en los Productos y Resultados del SNCALE) incentivará una mejor formación por parte de los aspirantes, resultando en conductores con mayores competencias para una circulación segura. Este cambio en la capacidad de los conductores contribuirá, a largo plazo, a la reducción de la tasa de siniestralidad vial. Conforme al Artículo 3.7.5.6, la Agencia Nacional de Seguridad Vial (ANSV) será la entidad responsable de realizar la evaluación formal de este impacto.
+
+3.2.2 La Jerarquía Causal: De Insumos a Resultados
+Para alcanzar dicho Impacto, el proyecto transforma recursos en cambios medibles a través de la siguiente jerarquía:
+
+El proyecto se estructura en torno a una jerarquía de resultados que describe la teoría de cambio, es decir, la lógica causal de cómo las intervenciones conducirán al impacto deseado (Global Affairs Canada, 2016). Este modelo es la columna vertebral de la estrategia del proyecto y se corresponde directamente con las fases normativas de la Resolución.
+
+3.2.1. Distinción Clave: Resultados (Outcomes) vs. Productos (Outputs)
+La distinción metodológica más importante del marco RBM es la separación conceptual y de medición entre Resultados y Productos.
+Resultados (Outcomes): Representan el "PORQUÉ" y el "QUÉ CAMBIA". Son los cambios medibles en la capacidad, comportamiento o estado de los beneficiarios (ej. aspirantes mejor evaluados, red nacional operativa). El proyecto solo contribuye a su logro y su medición se centra en la efectividad del cambio.
+Productos (Outputs): Representan el "ENTREGABLE" de la intervención. Son los bienes y servicios tangibles que el proyecto entrega (ej. un CALE construido, un evaluador capacitado, un software desplegado). El proyecto tiene control total sobre su entrega y su medición se centra en la eficiencia y calidad de la producción.
+Esta separación es fundamental para la rendición de cuentas: el proyecto es 100% responsable de entregar sus Productos, y estos Productos están diseñados para contribuir, junto a otros factores, al logro de los resultados.
+
+3.3. Gobernanza del Sistema (Modelo VSM)
+Para gestionar la complejidad inherente a una red nacional y distribuida, la estructura organizacional del SNCALE se diseña utilizando el Modelo de Sistema Viable (VSM) (Beer, 1985). Este marco, inspirado en la cibernética, asegura que un sistema sea capaz de adaptarse y mantener su viabilidad en un entorno cambiante.
+El VSM propone que toda organización viable debe poseer cinco subsistemas interconectados:
+Sistema 1 (Operaciones): Las unidades que realizan la actividad principal del sistema.
+Sistema 2 (Coordinación): Los mecanismos que armonizan y sincronizan al Sistema 1.
+Sistema 3 (Control): La gestión del "aquí y ahora" de la operación, optimizando el rendimiento y asegurando el cumplimiento.
+Sistema 4 (Inteligencia): La gestión del "allá y entonces", analizando el entorno para planificar la adaptación y la estrategia a largo plazo.
+Sistema 5 (Política): Define la identidad, las políticas y el propósito del sistema, balanceando las demandas del presente (S3) y el futuro (S4).
+3.3.1 Integración VSM y RBM
+La integración de VSM y RBM es el núcleo de nuestra metodología. A cada sistema viable se le asigna la responsabilidad de entregar un nivel de la cadena de resultados, como se ilustra a continuación:
+
+
+3.3.2 Recursividad
+Un principio clave del VSM es la recursividad: todo sistema viable está compuesto por otros sistemas viables. En nuestro caso, el SNCALE es un sistema viable cuyo Sistema 1 está compuesto por otros sistemas viables (los Nodos CALE). Esta arquitectura es la clave para la escalabilidad y la resiliencia de la red.
+
+El HUB Nacional 
+Es la entidad viable que gestiona la complejidad de toda la red. Sus sistemas son:
+S5 (Política): Consejo Directivo. Define la estrategia y la identidad de la Red.
+S4 (Inteligencia): Dirección de Estrategia. Analiza el entorno y planifica el futuro.
+S3 (Control): Dirección de Operaciones. Optimiza y audita la operación actual.
+S2 (Coordinación): PMO y Plataforma Tecnológica. Sincroniza las operaciones.
+S1 (Operaciones Centrales): Unidades Nacionales de Despliegue y Soporte.
+El Nodo CALE
+Cada CALE es un sistema viable completo en sí mismo (con un Gerente (S5), Jefe de Operaciones (S3), etc.), que ejecuta la operación directa en el territorio y se reporta al HUB.
+
+3.4. Integración de la Gestión Ágil/Lean con el Marco RBM
+Mientras que RBM y VSM definen el "qué", el "porqué" y el "quién" del proyecto, la Gestión Ágil/Lean (Agile) se introduce como el motor del "cómo" para la implementación de componentes complejos, particularmente los tecnológicos.
+
+La Gestión Ágil/Lean se utiliza para traducir los Productos (definidos en el marco RBM) en una Estructura de Desglose del Trabajo (EDT/WBS) que permite una planificación adaptativa, una entrega de valor incremental y una gestión de riesgos proactiva. La integración se logra mediante la siguiente jerarquía detallada:
+Producto (RBM): El entregable macro del proyecto. A este nivel, la gobernanza (S5, S4) define la estrategia.
+Actividad / Componente (RBM/Agile-LEAN/BIM/SCOR): Un Producto complejo se descompone en sus Actividades de implementación, que corresponden a sus componentes arquitectónicos (ej. Subsistema de Gestión). Este es el primer nivel del desglose de trabajo.
+Épica (Agile): Es un gran cuerpo de trabajo que entrega una funcionalidad de negocio completa (ej. "Gestionar Agendamiento de Citas"). Es a este nivel que se realizan las estimaciones de alto nivel (T-Shirt Sizing: S, M, L) para la planificación macro y la asignación de recursos. Las Épicas son el puente entre la visión del producto y la planificación del desarrollo.
+Feature (Agile): Una Épica se descompone en un conjunto de Features o Capacidades. Una Feature es un servicio o funcionalidad que satisface una necesidad del negocio y puede ser desarrollada en un ciclo de varios sprints (ej. "Calendario de reservas", "Motor de validación de requisitos").
+Historia de Usuario (Agile): Cada Feature se desglosa en Historias de Usuario. Esta es la unidad fundamental de trabajo en un sprint. Es una descripción corta de una funcionalidad desde la perspectiva del usuario, y es el artefacto que se estima en puntos de historia por el equipo de desarrollo. El progreso y la velocidad del equipo se miden a nivel de Historias de Usuario completadas por sprint.
+Tarea (Agile): Cada Historia de Usuario se descompone en Tareas técnicas concretas que los desarrolladores ejecutan (ej. "Crear tabla en base de datos", "Desarrollar API endpoint", "Diseñar componente UI"). Este es el nivel más bajo y es gestionado exclusivamente por el equipo de desarrollo.
+
+
+
+El término "Agile" es un paraguas que cubre muchas metodologías específicas (Scrum, Kanban, XP, Lean). 
+
+
+3.4.1 Contexto de Aplicación
+Para el desarrollo de software (Plataforma MUNAY/ALEIA), se utilizarán marcos ágiles como Scrum y Kanban, gestionando el trabajo a través de Épicas, Features e Historias de Usuario en ciclos cortos (sprints).
+Para los proyectos de infraestructura (adecuación y construcción de nodos), se aplicarán los principios de Lean Construction, gestionando los paquetes de obra (Épicas) potenciado por el uso de BIM, usando el estándar para proyectos públicos.
+Para la gestión de la cadena de suministro y la logística de despliegue, se adoptará un modelo operativo basado en el estándar SCOR (Supply Chain Operations Reference), ejecutado con principios Lean y gestionado visualmente a través de tableros Kanban para optimizar el flujo de activos desde la compra hasta la instalación.
+  
+PARTE II: FASE DE IMPLEMENTACIÓN Y OPERACIÓN DEL SERVICIO TEÓRICO
+
+4.0 Resultado Final 2: Servicio Nacional CALE Teórico Operativo
+4.1 Descripción, Alcance y Ficha de Gestión
+Este capítulo detalla el marco metodológico y el plan de ejecución para la consecución del Resultado Final 2: Servicio Nacional CALE Teórico Operativo. Este resultado materializa el cumplimiento de la FASE TERCERA de la Resolución (Art. 3.7.5.1) y es un habilitador crítico para el Impacto Último, al establecer la capacidad instalada a nivel nacional para la evaluación teórica de conductores.
+La estrategia se fundamenta en un modelo de industrialización y despliegue centralizado, gobernado por un HUB de Operaciones y ejecutado en fases iterativas denominadas "Olas de Despliegue". Este enfoque asegura la estandarización, el control de calidad y la eficiencia en la habilitación de cada Nodo CALE.
+Ficha de Gestión del Resultado Final 2
+
+Aporte al Impacto:
+Habilita la primera fase de evaluación rigurosa, impactando directamente la competencia teórica de los nuevos conductores.
+Responsable (VSM):
+S3: Dirección Nacional de Operaciones (hub_sncale), responsable de la ejecución y control de la implementación.
+Medio de Verificación:
+Notificación oficial del MinTransporte sobre la exigibilidad del examen; Certificados de registro de los nodos en RUNT.
+Riesgo Principal:
+Retrasos en la cadena de suministro de componentes tecnológicos (P2.1.3) o en la adecuación de sedes (P2.3.1) que impacten el cronograma de las "Olas".
+Referencia Normativa Principal:
+Art. 3.7.5.1 (FASE TERCERA); Art. 3.7.5.2 (a).
+Aporte desde la Matriz RBM:
+Se logra mediante la finalización de los Resultados Intermedios 2.1, 2.2, 2.3.
+
+4.2 Cadena de Resultados (Modelo Lógico)
+El logro del servicio teórico operativo requiere tres logros intermedios: el diseño de los estándares (2.1), establecimiento de la capacidad de despliegue del HUB (2.2), y finalmente, la habilitación de los nodos en el territorio (2.3).
+
+A continuación se describen los resultados inmediatos de cada uno de estos  resultados intermedios.
+Título del Resultado
+Descripción del Cambio Logrado
+Indicador (KPI)
+Línea Base
+Meta
+2. Servicio Teórico Operativo (FINAL)
+Capacidad para prestar el servicio de evaluación teórica a nivel nacional implementada y en operación.
+% de cobertura departamental alcanzada.
+0%
+100%
+2.1. Portafolio de Soluciones Estandarizadas (Blueprints) Desarrollado (INTERMEDIO)
+Los Blueprints (diseños estándar) para todos los componentes del servicio teórico han sido desarrollados y aprobados.
+% de Blueprints de la Fase 2 finalizados.
+0%
+100%
+2.1.1. Blueprint de Plataforma (MUNAY/ALEIA) Definido (INMEDIATO)
+El diseño técnico de las plataformas MUNAY y ALEIA ha sido completado y validado.
+Documento del Blueprint de Plataforma (P2.1.1, P2.1.5) aprobado.
+
+100%
+2.1.2. Blueprint de Infraestructura Física Definido (INMEDIATO)
+Los diseños tipo (BIM) para los arquetipos de nodo teórico (Fijo/Móvil) han sido completados.
+Documento del Blueprint de Infra. Física (P2.1.2) aprobado.
+
+100%
+2.1.3. Blueprint de Dotación Definido (INMEDIATO)
+Los catálogos de hardware y equipamiento para nodos teóricos han sido completados.
+Documento del Blueprint de Dotación (P2.1.3) aprobado.
+
+100%
+2.1.4. Blueprint de Talento Humano Definido (INMEDIATO)
+Los perfiles de cargo y el modelo de gestión del conocimiento han sido completados.
+Documento del Blueprint de Talento Humano (P2.1.4) aprobado.
+
+100%
+2.2. Capacidad de Despliegue y Gobernanza de la Red Establecida (INTERMEDIO)
+Las unidades funcionales del HUB (PMO, Logística, Soporte) están establecidas y operativas, utilizando ALEIA.
+Estado de operatividad de las unidades funcionales del HUB.
+
+
+2.2.1. Unidad de Implementación (PMO) Operativa (INMEDIATO)
+La unidad funcional de la PMO está establecida (equipo, procesos) y utiliza ALEIA para la gestión de Olas.
+1 (PMO gestionando activamente el portafolio de despliegue).
+0%
+100%
+2.2.2. Unidad de Cadena de Suministro Operativa (INMEDIATO)
+La unidad funcional de Logística está establecida y utiliza ALEIA para gestionar el ciclo de vida de los activos.
+1 (Centro de Staging procesando "Kits de Nodo").
+0%
+100%
+2.2.3. Unidad de Operación y Soporte Operativa (INMEDIATO)
+La unidad funcional de Soporte está establecida y gestiona los SLAs y el monitoreo de la red a través de ALEIA.
+1 (Mesa de Ayuda y sistema de monitoreo funcionando).
+0%
+100%
+2.3. Nodos CALE Teóricos Habilitados (INTERMEDIO)
+Nodos CALE teóricos han sido desplegados en el territorio y cumplen con todos los requisitos para operar.
+Número de nodos teóricos registrados y operativos en RUNT.
+0%
+
+2.3.1. Infraestructura Física del Nodo Adecuada (INMEDIATO)
+Las instalaciones físicas del nodo han sido construidas/adecuadas según el Blueprint correspondiente.
+1 (Acta de Recibo/Puesta en Marcha firmada).
+
+
+2.3.2. Dotación del Nodo Integrada y Funcional (INMEDIATO)
+El "Kit de Despliegue" ha sido instalado, integrado y ha superado las pruebas de aceptación en el nodo.
+1 (Acta de Integración de Dotación firmada).
+
+
+2.3.3. Personal del Nodo Certificado y Habilitado (INMEDIATO)
+El personal local del nodo ha sido seleccionado, certificado por el HUB y habilitado formalmente en RUNT.
+% de personal del nodo con estado "Habilitado" en RUNT.
+0%
+100%
+
+4.3 Desglose de Resultados y Productos Asociados
+
+4.3.1 Resultado Intermedio: Portafolio de Soluciones Estandarizadas (Blueprints)
+Este resultado es uno de los aportes de la Universidad, representa la finalización de la fase de diseño e ingeniería de detalle. Su propósito es la creación de un conjunto de "Blueprints" o diseños maestros que sirven como el estándar prescriptivo para la implementación de todos los componentes de la red. Esto garantiza la homogeneidad, la calidad y la eficiencia del despliegue. Esta función es liderada por el Sistema 4 (Inteligencia y Diseño) del HUB.
+El logro de este resultado se descompone en los siguientes cinco Resultados Inmediatos, cada uno de los cuales se materializa en un Producto de diseño específico:
+
+El siguiente catálogo detalla los cinco productos de diseño (Blueprints) que, en conjunto, constituyen el Portafolio de Soluciones Estandarizadas. Cada uno de estos documentos es un prerrequisito para las fases de implementación y despliegue.
+
+producto_id |
+Título del Producto
+Descripcion
+Indicador
+Meta
+Medio de Verificación
+P2.1.1 - Blueprint de Plataforma (MUNAY v1.0)
+Define la arquitectura técnica y funcional de la plataforma transaccional de cara al ciudadano para la evaluación teórica.
+Estado del documento.
+Aprobado.
+Documento del Blueprint.
+P2.1.2 - Blueprint de Infra. Física Teórica
+Define la arquitectura técnica y funcional de la plataforma Low-Code del HUB para la gobernanza y gestión del proyecto.
+Estado del documento.
+Aprobado.
+Documento del Blueprint (BIM).
+P2.1.3 - Blueprint de Dotación Teórica
+Establece los diseños tipo (BIM) y las especificaciones técnicas para los arquetipos de nodo teórico (Fijo/Móvil).
+Estado del documento.
+Aprobado.
+Documento del Blueprint.
+P2.1.4 - Blueprint de Talento Humano Teórico
+Contiene los catálogos homologados de hardware de TI, software base y equipamiento operativo para un nodo estándar.
+Estado del documento.
+Aprobado.
+Documento del Blueprint.
+
+
+4.3.2. Resultado Intermedio: Capacidad de Despliegue y Gobernanza de la Red Establecida
+Este resultado representa la capacidad operativa del HUB. Su propósito es establecer las unidades funcionales y los procesos, instrumentados por ALEIA, que son necesarios para ejecutar el despliegue de nodos y gobernar la red. Esta función es liderada por la sinergia de los Sistemas 1 (Operaciones Centrales), 2 (Coordinación) y 3 (Control) del HUB.
+
+La siguiente tabla detalla los tres productos que materializan la capacidad operativa del HUB. Cada producto representa una unidad funcional completa, con sus procesos y responsabilidades definidos.
+producto_id |
+Título del Producto
+Descripcion
+Indicador
+Meta
+Medio de Verificación
+P2.2.1 - Unidad de Implementación (PMO) Operativa
+Establece la capacidad de planificación y supervisión centralizada de los proyectos de despliegue, funcionando como el Sistema 2 (Coordinación) del HUB.
+Estado de la unidad.
+Operativa.
+PMO gestionando Olas en ALEIA.
+P2.2.2 - Unidad de Cadena de Suministro Operativa
+Establece la capacidad de gestión logística e industrializada del ciclo de vida de los activos físicos, funcionando como una de las unidades del Sistema 1 (Operaciones) del HUB.
+Estado de la unidad.
+Operativa.
+Logística gestionando kits en ALEIA.
+P2.2.3 - Unidad de Operación y Soporte Operativa
+Establece la capacidad de gestión de servicios de TI y soporte a la red, funcionando como una de las unidades del Sistema 1 (Operaciones) y reportando al Sistema 3 (Control) del HUB.
+Estado de la unidad.
+Operativa.
+Mesa de Ayuda funcionando.
+
+
+4.3.3. Resultado Intermedio: Nodos CALE Teóricos Habilitados
+Este resultado intermedio representa la materialización del despliegue en el territorio. Es la consecuencia directa de aplicar la capacidad del HUB (RI 2.2) sobre los estándares de diseño (RI 2.1) para producir una red de centros de evaluación operativos y debidamente registrados ante el RUNT. Cada nodo habilitado es, en efecto, una instancia del Sistema 1 (Operaciones) del VSM del snCALE.
+El logro de este resultado se descompone en la entrega secuencial de cuatro componentes clave para cada nodo:
+
+La siguiente tabla detalla los tres productos entregables que, en conjunto, constituyen un "Nodo CALE Teórico" operativo. La finalización exitosa y secuencial de estos productos es gestionada por la Unidad de Implementación (PMO - P2.2.1) del HUB.
+producto_id |
+Título del Producto
+Descripcion
+Indicador
+Meta
+Medio de Verificación
+P2.3.1 - Infraestructura Física - Nodo X
+Las instalaciones físicas han sido construidas o adecuadas conforme al Blueprint P2.1.2. El hito es la firma del Acta de Recibo/Puesta en Marcha de la obra.
+Hito de WBS.
+Acta firmada.
+Acta de Recibo/Puesta en Marcha.
+P2.3.2 - Dotación del Nodo X
+El "Kit de Despliegue", definido en el Blueprint P2.1.3, ha sido entregado, instalado, integrado y ha superado las Pruebas de Aceptación en Sitio (SAT). El hito es la firma del Acta de Integración de Dotación.
+Hito de WBS.
+Acta firmada.
+Acta de Integración de Dotación.
+P2.3.3 - Personal del Nodo X
+El personal local ha sido seleccionado, capacitado según el Blueprint P2.1.4, certificado por el HUB y habilitado formalmente en el sistema RUNT (cuando aplique). El hito es la obtención del reporte que confirma al 100% del personal en estado "Certificado".
+% Talento Humano Certificado.
+100%.
+Certificado de Habilitación del HUB / RUNNT
+P2.3.4 - Nodo Habilitador en el RUNNT
+La constancia oficial emitida por el RUNT que certifica el registro y la habilitación del nodo para operar. Este producto es el resultado de la ejecución del proceso A-03.
+% Habilitado.
+100%.
+Acta de Registro en RUNT - Nodo X
+
+
+4.4. Especificación Técnica de Productos del Portafolio de Soluciones (Blueprints)
+4.4.0 Propósito y Alcance del Capítulo
+El presente capítulo constituye el conjunto de especificaciones técnicas prescriptivas para los productos que componen el Portafolio de Soluciones de la Fase 2. Cada subsección subsiguiente es un "Blueprint": un documento autocontenido que define de manera inequívoca el QUÉ se debe construir, configurar o implementar.
+4.4.1. Producto P2.1.1: Blueprint de Plataforma (MUNAY v1.0)
+Este Blueprint define la arquitectura técnica y funcional de la Plataforma MUNAY v1.0. El alcance de esta versión se circunscribe a la habilitación del Servicio de Evaluación Teórica, en estricto cumplimiento de los requerimientos funcionales y no funcionales inferidos del Modelo Operativo de Procesos (MOP, Anexo A) y la Resolución 20253040037125.
+La arquitectura de la Plataforma MUNAY v1.0 se fundamenta en un modelo de microservicios que garantiza la escalabilidad, resiliencia y mantenibilidad del sistema. Los principios de diseño no negociables son:
+Separación de Responsabilidades: Existe una división estricta entre el plano de operación transaccional (MUNAY) y el plano de gestión y gobernanza (ALEIA).
+Agnosticismo de Hardware: El software está desacoplado de infraestructuras de hardware específicas (ej. kioscos, cámaras), permitiendo una integración flexible con diversos proveedores a través de interfaces estandarizadas.
+Diseño Basado en Procesos: Cada funcionalidad y servicio es una materialización directa de uno o más pasos definidos en el MOP (Anexo A).
+Seguridad por Diseño: Se implementan controles de seguridad en cada capa de la arquitectura, incluyendo la encriptación de datos en reposo y en tránsito, y pistas de auditoría inmutables.
+La plataforma se estructura en tres subsistemas lógicos principales que encapsulan sus responsabilidades funcionales:
+
+
+La especificación técnica, presupuestal (CAPEX/OPEX) y la estrategia de implementación de la plataforma MUNAY v1.0 (funcionalidades para el CALE TEÓRICO)  y v2.0(funcionalidades para el CALE PRÁCTICO) pueden verse en el Anexo A. Esta solución es un desarrollo a la medida, elaborado por la Universidad y sus aliados, que opera con las siguientes condiciones de servicio los procesos del MOP relacionados con la interacción del aspirante y la operación del CALE. Su comportamiento se especifica en el siguiente diagrama de secuencia:
+
+4.4.2. Producto P2.1.2: Blueprint de Infraestructura Física Teórica
+Este Blueprint establece las especificaciones técnicas para los arquetipos de Nodo CALE Teórico. Su propósito es garantizar la estandarización, cumplimiento normativo (Anexo 60, 1.1 y 2.1) y eficiencia en el despliegue de la infraestructura física a nivel nacional. 
+Toda infraestructura física, independientemente del arquetipo, debe cumplir con:
+Conectividad: Un canal de datos primario y uno de respaldo, con las capacidades mínimas definidas en el Blueprint de Dotación (P2.1.3).
+Energía Regulada: Todos los componentes TIC deben estar conectados a un circuito de energía regulada con respaldo de UPS.
+Seguridad Física: Control de acceso al cuarto de servidores y a la sala de exámenes.
+Diseño Inclusivo: Las instalaciones deben cumplir con la normativa de accesibilidad para personas con movilidad reducida.
+Este arquetipo está diseñado para instalaciones permanentes en sedes universitarias o de aliados estratégicos. Se definen 2 tamaños estándar según el número de cubículos (k). 
+CALE-T-24q - Capacidad Alta
+Característica
+Descripción
+Evaluación Teórica
+24 puestos simultáneos
+Formación Especializada
+24 puestos (opcional, Etapa 2). Esta es una sala multipropósito que puede ser activada como una segunda zona de prestación del servicio de evaluación o como una sala de formación especializada, permitiendo que un CALE-T duplique su capacidad de atención.
+Área
+181 m² (inmueble arrendado adaptado)
+Aplicación
+Ciudades capitales, alta demanda (>120 evaluaciones/día)
+
+
+
+CALE-T-16q - Capacidad Media
+Característica
+Descripción
+Evaluación Teórica
+16 puestos simultáneos
+Formación Especializada
+16 puestos (opcional, Etapa 2). Esta es una sala multipropósito que puede ser activada como una segunda zona de prestación del servicio de evaluación o como una sala de formación especializada, permitiendo que un CALE-T duplique su capacidad de atención.
+Área
+132 m² (inmueble arrendado adaptado)
+Aplicación
+Ciudades intermedias, demanda media (60-120 evaluaciones/día)
+
+
+La principal ventaja comparativa del diseño es la capacidad del CALE para adaptarse a la demanda de cualquier territorio, desde 4 hasta 48 cubículos, según la necesidad de la demanda por volúmen de atención.  Dichos ajustes son orquestados por las plataforma de MUNAY y ALEIA partir de un analisis predictivo de la demanda para ese territorio.
+Las especificaciones técnicas, presupuestales y de implementación para desarrollar el Blueprint se pueden revisar en el Anexo B. Los planos de diseño detallado, especificaciones de construcción y modelos BIM para los CALES seleccionados se aportarán en el momento que le Ministerio preseleccione esta iniciativa, para iniciar su fase precontractual.
+
+4.4.3. Producto P2.1.3: Blueprint de Dotación Teórica
+Este Blueprint define el catálogo homologado de equipamiento TIC y operativo para un Nodo CALE Teórico. El objetivo es la estandarización para optimizar la cadena de suministro, simplificar el soporte y garantizar el cumplimiento de los requisitos técnicos del Anexo 60.
+La dotación de un Nodo CALE Teórico se compone de kits estandarizados para cada componente de infraestructura. Las especificaciones técnicas prescriptivas y detalladas para cada componente individual se encuentran en el Anexo B.  Las fichas técnicas de cada producto se aportarán una vez que el Ministerio preseleccione esta iniciativa para iniciar un proceso precontractual. 
+Componentes Principales - Etapa 1 (Mínimo Normativo) para CALE-T-24q:
+
+#
+Componente
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+1
+Centro de Cómputo
+1
+1
+2
+Sala Evaluación Teórica
+1
+1
+4
+Oficinas Administrativas
+1
+1
+5
+Recepción y Control
+1
+1
+6
+Servicios Generales
+1
+1
+7
+Señalización
+1
+1
+9
+Plataforma Multiservicios - Hardware
+1
+1
+
+Centro de Computo
+#
+Componente
+Descripción Resumen
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+1
+Centro de Cómputo
+
+1
+1
+1.1
+Servidor Dell PowerEdge T340
+Xeon E-2234, 16GB RAM, HDD 2TB RAID1, garantía 3 años
+1
+1
+1.2
+NAS Synology DS920+
+4 bahías, 8TB HDD × 2 (RAID1), respaldos automáticos
+1
+1
+1.3
+Switch Cisco 48 puertos PoE
+Gigabit, administrable, PoE+ 380W (cámaras IP)
+1
+1
+1.4
+Rack 42U con accesorios
+Rack piso, bandejas, ventiladores, panel patch 48p
+1
+1
+1.5
+UPS APC 3kVA torre
+Online doble conversión, baterías 30min autonomía
+1
+1
+1.6
+Mini-split 12,000 BTU inverter
+SEER 18+, operación 24/7, temperatura 18-22°C
+1
+1
+1.7
+Cableado estructurado Cat6
+200m cable UTP, patch cords, conectores RJ45, canaletas
+1
+1
+1.8
+Instalación especializada
+Montaje rack, configuración red, pruebas, documentación
+1
+1
+
+Sala Evaluación Teórica
+#
+Componente
+Descripción Resumen
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+2
+Sala Evaluación Teórica
+
+1
+1
+2.1
+Cubículos armables modulares
+Sistema clic, paneles 120cm, escritorios 80×60cm, estructura
+24
+16
+2.2
+PC All-in-One 21.5" Dell OptiPlex
+Intel i5, 8GB RAM, SSD 256GB, Win10 Pro, monitor táctil
+24
+16
+2.5
+Sillas ergonómicas certificadas
+Respaldo lumbar ajustable, brazos, rodachinas, garantía 12m
+24
+16
+2.6
+Iluminación LED 400 lux
+Paneles LED 60×60cm, temperatura 4000K, dimmers
+1
+1
+2.7
+Mini-split 18,000 BTU inverter
+Climatización 48m², operación silenciosa <45dB
+1
+1
+2.8
+CCTV 6 cámaras IP 1080p
+Cámaras domo PoE, NVR 8ch, HDD 1TB, grabación 30 días
+1
+1
+2.9
+Instalación y configuración
+Ensamble cubículos, instalación PCs, red, clima, CCTV
+1
+1
+ Oficinas Administrativas
+#
+Componente
+Descripción Resumen
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+4
+Oficinas Administrativas
+
+1
+1
+4.1
+Divisiones drywall 3 oficinas (m²)
+Perfiles metálicos, lámina RH, aislamiento acústico
+20
+20
+4.2
+Escritorios ejecutivos 140×70cm
+Melamínico caoba, gavetas con llave, cableado oculto
+3
+3
+4.3
+Sillas gerenciales ergonómicas
+Cuero sintético, respaldo alto, brazos ajustables
+3
+3
+4.4
+Sillas visitantes
+Estructura metálica, tapizado, apilables
+6
+6
+4.5
+Archivadores metálicos 4 gavetas
+Rodamiento telescópico, cerradura central
+3
+3
+4.6
+PC Desktop Dell Vostro + Monitor 22"
+i5, 8GB RAM, SSD 256GB, monitor LED, teclado/mouse
+3
+3
+4.7
+Impresora multifuncional HP LaserJet
+Láser B/N, red ethernet, ADF 50 hojas, dúplex
+1
+1
+4.8
+Telefonía IP 3 extensiones (sistema)
+Central IP, 3 teléfonos, software gestión llamadas
+1
+1
+4.9
+Mini-split 12,000 BTU
+Climatización oficinas 20m²
+1
+1
+4.10
+Acabados pisos/pintura (m²)
+Porcelanato 60×60cm, pintura látex 2 manos, zócalo
+20
+20
+4.11
+Plataforma ALEIA
+Activación Plataforma ALEIA para gestion integral de implementación y operaciones
+1
+1
+Recepción y Control
+#
+Componente
+Descripción Resumen
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+5
+Recepción y Control
+
+1
+1
+5.1
+Counter recepción 3m melamina+vidrio
+MDF melamínico, vidrio templado frontal, gavetas, cableado
+1
+1
+5.2
+PC All-in-One recepción
+Idéntico sala evaluación (estandarización)
+1
+1
+5.3
+Lector biométrico huella + cédula
+Validación identidad, OCR cédula, integración software turnos
+1
+1
+5.4
+TV 43" informativa Samsung
+LED 4K, soporte pared, contenido digital turnos
+1
+1
+5.5
+Sillas espera triple × 3 unidades
+Estructura metálica, tapizado vinílico, anclaje piso
+3
+3
+5.6
+Mesa centro + revistero
+Melamínico blanco, 80×80cm, revistero acrílico
+1
+1
+5.7
+Acabados sala espera (m²)
+Piso porcelanato, pintura, zócalo, señalética vinilos
+15
+12
+5.8
+Iluminación LED destacada + spots
+Paneles + spots empotrados, temperatura 4000K, dimmers
+1
+1
+5.9
+Puerta ingreso vidrio templado
+Manual, templado 10mm, manija inoxidable, cerradura
+1
+1
+5.10
+Dispensador gel + papeleras (lote)
+Dispensador automático, papeleras acero 30L
+1
+1
+5.11
+Software gestión turnos (sistema)
+Sistema tickets, notificaciones SMS, integración biométrico
+1
+1
+Servicios Generales
+#
+Componente
+Descripción Resumen
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+6
+Servicios Generales
+
+1
+1
+6.1
+Adecuación civil baños 3 baterías
+Drywall RH, impermeabilización, enchape cerámica 30×30cm
+1
+1
+6.2
+Sanitarios + lavamanos estándar
+Tanque bajo 6L doble descarga, lavamanos pedestal
+3
+3
+6.3
+Baño accesible NTC 4143 completo
+Barras L 80cm, sanitario 45cm, lavamanos 75cm sin pedestal, puerta 90cm, espacio giro 150cm, pulsador emergencia, Braille
+1
+1
+6.4
+Grifería automática + accesorios
+Grifos sensor infrarrojo, dispensadores jabón/papel altura accesible, secadores manos
+1
+1
+6.5
+Espejos + dispensadores
+Espejos biselados inclinados 10°, porta rollo accesible
+1
+1
+6.6
+Redes agua fría/caliente PVC
+Tubería presión, desagües, pruebas hermeticidad
+1
+1
+6.7
+Cuarto aseo + equipamiento (m²)
+Adecuación depósito, estanterías metálicas, poceta aseo
+2
+2
+6.8
+Tablero eléctrico 24 circuitos
+Totalizador 60A, breakers termomagnéticos, certificado
+1
+1
+6.9
+Cableado THHN + tomas/switches
+Calibre 12-14AWG según carga, canaletas, cajas derivación
+1
+1
+6.10
+Sistema tierra física
+Varilla copperweld 2.4m, cable verde, medición <10Ω
+1
+1
+Señalización
+#
+Componente
+Descripción Resumen
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+7
+Señalización
+
+1
+1
+7.1
+Rutas evacuación fotoluminiscentes
+Señales NTC 1461, vinil fotoluminiscente, planos evacuación
+1
+1
+7.2
+Salidas emergencia acrílico 3mm
+Fotoluminiscente, pictograma + flecha, 30×15cm
+4
+4
+7.3
+Punto encuentro exterior
+Señal 60×40cm, reflectivo, poste metálico
+1
+1
+7.4
+Extintores PQS 10lb certificados
+Polvo químico ABC, manómetro, gancho, certificado ICONTEC
+6
+6
+7.5
+Señales extintor 20×20cm
+Vinilo autoadhesivo, pictograma + texto
+6
+6
+7.6
+Botiquín primeros auxilios
+Dotación completa NTC 1461, mural metálico
+2
+2
+7.7
+Identificación salas acrílico
+Acrílico 3mm, texto vinil cortado, montaje pared
+7
+7
+7.8
+Directorio áreas
+Acrílico 50×70cm, distribución CALE, señalética accesibilidad
+2
+2
+7.9
+Normas internas
+Impresión lona, marco aluminio, protocolo evaluación
+3
+3
+7.10
+Luces emergencia LED autónomas
+Batería 2h autonomía, sensor automático, LED 3W
+8
+8
+7.11
+Balizas piso fotoluminiscentes
+Adhesivas, ruta evacuación, recarga luz ambiental
+20
+20
+7.12
+Alarma sonora emergencia
+Sirena 120dB, luz estroboscópica, activación manual
+2
+2
+7.13
+Detector humo
+Fotoeléctrico, batería 10 años, certificado bomberos
+6
+6
+ Plataforma Multiservicios
+#
+Componente
+Descripción Resumen
+Cantidad CALE-T24q
+Cantidad CALE-T16q
+9
+Plataforma Multiservicios - Hardware
+
+1
+1
+9.1
+Terminal POS chip+banda+NFC
+Lector tarjetas, impresora térmica integrada, 4G backup
+1
+1
+9.2
+Lector biométrico + cédula
+Validación identidad, OCR cédula, integración cloud
+1
+1
+9.3
+Impresora térmica tickets
+80mm, cortador automático, códigos QR
+1
+1
+9.4
+Pantalla táctil 15" autoservicio
+Resistiva, soporte mesa, software turnos
+1
+1
+9.5
+Router wifi dual band
+AC1200, gestión remota, VLAN seguridad
+1
+1
+9.6
+Gateway telefonía IP
+3 líneas SIP simultáneas, códecs HD
+1
+1
+9.7
+UPS 1kVA respaldo 2h
+Línea interactiva, protección rayos
+1
+1
+9.8
+Licencia software cloud 5 años
+Recaudo, CRM, reportería, marketplace, actualizaciones
+1
+1
+9.9
+Instalación + capacitación
+Configuración plataforma, integración servicios, capacitación 2 días
+1
+1
+
+4.4.4. Producto P2.1.4: Blueprint de Talento Humano Teórico
+Alcance y Principios Rectores
+Este Blueprint define el modelo integral para el ciclo de vida del talento humano que opera en los Nodos CALE Teóricos, en cumplimiento con el Artículo 3.7.3.2.2 de la Resolución. Su propósito es estandarizar los procesos de selección, certificación, gestión del conocimiento, evaluación del desempeño y desarrollo continuo.
+El modelo se fundamenta en dos principios rectores no negociables:
+Integridad como Pilar Fundamental: La naturaleza del servicio exige que cada miembro del personal demuestre un compromiso insobornable con la ética y la transparencia. Los procesos de selección y evaluación están diseñados para identificar y cultivar esta cualidad por encima de cualquier otra.
+Competencia Basada en Evidencia: La idoneidad del personal no se presume, se demuestra. Todos los procesos, desde la selección hasta la promoción, se basan en la evaluación objetiva de competencias y desempeño.
+Modelo de Roles y Competencias
+Los roles funcionales se derivan del Modelo de Gobernanza VSM (Capítulo 5.5). A continuación, se especifican sus misiones y las competencias clave requeridas.
+Rol
+Misión Principal en el Proceso
+Competencias Clave
+Coordinador de Nodo
+Garantizar la correcta operación administrativa y técnica del CALE, asegurando el cumplimiento normativo y la calidad del servicio.
+Liderazgo, Gestión de Recursos, Resolución de Problemas, Integridad y Toma de Decisiones Éticas.
+Recepcionista
+Ejecutar los procesos de agendamiento, recaudo y check-in (B-01, B-02, B-03), sirviendo como el primer punto de contacto con el ciudadano.
+Servicio al Cliente, Manejo de Software, Atención al Detalle, Manejo de Información Confidencial.
+Supervisor de Examen
+Ejecutar el proceso de evaluación teórica (B-04), garantizando su absoluta integridad y aplicando los protocolos anti-fraude.
+Integridad Absoluta e Insobornable, Proactividad, Manejo de Protocolos de Seguridad, Asertividad ante Intentos de Fraude.
+
+Proceso Estandarizado de Selección y Vinculación
+El proceso de selección será centralizado y ejecutado por el HUB para garantizar la homogeneidad y el rigor. Incluye las siguientes fases eliminatorias:
+Fase 1: Verificación de Requisitos y Antecedentes:
+Comprobación de formación académica y experiencia laboral.
+Validación de antecedentes disciplinarios (Procuraduría - SIRI), fiscales (Contraloría - SICEF) y judiciales (Policía Nacional). Un reporte no favorable en cualquiera de estos sistemas es causal de exclusión inmediata.
+Fase 2: Pruebas de Desempeño Técnico y Psicotécnicas:
+Aplicación de pruebas estandarizadas que miden las competencias técnicas requeridas para el rol (ej. manejo de software, comprensión normativa).
+Evaluación psicotécnica para valorar habilidades blandas como la atención al detalle y la resolución de problemas.
+Fase 3: Assessment de Excelencia Ética:
+Los candidatos preseleccionados se someten a un centro de evaluación (Assessment Center) que incluye:
+Pruebas de Dilemas Éticos Situacionales: Escenarios diseñados para evaluar el juicio moral y la toma de decisiones bajo presión.
+Pruebas de Polígrafo: Aplicadas como herramienta de verificación para roles de máxima criticidad (Supervisor de Examen), sujetas a la normativa legal vigente.
+Fase 4: Entrevista Basada en Competencias (Método STAR):
+Entrevista estructurada conducida por un panel (HUB y Coordinador de Nodo) para validar, a través de ejemplos concretos de experiencias pasadas, la posesión de las competencias definidas en el perfil.
+
+Programa de Certificación Obligatorio
+Todo el personal debe completar y aprobar el programa de certificación del HUB antes de ser habilitado en RUNT.
+Módulo
+Título del Módulo
+Intensidad Estimada
+Objetivos de Aprendizaje
+Criterio de Evaluación
+M01
+Marco Normativo, Ético y de Calidad
+8 horas
+- Comprender el marco legal del SNCALE.
+- Internalizar el código de ética y las políticas anti-fraude.
+Examen teórico en línea (≥90% para aprobar).
+M02-A
+Operación de Plataforma MUNAY (Rol Recepcionista)
+12 horas
+- Ejecutar los procesos de agendamiento, recaudo y check-in en la plataforma.
+Simulación práctica guiada con calificación de desempeño.
+M02-B
+Operación de Plataforma MUNAY (Rol Supervisor)
+12 horas
+- Gestionar la sala de examen.
+- Operar el sistema de monitoreo.
+- Aplicar protocolos de inicio y fin de examen.
+Simulación práctica guiada con calificación de desempeño.
+M03
+Protocolos de Seguridad y Gestión de Incidentes
+8 horas
+- Identificar y reportar un incidente de seguridad.
+- Aplicar el protocolo de contingencia ante fallas de sistema.
+Examen práctico basado en escenarios (estudio de casos).
+M04
+Gestión del Conocimiento y Comunidades de Aprendizaje
+8 horas
+- Utilizar la base de conocimiento para resolver problemas operativos.<br>- Documentar lecciones aprendidas.<br>- Contribuir activamente a la comunidad de práctica.
+Evaluación de participación y aportes documentados en la plataforma ALEIA.
+
+Para asegurar la mejora continua y la capitalización del conocimiento, se establecen dos niveles de Comunidades de Aprendizaje, orquestadas a través de la plataforma ALEIA.
+Modelo de Gestión del Conocimiento: Comunidades de Aprendizaje
+Este modelo de Gestión de Conocimiento es el principal aporte de la Universidad en la fase de operación del proyecto, no solo resuelve los riesgos de apropiación social del proyecto, sino que es la manera de integrar la gestión de conocimiento 
+ALEIA: CALE Genial!
+Agrupa al personal de los nodos CALE para la gestión del conocimiento táctico y la estandarización de mejores prácticas.
+
+MUNAY INNOVA!
+Conecta la operación de los CALE con la misión académica de las IES para generar valor público a partir de los datos.
+
+
+4.5 Modelo de Gobernanza VSM
+4.5.1 Descripción General
+Una vez obtenida la autorización, la organización del proyecto evoluciona de un equipo de formulación (core_sncale) a la estructura de gobernanza y ejecución de la red: el hub_sncale. Este modelo, basado en el VSM, define los roles y las interacciones necesarias para gestionar el despliegue por "Olas" y la posterior operación del servicio.
+4.5.2 Estructura del HUB
+El HUB opera como un sistema viable completo, donde cada subsistema tiene una misión clara:
+
+4.5.3 Plataforma ALEIA
+Descripción General
+La función del Sistema 2 (Coordinación), según el Modelo de Sistema Viable (VSM) aplicado al SNCALE, se materializa tecnológicamente a través de la Plataforma de Orquestación ALEIA. El objetivo principal de esta plataforma es servir como el mecanismo de coordinación programática y de integración de la cadena de valor para asegurar la operación estable y confiable de las unidades del Sistema 1 (Operaciones).
+ALEIA opera como el componente tecnológico central del Sistema 2, con las siguientes responsabilidades funcionales:
+Orquestación Programática: Ejecuta las directivas de despliegue y operación, gestionando las interdependencias entre los Nodos CALE y las Operaciones Centrales para mitigar la oscilación y asegurar la sincronía.
+Integración de la Cadena de Valor: Provee las interfaces y servicios que garantizan el flujo de información estandarizado entre las distintas unidades operativas (Sistema 1), tales como Logística, Implementación y Soporte.
+Habilitación de Canales de Información Vertical: Facilita la transmisión de datos operativos desde el Sistema 1 hacia los sistemas de control y auditoría (Sistema 3) y de inteligencia estratégica (Sistema 4). Esta capacidad es fundamental para que las políticas definidas por el Sistema 5 sean informadas por el estado real del sistema y para que su cumplimiento sea verificable.
+En este contexto, ALEIA no es una plataforma de servicios transversales que impone las reglas de coordinación y comunicación definidas en el modelo de gobernanza, permitiendo la ejecución medible y controlada de las políticas del proyecto.
+Arquitectura Funcional de ALEIA en el Contexto VSM
+La arquitectura de ALEIA se alinea con el modelo de gobernanza, posicionándose como el eje de la coordinación y el flujo de información, tal como se ilustra en el diagrama de gobernanza del SNCALE.
+
+La arquitectura de ALEIA se define por las siguientes funciones clave:
+Capa de Ingesta de Datos: ALEIA consume datos estructurados y no estructurados de las plataformas primarias de cada dominio:
+Plataformas BIM: Para el estado y progreso de la infraestructura física (P2.1.2).
+Plataforma Transaccional MUNAY: Para los datos de operación de los Nodos CALE (P2.1.1).
+ERP de Suministros: Para el estado de la cadena de suministro y logística (P2.2.2).
+Capa de Modelado (Grafo de Conocimiento): Los datos ingeridos se procesan y correlacionan para construir un modelo semántico de la operación. Este grafo representa la "fuente única de la verdad" sobre el estado del proyecto.
+Capa de Servicios y APIs: ALEIA expone su inteligencia a través de servicios consumibles por los diferentes sistemas del VSM:
+Para S1 y S2: Provee servicios de orquestación para la ejecución de procesos multi-dominio.
+Para S3: Ofrece dashboards en tiempo real y un motor de alertas para el monitoreo de KPIs y la detección de desviaciones.
+Para S4: Proporciona datasets curados y APIs de consulta para el análisis de tendencias y la simulación de escenarios.
+Para S5: Entrega reportes ejecutivos y consolidados sobre el desempeño global y la salud del proyecto.
+
+
+Vinculación con la Arquitectura RBM
+Desde la perspectiva de la Gestión Basada en Resultados, ALEIA es el habilitador tecnológico clave para el Resultado Intermedio 2.2: Capacidad de Despliegue y Gobernanza de la Red Establecida. Mientras que la PMO (P2.2.1) constituye la capacidad humana y de procesos, ALEIA se clasifica como P2.2.4 (Habilitador Tecnológico ALEIA), representando la capacidad tecnológica para ejercer dicha gobernanza de manera eficiente y escalable.  A continuación se describen los procesos clave que la plataforma acompaña.
+Esquema de Orquestación para una Ola de Implementación
+Esta narrativa muestra cómo el HUB orquesta el despliegue de un Nodo CALE, desde la planificación hasta la puesta en marcha. El Sistema 2 (PMO) actúa como el director de orquesta, coordinando a las unidades especializadas del Sistema 1 para ejecutar el plan definido por el Sistema 4, bajo la supervisión del Sistema 3.
+
+Esquema de Soporte a un Nodo en Operación
+Esta narrativa ilustra cómo el HUB responde a un incidente reportado por un nodo que ya está operando. El Sistema 3 (Unidad de Operación y Soporte) recibe el caso y coordina la solución.
+
+
+PARTE III: FASE DE IMPLEMENTACIÓN Y OPERACIÓN DEL SERVICIO PRÁCTICO (RESULTADO FINAL 3)
+5.0 Resultado Final 3: Servicio Nacional CALE Práctico Operativo
+5.1 Descripción General, Alcance, Ficha Técnica
+Este capítulo detallará el marco metodológico y el plan de ejecución para la consecución del Resultado Final 3: Servicio Nacional CALE Práctico Operativo. Este resultado materializa el cumplimiento de la FASE CUARTA de la Resolución (Art. 3.7.5.1, si la numeración se mantiene correlativa al cambio del capítulo anterior) y es un habilitador crítico para el Impacto Último, al establecer la capacidad instalada a nivel nacional para la evaluación práctica de conductores. La estrategia se fundamenta en un modelo de industrialización y despliegue centralizado, gobernado por un HUB de Operaciones y ejecutado en fases iterativas denominadas "Olas de Despliegue". Este enfoque asegura la estandarización, el control de calidad y la eficiencia en la habilitación de cada Nodo CALE Práctico.
+El logro de este resultado es el hito culminante del proyecto, pues completa la capacidad del SNCALE para evaluar integralmente la idoneidad de los conductores.
+Ficha Resumen de Gestión y Trazabilidad
+
+Aporte al Impacto:
+Habilita la evaluación completa (destreza y comportamiento) de los aspirantes, asegurando que los nuevos conductores posean las habilidades prácticas para una conducción segura.
+Responsable (VSM):
+S3: Dirección Nacional de Operaciones (hub_sncale), responsable de la ejecución y control de la implementación de la capacidad práctica.
+Medio de Verificación:
+- Actas de puesta en marcha y certificación de las pistas de destreza.<br>- Certificados de registro de los nodos con capacidad práctica habilitada en el sistema RUNT.
+Riesgo Principal:
+- Retrasos en la adquisición de predios o en la ejecución de obras civiles para las pistas (P3.3.1).<br>- Disrupciones en la cadena de suministro para la adaptación y dotación de la flota vehicular (P3.3.2).
+Referencia Normativa:
+Art. 3.7.5.1 (FASE CUARTA); Anexo 60 (Secciones 2.1, 2.2, 2.3).
+Aporte desde la Matriz RBM:
+Se logra mediante la finalización de los Resultados Intermedios 3.1, 3.2 y 3.3.
+
+5.2 Cadena de Resultados (Modelo Lógico)
+De forma análoga a la fase teórica, el logro del servicio práctico operativo se fundamenta en tres pilares: el diseño de las soluciones estándar (3.1), la adaptación de la capacidad del HUB para el nuevo alcance (3.2), y la materialización del despliegue en el territorio (3.3).
+codeMermaid
+
+
+Nivel
+Título del Resultado
+Descripción del Cambio Logrado
+Indicador (KPI)
+Línea Base
+Meta
+Aporte
+Final
+3. Servicio Nacional CALE Práctico Implementado y en Operación
+La capacidad para prestar el servicio de evaluación práctica a nivel nacional ha sido implementada y puesta en operación.
+% de la red CALE con capacidad práctica instalada y operativa.
+0%
+100%.
+Aporta a: 0. Seguridad Vial Fortalecida.
+Intermedio
+3.1. HUB CALE Práctico Habilitado
+Las capacidades centrales del HUB para la gestión de activos (pistas, flota) y soporte especializado han sido establecidas.
+Número de nodos prácticos registrados en RUNT.
+0
+Mín. 35.
+Aporta a: 3. Servicio Práctico Operativo.
+Inmediato
+3.1.1. Capacidad de Plataforma Tecnológica para Pruebas Prácticas Habilitada
+La plataforma "CALE Digital" ha sido extendida para gestionar los datos de la prueba práctica.
+Plataforma en producción con capacidad de procesar y almacenar datos de telemetría y video.
+N/A
+100%
+Aporta a: 3.1. HUB Práctico Habilitado.
+Inmediato
+3.1.2. Capacidad de Despliegue de Activos Físicos Establecida
+Los procesos del HUB para la construcción de pistas y adquisición/adaptación de flota han sido establecidos.
+Tiempo promedio de habilitación de un nodo práctico (desde inicio de obra hasta operación).
+N/A
+< 180 días.
+Aporta a: 3.1. HUB Práctico Habilitado.
+Inmediato
+3.1.3. Capacidad de Gobernanza de la Operación Práctica Establecida
+El modelo del HUB para la gestión continua de la red práctica (certificación, mantenimiento, etc.) ha sido implementado.
+% de evaluadores prácticos a nivel nacional que cumplen con el perfil y la inducción.
+N/A
+100%
+Aporta a: 3.1. HUB Práctico Habilitado.
+Intermedio
+3.2. Capacidades Nodales Prácticas Desplegadas
+Cada nodo CALE práctico ha sido dotado con las pistas, vehículos, tecnología y evaluadores certificados necesarios.
+% de nodos prácticos que aprueban la auditoría de cumplimiento previa a la operación.
+N/A
+100%.
+Aporta a: 3.1. HUB Práctico Habilitado.
+Inmediato
+3.2.1. Pista de Destreza del Nodo Construida y Certificada
+La pista local ha sido construida y certificada como cumplidora de las especificaciones del Anexo 60.
+1 (Acta de recepción y conformidad de la obra).
+N/A
+1 por nodo.
+Aporta a: 3.2. Capacidades Nodales Prácticas.
+Inmediato
+3.2.2. Flota Vehicular del Nodo Asignada y Operativa
+La flota de vehículos correspondiente a la clase del CALE ha sido entregada, adaptada y registrada en el nodo.
+100% de los vehículos asignados en sitio, operativos y con documentación vigente.
+N/A
+100%
+Aporta a: 3.2. Capacidades Nodales Prácticas.
+Inmediato
+3.2.3. Talento Humano Práctico del Nodo Contratado y Capacitado
+El personal local del nodo ha sido seleccionado, contratado y certificado por el HUB.
+100% de evaluadores del nodo cumplen con el perfil del Art. 3.7.3.2.2.
+N/A
+100%
+Aporta a: 3.2. Capacidades Nodales Prácticas.
+
+5.3 Desglose de Resultados y Productos Asociados
+Este resultado representa la finalización de la fase de ingeniería de detalle para todos los componentes adicionales de la evaluación práctica.  Es importante destacar que las actualizaciones de MUNAY a la versión 2.0 NO SE CONSIDERAN COMO UN BLUEPRINT de este entregable, porque su proceso de desarrollo y despliegue es tratado integralmente en el producto 4.3.1 y en el Anexo A. 
+5.3.1 Producto P3.1. HUB CALE Práctico Habilitado
+Este resultado representa la finalización de la fase de ingeniería de detalle para todos los componentes de la evaluación práctica. Su función es liderada por el Sistema 4 (Inteligencia y Diseño) del HUB.
+Catálogo de Productos de Diseño (Blueprints - Fase Práctica)
+producto_id
+Título del Producto
+Descripción
+P3.1.1
+Blueprint de Infraestructura Física Práctica
+Establece los diseños tipo (BIM) para las pistas de destreza.
+P3.1.2
+Blueprint de Dotación Práctica
+Define las especificaciones para la adaptación de vehículos y los equipos de evaluación.
+P3.1.3
+Blueprint de Talento Humano Práctico
+Define los perfiles y programa de certificación para evaluadores prácticos y técnicos.
+5.3.2 Producto P3.2. HUB CALE Práctico Habilitado
+Este resultado representa la adaptación y ejecución de las capacidades del HUB (establecidas en la Fase 2) para gestionar la logística y el aprovisionamiento de los componentes de la fase práctica.  
+Catálogo de Productos de Capacidad del HUB (Fase Práctica)
+producto_id
+Título del Producto
+Descripción
+P3.2.1
+Plan de Logística y Cadena de Suministro Vehicular
+Establece el plan para la adquisición, adaptación, y distribución de la flota vehicular.
+P3.2.2
+Plan de Certificación de Evaluadores Prácticos
+Establece el cronograma para la ejecución del programa de certificación definido en P3.1.3.
+
+5.3.3 Producto P3.2. HUB CALE Práctico Habilitado
+Este resultado representa la materialización del despliegue en el territorio, produciendo una red de nodos con la infraestructura, equipamiento y personal necesarios para realizar las pruebas prácticas.
+Catálogo de Productos de Despliegue en Nodo (Fase Práctica)
+producto_id
+Título del Producto
+Descripción
+P3.3.1
+Infraestructura Física Práctica - Nodo X
+La pista de destreza del nodo ha sido construida y certificada conforme al P3.1.1.
+P3.3.2
+Dotación Práctica - Nodo X
+La flota vehicular y equipos de evaluación, definidos en P3.1.2, han sido entregados y puestos en operación.
+P3.3.3
+Personal Práctico - Nodo X
+El personal de evaluación ha sido certificado (P3.1.3) y habilitado en RUNT.
+
+5.4 Especificación Técnica de Productos (Blueprints - Fase Práctica)
+5.4.1 Producto P3.1.1 Blueprint de Infraestructura Física Práctica
+Este resultado representa la finalización de la fase de diseño e ingeniería de detalle para los componentes del servicio práctico y es un aporte fundamental de la Universidad. Su propósito es la creación de un conjunto de "Blueprints" o diseños maestros que sirven como el estándar prescriptivo para la implementación de todos los componentes de la red práctica. Esto garantiza la homogeneidad, la calidad y la eficiencia del despliegue. Esta función es liderada por el Sistema 4 (Inteligencia y Diseño) del HUB.
+Principios de Diseño y Ejecución
+La materialización de toda pista de destreza se rige por los siguientes principios no negociables:
+Trazabilidad Normativa: El diseño de cada pista y la ubicación de sus componentes se derivan directamente de las especificaciones del Anexo 60, asegurando la estandarización y la auditabilidad del proceso de evaluación.
+Gestión Basada en Modelos: La ejecución del proyecto de obra se fundamentará en los principios de Lean Construction. El Modelo de Información de Construcción (BIM) es la fuente única de verdad para la planificación, ejecución y supervisión.
+Estandarización de Componentes: Los materiales y elementos constructivos serán estandarizados y catalogados en el modelo BIM para optimizar la cadena de suministro y garantizar una calidad homogénea.
+Seguridad y Durabilidad: El diseño debe garantizar la seguridad de los usuarios y contemplar materiales de alta durabilidad para minimizar el mantenimiento y soportar las condiciones de uso intensivo.
+Especificación de Arquetipos de Pista
+Se definen tres arquetipos de pista, correspondientes a las categorías de licencia a evaluar. La documentación de ingeniería completa para cada arquetipo reside en el Anexo E, tal como se referencia en la siguiente tabla:
+Arquetipo (Categoría)
+Descripción Técnica de la Pista
+Referencia Normativa
+Pista Tipo A (A1/A2)
+Pista diseñada para la evaluación de maniobras de vehículos de dos ruedas, incluyendo equilibrio, zigzag y frenado, sobre una superficie de rodadura asfáltica con demarcación específica.
+Anexo 60, 2.1.1
+Pista Tipo B (B1)
+Pista diseñada para vehículos livianos, que integra maniobras de estacionamiento, eslalon y simulación de arranque en pendiente.
+Anexo 60, 2.1.2
+Pista Tipo C (C1)
+Pista de mayores dimensiones para vehículos pesados, enfocada en maniobras de precisión como recorrido en reversa en L y estacionamiento en muelle.
+Anexo 60, 2.1.3
+
+Los planos de diseño detallado, especificaciones de construcción y modelos BIM para cada arquetipo de pista se aportarán una vez esta iniciativa sea habilitada y se encuentre como preseleccionada como candidata para participar en el periodo precontractual liderado por el Ministerio. Las especificaciones técnicas, presupuestales y de implementación pueden revisarse en el Anexo C. 
+Catálogo de componentes base
+A continuación, se presenta el catálogo de componentes base para la construcción de las pistas. Cada componente será detallado en los modelos BIM del Anexo C.
+Nombre del Componente
+Descripción Técnica / Especificación Mínima
+Arquetipo de Pista (A)
+Arquetipo de Pista (B)
+Arquetipo de Pista (C)
+Capa de Rodadura Asfáltica
+Mezcla asfáltica en caliente, con especificaciones de granulometría, espesor y compactación para garantizar una superficie lisa y duradera, con coeficiente de fricción adecuado.
+FT-INF-001A
+FT-INF-001B
+FT-INF-001C
+Señalización Vertical
+Postes y señales reglamentarias (Pare, Ceda el Paso, etc.) fabricadas en material reflectivo de alta intensidad, conforme al Manual de Señalización Vial.
+FT-INF-002
+FT-INF-002
+FT-INF-002
+Demarcación Vial
+Pintura acrílica de alto tráfico para líneas de carril, zonas de estacionamiento y otras marcas, con especificaciones de retro reflectividad y durabilidad.
+FT-INF-003A
+FT-INF-003B
+FT-INF-003B
+Obstáculos Móviles (Conos)
+Conos de material polimérico flexible, con base pesada para estabilidad y bandas retrorreflectivas, conforme a las dimensiones del Anexo 60.
+FT-INF-004
+FT-INF-004
+FT-INF-004
+
+5.4.2 Producto P3.1.2 Blueprint de Vehículo Adaptado y Dotación
+Este Blueprint define la dotación adicional requerida para la evaluación práctica. Se asume como prerrequisito la existencia de la infraestructura del Kit de Infraestructura de Red y Servidores (DOT-KIT-SRV-T) definido en el Blueprint P2.1.3. La fuente única de verdad para las especificaciones técnicas de cada componente es el Anexo B.
+Kit Vehicular - Clase I/II/III: Corresponde a la adquisición y adaptación completa de un vehículo de prueba (motocicleta, liviano o pesado). Incluye los siguientes sub-kits de componentes:
+Kit de Adaptación Vehicular (DOT-KIT-VEH-P): Componentes tecnológicos y de seguridad a ser instalados en cada vehículo. 
+Kit de Evaluador Práctico (DOT-KIT-EVAL-P): Equipamiento que portará el evaluador durante la prueba.
+
+Kit de Vehículo Adaptado (DOT-KIT-VEH-P)
+Este kit define los componentes tecnológicos y de seguridad que deben ser instalados en cada vehículo de prueba para garantizar el control, monitoreo y registro de evidencias durante la evaluación.
+Componente
+Descripción
+ID Ficha Técnica (Ver Anexo B)
+Referencia Normativa (Fragmento Literal)
+Sistema de Doble Mando
+Sistema mecánico o electrónico de freno y embrague auxiliar para el evaluador.
+FT-HW-201
+Anexo 60, 2.2.1: "...contar con doble mando..."
+Sistema de Telemetría
+Módulo para la captura de datos del vehículo (CAN Bus, GPS) y su transmisión en tiempo real.
+FT-HW-202
+Anexo 60, 2.2.5: "...dispositivos tecnológicos que permitan el monitoreo..."
+Cámaras Internas/Externas
+Sistema de grabación de video a bordo multicanal para fines de auditoría y soporte de calificación.
+FT-HW-203
+Anexo 60, 2.2.4: "...contar con cámaras de video..."
+
+Kit de Evaluador Práctico (DOT-KIT-EVAL-P)
+Este kit define el equipamiento que portará el evaluador durante la prueba en vía.
+Componente
+Descripción
+ID Ficha Técnica (Ver Anexo B)
+Referencia Normativa (Fragmento Literal)
+
+Tablet de Calificación
+Dispositivo móvil robusto para la calificación en tiempo real de las maniobras del aspirante.
+FT-HW-204
+Anexo 60, 2.3.2: "...El evaluador registrará la calificación en tiempo real..."
+
+5.4.3. Producto P3.1.3: Blueprint de Talento Humano Práctico
+Alcance y Principios Rectores
+Este Blueprint define el modelo integral para el ciclo de vida del talento humano requerido adicionalmente para la operación de la evaluación práctica, complementando el modelo base definido en el Blueprint P2.1.4. Su propósito es estandarizar los procesos de selección, certificación y gestión del conocimiento para los nuevos roles, asegurando la máxima competencia técnica y un estándar de integridad insobornable.
+Los principios rectores de Integridad como Pilar Fundamental y Competencia Basada en Evidencia, definidos en la sección 5.4.4, aplican con igual o mayor rigor a los roles de esta fase.
+Modelo de Roles Adicionales
+Los siguientes roles son adicionales a los ya establecidos para la operación teórica y se integran a la estructura del nodo, reportando al Líder de Operaciones.
+Rol
+Misión Principal en el Proceso
+Competencias Clave
+Evaluador Práctico
+Ejecutar los procesos de evaluación de destreza en pista (B-06) y comportamiento en vía (B-07), garantizando la objetividad, el rigor y la seguridad.
+Dominio de técnicas de conducción, Calibración de juicio, Objetividad Insobornable, Comunicación asertiva, Gestión de situaciones de riesgo.
+Técnico de Alistamiento
+Ejecutar el proceso de alistamiento y verificación diaria de la flota vehicular (B-05), asegurando su operatividad y seguridad.
+Conocimiento en mecánica automotriz, Meticulosidad, Manejo de protocolos de seguridad, Diligencia en la documentación.
+
+Proceso Estandarizado de Selección y Vinculación
+El proceso de selección para estos roles seguirá las mismas fases rigurosas de verificación de antecedentes y assessment ético definidas en la sección 5.4.4, con la adición de pruebas de desempeño técnico adaptadas a las competencias específicas de cada rol:
+Para el Evaluador Práctico: La Fase 2 (Pruebas de Desempeño) incluirá una prueba de pericia conductiva de nivel avanzado y un assessment situacional para evaluar la toma de decisiones en escenarios de riesgo en la vía.
+Para el Técnico de Alistamiento: La Fase 2 incluirá una prueba práctica de diagnóstico vehicular y conocimiento de protocolos de seguridad automotriz.
+Programa de Certificación Institucional (Adicional)
+El personal seleccionado deberá completar los módulos transversales del programa general (ej. M01 - Marco Ético) y, adicionalmente, los siguientes módulos de especialización:
+Módulo
+Título del Módulo
+Rol Asociado
+Objetivos de Aprendizaje
+Criterio de Evaluación
+M05
+Técnicas de Evaluación Práctica en Pista y Vía
+Evaluador Práctico
+- Aplicar de manera estandarizada los criterios de calificación del Anexo 60.
+- Operar la Tablet de Calificación (FT-HW-204) para el registro en tiempo real.
+- Gestionar situaciones de riesgo durante la prueba.
+Prueba de calificación en simulador y en vehículo real con evaluador certificado del HUB.
+M06
+Protocolo de Alistamiento y Mantenimiento Vehicular
+Técnico de Alistamiento
+- Ejecutar el checklist de 25 puntos (Anexo 60, 2.2.7).
+- Identificar y reportar fallas mecánicas menores y mayores.
+- Documentar el historial de mantenimiento de cada vehículo.
+Ejecución supervisada del checklist completo sobre un vehículo con fallas preestablecidas.
+
+Integración a las Comunidades de Aprendizaje
+Los nuevos roles se integrarán a las comunidades de aprendizaje existentes, enriqueciéndolas con su conocimiento especializado.
+Los roles prácticos aportarán conocimiento táctico crucial para la mejora de la operación diaria.
+
+La data generada durante la evaluación práctica es un insumo de alto valor para la investigación en seguridad vial.
+
+
+
+5.5 Modelo de Gobernanza VSM: Capacidades del HUB y Nodos CALE adicionales
+En esta fase de implementación y operación del servicio práctico, el modelo de gobernanza VSM para los CALE prácticos activa funcionalidades adicionales de la gobernanza ya establecida para los CALE teóricos. Esto significa que la estructura de gobernanza del HUB, que opera como un sistema viable completo, se expande para integrar las particularidades y complejidades inherentes a la evaluación práctica.
+Las capacidades del HUB en esta fase se centran en la orquestación y el control de una red más compleja, que incluye infraestructura física específica para pistas de destreza y flotas vehiculares. ALEIA, como la plataforma de orquestación, implementa funcionalidades avanzadas para gestionar esta complejidad. Esto incluye la orquestación programática de los despliegues de nodos prácticos, la integración de la cadena de valor para el suministro de equipos y vehículos, y la habilitación de canales de información vertical para monitorear el desempeño y la seguridad de las operaciones prácticas.
+Para gestionar la complejidad de la implementación de los CALE prácticos, esta será trasladada a un operador externo que entregará el CALE "llave en mano". Este operador tendrá la responsabilidad de compartir todos los datos de construcción en el estándar BIM (Building Information Modeling) para proyectos públicos, asegurando la transparencia, la trazabilidad y la estandarización de la infraestructura física.
+
+
+
+PARTE IV: PLAN DE IMPLEMENTACIÓN, GOBERNANZA Y VIABILIDAD FINANCIERA
+Esta parte constituye el plan de acción consolidado del proyecto. Su objetivo es integrar los diseños (Blueprints), los modelos de gobernanza y las cadenas de resultados de las fases teórica y práctica en una única hoja de ruta ejecutable, programática y financieramente viable. Sirve como el artefacto central para la PMO (Sistema 2) en la orquestación del despliegue y para la alta dirección (Sistema 5) en el seguimiento estratégico y la toma de decisiones.
+
+
+6.0 Plan de Implementación Consolidado
+
+Este capítulo detalla el "cuándo", el "cómo" y el "con quién" se ejecutará el despliegue de la red SNCALE a nivel nacional, traduciendo el diseño estratégico en un plan táctico y operativo. Se integran las etapas de implementación de los nodos teóricos y prácticos, así como las etapas de expansión y sostenibilidad.
+6.1 Cronograma de Implementación Detallado 
+La implementación de la Red SNCALE se ejecutará en etapas definidas para asegurar la optimización de recursos y el cumplimiento normativo. Se requiere una preparación de insumos críticos que son aportados en la fase de formulación y aprobación.
+
+
+
+
+
+
+
+
+
+6.1.1 Etapa 0: Pre-alistamiento
+La contribución de la Universidad a esta iniciativa se materializa, en esta etapa, a través del diseño de los blueprints, la configuración de las plataformas y la operación del HUB central. Estos entregables serán formalizados por la universidad en la fase precontractual, una vez que el proyecto sea preseleccionado. Este avance estratégico es crucial, ya que permite iniciar la implementación sin demoras, garantizando la disponibilidad de espacios adecuados para los primeros 18 centros y facilitando el cumplimiento del cronograma normativo establecido.
+
+Adicionalmente, se cuenta con diseños BIM genéricos y planos de adecuación ya finalizados para ambas configuraciones. Esta disposición optimiza significativamente la planificación y reduce los tiempos de activación de las primeras 18 rutas de implementación. La estandarización técnica lograda a través de estos diseños agiliza la ejecución de obras y el montaje de la infraestructura, asegurando una puesta en marcha eficiente y replicable en los nodos subsiguientes.
+
+Asimismo, se ha asegurado la preselección de equipos y proveedores que ofrecen capacidad de instalación "llave en mano" y despliegue simultáneo en todo el país. Esta precondición es fundamental para la ejecución eficiente del proyecto, ya que permite iniciar la implementación de los CALE-T sin retrasos logísticos, garantizando la disponibilidad de recursos y servicios dentro de los plazos establecidos.
+
+Finalmente, se han formalizado acuerdos marco con proveedores tecnológicos que integran verticalmente los servicios de conectividad, infraestructura TIC (incluyendo el equipamiento operativo) y sistemas de información. Estos acuerdos previos facilitan que la configuración y el despliegue de las soluciones tecnológicas se realicen de manera ágil, limitándose estrictamente a las especificaciones normativas exigidas por la resolución vigente.
+
+Actividad
+Responsable/Estado
+Entregable Clave
+INMUEBRES seleccionados para CALE T iniciales
+UPTC/Terminado(firma inicio contrato)
+36 inmuebles arrendables pre-seleccionados (CALE-T-24q)
+Diseño BIM y Planificación Detallada
+UPTC/Terminado(firma inicio contrato)
+Diseño BIM paramétrico para CALE-T-24q finalizado. Planos de adecuación y distribución.
+Convenio Marco con Proveedores para CALE- T
+UPTC/Terminado(firma inicio contrato)
+Contratos marco para obra civil, TI, mobiliario y seguridad. Proveedores pre-seleccionados.
+Instalación Piloto Plataforma Multiservicios (ALEIA-flujos críticos)
+UPTC/Terminado(firma inicio contrato)
+Plataforma Multiservicios operativa en entorno de pruebas.
+
+
+Riesgos Mitigados:
+❌ Riesgo: Inmuebles no disponibles → ✅ Mitigación: Búsqueda 30 días anticipados, 3 opciones por ciudad
+❌ Riesgo: Equipos agotados → ✅ Mitigación: Pre-selección stock garantizado proveedores
+❌ Riesgo: Diseño no estandarizado → ✅ Mitigación: BIM paramétrico 1 diseño × 36 réplicas exactas
+
+6.1.2 Etapa 1: Despliegue Mínimo Normativo (Días 1-90) - Ruta Crítica
+Esta fase se centrará en la implementación de 36 nodos CALE-T (alta capacidad) para asegurar la cobertura departamental nacional en los primeros 90 días, continuando con la implementación de 20 nodos CALE-T (media capacidad) para aumentar accesibilidad por parte de la ciudadanía.
+Periodo
+Actividad Clave
+Hitos/Entregables
+Responsable
+Días 1-45
+Despliegue Inicial (18 Nodos CALE-T)
+18 nodos CALE-T (9x 24q, 9x 16q) con infraestructura básica operativa (Obra Civil, Centro de Cómputo, Sala Evaluación Teórica, Oficinas, Recepción, Servicios Generales, Señalización).
+Contratistas / Proveedores TI
+Días 46-90
+Despliegue Final (18 Nodos CALE-T Adicionales)
+18 nodos CALE-T (9x 24q, 9x 16q) adicionales completados. Total 36 nodos operativos.
+Contratistas / Proveedores TI
+Días 60-80
+Activación y Configuración Plataforma Multiservicios
+Plataforma Multiservicios completamente integrada y operativa en los 36 nodos.
+Proveedor Plataforma
+Días 80-90
+Pruebas Integrales y Certificación
+Pruebas funcionales de equipos, certificación RETIE, certificación NTC 4143. Capacitación de personal operativo.
+Equipo Integral UPTC / Auditores Externos
+Día 91
+Inauguración y Apertura Nacional
+36 CALEs operativos y listos para la prestación de servicios.
+UPTC
+Fase 2: Expansión de Formación (Días 91-150)
+
+
+
+Esta fase se activará según la demanda regional y la justificación financiera.
+
+
+
+
+
+
+
+Periodo
+Actividad Clave
+Hitos/Entregables
+Responsable
+Días 91-120
+Evaluación de Demanda y Decisión de Expansión
+Informe de demanda regional y análisis costo-beneficio para salas de formación.
+Equipo UPTC / Dirección Técnica
+Días 121-150
+Implementación Salas de Formación Especializada
+Activación de salas de formación en los nodos justificados.
+Contratistas / Proveedores
+
+
+6.1.3 Etapa 2: Densificación y Expansión de Formación (Días 91-150)
+Esta etapa se activará según la demanda regional y la justificación financiera.  Consiste en activar la oferta de servicios de educación superior, en la sala complementaria.
+Periodo
+Actividad Clave
+Hitos/Entregables
+Responsable
+Días 91-120
+Evaluación de Demanda y Decisión de Expansión
+Informe de demanda regional y análisis costo-beneficio para salas de formación.
+Equipo UPTC / Dirección Técnica
+Días 121-150
+Implementación Salas de Formación Especializada
+Activación de salas de formación en los nodos justificados.
+Contratistas / Proveedores
+6.1.4 Etapa 3: Solución Energética (Años 2-3)
+Esta fase se diferirá y se implementará según el análisis costo-beneficio operativo.
+Periodo
+Actividad Clave
+Hitos/Entregables
+Responsable
+Año 2-3
+Análisis de Viabilidad y Licitación
+Estudio de viabilidad actualizado. Licitación nacional para sistemas de energía renovable.
+Equipo UPTC / Área de Contratación
+Año 2-3
+Implementación Sistemas de Energía Renovable
+Instalación de sistemas solares en los CALEs seleccionados.
+Proveedores de Energía Renovable
+
+6.1.5 Etapa 4: Despliegue de Nodos CALE Prácticos (Mes 6 - Mes 18)
+Esta etapa se enfoca en la implementación de los nodos CALE Prácticos, siguiendo el modelo de "llave en mano" con operadores especializados. La complejidad de la implementación de la infraestructura práctica será gestionada por estos operadores, quienes se encargarán de la construcción y adecuación de las pistas de destreza y la dotación vehicular, compartiendo los datos de construcción en el estándar BIM para proyectos públicos. La gobernanza y orquestación de esta etapa se activarán a través de funcionalidades adicionales en la plataforma ALEIA, permitiendo al HUB monitorear y coordinar eficazmente el despliegue y la operación de estos nodos.
+
+Periodo
+Actividad Clave
+Hitos/Entregables
+Responsable
+Mes 6 - Mes 9
+Selección y Contratación de Operadores CALE Prácticos
+Licitación y adjudicación de contratos con operadores especializados para el despliegue de CALE Prácticos. Definición de acuerdos de nivel de servicio (SLA) y requisitos de entrega de datos BIM.
+Equipo UPTC / Área Contratación / Dirección Técnica
+Mes 7 - Mes 15
+Implementación de Infraestructura CALE Práctico
+Construcción y adecuación de pistas de destreza, instalaciones físicas y dotación vehicular, conforme a los "Blueprints" de la Fase Práctica y el estándar BIM. Integración de sistemas tecnológicos y de seguridad específicos para la evaluación práctica.
+Operadores Externos / Supervisión UPTC
+Mes 16 - Mes 17
+Pruebas Integrales y Certificación CALE Práctico
+Realización de pruebas funcionales exhaustivas de la infraestructura, vehículos y sistemas de evaluación. Certificación de cumplimiento normativo y capacitación del personal operativo de los nodos prácticos.
+Equipo Integral UPTC / Auditores Externos
+Mes 18
+Inauguración y Apertura Nacional de CALE Prácticos
+Nodos CALE Prácticos operativos y listos para la prestación de servicios de evaluación de destrezas en pista y vía. Registro y habilitación formal de los nodos en RUNT.
+
+
+
+
+7.0 Plan Financiero y Modelo de Sostenibilidad
+Este documento consolida el modelo financiero completo del Sistema Nacional de CALE, abarcando la inversión de capital (CAPEX), costos operativos (OPEX), proyecciones de ingresos y análisis de sostenibilidad financiera. El proyecto contempla el despliegue de una red nacional de 56 CALEs en 32 departamentos de Colombia, con capacidad para realizar más de 1 millón de evaluaciones anuales.
+7.1 Cifras Clave del Proyecto
+
+Concepto
+Valor
+Observaciones
+Inversión Total Etapa 1 (36 CALEs)
+$8,750,284,747
+CALE-T-24q - Mínimo viable
+CAPEX por CALE-T-24q (Etapa 1)
+$243,063,465
+Incluye contingencia 15%
+CAPEX por CALE-T-16q (Etapa 1)
+$196,481,105
+Incluye contingencia 15%
+Ingresos Anuales por CALE-T-24q
+$1,446,008,400
+Año 1 - Solo evaluaciones
+OPEX Anual por CALE-T-24q
+$1,351,944,007
+Incluye plataformas y personal
+Margen Operativo Año 1
+$94,064,393
+6.5% sobre ingresos
+Capacidad Nacional (56 CALEs)
+1,104,000 eval/año
+Año 2 - Año 10
+
+7.2 ESTRUCTURA DE COSTOS POR CLASE DE CALE
+El proyecto contempla tres clases de CALE según normativa del Ministerio de Transporte (Resolución 20253040037125/2025), cada una con requisitos de infraestructura y costos diferenciados.
+
+
+7.2.1 CALE-P Clase I - Costos de Construcción
+Infraestructura Civil y Tecnológica
+
+Componente
+UND
+Cantidad
+Valor Unitario
+Subtotal
+INFRAESTRUCTURA
+
+
+
+
+Construcción y puesta en operación de infraestructura civil y tecnológica de pistas de evaluación práctica A1-A2 y B1-C1
+m²
+3,236
+$1,237,600
+$4,004,873,600
+Construcción llave en mano de infraestructura administrativa y de evaluación teórica CALE Clase I
+m²
+382
+$3,180,900
+$1,215,103,800
+Vehículos de prueba examen teórico Categoría A1
+UND
+3
+$7,893,200
+$23,679,600
+Vehículos de prueba examen teórico Categoría A2
+UND
+3
+$10,893,000
+$32,679,000
+Vehículos de prueba examen teórico Categoría B1-C1
+UND
+2
+$72,680,000
+$145,360,000
+Vehículos de prueba examen teórico Categoría B2-C2
+UND
+1
+$124,300,000
+$124,300,000
+Vehículos de prueba examen teórico Categoría B3-C3
+UND
+1
+$498,357,000
+$498,357,000
+Equipos de seguridad para pruebas de conducción
+UND
+1
+$18,963,700
+$18,963,700
+Predio
+m²
+3,421
+$1,430,000
+$4,894,890,000
+
+
+
+TOTAL CLASE I
+$10,335,549,700
+
+
+
+7.2.2 CALE-P Clase II - Costos de Construcción
+Infraestructura Civil y Tecnológica
+Componente
+UND
+Cantidad
+Valor Unitario
+Subtotal
+INFRAESTRUCTURA
+
+
+
+
+Construcción y puesta en operación de infraestructura civil y tecnológica de pistas de evaluación práctica A1-A2 y B1-C1
+m²
+3,236
+$1,237,600
+$4,004,873,600
+Construcción llave en mano de infraestructura administrativa y de evaluación teórica CALE Clase I
+m²
+382
+$3,180,900
+$1,215,103,800
+Vehículos de prueba examen teórico Categoría A1
+UND
+3
+$7,893,200
+$23,679,600
+Vehículos de prueba examen teórico Categoría A2
+UND
+3
+$10,893,000
+$32,679,000
+Vehículos de prueba examen teórico Categoría B1-C1
+UND
+2
+$72,680,000
+$145,360,000
+Vehículos de prueba examen teórico Categoría B2-C2
+UND
+1
+$124,300,000
+$124,300,000
+Equipos de seguridad para pruebas de conducción
+UND
+1
+$18,963,700
+$18,963,700
+Predio
+m²
+4,728
+$1,870,000
+$8,841,360,000
+
+
+
+TOTAL CLASE II
+$14,406,319,700
+
+7.2.3 CALE Clase-P I - Costos de Construcción
+Infraestructura Civil y Tecnológica
+
+Componente
+UND
+Cantidad
+Valor Unitario
+Subtotal
+INFRAESTRUCTURA
+
+
+
+
+Construcción y puesta en operación de infraestructura civil y tecnológica de pistas de evaluación práctica A1-A2 y B1-C1
+m²
+3,236
+$1,237,600
+$4,004,873,600
+Construcción llave en mano de infraestructura administrativa y de evaluación teórica CALE Clase I
+m²
+382
+$3,180,900
+$1,215,103,800
+Vehículos de prueba examen teórico Categoría A1
+UND
+3
+$7,893,200
+$23,679,600
+Vehículos de prueba examen teórico Categoría A2
+UND
+3
+$10,893,000
+$32,679,000
+Vehículos de prueba examen teórico Categoría B1-C1
+UND
+2
+$72,680,000
+$145,360,000
+Vehículos de prueba examen teórico Categoría B2-C2
+UND
+1
+$124,300,000
+$124,300,000
+Vehículos de prueba examen teórico Categoría B3-C3
+UND
+1
+$498,357,000
+$498,357,000
+Equipos de seguridad para pruebas de conducción
+UND
+1
+$18,963,700
+$18,963,700
+
+
+
+TOTAL CLASE III
+$6,063,316,700
+
+
+
+7.2.4 CALE-T: Componentes Esenciales para Cumplimiento Resolución 20253040037125/2025
+
+COMPONENTE
+CALE-T-24q
+CALE-T-16q
+1. Centro de Cómputo
+17.980.000
+17.980.000
+2. Sala Evaluación Teórica
+138.092.000
+97.228.000
+4. Oficinas Administrativas
+29.054.290
+29.054.290
+5. Recepción y Control
+18.000.000
+16.950.000
+6. Servicios Generales
+21.035.000
+21.035.000
+7. Señalización
+9.020.000
+9.020.000
+9. Plataforma Multiservicios - Hardware
+7.000.000
+7.000.000
+SUBTOTAL ETAPA 1
+240.181.290
+198.267.290
+Ajuste economías escala (-8%/-17%)
+28.821.755
+23.792.075
+BASE CAPEX ETAPA 1
+211.359.535
+174.475.215
+Contingencia 15%*
+31.703.930
+26.171.282
+Total CAPEX
+243.063.465
+200.646.497
+Cantidad Nodos Etapa 1
+36
+20
+Total Etapa 1
+8.750.284.747
+4.012.929.944
+
+7.2.5. Componentes Estratégicos para la sostenibilidad y la apropiación social del servicio
+Esta medida deberá implementarse cuando la demanda de formación especializada justifique la inversión adicional.
+Componente
+CALE-T-24q
+CALE-T-16q
+Descripción
+3. Sala Formación Especializada
+$45,000,000
+$30,000,000
+24/16 cubículos armables + PCs + audiovisual (detalles en ANEXO D)
+Ajuste economías escala
+-$3,600,000
+-$5,100,000
+Compra centralizada equipos
+TOTAL ETAPA 2
+$41,400,000
+$24,900,000
+EXPANSIÓN OPCIONAL
+
+
