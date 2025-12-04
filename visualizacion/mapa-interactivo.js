@@ -5,45 +5,30 @@
 // CONFIGURACIÓN Y DATOS
 // ========================================
 
+// TIPOS_CONFIG actualizado para coincidir con datos reales del JSON
 const TIPOS_CONFIG = [
     {
-        tipo_id: 'L3.CALE.n_1.plus',
-        nombre: 'CALE Metropolitano Premium',
+        tipo_id: 'L3.CALE.n_1',
+        nombre: 'CALE Metropolitano',
         categoria: 'Cat.A+',
         color: '#E63946',
         icono: '🔴',
-        cantidad: 3
+        cantidad: 20
     },
     {
-        tipo_id: 'L3.CALE.n_1.base',
-        nombre: 'CALE Metropolitano Base',
-        categoria: 'Cat.A',
+        tipo_id: 'L3.SATELITE.n_2',
+        nombre: 'CALE Regional',
+        categoria: 'Cat.B',
         color: '#F77F00',
         icono: '🟠',
-        cantidad: 17
+        cantidad: 20
     },
     {
-        tipo_id: 'L3.CALE.n_2.star',
-        nombre: 'CALE Regional Plus',
-        categoria: 'Cat.B**',
-        color: '#FCBF49',
-        icono: '🟡',
-        cantidad: 16
-    },
-    {
-        tipo_id: 'L3.CALE.n_2.base',
-        nombre: 'CALE Regional Base',
-        categoria: 'Cat.B',
-        color: '#06D6A0',
-        icono: '🟢',
-        cantidad: 4
-    },
-    {
-        tipo_id: 'L3.CALE.n_3.base',
+        tipo_id: 'L3.SATELITE.n_3',
         nombre: 'CALE Provincial',
         categoria: 'Cat.C1',
-        color: '#118AB2',
-        icono: '🔵',
+        color: '#06D6A0',
+        icono: '🟢',
         cantidad: 16
     },
     {
@@ -51,7 +36,7 @@ const TIPOS_CONFIG = [
         nombre: 'Satélites C2',
         categoria: 'Cat.C2',
         color: '#8338EC',
-        icono: '⬤',
+        icono: '🟣',
         cantidad: 31
     },
     {
@@ -59,7 +44,7 @@ const TIPOS_CONFIG = [
         nombre: 'Satélites C3',
         categoria: 'Cat.C3',
         color: '#A05EB5',
-        icono: '⬤',
+        icono: '🟣',
         cantidad: 69
     },
     {
@@ -67,7 +52,7 @@ const TIPOS_CONFIG = [
         nombre: 'Satélites C4',
         categoria: 'Cat.C4',
         color: '#C77DFF',
-        icono: '⬤',
+        icono: '🟣',
         cantidad: 27
     },
     {
@@ -75,7 +60,7 @@ const TIPOS_CONFIG = [
         nombre: 'Satélites C5',
         categoria: 'Cat.C5',
         color: '#6C757D',
-        icono: '⬤',
+        icono: '⚪',
         cantidad: 14
     }
 ];

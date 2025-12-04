@@ -33,6 +33,13 @@
         "inmobiliaria": "CBRE Colombia",
         "arriendo_mensual": 77000000,
         "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_02": {
@@ -60,6 +67,13 @@
         "inmobiliaria": "CBRE Colombia",
         "arriendo_mensual": 77000000,
         "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_03": {
@@ -87,6 +101,13 @@
         "inmobiliaria": "Lonja de Santander",
         "arriendo_mensual": 66500000,
         "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_04": {
@@ -114,6 +135,13 @@
         "inmobiliaria": "Finca Raí­z Cali",
         "arriendo_mensual": 77000000,
         "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_05": {
@@ -141,6 +169,13 @@
         "inmobiliaria": "Metrocuadrado Tolima",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_06": {
@@ -168,6 +203,13 @@
         "inmobiliaria": "Finca Raí­z Nariño",
         "arriendo_mensual": 66500000,
         "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_07": {
@@ -195,6 +237,13 @@
         "inmobiliaria": "Metrocuadrado Cundinamarca",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_08": {
@@ -222,6 +271,13 @@
         "inmobiliaria": "Inmobiliaria Valledupar",
         "arriendo_mensual": 90000000,
         "arriendo_anual": 1080000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_09": {
@@ -249,6 +305,13 @@
         "inmobiliaria": "Finca Raí­z Cúcuta",
         "arriendo_mensual": 66500000,
         "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_10": {
@@ -276,6 +339,13 @@
         "inmobiliaria": "Alberto Álvarez Inmobiliaria",
         "arriendo_mensual": 77000000,
         "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_11": {
@@ -303,6 +373,13 @@
         "inmobiliaria": "Inmobiliaria del Norte",
         "arriendo_mensual": 77000000,
         "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_12": {
@@ -330,6 +407,13 @@
         "inmobiliaria": "Inmobiliaria Eje Cafetero",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_13": {
@@ -357,6 +441,13 @@
         "inmobiliaria": "Colliers Cartagena",
         "arriendo_mensual": 66500000,
         "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_14": {
@@ -384,6 +475,13 @@
         "inmobiliaria": "Metrocuadrado Soacha",
         "arriendo_mensual": 66500000,
         "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_15": {
@@ -411,6 +509,13 @@
         "inmobiliaria": "Inmobiliaria Cesar",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_16": {
@@ -438,6 +543,13 @@
         "inmobiliaria": "Inmobiliaria Casanare",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_17": {
@@ -465,6 +577,13 @@
         "inmobiliaria": "Finca Raí­z Cérdoba",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_18": {
@@ -492,6 +611,13 @@
         "inmobiliaria": "Finca Raí­z Caribe",
         "arriendo_mensual": 66500000,
         "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_19": {
@@ -519,6 +645,13 @@
         "inmobiliaria": "Inmobiliaria Santander",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_20": {
@@ -546,6 +679,13 @@
         "inmobiliaria": "Colliers Valle",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
       }
     },
     "NODO_21": {
@@ -573,6 +713,13 @@
         "inmobiliaria": "Alberto Álvarez",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_22": {
@@ -600,6 +747,13 @@
         "inmobiliaria": "Inmobiliaria Antioquia",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_23": {
@@ -627,6 +781,13 @@
         "inmobiliaria": "Colliers Meta",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_24": {
@@ -654,6 +815,13 @@
         "inmobiliaria": "Finca Raí­z Valle",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_25": {
@@ -681,6 +849,13 @@
         "inmobiliaria": "Finca Raí­z Guajira",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_26": {
@@ -708,6 +883,13 @@
         "inmobiliaria": "Inmobiliaria Poblado",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_27": {
@@ -735,6 +917,13 @@
         "inmobiliaria": "Metrocuadrado Tolima",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_28": {
@@ -762,6 +951,13 @@
         "inmobiliaria": "Finca Raí­z Cundinamarca",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_29": {
@@ -789,6 +985,13 @@
         "inmobiliaria": "Cushman & Wakefield",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_30": {
@@ -816,6 +1019,13 @@
         "inmobiliaria": "Metrocuadrado Cundinamarca",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_31": {
@@ -843,6 +1053,13 @@
         "inmobiliaria": "Finca Raí­z Boyací¡",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_32": {
@@ -870,6 +1087,13 @@
         "inmobiliaria": "Inmobiliaria Cauca",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_33": {
@@ -897,6 +1121,13 @@
         "inmobiliaria": "Finca Raí­z Huila",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_34": {
@@ -924,6 +1155,13 @@
         "inmobiliaria": "Inmobiliaria Caldas",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_35": {
@@ -951,6 +1189,13 @@
         "inmobiliaria": "Finca Raí­z Valle",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_36": {
@@ -978,6 +1223,13 @@
         "inmobiliaria": "Finca Raí­z Quindí­o",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_37": {
@@ -1005,6 +1257,13 @@
         "inmobiliaria": "Finca Raí­z Nariño",
         "arriendo_mensual": 66500000,
         "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_38": {
@@ -1032,6 +1291,13 @@
         "inmobiliaria": "Finca Raí­z Caquetí¡",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_39": {
@@ -1059,6 +1325,13 @@
         "inmobiliaria": "Inmobiliaria Sucre",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_40": {
@@ -1086,6 +1359,13 @@
         "inmobiliaria": "Inmobiliaria Cesar",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
       }
     },
     "NODO_41": {
@@ -1113,6 +1393,13 @@
         "inmobiliaria": "Finca Raí­z Islas",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_42": {
@@ -1140,6 +1427,13 @@
         "inmobiliaria": "Finca Raí­z Arauca",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_43": {
@@ -1167,6 +1461,13 @@
         "inmobiliaria": "Inmobiliaria Putumayo",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_44": {
@@ -1194,6 +1495,13 @@
         "inmobiliaria": "Inmobiliaria Amazonas",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_45": {
@@ -1221,6 +1529,13 @@
         "inmobiliaria": "Inmobiliaria Chocé",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_46": {
@@ -1248,6 +1563,13 @@
         "inmobiliaria": "Inmobiliaria Guaviare",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_47": {
@@ -1275,6 +1597,13 @@
         "inmobiliaria": "Inmobiliaria Vichada",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_48": {
@@ -1302,6 +1631,13 @@
         "inmobiliaria": "Finca Raí­z Urabí¡",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_49": {
@@ -1329,6 +1665,13 @@
         "inmobiliaria": "Inmobiliaria Guainí­a",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_50": {
@@ -1356,6 +1699,13 @@
         "inmobiliaria": "Finca Raí­z Nariño",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_51": {
@@ -1383,6 +1733,13 @@
         "inmobiliaria": "Inmobiliaria Nariño",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_52": {
@@ -1410,6 +1767,13 @@
         "inmobiliaria": "Finca Raí­z Norte de Santander",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_53": {
@@ -1437,6 +1801,13 @@
         "inmobiliaria": "Inmobiliaria Vaupés",
         "arriendo_mensual": 45500000,
         "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_54": {
@@ -1464,6 +1835,13 @@
         "inmobiliaria": "Finca Raí­z Bolí­var",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_55": {
@@ -1491,6 +1869,13 @@
         "inmobiliaria": "Inmobiliaria Urabí¡",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "NODO_56": {
@@ -1518,6 +1903,13 @@
         "inmobiliaria": "Inmobiliaria Caldas",
         "arriendo_mensual": 52500000,
         "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
       }
     },
     "SAT_001": {
@@ -1545,6 +1937,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_002": {
@@ -1572,6 +1971,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_003": {
@@ -1599,6 +2005,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_004": {
@@ -1626,6 +2039,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_005": {
@@ -1653,6 +2073,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_006": {
@@ -1680,6 +2107,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_007": {
@@ -1707,6 +2141,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_008": {
@@ -1734,6 +2175,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_009": {
@@ -1761,6 +2209,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_010": {
@@ -1788,6 +2243,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_011": {
@@ -1815,6 +2277,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_012": {
@@ -1842,6 +2311,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_013": {
@@ -1869,6 +2345,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_014": {
@@ -1896,6 +2379,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_015": {
@@ -1923,6 +2413,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_016": {
@@ -1950,6 +2447,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_017": {
@@ -1977,6 +2481,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_018": {
@@ -2004,6 +2515,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_019": {
@@ -2031,6 +2549,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_020": {
@@ -2058,6 +2583,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_021": {
@@ -2085,6 +2617,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_022": {
@@ -2112,6 +2651,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_023": {
@@ -2139,6 +2685,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_024": {
@@ -2166,6 +2719,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_025": {
@@ -2193,6 +2753,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_026": {
@@ -2220,6 +2787,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_027": {
@@ -2247,6 +2821,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_028": {
@@ -2274,6 +2855,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_029": {
@@ -2301,6 +2889,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_030": {
@@ -2328,6 +2923,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_031": {
@@ -2355,6 +2957,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_032": {
@@ -2382,6 +2991,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_033": {
@@ -2409,6 +3025,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_034": {
@@ -2436,6 +3059,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_035": {
@@ -2463,6 +3093,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_036": {
@@ -2490,6 +3127,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_037": {
@@ -2517,6 +3161,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_038": {
@@ -2544,6 +3195,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_039": {
@@ -2571,6 +3229,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_040": {
@@ -2598,6 +3263,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_041": {
@@ -2625,6 +3297,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_042": {
@@ -2652,6 +3331,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_043": {
@@ -2679,6 +3365,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_044": {
@@ -2706,6 +3399,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_045": {
@@ -2733,6 +3433,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_046": {
@@ -2760,6 +3467,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_047": {
@@ -2787,6 +3501,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_048": {
@@ -2814,6 +3535,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_049": {
@@ -2841,6 +3569,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_050": {
@@ -2868,6 +3603,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_051": {
@@ -2895,6 +3637,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_052": {
@@ -2922,6 +3671,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_053": {
@@ -2949,6 +3705,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_054": {
@@ -2976,6 +3739,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_055": {
@@ -3003,6 +3773,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_056": {
@@ -3030,6 +3807,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_057": {
@@ -3057,6 +3841,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_058": {
@@ -3084,6 +3875,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_059": {
@@ -3111,6 +3909,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_060": {
@@ -3138,6 +3943,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_061": {
@@ -3165,6 +3977,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_062": {
@@ -3192,6 +4011,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_063": {
@@ -3219,6 +4045,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_064": {
@@ -3246,6 +4079,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_065": {
@@ -3273,6 +4113,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_066": {
@@ -3300,6 +4147,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_067": {
@@ -3327,6 +4181,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_068": {
@@ -3354,6 +4215,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_069": {
@@ -3381,6 +4249,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_070": {
@@ -3408,6 +4283,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_071": {
@@ -3435,6 +4317,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_072": {
@@ -3462,6 +4351,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_073": {
@@ -3489,6 +4385,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_074": {
@@ -3516,6 +4419,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_075": {
@@ -3543,6 +4453,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_076": {
@@ -3570,6 +4487,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_077": {
@@ -3597,6 +4521,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_078": {
@@ -3624,6 +4555,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_079": {
@@ -3651,6 +4589,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_080": {
@@ -3678,6 +4623,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_081": {
@@ -3705,6 +4657,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_082": {
@@ -3732,6 +4691,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_083": {
@@ -3759,6 +4725,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_084": {
@@ -3786,6 +4759,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_085": {
@@ -3813,6 +4793,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_086": {
@@ -3840,6 +4827,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_087": {
@@ -3867,6 +4861,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_088": {
@@ -3894,6 +4895,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_089": {
@@ -3921,6 +4929,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_090": {
@@ -3948,6 +4963,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_091": {
@@ -3975,6 +4997,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_092": {
@@ -4002,6 +5031,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_093": {
@@ -4029,6 +5065,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_094": {
@@ -4056,6 +5099,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_095": {
@@ -4083,6 +5133,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_096": {
@@ -4110,6 +5167,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_097": {
@@ -4137,6 +5201,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_098": {
@@ -4164,6 +5235,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_099": {
@@ -4191,6 +5269,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_100": {
@@ -4218,6 +5303,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_101": {
@@ -4245,6 +5337,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_102": {
@@ -4272,6 +5371,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_103": {
@@ -4299,6 +5405,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_104": {
@@ -4326,6 +5439,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_105": {
@@ -4353,6 +5473,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_106": {
@@ -4380,6 +5507,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_107": {
@@ -4407,6 +5541,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_108": {
@@ -4434,6 +5575,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_109": {
@@ -4461,6 +5609,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_110": {
@@ -4488,6 +5643,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_111": {
@@ -4515,6 +5677,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_112": {
@@ -4542,6 +5711,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_113": {
@@ -4569,6 +5745,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_114": {
@@ -4596,6 +5779,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_115": {
@@ -4623,6 +5813,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_116": {
@@ -4650,6 +5847,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_117": {
@@ -4677,6 +5881,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_118": {
@@ -4704,6 +5915,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_119": {
@@ -4731,6 +5949,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_120": {
@@ -4758,6 +5983,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_121": {
@@ -4785,6 +6017,13 @@
         "inmobiliaria": "Alberto Álvarez",
         "arriendo_mensual": 59500000,
         "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_122": {
@@ -4812,6 +6051,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_123": {
@@ -4839,6 +6085,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
       }
     },
     "SAT_124": {
@@ -4866,6 +6119,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_125": {
@@ -4893,6 +6153,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_126": {
@@ -4920,6 +6187,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_127": {
@@ -4947,6 +6221,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_128": {
@@ -4974,6 +6255,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_129": {
@@ -5001,6 +6289,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_130": {
@@ -5028,6 +6323,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_131": {
@@ -5055,6 +6357,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_132": {
@@ -5082,6 +6391,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_133": {
@@ -5109,6 +6425,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_134": {
@@ -5136,6 +6459,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_135": {
@@ -5163,6 +6493,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_136": {
@@ -5190,6 +6527,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_137": {
@@ -5217,6 +6561,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
       }
     },
     "SAT_138": {
@@ -5244,6 +6595,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_139": {
@@ -5271,6 +6629,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     },
     "SAT_140": {
@@ -5298,6 +6663,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
       }
     },
     "SAT_141": {
@@ -5325,6 +6697,13 @@
         "inmobiliaria": "",
         "arriendo_mensual": 0,
         "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
       }
     }
   }
