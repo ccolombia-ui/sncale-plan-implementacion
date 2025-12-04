@@ -80,6 +80,58 @@ const TIPOS_CONFIG = [
     }
 ];
 
+// Mapeo de categorías a fichas L3 y configuración de capacidad
+const FICHAS_L3_CONFIG = {
+    'CALE.n_1': {
+        ficha: '../fichas_l3_unitarias/BIM_L3_001.html',
+        cubiculos: 24,
+        pistas: 'Clase I + II + III',
+        nombre: 'CALE Metropolitano'
+    },
+    'CALE.n_2': {
+        ficha: '../fichas_l3_unitarias/BIM_L3_002.html',
+        cubiculos: 16,
+        pistas: 'Clase I + II',
+        nombre: 'CALE Regional'
+    },
+    'CALE.n_3': {
+        ficha: '../fichas_l3_unitarias/BIM_L3_003.html',
+        cubiculos: 12,
+        pistas: 'Clase I',
+        nombre: 'CALE Provincial'
+    },
+    'CALE.C2': {
+        ficha: '../fichas_l3_unitarias/BIM_L3_C2.html',
+        cubiculos: 8,
+        pistas: 'Apoyo',
+        nombre: 'Satélite C2'
+    },
+    'CALE.C3': {
+        ficha: '../fichas_l3_unitarias/BIM_L3_C3.html',
+        cubiculos: 4,
+        pistas: 'Apoyo',
+        nombre: 'Satélite C3'
+    },
+    'CALE.C4': {
+        ficha: '../fichas_l3_unitarias/BIM_L3_C4.html',
+        cubiculos: 2,
+        pistas: 'Mínimo',
+        nombre: 'Satélite C4'
+    },
+    'CALE.C5': {
+        ficha: '../fichas_l3_unitarias/BIM_L3_C5.html',
+        cubiculos: 1,
+        pistas: 'Punto Info',
+        nombre: 'Satélite C5'
+    }
+};
+
+// Función para obtener config de ficha L3
+function getFichaL3Config(categoriaRaw) {
+    if (!categoriaRaw) return null;
+    return FICHAS_L3_CONFIG[categoriaRaw] || null;
+}
+
 // Datos de ejemplo (normalmente se cargarían desde tipos_l3_con_instancias_l4.json)
 let NODOS_DATA = {};
 let RELACIONES_JERARQUICAS = {};
@@ -454,6 +506,22 @@ function crearMarcador(nodo) {
 }
 
 function crearPopupContent(nodo) {
+    const fichaConfig = getFichaL3Config(nodo.categoria_raw);
+    const fichaBtn = fichaConfig ?
+        `<a href="${fichaConfig.ficha}" target="_blank" class="popup-btn" style="display:block; text-align:center; margin-top:8px; background:#27ae60;">
+            📋 Ver Ficha ${fichaConfig.nombre}
+        </a>` : '';
+
+    const capacidadInfo = fichaConfig ?
+        `<div class="popup-stat">
+            <div class="popup-stat-value">${fichaConfig.cubiculos}</div>
+            <div class="popup-stat-label">Cubículos</div>
+        </div>
+        <div class="popup-stat">
+            <div class="popup-stat-value" style="font-size:0.9em">${fichaConfig.pistas}</div>
+            <div class="popup-stat-label">Pistas</div>
+        </div>` : '';
+
     return `
         <div class="popup-title">${nodo.tipo_icono} ${nodo.nombre}</div>
         <div class="popup-stats">
@@ -465,10 +533,12 @@ function crearPopupContent(nodo) {
                 <div class="popup-stat-value">${nodo.cluster_municipios || 0}</div>
                 <div class="popup-stat-label">Municipios</div>
             </div>
+            ${capacidadInfo}
         </div>
         <button class="popup-btn" onclick="abrirDetalleNodo('${nodo.nodo_id}')">
             Ver Detalle Completo
         </button>
+        ${fichaBtn}
     `;
 }
 
@@ -514,14 +584,31 @@ function crearTipoElement(tipo) {
 
 function crearNodoElement(nodo) {
     const vinculados = nodo.subnodos_ids?.length || nodo.satelites_vinculados?.length || 0;
-    
+    const fichaConfig = getFichaL3Config(nodo.categoria_raw);
+
+    // Info de capacidad
+    const capacidadHtml = fichaConfig ?
+        `<div class="nodo-capacidad" style="font-size:0.75em; color:#4299e1; margin-top:3px;">
+            🏢 ${fichaConfig.cubiculos} cubículos • 🛣️ ${fichaConfig.pistas}
+        </div>` : '';
+
+    // Link a ficha L3
+    const fichaLink = fichaConfig ?
+        `<a href="${fichaConfig.ficha}" target="_blank"
+            onclick="event.stopPropagation();"
+            style="display:inline-block; font-size:0.7em; color:#27ae60; margin-top:4px; text-decoration:none;"
+            title="Ver ficha ${fichaConfig.nombre}">
+            📋 Ficha L3
+        </a>` : '';
+
     return `
         <div class="nodo-item" data-nodo-id="${nodo.nodo_id}" onclick="seleccionarNodo('${nodo.nodo_id}')">
             <div class="nodo-main-info">
                 <div class="nodo-name">${nodo.nombre}</div>
-                <div class="nodo-stats">
+                ${capacidadHtml}
+                <div class="nodo-stats" style="margin-top:4px;">
                     <span>📊 ${formatNumber(nodo.demanda_anual)}</span>
-                    <span>📍 ${nodo.departamento}</span>
+                    ${fichaLink}
                 </div>
             </div>
             ${vinculados > 0 ? `<div class="nodo-links">🔗 ${vinculados}</div>` : ''}
@@ -617,14 +704,33 @@ function seleccionarNodo(nodoId) {
 
 function mostrarPanel(nodo) {
     const panel = document.getElementById('panelFlotante');
-    
+    const fichaConfig = getFichaL3Config(nodo.categoria_raw);
+
     // Actualizar contenido
     document.getElementById('panelNodoNombre').textContent = nodo.nombre;
-    document.getElementById('panelNodoCategoria').textContent = `${nodo.tipo_icono} ${nodo.categoria} • ${nodo.departamento}`;
-    
-    // Tab General
+
+    // Agregar link a ficha L3 en el subtítulo
+    const categoriaHtml = fichaConfig ?
+        `${nodo.tipo_icono} ${nodo.categoria} • ${nodo.departamento}
+         <a href="${fichaConfig.ficha}" target="_blank"
+            style="display:inline-block; margin-left:10px; padding:3px 8px; background:#27ae60; color:white; text-decoration:none; border-radius:4px; font-size:0.8em;">
+            📋 Ver Ficha L3
+         </a>` :
+        `${nodo.tipo_icono} ${nodo.categoria} • ${nodo.departamento}`;
+
+    document.getElementById('panelNodoCategoria').innerHTML = categoriaHtml;
+
+    // Tab General - Agregar info de capacidad
     document.getElementById('panelDemanda').textContent = formatNumber(nodo.demanda_anual);
-    document.getElementById('panelCapacidad').textContent = formatNumber(nodo.valores_unitarios?.capacidad_anual || 0);
+
+    // Mostrar cubículos y pistas en lugar de capacidad anual si hay config
+    if (fichaConfig) {
+        document.getElementById('panelCapacidad').innerHTML =
+            `${fichaConfig.cubiculos} cubículos<br><small style="color:#4299e1">${fichaConfig.pistas}</small>`;
+    } else {
+        document.getElementById('panelCapacidad').textContent = formatNumber(nodo.valores_unitarios?.capacidad_anual || 0);
+    }
+
     document.getElementById('panelDepartamento').textContent = nodo.departamento;
     document.getElementById('panelDane').textContent = nodo.codigo_dane || '-';
     
