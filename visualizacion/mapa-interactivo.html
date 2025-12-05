@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4 - Nodos CALE Nacional | Mapa Interactivo | SNCALE UPTC</title>
+    <meta name="description" content="Nivel L4: Instancias CALE por municipio - 197 nodos georreferenciados - Sistema Nacional de Centros de Aplicación para Licencias de Conducción">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cat-a-plus: #E63946;
+            --cat-a: #1E90FF;
+            --cat-b-star: #FCBF49;
+            --cat-b: #06D6A0;
+            --cat-c1: #118AB2;
+            --cat-c2: #8338EC;
+            --cat-c3: #A05EB5;
+            --cat-c4: #C77DFF;
+            --cat-c5: #6C757D;
+            /* Página con fondo morado y sidebar blanca */
+            --bg-dark: #6b46c1; /* morado principal de fondo */
+            --bg-sidebar: #ffffff; /* sidebar en blanco */
+            --bg-panel: rgba(255,255,255,0.06);
+            --text-primary: #0f172a; /* texto oscuro para sidebar y contenido */
+            --text-secondary: #6b7280;
+            --border-color: #e6e6f2;
+            --highlight: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Usar el mismo degradado que la barra superior de la sidebar */
+            background: linear-gradient(135deg, rgba(99, 66, 176, 0.95), rgba(99,102,241,0.95));
+            color: var(--text-primary);
+            overflow: auto; /* permitir desplazamiento vertical cuando el contenido excede la ventana */
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-sidebar);
+            padding: 1.25rem 2rem; /* espacio aumentado */
+            margin-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-panel);
+            color: var(--text-primary);
+            border-radius: 6px;
+            width: 300px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--highlight);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+
+        .search-box .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: var(--highlight);
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+
+        /* Top categories filter bar */
+        .top-categories {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            padding: 0.6rem 1.25rem;
+            background: transparent;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.35rem 0.6rem;
+            background: rgba(255,255,255,0.06);
+            border-radius: 999px;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .category-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        .categories-right {
+            margin-left: auto;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .clear-filters {
+            background: #ef4444;
+            color: white;
+            padding: 0.45rem 0.8rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .clear-filters:hover { filter: brightness(0.95); }
+
+        /* Overview cards below map */
+        .overview-cards {
+            margin: 1rem 1.25rem 1.25rem 1.25rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.9rem;
+        }
+
+        .overview-card {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            color: white;
+            padding: 1rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            align-items: flex-start;
+        }
+
+        .overview-card .value {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .overview-card .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* Main Layout */
+        .main-container {
+            display: flex;
+            height: calc(100vh - 170px); /* dejar espacio para top-categories y cards inferiores */
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 350px;
+            background: var(--bg-sidebar);
+            border-right: 2px solid var(--border-color);
+            overflow-y: auto;
+            padding: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* Make expanded sections in the LEFT sidebar white/clean */
+        .sidebar .nodos-list {
+            background: #ffffff;
+            box-shadow: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .sidebar .nodos-list.expanded {
+            max-height: none; /* allow full list height so all nodos render */
+        }
+
+        .sidebar .nodo-item {
+            background: transparent;
+            color: var(--text-primary);
+        }
+
+        .sidebar .nodo-item:hover {
+            background: #f6f8fb;
+            border-left-color: transparent;
+        }
+
+        .sidebar .tipo-header:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .sidebar .tipo-badge {
+            background: rgba(15,23,42,0.04);
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: var(--bg-panel);
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #4a5568;
+        }
+
+        .sidebar-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sidebar top branding + search */
+        .sidebar-top {
+            padding: 1rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(139,92,246,0.95), rgba(99,102,241,0.95));
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-top h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-search {
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-search input {
+            width: 100%;
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        /* Tipo Item */
+        .tipo-item {
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .tipo-item:hover {
+            background: rgba(66, 153, 225, 0.05);
+        }
+
+        .tipo-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .tipo-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tipo-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .tipo-icon {
+            font-size: 1.2rem;
+        }
+
+        .tipo-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .tipo-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .tipo-toggle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+
+        .tipo-toggle.expanded {
+            transform: rotate(90deg);
+        }
+
+        /* Nodos List */
+        .nodos-list {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .nodos-list.expanded {
+            max-height: none;
+        }
+
+        .nodo-item {
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nodo-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: var(--highlight);
+        }
+
+        .nodo-item.selected {
+            background: rgba(66, 153, 225, 0.15);
+            border-left-color: var(--highlight);
+        }
+
+        .nodo-main-info {
+            flex: 1;
+        }
+
+        .nodo-name {
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .nodo-stats {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .nodo-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            color: var(--highlight);
+        }
+
+        /* Stats Footer */
+        .stats-footer {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-panel);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stats-footer h3 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--highlight);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Spacer to keep sidebar layout when stats footer is removed */
+        .sidebar-footer-spacer {
+            min-height: 220px; /* preserve space previously used by stats */
+            margin-top: 1.25rem;
+            padding: 1rem;
+            background: transparent;
+        }
+
+        /* Map Container */
+        .map-container {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Contenedor de Ficha (reemplaza el mapa) */
+        .ficha-container {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            overflow: auto;
+            z-index: 100;
+        }
+
+        .ficha-container.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ficha-header {
+            position: sticky;
+            top: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 101;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .ficha-header h2 {
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .btn-volver-mapa {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .btn-volver-mapa:hover {
+            background: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+        }
+
+        .ficha-content {
+            flex: 1;
+            overflow: auto;
+        }
+
+        .ficha-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Sidebar Derecha - Drill Down Jerárquico */
+        .sidebar-right {
+            display: none; /* hide right sidebar to maximize map area */
+        }
+
+        .sidebar-right::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar-right::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        .sidebar-right-header {
+            padding: 1rem;
+            background: var(--bg-panel);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .sidebar-right-header h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-right-header .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .sidebar-right-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        /* Resumen Financiero Nodo */
+        .nodo-resumen {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+        }
+
+        .nodo-resumen-item {
+            text-align: center;
+        }
+
+        .nodo-resumen-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .nodo-resumen-value {
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .nodo-resumen-value.capex { color: #2ecc71; }
+        .nodo-resumen-value.opex { color: #3498db; }
+
+        /* Nombre del nodo header */
+        .nodo-nombre-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .nivel-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .nivel-badge.l3 { background: rgba(255,255,255,0.3); }
+        .nivel-badge.l2 { background: rgba(255,165,0,0.3); }
+        .nivel-badge.l1 { background: rgba(46,204,113,0.3); }
+        .nivel-badge.l0 { background: rgba(52,152,219,0.3); }
+
+        /* Drill Down Items */
+        .drill-item {
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .drill-header {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            gap: 0.5rem;
+        }
+
+        .drill-header:hover {
+            filter: brightness(1.1);
+        }
+
+        .drill-header.active {
+            border-left: 3px solid #f39c12;
+        }
+
+        /* Colores por nivel */
+        .drill-l3 .drill-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+        .drill-l2 .drill-header { background: linear-gradient(135deg, #d35400, #e67e22); }
+        .drill-l1 .drill-header { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .drill-l0 .drill-header { background: linear-gradient(135deg, #2980b9, #3498db); }
+
+        .drill-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .drill-title {
+            flex: 1;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .drill-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.2s;
+        }
+
+        .drill-arrow.expanded {
+            transform: rotate(90deg);
+        }
+
+        .drill-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(0,0,0,0.15);
+        }
+
+        .drill-body.expanded {
+            max-height: 1000px;
+        }
+
+        .drill-body-content {
+            padding: 0.5rem;
+        }
+
+        /* Subitems dentro de drill */
+        .drill-subitem {
+            padding: 0.6rem 0.75rem;
+            margin: 0.25rem 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+
+        .drill-subitem:hover {
+            background: rgba(255,255,255,0.1);
+            border-left-color: var(--highlight);
+        }
+
+        .drill-subitem.selected {
+            background: rgba(66, 153, 225, 0.2);
+            border-left-color: #f39c12;
+        }
+
+        .drill-subitem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .drill-subitem-id {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #f39c12;
+        }
+
+        .drill-subitem-name {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .drill-subitem-values {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.7rem;
+            margin-top: 0.25rem;
+        }
+
+        .drill-subitem-values span {
+            font-family: monospace;
+        }
+
+        .drill-subitem-values .capex { color: #2ecc71; }
+        .drill-subitem-values .opex { color: #3498db; }
+
+        /* Botón Ver Ficha (solo L0) */
+        .btn-ver-ficha {
+    display: inline-block;
+    
+    /* Aumento de tamaño y peso */
+    padding: 5px 5px; /* Más espacio interior */
+    font-size: 0.84rem; /* Letra más grande y legible */
+    font-weight: 700; /* Letra más gruesa y destacada */
+    
+    /* Colores y Contraste */
+    background: #FFC107; /* Tono de amarillo/ámbar más vivo para destacar */
+    color: #1a1a1a; /* Texto oscuro para alto contraste */
+    text-decoration: none;
+    
+    /* Diseño y Forma */
+    border-radius: 6px; /* Bordes suaves */
+    border: 2px solid #FFECB3; /* Un borde sutil más claro (parece brillo) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra marcada para darle profundidad */
+    
+    /* Asegurar que la transición no interfiera */
+    transition: none; 
+}
+
+        .btn-ver-ficha:hover {
+            background: #d68910;
+            transform: scale(1.05);
+        }
+
+        /* Contenedor L0 con botón */
+        .drill-l0-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            margin: 0.25rem 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            border-left: 2px solid #3498db;
+        }
+
+        .drill-l0-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .drill-l0-info {
+            flex: 1;
+        }
+
+        .drill-l0-id {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #3498db;
+        }
+
+        .drill-l0-name {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Map Controls */
+        .map-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background: var(--bg-sidebar);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            min-width: 200px;
+        }
+
+        .map-controls h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .layer-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .layer-toggle input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .layer-toggle label {
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* Panel Flotante - OCULTO (reemplazado por sidebar-right) */
+        .panel-flotante {
+            display: none !important;
+        }
+
+        .panel-flotante.visible {
+            display: none !important;
+        }
+
+        .panel-header {
+            padding: 1.5rem;
+            background: var(--bg-panel);
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .panel-title h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .panel-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .panel-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .panel-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .panel-content {
+            padding: 1.5rem;
+        }
+
+        .panel-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .panel-tab {
+            padding: 0.75rem 1rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .panel-tab.active {
+            color: var(--highlight);
+            border-bottom-color: var(--highlight);
+        }
+
+        .panel-section {
+            margin-bottom: 2rem;
+        }
+
+        .panel-section h3 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .info-item {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .cluster-list {
+            list-style: none;
+        }
+
+        .cluster-item {
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .cluster-item:hover {
+            background: rgba(66, 153, 225, 0.1);
+            border-color: var(--highlight);
+        }
+
+        .cluster-icon {
+            font-size: 1.2rem;
+        }
+
+        .cluster-info {
+            flex: 1;
+        }
+
+        .cluster-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cluster-meta {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Estilos Jerarquía BIM Panel */
+        .jerarquia-resumen {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .resumen-item {
+            text-align: center;
+        }
+
+        .resumen-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            display: block;
+        }
+
+        .resumen-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .resumen-value.capex { color: #2ecc71; }
+        .resumen-value.opex { color: #3498db; }
+
+        .nivel-collapse {
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .nivel-header {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            gap: 0.5rem;
+        }
+
+        .nivel-header:hover {
+            filter: brightness(1.1);
+        }
+
+        .nivel-l3 .nivel-header { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+        .nivel-l2 .nivel-header { background: linear-gradient(135deg, #d35400, #e67e22); }
+        .nivel-l1 .nivel-header { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+        .nivel-l0 .nivel-header { background: linear-gradient(135deg, #2980b9, #3498db); }
+
+        .nivel-badge {
+            background: rgba(255,255,255,0.25);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .nivel-titulo {
+            flex: 1;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .nivel-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .nivel-arrow.rotated {
+            transform: rotate(90deg);
+        }
+
+        .nivel-body {
+            max-height: 300px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.2);
+            padding: 0.75rem;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .nivel-body.collapsed {
+            max-height: 0;
+            padding: 0 0.75rem;
+            overflow: hidden;
+        }
+
+        /* Componente en panel */
+        .comp-item-panel {
+            padding: 0.6rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 5px;
+            border-left: 3px solid #f39c12;
+        }
+
+        .comp-item-panel:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        .comp-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.3rem;
+        }
+
+        .comp-item-id {
+            font-family: monospace;
+            color: #f39c12;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .comp-item-link {
+            font-size: 0.7rem;
+            color: var(--highlight);
+            text-decoration: none;
+            padding: 2px 6px;
+            background: rgba(66, 153, 225, 0.2);
+            border-radius: 3px;
+        }
+
+        .comp-item-link:hover {
+            background: rgba(66, 153, 225, 0.4);
+        }
+
+        .comp-item-name {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .comp-item-valores {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.3rem;
+            font-size: 0.7rem;
+        }
+
+        .comp-valor-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comp-valor-label {
+            color: var(--text-secondary);
+        }
+
+        .comp-valor-value {
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .comp-valor-value.capex { color: #2ecc71; }
+        .comp-valor-value.opex { color: #3498db; }
+
+        .btn-ver-ficha-panel {
+            display: block;
+            text-align: center;
+            padding: 0.5rem;
+            background: linear-gradient(135deg, #f39c12, #d68910);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .btn-ver-ficha-panel:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Leaflet Custom Styles */
+        .leaflet-popup-content-wrapper {
+            background: var(--bg-sidebar);
+            color: var(--text-primary);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .leaflet-popup-content {
+            margin: 1rem;
+            min-width: 250px;
+        }
+
+        .popup-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .popup-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .popup-stat {
+            text-align: center;
+        }
+
+        .popup-stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--highlight);
+        }
+
+        .popup-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .popup-btn {
+            width: 100%;
+            padding: 0.5rem;
+            background: var(--highlight);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .popup-btn:hover {
+            background: #3182ce;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: absolute;
+                left: -350px;
+                z-index: 1002;
+                height: 100%;
+                transition: left 0.3s;
+            }
+
+            .sidebar.mobile-visible {
+                left: 0;
+            }
+
+            .panel-flotante {
+                width: 100%;
+                right: -100%;
+            }
+
+            .search-box input {
+                width: 200px;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2000;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--highlight);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header UPTC -->
+    <div class="header">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <!-- Logo UPTC -->
+            <img src="logo-uptc.svg" alt="Logo UPTC" width="80" height="80">
+            <div>
+                <h1 style="font-size: 1.3rem; margin: 0;"> SNCALE - L4: Nodos Municipales CALE</h1>
+                <p style="margin: 0; font-size: 11px; opacity: 0.85;">
+                    <strong></strong> Universidad Pedagógica y Tecnológica de Colombia
+                </p>
+            </div>
+        </div>
+
+        <div class="header-controls">
+            <button class="btn" onclick="mostrarAyuda()">❓ Ayuda</button>
+        </div>
+    </div>
+
+    <!-- Top Categories Bar (visual filters) -->
+    <div class="top-categories" id="topCategories">
+        <label class="category-item"><input type="checkbox" data-cat="CALE.n_1"> <span class="category-dot" style="background:#f20808"></span> CALE.n_1</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.n_1+"> <span class="category-dot" style="background:#0000ff"></span> CALE.n_1+</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.n_2"> <span class="category-dot" style="background:#ffb300"></span> CALE.n_2</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.n_2**"> <span class="category-dot" style="background:#ff4d00"></span> CALE.n_2**</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.n_3"> <span class="category-dot" style="background:#3cb018"></span> CALE.n_3</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.C2"> <span class="category-dot" style="background:#a20dde"></span> C2</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.C3"> <span class="category-dot" style="background:#a20dde"></span> C3</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.C4"> <span class="category-dot" style="background:#a20dde"></span> C4</label>
+        <label class="category-item"><input type="checkbox" data-cat="CALE.C5"> <span class="category-dot" style="background:#6C757D"></span> C5</label>
+
+        <div class="categories-right">
+            <button class="clear-filters" id="btnClearFilters">Limpiar Filtros</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <!-- Sidebar top branding with search (Red Nacional CALE) -->
+            <div class="sidebar-top" id="sidebarTop">
+                <h2>🏛️ Red Nacional CALE</h2>
+                <div class="sidebar-search">
+                    <input type="text" id="searchInput" placeholder="Buscar centro o municipio...">
+                </div>
+            </div>
+
+           
+
+            <!-- Tipos dinámicos se cargarán aquí -->
+            <div id="tiposContainer"></div>
+
+            <!-- Spacer to preserve layout when stats removed -->
+            <div class="sidebar-footer-spacer" aria-hidden="true"></div>
+        </div>
+
+        <!-- Map Container -->
+        <div class="map-container">
+            <div id="map"></div>
+
+            <!-- Contenedor de Ficha (toggle con mapa) -->
+            <div class="ficha-container" id="fichaContainer">
+                <div class="ficha-header">
+                    <h2 id="fichaTitle">Ficha Técnica</h2>
+                    <button class="btn-volver-mapa" onclick="volverAlMapa()">← Volver al Mapa</button>
+                </div>
+                <div class="ficha-content" id="fichaContent">
+                    <!-- El iframe se cargará aquí -->
+                </div>
+            </div>
+
+
+            <!-- Panel Flotante -->
+            <div class="panel-flotante" id="panelFlotante">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <h2 id="panelNodoNombre">Cargando...</h2>
+                        <div class="panel-subtitle" id="panelNodoCategoria"></div>
+                    </div>
+                    <button class="panel-close" onclick="cerrarPanel()">×</button>
+                </div>
+                <div class="panel-content">
+                    <div class="panel-tabs">
+                        <button class="panel-tab active" onclick="cambiarTab('general')">General</button>
+                        <button class="panel-tab" onclick="cambiarTab('jerarquia')">Jerarquía BIM</button>
+                        <button class="panel-tab" onclick="cambiarTab('infraestructura')">Infraestructura</button>
+                        <button class="panel-tab" onclick="cambiarTab('cluster')">Cluster</button>
+                        <button class="panel-tab" onclick="cambiarTab('presupuesto')">Presupuesto</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div id="tabGeneral" class="tab-content">
+                        <div class="panel-section">
+                            <h3>Información General</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="info-label">Demanda Anual</div>
+                                    <div class="info-value" id="panelDemanda">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Capacidad Anual</div>
+                                    <div class="info-value" id="panelCapacidad">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Departamento</div>
+                                    <div class="info-value" id="panelDepartamento">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Código DANE</div>
+                                    <div class="info-value" id="panelDane">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Jerarquía BIM -->
+                    <div id="tabJerarquia" class="tab-content" style="display: none;">
+                        <div class="panel-section">
+                            <!-- Resumen Financiero -->
+                            <div class="jerarquia-resumen">
+                                <div class="resumen-item">
+                                    <span class="resumen-label">CAPEX:</span>
+                                    <span class="resumen-value capex" id="jerarquiaCapex">-</span>
+                                </div>
+                                <div class="resumen-item">
+                                    <span class="resumen-label">OPEX Anual:</span>
+                                    <span class="resumen-value opex" id="jerarquiaOpex">-</span>
+                                </div>
+                            </div>
+
+                            <!-- Nivel L3: Capacidad -->
+                            <div class="nivel-collapse nivel-l3">
+                                <div class="nivel-header" onclick="toggleNivelPanel('l3')">
+                                    <span class="nivel-badge">L3</span>
+                                    <span class="nivel-titulo">Capacidad - Tipo CALE</span>
+                                    <span class="nivel-arrow" id="arrowL3">▶</span>
+                                </div>
+                                <div class="nivel-body" id="bodyL3">
+                                    <div id="componentesL3">
+                                        <!-- Componentes L3 se cargan dinámicamente -->
+                                    </div>
+                                    <a href="#" id="linkFichaL3" class="btn-ver-ficha-panel" target="_blank">Ver Ficha L3 Completa</a>
+                                </div>
+                            </div>
+
+                            <!-- Nivel L2: Distribución -->
+                            <div class="nivel-collapse nivel-l2">
+                                <div class="nivel-header" onclick="toggleNivelPanel('l2')">
+                                    <span class="nivel-badge">L2</span>
+                                    <span class="nivel-titulo">Distribución - Configuraciones</span>
+                                    <span class="nivel-arrow" id="arrowL2">▶</span>
+                                </div>
+                                <div class="nivel-body collapsed" id="bodyL2">
+                                    <div id="componentesL2">
+                                        <!-- Componentes L2 se cargan dinámicamente -->
+                                    </div>
+                                    <a href="../fichas_l2/index_l2.html" class="btn-ver-ficha-panel" target="_blank">Ver Índice L2</a>
+                                </div>
+                            </div>
+
+                            <!-- Nivel L1: Unidades Funcionales -->
+                            <div class="nivel-collapse nivel-l1">
+                                <div class="nivel-header" onclick="toggleNivelPanel('l1')">
+                                    <span class="nivel-badge">L1</span>
+                                    <span class="nivel-titulo">Unidades Funcionales</span>
+                                    <span class="nivel-arrow" id="arrowL1">▶</span>
+                                </div>
+                                <div class="nivel-body collapsed" id="bodyL1">
+                                    <div id="componentesL1">
+                                        <!-- Componentes L1 se cargan dinámicamente -->
+                                    </div>
+                                    <a href="../fichas_l1/index_l1.html" class="btn-ver-ficha-panel" target="_blank">Ver Índice L1</a>
+                                </div>
+                            </div>
+
+                            <!-- Nivel L0: Elementos Atómicos -->
+                            <div class="nivel-collapse nivel-l0">
+                                <div class="nivel-header" onclick="toggleNivelPanel('l0')">
+                                    <span class="nivel-badge">L0</span>
+                                    <span class="nivel-titulo">Elementos Atómicos</span>
+                                    <span class="nivel-arrow" id="arrowL0">▶</span>
+                                </div>
+                                <div class="nivel-body collapsed" id="bodyL0">
+                                    <div id="componentesL0">
+                                        <!-- Componentes L0 se cargan dinámicamente -->
+                                    </div>
+                                    <a href="../fichas/index_l0.html" class="btn-ver-ficha-panel" target="_blank">Ver 91 Componentes L0</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tabInfraestructura" class="tab-content" style="display: none;">
+                        <div class="panel-section">
+                            <h3>Ubicaciones</h3>
+                            <div class="info-item" style="margin-bottom: 1rem;">
+                                <div class="info-label">Dirección Sede</div>
+                                <div class="info-value" style="font-size: 0.9rem;" id="panelDireccion">-</div>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="info-label">Área (m²)</div>
+                                    <div class="info-value" id="panelArea">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Inmobiliaria</div>
+                                    <div class="info-value" style="font-size: 0.85rem;" id="panelInmobiliaria">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tabCluster" class="tab-content" style="display: none;">
+                        <div class="panel-section">
+                            <h3 id="clusterTitulo">Nodos Vinculados (0)</h3>
+                            <ul class="cluster-list" id="clusterList">
+                                <li style="text-align: center; color: var(--text-secondary); padding: 2rem;">
+                                    No hay nodos vinculados
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="tabPresupuesto" class="tab-content" style="display: none;">
+                        <div class="panel-section">
+                            <h3>Inversión y Operación</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <div class="info-label">CAPEX Unitario</div>
+                                    <div class="info-value" id="panelCapex">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">OPEX Anual</div>
+                                    <div class="info-value" id="panelOpex">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Arriendo Mensual</div>
+                                    <div class="info-value" id="panelArriendo">-</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label">Arriendo Anual</div>
+                                    <div class="info-value" id="panelArriendoAnual">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR DERECHA - Navegación Drill-Down Jerárquica -->
+        <div class="sidebar-right" id="sidebarRight">
+            <div class="sidebar-right-header">
+                <h2>🏗️ Componentes BIM</h2>
+                <div class="subtitle">Navegación L3 → L2 → L1 → L0</div>
+            </div>
+
+            <div class="sidebar-right-content">
+                <!-- Estado vacío - cuando no hay nodo seleccionado -->
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-state-icon">📍</div>
+                    <p><strong>Seleccione un nodo en el mapa</strong></p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">
+                        Para ver la jerarquía de componentes BIM del nodo seleccionado
+                    </p>
+                </div>
+
+                <!-- Contenedor para nodo seleccionado -->
+                <div class="nodo-seleccionado" id="nodoSeleccionado" style="display: none;">
+                    <!-- Nombre del nodo L3 -->
+                    <div class="nodo-nombre-header">
+                        <span class="nivel-badge l3">L3</span>
+                        <span id="nombreNodoL3">-</span>
+                    </div>
+
+                    <!-- Resumen financiero -->
+                    <div class="nodo-resumen">
+                        <div class="nodo-resumen-item">
+                            <div class="nodo-resumen-label">CAPEX</div>
+                            <div class="nodo-resumen-value capex" id="resumenCapex">$0</div>
+                        </div>
+                        <div class="nodo-resumen-item">
+                            <div class="nodo-resumen-label">OPEX Anual</div>
+                            <div class="nodo-resumen-value opex" id="resumenOpex">$0</div>
+                        </div>
+                        <div class="nodo-resumen-item" style="grid-column: 1 / -1;">
+                            <button class="btn-ver-ficha" id="btnVerFicha">Ver Ficha</button>
+                        </div>
+                    </div>
+
+                    <!-- Contenedor drill-down L2 -->
+                    <div class="drill-container" id="drillL2Container">
+                        <!-- Los componentes L2 se agregan dinámicamente aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Cards debajo del mapa (resumen) -->
+            <div class="overview-cards" id="overviewCards">
+                <div class="overview-card">
+                    <div class="value">57</div>
+                    <div class="label">Total Centros</div>
+                </div>
+                <div class="overview-card">
+                    <div class="value">0</div>
+                    <div class="label">Nodos Principales</div>
+                </div>
+                <div class="overview-card">
+                    <div class="value">57</div>
+                    <div class="label">Centros Satélite</div>
+                </div>
+                <div class="overview-card">
+                    <div class="value">1,123</div>
+                    <div class="label">Demanda Anual Total</div>
+                </div>
+                <div class="overview-card">
+                    <div class="value">19.521</div>
+                    <div class="label">Instituciones Educativas</div>
+                </div>
+            </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <div>Cargando datos del mapa...</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Small helper: limpiar checkboxes de categories (no rompe lógica existente)
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('btnClearFilters');
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                const boxes = document.querySelectorAll('#topCategories input[type="checkbox"]');
+                boxes.forEach(cb => { cb.checked = false; cb.dispatchEvent(new Event('change')); });
+            });
+        });
+    </script>
+    <script src="mapa-interactivo.js"></script>
+</body>
+</html>

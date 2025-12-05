@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo Red Nacional CALE | Proyecto MUNAY</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        #map-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #c53030;
+        }
+
+        /* Popup styling */
+        .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .popup-content h3 {
+            color: #2d3748;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .popup-content p {
+            margin: 5px 0;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+
+        .popup-content strong {
+            color: #2d3748;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .cache-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            color: #4a5568;
+            z-index: 1000;
+        }
+
+        /* Botones en popup */
+        .popup-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .popup-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .popup-btn-3d {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .popup-btn-3d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .popup-btn-2d {
+            background: #48bb78;
+            color: white;
+        }
+
+        .popup-btn-2d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+
+        .popup-btn-info {
+            background: #3182ce;
+            color: white;
+        }
+
+        .popup-btn-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+        }
+
+        /* Modal para información detallada */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .modal-close {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        .modal-section {
+            margin: 20px 0;
+        }
+
+        .modal-section h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.85em;
+            color: #718096;
+            margin-bottom: 4px;
+        }
+
+        .info-item value {
+            display: block;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        /* Filtros */
+        .filters-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            font-weight: bold;
+            color: #2d3748;
+            font-size: 0.9em;
+        }
+
+        .filter-select {
+            padding: 10px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .filter-btn-clear {
+            padding: 10px 20px;
+            background: #e53e3e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            align-self: flex-end;
+        }
+
+        .filter-btn-clear:hover {
+            background: #c53030;
+            transform: translateY(-2px);
+        }
+
+        /* Barra lateral jerárquica */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 2000;
+            overflow-y: auto;
+            transform: translateX(-350px);
+            transition: transform 0.3s;
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 10px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            z-index: 2001;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            transition: all 0.3s;
+        }
+
+        .sidebar-toggle:hover {
+            background: #764ba2;
+            padding-left: 15px;
+        }
+
+        .sidebar-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .sidebar-header h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .sidebar-search {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .sidebar-search::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .sidebar-content {
+            padding: 15px;
+        }
+
+        .tree-node {
+            margin: 5px 0;
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .tree-item:hover {
+            background: #f7fafc;
+        }
+
+        .tree-item.active {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+        }
+
+        .tree-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+        }
+
+        .tree-expand {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            cursor: pointer;
+            color: #718096;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+
+        .tree-expand.expanded {
+            transform: rotate(90deg);
+        }
+
+        .tree-label {
+            flex: 1;
+            font-size: 0.9em;
+            color: #2d3748;
+        }
+
+        .tree-count {
+            font-size: 0.85em;
+            color: #718096;
+            font-weight: bold;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .tree-children {
+            margin-left: 25px;
+            display: none;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 10px;
+        }
+
+        .tree-children.expanded {
+            display: block;
+        }
+
+        .tree-item.nivel-1 { color: #9333ea; }
+        .tree-item.nivel-2 { color: #16a34a; }
+        .tree-item.nivel-3 { color: #ea580c; }
+        .tree-item.nivel-sat { color: #dc2626; }
+        .tree-item.nivel-iebm { color: #3182ce; }
+    </style>
+</head>
+<body>
+    <!-- Botón toggle sidebar -->
+    <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleSidebar()">
+        FILTROS JERÁRQUICOS
+    </button>
+
+    <!-- Sidebar jerárquica -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>🏛️ Red Nacional CALE</h3>
+            <input type="text" class="sidebar-search" id="sidebar-search" placeholder="Buscar centro o municipio...">
+        </div>
+        <div class="sidebar-content" id="sidebar-tree">
+            <!-- Se llenará dinámicamente con JavaScript -->
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Red Nacional de Centros CALE</h1>
+            <p class="subtitle">Sistema de Capacitación en Logística Eléctrica - Proyecto MUNAY</p>
+            <p class="subtitle" style="font-size: 0.9em; margin-top: 10px; color: #48bb78;">
+                Datos en tiempo real desde Google Sheets
+            </p>
+        </header>
+
+        <!-- Filtros -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <label>Tipo de Centro</label>
+                <select id="filter-tipo" class="filter-select">
+                    <option value="">Todos</option>
+                    <option value="nodo">Solo Nodos Principales</option>
+                    <option value="satelite">Solo Satélites</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Categoría CALE</label>
+                <select id="filter-categoria" class="filter-select">
+                    <option value="">Todas</option>
+                    <option value="Cat.A+">Cat.A+ (CALE.n_1+)</option>
+                    <option value="Cat.A">Cat.A (CALE.n_1)</option>
+                    <option value="Cat.B**">Cat.B** (CALE.n_2**)</option>
+                    <option value="Cat.B">Cat.B (CALE.n_2)</option>
+                    <option value="Cat.C1">Cat.C1 (CALE.n_3)</option>
+                    <option value="C2">C2 (Satélite)</option>
+                    <option value="C3">C3 (Satélite)</option>
+                    <option value="C4">C4 (Satélite)</option>
+                    <option value="C5">C5 (Satélite)</option>
+                </select>
+            </div>
+            <button class="filter-btn-clear" onclick="limpiarFiltros()">Limpiar Filtros</button>
+        </div>
+
+        <div id="map-container">
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Cargando datos desde Google Sheets...</p>
+            </div>
+            <div id="cache-info" class="cache-info" style="display:none;"></div>
+            <div id="map"></div>
+            <div class="legend">
+                <h4>Categorías CALE</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9333ea;"></div>
+                    <span>CALE.n_1+ (HUB)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2563eb;"></div>
+                    <span>CALE.n_1 (Nodo)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #16a34a;"></div>
+                    <span>CALE.n_2 (Regional)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ea580c;"></div>
+                    <span>CALE.n_3 (Local)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #dc2626;"></div>
+                    <span>C2/C3/C4/C5 (Satélite)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats" id="stats"></div>
+    </div>
+
+    <!-- Modal para información detallada -->
+    <div id="modal-centro" class="modal-overlay" onclick="cerrarModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-titulo">Información del Centro</h2>
+                <button class="modal-close" onclick="cerrarModal()">×</button>
+            </div>
+            <div id="modal-body">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // ============================================================================
+        // CONFIGURACIÓN - GOOGLE SHEETS COMO ÚNICA FUENTE DE VERDAD
+        // ============================================================================
+
+        const GOOGLE_SHEETS_CONFIG = {
+            // URL de Google Sheets publicada como TSV (Tab-separated values)
+            // Usamos TSV porque las latitudes tienen comas decimales
+            // IMPORTANTE: Este Spreadsheet tiene TODAS las columnas incluyendo coordenadas
+            url: 'https://docs.google.com/spreadsheets/d/1ibTlTyAELNoMg6eERPvddPBdsu-eRvWuXlIbI5kDFqU/export?format=tsv&gid=197105959',
+
+            // Cache en localStorage (5 minutos)
+            cacheKey: 'cale_centros_cache',
+            cacheTTL: 5 * 60 * 1000,
+
+            // Formato de datos
+            format: 'tsv'  // Tab-separated values
+        };
+
+        const IEBM_GOOGLE_SHEETS_CONFIG = {
+            // URL de Google Sheets con IEBM (19,521 instituciones educativas)
+            url: 'https://docs.google.com/spreadsheets/d/1ibTlTyAELNoMg6eERPvddPBdsu-eRvWuXlIbI5kDFqU/export?format=tsv&gid=268599605',
+
+            // Cache en localStorage (10 minutos - datos más estáticos)
+            cacheKey: 'iebm_cache',
+            cacheTTL: 10 * 60 * 1000,
+
+            // Formato de datos
+            format: 'tsv'
+        };
+
+        // Colores por categoría (soporta ambas nomenclaturas: Cat.X y CALE.n_X)
+        const COLORES_CATEGORIAS = {
+            'Cat.A+': '#9333ea',
+            'CALE.n_1+': '#9333ea',
+            'Cat.A': '#2563eb',
+            'CALE.n_1': '#2563eb',
+            'Cat.B**': '#059669',
+            'CALE.n_2**': '#059669',
+            'Cat.B': '#16a34a',
+            'CALE.n_2': '#16a34a',
+            'Cat.C1': '#ea580c',
+            'CALE.n_3': '#ea580c',
+            'C2': '#dc2626',
+            'C3': '#dc2626',
+            'C4': '#dc2626',
+            'C5': '#dc2626'
+        };
+
+        const TAMANOS_MARCADORES = {
+            'Cat.A+': 12, 'CALE.n_1+': 12,
+            'Cat.A': 10, 'CALE.n_1': 10,
+            'Cat.B**': 8, 'CALE.n_2**': 8,
+            'Cat.B': 8, 'CALE.n_2': 8,
+            'Cat.C1': 6, 'CALE.n_3': 6,
+            'C2': 5, 'C3': 5, 'C4': 5, 'C5': 5
+        };
+
+        // ============================================================================
+        // FUNCIÓN: Parser TSV/CSV universal
+        // ============================================================================
+        function parseData(text, format = 'tsv') {
+            const lines = text.trim().split('\n');
+            const separator = format === 'tsv' ? '\t' : ',';
+
+            // Parse headers (primera línea)
+            const headers = lines[0].split(separator).map(h => h.trim().replace(/^"|"$/g, '').replace(/^\uFEFF/, ''));
+            const data = [];
+
+            // Parse datos (resto de líneas)
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (!line) continue; // Skip empty lines
+
+                // Para TSV, simplemente split por tab
+                if (format === 'tsv') {
+                    const values = line.split('\t').map(v => v.trim());
+
+                    if (values.length === headers.length) {
+                        const obj = {};
+                        headers.forEach((header, index) => {
+                            obj[header] = values[index];
+                        });
+                        data.push(obj);
+                    }
+                } else {
+                    // Para CSV, manejar comillas
+                    const values = [];
+                    let currentValue = '';
+                    let insideQuotes = false;
+
+                    for (let char of line) {
+                        if (char === '"') {
+                            insideQuotes = !insideQuotes;
+                        } else if (char === ',' && !insideQuotes) {
+                            values.push(currentValue.trim().replace(/^"|"$/g, ''));
+                            currentValue = '';
+                        } else {
+                            currentValue += char;
+                        }
+                    }
+                    values.push(currentValue.trim().replace(/^"|"$/g, ''));
+
+                    if (values.length === headers.length) {
+                        const obj = {};
+                        headers.forEach((header, index) => {
+                            obj[header] = values[index];
+                        });
+                        data.push(obj);
+                    }
+                }
+            }
+
+            return data;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Cargar datos desde Google Sheets (con cache)
+        // ============================================================================
+        async function cargarCentrosCALE() {
+            try {
+                // 1. Verificar cache
+                const cache = localStorage.getItem(GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    const { data, timestamp } = JSON.parse(cache);
+                    const now = Date.now();
+                    const timeLeft = GOOGLE_SHEETS_CONFIG.cacheTTL - (now - timestamp);
+
+                    if (timeLeft > 0) {
+                        console.log(`Cache valido por ${Math.round(timeLeft / 1000)} segundos`);
+                        mostrarInfoCache(timeLeft);
+                        return data;
+                    }
+                }
+
+                // 2. Cargar desde Google Sheets
+                console.log('Cargando datos desde Google Sheets...');
+                const response = await fetch(GOOGLE_SHEETS_CONFIG.url);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+
+                const dataText = await response.text();
+                const centros = parseData(dataText, GOOGLE_SHEETS_CONFIG.format);
+
+                if (!centros || centros.length === 0) {
+                    throw new Error('No se encontraron datos en Google Sheets');
+                }
+
+                console.log(`Cargados ${centros.length} centros desde Google Sheets`);
+
+                // 3. Guardar en cache
+                localStorage.setItem(GOOGLE_SHEETS_CONFIG.cacheKey, JSON.stringify({
+                    data: centros,
+                    timestamp: Date.now()
+                }));
+
+                mostrarInfoCache(GOOGLE_SHEETS_CONFIG.cacheTTL);
+                return centros;
+
+            } catch (error) {
+                console.error('Error cargando datos:', error);
+
+                // Fallback a cache expirado
+                const cache = localStorage.getItem(GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    console.log('Usando cache expirado como fallback');
+                    const { data } = JSON.parse(cache);
+                    mostrarInfoCache(-1);
+                    return data;
+                }
+
+                throw error;
+            }
+        }
+
+        function mostrarInfoCache(timeLeft) {
+            const cacheInfo = document.getElementById('cache-info');
+            if (timeLeft > 0) {
+                const minutos = Math.floor(timeLeft / 60000);
+                const segundos = Math.floor((timeLeft % 60000) / 1000);
+                cacheInfo.textContent = `Cache: ${minutos}:${segundos.toString().padStart(2, '0')}`;
+                cacheInfo.style.display = 'block';
+            } else if (timeLeft === -1) {
+                cacheInfo.textContent = 'Usando cache (sin conexión)';
+                cacheInfo.style.background = 'rgba(254, 215, 215, 0.9)';
+                cacheInfo.style.display = 'block';
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Cargar IEBM desde Google Sheets
+        // ============================================================================
+        async function cargarIEBM() {
+            try {
+                // 1. Verificar cache
+                const cache = localStorage.getItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    const { data, timestamp } = JSON.parse(cache);
+                    const now = Date.now();
+                    const timeLeft = IEBM_GOOGLE_SHEETS_CONFIG.cacheTTL - (now - timestamp);
+
+                    if (timeLeft > 0) {
+                        console.log(`IEBM Cache válido por ${Math.round(timeLeft / 1000)} segundos`);
+                        return data;
+                    }
+                }
+
+                // 2. Cargar desde Google Sheets
+                console.log('Cargando IEBM desde Google Sheets...');
+                const response = await fetch(IEBM_GOOGLE_SHEETS_CONFIG.url);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP al cargar IEBM: ${response.status}`);
+                }
+
+                const dataText = await response.text();
+                const iebm = parseData(dataText, IEBM_GOOGLE_SHEETS_CONFIG.format);
+
+                if (!iebm || iebm.length === 0) {
+                    throw new Error('No se encontraron datos de IEBM en Google Sheets');
+                }
+
+                console.log(`✓ Cargadas ${iebm.length} IEBM desde Google Sheets`);
+
+                // 3. Guardar en cache
+                localStorage.setItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey, JSON.stringify({
+                    data: iebm,
+                    timestamp: Date.now()
+                }));
+
+                return iebm;
+
+            } catch (error) {
+                console.error('Error cargando IEBM:', error);
+
+                // Fallback a cache expirado
+                const cache = localStorage.getItem(IEBM_GOOGLE_SHEETS_CONFIG.cacheKey);
+                if (cache) {
+                    console.log('Usando cache expirado de IEBM como fallback');
+                    const { data } = JSON.parse(cache);
+                    return data;
+                }
+
+                // Si no hay cache, retornar array vacío (no crítico)
+                console.warn('No se pudieron cargar IEBM, continuando sin ellas');
+                return [];
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Inicializar mapa
+        // ============================================================================
+        async function inicializarMapa() {
+            try {
+                // 1. Cargar datos
+                const centros = await cargarCentrosCALE();
+                const iebm = await cargarIEBM(); // Cargar IEBM también
+                iebmGlobal = iebm; // Guardar globalmente
+
+                // 2. Ocultar loading
+                document.getElementById('loading').style.display = 'none';
+
+                // 3. Crear mapa centrado en Colombia
+                const mapa = L.map('map').setView([4.5709, -74.2973], 6);
+                mapaGlobal = mapa; // Guardar referencia global para filtros
+
+                // 4. Agregar capa base de OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    maxZoom: 18
+                }).addTo(mapa);
+
+                // 5. Agregar marcadores
+                todosMarcadores = []; // Usar variable global para filtros
+                centros.forEach(centro => {
+                    // Convertir coordenadas (puede venir con coma decimal: "4,649251")
+                    const latStr = (centro.latitud || centro.lat || '').toString().replace(',', '.');
+                    const lngStr = (centro.longitud || centro.lon || centro.lng || '').toString().replace(',', '.');
+                    const lat = parseFloat(latStr);
+                    const lng = parseFloat(lngStr);
+
+                    if (isNaN(lat) || isNaN(lng)) {
+                        console.warn(`Coordenadas invalidas para ${centro.centro_id || centro.id}: lat="${centro.latitud}", lng="${centro.longitud}"`);
+                        return;
+                    }
+
+                    const categoria = centro.categoria_cale || centro.categoria || 'C2';
+                    const color = COLORES_CATEGORIAS[categoria] || '#dc2626';
+                    const radio = TAMANOS_MARCADORES[categoria] || 5;
+
+                    const marker = L.circleMarker([lat, lng], {
+                        radius: radio,
+                        fillColor: color,
+                        color: '#ffffff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+
+                    // Popup con información y botones
+                    const centroId = centro.centro_id || centro.id || 'desconocido';
+                    const popupContent = `
+                        <div class="popup-content">
+                            <h3>${centroId}</h3>
+                            <p><strong>Municipio:</strong> ${centro.municipio || 'N/A'}</p>
+                            <p><strong>Departamento:</strong> ${centro.departamento || 'N/A'}</p>
+                            <p><strong>Tipo:</strong> ${centro.tipo_centro || centro.tipo || 'N/A'}</p>
+                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || centro.demanda_anual || 0).toLocaleString()} aspirantes</p>
+                            ${centro.nodo_principal ? `<p><strong>Nodo Principal:</strong> ${centro.nodo_principal}</p>` : ''}
+                            <span class="category-badge">${categoria}</span>
+                            <div class="popup-buttons">
+                                <button class="popup-btn popup-btn-info" onclick='abrirModal(${JSON.stringify(centro).replace(/'/g, "\\'")})'>
+                                    📋 Info Completa
+                                </button>
+                                <button class="popup-btn popup-btn-3d" onclick='abrirVisor3D("${centroId}", "${categoria}")'>
+                                    🎮 Visor 3D
+                                </button>
+                                <button class="popup-btn popup-btn-2d" onclick='abrirVisor2D("${centroId}", "${categoria}")'>
+                                    📐 Visor 2D
+                                </button>
+                            </div>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(mapa);
+                    todosMarcadores.push({ marker, centro, categoria });
+                });
+
+                // 6. Mostrar estadísticas
+                mostrarEstadisticas(centros);
+
+                // 7. Construir y renderizar jerarquía en sidebar
+                centrosGlobal = centros;
+                datosJerarquia = construirJerarquia(centros);
+                renderizarArbol(datosJerarquia);
+
+                console.log(`Mapa inicializado con ${todosMarcadores.length} marcadores`);
+                console.log('Jerarquía construida:', datosJerarquia);
+
+            } catch (error) {
+                console.error('Error inicializando mapa:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <strong>Error al cargar datos</strong>
+                        <p>${error.message}</p>
+                        <p>Verifica que la Google Sheet esté publicada como CSV público.</p>
+                        <button onclick="location.reload()" style="margin-top:10px; padding:8px 16px; cursor:pointer;">Reintentar</button>
+                    </div>
+                `;
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Mostrar estadísticas
+        // ============================================================================
+        function mostrarEstadisticas(centros) {
+            // Clasificación correcta:
+            // - NODOS PRINCIPALES: CALE.n_1+ y CALE.n_1
+            // - SATÉLITES: CALE.n_2, CALE.n_3, C2, C3, C4, C5
+
+            const stats = {
+                total: centros.length,
+                nodos: centros.filter(c => {
+                    const cat = (c['Categoría'] || c.categoria_cale || c.categoria || '').trim();
+                    return cat === 'CALE.n_1+' || cat === 'CALE.n_1';
+                }).length,
+                satelites: centros.filter(c => {
+                    const cat = (c['Categoría'] || c.categoria_cale || c.categoria || '').trim();
+                    return cat === 'CALE.n_2' || cat === 'CALE.n_2**' ||
+                           cat === 'CALE.n_3' ||
+                           cat === 'C2' || cat === 'C3' || cat === 'C4' || cat === 'C5';
+                }).length,
+                demandaTotal: centros.reduce((sum, c) => {
+                    const demanda = parseInt(c['Demanda'] || c.demanda_estimada_anual || c.demanda_anual || 0);
+                    return sum + demanda;
+                }, 0)
+            };
+
+            console.log('=== ESTADÍSTICAS CALCULADAS ===');
+            console.log('Total:', stats.total);
+            console.log('Nodos (CALE.n_1+ y CALE.n_1):', stats.nodos);
+            console.log('Satélites (resto):', stats.satelites);
+            console.log('Demanda Total:', stats.demandaTotal);
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.total}</div>
+                    <div class="stat-label">Total Centros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.nodos}</div>
+                    <div class="stat-label">Nodos Principales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.satelites}</div>
+                    <div class="stat-label">Centros Satélite</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.demandaTotal.toLocaleString()}</div>
+                    <div class="stat-label">Demanda Anual Total</div>
+                </div>
+            `;
+        }
+
+        // ============================================================================
+        // FUNCIONES: Modal y navegación
+        // ============================================================================
+
+        function abrirModal(centro) {
+            const modal = document.getElementById('modal-centro');
+            const modalTitulo = document.getElementById('modal-titulo');
+            const modalBody = document.getElementById('modal-body');
+
+            modalTitulo.textContent = centro.centro_id || 'Centro CALE';
+
+            // Determinar tipo de CALE para buscar subcomponentes
+            const categoria = centro.categoria_cale || centro.categoria || 'N/A';
+            let tipoCale = 'desconocido';
+
+            if (categoria === 'Cat.A+' || categoria === 'CALE.n_1+') tipoCale = 'CALE.n_1+';
+            else if (categoria === 'Cat.A' || categoria === 'CALE.n_1') tipoCale = 'CALE.n_1';
+            else if (categoria === 'Cat.B**' || categoria === 'CALE.n_2**') tipoCale = 'CALE.n_2**';
+            else if (categoria === 'Cat.B' || categoria === 'CALE.n_2') tipoCale = 'CALE.n_2';
+            else if (categoria === 'Cat.C1' || categoria === 'CALE.n_3') tipoCale = 'CALE.n_3';
+            else tipoCale = categoria; // C2, C3, C4, C5
+
+            modalBody.innerHTML = `
+                <div class="modal-section">
+                    <h4>Información General</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Centro ID</label>
+                            <value>${centro.centro_id || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Tipo de Centro</label>
+                            <value>${centro.tipo_centro || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Categoría CALE</label>
+                            <value>${categoria}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Municipio</label>
+                            <value>${centro.municipio || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Departamento</label>
+                            <value>${centro.departamento || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Código DANE</label>
+                            <value>${centro.codigo_dane || 'N/A'}</value>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Información Operativa</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Demanda Anual Estimada</label>
+                            <value>${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()} aspirantes</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Nodo Principal</label>
+                            <value>${centro.nodo_principal || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Total Municipios Cluster</label>
+                            <value>${centro.total_municipios_cluster || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Distancia Máxima</label>
+                            <value>${centro.distancia_maxima_km || 'N/A'} km</value>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Coordenadas</h4>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Latitud</label>
+                            <value>${centro.latitud || 'N/A'}</value>
+                        </div>
+                        <div class="info-item">
+                            <label>Longitud</label>
+                            <value>${centro.longitud || 'N/A'}</value>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>Visualizar Componentes del ${tipoCale}</h4>
+                    <p style="color: #718096; margin-bottom: 15px;">
+                        Este centro es tipo ${tipoCale}. Usa los visores para explorar los componentes arquitectónicos y técnicos.
+                    </p>
+                    <div class="popup-buttons">
+                        <button class="popup-btn popup-btn-3d" onclick='abrirVisor3D("${centro.centro_id}", "${categoria}")'>
+                            🎮 Abrir Visor 3D
+                        </button>
+                        <button class="popup-btn popup-btn-2d" onclick='abrirVisor2D("${centro.centro_id}", "${categoria}")'>
+                            📐 Abrir Visor 2D (Planos)
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function cerrarModal(event) {
+            const modal = document.getElementById('modal-centro');
+            if (!event || event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function abrirVisor3D(centroId, categoria) {
+            // TODO: Integrar con visor 3D real
+            alert(`Abriendo Visor 3D para ${centroId} (${categoria})\n\nEsto abrirá el visor BIM 3D con los modelos IFC del centro.`);
+            // En el futuro: window.location.href = `/visor-3d.html?centro=${centroId}&categoria=${categoria}`;
+        }
+
+        function abrirVisor2D(centroId, categoria) {
+            // TODO: Integrar con visor 2D de planos
+            alert(`Abriendo Visor 2D para ${centroId} (${categoria})\n\nEsto abrirá los planos arquitectónicos 2D exportados desde FreeCAD.`);
+            // En el futuro: window.location.href = `/visor-2d.html?centro=${centroId}&categoria=${categoria}`;
+        }
+
+        // ============================================================================
+        // FUNCIONES: Filtros
+        // ============================================================================
+
+        let todosMarcadores = [];
+        let mapaGlobal = null;
+
+        function aplicarFiltros() {
+            const filtroTipo = document.getElementById('filter-tipo').value;
+            const filtroCategoria = document.getElementById('filter-categoria').value;
+
+            todosMarcadores.forEach(({ marker, centro, categoria }) => {
+                let mostrar = true;
+
+                // Filtro por tipo
+                if (filtroTipo === 'nodo') {
+                    const cat = centro.categoria_cale || centro.categoria || '';
+                    mostrar = cat === 'Cat.A+' || cat === 'Cat.A';
+                } else if (filtroTipo === 'satelite') {
+                    const cat = centro.categoria_cale || centro.categoria || '';
+                    mostrar = cat !== 'Cat.A+' && cat !== 'Cat.A';
+                }
+
+                // Filtro por categoría
+                if (filtroCategoria && mostrar) {
+                    const cat = centro.categoria_cale || centro.categoria || '';
+                    mostrar = cat === filtroCategoria;
+                }
+
+                // Mostrar/ocultar marcador
+                if (mostrar) {
+                    if (!mapaGlobal.hasLayer(marker)) {
+                        marker.addTo(mapaGlobal);
+                    }
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) {
+                        mapaGlobal.removeLayer(marker);
+                    }
+                }
+            });
+        }
+
+        function limpiarFiltros() {
+            document.getElementById('filter-tipo').value = '';
+            document.getElementById('filter-categoria').value = '';
+            aplicarFiltros();
+        }
+
+        // Event listeners para filtros
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('filter-tipo').addEventListener('change', aplicarFiltros);
+            document.getElementById('filter-categoria').addEventListener('change', aplicarFiltros);
+        });
+
+        // ============================================================================
+        // FUNCIONES: Sidebar Jerárquica
+        // ============================================================================
+
+        let datosJerarquia = null;
+        let centrosGlobal = [];
+        let iebmGlobal = [];
+        let marcadoresIEBM = [];
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.getElementById('sidebar-toggle');
+            sidebar.classList.toggle('open');
+
+            if (sidebar.classList.contains('open')) {
+                toggle.textContent = '✕ CERRAR';
+            } else {
+                toggle.textContent = 'FILTROS JERÁRQUICOS';
+            }
+        }
+
+        function construirJerarquia(centros) {
+            // Agrupar por nodo_principal
+            const jerarquia = {};
+
+            centros.forEach(centro => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const esNodo = cat === 'Cat.A+' || cat === 'Cat.A';
+                const nodoPrincipal = esNodo ? centro.centro_id : (centro.nodo_principal || 'SIN_NODO');
+
+                if (!jerarquia[nodoPrincipal]) {
+                    jerarquia[nodoPrincipal] = {
+                        nodo: esNodo ? centro : null,
+                        satelites: {
+                            n2: [],
+                            n3: [],
+                            c2: [],
+                            c3: [],
+                            c4: [],
+                            c5: []
+                        },
+                        demandaTotal: 0
+                    };
+                }
+
+                if (esNodo) {
+                    jerarquia[nodoPrincipal].nodo = centro;
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                } else {
+                    // Clasificar satélite
+                    let tipo = 'c2'; // default
+                    if (cat === 'Cat.B' || cat === 'CALE.n_2') tipo = 'n2';
+                    else if (cat === 'Cat.B**' || cat === 'CALE.n_2**') tipo = 'n2';
+                    else if (cat === 'Cat.C1' || cat === 'CALE.n_3') tipo = 'n3';
+                    else if (cat === 'C2') tipo = 'c2';
+                    else if (cat === 'C3') tipo = 'c3';
+                    else if (cat === 'C4') tipo = 'c4';
+                    else if (cat === 'C5') tipo = 'c5';
+
+                    jerarquia[nodoPrincipal].satelites[tipo].push(centro);
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                }
+            });
+
+            return jerarquia;
+        }
+
+        function renderizarArbol(jerarquia) {
+            const treeContainer = document.getElementById('sidebar-tree');
+            let html = '';
+
+            // Ordenar nodos por demanda total (descendente)
+            const nodosOrdenados = Object.entries(jerarquia)
+                .filter(([key, data]) => data.nodo !== null)
+                .sort((a, b) => b[1].demandaTotal - a[1].demandaTotal);
+
+            nodosOrdenados.forEach(([centroId, data]) => {
+                const nodo = data.nodo;
+                const municipio = nodo.municipio || 'N/A';
+                const demanda = data.demandaTotal.toLocaleString();
+                const totalSatelites = Object.values(data.satelites).reduce((sum, arr) => sum + arr.length, 0);
+
+                html += `
+                    <div class="tree-node">
+                        <div class="tree-item nivel-1" onclick="filtrarPorNodo('${centroId}')">
+                            <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}')">▶</span>
+                            <span class="tree-icon">🏛️</span>
+                            <span class="tree-label">${municipio}</span>
+                            <span class="tree-count">${demanda}</span>
+                        </div>
+                        <div class="tree-children" id="tree-${centroId}">
+                `;
+
+                // Satélites CALE.n_2
+                if (data.satelites.n2.length > 0) {
+                    const demandaN2 = data.satelites.n2.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-2">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n2')">▶</span>
+                                <span class="tree-icon">🏫</span>
+                                <span class="tree-label">CALE.n_2 (${data.satelites.n2.length})</span>
+                                <span class="tree-count">${demandaN2.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n2">
+                    `;
+                    data.satelites.n2.forEach(sat => {
+                        html += `
+                            <div class="tree-item nivel-2" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites CALE.n_3
+                if (data.satelites.n3.length > 0) {
+                    const demandaN3 = data.satelites.n3.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-3">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n3')">▶</span>
+                                <span class="tree-icon">🏢</span>
+                                <span class="tree-label">CALE.n_3 (${data.satelites.n3.length})</span>
+                                <span class="tree-count">${demandaN3.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n3">
+                    `;
+                    data.satelites.n3.forEach(sat => {
+                        html += `
+                            <div class="tree-item nivel-3" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites C2-C5 agrupados
+                const satelitesC = [...data.satelites.c2, ...data.satelites.c3, ...data.satelites.c4, ...data.satelites.c5];
+                if (satelitesC.length > 0) {
+                    const demandaC = satelitesC.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-sat">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-c')">▶</span>
+                                <span class="tree-icon">🎯</span>
+                                <span class="tree-label">Satélites C2-C5 (${satelitesC.length})</span>
+                                <span class="tree-count">${demandaC.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-c">
+                    `;
+                    satelitesC.forEach(sat => {
+                        const cat = sat.categoria_cale || sat.categoria || '';
+                        html += `
+                            <div class="tree-item nivel-sat" onclick="centrarEnMarcador('${sat.centro_id}')">
+                                <span class="tree-icon">${cat}</span>
+                                <span class="tree-label">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // TODO: Agregar IEBM cuando se implemente
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            treeContainer.innerHTML = html;
+        }
+
+        function toggleTreeNode(event, nodeId) {
+            event.stopPropagation();
+            const children = document.getElementById(`tree-${nodeId}`);
+            const expand = event.target;
+
+            if (children) {
+                children.classList.toggle('expanded');
+                expand.classList.toggle('expanded');
+            }
+        }
+
+        function filtrarPorNodo(centroId) {
+            // 1. Mostrar solo los centros CALE de este nodo
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const esNodo = centro.centro_id === centroId;
+                const perteneceAlNodo = centro.nodo_principal === centroId;
+
+                if (esNodo || perteneceAlNodo) {
+                    if (!mapaGlobal.hasLayer(marker)) {
+                        marker.addTo(mapaGlobal);
+                    }
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) {
+                        mapaGlobal.removeLayer(marker);
+                    }
+                }
+            });
+
+            // 2. Limpiar marcadores IEBM anteriores
+            marcadoresIEBM.forEach(marker => {
+                if (mapaGlobal.hasLayer(marker)) {
+                    mapaGlobal.removeLayer(marker);
+                }
+            });
+            marcadoresIEBM = [];
+
+            // 3. Agregar marcadores IEBM para este nodo y sus satélites
+            // Obtener todos los centros de este nodo (nodo + satélites)
+            const centrosDelNodo = [centroId];
+            todosMarcadores.forEach(({ centro }) => {
+                if (centro.nodo_principal === centroId && centro.centro_id !== centroId) {
+                    centrosDelNodo.push(centro.centro_id);
+                }
+            });
+
+            // Filtrar IEBM que pertenecen a algún centro de este nodo
+            const iebmDelNodo = iebmGlobal.filter(iebm => {
+                return centrosDelNodo.includes(iebm.nodo_cale_mas_cercano);
+            });
+
+            console.log(`Mostrando ${iebmDelNodo.length} IEBM para ${centroId}`);
+
+            // Crear marcadores para cada IEBM
+            iebmDelNodo.forEach(iebm => {
+                const latStr = (iebm.latitud || '').toString().replace(',', '.');
+                const lngStr = (iebm.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (isNaN(lat) || isNaN(lng)) return;
+
+                // Marcador más pequeño para IEBM (color azul educación)
+                const marker = L.circleMarker([lat, lng], {
+                    radius: 3,
+                    fillColor: '#3182ce',
+                    color: '#ffffff',
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.7
+                });
+
+                // Popup para IEBM
+                const popupContent = `
+                    <div class="popup-content">
+                        <h3>🎓 ${iebm.sede_iebm || 'Institución Educativa'}</h3>
+                        <p><strong>Municipio:</strong> ${iebm.municipio || 'N/A'}</p>
+                        <p><strong>Departamento:</strong> ${iebm.departamento || 'N/A'}</p>
+                        <p><strong>Zona:</strong> ${iebm.zona || 'N/A'}</p>
+                        <p><strong>Sector:</strong> ${iebm.sector || 'N/A'}</p>
+                        <p><strong>CALE asignado:</strong> ${iebm.nodo_cale_mas_cercano}</p>
+                        <p><strong>Distancia al CALE:</strong> ${iebm.distancia_km} km</p>
+                        <p style="font-size:0.85em; color:#718096; margin-top:8px;">
+                            Estudiantes de media (datos pendientes)
+                        </p>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+                marker.addTo(mapaGlobal);
+                marcadoresIEBM.push(marker);
+            });
+
+            // 4. Centrar mapa en el nodo
+            const nodo = centrosGlobal.find(c => c.centro_id === centroId);
+            if (nodo) {
+                const latStr = (nodo.latitud || '').toString().replace(',', '.');
+                const lngStr = (nodo.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    mapaGlobal.setView([lat, lng], 9);
+                }
+            }
+        }
+
+        function centrarEnMarcador(centroId) {
+            const centro = centrosGlobal.find(c => c.centro_id === centroId);
+            if (centro) {
+                const latStr = (centro.latitud || '').toString().replace(',', '.');
+                const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    mapaGlobal.setView([lat, lng], 12);
+
+                    // Abrir popup del marcador
+                    const marcador = todosMarcadores.find(m => m.centro.centro_id === centroId);
+                    if (marcador) {
+                        marcador.marker.openPopup();
+                    }
+                }
+            }
+        }
+
+        // ============================================================================
+        // INICIALIZACIÓN
+        // ============================================================================
+        inicializarMapa();
+
+        // Actualizar cache info cada segundo
+        setInterval(() => {
+            const cache = localStorage.getItem(GOOGLE_SHEETS_CONFIG.cacheKey);
+            if (cache) {
+                const { timestamp } = JSON.parse(cache);
+                const timeLeft = GOOGLE_SHEETS_CONFIG.cacheTTL - (Date.now() - timestamp);
+                mostrarInfoCache(timeLeft);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

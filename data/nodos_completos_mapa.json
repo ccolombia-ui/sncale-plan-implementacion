@@ -1,0 +1,6710 @@
+{
+  "metadata": {
+    "fecha": "2025-12-03",
+    "version": "2.0_COMPLETA_197_NODOS",
+    "total_nodos": 197,
+    "nodos_principales": 20,
+    "satelites": 177,
+    "fuente": "presupuesto_bim.xlsx - arquitectura_red_cale_nacional"
+  },
+  "nodos": {
+    "NODO_01": {
+      "nodo_id": "NODO_01",
+      "nombre": "BOGOTÁ, D.C.",
+      "departamento": "BOGOTA, D.C.",
+      "codigo_dane": "11001",
+      "coords": {
+        "lat": 4.649251,
+        "lon": -74.106992
+      },
+      "demanda_anual": 80453,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.CALE.n_1_plus",
+      "tipo_nombre": "CALE Metropolitano Plus",
+      "tipo_color": "#0000ff",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1+",
+      "es_principal": true,
+      "nodo_principal": "NODO_01",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 71D #6-94 Sur, CC Plaza de las Américas, Kennedy",
+        "area_m2": 3800,
+        "inmobiliaria": "CBRE Colombia",
+        "arriendo_mensual": 77000000,
+        "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_02": {
+      "nodo_id": "NODO_02",
+      "nombre": "BOGOTÁ, D.C.",
+      "departamento": "BOGOTA, D.C.",
+      "codigo_dane": "11001",
+      "coords": {
+        "lat": 4.649251,
+        "lon": -74.106992
+      },
+      "demanda_anual": 70396,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.CALE.n_1_plus",
+      "tipo_nombre": "CALE Metropolitano Plus",
+      "tipo_color": "#0000ff",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1+",
+      "es_principal": true,
+      "nodo_principal": "NODO_02",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 71D #6-94 Sur, CC Plaza de las Américas, Kennedy",
+        "area_m2": 3800,
+        "inmobiliaria": "CBRE Colombia",
+        "arriendo_mensual": 77000000,
+        "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_03": {
+      "nodo_id": "NODO_03",
+      "nombre": "BUCARAMANGA",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68001",
+      "coords": {
+        "lat": 7.11647,
+        "lon": -73.132562
+      },
+      "demanda_anual": 68000,
+      "cluster_municipios": 14,
+      "tipo_id": "L3.CALE.n_1_plus",
+      "tipo_nombre": "CALE Metropolitano Plus",
+      "tipo_color": "#0000ff",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1+",
+      "es_principal": true,
+      "nodo_principal": "NODO_03",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 27 #42-27, CC Cacique",
+        "area_m2": 3500,
+        "inmobiliaria": "Lonja de Santander",
+        "arriendo_mensual": 66500000,
+        "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_04": {
+      "nodo_id": "NODO_04",
+      "nombre": "CALI",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "76001",
+      "coords": {
+        "lat": 3.413686,
+        "lon": -76.52133
+      },
+      "demanda_anual": 57318,
+      "cluster_municipios": 10,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_04",
+      "infraestructura": {
+        "direccion_teorica": "Av. Roosevelt #38-15, Barrio Tequendama",
+        "area_m2": 3700,
+        "inmobiliaria": "Finca Raí­z Cali",
+        "arriendo_mensual": 77000000,
+        "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_05": {
+      "nodo_id": "NODO_05",
+      "nombre": "IBAGUÉ",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73001",
+      "coords": {
+        "lat": 4.432248,
+        "lon": -75.19425
+      },
+      "demanda_anual": 55000,
+      "cluster_municipios": 8,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_05",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 3 #60-81, CC Multicentro",
+        "area_m2": 3500,
+        "inmobiliaria": "Metrocuadrado Tolima",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_06": {
+      "nodo_id": "NODO_06",
+      "nombre": "PASTO",
+      "departamento": "NARINO",
+      "codigo_dane": "52001",
+      "coords": {
+        "lat": 1.212352,
+        "lon": -77.278795
+      },
+      "demanda_anual": 52000,
+      "cluster_municipios": 23,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_06",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 25 #11-97, CC Unicentro",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Nariño",
+        "arriendo_mensual": 66500000,
+        "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_07": {
+      "nodo_id": "NODO_07",
+      "nombre": "MOSQUERA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25473",
+      "coords": {
+        "lat": 4.70653,
+        "lon": -74.221154
+      },
+      "demanda_anual": 50283,
+      "cluster_municipios": 18,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_07",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 2 #13-35, Zona Comercial Centro, Mosquera",
+        "area_m2": 3500,
+        "inmobiliaria": "Metrocuadrado Cundinamarca",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_08": {
+      "nodo_id": "NODO_08",
+      "nombre": "VALLEDUPAR",
+      "departamento": "CESAR",
+      "codigo_dane": "20001",
+      "coords": {
+        "lat": 10.460472,
+        "lon": -73.259398
+      },
+      "demanda_anual": 40000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_08",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 9 #16A-15, CC Guatapurí­ Plaza",
+        "area_m2": 3400,
+        "inmobiliaria": "Inmobiliaria Valledupar",
+        "arriendo_mensual": 90000000,
+        "arriendo_anual": 1080000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_09": {
+      "nodo_id": "NODO_09",
+      "nombre": "SAN JOSÉ DE CÚCUTA",
+      "departamento": "NORTE DE SANTANDER",
+      "codigo_dane": "54001",
+      "coords": {
+        "lat": 7.905725,
+        "lon": -72.508178
+      },
+      "demanda_anual": 35320,
+      "cluster_municipios": 14,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_09",
+      "infraestructura": {
+        "direccion_teorica": "Av. 4 #14-20, CC Ventura Plaza",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Cúcuta",
+        "arriendo_mensual": 66500000,
+        "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_10": {
+      "nodo_id": "NODO_10",
+      "nombre": "MEDELLÍN",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05001",
+      "coords": {
+        "lat": 6.246631,
+        "lon": -75.581775
+      },
+      "demanda_anual": 27733,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_10",
+      "infraestructura": {
+        "direccion_teorica": "Circular 4 #73-50, Laureles",
+        "area_m2": 3600,
+        "inmobiliaria": "Alberto Álvarez Inmobiliaria",
+        "arriendo_mensual": 77000000,
+        "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_11": {
+      "nodo_id": "NODO_11",
+      "nombre": "BARRANQUILLA",
+      "departamento": "ATLANTICO",
+      "codigo_dane": "08001",
+      "coords": {
+        "lat": 10.977961,
+        "lon": -74.815546
+      },
+      "demanda_anual": 27550,
+      "cluster_municipios": 16,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_11",
+      "infraestructura": {
+        "direccion_teorica": "Calle 84 #52-100, Corredor Calle 84",
+        "area_m2": 3600,
+        "inmobiliaria": "Inmobiliaria del Norte",
+        "arriendo_mensual": 77000000,
+        "arriendo_anual": 924000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_12": {
+      "nodo_id": "NODO_12",
+      "nombre": "PEREIRA",
+      "departamento": "RISARALDA",
+      "codigo_dane": "66001",
+      "coords": {
+        "lat": 4.804985,
+        "lon": -75.719711
+      },
+      "demanda_anual": 22368,
+      "cluster_municipios": 23,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_12",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 9 #20-59, CC Bolí­var Plaza",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Eje Cafetero",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_13": {
+      "nodo_id": "NODO_13",
+      "nombre": "CARTAGENA DE INDIAS",
+      "departamento": "BOLIVAR",
+      "codigo_dane": "13001",
+      "coords": {
+        "lat": 10.385126,
+        "lon": -75.496269
+      },
+      "demanda_anual": 14021,
+      "cluster_municipios": 10,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_13",
+      "infraestructura": {
+        "direccion_teorica": "Av. Pedro de Heredia, CC La Plazuela",
+        "area_m2": 3500,
+        "inmobiliaria": "Colliers Cartagena",
+        "arriendo_mensual": 66500000,
+        "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_14": {
+      "nodo_id": "NODO_14",
+      "nombre": "SOACHA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25754",
+      "coords": {
+        "lat": 4.579268,
+        "lon": -74.215463
+      },
+      "demanda_anual": 13002,
+      "cluster_municipios": 12,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_14",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 7 #13A-01, CC Mercurio",
+        "area_m2": 3600,
+        "inmobiliaria": "Metrocuadrado Soacha",
+        "arriendo_mensual": 66500000,
+        "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_15": {
+      "nodo_id": "NODO_15",
+      "nombre": "LA PAZ",
+      "departamento": "CESAR",
+      "codigo_dane": "68397",
+      "coords": {
+        "lat": 10.387552,
+        "lon": -73.171365
+      },
+      "demanda_anual": 12407,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_15",
+      "infraestructura": {
+        "direccion_teorica": "Calle 8 #10-30, Zona Comercial Centro, La Paz",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Cesar",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_16": {
+      "nodo_id": "NODO_16",
+      "nombre": "YOPAL",
+      "departamento": "CASANARE",
+      "codigo_dane": "85001",
+      "coords": {
+        "lat": 5.327102,
+        "lon": -72.396132
+      },
+      "demanda_anual": 11793,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_16",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 20 #27-50, CC Llano Centro, Yopal",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Casanare",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_17": {
+      "nodo_id": "NODO_17",
+      "nombre": "MONTERÍA",
+      "departamento": "CORDOBA",
+      "codigo_dane": "23001",
+      "coords": {
+        "lat": 8.759789,
+        "lon": -75.873096
+      },
+      "demanda_anual": 11628,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_17",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 3 #38-01, CC Alamedas del Sinú, Monterí­a",
+        "area_m2": 3600,
+        "inmobiliaria": "Finca Raí­z Cérdoba",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_18": {
+      "nodo_id": "NODO_18",
+      "nombre": "SANTA MARTA",
+      "departamento": "MAGDALENA",
+      "codigo_dane": "47001",
+      "coords": {
+        "lat": 11.204679,
+        "lon": -74.199829
+      },
+      "demanda_anual": 7378,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_18",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 1 #24-30, CC Ocean Mall",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Caribe",
+        "arriendo_mensual": 66500000,
+        "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_19": {
+      "nodo_id": "NODO_19",
+      "nombre": "BARRANCABERMEJA",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68081",
+      "coords": {
+        "lat": 7.064857,
+        "lon": -73.849243
+      },
+      "demanda_anual": 6345,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_19",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 19 #52-60, CC La Rosita, Barrancabermeja",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Santander",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_20": {
+      "nodo_id": "NODO_20",
+      "nombre": "BUENAVENTURA",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "76109",
+      "coords": {
+        "lat": 3.875708,
+        "lon": -77.01074
+      },
+      "demanda_anual": 2721,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.CALE.n_1",
+      "tipo_nombre": "CALE Metropolitano",
+      "tipo_color": "#E63946",
+      "tipo_icono": "",
+      "categoria": "Cat.A+",
+      "categoria_raw": "CALE.n_1",
+      "es_principal": true,
+      "nodo_principal": "NODO_20",
+      "infraestructura": {
+        "direccion_teorica": "Calle 1 #39-45, CC Viva Buenaventura",
+        "area_m2": 3600,
+        "inmobiliaria": "Colliers Valle",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 3728340000,
+        "opex_anual": 2400000000,
+        "capacidad_anual": 173040,
+        "cubiculos": 24,
+        "pistas": "Clase I + II + III"
+      }
+    },
+    "NODO_21": {
+      "nodo_id": "NODO_21",
+      "nombre": "BARBOSA",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "68077",
+      "coords": {
+        "lat": 6.439195,
+        "lon": -75.331627
+      },
+      "demanda_anual": 33432,
+      "cluster_municipios": 13,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_21",
+      "infraestructura": {
+        "direccion_teorica": "Parque Principal, Cra. 13 #12-50, Barbosa",
+        "area_m2": 3500,
+        "inmobiliaria": "Alberto Álvarez",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_22": {
+      "nodo_id": "NODO_22",
+      "nombre": "SANTA FÉ DE ANTIOQUIA",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05042",
+      "coords": {
+        "lat": 6.556484,
+        "lon": -75.826648
+      },
+      "demanda_anual": 32510,
+      "cluster_municipios": 13,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_22",
+      "infraestructura": {
+        "direccion_teorica": "Calle 11 #9-30, Centro Histérico, Santa Fé de Antioquia",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Antioquia",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_23": {
+      "nodo_id": "NODO_23",
+      "nombre": "VILLAVICENCIO",
+      "departamento": "META",
+      "codigo_dane": "50001",
+      "coords": {
+        "lat": 4.126369,
+        "lon": -73.622601
+      },
+      "demanda_anual": 30258,
+      "cluster_municipios": 10,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_23",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 9 #37-04, CC Unicentro, Villavicencio",
+        "area_m2": 3600,
+        "inmobiliaria": "Colliers Meta",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_24": {
+      "nodo_id": "NODO_24",
+      "nombre": "JAMUNDÍ",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "76364",
+      "coords": {
+        "lat": 3.258751,
+        "lon": -76.538472
+      },
+      "demanda_anual": 24973,
+      "cluster_municipios": 11,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_24",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 6 #8-20, Zona Comercial Centro, Jamundí­",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Valle",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_25": {
+      "nodo_id": "NODO_25",
+      "nombre": "RIOHACHA",
+      "departamento": "LA GUAJIRA",
+      "codigo_dane": "44001",
+      "coords": {
+        "lat": 11.528588,
+        "lon": -72.911795
+      },
+      "demanda_anual": 22000,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_25",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 7 #3-15, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Guajira",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_26": {
+      "nodo_id": "NODO_26",
+      "nombre": "ENVIGADO",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05266",
+      "coords": {
+        "lat": 6.166695,
+        "lon": -75.582192
+      },
+      "demanda_anual": 21571,
+      "cluster_municipios": 8,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_26",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 43A Sur #30-30, Zona Comercial, Envigado",
+        "area_m2": 3400,
+        "inmobiliaria": "Inmobiliaria Poblado",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_27": {
+      "nodo_id": "NODO_27",
+      "nombre": "IBAGUÉ",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73001",
+      "coords": {
+        "lat": 4.432248,
+        "lon": -75.19425
+      },
+      "demanda_anual": 20480,
+      "cluster_municipios": 0,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_27",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 3 #60-81, CC Multicentro, Ibagué",
+        "area_m2": 3500,
+        "inmobiliaria": "Metrocuadrado Tolima",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_28": {
+      "nodo_id": "NODO_28",
+      "nombre": "GIRARDOT",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25307",
+      "coords": {
+        "lat": 4.313069,
+        "lon": -74.798201
+      },
+      "demanda_anual": 16965,
+      "cluster_municipios": 21,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_28",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 10 #18-50, Zona Comercial Centro, Girardot",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Cundinamarca",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_29": {
+      "nodo_id": "NODO_29",
+      "nombre": "RIONEGRO",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "68615",
+      "coords": {
+        "lat": 6.147148,
+        "lon": -75.377316
+      },
+      "demanda_anual": 15461,
+      "cluster_municipios": 12,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_29",
+      "infraestructura": {
+        "direccion_teorica": "Autopista Medellí­n-Bogotí¡ Km 5, CC Llanogrande, Rionegro",
+        "area_m2": 3400,
+        "inmobiliaria": "Cushman & Wakefield",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_30": {
+      "nodo_id": "NODO_30",
+      "nombre": "EL PEÑÓN",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25258",
+      "coords": {
+        "lat": 5.025477,
+        "lon": -73.994444
+      },
+      "demanda_anual": 15098,
+      "cluster_municipios": 24,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 7 #3-50, CC Plaza Central, Zipaquirí¡",
+        "area_m2": 3500,
+        "inmobiliaria": "Metrocuadrado Cundinamarca",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_31": {
+      "nodo_id": "NODO_31",
+      "nombre": "TUNJA",
+      "departamento": "BOYACA",
+      "codigo_dane": "15001",
+      "coords": {
+        "lat": 5.53988,
+        "lon": -73.355539
+      },
+      "demanda_anual": 14119,
+      "cluster_municipios": 36,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "Av. Oriental #17-88, CC Unicentro Tunja",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Boyací¡",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_32": {
+      "nodo_id": "NODO_32",
+      "nombre": "POPAYÁN",
+      "departamento": "CAUCA",
+      "codigo_dane": "19001",
+      "coords": {
+        "lat": 2.459641,
+        "lon": -76.599377
+      },
+      "demanda_anual": 13741,
+      "cluster_municipios": 12,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_32",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 9 #44N-70, CC El Portal, Popayí¡n",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Cauca",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_33": {
+      "nodo_id": "NODO_33",
+      "nombre": "NEIVA",
+      "departamento": "HUILA",
+      "codigo_dane": "41001",
+      "coords": {
+        "lat": 2.935432,
+        "lon": -75.277327
+      },
+      "demanda_anual": 10427,
+      "cluster_municipios": 9,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_33",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 5 #10-110, CC San Pedro Plaza, Neiva",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Huila",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_34": {
+      "nodo_id": "NODO_34",
+      "nombre": "MANIZALES",
+      "departamento": "CALDAS",
+      "codigo_dane": "17001",
+      "coords": {
+        "lat": 5.057657,
+        "lon": -75.491025
+      },
+      "demanda_anual": 9541,
+      "cluster_municipios": 13,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_34",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 23 #62-03, CC Fundadores, Manizales",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Caldas",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_35": {
+      "nodo_id": "NODO_35",
+      "nombre": "TULUÁ",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "76834",
+      "coords": {
+        "lat": 4.085399,
+        "lon": -76.197731
+      },
+      "demanda_anual": 9017,
+      "cluster_municipios": 13,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_35",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 26 #28-40, CC Tuluí¡ Plaza",
+        "area_m2": 3600,
+        "inmobiliaria": "Finca Raí­z Valle",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_36": {
+      "nodo_id": "NODO_36",
+      "nombre": "ARMENIA",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05059",
+      "coords": {
+        "lat": 6.155667,
+        "lon": -75.786647
+      },
+      "demanda_anual": 8292,
+      "cluster_municipios": 13,
+      "tipo_id": "L3.CALE.n_2_plus",
+      "tipo_nombre": "CALE Subregional Plus",
+      "tipo_color": "#F77F00",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2**",
+      "es_principal": false,
+      "nodo_principal": "NODO_36",
+      "infraestructura": {
+        "direccion_teorica": "Av. Bolí­var #1N-80, CC Portal del Quindí­o, Armenia",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Quindí­o",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_37": {
+      "nodo_id": "NODO_37",
+      "nombre": "PASTO",
+      "departamento": "NARINO",
+      "codigo_dane": "52001",
+      "coords": {
+        "lat": 1.212352,
+        "lon": -77.278795
+      },
+      "demanda_anual": 7915,
+      "cluster_municipios": 0,
+      "tipo_id": "L3.SATELITE.n_2",
+      "tipo_nombre": "CALE Regional",
+      "tipo_color": "#FFEB3B",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2",
+      "es_principal": false,
+      "nodo_principal": "NODO_37",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 25 #11-97, CC Unicentro, Pasto",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Nariño",
+        "arriendo_mensual": 66500000,
+        "arriendo_anual": 798000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_38": {
+      "nodo_id": "NODO_38",
+      "nombre": "FLORENCIA",
+      "departamento": "CAQUETA",
+      "codigo_dane": "19290",
+      "coords": {
+        "lat": 1.618196,
+        "lon": -75.609831
+      },
+      "demanda_anual": 6635,
+      "cluster_municipios": 8,
+      "tipo_id": "L3.SATELITE.n_2",
+      "tipo_nombre": "CALE Regional",
+      "tipo_color": "#FFEB3B",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2",
+      "es_principal": false,
+      "nodo_principal": "NODO_38",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 11 #7-35, Zona Comercial Centro, Florencia",
+        "area_m2": 3600,
+        "inmobiliaria": "Finca Raí­z Caquetí¡",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_39": {
+      "nodo_id": "NODO_39",
+      "nombre": "SINCELEJO",
+      "departamento": "SUCRE",
+      "codigo_dane": "70001",
+      "coords": {
+        "lat": 9.302322,
+        "lon": -75.395445
+      },
+      "demanda_anual": 2716,
+      "cluster_municipios": 21,
+      "tipo_id": "L3.SATELITE.n_2",
+      "tipo_nombre": "CALE Regional",
+      "tipo_color": "#FFEB3B",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2",
+      "es_principal": false,
+      "nodo_principal": "NODO_39",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 20 #34-10, CC Mediterrí¡neo, Sincelejo",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Sucre",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_40": {
+      "nodo_id": "NODO_40",
+      "nombre": "AGUACHICA",
+      "departamento": "CESAR",
+      "codigo_dane": "20011",
+      "coords": {
+        "lat": 8.306811,
+        "lon": -73.614027
+      },
+      "demanda_anual": 2591,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.n_2",
+      "tipo_nombre": "CALE Regional",
+      "tipo_color": "#FFEB3B",
+      "tipo_icono": "",
+      "categoria": "Cat.A",
+      "categoria_raw": "CALE.n_2",
+      "es_principal": false,
+      "nodo_principal": "NODO_40",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 31 #6-50, Zona Comercial Centro, Aguachica",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Cesar",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 2500000000,
+        "opex_anual": 1800000000,
+        "capacidad_anual": 115360,
+        "cubiculos": 16,
+        "pistas": "Clase I + II"
+      }
+    },
+    "NODO_41": {
+      "nodo_id": "NODO_41",
+      "nombre": "SAN MIGUEL",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68686",
+      "coords": {
+        "lat": 6.811511,
+        "lon": -72.848864
+      },
+      "demanda_anual": 16000,
+      "cluster_municipios": 18,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "Av. Colombia, Zona Comercial North End",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Islas",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_42": {
+      "nodo_id": "NODO_42",
+      "nombre": "ARAUCA",
+      "departamento": "ARAUCA",
+      "codigo_dane": "81001",
+      "coords": {
+        "lat": 7.072726,
+        "lon": -70.747408
+      },
+      "demanda_anual": 14500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_42",
+      "infraestructura": {
+        "direccion_teorica": "Calle 21 #20-50, Zona Comercial Principal",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Arauca",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_43": {
+      "nodo_id": "NODO_43",
+      "nombre": "MOCOA",
+      "departamento": "PUTUMAYO",
+      "codigo_dane": "86001",
+      "coords": {
+        "lat": 1.151172,
+        "lon": -76.654238
+      },
+      "demanda_anual": 13500,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_43",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 7 #15-30, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Putumayo",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_44": {
+      "nodo_id": "NODO_44",
+      "nombre": "LETICIA",
+      "departamento": "AMAZONAS",
+      "codigo_dane": "91001",
+      "coords": {
+        "lat": -4.19895,
+        "lon": -69.941721
+      },
+      "demanda_anual": 12000,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_44",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 11 #8-30, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Amazonas",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_45": {
+      "nodo_id": "NODO_45",
+      "nombre": "QUIBDÓ",
+      "departamento": "CHOCO",
+      "codigo_dane": "27001",
+      "coords": {
+        "lat": 5.682166,
+        "lon": -76.638144
+      },
+      "demanda_anual": 11200,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_45",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 1 #28-20, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Chocé",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_46": {
+      "nodo_id": "NODO_46",
+      "nombre": "SAN JOSÉ DEL GUAVIARE",
+      "departamento": "GUAVIARE",
+      "codigo_dane": "95001",
+      "coords": {
+        "lat": 2.565932,
+        "lon": -72.639254
+      },
+      "demanda_anual": 10500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_46",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 22 #9-40, Zona Comercial Centro, San José del Guaviare",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Guaviare",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_47": {
+      "nodo_id": "NODO_47",
+      "nombre": "PUERTO CARREÑO",
+      "departamento": "VICHADA",
+      "codigo_dane": "99001",
+      "coords": {
+        "lat": 6.186636,
+        "lon": -67.487095
+      },
+      "demanda_anual": 9800,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_47",
+      "infraestructura": {
+        "direccion_teorica": "Calle 5 #16-20, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Vichada",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_48": {
+      "nodo_id": "NODO_48",
+      "nombre": "APARTADÓ",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05045",
+      "coords": {
+        "lat": 7.882968,
+        "lon": -76.625279
+      },
+      "demanda_anual": 9500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_48",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 100 #99-40, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Urabí¡",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_49": {
+      "nodo_id": "NODO_49",
+      "nombre": "INÍRIDA",
+      "departamento": "GUAINIA",
+      "codigo_dane": "94001",
+      "coords": {
+        "lat": 3.866764,
+        "lon": -67.918613
+      },
+      "demanda_anual": 9200,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_49",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 8 #10-30, Zona Comercial Centro, Puerto Iní­rida",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Guainí­a",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_50": {
+      "nodo_id": "NODO_50",
+      "nombre": "IPIALES",
+      "departamento": "NARINO",
+      "codigo_dane": "52356",
+      "coords": {
+        "lat": 0.827732,
+        "lon": -77.646367
+      },
+      "demanda_anual": 8800,
+      "cluster_municipios": 16,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_50",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 6 #14-30, Zona Comercial Centro, Ipiales",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Nariño",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_51": {
+      "nodo_id": "NODO_51",
+      "nombre": "SAN ANDRÉS DE TUMACO",
+      "departamento": "NARINO",
+      "codigo_dane": "52835",
+      "coords": {
+        "lat": 1.807399,
+        "lon": -78.764073
+      },
+      "demanda_anual": 8500,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_51",
+      "infraestructura": {
+        "direccion_teorica": "Calle del Comercio #5-20, Zona Centro, Tumaco",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Nariño",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_52": {
+      "nodo_id": "NODO_52",
+      "nombre": "OCAÑA",
+      "departamento": "NORTE DE SANTANDER",
+      "codigo_dane": "54498",
+      "coords": {
+        "lat": 8.248574,
+        "lon": -73.35607
+      },
+      "demanda_anual": 8200,
+      "cluster_municipios": 10,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_52",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 11 #10-45, Zona Comercial Centro, Ocaña",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Norte de Santander",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_53": {
+      "nodo_id": "NODO_53",
+      "nombre": "MITÚ",
+      "departamento": "VAUPES",
+      "codigo_dane": "97001",
+      "coords": {
+        "lat": 1.253151,
+        "lon": -70.232641
+      },
+      "demanda_anual": 8100,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_53",
+      "infraestructura": {
+        "direccion_teorica": "Calle 8 #12-15, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Vaupés",
+        "arriendo_mensual": 45500000,
+        "arriendo_anual": 546000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_54": {
+      "nodo_id": "NODO_54",
+      "nombre": "MAGANGUÉ",
+      "departamento": "BOLIVAR",
+      "codigo_dane": "13430",
+      "coords": {
+        "lat": 9.263799,
+        "lon": -74.766742
+      },
+      "demanda_anual": 7500,
+      "cluster_municipios": 12,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_54",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 3 #18-30, Zona Comercial Centro",
+        "area_m2": 3500,
+        "inmobiliaria": "Finca Raí­z Bolí­var",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_55": {
+      "nodo_id": "NODO_55",
+      "nombre": "TURBO",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05837",
+      "coords": {
+        "lat": 8.089929,
+        "lon": -76.728858
+      },
+      "demanda_anual": 7200,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_55",
+      "infraestructura": {
+        "direccion_teorica": "Cra. 13 #100-15, Zona Comercial Puerto",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Urabí¡",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "NODO_56": {
+      "nodo_id": "NODO_56",
+      "nombre": "RIOSUCIO",
+      "departamento": "CHOCO",
+      "codigo_dane": "27615",
+      "coords": {
+        "lat": 7.436704,
+        "lon": -77.113156
+      },
+      "demanda_anual": 6800,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.n_3",
+      "tipo_nombre": "CALE Provincial",
+      "tipo_color": "#06D6A0",
+      "tipo_icono": "",
+      "categoria": "Cat.B",
+      "categoria_raw": "CALE.n_3",
+      "es_principal": false,
+      "nodo_principal": "NODO_56",
+      "infraestructura": {
+        "direccion_teorica": "Parque Principal, Cra. 5 #6-30, Riosucio",
+        "area_m2": 3500,
+        "inmobiliaria": "Inmobiliaria Caldas",
+        "arriendo_mensual": 52500000,
+        "arriendo_anual": 630000000
+      },
+      "valores_unitarios": {
+        "capex": 1800000000,
+        "opex_anual": 1200000000,
+        "capacidad_anual": 86520,
+        "cubiculos": 12,
+        "pistas": "Clase I"
+      }
+    },
+    "SAT_001": {
+      "nodo_id": "SAT_001",
+      "nombre": "ARENAL",
+      "departamento": "BOLIVAR",
+      "codigo_dane": "13042",
+      "coords": {
+        "lat": 8.458865,
+        "lon": -73.941099
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_40",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_002": {
+      "nodo_id": "SAT_002",
+      "nombre": "CURUMANÍ",
+      "departamento": "CESAR",
+      "codigo_dane": "20228",
+      "coords": {
+        "lat": 9.201716,
+        "lon": -73.540843
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_40",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_003": {
+      "nodo_id": "SAT_003",
+      "nombre": "SANTA ROSA DEL SUR",
+      "departamento": "BOLIVAR",
+      "codigo_dane": "13688",
+      "coords": {
+        "lat": 7.963938,
+        "lon": -74.052243
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_40",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_004": {
+      "nodo_id": "SAT_004",
+      "nombre": "SAN MARTÍN DE LOBA",
+      "departamento": "BOLIVAR",
+      "codigo_dane": "13667",
+      "coords": {
+        "lat": 8.937485,
+        "lon": -74.039134
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_40",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_005": {
+      "nodo_id": "SAT_005",
+      "nombre": "PUEBLORRICO",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05576",
+      "coords": {
+        "lat": 5.79158,
+        "lon": -75.839903
+      },
+      "demanda_anual": 4000,
+      "cluster_municipios": 8,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_36",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_006": {
+      "nodo_id": "SAT_006",
+      "nombre": "URRAO",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05847",
+      "coords": {
+        "lat": 6.317343,
+        "lon": -76.133951
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_36",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_007": {
+      "nodo_id": "SAT_007",
+      "nombre": "MUTATÁ",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05480",
+      "coords": {
+        "lat": 7.242875,
+        "lon": -76.435875
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_48",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_008": {
+      "nodo_id": "SAT_008",
+      "nombre": "ARAUCA",
+      "departamento": "ARAUCA",
+      "codigo_dane": "81001",
+      "coords": {
+        "lat": 6.281461,
+        "lon": -71.10339
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_42",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_009": {
+      "nodo_id": "SAT_009",
+      "nombre": "CAMPAMENTO",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05134",
+      "coords": {
+        "lat": 6.979771,
+        "lon": -75.298091
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_21",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_010": {
+      "nodo_id": "SAT_010",
+      "nombre": "CARACOLÍ",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05142",
+      "coords": {
+        "lat": 6.409829,
+        "lon": -74.757421
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_21",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_011": {
+      "nodo_id": "SAT_011",
+      "nombre": "YALÍ",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05885",
+      "coords": {
+        "lat": 6.676554,
+        "lon": -74.840059
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_21",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_012": {
+      "nodo_id": "SAT_012",
+      "nombre": "SEGOVIA",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05736",
+      "coords": {
+        "lat": 7.079648,
+        "lon": -74.701596
+      },
+      "demanda_anual": 1750,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_19",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_013": {
+      "nodo_id": "SAT_013",
+      "nombre": "PUERTO PARRA",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68573",
+      "coords": {
+        "lat": 6.650785,
+        "lon": -74.056129
+      },
+      "demanda_anual": 1750,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_19",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_014": {
+      "nodo_id": "SAT_014",
+      "nombre": "SALAMINA",
+      "departamento": "MAGDALENA",
+      "codigo_dane": "47675",
+      "coords": {
+        "lat": 10.491229,
+        "lon": -74.794189
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_11",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_015": {
+      "nodo_id": "SAT_015",
+      "nombre": "PIOJÓ",
+      "departamento": "ATLANTICO",
+      "codigo_dane": "08549",
+      "coords": {
+        "lat": 10.749216,
+        "lon": -75.107592
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_11",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_016": {
+      "nodo_id": "SAT_016",
+      "nombre": "FOSCA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25281",
+      "coords": {
+        "lat": 4.339093,
+        "lon": -73.93902
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_02",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_017": {
+      "nodo_id": "SAT_017",
+      "nombre": "EL LITORAL DEL SAN JUAN",
+      "departamento": "CHOCO",
+      "codigo_dane": "27250",
+      "coords": {
+        "lat": 4.259564,
+        "lon": -77.363702
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_20",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_018": {
+      "nodo_id": "SAT_018",
+      "nombre": "SABANA DE TORRES",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68655",
+      "coords": {
+        "lat": 7.391919,
+        "lon": -73.49906
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_03",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_019": {
+      "nodo_id": "SAT_019",
+      "nombre": "MUTISCUA",
+      "departamento": "NORTE DE SANTANDER",
+      "codigo_dane": "54480",
+      "coords": {
+        "lat": 7.300469,
+        "lon": -72.747169
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_03",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_020": {
+      "nodo_id": "SAT_020",
+      "nombre": "SAN JUAN NEPOMUCENO",
+      "departamento": "BOLIVAR",
+      "codigo_dane": "13657",
+      "coords": {
+        "lat": 9.953751,
+        "lon": -75.081761
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_13",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_021": {
+      "nodo_id": "SAT_021",
+      "nombre": "PROVIDENCIA",
+      "departamento": "ARCHIPIELAGO DE SAN ANDRES, PROVIDENCIA Y SANTA CATALINA",
+      "codigo_dane": "88564",
+      "coords": {
+        "lat": 13.373185,
+        "lon": -81.368386
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_13",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_022": {
+      "nodo_id": "SAT_022",
+      "nombre": "SANTA LUCÍA",
+      "departamento": "ATLANTICO",
+      "codigo_dane": "08675",
+      "coords": {
+        "lat": 10.324303,
+        "lon": -74.959204
+      },
+      "demanda_anual": 6500,
+      "cluster_municipios": 13,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_13",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_023": {
+      "nodo_id": "SAT_023",
+      "nombre": "SAN ANDRÉS",
+      "departamento": "ARCHIPIELAGO DE SAN ANDRES, PROVIDENCIA Y SANTA CATALINA",
+      "codigo_dane": "88001",
+      "coords": {
+        "lat": 12.578108,
+        "lon": -81.707181
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_13",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_024": {
+      "nodo_id": "SAT_024",
+      "nombre": "LA PINTADA",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05390",
+      "coords": {
+        "lat": 5.743808,
+        "lon": -75.60781
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_26",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_025": {
+      "nodo_id": "SAT_025",
+      "nombre": "ELÍAS",
+      "departamento": "HUILA",
+      "codigo_dane": "41244",
+      "coords": {
+        "lat": 2.012854,
+        "lon": -75.938301
+      },
+      "demanda_anual": 6500,
+      "cluster_municipios": 13,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_38",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_026": {
+      "nodo_id": "SAT_026",
+      "nombre": "SOLITA",
+      "departamento": "CAQUETA",
+      "codigo_dane": "18785",
+      "coords": {
+        "lat": 0.87654,
+        "lon": -75.619902
+      },
+      "demanda_anual": 2100,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_38",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_027": {
+      "nodo_id": "SAT_027",
+      "nombre": "VALLE DEL GUAMUEZ",
+      "departamento": "PUTUMAYO",
+      "codigo_dane": "86865",
+      "coords": {
+        "lat": -0.192318,
+        "lon": -74.781842
+      },
+      "demanda_anual": 400,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_38",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_028": {
+      "nodo_id": "SAT_028",
+      "nombre": "CARTAGENA DEL CHAIRÁ",
+      "departamento": "CAQUETA",
+      "codigo_dane": "18150",
+      "coords": {
+        "lat": 1.332371,
+        "lon": -74.847867
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_38",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_029": {
+      "nodo_id": "SAT_029",
+      "nombre": "AMBALEMA",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73030",
+      "coords": {
+        "lat": 4.782682,
+        "lon": -74.764429
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_28",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_030": {
+      "nodo_id": "SAT_030",
+      "nombre": "VILLARRICA",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73873",
+      "coords": {
+        "lat": 3.936902,
+        "lon": -74.600285
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_28",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_031": {
+      "nodo_id": "SAT_031",
+      "nombre": "CACAHUAL",
+      "departamento": "GUAINIA",
+      "codigo_dane": "94886",
+      "coords": {
+        "lat": 3.52617,
+        "lon": -67.413312
+      },
+      "demanda_anual": 1200,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_49",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_032": {
+      "nodo_id": "SAT_032",
+      "nombre": "LÉRIDA",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73408",
+      "coords": {
+        "lat": 4.862046,
+        "lon": -74.910716
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_27",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_033": {
+      "nodo_id": "SAT_033",
+      "nombre": "SAN ANTONIO",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73675",
+      "coords": {
+        "lat": 3.914146,
+        "lon": -75.480074
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_27",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_034": {
+      "nodo_id": "SAT_034",
+      "nombre": "MALLAMA",
+      "departamento": "NARINO",
+      "codigo_dane": "52435",
+      "coords": {
+        "lat": 1.141037,
+        "lon": -77.864549
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_50",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_035": {
+      "nodo_id": "SAT_035",
+      "nombre": "POPAYÁN",
+      "departamento": "CAUCA",
+      "codigo_dane": "19001",
+      "coords": {
+        "lat": 2.953017,
+        "lon": -76.270284
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_24",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_036": {
+      "nodo_id": "SAT_036",
+      "nombre": "AGUSTÍN CODAZZI",
+      "departamento": "CESAR",
+      "codigo_dane": "20013",
+      "coords": {
+        "lat": 10.040454,
+        "lon": -73.238389
+      },
+      "demanda_anual": 1750,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_15",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_037": {
+      "nodo_id": "SAT_037",
+      "nombre": "PUERTO ARICA",
+      "departamento": "AMAZONAS",
+      "codigo_dane": "91536",
+      "coords": {
+        "lat": -2.147039,
+        "lon": -71.752186
+      },
+      "demanda_anual": 800,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_44",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_038": {
+      "nodo_id": "SAT_038",
+      "nombre": "MARMATO",
+      "departamento": "CALDAS",
+      "codigo_dane": "17442",
+      "coords": {
+        "lat": 5.47422,
+        "lon": -75.600049
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_34",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_039": {
+      "nodo_id": "SAT_039",
+      "nombre": "MARQUETALIA",
+      "departamento": "CALDAS",
+      "codigo_dane": "17444",
+      "coords": {
+        "lat": 5.297525,
+        "lon": -75.053097
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_34",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_040": {
+      "nodo_id": "SAT_040",
+      "nombre": "GUÁTICA",
+      "departamento": "RISARALDA",
+      "codigo_dane": "66318",
+      "coords": {
+        "lat": 5.315367,
+        "lon": -75.799005
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_34",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_041": {
+      "nodo_id": "SAT_041",
+      "nombre": "VILLAHERMOSA",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73870",
+      "coords": {
+        "lat": 5.030452,
+        "lon": -75.117729
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_34",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_042": {
+      "nodo_id": "SAT_042",
+      "nombre": "FALAN",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73270",
+      "coords": {
+        "lat": 5.123104,
+        "lon": -74.953007
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_34",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_043": {
+      "nodo_id": "SAT_043",
+      "nombre": "BUENAVISTA",
+      "departamento": "CORDOBA",
+      "codigo_dane": "15109",
+      "coords": {
+        "lat": 8.221187,
+        "lon": -75.480897
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_17",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_044": {
+      "nodo_id": "SAT_044",
+      "nombre": "PUERTO ESCONDIDO",
+      "departamento": "CÓRDOBA",
+      "codigo_dane": "23574",
+      "coords": {
+        "lat": 9.005372,
+        "lon": -76.260411
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_17",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_045": {
+      "nodo_id": "SAT_045",
+      "nombre": "TIERRALTA",
+      "departamento": "CÓRDOBA",
+      "codigo_dane": "23807",
+      "coords": {
+        "lat": 8.170612,
+        "lon": -76.059797
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_17",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_046": {
+      "nodo_id": "SAT_046",
+      "nombre": "MONTELÍBANO",
+      "departamento": "CÓRDOBA",
+      "codigo_dane": "23466",
+      "coords": {
+        "lat": 7.973777,
+        "lon": -75.416818
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_17",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_047": {
+      "nodo_id": "SAT_047",
+      "nombre": "TENERIFE",
+      "departamento": "MAGDALENA",
+      "codigo_dane": "47798",
+      "coords": {
+        "lat": 9.898273,
+        "lon": -74.859783
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_54",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_048": {
+      "nodo_id": "SAT_048",
+      "nombre": "SAN BENITO ABAD",
+      "departamento": "SUCRE",
+      "codigo_dane": "70678",
+      "coords": {
+        "lat": 8.930108,
+        "lon": -75.031089
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_54",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_049": {
+      "nodo_id": "SAT_049",
+      "nombre": "GUAMAL",
+      "departamento": "MAGDALENA",
+      "codigo_dane": "50318",
+      "coords": {
+        "lat": 9.144354,
+        "lon": -74.223689
+      },
+      "demanda_anual": 4500,
+      "cluster_municipios": 9,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_54",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_050": {
+      "nodo_id": "SAT_050",
+      "nombre": "SAN JACINTO DEL CAUCA",
+      "departamento": "BOLí_x008d_VAR",
+      "codigo_dane": "13655",
+      "coords": {
+        "lat": 8.25158,
+        "lon": -74.721156
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_54",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_051": {
+      "nodo_id": "SAT_051",
+      "nombre": "ASTREA",
+      "departamento": "MAGDALENA",
+      "codigo_dane": "20032",
+      "coords": {
+        "lat": 9.847047,
+        "lon": -74.236515
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_54",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_052": {
+      "nodo_id": "SAT_052",
+      "nombre": "MIRITÍ - PARANÁ",
+      "departamento": "AMAZONAS",
+      "codigo_dane": "91460",
+      "coords": {
+        "lat": -0.888833,
+        "lon": -70.98893
+      },
+      "demanda_anual": 1200,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_53",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_053": {
+      "nodo_id": "SAT_053",
+      "nombre": "TARAIRA",
+      "departamento": "VAUPí_x0089_S",
+      "codigo_dane": "97666",
+      "coords": {
+        "lat": -0.564984,
+        "lon": -69.635497
+      },
+      "demanda_anual": 600,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_53",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_054": {
+      "nodo_id": "SAT_054",
+      "nombre": "MORICHAL",
+      "departamento": "GUAINí_x008d_A",
+      "codigo_dane": "94888",
+      "coords": {
+        "lat": 2.265132,
+        "lon": -69.919404
+      },
+      "demanda_anual": 600,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_53",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_055": {
+      "nodo_id": "SAT_055",
+      "nombre": "PUERTO CAICEDO",
+      "departamento": "PUTUMAYO",
+      "codigo_dane": "86569",
+      "coords": {
+        "lat": 0.687784,
+        "lon": -76.606118
+      },
+      "demanda_anual": 2100,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_43",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_056": {
+      "nodo_id": "SAT_056",
+      "nombre": "GUADUAS",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25320",
+      "coords": {
+        "lat": 5.072076,
+        "lon": -74.603402
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_07",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_057": {
+      "nodo_id": "SAT_057",
+      "nombre": "CASTILLA LA NUEVA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "50150",
+      "coords": {
+        "lat": 4.948916,
+        "lon": -74.593455
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_07",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_058": {
+      "nodo_id": "SAT_058",
+      "nombre": "YAGUARÁ",
+      "departamento": "HUILA",
+      "codigo_dane": "41885",
+      "coords": {
+        "lat": 2.664694,
+        "lon": -75.518023
+      },
+      "demanda_anual": 4500,
+      "cluster_municipios": 9,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_33",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_059": {
+      "nodo_id": "SAT_059",
+      "nombre": "COLOMBIA",
+      "departamento": "HUILA",
+      "codigo_dane": "41206",
+      "coords": {
+        "lat": 3.376745,
+        "lon": -74.802815
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_33",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_060": {
+      "nodo_id": "SAT_060",
+      "nombre": "SAN VICENTE DEL CAGUÁN",
+      "departamento": "CAQUETÁ",
+      "codigo_dane": "18753",
+      "coords": {
+        "lat": 2.119413,
+        "lon": -74.767894
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_33",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_061": {
+      "nodo_id": "SAT_061",
+      "nombre": "RIOBLANCO",
+      "departamento": "TOLIMA",
+      "codigo_dane": "73616",
+      "coords": {
+        "lat": 3.529932,
+        "lon": -75.644069
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_33",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_062": {
+      "nodo_id": "SAT_062",
+      "nombre": "EL TARRA",
+      "departamento": "NORTE DE SANTANDER",
+      "codigo_dane": "54250",
+      "coords": {
+        "lat": 8.574281,
+        "lon": -73.09614
+      },
+      "demanda_anual": 1050,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_52",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_063": {
+      "nodo_id": "SAT_063",
+      "nombre": "BUENAVISTA",
+      "departamento": "QUINDí_x008d_O",
+      "codigo_dane": "15109",
+      "coords": {
+        "lat": 4.360029,
+        "lon": -75.739572
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_12",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_064": {
+      "nodo_id": "SAT_064",
+      "nombre": "ARGELIA",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "05055",
+      "coords": {
+        "lat": 4.726945,
+        "lon": -76.119905
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_12",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_065": {
+      "nodo_id": "SAT_065",
+      "nombre": "APÍA",
+      "departamento": "RISARALDA",
+      "codigo_dane": "66045",
+      "coords": {
+        "lat": 5.106526,
+        "lon": -75.942356
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_12",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_066": {
+      "nodo_id": "SAT_066",
+      "nombre": "ISNOS",
+      "departamento": "HUILA",
+      "codigo_dane": "41359",
+      "coords": {
+        "lat": 1.929467,
+        "lon": -76.217637
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_32",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_067": {
+      "nodo_id": "SAT_067",
+      "nombre": "PÁEZ",
+      "departamento": "CAUCA",
+      "codigo_dane": "19517",
+      "coords": {
+        "lat": 2.115875,
+        "lon": -76.981075
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_32",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_068": {
+      "nodo_id": "SAT_068",
+      "nombre": "LÓPEZ DE MICAY",
+      "departamento": "CAUCA",
+      "codigo_dane": "19418",
+      "coords": {
+        "lat": 2.846788,
+        "lon": -77.247803
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_32",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_069": {
+      "nodo_id": "SAT_069",
+      "nombre": "INZÁ",
+      "departamento": "CAUCA",
+      "codigo_dane": "19355",
+      "coords": {
+        "lat": 2.549183,
+        "lon": -76.063503
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_32",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_070": {
+      "nodo_id": "SAT_070",
+      "nombre": "EL ROSARIO",
+      "departamento": "NARIÑO",
+      "codigo_dane": "52256",
+      "coords": {
+        "lat": 1.745309,
+        "lon": -77.33417
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_37",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_071": {
+      "nodo_id": "SAT_071",
+      "nombre": "LOS ANDES",
+      "departamento": "NARIÑO",
+      "codigo_dane": "52418",
+      "coords": {
+        "lat": 1.494587,
+        "lon": -77.521303
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_37",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_072": {
+      "nodo_id": "SAT_072",
+      "nombre": "LA CRUZ",
+      "departamento": "NARIÑO",
+      "codigo_dane": "52378",
+      "coords": {
+        "lat": 1.600219,
+        "lon": -77.131316
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_37",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_073": {
+      "nodo_id": "SAT_073",
+      "nombre": "SAN PABLO",
+      "departamento": "NARIÑO",
+      "codigo_dane": "13670",
+      "coords": {
+        "lat": 1.669429,
+        "lon": -77.013984
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_37",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_074": {
+      "nodo_id": "SAT_074",
+      "nombre": "LLORÓ",
+      "departamento": "CHOCÓ",
+      "codigo_dane": "27413",
+      "coords": {
+        "lat": 5.1863,
+        "lon": -76.472925
+      },
+      "demanda_anual": 4500,
+      "cluster_municipios": 9,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_45",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_075": {
+      "nodo_id": "SAT_075",
+      "nombre": "BAHÍA SOLANO",
+      "departamento": "CHOCÓ",
+      "codigo_dane": "27075",
+      "coords": {
+        "lat": 6.222807,
+        "lon": -77.401359
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_45",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_076": {
+      "nodo_id": "SAT_076",
+      "nombre": "EL CANTÓN DEL SAN PABLO",
+      "departamento": "CHOCÓ",
+      "codigo_dane": "27135",
+      "coords": {
+        "lat": 5.192471,
+        "lon": -76.950891
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_45",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_077": {
+      "nodo_id": "SAT_077",
+      "nombre": "SAN LUIS",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "73678",
+      "coords": {
+        "lat": 6.043017,
+        "lon": -74.993619
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_29",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_078": {
+      "nodo_id": "SAT_078",
+      "nombre": "OLAYA HERRERA",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "52490",
+      "coords": {
+        "lat": 5.610777,
+        "lon": -75.176262
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_29",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_079": {
+      "nodo_id": "SAT_079",
+      "nombre": "HATONUEVO",
+      "departamento": "LA GUAJIRA",
+      "codigo_dane": "44378",
+      "coords": {
+        "lat": 11.068864,
+        "lon": -72.75904
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_25",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_080": {
+      "nodo_id": "SAT_080",
+      "nombre": "URIBIA",
+      "departamento": "LA GUAJIRA",
+      "codigo_dane": "44847",
+      "coords": {
+        "lat": 11.711904,
+        "lon": -72.265906
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_25",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_081": {
+      "nodo_id": "SAT_081",
+      "nombre": "MURINDÓ",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05475",
+      "coords": {
+        "lat": 6.97771,
+        "lon": -76.817485
+      },
+      "demanda_anual": 1750,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_56",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_082": {
+      "nodo_id": "SAT_082",
+      "nombre": "EL CHARCO",
+      "departamento": "NARIÑO",
+      "codigo_dane": "52250",
+      "coords": {
+        "lat": 2.479688,
+        "lon": -78.110217
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_51",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_083": {
+      "nodo_id": "SAT_083",
+      "nombre": "LA ARGENTINA",
+      "departamento": "NARIÑO",
+      "codigo_dane": "41378",
+      "coords": {
+        "lat": 1.765633,
+        "lon": -78.182924
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_51",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_084": {
+      "nodo_id": "SAT_084",
+      "nombre": "PAMPLONITA",
+      "departamento": "NORTE DE SANTANDER",
+      "codigo_dane": "54520",
+      "coords": {
+        "lat": 7.436745,
+        "lon": -72.639111
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_09",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_085": {
+      "nodo_id": "SAT_085",
+      "nombre": "BUCARASICA",
+      "departamento": "NORTE DE SANTANDER",
+      "codigo_dane": "54109",
+      "coords": {
+        "lat": 8.041299,
+        "lon": -72.868231
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_09",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_086": {
+      "nodo_id": "SAT_086",
+      "nombre": "TOLEDO",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "54820",
+      "coords": {
+        "lat": 7.010328,
+        "lon": -75.692281
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_22",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_087": {
+      "nodo_id": "SAT_087",
+      "nombre": "CÁCERES",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05120",
+      "coords": {
+        "lat": 7.578366,
+        "lon": -75.35205
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_22",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_088": {
+      "nodo_id": "SAT_088",
+      "nombre": "URAMITA",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05842",
+      "coords": {
+        "lat": 6.898393,
+        "lon": -76.173284
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_22",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_089": {
+      "nodo_id": "SAT_089",
+      "nombre": "ARACATACA",
+      "departamento": "MAGDALENA",
+      "codigo_dane": "47053",
+      "coords": {
+        "lat": 10.589791,
+        "lon": -74.186702
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_18",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_090": {
+      "nodo_id": "SAT_090",
+      "nombre": "RESTREPO",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "50606",
+      "coords": {
+        "lat": 3.821351,
+        "lon": -76.523329
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_04",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_091": {
+      "nodo_id": "SAT_091",
+      "nombre": "LA UNIÓN",
+      "departamento": "SUCRE",
+      "codigo_dane": "05400",
+      "coords": {
+        "lat": 8.853975,
+        "lon": -75.276056
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_39",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_092": {
+      "nodo_id": "SAT_092",
+      "nombre": "SAN ONOFRE",
+      "departamento": "SUCRE",
+      "codigo_dane": "70713",
+      "coords": {
+        "lat": 9.736955,
+        "lon": -75.522398
+      },
+      "demanda_anual": 2100,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_39",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_093": {
+      "nodo_id": "SAT_093",
+      "nombre": "ARBELÁEZ",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25053",
+      "coords": {
+        "lat": 4.272534,
+        "lon": -74.414901
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_14",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_094": {
+      "nodo_id": "SAT_094",
+      "nombre": "EL ESPINO",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15248",
+      "coords": {
+        "lat": 6.483027,
+        "lon": -72.497007
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_095": {
+      "nodo_id": "SAT_095",
+      "nombre": "CONFINES",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68209",
+      "coords": {
+        "lat": 6.357327,
+        "lon": -73.240554
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_096": {
+      "nodo_id": "SAT_096",
+      "nombre": "CUBARÁ",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15223",
+      "coords": {
+        "lat": 6.997275,
+        "lon": -72.107939
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_097": {
+      "nodo_id": "SAT_097",
+      "nombre": "CÁCOTA",
+      "departamento": "NORTE DE SANTANDER",
+      "codigo_dane": "54125",
+      "coords": {
+        "lat": 7.268705,
+        "lon": -72.642059
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_098": {
+      "nodo_id": "SAT_098",
+      "nombre": "TAME",
+      "departamento": "ARAUCA",
+      "codigo_dane": "81794",
+      "coords": {
+        "lat": 6.453324,
+        "lon": -71.754427
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_099": {
+      "nodo_id": "SAT_099",
+      "nombre": "JERICÓ",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "05368",
+      "coords": {
+        "lat": 6.145735,
+        "lon": -72.571122
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_100": {
+      "nodo_id": "SAT_100",
+      "nombre": "CABRERA",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68121",
+      "coords": {
+        "lat": 6.592118,
+        "lon": -73.246475
+      },
+      "demanda_anual": 4000,
+      "cluster_municipios": 8,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_101": {
+      "nodo_id": "SAT_101",
+      "nombre": "SAN ANDRÉS",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68669",
+      "coords": {
+        "lat": 6.427548,
+        "lon": -72.867638
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_102": {
+      "nodo_id": "SAT_102",
+      "nombre": "OCAMONTE",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68498",
+      "coords": {
+        "lat": 6.339988,
+        "lon": -73.122563
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_103": {
+      "nodo_id": "SAT_103",
+      "nombre": "BOAVITA",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15097",
+      "coords": {
+        "lat": 6.330703,
+        "lon": -72.584905
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_41",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_104": {
+      "nodo_id": "SAT_104",
+      "nombre": "CALAMAR",
+      "departamento": "GUAVIARE",
+      "codigo_dane": "13140",
+      "coords": {
+        "lat": 1.960982,
+        "lon": -72.655197
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_46",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_105": {
+      "nodo_id": "SAT_105",
+      "nombre": "EL DOVIO",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "76250",
+      "coords": {
+        "lat": 4.510452,
+        "lon": -76.237084
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_35",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_106": {
+      "nodo_id": "SAT_106",
+      "nombre": "GINEBRA",
+      "departamento": "VALLE DEL CAUCA",
+      "codigo_dane": "76306",
+      "coords": {
+        "lat": 3.724181,
+        "lon": -76.268068
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_35",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_107": {
+      "nodo_id": "SAT_107",
+      "nombre": "CORRALES",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15215",
+      "coords": {
+        "lat": 5.828064,
+        "lon": -72.844795
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_108": {
+      "nodo_id": "SAT_108",
+      "nombre": "BRICEÑO",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15106",
+      "coords": {
+        "lat": 5.690879,
+        "lon": -73.92326
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_109": {
+      "nodo_id": "SAT_109",
+      "nombre": "GARAGOA",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15299",
+      "coords": {
+        "lat": 5.083234,
+        "lon": -73.364413
+      },
+      "demanda_anual": 4500,
+      "cluster_municipios": 9,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_110": {
+      "nodo_id": "SAT_110",
+      "nombre": "SANTANA",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15686",
+      "coords": {
+        "lat": 6.056866,
+        "lon": -73.481639
+      },
+      "demanda_anual": 4000,
+      "cluster_municipios": 8,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_111": {
+      "nodo_id": "SAT_111",
+      "nombre": "PÁEZ",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "19517",
+      "coords": {
+        "lat": 5.097319,
+        "lon": -73.052737
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_112": {
+      "nodo_id": "SAT_112",
+      "nombre": "CUÍTIVA",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15226",
+      "coords": {
+        "lat": 5.580367,
+        "lon": -72.965923
+      },
+      "demanda_anual": 2500,
+      "cluster_municipios": 5,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_113": {
+      "nodo_id": "SAT_113",
+      "nombre": "BERBEO",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15090",
+      "coords": {
+        "lat": 5.98923,
+        "lon": -72.911641
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_114": {
+      "nodo_id": "SAT_114",
+      "nombre": "FLORIÁN",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68271",
+      "coords": {
+        "lat": 5.804659,
+        "lon": -73.97143
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_115": {
+      "nodo_id": "SAT_115",
+      "nombre": "EL GUACAMAYO",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68245",
+      "coords": {
+        "lat": 6.245111,
+        "lon": -73.496908
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_116": {
+      "nodo_id": "SAT_116",
+      "nombre": "NOBSA",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15491",
+      "coords": {
+        "lat": 5.768046,
+        "lon": -72.937042
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_117": {
+      "nodo_id": "SAT_117",
+      "nombre": "GUACHETÁ",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25317",
+      "coords": {
+        "lat": 5.383378,
+        "lon": -73.686972
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_118": {
+      "nodo_id": "SAT_118",
+      "nombre": "SAN LUIS DE GACENO",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15667",
+      "coords": {
+        "lat": 4.81976,
+        "lon": -73.168076
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_119": {
+      "nodo_id": "SAT_119",
+      "nombre": "BOLÍVAR",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68101",
+      "coords": {
+        "lat": 5.988953,
+        "lon": -73.771346
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_120": {
+      "nodo_id": "SAT_120",
+      "nombre": "SUSA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25779",
+      "coords": {
+        "lat": 5.455291,
+        "lon": -73.813938
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_121": {
+      "nodo_id": "SAT_121",
+      "nombre": "BARBOSA",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68077",
+      "coords": {
+        "lat": 5.932531,
+        "lon": -73.615965
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "Parque Principal, Cra. 13 #12-50, Barbosa",
+        "area_m2": 3500,
+        "inmobiliaria": "Alberto Álvarez",
+        "arriendo_mensual": 59500000,
+        "arriendo_anual": 714000000
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_122": {
+      "nodo_id": "SAT_122",
+      "nombre": "LANDÁZURI",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68385",
+      "coords": {
+        "lat": 6.218812,
+        "lon": -73.811359
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_123": {
+      "nodo_id": "SAT_123",
+      "nombre": "ENCINO",
+      "departamento": "SANTANDER",
+      "codigo_dane": "68264",
+      "coords": {
+        "lat": 6.137429,
+        "lon": -73.098749
+      },
+      "demanda_anual": 500,
+      "cluster_municipios": 1,
+      "tipo_id": "L3.SATELITE.c5",
+      "tipo_nombre": "Satelite C5",
+      "tipo_color": "#6C757D",
+      "tipo_icono": "gray",
+      "categoria": "Cat.C5",
+      "categoria_raw": "CALE.C5",
+      "es_principal": false,
+      "nodo_principal": "NODO_31",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 100000000,
+        "opex_anual": 80000000,
+        "capacidad_anual": 7210,
+        "cubiculos": 1,
+        "pistas": "Punto Info"
+      }
+    },
+    "SAT_124": {
+      "nodo_id": "SAT_124",
+      "nombre": "NECOCLÍ",
+      "departamento": "ANTIOQUIA",
+      "codigo_dane": "05490",
+      "coords": {
+        "lat": 8.434526,
+        "lon": -76.787271
+      },
+      "demanda_anual": 1400,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_55",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_125": {
+      "nodo_id": "SAT_125",
+      "nombre": "EL CASTILLO",
+      "departamento": "META",
+      "codigo_dane": "50251",
+      "coords": {
+        "lat": 3.563907,
+        "lon": -73.794225
+      },
+      "demanda_anual": 4000,
+      "cluster_municipios": 8,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_23",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_126": {
+      "nodo_id": "SAT_126",
+      "nombre": "CABUYARO",
+      "departamento": "META",
+      "codigo_dane": "50124",
+      "coords": {
+        "lat": 4.286705,
+        "lon": -72.791768
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_23",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_127": {
+      "nodo_id": "SAT_127",
+      "nombre": "MEDINA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25438",
+      "coords": {
+        "lat": 4.506298,
+        "lon": -73.348449
+      },
+      "demanda_anual": 1500,
+      "cluster_municipios": 3,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_23",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_128": {
+      "nodo_id": "SAT_128",
+      "nombre": "FUENTE DE ORO",
+      "departamento": "META",
+      "codigo_dane": "50287",
+      "coords": {
+        "lat": 3.462875,
+        "lon": -73.618121
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_23",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_129": {
+      "nodo_id": "SAT_129",
+      "nombre": "SAN JUAN DEL CESAR",
+      "departamento": "LA GUAJIRA",
+      "codigo_dane": "44650",
+      "coords": {
+        "lat": 10.769546,
+        "lon": -73.000629
+      },
+      "demanda_anual": 1200,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_08",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_130": {
+      "nodo_id": "SAT_130",
+      "nombre": "SOCOTÁ",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15755",
+      "coords": {
+        "lat": 6.041162,
+        "lon": -72.636653
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_16",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_131": {
+      "nodo_id": "SAT_131",
+      "nombre": "PUERTO GAITÁN",
+      "departamento": "META",
+      "codigo_dane": "50568",
+      "coords": {
+        "lat": 4.314905,
+        "lon": -72.087649
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_16",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_132": {
+      "nodo_id": "SAT_132",
+      "nombre": "PORE",
+      "departamento": "CASANARE",
+      "codigo_dane": "85263",
+      "coords": {
+        "lat": 5.72773,
+        "lon": -71.99286
+      },
+      "demanda_anual": 3500,
+      "cluster_municipios": 7,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_16",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_133": {
+      "nodo_id": "SAT_133",
+      "nombre": "TAURAMENA",
+      "departamento": "CASANARE",
+      "codigo_dane": "85410",
+      "coords": {
+        "lat": 5.018977,
+        "lon": -72.74662
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_16",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_134": {
+      "nodo_id": "SAT_134",
+      "nombre": "NUNCHÍA",
+      "departamento": "CASANARE",
+      "codigo_dane": "85225",
+      "coords": {
+        "lat": 4.790258,
+        "lon": -71.338533
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_16",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_135": {
+      "nodo_id": "SAT_135",
+      "nombre": "MUZO",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15480",
+      "coords": {
+        "lat": 5.532758,
+        "lon": -74.10269
+      },
+      "demanda_anual": 4500,
+      "cluster_municipios": 9,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_136": {
+      "nodo_id": "SAT_136",
+      "nombre": "GUATEQUE",
+      "departamento": "BOYACÁ",
+      "codigo_dane": "15322",
+      "coords": {
+        "lat": 5.007321,
+        "lon": -73.471207
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_137": {
+      "nodo_id": "SAT_137",
+      "nombre": "LA PEÑA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25398",
+      "coords": {
+        "lat": 5.198945,
+        "lon": -74.394105
+      },
+      "demanda_anual": 3000,
+      "cluster_municipios": 6,
+      "tipo_id": "L3.SATELITE.c2",
+      "tipo_nombre": "Satelite C2",
+      "tipo_color": "#8338EC",
+      "tipo_icono": "purple",
+      "categoria": "Cat.C2",
+      "categoria_raw": "CALE.C2",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 800000000,
+        "opex_anual": 600000000,
+        "capacidad_anual": 57680,
+        "cubiculos": 8,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_138": {
+      "nodo_id": "SAT_138",
+      "nombre": "GAMA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25299",
+      "coords": {
+        "lat": 4.763325,
+        "lon": -73.611037
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_139": {
+      "nodo_id": "SAT_139",
+      "nombre": "FACATATIVÁ",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25269",
+      "coords": {
+        "lat": 5.403997,
+        "lon": -73.795855
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    },
+    "SAT_140": {
+      "nodo_id": "SAT_140",
+      "nombre": "LA PALMA",
+      "departamento": "CUNDINAMARCA",
+      "codigo_dane": "25394",
+      "coords": {
+        "lat": 5.358816,
+        "lon": -74.391022
+      },
+      "demanda_anual": 2000,
+      "cluster_municipios": 4,
+      "tipo_id": "L3.SATELITE.c3",
+      "tipo_nombre": "Satelite C3",
+      "tipo_color": "#A05EB5",
+      "tipo_icono": "violet",
+      "categoria": "Cat.C3",
+      "categoria_raw": "CALE.C3",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 400000000,
+        "opex_anual": 300000000,
+        "capacidad_anual": 28840,
+        "cubiculos": 4,
+        "pistas": "Apoyo"
+      }
+    },
+    "SAT_141": {
+      "nodo_id": "SAT_141",
+      "nombre": "LA DORADA",
+      "departamento": "CALDAS",
+      "codigo_dane": "17380",
+      "coords": {
+        "lat": 5.460834,
+        "lon": -74.668819
+      },
+      "demanda_anual": 1000,
+      "cluster_municipios": 2,
+      "tipo_id": "L3.SATELITE.c4",
+      "tipo_nombre": "Satelite C4",
+      "tipo_color": "#C77DFF",
+      "tipo_icono": "pink",
+      "categoria": "Cat.C4",
+      "categoria_raw": "CALE.C4",
+      "es_principal": false,
+      "nodo_principal": "NODO_30",
+      "infraestructura": {
+        "direccion_teorica": "",
+        "area_m2": 0,
+        "inmobiliaria": "",
+        "arriendo_mensual": 0,
+        "arriendo_anual": 0
+      },
+      "valores_unitarios": {
+        "capex": 200000000,
+        "opex_anual": 150000000,
+        "capacidad_anual": 14420,
+        "cubiculos": 2,
+        "pistas": "Minimo"
+      }
+    }
+  }
+}

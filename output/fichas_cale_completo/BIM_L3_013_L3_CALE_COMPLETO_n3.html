@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Técnica BIM: L3.CALE_COMPLETO.n_3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .badge.v2 {
+            background: #f59e0b;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '📊';
+            font-size: 1.2em;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .info-card h3 {
+            color: #1e3c72;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .info-card .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .info-card .label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        tbody tr:hover {
+            background: #f9fafb;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: -20px;
+            width: 2px;
+            background: #667eea;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #10b981;
+            border: 2px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+        
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        
+        .timeline-item h4 {
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .alert {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid;
+        }
+        
+        .alert-success {
+            background: #d1fae5;
+            border-color: #10b981;
+            color: #065f46;
+        }
+        
+        .alert-warning {
+            background: #fef3c7;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+        
+        .alert-info {
+            background: #dbeafe;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+        
+        .component-tree {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .component-tree .node {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        
+        .component-tree .l3 {
+            color: #dc2626;
+            font-weight: bold;
+        }
+        
+        .component-tree .l2 {
+            color: #ea580c;
+            font-weight: bold;
+        }
+        
+        .component-tree .l1 {
+            color: #ca8a04;
+        }
+        
+        .component-tree .value {
+            color: #059669;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: #f9fafb;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>CALE Completo n_3 - 16 Cubículos + Pista Clase I</h1>
+            <div class="subtitle">L3.CALE_COMPLETO.n_3 | BIM ID: BIM_L3_013</div>
+            <div class="badge">✅ ESPECIFICADO</div>
+            <div class="badge v2">📌 Versión 2.0</div>
+        </div>
+        
+        <!-- CONTENT -->
+        <div class="content">
+            
+            <!-- DESCRIPCIÓN -->
+            <div class="section">
+                <div class="section-title">Descripción General</div>
+                <div class="alert alert-info">
+                    <strong>📋 Descripción:</strong> Centro CALE completo nivel 3: Evaluación TEÓRICA (todas categorías A1-C3) + Evaluación PRÁCTICA (A1, A2, B1, C1). Configuración recursiva que combina CALE Teórico 16 cubículos (arrendado) con Pista Clase I (construida).
+                </div>
+                <div class="alert alert-success">
+                    <strong>🎯 Tipo:</strong> CALE_COMPLETO_RECURSIVO<br>
+                    <strong>📦 Categoría:</strong> CENTRO_EVALUACION_TEORICO_PRACTICO<br>
+                    <strong>🏗️ Modelo:</strong> HÍBRIDO: Arrendamiento (teórico) + Construcción (pistas)<br>
+                    <strong>📅 Fase Despliegue:</strong> 1
+                </div>
+            </div>
+            
+            <!-- MÉTRICAS CLAVE -->
+            <div class="section">
+                <div class="section-title">Métricas Clave</div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>💰 CAPEX Total</h3>
+                        <div class="value">$1.18B</div>
+                        <div class="label">Inversión inicial v2.0</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>📊 OPEX Anual</h3>
+                        <div class="value">$513M</div>
+                        <div class="label">Gasto operativo año</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>📈 Capacidad Total</h3>
+                        <div class="value">7,785</div>
+                        <div class="label">Evaluaciones/mes</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>⏱️ Tiempo</h3>
+                        <div class="value">9.4</div>
+                        <div class="label">Meses implementación</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>👥 Personal</h3>
+                        <div class="value">7</div>
+                        <div class="label">Empleados requeridos</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>📐 Área Total</h3>
+                        <div class="value">3,790</div>
+                        <div class="label">m² requeridos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CAPACIDAD DETALLADA -->
+            <div class="section">
+                <div class="section-title">Capacidad de Evaluación</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo Evaluación</th>
+                                <th>Puestos/Pistas</th>
+                                <th>Eval/Mes</th>
+                                <th>Eval/Día</th>
+                                <th>Eval/Año</th>
+                                <th>Categorías</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>📝 Teórica</strong></td>
+                                <td>16 cubículos</td>
+                                <td>5,705</td>
+                                <td>219</td>
+                                <td>68,460</td>
+                                <td>A1, A2, B1, B2, B3, C1, C2, C3</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🚗 Práctica</strong></td>
+                                <td>2 pistas</td>
+                                <td>2,080</td>
+                                <td>80</td>
+                                <td>24,960</td>
+                                <td>A1, A2, B1, C1</td>
+                            </tr>
+                            <tr style="background: #f0fdf4; font-weight: bold;">
+                                <td><strong>📊 TOTAL</strong></td>
+                                <td>-</td>
+                                <td>7,785</td>
+                                <td>299</td>
+                                <td>93,420</td>
+                                <td>8 categorías</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <strong>⚠️ Limitaciones CALE.n_3:</strong><br>
+                    • NO soporta evaluación práctica: B2, C2, B3, C3<br>
+                    • Requiere upgrade a CALE.n_2 (+L2.pista_clase_II) o CALE.n_1 (+L2.pista_clase_III)<br>
+                    • Cubre ~80% demanda ciudades intermedias (A1, A2, B1, C1 son mayoritarias)
+                </div>
+            </div>
+            
+            <!-- COMPONENTES RECURSIVOS -->
+            <div class="section">
+                <div class="section-title">Estructura Recursiva (L3 → L3 + L2)</div>
+                <div class="component-tree">
+<div class="node l3">BIM_L3_013 (CALE.n_3) <span class="value">$1.18B</span></div>
+<div class="node">├─ 🔗 <span class="l3">L3</span> → BIM_L3_011 (CALE Teórico 16q v2.0) <span class="value">$460M</span></div>
+<div class="node">│   ├─ <span class="l2">L2</span>.sala_16_cubiculos <span class="value">$120M</span></div>
+<div class="node">│   ├─ <span class="l2">L2</span>.sala_formacion <span class="value">$30M</span></div>
+<div class="node">│   ├─ <span class="l2">L2</span>.zona_administrativa <span class="value">$80M</span></div>
+<div class="node">│   ├─ <span class="l2">L2</span>.datacenter <span class="value">$65M</span></div>
+<div class="node">│   ├─ <span class="l2">L2</span>.edificacion_adecuada <span class="value">$140M</span></div>
+<div class="node">│   └─ <span class="l2">L2</span>.servicios_publicos <span class="value">$25M</span></div>
+<div class="node">│</div>
+<div class="node">└─ 🔗 <span class="l2">L2</span> → BIM_L2_001 (Pista Clase I) <span class="value">$721M</span></div>
+<div class="node">    ├─ <span class="l1">L1</span>.pista_motos_A1A2_completa <span class="value">$290M</span></div>
+<div class="node">    │   ├─ L0... (componentes atómicos)</div>
+<div class="node">    │   └─ ...</div>
+<div class="node">    └─ <span class="l1">L1</span>.pista_carros_B1C1_completa <span class="value">$432M</span></div>
+<div class="node">        ├─ L0... (componentes atómicos)</div>
+<div class="node">        └─ ...</div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <strong>✅ Validaciones Recursividad:</strong><br>
+                    • Tipo: L3 → L3 + L2 (VÁLIDO)<br>
+                    • Ciclos detectados: 0<br>
+                    • Integridad referencias: OK<br>
+                    • Agregación valores: $460M + $721.44M = $1,181.44M ✓
+                </div>
+            </div>
+            
+            <!-- COMPARACIÓN v1.0 vs v2.0 -->
+            <div class="section">
+                <div class="section-title">Correcciones v1.0 → v2.0</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>v1.0 ❌</th>
+                                <th>v2.0 ✅</th>
+                                <th>Diferencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>CAPEX CALE.n_3</strong></td>
+                                <td>$1,241,440,000</td>
+                                <td><strong>$1,181,440,000</strong></td>
+                                <td style="color: #059669;">-$60M (-4.8%)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CAPEX base (16q)</strong></td>
+                                <td>$520,000,000</td>
+                                <td><strong>$460,000,000</strong></td>
+                                <td style="color: #059669;">-$60M (sin parqueadero)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Capacidad teórica/mes</strong></td>
+                                <td>400</td>
+                                <td><strong>5,705</strong></td>
+                                <td style="color: #059669;">+1,326%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OPEX teórico/año</strong></td>
+                                <td>~$180M</td>
+                                <td><strong>$308.6M</strong></td>
+                                <td style="color: #dc2626;">+71% (arrendamiento)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tiempo implementación</strong></td>
+                                <td>~12 meses</td>
+                                <td><strong>9.4 meses</strong></td>
+                                <td style="color: #059669;">-2.6 meses</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- FINANCIERO DETALLADO -->
+            <div class="section">
+                <div class="section-title">Análisis Financiero</div>
+                
+                <h3>💰 OPEX Anual - CALE Teórico 16q</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Valor/Año</th>
+                                <th>% OPEX Teórico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Software (SNCALE, MUNAY, ALEYA)</td>
+                                <td>$30M</td>
+                                <td>9.7%</td>
+                            </tr>
+                            <tr>
+                                <td>RRHH (3 personas)</td>
+                                <td>$150M</td>
+                                <td>48.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Energía</td>
+                                <td>$27M</td>
+                                <td>8.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Agua</td>
+                                <td>$249,600</td>
+                                <td>0.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Internet Fibra</td>
+                                <td>$7M</td>
+                                <td>2.1%</td>
+                            </tr>
+                            <tr style="background: #fef3c7;">
+                                <td><strong>Arrendamiento (290 m²)</strong></td>
+                                <td><strong>$87M</strong></td>
+                                <td><strong>28.2%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Mantenimiento</td>
+                                <td>$8M</td>
+                                <td>2.6%</td>
+                            </tr>
+                            <tr style="background: #f0fdf4; font-weight: bold;">
+                                <td><strong>TOTAL OPEX TEÓRICO</strong></td>
+                                <td><strong>$309M</strong></td>
+                                <td><strong>100%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 style="margin-top: 30px;">🚗 OPEX Anual - Pista Clase I</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Concepto</th>
+                                <th>Valor/Año</th>
+                                <th>% OPEX Práctico</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mantenimiento Pistas</td>
+                                <td>$36M</td>
+                                <td>17.7%</td>
+                            </tr>
+                            <tr>
+                                <td>RRHH Evaluadores (4 personas)</td>
+                                <td>$96M</td>
+                                <td>47.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Vehículos Evaluación</td>
+                                <td>$48M</td>
+                                <td>23.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Combustible</td>
+                                <td>$18M</td>
+                                <td>8.8%</td>
+                            </tr>
+                            <tr>
+                                <td>Mantenimiento Vehículos</td>
+                                <td>$6M</td>
+                                <td>2.9%</td>
+                            </tr>
+                            <tr style="background: #f0fdf4; font-weight: bold;">
+                                <td><strong>TOTAL OPEX PRÁCTICO</strong></td>
+                                <td><strong>$204M</strong></td>
+                                <td><strong>100%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="info-grid" style="margin-top: 30px;">
+                    <div class="info-card">
+                        <h3>💵 OPEX Total Anual</h3>
+                        <div class="value">$513M</div>
+                        <div class="label">Teórico + Práctico</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>📊 Ratio OPEX/CAPEX</h3>
+                        <div class="value">43.4%</div>
+                        <div class="label">Gasto anual vs inversión</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎯 ROI Estimado</h3>
+                        <div class="value">4.2</div>
+                        <div class="label">Años recuperación</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>💰 Costo/Evaluación</h3>
+                        <div class="value">$120,500</div>
+                        <div class="label">Promedio (CAPEX+OPEX)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TIMING -->
+            <div class="section">
+                <div class="section-title">Ruta Crítica Implementación</div>
+                
+                <div class="alert alert-info">
+                    <strong>⏱️ Método:</strong> SECUENCIAL CON SOLAPAMIENTO: CALE Teórico → Pistas (inicio día 66)<br>
+                    <strong>📅 Total:</strong> 282 días (9.4 meses)<br>
+                    <strong>🔄 Solapamiento:</strong> 30 días (pistas inician día 66, CALE Teórico al 50%)
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <h3>📝 Fase 1: CALE Teórico 16q (132 días)</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Día 1</h4>
+                                <p>Firma arrendamiento + inicio adecuaciones</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 14</h4>
+                                <p>Arrendamiento listo + inicio instalaciones</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 34</h4>
+                                <p>Datacenter operativo</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 40</h4>
+                                <p>ALEYA operativo</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 55</h4>
+                                <p>MUNAY operativo (evaluaciones teóricas listas)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 70</h4>
+                                <p>Capacitación finalizada</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 132</h4>
+                                <p>CALE Teórico 16q operativo (solo evaluaciones teóricas)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>🚗 Fase 2: Pistas Clase I (180 días)</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Día 66</h4>
+                                <p>Inicio construcción pistas (diseños + permisos)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 96</h4>
+                                <p>Movimiento tierras + fundaciones</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 126</h4>
+                                <p>Pavimentación + señalización</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 156</h4>
+                                <p>Instalación equipos evaluación</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 186</h4>
+                                <p>Pruebas + certificaciones pistas</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 216</h4>
+                                <p>Entrega vehículos evaluación</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 231</h4>
+                                <p>Capacitación evaluadores prácticos</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Día 246</h4>
+                                <p>Pistas operativas (evaluaciones prácticas listas)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success" style="margin-top: 20px;">
+                    <strong>🎉 Hito Final (Día 282):</strong> INAUGURACIÓN CALE.n_3 COMPLETO (teórico + práctico)<br>
+                    <strong>📌 Nota:</strong> Evaluaciones teóricas operativas desde día 132, prácticas desde día 246
+                </div>
+            </div>
+            
+            <!-- UPGRADE PATH -->
+            <div class="section">
+                <div class="section-title">Rutas de Expansión (Upgrade)</div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Configuración</th>
+                                <th>Componentes</th>
+                                <th>CAPEX Total</th>
+                                <th>Incremento</th>
+                                <th>Nuevas Categorías</th>
+                                <th>Eval/Mes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #f0fdf4;">
+                                <td><strong>CALE.n_3 (Actual)</strong></td>
+                                <td>16q + Pista I</td>
+                                <td><strong>$1.18B</strong></td>
+                                <td>-</td>
+                                <td>A1, A2, B1, C1</td>
+                                <td>7,785</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CALE.n_2</strong></td>
+                                <td>+ Pista II (B2/C2)</td>
+                                <td>$1.87B</td>
+                                <td>+$686M</td>
+                                <td>+ B2, C2</td>
+                                <td>9,225</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CALE.n_1</strong></td>
+                                <td>+ Pista III (B3/C3)</td>
+                                <td>$2.55B</td>
+                                <td>+$1.37B</td>
+                                <td>+ B2, B3, C2, C3</td>
+                                <td>10,665</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <strong>💡 Estrategia Upgrade:</strong><br>
+                    • Expansión incremental: n_3 → n_2 → n_1<br>
+                    • CALE Teórico 16q permanece sin cambios (solo agregar pistas)<br>
+                    • Cada upgrade agrega ~7 meses construcción + $686M-$686M inversión<br>
+                    • Permite adaptar inversión según evolución demanda
+                </div>
+            </div>
+            
+            <!-- APLICABILIDAD -->
+            <div class="section">
+                <div class="section-title">Aplicabilidad y Despliegue</div>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏙️ Tipo Nodo</h3>
+                        <div class="value" style="font-size: 1.3em;">Intermedias</div>
+                        <div class="label">Ciudades objetivo</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>👥 Población</h3>
+                        <div class="value" style="font-size: 1.5em;">50K-100K</div>
+                        <div class="label">Habitantes</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>📊 Demanda Anual</h3>
+                        <div class="value" style="font-size: 1.5em;">6K-12K</div>
+                        <div class="label">Evaluaciones</div>
+                    </div>
+                    <div class="info-card">
+                        <h3>🎯 Cobertura</h3>
+                        <div class="value" style="font-size: 1.5em;">80%</div>
+                        <div class="label">Demanda cubierta</div>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 30px;">📍 Ciudades Objetivo Fase 1 (Estimado: 8-12 nodos)</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Riohacha (La Guajira)</strong>
+                    </div>
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Quibdó (Chocó)</strong>
+                    </div>
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Arauca (Arauca)</strong>
+                    </div>
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Yopal (Casanare)</strong>
+                    </div>
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Florencia (Caquetá)</strong>
+                    </div>
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Mocoa (Putumayo)</strong>
+                    </div>
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Puerto Carreño (Vichada)</strong>
+                    </div>
+                    <div class="info-card" style="padding: 15px;">
+                        <strong>📍 Mitú (Vaupés)</strong>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success" style="margin-top: 30px;">
+                    <strong>📊 Estimación Fase 1 (8-12 nodos CALE.n_3):</strong><br>
+                    • Inversión Total: $9.45B - $14.18B<br>
+                    • Capacidad Total: 62,280 - 93,420 evaluaciones/mes<br>
+                    • Tiempo Despliegue: 10.8 meses (con contingencia 15%)
+                </div>
+            </div>
+            
+            <!-- VENTAJAS -->
+            <div class="section">
+                <div class="section-title">Ventajas y Consideraciones</div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h3 style="color: #059669;">✅ Ventajas CALE.n_3</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ Inversión moderada ($1,181M vs $2,554M CALE.n_1)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ Cubre 80% demanda ciudades intermedias (A1, A2, B1, C1)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ Tiempo implementación menor (9.4 meses vs 12 meses n_1)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ OPEX controlado ($513M/año vs $780M/año n_1)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ Upgradeable a n_2 o n_1 sin modificar infraestructura teórica</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ Modelo híbrido: arrendamiento (teórico) + construcción (pistas)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ Operación parcial desde mes 4.4 (solo teórico)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">✅ ROI 4.2 años (vs 6+ años CALE.n_1)</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: #ea580c;">⚠️ Consideraciones Operativas</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">⚠️ NO soporta evaluación práctica B2, C2, B3, C3 (requiere upgrade)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">⚠️ Requiere terreno 3,500 m² para pistas (compra o arrendamiento largo plazo)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">⚠️ Personal práctico requiere certificación especializada (2 meses)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">⚠️ Vehículos evaluación requieren mantenimiento continuo</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">⚠️ Operación pistas depende clima (lluvias reducen disponibilidad)</li>
+                            <li style="padding: 8px 0; border-bottom: 1px solid #e5e7eb;">⚠️ Evaluaciones prácticas solo disponibles desde mes 8.2 (día 246)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <p><strong>Ficha Técnica BIM 5D - Sistema Nacional CALE</strong></p>
+            <p>Generado: 2025-11-03 18:19:59</p>
+            <p>BIM ID: BIM_L3_013 | Código: L3.CALE_COMPLETO.n_3 | Versión: 2.0</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                📄 Fuente: TABLAS_L3_CALE_COMPLETO_N3.json<br>
+                🔧 Generador: generar_ficha_cale_n3.py
+            </p>
+        </div>
+    </div>
+</body>
+</html>

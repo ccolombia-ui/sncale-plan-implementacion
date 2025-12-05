@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo a Mapa 197 Nodos</title>
+    <meta http-equiv="refresh" content="0; url=visualizacion/mapa-interactivo.html">
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f1624;
+            color: #e2e8f0;
+        }
+
+        .fallback {
+            text-align: center;
+            padding: 1rem 2rem;
+            border: 1px solid #2d3748;
+            border-radius: 10px;
+            background: #111827;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        a {
+            color: #63b3ed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="fallback">
+        <p>Redirigiendo al mapa de 197 nodos...</p>
+        <p>Si no ocurre automáticamente, haz clic aquí: <a href="visualizacion/mapa-interactivo.html">visualizacion/mapa-interactivo.html</a></p>
+    </div>
+
+    <script>
+        // Redirección inmediata al mapa principal
+        window.location.replace('visualizacion/mapa-interactivo.html');
+    </script>
+</body>
+</html>

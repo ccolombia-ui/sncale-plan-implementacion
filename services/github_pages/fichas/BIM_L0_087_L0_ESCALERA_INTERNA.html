@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Técnica BIM - BIM_L0_087 | SNCALE</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --bg-light: #ecf0f1;
+            --sidebar-width: 280px;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background: var(--bg-light);
+            display: flex;
+        }
+        
+        /* SIDEBAR - JERARQUÍA BIM */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: linear-gradient(180deg, #1e3a5f 0%, var(--primary-color) 100%);
+            color: white;
+            overflow-y: auto;
+            padding: 20px;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .sidebar-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-logo {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-title {
+            font-size: 0.9em;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Árbol jerárquico BIM */
+        .bim-tree {
+            margin-top: 20px;
+        }
+        
+        .tree-level {
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .tree-level::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 30px;
+            bottom: -15px;
+            width: 2px;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .tree-level:last-child::before {
+            display: none;
+        }
+        
+        .level-header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .level-header:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+        
+        .level-header.active {
+            background: var(--secondary-color);
+            box-shadow: 0 2px 8px rgba(52,152,219,0.3);
+        }
+        
+        .level-checkbox {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .level-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-right: 8px;
+            min-width: 35px;
+            text-align: center;
+        }
+        
+        .level-name {
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .level-items {
+            margin-left: 35px;
+            padding-left: 15px;
+            border-left: 2px solid rgba(255,255,255,0.15);
+        }
+        
+        .item-node {
+            padding: 8px 10px;
+            margin: 5px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            font-size: 0.85em;
+            position: relative;
+            transition: all 0.2s;
+        }
+        
+        .item-node::before {
+            content: '├─';
+            position: absolute;
+            left: -15px;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .item-node:last-child::before {
+            content: '└─';
+        }
+        
+        .item-node:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(3px);
+        }
+        
+        .item-node.current {
+            background: var(--accent-color);
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(231,76,60,0.3);
+        }
+        
+        .item-code {
+            color: rgba(255,255,255,0.6);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        /* MAIN CONTENT */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 20px;
+            max-width: calc(100% - var(--sidebar-width));
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Toggle sidebar button (móvil) */
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Header BIM */
+        .bim-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .bim-id {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .bim-nivel {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+        
+        /* Secciones */
+        .seccion {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .seccion h2 {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Grid de información */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .info-item {
+            padding: 15px;
+            background: var(--bg-light);
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 5px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        /* Badge de confianza */
+        .confianza-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85em;
+            text-transform: uppercase;
+        }
+        
+        .confianza-alta { background: var(--success-color); color: white; }
+        .confianza-media { background: var(--warning-color); color: white; }
+        .confianza-baja { background: var(--accent-color); color: white; }
+        
+        /* Tabla de especificaciones */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: var(--bg-light);
+        }
+        
+        /* Normatividad */
+        .normativa-item {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 3px solid var(--accent-color);
+            background: #fff5f5;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+            }
+            
+            .sidebar-toggle {
+                display: block;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BOTÓN TOGGLE SIDEBAR (MÓVIL) -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Menú</button>
+
+    <!-- SIDEBAR - JERARQUÍA BIM -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">🏗️</div>
+            <div class="sidebar-title">SNCALE - Jerarquía BIM</div>
+        </div>
+        
+        <div class="bim-tree">
+            <!-- NIVEL L5: MUNICIPIOS -->
+            <div class="tree-level">
+                <div class="level-header">
+                    <span class="level-checkbox">☐</span>
+                    <span class="level-badge">L5</span>
+                    <span class="level-name">Municipios</span>
+                </div>
+                <div class="level-items">
+                    <div class="item-node">
+                        <span class="item-code">MUN_001</span> - Bogotá D.C.
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">MUN_002</span> - Medellín
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">...</span> 197 municipios
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NIVEL L4: CAPACIDADES -->
+            <div class="tree-level">
+                <div class="level-header">
+                    <span class="level-checkbox">☐</span>
+                    <span class="level-badge">L4</span>
+                    <span class="level-name">Capacidades CALE</span>
+                </div>
+                <div class="level-items">
+                    <div class="item-node">
+                        <span class="item-code">CAP_001</span> - 500 conductores/mes
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">CAP_002</span> - 1,000 conductores/mes
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">CAP_003</span> - 1,500 conductores/mes
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NIVEL L3: CATEGORÍAS CALE -->
+            <div class="tree-level">
+                <div class="level-header">
+                    <span class="level-checkbox">☑</span>
+                    <span class="level-badge">L3</span>
+                    <span class="level-name">Categorías CALE</span>
+                </div>
+                <div class="level-items">
+                    <div class="item-node">
+                        <span class="item-code">CAT_A</span> - CALE Tipo A
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">CAT_B</span> - CALE Tipo B
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">CAT_C</span> - CALE Tipo C
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NIVEL L2: CONFIGURACIONES BASE -->
+            <div class="tree-level">
+                <div class="level-header active">
+                    <span class="level-checkbox">☑</span>
+                    <span class="level-badge">L2</span>
+                    <span class="level-name">Configuraciones</span>
+                </div>
+                <div class="level-items">
+                    <div class="item-node">
+                        <span class="item-code">B50_001</span> - CALE Rural Básico
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">B50_002</span> - CALE Urbano Estándar
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">B50_003</span> - CALE Metropolitano
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">B50_004</span> - CALE Especializado
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">B50_005</span> - CALE Piloto
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NIVEL L1: ENSAMBLAJES -->
+            <div class="tree-level">
+                <div class="level-header active">
+                    <span class="level-checkbox">☑</span>
+                    <span class="level-badge">L1</span>
+                    <span class="level-name">Ensamblajes</span>
+                </div>
+                <div class="level-items">
+                    <div class="item-node">
+                        <span class="item-code">B60_001</span> - Pendiente definición
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">...</span> 27 ensamblajes totales
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NIVEL L0: COMPONENTES ATÓMICOS (ACTUAL) -->
+            <div class="tree-level">
+                <div class="level-header active">
+                    <span class="level-checkbox">☑</span>
+                    <span class="level-badge">L0</span>
+                    <span class="level-name">Componentes Atómicos</span>
+                </div>
+                <div class="level-items">
+                    <div class="item-node current">
+                        <span class="item-code">BIM_L0_087</span> - Escalera principal ← ACTUAL
+                    </div>
+                    <div class="item-node">
+                        <span class="item-code">...</span> 91 componentes totales
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón volver al índice -->
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.2);">
+            <a href="../index_v2_incremental.html" style="display: block; text-align: center; padding: 12px; background: rgba(255,255,255,0.1); color: white; text-decoration: none; border-radius: 5px; transition: all 0.3s;">
+                ← Volver al Índice General
+            </a>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-content">
+        <div class="container">
+            <!-- HEADER BIM -->
+            <div class="bim-header">
+                <div class="bim-id">BIM_L0_087</div>
+                <div>
+                    <span class="bim-nivel">📐 Nivel: L0 - Componente Atómico</span>
+                    <span class="bim-nivel">🏗️ Sistema: B70</span>
+                    <span class="bim-nivel">📦 Categoría: ESCALERA</span>
+                </div>
+                <h1 style="margin-top: 15px;">Escalera principal</h1>
+                <p style="opacity: 0.9; margin-top: 10px;">Escalera principal</p>
+            </div>
+
+            <!-- SECCIÓN 1: IDENTIFICACIÓN BIM -->
+            <div class="seccion">
+                <h2>🎯 Identificación BIM</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">BIM ID</div>
+                        <div class="info-value">BIM_L0_087</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Código L0</div>
+                        <div class="info-value">L0.ESCALERA_INTERNA</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Código ERP</div>
+                        <div class="info-value">-</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Clasificación OmniClass</div>
+                        <div class="info-value">Por definir</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Clasificación UniFormat</div>
+                        <div class="info-value">Por definir</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">COBie Type</div>
+                        <div class="info-value">Component</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: INFORMACIÓN PRESUPUESTAL -->
+            <div class="seccion">
+                <h2>💰 Información Presupuestal</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Valor Unitario B70</div>
+                        <div class="info-value" style="font-size: 1.5em; color: var(--secondary-color);">
+                            $$1.200.000
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">📊 ref_vrUnitario</div>
+                        <div class="info-value" style="font-size: 1.5em; color: var(--success-color);">
+                            $$1.200.000
+                        </div>
+                        <div style="margin-top: 8px; font-size: 0.85em; color: #666;">
+                            Fuente: Valor B70 actual - pendiente validación
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Nivel Confianza</div>
+                        <div class="info-value">
+                            <span class="confianza-badge confianza-baja">
+                                PENDIENTE COTIZACIÓN
+                            </span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Diferencia (%)</div>
+                        <div class="info-value" style="color: #27ae60;">
+                            0.0%
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Unidad de Medida</div>
+                        <div class="info-value">ml</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Última Actualización</div>
+                        <div class="info-value">2025-10-31</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: ESPECIFICACIONES TÉCNICAS -->
+            <div class="seccion">
+                <h2>⚙️ Especificaciones Técnicas</h2>
+                <div class="info-item" style="margin-bottom: 15px;">
+                    <div class="info-label">🔗 url_especificacion_tecnica</div>
+                    <div class="info-value">
+                        <a href="https://ccolombia-ui.github.io/sncale-plan-implementacion/fichas/BIM_L0_087_L0_ESCALERA_INTERNA.html" target="_blank" style="color: var(--secondary-color); text-decoration: none; font-weight: 600;">
+                            https://ccolombia-ui.github.io/sncale-plan-implementacion/fichas/BIM_L0_087_L0_ESCALERA_INTERNA.html
+                        </a>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Valor/Característica</th>
+                            <th>Norma Aplicable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td>Unidad de Medida</td>
+            <td>ml</td>
+            <td>Sistema BIM</td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SECCIÓN 4: NORMATIVIDAD Y CUMPLIMIENTO -->
+            <div class="seccion">
+                <h2>📜 Normatividad y Cumplimiento</h2>
+                
+                <h3 style="color: var(--accent-color); margin-top: 20px;">Resolución 20253040037125 - CALE</h3>
+                <div class="normativa-item">
+                    <strong>Aplicabilidad CALE:</strong> Componente aplicable según Resolución 20253040037125
+                </div>
+                
+                <h3 style="color: var(--accent-color); margin-top: 20px;">Normas Técnicas Colombianas</h3>
+                
+        <div class="normativa-item">
+            <strong>NTC General</strong>: Aplicable
+        </div>
+        
+        <div class="normativa-item">
+            <strong>ISO 19650</strong>: BIM
+        </div>
+        
+                
+                <h3 style="color: var(--accent-color); margin-top: 20px;">Normas Internacionales</h3>
+                
+        <div class="normativa-item">
+            <strong>ISO 19650-1:2018</strong>: Organization and digitization of information
+        </div>
+        <div class="normativa-item">
+            <strong>ISO 16739-1:2018</strong>: Industry Foundation Classes (IFC)
+        </div>
+        
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer">
+                <p><strong>Sistema MUNAY/SNCALE</strong> - Metodología BIM para Proyectos Públicos</p>
+                <p>Generado automáticamente | Última actualización: 2025-10-31 15:12:27</p>
+                <p>Conforme a: ISO 19650 | COBie | Guía BIM Colombia | Resolución 20253040037125</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+        
+        // Cerrar sidebar al hacer clic fuera (móvil)
+        document.querySelector('.main-content').addEventListener('click', function() {
+            if (window.innerWidth <= 1024) {
+                document.querySelector('.sidebar').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

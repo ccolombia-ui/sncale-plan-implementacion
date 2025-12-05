@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "documento": "MUNAY_5.2__anexo_b__DEFINITIVO",
+    "doc_id": "16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE",
+    "fecha_extraccion": "2025-11-03 13:15:09",
+    "total_componentes": 3,
+    "version": "1.0.0",
+    "estructura": "RECURSIVIDAD L2→L2",
+    "notas": "Configuraciones L2 con referencias a otros L2 (Single Source of Truth)"
+  },
+  "componentes": {
+    "BIM_L2_001": {
+      "bim_id": "BIM_L2_001",
+      "codigo": "L2.pista_clase_I",
+      "nombre": "Pista Clase I",
+      "descripcion": "Infraestructura completa motos A1/A2 + carros B1/C1",
+      "categorias_licencia": [
+        "A1",
+        "A2",
+        "B1",
+        "C1"
+      ],
+      "valor_total": 721440000,
+      "tipo": "CONFIGURACION_BASE",
+      "fuente": "Tabla #11 (valorización), Tabla #19 (componentes)",
+      "componentes": [
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_001",
+          "codigo": "L1.pista_motos_A1A2_completa",
+          "nombre": "Pista motos A1A2 completa",
+          "valor": 289805000
+        },
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_002",
+          "codigo": "L1.pista_carros_B1C1_completa",
+          "nombre": "Pista carros B1C1 completa",
+          "valor": 431635000
+        }
+      ]
+    },
+    "BIM_L2_002": {
+      "bim_id": "BIM_L2_002",
+      "codigo": "L2.pista_clase_II",
+      "nombre": "Pista Clase II",
+      "descripcion": "Infraestructura completa clase I + camiones B2/C2",
+      "categorias_licencia": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "C1",
+        "C2"
+      ],
+      "valor_total": 1407390000,
+      "tipo": "CONFIGURACION_EXTENDIDA",
+      "fuente": "Tabla #13 (valorización), Tabla #20 (componentes)",
+      "componentes": [
+        {
+          "tipo": "L2",
+          "referencia": "BIM_L2_001",
+          "codigo": "L2.pista_clase_I",
+          "nombre": "Pista Clase I completa",
+          "valor": 721440000,
+          "resuelve_a": [
+            "L1.pista_motos_A1A2_completa",
+            "L1.pista_carros_B1C1_completa"
+          ]
+        },
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_003",
+          "codigo": "L1.pista_camiones_B2C2_completa",
+          "nombre": "Pista camiones B2C2 completa",
+          "valor": 685950000
+        }
+      ]
+    },
+    "BIM_L2_003": {
+      "bim_id": "BIM_L2_003",
+      "codigo": "L2.pista_clase_III",
+      "nombre": "Pista Clase III",
+      "descripcion": "Infraestructura completa clase II + tractocamiones B3/C3",
+      "categorias_licencia": [
+        "A1",
+        "A2",
+        "B1",
+        "B2",
+        "B3",
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "valor_total": 2093340000,
+      "tipo": "CONFIGURACION_EXTENDIDA",
+      "fuente": "Tabla #15 (valorización), Tabla #21 (componentes)",
+      "componentes": [
+        {
+          "tipo": "L2",
+          "referencia": "BIM_L2_002",
+          "codigo": "L2.pista_clase_II",
+          "nombre": "Pista Clase II completa",
+          "valor": 1407390000,
+          "resuelve_a": [
+            "L2.pista_clase_I",
+            "L1.pista_camiones_B2C2_completa"
+          ]
+        },
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_004",
+          "codigo": "L1.pista_tractocamiones_B3C3_completa",
+          "nombre": "Pista tractocamiones B3C3 completa",
+          "valor": 686000000
+        }
+      ]
+    }
+  }
+}

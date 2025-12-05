@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM_L3_001 - CALE.n_1 - Centro Metropolitano</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .bim-id {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 2.5rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #8b0000;
+        }
+        
+        .info-card.destacada {
+            background: linear-gradient(135deg, #8b000015 0%, #dc143c15 100%);
+            border-left: 4px solid #dc143c;
+        }
+        
+        .info-card h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-card p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #8b0000;
+            margin: 0.3rem 0;
+        }
+        
+        .info-card.destacada p {
+            font-size: 1.8rem;
+            color: #dc143c;
+        }
+        
+        section {
+            margin-bottom: 2.5rem;
+        }
+        
+        h2 {
+            color: #8b0000;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #8b0000;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 1rem;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
+            color: white;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        th {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .text-right {
+            text-align: right;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #dc143c;
+        }
+        
+        .fuente-datos {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin-top: 2rem;
+        }
+        
+        .fuente-datos h3 {
+            color: #28a745;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .fuente-datos p {
+            color: #666;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .metadata-info {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 1.5rem 2.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        footer a {
+            color: #8b0000;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.85rem;
+            }
+            
+            th, td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="bim-id">BIM_L3_001</div>
+                <h1>CALE.n_1 - Centro Metropolitano</h1>
+                <p class="subtitle">Configuración completa para centros de enseñanza en ciudades metropolitanas (20 nodos base + 3 variante+)</p>
+            </div>
+            <svg class="logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+                <text x="10" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">UPTC</text>
+                <text x="10" y="65" font-family="Arial, sans-serif" font-size="14" fill="currentColor">Universidad Pedagógica</text>
+            </svg>
+        </header>
+        
+        <div class="content">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🔖 Identificador BIM</h3>
+                    <p><code>BIM_L3_001</code></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📂 Nivel Jerarquía</h3>
+                    <p>Nivel L3</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏗️ Tipo CALE</h3>
+                    <p>Metropolitano</p>
+                </div>
+                
+                <div class="info-card destacada">
+                    <h3>💰 Valorización Total</h3>
+                    <p>$141.320.000.000 COP</p>
+                </div>
+            </div>
+            
+            
+        <div class="info-card">
+            <h3>📍 Cantidad de Nodos</h3>
+            <p><strong>Nodos Base:</strong> 20</p>
+            <p><strong>Nodos Variante:</strong> 3</p>
+        </div>
+            
+            <section>
+                <h2>🔧 Componentes de la Configuración</h2>
+                <p class="metadata-info">Desglose completo de componentes con valores unitarios y totales</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Componente</th>
+                                <th>Descripción</th>
+                                <th>Referencia BIM</th>
+                                <th>Valor Unitario</th>
+                                <th>Cant. Base</th>
+                                <th>Cant. Variante</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+            <tr>
+                <td>1</td>
+                <td><strong>Pista Evaluación Clase III</strong></td>
+                <td>Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c</td>
+                <td><code>L2.pista_clase_3</code></td>
+                <td class="text-right">$1.850.000.000</td>
+                <td class="text-center">20</td>
+                <td class="text-center">0</td>
+                <td class="text-right"><strong>$37.000.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><strong>Pista Evaluación Clase II</strong></td>
+                <td>Circuito para motocicletas según Art. 3.7.4.b</td>
+                <td><code>L2.pista_clase_2</code></td>
+                <td class="text-right">$980.000.000</td>
+                <td class="text-center">20</td>
+                <td class="text-center">0</td>
+                <td class="text-right"><strong>$19.600.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><strong>Pista Evaluación Clase I</strong></td>
+                <td>Circuito para vehículos livianos según Art. 3.7.4.a</td>
+                <td><code>L2.pista_clase_1</code></td>
+                <td class="text-right">$750.000.000</td>
+                <td class="text-center">20</td>
+                <td class="text-center">0</td>
+                <td class="text-right"><strong>$15.000.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><strong>Sala Evaluación Teórica (24 cubículos)</strong></td>
+                <td>Equipamiento completo con sistema de cómputo</td>
+                <td><code>L1.sala_24_cubiculos</code></td>
+                <td class="text-right">$186.000.000</td>
+                <td class="text-center">20</td>
+                <td class="text-center">0</td>
+                <td class="text-right"><strong>$3.720.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><strong>Simulador Conducción Clase III</strong></td>
+                <td>Simulador avanzado con 6 DOF según NTC 5375</td>
+                <td><code>L0.simulador_c3</code></td>
+                <td class="text-right">$450.000.000</td>
+                <td class="text-center">40</td>
+                <td class="text-center">0</td>
+                <td class="text-right"><strong>$18.000.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><strong>Infraestructura Civil Base</strong></td>
+                <td>Edificación administrativa y servicios</td>
+                <td><code>L2.edificacion_admin</code></td>
+                <td class="text-right">$2.400.000.000</td>
+                <td class="text-center">20</td>
+                <td class="text-center">0</td>
+                <td class="text-right"><strong>$48.000.000.000</strong></td>
+            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            
+        <section class="metadata-section">
+            <h2>📋 Información Adicional</h2>
+            <p class="metadata-info">Datos complementarios de la configuración (Tabla #2)</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Tipo CALE</th><th>Cantidad</th><th>Descripción Modificador</th><th>Mapa de Geolocalización</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CALE.n_1+</td><td>3</td><td>Configuración base estándar, con Cale.n_2 adicional</td><td>Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos
+filtrar categorías: (3) CALE.n_1+</td></tr><tr><td>CALE.n_1</td><td>17</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos
+filtrar categorías: (17) CALE.n_1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+            
+            <div class="fuente-datos">
+                <h3>📊 Fuente de Datos</h3>
+                <p><strong>Documento:</strong> Google Doc MUNAY_5.2__anexo_b__DEFINITIVO</p>
+                <p><strong>ID:</strong> <code>16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE</code></p>
+                <p><strong>Tabla Valorización:</strong> #3</p>
+                <p><strong>Total Componentes:</strong> 6</p>
+                <p><strong>Estado:</strong> ✅ Validado desde fuente oficial única</p>
+            </div>
+            
+            <section>
+                <h2>📜 Marco Normativo y Cumplimiento Regulatorio</h2>
+                <p class="metadata-info">Normatividad aplicable según Resolución 20253040037125 de 2025 del Ministerio de Transporte</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📋 Resolución Principal</h3>
+                        <p style="font-size: 1rem; color: #333;">Resolución 20253040037125 de 2025</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Ministerio de Transporte - Reglamenta los Centros de Apoyo Logístico de Evaluación (CALE)</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚖️ Ley Fundacional</h3>
+                        <p style="font-size: 1rem; color: #333;">Ley 2251 de 2022</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">"Ley Julián Esteban" - Crea el Sistema Nacional CALE</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🚗 Código de Tránsito</h3>
+                        <p style="font-size: 1rem; color: #333;">Ley 769 de 2002</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Código Nacional de Tránsito Terrestre</p>
+                    </div>
+                    
+                    <div class="info-card destacada">
+                        <h3>🏷️ Clasificación CALE</h3>
+                        <p style="font-size: 1rem;">Clase III - Completa</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Autorizado para todas las categorías (A1, A2, B1, B2, B3, C1, C2, C3)</p>
+                    </div>
+                </div>
+                
+                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">✅ Certificaciones ISO Obligatorias (Art. 3.7.1.1 #4)</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏆 ISO 9001:2015</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Sistema de Gestión de Calidad</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🌿 ISO 14001:2015</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Sistema de Gestión Ambiental</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚕️ ISO 45001:2018</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Seguridad y Salud en el Trabajo</p>
+                    </div>
+                </div>
+                
+                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">🛡️ Seguros Obligatorios (Art. 3.7.1.3 #3)</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>💼 Responsabilidad Civil</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Póliza de Responsabilidad Civil Extracontractual (renovación anual)</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🩹 Accidentes Personales</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Seguro de Accidentes Personales para evaluados (renovación anual)</p>
+                    </div>
+                </div>
+                
+                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">🔍 Supervisión y Control</h3>
+                <div class="info-card" style="background: linear-gradient(135deg, #28a74515 0%, #20c99715 100%); border-left: 4px solid #28a745;">
+                    <h3 style="color: #28a745;">Entidad Supervisora</h3>
+                    <p style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;"><strong>Superintendencia de Transporte</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">Sistema: <strong>SICOV</strong> (Sistema de Control y Vigilancia)</p>
+                    <p style="font-size: 0.9rem; color: #666;">Frecuencia de inspección: Mínimo 1 visita técnica anual</p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>Sistema Nacional de Centros de Apoyo Logístico de Evaluación - SNCALE | UPTC</p>
+            <p>
+                <a href="../fichas_l1/BIM_L1_001.html">← Fichas L1</a> |
+                <a href="../fichas_l2/BIM_L2_001.html">← Fichas L2</a> |
+                <a href="BIM_L3_001.html">L3 Index</a>
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">
+                Generado desde Google Doc oficial | BIM_L3_001 | UPTC 2025
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

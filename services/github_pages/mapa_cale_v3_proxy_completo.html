@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo Red Nacional CALE | Proyecto MUNAY</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        #map-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 250px;
+        }
+
+        .legend h4 {
+            margin: 0 0 10px 0;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid rgba(0,0,0,0.2);
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #c53030;
+        }
+
+        /* Popup styling */
+        .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .popup-content h3 {
+            color: #2d3748;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .popup-content p {
+            margin: 5px 0;
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+
+        .popup-content strong {
+            color: #2d3748;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        .cache-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            color: #4a5568;
+            z-index: 1000;
+        }
+
+        /* Botones en popup */
+        .popup-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .popup-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .popup-btn-3d {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .popup-btn-3d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .popup-btn-2d {
+            background: #48bb78;
+            color: white;
+        }
+
+        .popup-btn-2d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+        }
+
+        .popup-btn-info {
+            background: #3182ce;
+            color: white;
+        }
+
+        .popup-btn-info:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+        }
+
+        /* Modal para información detallada */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .modal-close {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.1);
+        }
+
+        .modal-section {
+            margin: 20px 0;
+        }
+
+        .modal-section h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.85em;
+            color: #718096;
+            margin-bottom: 4px;
+        }
+
+        .info-item value {
+            display: block;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        /* Barra lateral jerárquica - FIJA Y SIEMPRE VISIBLE */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 60px;  /* Debajo del menú horizontal */
+            width: 400px;
+            height: calc(100vh - 60px);
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 2000;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .sidebar-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .sidebar-header h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .sidebar-search {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 0.9em;
+        }
+
+        .sidebar-search::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .sidebar-content {
+            padding: 15px;
+        }
+
+        .tree-node {
+            margin: 5px 0;
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .tree-item:hover {
+            background: #f7fafc;
+        }
+
+        .tree-item.active {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+        }
+
+        .tree-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+        }
+
+        .tree-expand {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            cursor: pointer;
+            color: #718096;
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+
+        .tree-expand.expanded {
+            transform: rotate(90deg);
+        }
+
+        .tree-label {
+            flex: 1;
+            font-size: 0.9em;
+            color: #2d3748;
+        }
+
+        .tree-count {
+            font-size: 0.85em;
+            color: #718096;
+            font-weight: bold;
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .tree-children {
+            margin-left: 25px;
+            display: none;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 10px;
+        }
+
+        .tree-children.expanded {
+            display: block;
+        }
+
+        .tree-item.nivel-1 { color: #9333ea; }
+        .tree-item.nivel-2 { color: #16a34a; }
+        .tree-item.nivel-3 { color: #ea580c; }
+        .tree-item.nivel-sat { color: #dc2626; }
+        .tree-item.nivel-iebm { color: #3182ce; }
+
+        /* Checkboxes personalizados */
+        .tree-checkbox {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            cursor: pointer;
+            accent-color: #667eea;
+            flex-shrink: 0;
+        }
+
+        /* Colores por región (20 colores distintivos) */
+        .region-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Version badge */
+        .version-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #48bb78;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            z-index: 3000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Menú horizontal de categorías */
+        .menu-horizontal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 2500;
+            padding: 10px 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-horizontal label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            background: #f7fafc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9em;
+            border: 2px solid transparent;
+        }
+
+        .menu-horizontal label:hover {
+            background: #e2e8f0;
+        }
+
+        .menu-horizontal input[type="checkbox"]:checked + span {
+            font-weight: bold;
+        }
+
+        .menu-horizontal label.active {
+            background: #667eea;
+            color: white;
+            border-color: #764ba2;
+        }
+
+        .menu-category {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu-color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Ajustar container para el menú horizontal y sidebar fija */
+        body.with-menu .container {
+            margin-top: 70px;
+            margin-left: 400px;  /* Espacio para sidebar fija */
+            padding-right: 20px;
+        }
+
+        /* Ajustar mapa para sidebar fija */
+        #map-container {
+            position: relative;
+        }
+    </style>
+</head>
+<body class="with-menu">
+    <!-- Menú horizontal de categorías -->
+    <div class="menu-horizontal" id="menu-categorias">
+        <strong style="margin-right: 10px;">Filtrar por Categoría:</strong>
+        <!-- Se llenará dinámicamente con JavaScript -->
+    </div>
+
+    <!-- Version badge -->
+    <div class="version-badge">
+        v3.0 - Proxy Seguro + Jerarquía Completa
+    </div>
+
+    <!-- Sidebar jerárquica - FIJA Y SIEMPRE VISIBLE -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Red Nacional CALE</h3>
+            <input type="text" class="sidebar-search" id="sidebar-search" placeholder="Buscar centro o municipio...">
+        </div>
+        <div class="sidebar-content" id="sidebar-tree">
+            <!-- Se llenará dinámicamente con JavaScript -->
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Red Nacional de Centros CALE</h1>
+            <p class="subtitle">Sistema de Capacitación en Logística Eléctrica - Proyecto MUNAY</p>
+            <p class="subtitle" style="font-size: 0.9em; margin-top: 10px; color: #48bb78;">
+                Datos en tiempo real desde proxy seguro | Versión 3.0 con Service Account
+            </p>
+        </header>
+
+        <div id="map-container">
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Cargando datos desde proxy seguro...</p>
+            </div>
+            <div id="cache-info" class="cache-info" style="display:none;"></div>
+            <div id="map"></div>
+            <div class="legend">
+                <h4>Categorías CALE</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9333ea;"></div>
+                    <span>CALE.n_1+ (HUB)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2563eb;"></div>
+                    <span>CALE.n_1 (Nodo)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #16a34a;"></div>
+                    <span>CALE.n_2 (Regional)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ea580c;"></div>
+                    <span>CALE.n_3 (Local)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #dc2626;"></div>
+                    <span>C2/C3/C4/C5 (Satélite)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #3182ce;"></div>
+                    <span>IEBM (Instituciones)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats" id="stats"></div>
+    </div>
+
+    <!-- Modal para información detallada -->
+    <div id="modal-centro" class="modal-overlay" onclick="cerrarModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-titulo">Información del Centro</h2>
+                <button class="modal-close" onclick="cerrarModal()">×</button>
+            </div>
+            <div id="modal-body">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- CALE Data Loader - PROXY SEGURO -->
+    <script src="js/cale-data-loader.js"></script>
+
+    <script>
+        console.log('%c🔒 Mapa CALE v3 - Proxy Seguro', 'color: #4ade80; font-size: 16px; font-weight: bold;');
+        console.log('Datos cargados desde proxy seguro con Service Account');
+        console.log('Proxy URL: https://cale-proxy.ccolombia.workers.dev');
+
+        // ============================================================================
+        // CONFIGURACIÓN - PROXY SEGURO COMO ÚNICA FUENTE DE VERDAD
+        // ============================================================================
+
+        const loader = new CALEDataLoader();
+
+        const COLORES_CATEGORIAS = {
+            'Cat.A+': '#9333ea', 'CALE.n_1+': '#9333ea',
+            'Cat.A': '#2563eb', 'CALE.n_1': '#2563eb',
+            'Cat.B**': '#059669', 'CALE.n_2**': '#059669',
+            'Cat.B': '#16a34a', 'CALE.n_2': '#16a34a',
+            'Cat.C1': '#ea580c', 'CALE.n_3': '#ea580c',
+            'C2': '#dc2626', 'C3': '#dc2626', 'C4': '#dc2626', 'C5': '#dc2626'
+        };
+
+        const TAMANOS_MARCADORES = {
+            'Cat.A+': 12, 'CALE.n_1+': 12,
+            'Cat.A': 10, 'CALE.n_1': 10,
+            'Cat.B**': 8, 'CALE.n_2**': 8,
+            'Cat.B': 8, 'CALE.n_2': 8,
+            'Cat.C1': 6, 'CALE.n_3': 6,
+            'C2': 5, 'C3': 5, 'C4': 5, 'C5': 5
+        };
+
+        // Paleta de 20 colores distintivos para las regiones
+        const COLORES_REGIONES = [
+            '#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6',
+            '#1abc9c', '#e67e22', '#34495e', '#16a085', '#27ae60',
+            '#2980b9', '#8e44ad', '#c0392b', '#d35400', '#7f8c8d',
+            '#95a5a6', '#f1c40f', '#e84393', '#00b894', '#0984e3'
+        ];
+
+        // Estado de selección de nodos
+        let nodosSeleccionados = new Set();
+        let categoriasSeleccionadas = new Set();
+
+        // Capa de polígonos municipales
+        let capaPoligonosMunicipios = null;
+        let municipiosGeoJSON = null;
+
+        // URL del GeoJSON de municipios de Colombia (1122)
+        const MUNICIPIOS_GEOJSON_URL = 'https://gist.githubusercontent.com/john-guerra/727e8992e9599b9d9f1dbfdc4c8e479e/raw/090f8b935a437e24d65b64d87598fbb437c006da/colombia-municipios.json';
+
+        // Categorías CALE (solo las que existen en los datos)
+        const CATEGORIAS_CALE = [
+            { id: 'CALE.n_1', nombre: 'CALE.n_1', color: '#2563eb' },
+            { id: 'CALE.n_2', nombre: 'CALE.n_2', color: '#16a34a' },
+            { id: 'CALE.n_3', nombre: 'CALE.n_3', color: '#ea580c' },
+            { id: 'CALE.C2', nombre: 'C2', color: '#dc2626' },
+            { id: 'CALE.C3', nombre: 'C3', color: '#dc2626' },
+            { id: 'CALE.C4', nombre: 'C4', color: '#dc2626' },
+            { id: 'CALE.C5', nombre: 'C5', color: '#dc2626' }
+        ];
+
+        // ============================================================================
+        // FUNCIÓN: Cargar centros CALE desde PROXY SEGURO
+        // ============================================================================
+        async function cargarCentrosCALE() {
+            try {
+                console.log('📥 Cargando centros CALE desde proxy seguro...');
+                const centros = await loader.cargarNodos();
+                console.log(`✓ Cargados ${centros.length} centros desde proxy`);
+
+                // Mostrar info de cache
+                const cacheInfo = loader.getCacheInfo();
+                if (cacheInfo.nodos && cacheInfo.nodos.is_valid) {
+                    mostrarInfoCache(cacheInfo.nodos.time_left_ms);
+                }
+
+                return centros;
+
+            } catch (error) {
+                console.error('❌ Error cargando centros:', error);
+                throw error;
+            }
+        }
+
+        function mostrarInfoCache(timeLeft) {
+            const cacheInfo = document.getElementById('cache-info');
+            if (timeLeft > 0) {
+                const minutos = Math.floor(timeLeft / 60000);
+                const segundos = Math.floor((timeLeft % 60000) / 1000);
+                cacheInfo.textContent = `Cache: ${minutos}:${segundos.toString().padStart(2, '0')}`;
+                cacheInfo.style.display = 'block';
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Cargar IEBM (PLACEHOLDER - adaptar si hay endpoint)
+        // ============================================================================
+        async function cargarIEBM() {
+            try {
+                // Por ahora retornar array vacío
+                // TODO: Agregar endpoint de IEBM al proxy si es necesario
+                console.log('⚠️ IEBM: Endpoint no disponible en proxy actual');
+                return [];
+
+            } catch (error) {
+                console.error('❌ Error cargando IEBM:', error);
+                return [];
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Calcular nodo_raiz para cada centro
+        // ============================================================================
+        function calcularNodoRaiz(centros) {
+            console.log('📊 Calculando nodo_raiz para todos los centros...');
+
+            centros.forEach(centro => {
+                const centroId = centro.centro_id || '';
+
+                // CORRECCION: Cualquier centro con ID "NODO_*" es un nodo raíz
+                const esNodoRaiz = centroId.startsWith('NODO_');
+
+                if (esNodoRaiz) {
+                    // Es un nodo raíz, su nodo_raiz es él mismo
+                    centro.nodo_raiz = centro.centro_id;
+                } else {
+                    // Es satélite, su nodo_raiz es su nodo_principal
+                    centro.nodo_raiz = centro.nodo_principal || 'SIN_NODO';
+                }
+            });
+
+            // Log de estadísticas
+            const nodosRaiz = new Set(centros.map(c => c.nodo_raiz));
+            console.log(`✓ ${nodosRaiz.size} nodos raíz identificados`);
+            console.log(`✓ Nodos raíz:`, Array.from(nodosRaiz).sort());
+
+            return centros;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Cargar GeoJSON de municipios
+        // ============================================================================
+        async function cargarMunicipiosGeoJSON() {
+            try {
+                console.log('🗺️ Cargando GeoJSON de municipios colombianos...');
+                const response = await fetch(MUNICIPIOS_GEOJSON_URL);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+
+                const geojson = await response.json();
+                console.log(`✓ Cargados ${geojson.features.length} municipios`);
+
+                return geojson;
+
+            } catch (error) {
+                console.error('❌ Error cargando GeoJSON de municipios:', error);
+                console.warn('⚠️ Continuando sin polígonos municipales');
+                return null;
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Asignar nodo_raiz a municipios
+        // ============================================================================
+        function asignarNodoRaizAMunicipios(geojson, centros) {
+            if (!geojson || !geojson.features || !Array.isArray(geojson.features)) {
+                console.warn('⚠️ GeoJSON inválido o sin features');
+                return null;
+            }
+
+            console.log('🎨 Asignando nodo_raiz a municipios...');
+
+            // Crear índice de nodo_raiz por municipio (desde centros CALE)
+            const municipioToNodoRaiz = {};
+
+            centros.forEach(centro => {
+                const municipio = centro.municipio;
+                const nodoRaiz = centro.nodo_raiz;
+
+                if (municipio && nodoRaiz) {
+                    // Normalizar nombre de municipio
+                    const municipioNorm = municipio.toUpperCase().trim();
+
+                    if (!municipioToNodoRaiz[municipioNorm]) {
+                        municipioToNodoRaiz[municipioNorm] = nodoRaiz;
+                    }
+                }
+            });
+
+            // Asignar nodo_raiz a cada feature del GeoJSON
+            let asignados = 0;
+            geojson.features.forEach(feature => {
+                if (!feature || !feature.properties) return;
+
+                const nombreMunicipio = (feature.properties.MPIO_CNMBR || feature.properties.nombre || '').toUpperCase().trim();
+
+                if (municipioToNodoRaiz[nombreMunicipio]) {
+                    feature.properties.nodo_raiz = municipioToNodoRaiz[nombreMunicipio];
+                    asignados++;
+                } else {
+                    // Sin CALE asignado
+                    feature.properties.nodo_raiz = null;
+                }
+            });
+
+            console.log(`✓ ${asignados} municipios asignados a nodos raíz`);
+            console.log(`⚠️ ${geojson.features.length - asignados} municipios sin CALE asignado`);
+
+            return geojson;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Crear mapa de colores por nodo_raiz
+        // ============================================================================
+        function crearMapaColoresNodoRaiz(centros) {
+            const nodosRaiz = [...new Set(centros.map(c => c.nodo_raiz))].filter(n => n !== 'SIN_NODO').sort();
+            const mapaColores = {};
+
+            nodosRaiz.forEach((nodoRaiz, index) => {
+                mapaColores[nodoRaiz] = COLORES_REGIONES[index % COLORES_REGIONES.length];
+            });
+
+            console.log('🎨 Mapa de colores por nodo_raiz:', mapaColores);
+            return mapaColores;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Renderizar polígonos municipales
+        // ============================================================================
+        function renderizarPoligonosMunicipales(geojson, mapaColores) {
+            if (!geojson || !geojson.features || !Array.isArray(geojson.features) || !mapaGlobal) {
+                console.warn('⚠️ No se pueden renderizar polígonos: datos inválidos');
+                return;
+            }
+
+            console.log('🗺️ Renderizando polígonos municipales...');
+
+            // Remover capa anterior si existe
+            if (capaPoligonosMunicipios) {
+                mapaGlobal.removeLayer(capaPoligonosMunicipios);
+            }
+
+            // Crear capa de polígonos
+            capaPoligonosMunicipios = L.geoJSON(geojson, {
+                style: function(feature) {
+                    const nodoRaiz = feature.properties.nodo_raiz;
+                    const color = nodoRaiz ? (mapaColores[nodoRaiz] || '#cccccc') : '#eeeeee';
+
+                    return {
+                        fillColor: color,
+                        fillOpacity: 0.3,
+                        color: '#ffffff',
+                        weight: 1,
+                        opacity: 0.6
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    const nombreMunicipio = feature.properties.MPIO_CNMBR || feature.properties.nombre || 'Desconocido';
+                    const nodoRaiz = feature.properties.nodo_raiz || 'Sin asignar';
+
+                    layer.bindPopup(`
+                        <div class="popup-content">
+                            <h3>${nombreMunicipio}</h3>
+                            <p><strong>Nodo CALE:</strong> ${nodoRaiz}</p>
+                        </div>
+                    `);
+                }
+            });
+
+            // Agregar al mapa DEBAJO de los marcadores
+            capaPoligonosMunicipios.addTo(mapaGlobal);
+            capaPoligonosMunicipios.bringToBack();
+
+            console.log('✓ Polígonos municipales renderizados');
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Inicializar mapa
+        // ============================================================================
+        let todosMarcadores = [];
+        let mapaGlobal = null;
+        let centrosGlobal = [];
+        let iebmGlobal = [];
+        let marcadoresIEBM = [];
+        let datosJerarquia = null;
+        let mapaColoresNodoRaiz = {};
+
+        async function inicializarMapa() {
+            try {
+                let centros = await cargarCentrosCALE();
+                const iebm = await cargarIEBM();
+                iebmGlobal = iebm;
+
+                // Calcular nodo_raiz para todos los centros
+                centros = calcularNodoRaiz(centros);
+
+                // Crear mapa de colores por nodo_raiz
+                mapaColoresNodoRaiz = crearMapaColoresNodoRaiz(centros);
+
+                // Cargar GeoJSON de municipios
+                let municipiosGeo = await cargarMunicipiosGeoJSON();
+
+                if (municipiosGeo) {
+                    // Asignar nodo_raiz a municipios
+                    municipiosGeo = asignarNodoRaizAMunicipios(municipiosGeo, centros);
+                    municipiosGeoJSON = municipiosGeo;
+                }
+
+                document.getElementById('loading').style.display = 'none';
+
+                const mapa = L.map('map').setView([4.5709, -74.2973], 6);
+                mapaGlobal = mapa;
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    maxZoom: 18
+                }).addTo(mapa);
+
+                centros.forEach(centro => {
+                    const latStr = (centro.latitud || '').toString().replace(',', '.');
+                    const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                    const lat = parseFloat(latStr);
+                    const lng = parseFloat(lngStr);
+
+                    if (isNaN(lat) || isNaN(lng)) return;
+
+                    const categoria = centro.categoria_cale || centro.categoria || 'C2';
+                    const color = COLORES_CATEGORIAS[categoria] || '#dc2626';
+                    const radio = TAMANOS_MARCADORES[categoria] || 5;
+
+                    const marker = L.circleMarker([lat, lng], {
+                        radius: radio,
+                        fillColor: color,
+                        color: '#ffffff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+
+                    const centroId = centro.centro_id || 'desconocido';
+                    const popupContent = `
+                        <div class="popup-content">
+                            <h3>${centroId}</h3>
+                            <p><strong>Municipio:</strong> ${centro.municipio || 'N/A'}</p>
+                            <p><strong>Departamento:</strong> ${centro.departamento || 'N/A'}</p>
+                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()} aspirantes</p>
+                            ${centro.nodo_principal ? `<p><strong>Nodo Principal:</strong> ${centro.nodo_principal}</p>` : ''}
+                            <span class="category-badge">${categoria}</span>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(mapa);
+                    todosMarcadores.push({ marker, centro, categoria });
+                });
+
+                mostrarEstadisticas(centros);
+
+                centrosGlobal = centros;
+                datosJerarquia = construirJerarquia(centros);
+                renderizarArbol(datosJerarquia);
+
+                // Renderizar polígonos municipales
+                if (municipiosGeoJSON) {
+                    renderizarPoligonosMunicipales(municipiosGeoJSON, mapaColoresNodoRaiz);
+                }
+
+                // Crear menú horizontal de categorías
+                crearMenuCategorias();
+
+                console.log(`✓ Mapa inicializado con ${todosMarcadores.length} marcadores CALE + ${iebm.length} IEBM`);
+
+            } catch (error) {
+                console.error('❌ Error inicializando mapa:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <strong>Error al cargar datos</strong>
+                        <p>${error.message}</p>
+                        <button onclick="location.reload()" style="margin-top:10px; padding:8px 16px; cursor:pointer;">Reintentar</button>
+                    </div>
+                `;
+            }
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Mostrar estadísticas
+        // ============================================================================
+        function mostrarEstadisticas(centros) {
+            const stats = {
+                total: centros.length,
+                nodos: centros.filter(c => {
+                    const cat = (c.categoria_cale || c.categoria || '').trim();
+                    return cat === 'Cat.A+' || cat === 'Cat.A';
+                }).length,
+                satelites: centros.filter(c => {
+                    const cat = (c.categoria_cale || c.categoria || '').trim();
+                    return cat !== 'Cat.A+' && cat !== 'Cat.A';
+                }).length,
+                demandaTotal: centros.reduce((sum, c) => {
+                    const demanda = parseInt(c.demanda_estimada_anual || 0);
+                    return sum + demanda;
+                }, 0)
+            };
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${stats.total}</div>
+                    <div class="stat-label">Total Centros</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.nodos}</div>
+                    <div class="stat-label">Nodos Principales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.satelites}</div>
+                    <div class="stat-label">Centros Satélite</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${stats.demandaTotal.toLocaleString()}</div>
+                    <div class="stat-label">Demanda Anual Total</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">${iebmGlobal.length.toLocaleString()}</div>
+                    <div class="stat-label">Instituciones Educativas</div>
+                </div>
+            `;
+        }
+
+        // ============================================================================
+        // FUNCIÓN: Crear menú horizontal de categorías
+        // ============================================================================
+        function crearMenuCategorias() {
+            const menuContainer = document.getElementById('menu-categorias');
+            let html = '<strong style="margin-right: 10px;">Filtrar por Categoría:</strong>';
+
+            CATEGORIAS_CALE.forEach(cat => {
+                html += `
+                    <label class="menu-category" id="menu-cat-${cat.id}">
+                        <input type="checkbox"
+                               value="${cat.id}"
+                               onchange="toggleCategoriaFiltro('${cat.id}', this.checked)">
+                        <span class="menu-color-dot" style="background: ${cat.color};"></span>
+                        <span>${cat.nombre}</span>
+                    </label>
+                `;
+            });
+
+            // Botón para limpiar filtros
+            html += `
+                <button onclick="limpiarFiltrosCategorias()"
+                        style="padding: 6px 12px; background: #e53e3e; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-left: 10px;">
+                    Limpiar Filtros
+                </button>
+            `;
+
+            menuContainer.innerHTML = html;
+        }
+
+        function toggleCategoriaFiltro(categoriaId, checked) {
+            console.log(`🎯 Filtro categoría ${categoriaId}: ${checked ? 'activado' : 'desactivado'}`);
+
+            if (checked) {
+                categoriasSeleccionadas.add(categoriaId);
+            } else {
+                categoriasSeleccionadas.delete(categoriaId);
+            }
+
+            // Actualizar estilo del label
+            const label = document.getElementById(`menu-cat-${categoriaId}`);
+            if (checked) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+
+            // Aplicar filtro al mapa
+            aplicarFiltrosCategorias();
+        }
+
+        function aplicarFiltrosCategorias() {
+            if (categoriasSeleccionadas.size === 0) {
+                // Sin filtros, mostrar todo
+                todosMarcadores.forEach(({ marker }) => {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                });
+                return;
+            }
+
+            // Filtrar marcadores por categoría
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const mostrar = categoriasSeleccionadas.has(cat);
+
+                if (mostrar) {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                }
+            });
+        }
+
+        function limpiarFiltrosCategorias() {
+            categoriasSeleccionadas.clear();
+
+            // Desmarcar todos los checkboxes
+            document.querySelectorAll('#menu-categorias input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+
+            // Remover clase active de todos los labels
+            document.querySelectorAll('.menu-category').forEach(label => {
+                label.classList.remove('active');
+            });
+
+            // Mostrar todos los marcadores
+            aplicarFiltrosCategorias();
+        }
+
+        // ============================================================================
+        // FUNCIONES: Modal
+        // ============================================================================
+        function cerrarModal(event) {
+            const modal = document.getElementById('modal-centro');
+            if (!event || event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // ============================================================================
+        // FUNCIONES: Sidebar Jerárquica
+        // ============================================================================
+
+        // Estado de selección jerárquica
+        let seleccionJerarquica = {
+            nodos: new Set(),      // Nodos principales seleccionados
+            satelites: new Set(),  // Satélites individuales seleccionados
+            iebm: new Set()        // IEBM individuales seleccionados (futuro)
+        };
+
+        function construirJerarquia(centros) {
+            const jerarquia = {};
+
+            centros.forEach(centro => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const centroId = centro.centro_id || '';
+
+                // CORRECCION: Un nodo es cualquier centro con ID "NODO_*", independiente de su categoría
+                const esNodo = centroId.startsWith('NODO_');
+                const nodoPrincipal = esNodo ? centro.centro_id : (centro.nodo_principal || 'SIN_NODO');
+
+                if (!jerarquia[nodoPrincipal]) {
+                    jerarquia[nodoPrincipal] = {
+                        nodo: esNodo ? centro : null,
+                        satelites: { n2: [], n3: [], c2: [], c3: [], c4: [], c5: [] },
+                        demandaTotal: 0
+                    };
+                }
+
+                if (esNodo) {
+                    jerarquia[nodoPrincipal].nodo = centro;
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                } else {
+                    // Es un satélite (SAT_*)
+                    let tipo = 'c2';
+                    if (cat === 'Cat.B' || cat === 'Cat.B**' || cat === 'CALE.n_2' || cat === 'CALE.n_2**') tipo = 'n2';
+                    else if (cat === 'Cat.C1' || cat === 'CALE.n_3') tipo = 'n3';
+                    else if (cat === 'C3') tipo = 'c3';
+                    else if (cat === 'C4') tipo = 'c4';
+                    else if (cat === 'C5') tipo = 'c5';
+
+                    jerarquia[nodoPrincipal].satelites[tipo].push(centro);
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                }
+            });
+
+            return jerarquia;
+        }
+
+        function renderizarArbol(jerarquia) {
+            const treeContainer = document.getElementById('sidebar-tree');
+            let html = '';
+
+            const nodosOrdenados = Object.entries(jerarquia)
+                .filter(([key, data]) => data.nodo !== null)
+                .sort((a, b) => b[1].demandaTotal - a[1].demandaTotal);
+
+            if (nodosOrdenados.length === 0) {
+                treeContainer.innerHTML = '<p style="padding: 20px; text-align: center; color: #718096;">No hay nodos disponibles</p>';
+                return;
+            }
+
+            nodosOrdenados.forEach(([centroId, data], index) => {
+                const nodo = data.nodo;
+                const municipio = nodo.municipio || 'N/A';
+                const demanda = data.demandaTotal.toLocaleString();
+                const colorRegion = mapaColoresNodoRaiz[centroId] || COLORES_REGIONES[index % COLORES_REGIONES.length];
+
+                html += `
+                    <div class="tree-node" style="margin-bottom: 15px; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+                        <div class="tree-item nivel-1">
+                            <input type="checkbox"
+                                   class="tree-checkbox"
+                                   id="check-nodo-${centroId}"
+                                   onchange="toggleNodoPrincipal('${centroId}', this.checked)"
+                                   onclick="event.stopPropagation()">
+                            <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}')">▶</span>
+                            <div class="region-color" style="background: ${colorRegion};"></div>
+                            <span class="tree-icon">🏛️</span>
+                            <span class="tree-label" onclick="centrarEnMarcador('${centroId}')" style="font-weight: bold; cursor: pointer;">${municipio}</span>
+                            <span class="tree-count">${demanda}</span>
+                        </div>
+                        <div class="tree-children" id="tree-${centroId}">
+                `;
+
+                // Satélites CALE.n_2
+                if (data.satelites.n2.length > 0) {
+                    const demandaN2 = data.satelites.n2.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-2">
+                                <input type="checkbox"
+                                       class="tree-checkbox"
+                                       id="check-grupo-${centroId}-n2"
+                                       onchange="toggleGrupoSatelites('${centroId}', 'n2', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n2')">▶</span>
+                                <span class="tree-icon">🏫</span>
+                                <span class="tree-label">CALE.n_2 (${data.satelites.n2.length})</span>
+                                <span class="tree-count">${demandaN2.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n2">
+                    `;
+                    data.satelites.n2.forEach(sat => {
+                        const satId = sat.centro_id;
+                        html += `
+                            <div class="tree-item nivel-2" style="padding-left: 10px;">
+                                <input type="checkbox"
+                                       class="tree-checkbox checkbox-satelite"
+                                       data-nodo="${centroId}"
+                                       data-grupo="n2"
+                                       id="check-sat-${satId}"
+                                       onchange="toggleSateliteIndividual('${centroId}', '${satId}', 'n2', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label" onclick="centrarEnMarcador('${satId}')" style="cursor: pointer;">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                                <span class="tree-icon" onclick="toggleIEBMSatelite('${satId}')" style="cursor: pointer; margin-left: 5px;" title="Mostrar IEBM">🎓</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites CALE.n_3
+                if (data.satelites.n3.length > 0) {
+                    const demandaN3 = data.satelites.n3.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-3">
+                                <input type="checkbox"
+                                       class="tree-checkbox"
+                                       id="check-grupo-${centroId}-n3"
+                                       onchange="toggleGrupoSatelites('${centroId}', 'n3', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n3')">▶</span>
+                                <span class="tree-icon">🏢</span>
+                                <span class="tree-label">CALE.n_3 (${data.satelites.n3.length})</span>
+                                <span class="tree-count">${demandaN3.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n3">
+                    `;
+                    data.satelites.n3.forEach(sat => {
+                        const satId = sat.centro_id;
+                        html += `
+                            <div class="tree-item nivel-3" style="padding-left: 10px;">
+                                <input type="checkbox"
+                                       class="tree-checkbox checkbox-satelite"
+                                       data-nodo="${centroId}"
+                                       data-grupo="n3"
+                                       id="check-sat-${satId}"
+                                       onchange="toggleSateliteIndividual('${centroId}', '${satId}', 'n3', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-icon">📍</span>
+                                <span class="tree-label" onclick="centrarEnMarcador('${satId}')" style="cursor: pointer;">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                                <span class="tree-icon" onclick="toggleIEBMSatelite('${satId}')" style="cursor: pointer; margin-left: 5px;" title="Mostrar IEBM">🎓</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites C2-C5
+                const satelitesC = [...data.satelites.c2, ...data.satelites.c3, ...data.satelites.c4, ...data.satelites.c5];
+                if (satelitesC.length > 0) {
+                    const demandaC = satelitesC.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item nivel-sat">
+                                <input type="checkbox"
+                                       class="tree-checkbox"
+                                       id="check-grupo-${centroId}-c"
+                                       onchange="toggleGrupoSatelites('${centroId}', 'c', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-c')">▶</span>
+                                <span class="tree-icon">🎯</span>
+                                <span class="tree-label">Satélites C2-C5 (${satelitesC.length})</span>
+                                <span class="tree-count">${demandaC.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-c">
+                    `;
+                    satelitesC.forEach(sat => {
+                        const satId = sat.centro_id;
+                        const cat = sat.categoria_cale || sat.categoria || '';
+                        html += `
+                            <div class="tree-item nivel-sat" style="padding-left: 10px;">
+                                <input type="checkbox"
+                                       class="tree-checkbox checkbox-satelite"
+                                       data-nodo="${centroId}"
+                                       data-grupo="c"
+                                       id="check-sat-${satId}"
+                                       onchange="toggleSateliteIndividual('${centroId}', '${satId}', 'c', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-icon">${cat}</span>
+                                <span class="tree-label" onclick="centrarEnMarcador('${satId}')" style="cursor: pointer;">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                                <span class="tree-icon" onclick="toggleIEBMSatelite('${satId}')" style="cursor: pointer; margin-left: 5px;" title="Mostrar IEBM">🎓</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                html += `</div></div>`;
+            });
+
+            treeContainer.innerHTML = html;
+
+            // EXPANDIR AUTOMÁTICAMENTE los primeros 3 nodos para mostrar la jerarquía
+            setTimeout(() => {
+                nodosOrdenados.slice(0, 3).forEach(([centroId]) => {
+                    const childrenDiv = document.getElementById(`tree-${centroId}`);
+                    const expandBtn = childrenDiv?.previousElementSibling?.querySelector('.tree-expand');
+                    if (childrenDiv && expandBtn) {
+                        childrenDiv.classList.add('expanded');
+                        expandBtn.classList.add('expanded');
+                    }
+                });
+            }, 100);
+        }
+
+        function toggleTreeNode(event, nodeId) {
+            event.stopPropagation();
+            const children = document.getElementById(`tree-${nodeId}`);
+            const expand = event.target;
+
+            if (children) {
+                children.classList.toggle('expanded');
+                expand.classList.toggle('expanded');
+            }
+        }
+
+        // ============================================================================
+        // FUNCIONES: Selección en Cascada Multinivel
+        // ============================================================================
+
+        function toggleNodoPrincipal(centroId, checked) {
+            console.log(`🏛️ Toggle nodo principal ${centroId}: ${checked ? 'seleccionado' : 'deseleccionado'}`);
+
+            if (checked) {
+                seleccionJerarquica.nodos.add(centroId);
+
+                // CASCADA: Seleccionar todos los checkboxes de grupos hijos
+                ['n2', 'n3', 'c'].forEach(grupo => {
+                    const checkGrupo = document.getElementById(`check-grupo-${centroId}-${grupo}`);
+                    if (checkGrupo) {
+                        checkGrupo.checked = true;
+                        // Seleccionar todos los satélites de este grupo
+                        toggleGrupoSatelites(centroId, grupo, true, true); // true en skipUpdate para no actualizar múltiples veces
+                    }
+                });
+            } else {
+                seleccionJerarquica.nodos.delete(centroId);
+
+                // CASCADA: Deseleccionar todos los checkboxes de grupos hijos
+                ['n2', 'n3', 'c'].forEach(grupo => {
+                    const checkGrupo = document.getElementById(`check-grupo-${centroId}-${grupo}`);
+                    if (checkGrupo) {
+                        checkGrupo.checked = false;
+                        toggleGrupoSatelites(centroId, grupo, false, true);
+                    }
+                });
+            }
+
+            actualizarVisualizacion();
+        }
+
+        function toggleGrupoSatelites(centroId, grupo, checked, skipUpdate = false) {
+            console.log(`📦 Toggle grupo ${grupo} de nodo ${centroId}: ${checked ? 'seleccionado' : 'deseleccionado'}`);
+
+            // Seleccionar/deseleccionar todos los satélites del grupo
+            const checkboxesSatelites = document.querySelectorAll(
+                `.checkbox-satelite[data-nodo="${centroId}"][data-grupo="${grupo}"]`
+            );
+
+            checkboxesSatelites.forEach(checkbox => {
+                checkbox.checked = checked;
+                const satId = checkbox.id.replace('check-sat-', '');
+
+                if (checked) {
+                    seleccionJerarquica.satelites.add(satId);
+                } else {
+                    seleccionJerarquica.satelites.delete(satId);
+                }
+            });
+
+            if (!skipUpdate) {
+                actualizarVisualizacion();
+            }
+        }
+
+        function toggleSateliteIndividual(centroId, satId, grupo, checked) {
+            console.log(`📍 Toggle satélite ${satId}: ${checked ? 'seleccionado' : 'deseleccionado'}`);
+
+            if (checked) {
+                seleccionJerarquica.satelites.add(satId);
+            } else {
+                seleccionJerarquica.satelites.delete(satId);
+            }
+
+            // Verificar si todos los satélites del grupo están seleccionados
+            const checkboxesSatelites = document.querySelectorAll(
+                `.checkbox-satelite[data-nodo="${centroId}"][data-grupo="${grupo}"]`
+            );
+            const todosSeleccionados = Array.from(checkboxesSatelites).every(cb => cb.checked);
+
+            // Actualizar checkbox del grupo
+            const checkGrupo = document.getElementById(`check-grupo-${centroId}-${grupo}`);
+            if (checkGrupo) {
+                checkGrupo.checked = todosSeleccionados;
+            }
+
+            actualizarVisualizacion();
+        }
+
+        function toggleIEBMSatelite(satId) {
+            console.log(`🎓 Toggle IEBM para satélite ${satId}`);
+
+            // Limpiar IEBM anteriores
+            marcadoresIEBM.forEach(marker => {
+                if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+            });
+            marcadoresIEBM = [];
+
+            // Mostrar IEBM solo de este satélite
+            const iebmDelSatelite = iebmGlobal.filter(iebm => iebm.nodo_cale_mas_cercano === satId);
+
+            iebmDelSatelite.forEach(iebm => {
+                const latStr = (iebm.latitud || '').toString().replace(',', '.');
+                const lngStr = (iebm.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (isNaN(lat) || isNaN(lng)) return;
+
+                const marker = L.circleMarker([lat, lng], {
+                    radius: 3,
+                    fillColor: '#3182ce',
+                    color: '#ffffff',
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.7
+                });
+
+                const popupContent = `
+                    <div class="popup-content">
+                        <h3>🎓 ${iebm.sede_iebm || 'Institución Educativa'}</h3>
+                        <p><strong>Municipio:</strong> ${iebm.municipio || 'N/A'}</p>
+                        <p><strong>CALE asignado:</strong> ${iebm.nodo_cale_mas_cercano}</p>
+                        <p><strong>Distancia:</strong> ${iebm.distancia_km} km</p>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+                marker.addTo(mapaGlobal);
+                marcadoresIEBM.push(marker);
+            });
+
+            console.log(`✓ Mostrando ${iebmDelSatelite.length} IEBM para ${satId}`);
+
+            // Centrar en el satélite
+            centrarEnMarcador(satId);
+        }
+
+        function actualizarVisualizacion() {
+            console.log('🔄 Actualizando visualización del mapa...');
+            console.log('Nodos seleccionados:', Array.from(seleccionJerarquica.nodos));
+            console.log('Satélites seleccionados:', Array.from(seleccionJerarquica.satelites));
+
+            if (seleccionJerarquica.nodos.size === 0 && seleccionJerarquica.satelites.size === 0) {
+                // Sin selección, mostrar todo
+                todosMarcadores.forEach(({ marker }) => {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                });
+
+                // Limpiar IEBM
+                marcadoresIEBM.forEach(marker => {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                });
+                marcadoresIEBM = [];
+
+                return;
+            }
+
+            // Recopilar todos los centros a mostrar
+            const centrosAMostrar = new Set();
+
+            // Agregar nodos principales seleccionados + sus satélites
+            for (const nodoId of seleccionJerarquica.nodos) {
+                centrosAMostrar.add(nodoId);
+
+                // Agregar todos los satélites del nodo
+                todosMarcadores.forEach(({ centro }) => {
+                    if (centro.nodo_principal === nodoId) {
+                        centrosAMostrar.add(centro.centro_id);
+                    }
+                });
+            }
+
+            // Agregar satélites individuales seleccionados
+            for (const satId of seleccionJerarquica.satelites) {
+                centrosAMostrar.add(satId);
+            }
+
+            // Filtrar marcadores
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const mostrar = centrosAMostrar.has(centro.centro_id);
+
+                if (mostrar) {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                }
+            });
+
+            // Mostrar IEBM de los centros seleccionados
+            mostrarIEBMDeCentrosSeleccionados(Array.from(centrosAMostrar));
+        }
+
+        function mostrarIEBMDeCentrosSeleccionados(centros) {
+            // Limpiar IEBM anteriores
+            marcadoresIEBM.forEach(marker => {
+                if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+            });
+            marcadoresIEBM = [];
+
+            if (centros.length === 0) return;
+
+            // Filtrar IEBM
+            const iebmFiltradas = iebmGlobal.filter(iebm => {
+                return centros.includes(iebm.nodo_cale_mas_cercano);
+            });
+
+            console.log(`✓ Mostrando ${iebmFiltradas.length} IEBM para centros seleccionados`);
+
+            // Crear marcadores IEBM
+            iebmFiltradas.forEach(iebm => {
+                const latStr = (iebm.latitud || '').toString().replace(',', '.');
+                const lngStr = (iebm.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (isNaN(lat) || isNaN(lng)) return;
+
+                const marker = L.circleMarker([lat, lng], {
+                    radius: 3,
+                    fillColor: '#3182ce',
+                    color: '#ffffff',
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.7
+                });
+
+                const popupContent = `
+                    <div class="popup-content">
+                        <h3>🎓 ${iebm.sede_iebm || 'Institución Educativa'}</h3>
+                        <p><strong>Municipio:</strong> ${iebm.municipio || 'N/A'}</p>
+                        <p><strong>CALE asignado:</strong> ${iebm.nodo_cale_mas_cercano}</p>
+                        <p><strong>Distancia:</strong> ${iebm.distancia_km} km</p>
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent);
+                marker.addTo(mapaGlobal);
+                marcadoresIEBM.push(marker);
+            });
+        }
+
+        function centrarEnMarcador(centroId) {
+            const centro = centrosGlobal.find(c => c.centro_id === centroId);
+            if (centro) {
+                const latStr = (centro.latitud || '').toString().replace(',', '.');
+                const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    mapaGlobal.setView([lat, lng], 12);
+
+                    // Abrir popup del marcador
+                    const marcador = todosMarcadores.find(m => m.centro.centro_id === centroId);
+                    if (marcador) {
+                        marcador.marker.openPopup();
+                    }
+                }
+            }
+        }
+
+
+        // ============================================================================
+        // INICIALIZACIÓN
+        // ============================================================================
+        inicializarMapa();
+
+        // Actualizar cache info cada segundo
+        setInterval(() => {
+            const cacheInfo = loader.getCacheInfo();
+            if (cacheInfo.nodos && cacheInfo.nodos.is_valid) {
+                mostrarInfoCache(cacheInfo.nodos.time_left_ms);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Proxy Seguro CALE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #1557b0;
+        }
+
+        .btn-success {
+            background: #34a853;
+        }
+
+        .btn-success:hover {
+            background: #2d8e47;
+        }
+
+        .btn-danger {
+            background: #ea4335;
+        }
+
+        .btn-danger:hover {
+            background: #c5362f;
+        }
+
+        .result {
+            background: #f8f9fa;
+            border-left: 4px solid #1a73e8;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .result pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #1a73e8;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: #e8f0fe;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a73e8;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .success-msg {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Demo Proxy Seguro CALE</h1>
+            <p>Sistema BIM CALE - Cloudflare Workers Proxy</p>
+        </div>
+
+        <div class="success-msg">
+            ✅ <strong>Proxy configurado correctamente</strong><br>
+            URL: <code>https://cale-proxy.ccolombia.workers.dev</code>
+        </div>
+
+        <div class="card">
+            <h2>Prueba de Endpoints</h2>
+            <p>Carga datos desde el proxy seguro que usa Service Account authentication</p>
+
+            <div style="margin-top: 20px;">
+                <button class="btn" onclick="testHealth()">🏥 Health Check</button>
+                <button class="btn btn-success" onclick="cargarNodos()">📍 Cargar Nodos (197)</button>
+                <button class="btn btn-success" onclick="cargarMunicipios()">🏘️ Cargar Municipios (1,122)</button>
+                <button class="btn btn-danger" onclick="limpiarCache()">🗑️ Limpiar Cache</button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p style="margin-top: 15px;">Cargando datos...</p>
+            </div>
+
+            <div id="result"></div>
+        </div>
+
+        <div class="card">
+            <h2>Estadísticas</h2>
+            <div class="stats" id="stats">
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-nodos">-</div>
+                    <div class="stat-label">Nodos CALE</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-municipios">-</div>
+                    <div class="stat-label">Municipios</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="stat-cache">-</div>
+                    <div class="stat-label">Cache Status</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Info del Cache</h2>
+            <div id="cache-info"></div>
+        </div>
+    </div>
+
+    <!-- Cargar el Data Loader -->
+    <script src="js/cale-data-loader.js"></script>
+
+    <script>
+        // Inicializar loader
+        const loader = new CALEDataLoader();
+
+        // Mostrar loading
+        function showLoading(show) {
+            document.getElementById('loading').classList.toggle('active', show);
+        }
+
+        // Mostrar resultado
+        function showResult(data) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<div class="result"><pre>' +
+                JSON.stringify(data, null, 2) +
+                '</pre></div>';
+        }
+
+        // Health check
+        async function testHealth() {
+            try {
+                showLoading(true);
+                const health = await loader.checkHealth();
+                showResult(health);
+                updateCacheInfo();
+            } catch (error) {
+                showResult({ error: error.message });
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Cargar nodos
+        async function cargarNodos() {
+            try {
+                showLoading(true);
+                const nodos = await loader.cargarNodos();
+
+                document.getElementById('stat-nodos').textContent = nodos.length;
+
+                showResult({
+                    count: nodos.length,
+                    sample: nodos.slice(0, 5),
+                    message: `Cargados ${nodos.length} nodos CALE. Mostrando primeros 5.`
+                });
+
+                updateCacheInfo();
+            } catch (error) {
+                showResult({ error: error.message });
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Cargar municipios
+        async function cargarMunicipios() {
+            try {
+                showLoading(true);
+                const municipios = await loader.cargarMunicipios();
+
+                document.getElementById('stat-municipios').textContent = municipios.length;
+
+                showResult({
+                    count: municipios.length,
+                    sample: municipios.slice(0, 5),
+                    message: `Cargados ${municipios.length} municipios. Mostrando primeros 5.`
+                });
+
+                updateCacheInfo();
+            } catch (error) {
+                showResult({ error: error.message });
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Limpiar cache
+        function limpiarCache() {
+            loader.limpiarCache();
+            document.getElementById('stat-cache').textContent = 'Limpiado';
+            showResult({ message: 'Cache limpiado exitosamente' });
+            updateCacheInfo();
+        }
+
+        // Actualizar info del cache
+        function updateCacheInfo() {
+            const cacheInfo = loader.getCacheInfo();
+            const cacheDiv = document.getElementById('cache-info');
+
+            let html = '<div class="result"><h3>Estado del Cache</h3>';
+
+            if (cacheInfo.nodos) {
+                const timeLeftMin = Math.round(cacheInfo.nodos.time_left_ms / 60000);
+                html += `<p><strong>Nodos:</strong> ${cacheInfo.nodos.count} items, válido por ${timeLeftMin} minutos</p>`;
+            } else {
+                html += `<p><strong>Nodos:</strong> No hay cache</p>`;
+            }
+
+            if (cacheInfo.municipios) {
+                const timeLeftMin = Math.round(cacheInfo.municipios.time_left_ms / 60000);
+                html += `<p><strong>Municipios:</strong> ${cacheInfo.municipios.count} items, válido por ${timeLeftMin} minutos</p>`;
+            } else {
+                html += `<p><strong>Municipios:</strong> No hay cache</p>`;
+            }
+
+            html += '</div>';
+            cacheDiv.innerHTML = html;
+
+            // Actualizar estado general del cache
+            const hasValidCache = (cacheInfo.nodos?.is_valid || cacheInfo.municipios?.is_valid);
+            document.getElementById('stat-cache').textContent = hasValidCache ? 'Activo' : 'Vacío';
+        }
+
+        // Inicializar
+        window.addEventListener('load', () => {
+            updateCacheInfo();
+            testHealth(); // Health check automático al cargar
+        });
+    </script>
+</body>
+</html>

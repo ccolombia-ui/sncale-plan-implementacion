@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALE Teórico 16 Cubículos - BIM_L2_005 | SNCALE L2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        /* Header con logo UPTC */
+        .header {
+            background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+            color: white;
+            padding: 50px;
+            position: relative;
+        }
+        
+        .header-logo {
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .header-logo svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header-content {
+            max-width: 900px;
+        }
+        
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .header .description {
+            font-size: 1.05em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.25);
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 1em;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            font-weight: 500;
+        }
+        
+        .content {
+            padding: 50px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.2em;
+            color: #134e5e;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #71b280;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #134e5e;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-card h3 {
+            color: #134e5e;
+            margin-bottom: 15px;
+            font-size: 1.15em;
+        }
+        
+        .info-card p {
+            color: #495057;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .info-card .unit {
+            font-size: 0.85em;
+            color: #6c757d;
+            font-weight: normal;
+        }
+        
+        .info-card.destacada {
+            background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+            color: white;
+            border-left: 5px solid white;
+        }
+        
+        .info-card.destacada h3 {
+            color: white;
+        }
+        
+        .info-card.destacada p {
+            color: white;
+        }
+        
+        .info-card.destacada .unit {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Tabla de componentes */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+            color: white;
+        }
+        
+        thead th {
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr {
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.3s;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        tbody td {
+            padding: 18px 15px;
+            font-size: 0.95em;
+        }
+        
+        tbody td code {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #134e5e;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            padding: 35px 50px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .footer-info {
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+        
+        .footer-info strong {
+            color: #134e5e;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .footer-links a {
+            color: #134e5e;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #71b280;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header-logo {
+                width: 70px;
+                height: 70px;
+                right: 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.6em;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer {
+                padding: 25px 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-logo">
+                <!-- Logo UPTC SVG -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="3"/>
+                    <text x="50" y="58" font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+                          fill="white" text-anchor="middle">UPTC</text>
+                </svg>
+            </div>
+            
+            <div class="header-content">
+                <h1>BIM_L2_005</h1>
+                <div class="subtitle">CALE Teórico 16 Cubículos</div>
+                <div class="description">Configuración de centro teórico con capacidad para 16 cubículos simultáneos. Incluye edificación principal, aulas teóricas, batería de sanitarios, sistema de ventilación, mobiliario y tecnología educativa básica.</div>
+                
+                <div class="badges">
+                    <span class="badge">Nivel L2 - Configuración Base</span>
+                    <span class="badge">0 Componentes L1</span>
+                    <span class="badge">Todas</span>
+                    <span class="badge">Fuente: Google Doc Oficial</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Content -->
+        <main class="content">
+            <!-- Información General -->
+            <section class="section">
+                <h2 class="section-title">📊 Información General</h2>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Código BIM</h3>
+                        <p>BIM_L2_005</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Nivel</h3>
+                        <p>L2 - Configuración Base</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Componentes L1</h3>
+                        <p>0 <span class="unit">ensamblajes</span></p>
+                    </div>
+                    
+                    <div class="info-card destacada">
+                        <h3>💰 Valorización Oficial</h3>
+                        <p>$200,646,497 <span class="unit">COP</span></p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Componentes L1 del Ensamblaje -->
+            <section class="section">
+                <h2 class="section-title">🔧 Componentes L1 Incluidos</h2>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 60px;">#</th>
+                                <th style="width: 200px;">Componente</th>
+                                <th>Descripción</th>
+                                <th style="width: 120px;">Categoría</th>
+                                <th style="width: 110px;">Tipo</th>
+                                <th style="width: 180px;">Referencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 40px; color: #6c757d;">
+                                <strong>Esta configuración L2 no incluye componentes L1 de pistas.</strong><br>
+                                <span style="font-size: 0.9em;">Corresponde a edificación teórica con componentes L0 directos.</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Fuente de Datos -->
+            <section class="section">
+                <h2 class="section-title">📄 Fuente de Datos</h2>
+                
+                <div class="info-card">
+                    <h3>Documento Oficial</h3>
+                    <p style="font-size: 1em; font-weight: normal; margin-top: 10px;">
+                        <strong>Título:</strong> MUNAY_5.2__anexo_b__DEFINITIVO<br>
+                        <strong>Google Doc ID:</strong> 16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE<br>
+                        <strong>Tabla valorización:</strong> #17 (Elemento índice 389)<br>
+                        <strong>Fecha extracción:</strong> 2025-11-03<br>
+                        <strong>Estado:</strong> ✅ Validado como única fuente de verdad
+                    </p>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <strong>Sistema Nacional de Centros de Enseñanza Automovilística Certificados (SNCALE)</strong><br>
+                    Universidad Pedagógica y Tecnológica de Colombia (UPTC)<br>
+                    Generado desde Google Doc oficial - Nivel L2
+                </div>
+                
+                <div class="footer-links">
+                    <a href="../index.html">← Volver al Índice</a>
+                    <a href="../fichas_l1/BIM_L1_005.html">Ver Ensamblaje L1</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

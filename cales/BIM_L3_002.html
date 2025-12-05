@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM_L3_002 - CALE.n_2 - Centro Subregional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 0;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar-wrapper {
+            width: 280px;
+            background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+            color: white;
+            overflow-y: auto;
+            border-right: 2px solid #003366;
+            padding: 1.5rem 0;
+        }
+        
+        .sidebar-wrapper::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .sidebar-wrapper::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+        }
+        
+        .sidebar-wrapper::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+        
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem;
+            overflow-y: auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .sidebar-header {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-header h3 {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sidebar-header .titulo-actual {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+            word-wrap: break-word;
+        }
+        
+        .jerarquia-item {
+            margin-bottom: 0.3rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .jerarquia-header {
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            user-select: none;
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .jerarquia-header:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .jerarquia-toggle {
+            margin-right: 0.5rem;
+            display: inline-block;
+            transition: transform 0.3s;
+            font-size: 0.8rem;
+        }
+        
+        .jerarquia-toggle.expanded {
+            transform: rotate(90deg);
+        }
+        
+        .jerarquia-title {
+            flex: 1;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .jerarquia-count {
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .jerarquia-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .jerarquia-body.expanded {
+            max-height: 2000px;
+        }
+
+        .specs-view {
+            display: none;
+            padding: 2rem;
+            min-height: 500px;
+            background: white;
+        }
+
+        .specs-view.active {
+            display: block;
+        }
+
+        .specs-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #2d5016;
+        }
+
+        .specs-title {
+            font-size: 1.8rem;
+            color: #2d5016;
+            font-weight: 600;
+        }
+
+        .specs-back-btn {
+            background: #2d5016;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .specs-back-btn:hover {
+            background: #4a7c28;
+        }
+
+        .specs-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .specs-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #2d5016;
+        }
+
+        .specs-card h3 {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .specs-card p {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .specs-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .specs-children {
+            margin-top: 2rem;
+        }
+
+        .specs-children h3 {
+            color: #2d5016;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #2d5016;
+        }
+
+        .specs-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+            border-left: 3px solid #4a7c28;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .specs-item:hover {
+            background: #f0f4f0;
+            border-left-color: #2d5016;
+        }
+        
+        .jerarquia-item-level {
+            padding: 0.5rem 1.5rem 0.5rem 2.2rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.85);
+            border-left: 2px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .jerarquia-item-level:hover {
+            color: white;
+            border-left-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar-wrapper {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #003366;
+                max-height: 200px;
+            }
+            
+            .main-wrapper {
+                padding: 1.5rem 1rem;
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .bim-id {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 2.5rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #004d99;
+        }
+        
+        .info-card.destacada {
+            background: linear-gradient(135deg, #004d9915 0%, #0066cc15 100%);
+            border-left: 4px solid #0066cc;
+        }
+        
+        .info-card h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-card p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #004d99;
+            margin: 0.3rem 0;
+        }
+        
+        .info-card.destacada p {
+            font-size: 1.8rem;
+            color: #0066cc;
+        }
+        
+        section {
+            margin-bottom: 2.5rem;
+        }
+        
+        h2 {
+            color: #004d99;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #004d99;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 1rem;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+            color: white;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        th {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .text-right {
+            text-align: right;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #0066cc;
+        }
+        
+        .fuente-datos {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin-top: 2rem;
+        }
+        
+        .fuente-datos h3 {
+            color: #28a745;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .fuente-datos p {
+            color: #666;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .metadata-info {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 1.5rem 2.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        footer a {
+            color: #004d99;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.85rem;
+            }
+            
+            th, td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar-wrapper" id="sidebarWrapper"></div>
+    
+    <div class="main-wrapper">
+        <div class="container">
+            <header class="header">
+            <div class="header-content">
+                <div class="bim-id">BIM_L3_002</div>
+                <h1>CALE.n_2 - Centro Subregional</h1>
+                <p class="subtitle">Configuración intermedia para capitales subregionales (4 municipios) (VALORES UNITARIOS - 1 unidad)</p>
+            </div>
+            <svg class="logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+                <text x="10" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="currentColor">UPTC</text>
+                <text x="10" y="65" font-family="Arial, sans-serif" font-size="14" fill="currentColor">Universidad Pedagógica</text>
+            </svg>
+        </header>
+        
+        <div class="content">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🔖 Identificador BIM</h3>
+                    <p><code>BIM_L3_002</code></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📂 Nivel Jerarquía</h3>
+                    <p>Nivel L3</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏗️ Tipo CALE</h3>
+                    <p>Subregional</p>
+                </div>
+                
+                <div class="info-card destacada">
+                    <h3>💰 Valorización Total</h3>
+                    <p>$11.206.265.897 COP</p>
+                </div>
+            </div>
+            
+            
+        <div class="info-card">
+            <h3>📍 Cantidad de Nodos</h3>
+            <p><strong>Nodos Base:</strong> 1 (UNITARIA)</p>
+            <p><strong>Nodos Totales Red Nacional:</strong> 4</p>
+        </div>
+            
+            <section>
+                <h2>🔧 Componentes de la Configuración</h2>
+                <p class="metadata-info">Desglose completo de componentes con valores unitarios y totales</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Componente</th>
+                                <th>Descripción</th>
+                                <th>Referencia BIM</th>
+                                <th>Valor Unitario</th>
+                                <th>Cant. Base</th>
+                                <th>Cant. Variante</th>
+                                <th>Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+            <tr>
+                <td>1</td>
+                <td><strong>PISTA_CLASE_II</strong></td>
+                <td>Pista completa Clase II (B2, C2)</td>
+                <td><code>L2.pista_clase_II</code></td>
+                <td class="text-right">$980.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$980.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><strong>SALA_12_CUBICULOS</strong></td>
+                <td>Sala de formación 12 puestos</td>
+                <td><code>L2.sala_12_cubiculos</code></td>
+                <td class="text-right">$93.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$93.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><strong>EDIFICACION_ADMIN</strong></td>
+                <td>Edificación administrativa</td>
+                <td><code>L2.edificacion</code></td>
+                <td class="text-right">$2.000.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$2.000.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><strong>CALE_T_AJUSTADO</strong></td>
+                <td>Centro teórico 12 cubículos (proporcional)</td>
+                <td><code>L2.cale_teorico_12q</code></td>
+                <td class="text-right">$119.297.599</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$119.297.599</strong></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><strong>SENALIZACION_VIAL</strong></td>
+                <td>Señalización vial y demarcación</td>
+                <td><code>L2.senalizacion</code></td>
+                <td class="text-right">$2.100.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$2.100.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><strong>SISTEMA_TECNOLOGICO</strong></td>
+                <td>Sistema tecnológico integrado</td>
+                <td><code>L2.tecnologia</code></td>
+                <td class="text-right">$2.625.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$2.625.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><strong>MOBILIARIO</strong></td>
+                <td>Mobiliario y equipamiento</td>
+                <td><code>L2.mobiliario</code></td>
+                <td class="text-right">$1.350.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$1.350.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><strong>INSTALACIONES_ESPECIALES</strong></td>
+                <td>Instalaciones especiales</td>
+                <td><code>L2.instalaciones</code></td>
+                <td class="text-right">$1.500.000.000</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$1.500.000.000</strong></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><strong>OBRAS_EXTERIORES</strong></td>
+                <td>Obras exteriores y urbanismo</td>
+                <td><code>L2.obras_exteriores</code></td>
+                <td class="text-right">$438.968.298</td>
+                <td class="text-center">1</td>
+                <td class="text-center">1</td>
+                <td class="text-right"><strong>$438.968.298</strong></td>
+            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            
+        <section class="metadata-section">
+            <h2>📋 Información Adicional</h2>
+            <p class="metadata-info">Datos complementarios de la configuración (Tabla #4)</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Tipo CALE</th><th>Cantidad</th><th>Descripción Modificador</th><th>Mapa de Geolocalización</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CALE.n_2**</td><td>16</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**</td></tr><tr><td>CALE.n_2</td><td>4</td><td>Configuración base estándar</td><td>Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+            
+            <div class="fuente-datos">
+                <h3>📊 Fuente de Datos</h3>
+                <p><strong>Documento:</strong> Google Doc MUNAY_5.2__anexo_b__DEFINITIVO</p>
+                <p><strong>ID:</strong> <code>16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE</code></p>
+                <p><strong>Tabla Valorización:</strong> #5</p>
+                <p><strong>Total Componentes:</strong> 7</p>
+                <p><strong>Estado:</strong> ✅ Validado desde fuente oficial única</p>
+            </div>
+            
+            <section>
+                <h2>📜 Marco Normativo y Cumplimiento Regulatorio</h2>
+                <p class="metadata-info">Normatividad aplicable según Resolución 20253040037125 de 2025 del Ministerio de Transporte</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📋 Resolución Principal</h3>
+                        <p style="font-size: 1rem; color: #333;">Resolución 20253040037125 de 2025</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Ministerio de Transporte - Reglamenta los Centros de Apoyo Logístico de Evaluación (CALE)</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚖️ Ley Fundacional</h3>
+                        <p style="font-size: 1rem; color: #333;">Ley 2251 de 2022</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">"Ley Julián Esteban" - Crea el Sistema Nacional CALE</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🚗 Código de Tránsito</h3>
+                        <p style="font-size: 1rem; color: #333;">Ley 769 de 2002</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Código Nacional de Tránsito Terrestre</p>
+                    </div>
+                    
+                    <div class="info-card destacada">
+                        <h3>🏷️ Clasificación CALE</h3>
+                        <p style="font-size: 1rem;">Clase II - Intermedia</p>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Autorizado para categorías A1, A2, B1, B2, C1, C2</p>
+                    </div>
+                </div>
+                
+                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">✅ Certificaciones ISO Obligatorias (Art. 3.7.1.1 #4)</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🏆 ISO 9001:2015</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Sistema de Gestión de Calidad</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🌿 ISO 14001:2015</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Sistema de Gestión Ambiental</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>⚕️ ISO 45001:2018</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Seguridad y Salud en el Trabajo</p>
+                    </div>
+                </div>
+                
+                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">🛡️ Seguros Obligatorios (Art. 3.7.1.3 #3)</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>💼 Responsabilidad Civil</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Póliza de Responsabilidad Civil Extracontractual (renovación anual)</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🩹 Accidentes Personales</h3>
+                        <p style="font-size: 0.9rem; color: #333;">Seguro de Accidentes Personales para evaluados (renovación anual)</p>
+                    </div>
+                </div>
+                
+                <h3 style="color: #8b0000; margin-top: 2rem; margin-bottom: 1rem;">🔍 Supervisión y Control</h3>
+                <div class="info-card" style="background: linear-gradient(135deg, #28a74515 0%, #20c99715 100%); border-left: 4px solid #28a745;">
+                    <h3 style="color: #28a745;">Entidad Supervisora</h3>
+                    <p style="font-size: 1.1rem; color: #333; margin-bottom: 0.5rem;"><strong>Superintendencia de Transporte</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">Sistema: <strong>SICOV</strong> (Sistema de Control y Vigilancia)</p>
+                    <p style="font-size: 0.9rem; color: #666;">Frecuencia de inspección: Mínimo 1 visita técnica anual</p>
+                </div>
+            </section>
+            </div>
+            
+            <footer>
+                <p>Sistema Nacional de Centros de Apoyo Logístico de Evaluación - SNCALE | UPTC</p>
+                <p>
+                    <a href="../fichas_l1/BIM_L1_001.html">← Fichas L1</a> |
+                    <a href="../fichas_l2/BIM_L2_001.html">← Fichas L2</a> |
+                    <a href="BIM_L3_001.html">L3 Index</a>
+                </p>
+                <p style="margin-top: 1rem; font-size: 0.85rem;">
+                    Generado desde Google Doc oficial | BIM_L3_002 | UPTC 2025
+                </p>
+            </footer>
+        </div>
+    </div>
+    
+    <script>
+        const L2_COMPONENT_MAP = {
+            'L2.pista_clase_II': {
+                titulo: 'Pista Clase II',
+                descripcion: 'Pista completa Clase II (B2, C2)',
+                l1_items: [
+                    { id: 'L1.002', titulo: 'Pista carros B1C1 completa', l0_items: [{titulo:'IC_001',especificacion:'Infraestructura de circuito B1C1'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_003',especificacion:'Vehículo prueba B1'},{titulo:'VEH_004',especificacion:'Vehículo prueba C1'}] },
+                    { id: 'L1.003', titulo: 'Pista camiones B2C2 completa', l0_items: [{titulo:'IC_001',especificacion:'Infraestructura de circuito B2C2'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_005',especificacion:'Vehículo prueba B2/C2'}] }
+                ]
+            },
+            'L2.sala_12_cubiculos': {
+                titulo: 'Sala de Formación 12 Puestos',
+                descripcion: 'Sala de formación 12 puestos',
+                l1_items: [
+                    { id: 'L1.005', titulo: 'Instalación eléctrica aulas', l0_items: [{titulo:'ELE_001',especificacion:'Cableado de baja tensión'},{titulo:'ELE_002',especificacion:'Panel de distribución secundario'},{titulo:'ELE_003',especificacion:'Tomacorrientes tipo C'},{titulo:'ELE_004',especificacion:'Interruptores automáticos'}] },
+                    { id: 'L1.006', titulo: 'Mobiliario educativo', l0_items: [{titulo:'MOB_001',especificacion:'Pupitres con superficie de escritura'},{titulo:'MOB_002',especificacion:'Sillas ajustables en altura'},{titulo:'MOB_003',especificacion:'Pizarra acrílica'},{titulo:'MOB_004',especificacion:'Estantería metálica'},{titulo:'MOB_005',especificacion:'Armario para material didáctico'}] }
+                ]
+            },
+            'L2.edificacion': {
+                titulo: 'Edificación Administrativa',
+                descripcion: 'Edificación administrativa',
+                l1_items: [
+                    { id: 'L1.007', titulo: 'Estructura civil', l0_items: [{titulo:'EDIF_001',especificacion:'Estructura de concreto reforzado'},{titulo:'ACC_001',especificacion:'Acceso principal'},{titulo:'ACC_002',especificacion:'Acceso secundario'},{titulo:'ACC_003',especificacion:'Acceso de emergencia'}] },
+                    { id: 'L1.008', titulo: 'Instalaciones sanitarias', l0_items: [{titulo:'HID_001',especificacion:'Red de agua potable'},{titulo:'HID_002',especificacion:'Sistema de alcantarillado'},{titulo:'SEG_001',especificacion:'Sistemas de seguridad contra incendios'},{titulo:'SEG_002',especificacion:'Señalética de seguridad'}] }
+                ]
+            },
+            'L2.cale_teorico_12q': {
+                titulo: 'Centro Teórico CALE',
+                descripcion: 'Centro teórico 12 cubículos (proporcional)',
+                l1_items: [
+                    { id: 'L1.009', titulo: 'Aulas teóricas equipadas', l0_items: [{titulo:'MOB_006',especificacion:'Escritorio tipo pupitres con apoyo'},{titulo:'MOB_007',especificacion:'Sillas ergonómicas'},{titulo:'MOB_008',especificacion:'Pizarras interactivas'},{titulo:'TEC_001',especificacion:'Computadora de escritorio'},{titulo:'TEC_002',especificacion:'Sistema de proyección'}] },
+                    { id: 'L1.010', titulo: 'Sistemas audiovisuales', l0_items: [{titulo:'TEC_003',especificacion:'Cámara de video profesional'},{titulo:'TEC_004',especificacion:'Sistema de sonido integrado'},{titulo:'MONITOR_VIDEOWALL',especificacion:'Panel de video wall de alta resolución'}] }
+                ]
+            },
+            'L2.senalizacion': {
+                titulo: 'Señalización Vial',
+                descripcion: 'Señalización vial y demarcación',
+                l1_items: [
+                    { id: 'L1.011', titulo: 'Demarcación pista', l0_items: [{titulo:'MAT_001',especificacion:'Pintura reflectiva blanca'},{titulo:'MAT_002',especificacion:'Tachas reflectoras'}] }
+                ]
+            },
+            'L2.tecnologia': {
+                titulo: 'Sistema Tecnológico',
+                descripcion: 'Sistema tecnológico integrado',
+                l1_items: [
+                    { id: 'L1.012', titulo: 'Plataforma ALEYA', l0_items: [{titulo:'PLAT_TEC',especificacion:'Plataforma de evaluación ALEYA'},{titulo:'TEC_005',especificacion:'Software de control'},{titulo:'TEC_006',especificacion:'Sistema de respaldo'}] }
+                ]
+            },
+            'L2.mobiliario': {
+                titulo: 'Mobiliario',
+                descripcion: 'Mobiliario y equipamiento',
+                l1_items: [
+                    { id: 'L1.013', titulo: 'Mobiliario general', l0_items: [{titulo:'MOB_009',especificacion:'Sillas de espera'},{titulo:'MOB_010',especificacion:'Mesas de atención'},{titulo:'MOB_011',especificacion:'Escritorios administrativos'},{titulo:'MOB_012',especificacion:'Armarios para archivo'}] }
+                ]
+            },
+            'L2.instalaciones': {
+                titulo: 'Instalaciones Especiales',
+                descripcion: 'Instalaciones especiales',
+                l1_items: [
+                    { id: 'L1.015', titulo: 'Sistema eléctrico integral', l0_items: [{titulo:'ELE_001',especificacion:'Transformador trifásico 500kVA'},{titulo:'ELE_002',especificacion:'Panel de distribución principal'},{titulo:'ELE_003',especificacion:'Sistema UPS de respaldo'},{titulo:'ELE_004',especificacion:'Generador diesel de emergencia'},{titulo:'ELE_006',especificacion:'Cableado de media tensión'},{titulo:'ELE_007',especificacion:'Cableado de baja tensión'},{titulo:'ELE_008',especificacion:'Sistema de puesta a tierra'},{titulo:'ELE_009',especificacion:'Pararrayos y protección'}] },
+                    { id: 'L1.016', titulo: 'HVAC y comunicaciones', l0_items: [{titulo:'HVAC_001',especificacion:'Sistema de aire acondicionado central'},{titulo:'IC_002',especificacion:'Red de telecomunicaciones'},{titulo:'IC_003',especificacion:'Sistema de fibra óptica'},{titulo:'IC_004',especificacion:'Cableado estructurado Cat-6A'}] }
+                ]
+            },
+            'L2.obras_exteriores': {
+                titulo: 'Obras Exteriores',
+                descripcion: 'Obras exteriores y urbanismo',
+                l1_items: [
+                    { id: 'L1.014', titulo: 'Circulación externa', l0_items: [{titulo:'CIRCULACION_EXTERNA',especificacion:'Vías perimetrales y accesos'},{titulo:'PASILLO_INTERNO',especificacion:'Pasillos internos entre módulos'},{titulo:'RAMPA_ACCESIBILIDAD',especificacion:'Rampa de accesibilidad para discapacitados'}] }
+                ]
+            }
+        };
+
+        function parseComponentTable() {
+            const table = document.querySelector('table');
+            if (!table) return [];
+
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
+            const components = [];
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 4) {
+                    const componentName = cells[1].textContent.trim();
+                    const referenciaBim = cells[3].querySelector('code')?.textContent.trim() || '';
+                    const descripcion = cells[2].textContent.trim();
+                    const valor = cells[4].textContent.trim();
+
+                    if (referenciaBim.startsWith('L2.')) {
+                        components.push({
+                            nombre: componentName,
+                            referencia: referenciaBim,
+                            descripcion: descripcion,
+                            valor: valor
+                        });
+                    }
+                }
+            });
+
+            return components;
+        }
+
+        function buildHierarchy(components) {
+            const titulo = document.querySelector('h1')?.textContent || 'Centro CALE';
+            
+            const hijos_l2 = components.map((comp, idx) => {
+                const metadata = L2_COMPONENT_MAP[comp.referencia] || {
+                    titulo: comp.nombre,
+                    descripcion: comp.descripcion,
+                    l1_items: []
+                };
+                
+                const hijos_l1 = (metadata.l1_items || []).map(l1 => ({
+                    id: l1.id,
+                    titulo: l1.titulo,
+                    hijos_l0: (l1.l0_items || []).map(l0 => typeof l0 === 'string' ? {titulo: l0, especificacion: ''} : l0)
+                }));
+                
+                return {
+                    bim_id: `BIM_L2_${idx}`,
+                    titulo: metadata.titulo,
+                    descripcion: metadata.descripcion,
+                    referencia: comp.referencia,
+                    valor: comp.valor,
+                    hijos_l1: hijos_l1
+                };
+            });
+
+            return {
+                titulo: titulo,
+                hijos_l2: hijos_l2
+            };
+        }
+
+        function extractBimId() {
+            const bimIdElement = document.querySelector('.bim-id');
+            return bimIdElement ? bimIdElement.textContent : 'BIM_L3_002';
+        }
+
+        function renderSidebar() {
+            const sidebarWrapper = document.getElementById('sidebarWrapper');
+            const components = parseComponentTable();
+            const data = buildHierarchy(components);
+
+            if (!data || !data.hijos_l2 || data.hijos_l2.length === 0) {
+                sidebarWrapper.innerHTML = '<div class="sidebar-header"><p>No hay componentes disponibles</p></div>';
+                return;
+            }
+
+            window.hierarchyData = data;
+
+            let html = `
+                <div class="sidebar-header">
+                    <h3></h3>
+                    <p class="titulo-actual">${data.titulo}</p>
+                </div>
+                <div class="jerarquia-item">
+                    <div class="jerarquia-header" onclick="toggleLevel(this); return false;">
+                        <span class="jerarquia-toggle">▶</span>
+                        <span class="jerarquia-title">L3 ${data.titulo}</span>
+                        <span class="jerarquia-count">${data.hijos_l2.length}</span>
+                    </div>
+                    <div class="jerarquia-body" id="body-l3">
+            `;
+
+            data.hijos_l2.forEach((l2, idx) => {
+                const hasL1 = l2.hijos_l1 && l2.hijos_l1.length > 0;
+                html += `
+                    <div class="jerarquia-item" style="margin-left: 1rem;">
+                        <div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: rgba(255,255,255,0.08);">
+                            <span class="jerarquia-toggle ${hasL1 ? '' : 'disabled'}">▶</span>
+                            <span class="jerarquia-title" onclick="showL2Specs(${idx}); return false;">L2 ${l2.titulo}</span>
+                            ${hasL1 ? `<span class="jerarquia-count">${l2.hijos_l1.length}</span>` : ''}
+                        </div>
+                        <div class="jerarquia-body" id="body-l2-${idx}">
+                `;
+                
+                if (hasL1) {
+                    l2.hijos_l1.forEach((l1, l1idx) => {
+                        const hasL0 = l1.hijos_l0 && l1.hijos_l0.length > 0;
+                        html += `
+                            <div class="jerarquia-item" style="margin-left: 1rem;">
+                                <div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: rgba(255,255,255,0.05); font-size: 0.8rem;">
+                                    <span class="jerarquia-toggle ${hasL0 ? '' : 'disabled'}">▶</span>
+                                    <span class="jerarquia-title" onclick="showL1Specs(${idx}, ${l1idx}); return false;">L1 ${l1.titulo}</span>
+                                    ${hasL0 ? `<span class="jerarquia-count">${l1.hijos_l0.length}</span>` : ''}
+                                </div>
+                                <div class="jerarquia-body" id="body-l1-${idx}-${l1idx}">
+                        `;
+                        
+                        if (hasL0) {
+                            l1.hijos_l0.forEach((l0, l0idx) => {
+                                html += `
+                                    <div class="jerarquia-item-level" style="margin-left: 0.5rem; padding-left: 2.5rem; font-size: 0.75rem;" onclick="showL0Specs(${idx}, ${l1idx}, ${l0idx}); return false;">
+                                        🔸 L0 ${l0.titulo}
+                                    </div>
+                                `;
+                            });
+                        } else {
+                            html += `<div class="jerarquia-item-level" style="color: rgba(255,255,255,0.4); font-style: italic; font-size: 0.75rem;">Sin componentes L0</div>`;
+                        }
+                        
+                        html += `
+                                </div>
+                            </div>
+                        `;
+                    });
+                } else {
+                    html += `<div class="jerarquia-item-level" style="color: rgba(255,255,255,0.4); font-style: italic;">Sin sub-componentes L1</div>`;
+                }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            sidebarWrapper.innerHTML = html;
+        }
+
+        function toggleLevel(element) {
+            event.stopPropagation();
+            const body = element.nextElementSibling;
+            if (body && body.classList.contains('jerarquia-body')) {
+                body.classList.toggle('expanded');
+                const toggle = element.querySelector('.jerarquia-toggle');
+                if (toggle && !toggle.classList.contains('disabled')) {
+                    toggle.classList.toggle('expanded');
+                }
+            }
+        }
+
+        function showL2Specs(l2idx) {
+            event.stopPropagation();
+            const l2 = window.hierarchyData.hijos_l2[l2idx];
+            const specsView = document.querySelector('.content');
+            
+            let html = `
+                <div class="specs-header">
+                    <div>
+                        <span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">📦 L2 COMPONENTE</span>
+                        <h2 class="specs-title">${l2.titulo}</h2>
+                    </div>
+                    <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
+                </div>
+                
+                <div class="specs-info">
+                    <div class="specs-card">
+                        <h3>Descripción</h3>
+                        <p>${l2.descripcion || 'N/A'}</p>
+                    </div>
+                    <div class="specs-card">
+                        <h3>Referencia BIM</h3>
+                        <p><code>${l2.referencia}</code></p>
+                    </div>
+                    <div class="specs-card">
+                        <h3>Valor Unitario</h3>
+                        <p>${l2.valor || 'N/A'}</p>
+                    </div>
+                </div>
+            `;
+
+            if (l2.hijos_l1 && l2.hijos_l1.length > 0) {
+                html += `<div class="specs-children"><h3>Sub-componentes L1 (${l2.hijos_l1.length})</h3>`;
+                l2.hijos_l1.forEach((l1, l1idx) => {
+                    html += `<div class="specs-item" onclick="showL1Specs(${l2idx}, ${l1idx})">
+                        🔗 <strong>${l1.titulo}</strong>
+                        ${l1.hijos_l0 && l1.hijos_l0.length > 0 ? `<span style="color: #666; margin-left: 1rem;">(${l1.hijos_l0.length} elementos)</span>` : ''}
+                    </div>`;
+                });
+                html += `</div>`;
+            }
+
+            specsView.innerHTML = html;
+            document.querySelector('.main-wrapper').scrollTop = 0;
+        }
+
+        function showL1Specs(l2idx, l1idx) {
+            event.stopPropagation();
+            const l2 = window.hierarchyData.hijos_l2[l2idx];
+            const l1 = l2.hijos_l1[l1idx];
+            const specsView = document.querySelector('.content');
+            
+            let html = `
+                <div class="specs-header">
+                    <div>
+                        <span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">🔗 L1 SUB-COMPONENTE</span>
+                        <h2 class="specs-title">${l1.titulo}</h2>
+                    </div>
+                    <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
+                </div>
+                
+                <div class="specs-info">
+                    <div class="specs-card">
+                        <h3>Componente Padre</h3>
+                        <p>📦 ${l2.titulo}</p>
+                    </div>
+                    <div class="specs-card">
+                        <h3>ID L1</h3>
+                        <p><code>${l1.id}</code></p>
+                    </div>
+                    <div class="specs-card">
+                        <h3>Elementos L0</h3>
+                        <p>${l1.hijos_l0 ? l1.hijos_l0.length : 0} componentes</p>
+                    </div>
+                </div>
+            `;
+
+            if (l1.hijos_l0 && l1.hijos_l0.length > 0) {
+                html += `<div class="specs-children"><h3>Elementos L0 (${l1.hijos_l0.length})</h3>`;
+                l1.hijos_l0.forEach((l0, l0idx) => {
+                    html += `<div class="specs-item" onclick="showL0Specs(${l2idx}, ${l1idx}, ${l0idx})">
+                        🔸 <strong>${l0.titulo}</strong>
+                    </div>`;
+                });
+                html += `</div>`;
+            }
+
+            specsView.innerHTML = html;
+            document.querySelector('.main-wrapper').scrollTop = 0;
+        }
+
+        async function showL0Specs(l2idx, l1idx, l0idx) {
+            event.stopPropagation();
+            const l2 = window.hierarchyData.hijos_l2[l2idx];
+            const l1 = l2.hijos_l1[l1idx];
+            const l0 = l1.hijos_l0[l0idx];
+            const specsView = document.querySelector('.content');
+            
+            specsView.innerHTML = '<div class="specs-content" style="text-align: center; padding: 3rem;"><p>Cargando fichá de componente L0...</p></div>';
+            
+            try {
+                let content = null;
+                let styles = null;
+                for (let i = 1; i <= 91; i++) {
+                    const fileNum = String(i).padStart(3, '0');
+                    const url = `../fichas/BIM_L0_${fileNum}.html`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const html = await response.text();
+                            if (html.includes('L0.' + l0.titulo) || html.includes('>' + l0.titulo + '<')) {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, 'text/html');
+                                const mainContent = doc.querySelector('.main-content');
+                                const styleTag = doc.querySelector('style');
+                                if (mainContent) {
+                                    content = mainContent.innerHTML;
+                                    if (styleTag) {
+                                        styles = styleTag.textContent;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    } catch (e) {
+                    }
+                }
+                
+                if (content) {
+                    specsView.innerHTML = `
+                        <style>
+                            ${styles || ''}
+                            .bim-l0-container { margin-left: 0; max-width: 100%; }
+                        </style>
+                        <div style="position: relative; margin-bottom: 2rem;">
+                            <button class="specs-back-btn" onclick="hideSpecs()" style="position: sticky; top: 0; z-index: 10;">← Volver al L3</button>
+                        </div>
+                        <div class="bim-l0-container">
+                            ${content}
+                        </div>
+                    `;
+                } else {
+                    specsView.innerHTML = `
+                        <div class="specs-header">
+                            <div>
+                                <span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">🔸 L0 ELEMENTO ATÓMICO</span>
+                                <h2 class="specs-title">${l0.titulo}</h2>
+                            </div>
+                            <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
+                        </div>
+                        <div class="specs-content">
+                            <h3>Especificaciones Técnicas</h3>
+                            <p>Fichá técnica para ${l0.titulo}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                specsView.innerHTML = `
+                    <div class="specs-header">
+                        <div>
+                            <span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">🔸 L0 ELEMENTO ATÓMICO</span>
+                            <h2 class="specs-title">${l0.titulo}</h2>
+                        </div>
+                        <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
+                    </div>
+                    <div class="specs-content">
+                        <h3>Error</h3>
+                        <p>No se pudo cargar la información del componente</p>
+                    </div>
+                `;
+            }
+            
+            document.querySelector('.main-wrapper').scrollTop = 0;
+        }
+
+        function hideSpecs() {
+            location.reload();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderSidebar);
+    </script>
+</body>
+</html>

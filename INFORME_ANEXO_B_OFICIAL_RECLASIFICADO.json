@@ -1,0 +1,973 @@
+{
+  "documento": "MUNAY_5.2__anexo_b__DEFINITIVO",
+  "fecha_analisis": "2025-11-03",
+  "fuente_verdad": "https://docs.google.com/document/d/16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE",
+  "clasificacion": {
+    "L0": 31,
+    "L1": 3,
+    "L2": 5,
+    "L3_valorizacion": 4,
+    "L3_metadata": 4
+  },
+  "tablas_l1": [
+    {
+      "numero": 10,
+      "elemento_index": 265,
+      "filas": 17,
+      "columnas": 6,
+      "encabezados": [
+        "#",
+        "Componente",
+        "Descripción",
+        "Categoría",
+        "Tipo",
+        "Referencia"
+      ],
+      "ejemplo_fila2": [
+        "1",
+        "MANIOBRA_00",
+        "Maniobra 0: Arranque en pendiente",
+        "A1,A2,B1,C1",
+        "Básica",
+        "L1.maniobra_00"
+      ],
+      "todas_filas": [
+        [
+          "#",
+          "Componente",
+          "Descripción",
+          "Categoría",
+          "Tipo",
+          "Referencia"
+        ],
+        [
+          "1",
+          "MANIOBRA_00",
+          "Maniobra 0: Arranque en pendiente",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_00"
+        ],
+        [
+          "2",
+          "MANIOBRA_01",
+          "Maniobra 1: Estacionamiento en paralelo",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_01"
+        ],
+        [
+          "3",
+          "MANIOBRA_02",
+          "Maniobra 2: Estacionamiento en batería",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_02"
+        ],
+        [
+          "4",
+          "MANIOBRA_03",
+          "Maniobra 3: Cambio de carril",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_03"
+        ],
+        [
+          "5",
+          "MANIOBRA_04",
+          "Maniobra 4: Giro a la derecha",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_04"
+        ],
+        [
+          "6",
+          "MANIOBRA_05",
+          "Maniobra 5: Giro a la izquierda",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_05"
+        ],
+        [
+          "7",
+          "MANIOBRA_06",
+          "Maniobra 6: Giro en U",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_06"
+        ],
+        [
+          "8",
+          "MANIOBRA_07",
+          "Maniobra 7: Paso por glorieta",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_07"
+        ],
+        [
+          "9",
+          "MANIOBRA_08",
+          "Maniobra 8: Frenado de emergencia",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_08"
+        ],
+        [
+          "10",
+          "MANIOBRA_09",
+          "Maniobra 9: Reversa controlada",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_09"
+        ],
+        [
+          "11",
+          "MANIOBRA_10",
+          "Maniobra 10: Estacionamiento en línea",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_10"
+        ],
+        [
+          "12",
+          "MANIOBRA_11",
+          "Maniobra 11: Slalom simple",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_11"
+        ],
+        [
+          "13",
+          "MANIOBRA_12",
+          "Maniobra 12: Paso por intersección",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_12"
+        ],
+        [
+          "14",
+          "MANIOBRA_13",
+          "Maniobra 13: Conducción en recta",
+          "A1,A2,B1,C1",
+          "Básica",
+          "L1.maniobra_13"
+        ],
+        [
+          "15",
+          "PAVIMENTO",
+          "Pavimento flexible asfalto",
+          "Infraestructura",
+          "Civil",
+          "L0.pavimento_flexible"
+        ],
+        [
+          "16",
+          "SEÑALIZACION",
+          "Señalización horizontal y vertical",
+          "Infraestructura",
+          "Civil",
+          "L0.señalizacion"
+        ]
+      ]
+    },
+    {
+      "numero": 12,
+      "elemento_index": 295,
+      "filas": 7,
+      "columnas": 6,
+      "encabezados": [
+        "#",
+        "Componente",
+        "Descripción",
+        "Categoría",
+        "Tipo",
+        "Referencia"
+      ],
+      "ejemplo_fila2": [
+        "1",
+        "MANIOBRA_14",
+        "Maniobra 14: Maniobras con remolque",
+        "B2,C2",
+        "Intermedia",
+        "L1.maniobra_14"
+      ],
+      "todas_filas": [
+        [
+          "#",
+          "Componente",
+          "Descripción",
+          "Categoría",
+          "Tipo",
+          "Referencia"
+        ],
+        [
+          "1",
+          "MANIOBRA_14",
+          "Maniobra 14: Maniobras con remolque",
+          "B2,C2",
+          "Intermedia",
+          "L1.maniobra_14"
+        ],
+        [
+          "2",
+          "MANIOBRA_15",
+          "Maniobra 15: Reversa con remolque",
+          "B2,C2",
+          "Intermedia",
+          "L1.maniobra_15"
+        ],
+        [
+          "3",
+          "MANIOBRA_16",
+          "Maniobra 16: Estacionamiento con remolque",
+          "B2,C2",
+          "Intermedia",
+          "L1.maniobra_16"
+        ],
+        [
+          "4",
+          "PAVIMENTO",
+          "Pavimento reforzado concreto",
+          "Infraestructura",
+          "Civil",
+          "L0.pavimento_reforzado"
+        ],
+        [
+          "5",
+          "SEÑALIZACION",
+          "Señalización horizontal y vertical",
+          "Infraestructura",
+          "Civil",
+          "L0.señalizacion"
+        ],
+        [
+          "6",
+          "INCLUYE_CLASE_I",
+          "#ERROR!",
+          "B2,C2",
+          "Referencia",
+          "L2.pista_clase_I"
+        ]
+      ]
+    },
+    {
+      "numero": 14,
+      "elemento_index": 325,
+      "filas": 8,
+      "columnas": 6,
+      "encabezados": [
+        "#",
+        "Componente",
+        "Descripción",
+        "Categoría",
+        "Tipo",
+        "Referencia"
+      ],
+      "ejemplo_fila2": [
+        "1",
+        "MANIOBRA_17",
+        "Maniobra 17: Maniobras vehículos pesados",
+        "B3,C3",
+        "Avanzada",
+        "L1.maniobra_17"
+      ],
+      "todas_filas": [
+        [
+          "#",
+          "Componente",
+          "Descripción",
+          "Categoría",
+          "Tipo",
+          "Referencia"
+        ],
+        [
+          "1",
+          "MANIOBRA_17",
+          "Maniobra 17: Maniobras vehículos pesados",
+          "B3,C3",
+          "Avanzada",
+          "L1.maniobra_17"
+        ],
+        [
+          "2",
+          "MANIOBRA_18",
+          "Maniobra 18: Reversa vehículo articulado",
+          "B3,C3",
+          "Avanzada",
+          "L1.maniobra_18"
+        ],
+        [
+          "3",
+          "MANIOBRA_19",
+          "Maniobra 19: Maniobras en espacio reducido",
+          "B3,C3",
+          "Avanzada",
+          "L1.maniobra_19"
+        ],
+        [
+          "4",
+          "PAVIMENTO",
+          "Pavimento especial concreto Fc=35MPa",
+          "Infraestructura",
+          "Civil",
+          "L0.pavimento_especial"
+        ],
+        [
+          "5",
+          "SEÑALIZACION",
+          "Señalización horizontal y vertical",
+          "Infraestructura",
+          "Civil",
+          "L0.señalizacion"
+        ],
+        [
+          "6",
+          "INCLUYE_CLASE_II",
+          "+ Todas las maniobras de Clase II (14-16)",
+          "B3,C3",
+          "Referencia",
+          "L2.pista_clase_II"
+        ],
+        [
+          "7",
+          "INCLUYE_CLASE_I",
+          "+ Todas las maniobras de Clase I (0-13)",
+          "B3,C3",
+          "Referencia",
+          "L2.pista_clase_I"
+        ]
+      ]
+    }
+  ],
+  "tablas_l2": [
+    {
+      "numero": 11,
+      "elemento_index": 276,
+      "filas": 2,
+      "columnas": 2,
+      "encabezados": [
+        "Concepto",
+        "Valor (COP)"
+      ],
+      "ejemplo_fila2": [
+        "Total L2.pista_clase_I",
+        "$975,000,000"
+      ],
+      "todas_filas": [
+        [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        [
+          "Total L2.pista_clase_I",
+          "$975,000,000"
+        ]
+      ]
+    },
+    {
+      "numero": 13,
+      "elemento_index": 306,
+      "filas": 2,
+      "columnas": 2,
+      "encabezados": [
+        "Concepto",
+        "Valor (COP)"
+      ],
+      "ejemplo_fila2": [
+        "Total L2.pista_clase_II",
+        "$680,000,000"
+      ],
+      "todas_filas": [
+        [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        [
+          "Total L2.pista_clase_II",
+          "$680,000,000"
+        ]
+      ]
+    },
+    {
+      "numero": 15,
+      "elemento_index": 336,
+      "filas": 2,
+      "columnas": 2,
+      "encabezados": [
+        "Concepto",
+        "Valor (COP)"
+      ],
+      "ejemplo_fila2": [
+        "Total L2.pista_clase_III",
+        "$1,850,000,000"
+      ],
+      "todas_filas": [
+        [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        [
+          "Total L2.pista_clase_III",
+          "$1,850,000,000"
+        ]
+      ]
+    },
+    {
+      "numero": 16,
+      "elemento_index": 363,
+      "filas": 2,
+      "columnas": 2,
+      "encabezados": [
+        "Concepto",
+        "Valor (COP)"
+      ],
+      "ejemplo_fila2": [
+        "Total L2.cale_teorico_24q",
+        "$243,063,465"
+      ],
+      "todas_filas": [
+        [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        [
+          "Total L2.cale_teorico_24q",
+          "$243,063,465"
+        ]
+      ]
+    },
+    {
+      "numero": 17,
+      "elemento_index": 389,
+      "filas": 2,
+      "columnas": 2,
+      "encabezados": [
+        "Concepto",
+        "Valor (COP)"
+      ],
+      "ejemplo_fila2": [
+        "Total L2.cale_teorico_16q",
+        "$200,646,497"
+      ],
+      "todas_filas": [
+        [
+          "Concepto",
+          "Valor (COP)"
+        ],
+        [
+          "Total L2.cale_teorico_16q",
+          "$200,646,497"
+        ]
+      ]
+    }
+  ],
+  "tablas_l3_valorizacion": [
+    {
+      "numero": 3,
+      "elemento_index": 78,
+      "filas": 7,
+      "columnas": 7,
+      "encabezados": [
+        "Componente",
+        "Descripción",
+        "Referencia BIM",
+        "Vr. Unitario (COP)",
+        "Cant. Variante+",
+        "Cant. Base",
+        "Vr. Total (COP)"
+      ],
+      "ejemplo_fila2": [
+        "Pista Evaluación Clase III",
+        "Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c",
+        "L2.pista_clase_3",
+        "$1,850,000,000",
+        "0",
+        "20",
+        "$37,000,000,000"
+      ],
+      "todas_filas": [
+        [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. Variante+",
+          "Cant. Base",
+          "Vr. Total (COP)"
+        ],
+        [
+          "Pista Evaluación Clase III",
+          "Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c",
+          "L2.pista_clase_3",
+          "$1,850,000,000",
+          "0",
+          "20",
+          "$37,000,000,000"
+        ],
+        [
+          "Pista Evaluación Clase II",
+          "Circuito para motocicletas según Art. 3.7.4.b",
+          "L2.pista_clase_2",
+          "$980,000,000",
+          "0",
+          "20",
+          "$19,600,000,000"
+        ],
+        [
+          "Pista Evaluación Clase I",
+          "Circuito para vehículos livianos según Art. 3.7.4.a",
+          "L2.pista_clase_1",
+          "$750,000,000",
+          "0",
+          "20",
+          "$15,000,000,000"
+        ],
+        [
+          "Sala Evaluación Teórica (24 cubículos)",
+          "Equipamiento completo con sistema de cómputo",
+          "L1.sala_24_cubiculos",
+          "$186,000,000",
+          "0",
+          "20",
+          "$3,720,000,000"
+        ],
+        [
+          "Simulador Conducción Clase III",
+          "Simulador avanzado con 6 DOF según NTC 5375",
+          "L0.simulador_c3",
+          "$450,000,000",
+          "0",
+          "40",
+          "$18,000,000,000"
+        ],
+        [
+          "Infraestructura Civil Base",
+          "Edificación administrativa y servicios",
+          "L2.edificacion_admin",
+          "$2,400,000,000",
+          "0",
+          "20",
+          "$48,000,000,000"
+        ]
+      ]
+    },
+    {
+      "numero": 5,
+      "elemento_index": 107,
+      "filas": 8,
+      "columnas": 7,
+      "encabezados": [
+        "Componente",
+        "Descripción",
+        "Referencia BIM",
+        "Vr. Unitario (COP)",
+        "Cant. Base",
+        "Cant. **",
+        "Vr. Total Base (COP)"
+      ],
+      "ejemplo_fila2": [
+        "PISTA_CLASE_II",
+        "Pista completa Clase II (B2, C2)",
+        "L2.pista_clase_II",
+        "Ver L2",
+        "1",
+        "0",
+        "Ver detalle L2"
+      ],
+      "todas_filas": [
+        [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. Base",
+          "Cant. **",
+          "Vr. Total Base (COP)"
+        ],
+        [
+          "PISTA_CLASE_II",
+          "Pista completa Clase II (B2, C2)",
+          "L2.pista_clase_II",
+          "Ver L2",
+          "1",
+          "0",
+          "Ver detalle L2"
+        ],
+        [
+          "PISTA_CLASE_I",
+          "Pista completa Clase I (A1, A2, B1, C1)",
+          "L2.pista_clase_I",
+          "Ver L2",
+          "1",
+          "2",
+          "Ver detalle L2"
+        ],
+        [
+          "EDIFICACION",
+          "Edificación adecuada (arriendo)",
+          "L2.edificacion",
+          "Ver L2",
+          "1",
+          "0",
+          "Ver detalle L2"
+        ],
+        [
+          "CALE_TEORICO_16q",
+          "Centro teórico 16 cubículos + áreas admin",
+          "L2.cale_teorico_16q",
+          "$200,646,497",
+          "1",
+          "0",
+          "$4,012,929,940"
+        ],
+        [
+          "TECNOLOGIA",
+          "Plataforma tecnológica CALE",
+          "L2.tecnologia",
+          "Ver L2",
+          "1",
+          "0",
+          "Ver detalle L2"
+        ],
+        [
+          "CERTIFICACIONES",
+          "Certificaciones ISO (4)",
+          "L2.certificaciones",
+          "Ver L2",
+          "1",
+          "0",
+          "Ver detalle L2"
+        ],
+        [
+          "SEGUROS",
+          "Seguros y pólizas",
+          "L2.seguros",
+          "Ver L2",
+          "1",
+          "0",
+          "Ver detalle L2"
+        ]
+      ]
+    },
+    {
+      "numero": 7,
+      "elemento_index": 144,
+      "filas": 7,
+      "columnas": 6,
+      "encabezados": [
+        "Componente",
+        "Descripción",
+        "Referencia BIM",
+        "Vr. Unitario (COP)",
+        "Cant. Base",
+        "Vr. Total (COP)"
+      ],
+      "ejemplo_fila2": [
+        "PISTA_CLASE_I",
+        "Pista completa Clase I (A1, A2, B1, C1)",
+        "L2.pista_clase_I",
+        "Ver L2",
+        "16",
+        "Ver detalle L2"
+      ],
+      "todas_filas": [
+        [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. Base",
+          "Vr. Total (COP)"
+        ],
+        [
+          "PISTA_CLASE_I",
+          "Pista completa Clase I (A1, A2, B1, C1)",
+          "L2.pista_clase_I",
+          "Ver L2",
+          "16",
+          "Ver detalle L2"
+        ],
+        [
+          "EDIFICACION",
+          "Edificación adecuada (arriendo)",
+          "L2.edificacion",
+          "Ver L2",
+          "16",
+          "Ver detalle L2"
+        ],
+        [
+          "CALE_TEORICO_16q",
+          "Centro teórico 16 cubículos + áreas admin",
+          "L2.cale_teorico_16q",
+          "$200,646,497",
+          "16",
+          "$3,210,343,952"
+        ],
+        [
+          "TECNOLOGIA",
+          "Plataforma tecnológica CALE",
+          "L2.tecnologia",
+          "Ver L2",
+          "16",
+          "Ver detalle L2"
+        ],
+        [
+          "CERTIFICACIONES",
+          "Certificaciones ISO (4)",
+          "L2.certificaciones",
+          "Ver L2",
+          "16",
+          "Ver detalle L2"
+        ],
+        [
+          "SEGUROS",
+          "Seguros y pólizas",
+          "L2.seguros",
+          "Ver L2",
+          "16",
+          "Ver detalle L2"
+        ]
+      ]
+    },
+    {
+      "numero": 9,
+      "elemento_index": 188,
+      "filas": 4,
+      "columnas": 10,
+      "encabezados": [
+        "Componente",
+        "Descripción",
+        "Referencia BIM",
+        "Vr. Unitario (COP)",
+        "Cant. C2",
+        "Cant. C3",
+        "Cant. C4",
+        "Cant. C5",
+        "Total",
+        "Vr. Total (COP)"
+      ],
+      "ejemplo_fila2": [
+        "ESPACIO_TEORICO¹",
+        "Sala evaluación teórica",
+        "L2.sala_teorica_basica",
+        "Ver L2",
+        "31",
+        "69",
+        "27",
+        "14",
+        "141",
+        "Ver detalle L2"
+      ],
+      "todas_filas": [
+        [
+          "Componente",
+          "Descripción",
+          "Referencia BIM",
+          "Vr. Unitario (COP)",
+          "Cant. C2",
+          "Cant. C3",
+          "Cant. C4",
+          "Cant. C5",
+          "Total",
+          "Vr. Total (COP)"
+        ],
+        [
+          "ESPACIO_TEORICO¹",
+          "Sala evaluación teórica",
+          "L2.sala_teorica_basica",
+          "Ver L2",
+          "31",
+          "69",
+          "27",
+          "14",
+          "141",
+          "Ver detalle L2"
+        ],
+        [
+          "EQUIPAMIENTO_TIC",
+          "Computadores y conectividad",
+          "L2.equipamiento_tic",
+          "Ver L2",
+          "31",
+          "69",
+          "27",
+          "14",
+          "141",
+          "Ver detalle L2"
+        ],
+        [
+          "MOBILIARIO_BASICO",
+          "Sillas, mesas, archivadores",
+          "L2.mobiliario_basico",
+          "Ver L2",
+          "31",
+          "69",
+          "27",
+          "14",
+          "141",
+          "Ver detalle L2"
+        ]
+      ]
+    }
+  ],
+  "tablas_l3_metadata": [
+    {
+      "numero": 2,
+      "elemento_index": 68,
+      "filas": 3,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "ejemplo_fila2": [
+        "CALE.n_1+",
+        "3",
+        "Configuración base estándar, con Cale.n_2 adicional",
+        "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: "
+      ],
+      "todas_filas": [
+        [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        [
+          "CALE.n_1+",
+          "3",
+          "Configuración base estándar, con Cale.n_2 adicional",
+          "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (3) CALE.n_1+"
+        ],
+        [
+          "CALE.n_1",
+          "17",
+          "Configuración base estándar",
+          "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (17) CALE.n_1"
+        ]
+      ]
+    },
+    {
+      "numero": 4,
+      "elemento_index": 98,
+      "filas": 3,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "ejemplo_fila2": [
+        "CALE.n_2**",
+        "16",
+        "Configuración base estándar",
+        "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría:"
+      ],
+      "todas_filas": [
+        [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        [
+          "CALE.n_2**",
+          "16",
+          "Configuración base estándar",
+          "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**"
+        ],
+        [
+          "CALE.n_2",
+          "4",
+          "Configuración base estándar",
+          "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2"
+        ]
+      ]
+    },
+    {
+      "numero": 6,
+      "elemento_index": 136,
+      "filas": 2,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "ejemplo_fila2": [
+        "CALE.n_3",
+        "16",
+        "Configuración base estándar",
+        "Topología SNCALE BIM - filtrar: (16) CALE.n_3"
+      ],
+      "todas_filas": [
+        [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        [
+          "CALE.n_3",
+          "16",
+          "Configuración base estándar",
+          "Topología SNCALE BIM - filtrar: (16) CALE.n_3"
+        ]
+      ]
+    },
+    {
+      "numero": 8,
+      "elemento_index": 170,
+      "filas": 5,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "ejemplo_fila2": [
+        "CALE.C2",
+        "31",
+        "Satélites cercanos (< 50 km)",
+        "Topología SNCALE BIM - filtrar: (31) CALE.C2"
+      ],
+      "todas_filas": [
+        [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        [
+          "CALE.C2",
+          "31",
+          "Satélites cercanos (< 50 km)",
+          "Topología SNCALE BIM - filtrar: (31) CALE.C2"
+        ],
+        [
+          "CALE.C3",
+          "69",
+          "Satélites rango medio (50-100 km)",
+          "Topología SNCALE BIM - filtrar: (69) CALE.C3"
+        ],
+        [
+          "CALE.C4",
+          "27",
+          "Satélites remotos (100-150 km)",
+          "Topología SNCALE BIM - filtrar: (27) CALE.C4"
+        ],
+        [
+          "CALE.C5",
+          "14",
+          "Satélites muy remotos (> 150 km)",
+          "Topología SNCALE BIM - filtrar: (14) CALE.C5"
+        ]
+      ]
+    }
+  ]
+}

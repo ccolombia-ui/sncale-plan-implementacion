@@ -1,0 +1,518 @@
+{
+  "fuente": {
+    "documento": "Google Doc MUNAY_5.2__anexo_b__DEFINITIVO",
+    "doc_id": "16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE",
+    "tablas_valorizacion": [
+      3,
+      5,
+      7,
+      9
+    ],
+    "tablas_metadata": [
+      2,
+      4,
+      6,
+      8
+    ]
+  },
+  "resumen": {
+    "total_configuraciones": 4,
+    "valorizacion_total_cop": 145332930021,
+    "valorizacion_total_formateado": "$145.332.930.021 COP"
+  },
+  "configuraciones": [
+    {
+      "bim_id": "BIM_L3_001",
+      "nivel": "cale_n1_metropolitano",
+      "titulo": "CALE.n_1 - Centro Metropolitano",
+      "descripcion": "Configuración completa para centros de enseñanza en ciudades metropolitanas (20 nodos base + 3 variante+)",
+      "tipo_cale": "Metropolitano",
+      "cantidad_base": 20,
+      "cantidad_variante": 3,
+      "cantidad_total": 0,
+      "distribucion": "",
+      "componentes": [
+        {
+          "numero": 1,
+          "componente": "Pista Evaluación Clase III",
+          "descripcion": "Circuito completo según Res. 20253040037125/2025 Art. 3.7.4.c",
+          "referencia_bim": "L2.pista_clase_3",
+          "valor_unitario_cop": 1850000000,
+          "cantidad_variante": 0,
+          "cantidad_base": 20,
+          "valor_total_cop": 37000000000,
+          "fuente": "Tabla #3, Fila 2"
+        },
+        {
+          "numero": 2,
+          "componente": "Pista Evaluación Clase II",
+          "descripcion": "Circuito para motocicletas según Art. 3.7.4.b",
+          "referencia_bim": "L2.pista_clase_2",
+          "valor_unitario_cop": 980000000,
+          "cantidad_variante": 0,
+          "cantidad_base": 20,
+          "valor_total_cop": 19600000000,
+          "fuente": "Tabla #3, Fila 3"
+        },
+        {
+          "numero": 3,
+          "componente": "Pista Evaluación Clase I",
+          "descripcion": "Circuito para vehículos livianos según Art. 3.7.4.a",
+          "referencia_bim": "L2.pista_clase_1",
+          "valor_unitario_cop": 750000000,
+          "cantidad_variante": 0,
+          "cantidad_base": 20,
+          "valor_total_cop": 15000000000,
+          "fuente": "Tabla #3, Fila 4"
+        },
+        {
+          "numero": 4,
+          "componente": "Sala Evaluación Teórica (24 cubículos)",
+          "descripcion": "Equipamiento completo con sistema de cómputo",
+          "referencia_bim": "L1.sala_24_cubiculos",
+          "valor_unitario_cop": 186000000,
+          "cantidad_variante": 0,
+          "cantidad_base": 20,
+          "valor_total_cop": 3720000000,
+          "fuente": "Tabla #3, Fila 5"
+        },
+        {
+          "numero": 5,
+          "componente": "Simulador Conducción Clase III",
+          "descripcion": "Simulador avanzado con 6 DOF según NTC 5375",
+          "referencia_bim": "L0.simulador_c3",
+          "valor_unitario_cop": 450000000,
+          "cantidad_variante": 0,
+          "cantidad_base": 40,
+          "valor_total_cop": 18000000000,
+          "fuente": "Tabla #3, Fila 6"
+        },
+        {
+          "numero": 6,
+          "componente": "Infraestructura Civil Base",
+          "descripcion": "Edificación administrativa y servicios",
+          "referencia_bim": "L2.edificacion_admin",
+          "valor_unitario_cop": 2400000000,
+          "cantidad_variante": 0,
+          "cantidad_base": 20,
+          "valor_total_cop": 48000000000,
+          "fuente": "Tabla #3, Fila 7"
+        }
+      ],
+      "valorizacion": {
+        "total_cop": 141320000000,
+        "total_cop_formateado": "$141.320.000.000"
+      },
+      "metadatos": {
+        "fuente_tabla": 3,
+        "total_filas": 6,
+        "elemento_index": 78
+      },
+      "metadata_adicional": {
+        "numero_tabla": 2,
+        "elemento_index": 68,
+        "filas": 3,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "datos": [
+          {
+            "Tipo CALE": "CALE.n_1+",
+            "Cantidad": "3",
+            "Descripción Modificador": "Configuración base estándar, con Cale.n_2 adicional",
+            "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (3) CALE.n_1+"
+          },
+          {
+            "Tipo CALE": "CALE.n_1",
+            "Cantidad": "17",
+            "Descripción Modificador": "Configuración base estándar",
+            "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (17) CALE.n_1"
+          }
+        ],
+        "nivel": "cale_n1_metropolitano"
+      }
+    },
+    {
+      "bim_id": "BIM_L3_002",
+      "nivel": "cale_n2_subregional",
+      "titulo": "CALE.n_2 - Centro Subregional",
+      "descripcion": "Configuración para centros en capitales subregionales (20 nodos base + 16 variante**)",
+      "tipo_cale": "Subregional",
+      "cantidad_base": 20,
+      "cantidad_variante": 16,
+      "cantidad_total": 0,
+      "distribucion": "",
+      "componentes": [
+        {
+          "numero": 1,
+          "componente": "PISTA_CLASE_II",
+          "descripcion": "Pista completa Clase II (B2, C2)",
+          "referencia_bim": "L2.pista_clase_II",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 1,
+          "cantidad_base": 0,
+          "valor_total_cop": 0,
+          "fuente": "Tabla #5, Fila 2"
+        },
+        {
+          "numero": 2,
+          "componente": "PISTA_CLASE_I",
+          "descripcion": "Pista completa Clase I (A1, A2, B1, C1)",
+          "referencia_bim": "L2.pista_clase_I",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 1,
+          "cantidad_base": 2,
+          "valor_total_cop": 0,
+          "fuente": "Tabla #5, Fila 3"
+        },
+        {
+          "numero": 3,
+          "componente": "EDIFICACION",
+          "descripcion": "Edificación adecuada (arriendo)",
+          "referencia_bim": "L2.edificacion",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 1,
+          "cantidad_base": 0,
+          "valor_total_cop": 0,
+          "fuente": "Tabla #5, Fila 4"
+        },
+        {
+          "numero": 4,
+          "componente": "CALE_TEORICO_16q",
+          "descripcion": "Centro teórico 16 cubículos + áreas admin",
+          "referencia_bim": "L2.cale_teorico_16q",
+          "valor_unitario_cop": 200646497,
+          "cantidad_variante": 1,
+          "cantidad_base": 0,
+          "valor_total_cop": 4012929940,
+          "fuente": "Tabla #5, Fila 5"
+        },
+        {
+          "numero": 5,
+          "componente": "TECNOLOGIA",
+          "descripcion": "Plataforma tecnológica CALE",
+          "referencia_bim": "L2.tecnologia",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 1,
+          "cantidad_base": 0,
+          "valor_total_cop": 0,
+          "fuente": "Tabla #5, Fila 6"
+        },
+        {
+          "numero": 6,
+          "componente": "CERTIFICACIONES",
+          "descripcion": "Certificaciones ISO (4)",
+          "referencia_bim": "L2.certificaciones",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 1,
+          "cantidad_base": 0,
+          "valor_total_cop": 0,
+          "fuente": "Tabla #5, Fila 7"
+        },
+        {
+          "numero": 7,
+          "componente": "SEGUROS",
+          "descripcion": "Seguros y pólizas",
+          "referencia_bim": "L2.seguros",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 1,
+          "cantidad_base": 0,
+          "valor_total_cop": 0,
+          "fuente": "Tabla #5, Fila 8"
+        }
+      ],
+      "valorizacion": {
+        "total_cop": 4012929940,
+        "total_cop_formateado": "$4.012.929.940"
+      },
+      "metadatos": {
+        "fuente_tabla": 5,
+        "total_filas": 7,
+        "elemento_index": 107
+      },
+      "metadata_adicional": {
+        "numero_tabla": 4,
+        "elemento_index": 98,
+        "filas": 3,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "datos": [
+          {
+            "Tipo CALE": "CALE.n_2**",
+            "Cantidad": "16",
+            "Descripción Modificador": "Configuración base estándar",
+            "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**"
+          },
+          {
+            "Tipo CALE": "CALE.n_2",
+            "Cantidad": "4",
+            "Descripción Modificador": "Configuración base estándar",
+            "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2"
+          }
+        ],
+        "nivel": "cale_n2_subregional"
+      }
+    },
+    {
+      "bim_id": "BIM_L3_003",
+      "nivel": "cale_n3_local",
+      "titulo": "CALE.n_3 - Centro Local",
+      "descripcion": "Configuración básica para centros locales (16 nodos)",
+      "tipo_cale": "Local",
+      "cantidad_base": 16,
+      "cantidad_variante": 0,
+      "cantidad_total": 0,
+      "distribucion": "",
+      "componentes": [],
+      "valorizacion": {
+        "total_cop": 0,
+        "total_cop_formateado": "$0"
+      },
+      "metadatos": {
+        "fuente_tabla": 7,
+        "total_filas": 0,
+        "elemento_index": 144
+      },
+      "metadata_adicional": {
+        "numero_tabla": 6,
+        "elemento_index": 136,
+        "filas": 2,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "datos": [
+          {
+            "Tipo CALE": "CALE.n_3",
+            "Cantidad": "16",
+            "Descripción Modificador": "Configuración base estándar",
+            "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (16) CALE.n_3"
+          }
+        ],
+        "nivel": "cale_n3_local"
+      }
+    },
+    {
+      "bim_id": "BIM_L3_004",
+      "nivel": "red_satelites",
+      "titulo": "Red Nacional de Satélites",
+      "descripcion": "Distribución de 140 satélites en categorías C2-C5 para cobertura nacional",
+      "tipo_cale": "Red Satélites",
+      "cantidad_base": 0,
+      "cantidad_variante": 0,
+      "cantidad_total": 140,
+      "distribucion": "C2: 40 | C3: 40 | C4: 40 | C5: 20",
+      "componentes": [
+        {
+          "numero": 1,
+          "componente": "ESPACIO_TEORICO¹",
+          "descripcion": "Sala evaluación teórica",
+          "referencia_bim": "L2.sala_teorica_basica",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 31,
+          "cantidad_base": 69,
+          "valor_total_cop": 27,
+          "fuente": "Tabla #9, Fila 2"
+        },
+        {
+          "numero": 2,
+          "componente": "EQUIPAMIENTO_TIC",
+          "descripcion": "Computadores y conectividad",
+          "referencia_bim": "L2.equipamiento_tic",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 31,
+          "cantidad_base": 69,
+          "valor_total_cop": 27,
+          "fuente": "Tabla #9, Fila 3"
+        },
+        {
+          "numero": 3,
+          "componente": "MOBILIARIO_BASICO",
+          "descripcion": "Sillas, mesas, archivadores",
+          "referencia_bim": "L2.mobiliario_basico",
+          "valor_unitario_cop": 0,
+          "cantidad_variante": 31,
+          "cantidad_base": 69,
+          "valor_total_cop": 27,
+          "fuente": "Tabla #9, Fila 4"
+        }
+      ],
+      "valorizacion": {
+        "total_cop": 81,
+        "total_cop_formateado": "$81"
+      },
+      "metadatos": {
+        "fuente_tabla": 9,
+        "total_filas": 3,
+        "elemento_index": 188
+      },
+      "metadata_adicional": {
+        "numero_tabla": 8,
+        "elemento_index": 170,
+        "filas": 5,
+        "columnas": 4,
+        "encabezados": [
+          "Tipo CALE",
+          "Cantidad",
+          "Descripción Modificador",
+          "Mapa de Geolocalización"
+        ],
+        "datos": [
+          {
+            "Tipo CALE": "CALE.C2",
+            "Cantidad": "31",
+            "Descripción Modificador": "Satélites cercanos (< 50 km)",
+            "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (31) CALE.C2"
+          },
+          {
+            "Tipo CALE": "CALE.C3",
+            "Cantidad": "69",
+            "Descripción Modificador": "Satélites rango medio (50-100 km)",
+            "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (69) CALE.C3"
+          },
+          {
+            "Tipo CALE": "CALE.C4",
+            "Cantidad": "27",
+            "Descripción Modificador": "Satélites remotos (100-150 km)",
+            "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (27) CALE.C4"
+          },
+          {
+            "Tipo CALE": "CALE.C5",
+            "Cantidad": "14",
+            "Descripción Modificador": "Satélites muy remotos (> 150 km)",
+            "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (14) CALE.C5"
+          }
+        ],
+        "nivel": "red_satelites"
+      }
+    }
+  ],
+  "metadatos": [
+    {
+      "numero_tabla": 2,
+      "elemento_index": 68,
+      "filas": 3,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "datos": [
+        {
+          "Tipo CALE": "CALE.n_1+",
+          "Cantidad": "3",
+          "Descripción Modificador": "Configuración base estándar, con Cale.n_2 adicional",
+          "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (3) CALE.n_1+"
+        },
+        {
+          "Tipo CALE": "CALE.n_1",
+          "Cantidad": "17",
+          "Descripción Modificador": "Configuración base estándar",
+          "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estandar BIM para Proyectos Públicos\nfiltrar categorías: (17) CALE.n_1"
+        }
+      ],
+      "nivel": "cale_n1_metropolitano"
+    },
+    {
+      "numero_tabla": 4,
+      "elemento_index": 98,
+      "filas": 3,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "datos": [
+        {
+          "Tipo CALE": "CALE.n_2**",
+          "Cantidad": "16",
+          "Descripción Modificador": "Configuración base estándar",
+          "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2**"
+        },
+        {
+          "Tipo CALE": "CALE.n_2",
+          "Cantidad": "4",
+          "Descripción Modificador": "Configuración base estándar",
+          "Mapa de Geolocalización": "Topología de Sistema Nacional de CALEs con estándar BIM para Proyectos Públicos - filtrar categoría: (20) CALE.n_2"
+        }
+      ],
+      "nivel": "cale_n2_subregional"
+    },
+    {
+      "numero_tabla": 6,
+      "elemento_index": 136,
+      "filas": 2,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "datos": [
+        {
+          "Tipo CALE": "CALE.n_3",
+          "Cantidad": "16",
+          "Descripción Modificador": "Configuración base estándar",
+          "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (16) CALE.n_3"
+        }
+      ],
+      "nivel": "cale_n3_local"
+    },
+    {
+      "numero_tabla": 8,
+      "elemento_index": 170,
+      "filas": 5,
+      "columnas": 4,
+      "encabezados": [
+        "Tipo CALE",
+        "Cantidad",
+        "Descripción Modificador",
+        "Mapa de Geolocalización"
+      ],
+      "datos": [
+        {
+          "Tipo CALE": "CALE.C2",
+          "Cantidad": "31",
+          "Descripción Modificador": "Satélites cercanos (< 50 km)",
+          "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (31) CALE.C2"
+        },
+        {
+          "Tipo CALE": "CALE.C3",
+          "Cantidad": "69",
+          "Descripción Modificador": "Satélites rango medio (50-100 km)",
+          "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (69) CALE.C3"
+        },
+        {
+          "Tipo CALE": "CALE.C4",
+          "Cantidad": "27",
+          "Descripción Modificador": "Satélites remotos (100-150 km)",
+          "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (27) CALE.C4"
+        },
+        {
+          "Tipo CALE": "CALE.C5",
+          "Cantidad": "14",
+          "Descripción Modificador": "Satélites muy remotos (> 150 km)",
+          "Mapa de Geolocalización": "Topología SNCALE BIM - filtrar: (14) CALE.C5"
+        }
+      ],
+      "nivel": "red_satelites"
+    }
+  ]
+}

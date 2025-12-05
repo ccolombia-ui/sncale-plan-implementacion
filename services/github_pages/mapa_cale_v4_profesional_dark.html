@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Red CALE - Tema Profesional | Proyecto MUNAY</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #1e1e1e;
+            --bg-secondary: #252526;
+            --bg-tertiary: #2d2d30;
+            --border-color: #3e3e42;
+            --text-primary: #cccccc;
+            --text-secondary: #858585;
+            --text-muted: #6b6b6b;
+            --accent-blue: #4a90e2;
+            --accent-green: #50e3c2;
+            --accent-red: #e74c3c;
+            --hover-bg: #3e3e42;
+            --active-bg: #4a90e2;
+        }
+
+        body {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* ===== SCROLLBARS ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+
+        /* ===== LAYOUT PRINCIPAL ===== */
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* ===== HEADER / TOOLBAR ===== */
+        .header {
+            height: 50px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 3000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            letter-spacing: 0.5px;
+        }
+
+        .header-title {
+            font-size: 14px;
+            color: var(--text-primary);
+            border-left: 1px solid var(--border-color);
+            padding-left: 15px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 20px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+        }
+
+        .header-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .header-stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .header-stat-label {
+            font-size: 10px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== CONTENT AREA ===== */
+        .content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* ===== SIDEBAR IZQUIERDO ===== */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+        }
+
+        .sidebar-header h3 {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-search {
+            width: 100%;
+            padding: 8px 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-search:focus {
+            border-color: var(--accent-blue);
+            background: var(--bg-secondary);
+        }
+
+        .sidebar-search::placeholder {
+            color: var(--text-muted);
+        }
+
+        .sidebar-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        /* ===== CATEGORIAS FILTER (TOP BAR IN SIDEBAR) ===== */
+        .filter-section {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-tertiary);
+        }
+
+        .filter-title {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 11px;
+        }
+
+        .filter-item:hover {
+            background: var(--hover-bg);
+        }
+
+        .filter-item.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: #fff;
+        }
+
+        .filter-item input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+            margin-right: 6px;
+            cursor: pointer;
+            accent-color: var(--accent-blue);
+        }
+
+        .filter-color-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+
+        .filter-clear {
+            margin-top: 10px;
+            width: 100%;
+            padding: 6px;
+            background: var(--accent-red);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+
+        .filter-clear:hover {
+            opacity: 0.9;
+        }
+
+        /* ===== TREE HIERARCHY ===== */
+        .tree-node {
+            margin: 5px 0;
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            padding: 6px 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+            font-size: 13px;
+        }
+
+        .tree-item:hover {
+            background: var(--hover-bg);
+        }
+
+        .tree-item.active {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+
+        .tree-checkbox {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            cursor: pointer;
+            accent-color: var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        .tree-expand {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 10px;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .tree-expand.expanded {
+            transform: rotate(90deg);
+        }
+
+        .tree-icon {
+            width: 16px;
+            margin-right: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .tree-label {
+            flex: 1;
+            font-size: 13px;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tree-count {
+            font-size: 11px;
+            font-family: 'Roboto Mono', monospace;
+            color: var(--text-secondary);
+            background: var(--bg-primary);
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+
+        .tree-children {
+            margin-left: 20px;
+            display: none;
+            border-left: 1px solid var(--border-color);
+            padding-left: 8px;
+        }
+
+        .tree-children.expanded {
+            display: block;
+        }
+
+        .region-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+
+        /* ===== MAPA PRINCIPAL ===== */
+        .map-container {
+            flex: 1;
+            position: relative;
+            background: var(--bg-primary);
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ===== PANEL DERECHO (PROPIEDADES) ===== */
+        .properties-panel {
+            width: 300px;
+            background: var(--bg-primary);
+            border-left: 1px solid var(--border-color);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .properties-panel.active {
+            display: flex;
+        }
+
+        .properties-header {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+        }
+
+        .properties-header h3 {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .properties-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        /* ===== LEGEND (OVERLAY ON MAP) ===== */
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            z-index: 1000;
+            min-width: 200px;
+        }
+
+        .legend h4 {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            font-size: 12px;
+            color: var(--text-primary);
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* ===== LOADING OVERLAY ===== */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 30, 30, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5000;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border-color);
+            border-top: 3px solid var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* ===== CACHE INFO ===== */
+        .cache-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            font-size: 11px;
+            font-family: 'Roboto Mono', monospace;
+            color: var(--text-secondary);
+            z-index: 1000;
+        }
+
+        /* ===== VERSION BADGE ===== */
+        .version-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--accent-green);
+            color: var(--bg-primary);
+            padding: 8px 15px;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 3000;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== POPUPS ===== */
+        .leaflet-popup-content-wrapper {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .leaflet-popup-tip {
+            background: var(--bg-secondary);
+        }
+
+        .popup-content h3 {
+            color: var(--accent-blue);
+            margin: 0 0 10px 0;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .popup-content p {
+            margin: 5px 0;
+            color: var(--text-primary);
+            font-size: 13px;
+        }
+
+        .popup-content strong {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--accent-blue);
+            color: #fff;
+            font-weight: 500;
+            font-size: 11px;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .modal-header h2 {
+            color: var(--accent-blue);
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .modal-close {
+            background: var(--accent-red);
+            color: #fff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .modal-close:hover {
+            opacity: 0.8;
+        }
+
+        /* ===== LEAFLET CONTROLS STYLING ===== */
+        .leaflet-control-zoom a,
+        .leaflet-control-layers-toggle {
+            background-color: var(--bg-secondary) !important;
+            color: var(--text-primary) !important;
+            border: 1px solid var(--border-color) !important;
+        }
+
+        .leaflet-control-zoom a:hover {
+            background-color: var(--hover-bg) !important;
+        }
+
+        .leaflet-bar a {
+            color: var(--text-primary) !important;
+        }
+
+        /* ===== ERROR MESSAGE ===== */
+        .error {
+            background: var(--bg-secondary);
+            color: var(--accent-red);
+            padding: 15px;
+            border-left: 4px solid var(--accent-red);
+            margin: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: absolute;
+                left: -280px;
+                top: 50px;
+                height: calc(100vh - 50px);
+                z-index: 2500;
+                transition: left 0.3s ease;
+            }
+
+            .sidebar.open {
+                left: 0;
+            }
+
+            .header-stats {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <div class="header-logo">RED CALE</div>
+                <div class="header-title">Sistema de Capacitación en Logística Eléctrica</div>
+            </div>
+            <div class="header-right">
+                <div class="header-stats" id="header-stats">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <!-- SIDEBAR IZQUIERDO -->
+            <aside class="sidebar">
+                <!-- FILTROS DE CATEGORÍAS -->
+                <div class="filter-section">
+                    <div class="filter-title">Filtrar por Categoría</div>
+                    <div class="filter-grid" id="filter-grid">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                    <button class="filter-clear" onclick="limpiarFiltrosCategorias()">Limpiar Filtros</button>
+                </div>
+
+                <!-- SEARCH -->
+                <div class="sidebar-header">
+                    <h3>Jerarquía de Nodos</h3>
+                    <input type="text" class="sidebar-search" id="sidebar-search" placeholder="Buscar centro o municipio...">
+                </div>
+
+                <!-- TREE -->
+                <div class="sidebar-content" id="sidebar-tree">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </aside>
+
+            <!-- MAPA -->
+            <main class="map-container">
+                <div id="loading" class="loading-overlay">
+                    <div class="loading-content">
+                        <div class="loading-spinner"></div>
+                        <p class="loading-text">Cargando datos desde proxy seguro...</p>
+                    </div>
+                </div>
+                <div id="cache-info" class="cache-info" style="display:none;"></div>
+                <div id="map"></div>
+                <div class="legend">
+                    <h4>Categorías CALE</h4>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #2563eb;"></div>
+                        <span>CALE.n_1</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #16a34a;"></div>
+                        <span>CALE.n_2</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ea580c;"></div>
+                        <span>CALE.n_3</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #dc2626;"></div>
+                        <span>C2/C3/C4/C5</span>
+                    </div>
+                </div>
+            </main>
+
+            <!-- PANEL DERECHO (OPCIONAL) -->
+            <aside class="properties-panel" id="properties-panel">
+                <div class="properties-header">
+                    <h3>Propiedades</h3>
+                </div>
+                <div class="properties-content" id="properties-content">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- VERSION BADGE -->
+    <div class="version-badge">
+        v4.0 - Dark Theme
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal-centro" class="modal-overlay" onclick="cerrarModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-titulo">Información del Centro</h2>
+                <button class="modal-close" onclick="cerrarModal()">×</button>
+            </div>
+            <div id="modal-body">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- CALE Data Loader - PROXY SEGURO -->
+    <script src="js/cale-data-loader.js"></script>
+
+    <script>
+        console.log('%c🌑 Mapa CALE v4 - Tema Profesional Oscuro', 'color: #4a90e2; font-size: 16px; font-weight: bold;');
+        console.log('Datos cargados desde proxy seguro con Service Account');
+        console.log('Proxy URL: https://cale-proxy.ccolombia.workers.dev');
+
+        // ============================================================================
+        // CONFIGURACIÓN
+        // ============================================================================
+
+        const loader = new CALEDataLoader();
+
+        const COLORES_CATEGORIAS = {
+            'Cat.A+': '#9333ea', 'CALE.n_1+': '#9333ea',
+            'Cat.A': '#2563eb', 'CALE.n_1': '#2563eb',
+            'Cat.B**': '#059669', 'CALE.n_2**': '#059669',
+            'Cat.B': '#16a34a', 'CALE.n_2': '#16a34a',
+            'Cat.C1': '#ea580c', 'CALE.n_3': '#ea580c',
+            'C2': '#dc2626', 'C3': '#dc2626', 'C4': '#dc2626', 'C5': '#dc2626'
+        };
+
+        const TAMANOS_MARCADORES = {
+            'Cat.A+': 12, 'CALE.n_1+': 12,
+            'Cat.A': 10, 'CALE.n_1': 10,
+            'Cat.B**': 8, 'CALE.n_2**': 8,
+            'Cat.B': 8, 'CALE.n_2': 8,
+            'Cat.C1': 6, 'CALE.n_3': 6,
+            'C2': 5, 'C3': 5, 'C4': 5, 'C5': 5
+        };
+
+        const COLORES_REGIONES = [
+            '#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6',
+            '#1abc9c', '#e67e22', '#34495e', '#16a085', '#27ae60',
+            '#2980b9', '#8e44ad', '#c0392b', '#d35400', '#7f8c8d',
+            '#95a5a6', '#f1c40f', '#e84393', '#00b894', '#0984e3'
+        ];
+
+        const CATEGORIAS_CALE = [
+            { id: 'CALE.n_1', nombre: 'CALE.n_1', color: '#2563eb' },
+            { id: 'CALE.n_2', nombre: 'CALE.n_2', color: '#16a34a' },
+            { id: 'CALE.n_3', nombre: 'CALE.n_3', color: '#ea580c' },
+            { id: 'CALE.C2', nombre: 'C2', color: '#dc2626' },
+            { id: 'CALE.C3', nombre: 'C3', color: '#dc2626' },
+            { id: 'CALE.C4', nombre: 'C4', color: '#dc2626' },
+            { id: 'CALE.C5', nombre: 'C5', color: '#dc2626' }
+        ];
+
+        let todosMarcadores = [];
+        let mapaGlobal = null;
+        let centrosGlobal = [];
+        let iebmGlobal = [];
+        let marcadoresIEBM = [];
+        let datosJerarquia = null;
+        let mapaColoresNodoRaiz = {};
+        let nodosSeleccionados = new Set();
+        let categoriasSeleccionadas = new Set();
+        let capaPoligonosMunicipios = null;
+        let municipiosGeoJSON = null;
+
+        const MUNICIPIOS_GEOJSON_URL = 'https://gist.githubusercontent.com/john-guerra/727e8992e9599b9d9f1dbfdc4c8e479e/raw/090f8b935a437e24d65b64d87598fbb437c006da/colombia-municipios.json';
+
+        let seleccionJerarquica = {
+            nodos: new Set(),
+            satelites: new Set(),
+            iebm: new Set()
+        };
+
+        // ============================================================================
+        // FUNCIONES DE CARGA DE DATOS
+        // ============================================================================
+
+        async function cargarCentrosCALE() {
+            try {
+                console.log('📥 Cargando centros CALE desde proxy seguro...');
+                const centros = await loader.cargarNodos();
+                console.log(`✓ Cargados ${centros.length} centros desde proxy`);
+
+                const cacheInfo = loader.getCacheInfo();
+                if (cacheInfo.nodos && cacheInfo.nodos.is_valid) {
+                    mostrarInfoCache(cacheInfo.nodos.time_left_ms);
+                }
+
+                return centros;
+
+            } catch (error) {
+                console.error('❌ Error cargando centros:', error);
+                throw error;
+            }
+        }
+
+        function mostrarInfoCache(timeLeft) {
+            const cacheInfo = document.getElementById('cache-info');
+            if (timeLeft > 0) {
+                const minutos = Math.floor(timeLeft / 60000);
+                const segundos = Math.floor((timeLeft % 60000) / 1000);
+                cacheInfo.textContent = `Cache: ${minutos}:${segundos.toString().padStart(2, '0')}`;
+                cacheInfo.style.display = 'block';
+            }
+        }
+
+        async function cargarIEBM() {
+            try {
+                console.log('⚠️ IEBM: Endpoint no disponible en proxy actual');
+                return [];
+            } catch (error) {
+                console.error('❌ Error cargando IEBM:', error);
+                return [];
+            }
+        }
+
+        function calcularNodoRaiz(centros) {
+            console.log('📊 Calculando nodo_raiz para todos los centros...');
+
+            centros.forEach(centro => {
+                const centroId = centro.centro_id || '';
+                const esNodoRaiz = centroId.startsWith('NODO_');
+
+                if (esNodoRaiz) {
+                    centro.nodo_raiz = centro.centro_id;
+                } else {
+                    centro.nodo_raiz = centro.nodo_principal || 'SIN_NODO';
+                }
+            });
+
+            const nodosRaiz = new Set(centros.map(c => c.nodo_raiz));
+            console.log(`✓ ${nodosRaiz.size} nodos raíz identificados`);
+
+            return centros;
+        }
+
+        async function cargarMunicipiosGeoJSON() {
+            try {
+                console.log('🗺️ Cargando GeoJSON de municipios colombianos...');
+                const response = await fetch(MUNICIPIOS_GEOJSON_URL);
+
+                if (!response.ok) {
+                    throw new Error(`Error HTTP: ${response.status}`);
+                }
+
+                const geojson = await response.json();
+                console.log(`✓ Cargados ${geojson.features.length} municipios`);
+
+                return geojson;
+
+            } catch (error) {
+                console.error('❌ Error cargando GeoJSON de municipios:', error);
+                console.warn('⚠️ Continuando sin polígonos municipales');
+                return null;
+            }
+        }
+
+        function asignarNodoRaizAMunicipios(geojson, centros) {
+            if (!geojson || !geojson.features || !Array.isArray(geojson.features)) {
+                console.warn('⚠️ GeoJSON inválido o sin features');
+                return null;
+            }
+
+            console.log('🎨 Asignando nodo_raiz a municipios...');
+
+            const municipioToNodoRaiz = {};
+
+            centros.forEach(centro => {
+                const municipio = centro.municipio;
+                const nodoRaiz = centro.nodo_raiz;
+
+                if (municipio && nodoRaiz) {
+                    const municipioNorm = municipio.toUpperCase().trim();
+
+                    if (!municipioToNodoRaiz[municipioNorm]) {
+                        municipioToNodoRaiz[municipioNorm] = nodoRaiz;
+                    }
+                }
+            });
+
+            let asignados = 0;
+            geojson.features.forEach(feature => {
+                if (!feature || !feature.properties) return;
+
+                const nombreMunicipio = (feature.properties.MPIO_CNMBR || feature.properties.nombre || '').toUpperCase().trim();
+
+                if (municipioToNodoRaiz[nombreMunicipio]) {
+                    feature.properties.nodo_raiz = municipioToNodoRaiz[nombreMunicipio];
+                    asignados++;
+                } else {
+                    feature.properties.nodo_raiz = null;
+                }
+            });
+
+            console.log(`✓ ${asignados} municipios asignados a nodos raíz`);
+
+            return geojson;
+        }
+
+        function crearMapaColoresNodoRaiz(centros) {
+            const nodosRaiz = [...new Set(centros.map(c => c.nodo_raiz))].filter(n => n !== 'SIN_NODO').sort();
+            const mapaColores = {};
+
+            nodosRaiz.forEach((nodoRaiz, index) => {
+                mapaColores[nodoRaiz] = COLORES_REGIONES[index % COLORES_REGIONES.length];
+            });
+
+            console.log('🎨 Mapa de colores por nodo_raiz:', mapaColores);
+            return mapaColores;
+        }
+
+        function renderizarPoligonosMunicipales(geojson, mapaColores) {
+            if (!geojson || !geojson.features || !Array.isArray(geojson.features) || !mapaGlobal) {
+                console.warn('⚠️ No se pueden renderizar polígonos: datos inválidos');
+                return;
+            }
+
+            console.log('🗺️ Renderizando polígonos municipales...');
+
+            if (capaPoligonosMunicipios) {
+                mapaGlobal.removeLayer(capaPoligonosMunicipios);
+            }
+
+            capaPoligonosMunicipios = L.geoJSON(geojson, {
+                style: function(feature) {
+                    const nodoRaiz = feature.properties.nodo_raiz;
+                    const color = nodoRaiz ? (mapaColores[nodoRaiz] || '#3e3e42') : '#2d2d30';
+
+                    return {
+                        fillColor: color,
+                        fillOpacity: 0.2,
+                        color: '#3e3e42',
+                        weight: 1,
+                        opacity: 0.5
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    const nombreMunicipio = feature.properties.MPIO_CNMBR || feature.properties.nombre || 'Desconocido';
+                    const nodoRaiz = feature.properties.nodo_raiz || 'Sin asignar';
+
+                    layer.bindPopup(`
+                        <div class="popup-content">
+                            <h3>${nombreMunicipio}</h3>
+                            <p><strong>Nodo CALE:</strong> ${nodoRaiz}</p>
+                        </div>
+                    `);
+                }
+            });
+
+            capaPoligonosMunicipios.addTo(mapaGlobal);
+            capaPoligonosMunicipios.bringToBack();
+
+            console.log('✓ Polígonos municipales renderizados');
+        }
+
+        // ============================================================================
+        // INICIALIZACIÓN DEL MAPA
+        // ============================================================================
+
+        async function inicializarMapa() {
+            try {
+                let centros = await cargarCentrosCALE();
+                const iebm = await cargarIEBM();
+                iebmGlobal = iebm;
+
+                centros = calcularNodoRaiz(centros);
+                mapaColoresNodoRaiz = crearMapaColoresNodoRaiz(centros);
+
+                let municipiosGeo = await cargarMunicipiosGeoJSON();
+
+                if (municipiosGeo) {
+                    municipiosGeo = asignarNodoRaizAMunicipios(municipiosGeo, centros);
+                    municipiosGeoJSON = municipiosGeo;
+                }
+
+                document.getElementById('loading').style.display = 'none';
+
+                const mapa = L.map('map').setView([4.5709, -74.2973], 6);
+                mapaGlobal = mapa;
+
+                // TILES OSCUROS - CartoDB Dark Matter
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 20
+                }).addTo(mapa);
+
+                centros.forEach(centro => {
+                    const latStr = (centro.latitud || '').toString().replace(',', '.');
+                    const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                    const lat = parseFloat(latStr);
+                    const lng = parseFloat(lngStr);
+
+                    if (isNaN(lat) || isNaN(lng)) return;
+
+                    const categoria = centro.categoria_cale || centro.categoria || 'C2';
+                    const color = COLORES_CATEGORIAS[categoria] || '#dc2626';
+                    const radio = TAMANOS_MARCADORES[categoria] || 5;
+
+                    const marker = L.circleMarker([lat, lng], {
+                        radius: radio,
+                        fillColor: color,
+                        color: '#ffffff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+
+                    const centroId = centro.centro_id || 'desconocido';
+                    const popupContent = `
+                        <div class="popup-content">
+                            <h3>${centroId}</h3>
+                            <p><strong>Municipio:</strong> ${centro.municipio || 'N/A'}</p>
+                            <p><strong>Departamento:</strong> ${centro.departamento || 'N/A'}</p>
+                            <p><strong>Demanda Anual:</strong> ${parseInt(centro.demanda_estimada_anual || 0).toLocaleString()} aspirantes</p>
+                            ${centro.nodo_principal ? `<p><strong>Nodo Principal:</strong> ${centro.nodo_principal}</p>` : ''}
+                            <span class="category-badge">${categoria}</span>
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+                    marker.addTo(mapa);
+                    todosMarcadores.push({ marker, centro, categoria });
+                });
+
+                mostrarEstadisticas(centros);
+
+                centrosGlobal = centros;
+                datosJerarquia = construirJerarquia(centros);
+                renderizarArbol(datosJerarquia);
+
+                if (municipiosGeoJSON) {
+                    renderizarPoligonosMunicipales(municipiosGeoJSON, mapaColoresNodoRaiz);
+                }
+
+                crearFiltrosCategorias();
+
+                console.log(`✓ Mapa inicializado con ${todosMarcadores.length} marcadores CALE + ${iebm.length} IEBM`);
+
+            } catch (error) {
+                console.error('❌ Error inicializando mapa:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="error">
+                        <strong>Error al cargar datos</strong>
+                        <p>${error.message}</p>
+                        <button onclick="location.reload()" style="margin-top:10px; padding:8px 16px; cursor:pointer;">Reintentar</button>
+                    </div>
+                `;
+            }
+        }
+
+        // ============================================================================
+        // FUNCIONES DE UI
+        // ============================================================================
+
+        function mostrarEstadisticas(centros) {
+            const stats = {
+                total: centros.length,
+                nodos: centros.filter(c => {
+                    const cat = (c.categoria_cale || c.categoria || '').trim();
+                    return cat === 'Cat.A+' || cat === 'Cat.A';
+                }).length,
+                satelites: centros.filter(c => {
+                    const cat = (c.categoria_cale || c.categoria || '').trim();
+                    return cat !== 'Cat.A+' && cat !== 'Cat.A';
+                }).length,
+                demandaTotal: centros.reduce((sum, c) => {
+                    const demanda = parseInt(c.demanda_estimada_anual || 0);
+                    return sum + demanda;
+                }, 0)
+            };
+
+            document.getElementById('header-stats').innerHTML = `
+                <div class="header-stat">
+                    <div class="header-stat-value">${stats.total}</div>
+                    <div class="header-stat-label">Centros</div>
+                </div>
+                <div class="header-stat">
+                    <div class="header-stat-value">${stats.nodos}</div>
+                    <div class="header-stat-label">Nodos</div>
+                </div>
+                <div class="header-stat">
+                    <div class="header-stat-value">${stats.demandaTotal.toLocaleString()}</div>
+                    <div class="header-stat-label">Demanda</div>
+                </div>
+            `;
+        }
+
+        function crearFiltrosCategorias() {
+            const filterContainer = document.getElementById('filter-grid');
+            let html = '';
+
+            CATEGORIAS_CALE.forEach(cat => {
+                html += `
+                    <label class="filter-item" id="filter-cat-${cat.id}">
+                        <input type="checkbox"
+                               value="${cat.id}"
+                               onchange="toggleCategoriaFiltro('${cat.id}', this.checked)">
+                        <span class="filter-color-dot" style="background: ${cat.color};"></span>
+                        <span>${cat.nombre}</span>
+                    </label>
+                `;
+            });
+
+            filterContainer.innerHTML = html;
+        }
+
+        function toggleCategoriaFiltro(categoriaId, checked) {
+            console.log(`🎯 Filtro categoría ${categoriaId}: ${checked ? 'activado' : 'desactivado'}`);
+
+            if (checked) {
+                categoriasSeleccionadas.add(categoriaId);
+            } else {
+                categoriasSeleccionadas.delete(categoriaId);
+            }
+
+            const label = document.getElementById(`filter-cat-${categoriaId}`);
+            if (checked) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+
+            aplicarFiltrosCategorias();
+        }
+
+        function aplicarFiltrosCategorias() {
+            if (categoriasSeleccionadas.size === 0) {
+                todosMarcadores.forEach(({ marker }) => {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                });
+                return;
+            }
+
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const mostrar = categoriasSeleccionadas.has(cat);
+
+                if (mostrar) {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                }
+            });
+        }
+
+        function limpiarFiltrosCategorias() {
+            categoriasSeleccionadas.clear();
+
+            document.querySelectorAll('#filter-grid input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+
+            document.querySelectorAll('.filter-item').forEach(label => {
+                label.classList.remove('active');
+            });
+
+            aplicarFiltrosCategorias();
+        }
+
+        function cerrarModal(event) {
+            const modal = document.getElementById('modal-centro');
+            if (!event || event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // ============================================================================
+        // FUNCIONES DE JERARQUÍA
+        // ============================================================================
+
+        function construirJerarquia(centros) {
+            const jerarquia = {};
+
+            centros.forEach(centro => {
+                const cat = centro.categoria_cale || centro.categoria || '';
+                const centroId = centro.centro_id || '';
+
+                const esNodo = centroId.startsWith('NODO_');
+                const nodoPrincipal = esNodo ? centro.centro_id : (centro.nodo_principal || 'SIN_NODO');
+
+                if (!jerarquia[nodoPrincipal]) {
+                    jerarquia[nodoPrincipal] = {
+                        nodo: esNodo ? centro : null,
+                        satelites: { n2: [], n3: [], c2: [], c3: [], c4: [], c5: [] },
+                        demandaTotal: 0
+                    };
+                }
+
+                if (esNodo) {
+                    jerarquia[nodoPrincipal].nodo = centro;
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                } else {
+                    let tipo = 'c2';
+                    if (cat === 'Cat.B' || cat === 'Cat.B**' || cat === 'CALE.n_2' || cat === 'CALE.n_2**') tipo = 'n2';
+                    else if (cat === 'Cat.C1' || cat === 'CALE.n_3') tipo = 'n3';
+                    else if (cat === 'C3') tipo = 'c3';
+                    else if (cat === 'C4') tipo = 'c4';
+                    else if (cat === 'C5') tipo = 'c5';
+
+                    jerarquia[nodoPrincipal].satelites[tipo].push(centro);
+                    jerarquia[nodoPrincipal].demandaTotal += parseInt(centro.demanda_estimada_anual || 0);
+                }
+            });
+
+            return jerarquia;
+        }
+
+        function renderizarArbol(jerarquia) {
+            const treeContainer = document.getElementById('sidebar-tree');
+            let html = '';
+
+            const nodosOrdenados = Object.entries(jerarquia)
+                .filter(([key, data]) => data.nodo !== null)
+                .sort((a, b) => b[1].demandaTotal - a[1].demandaTotal);
+
+            if (nodosOrdenados.length === 0) {
+                treeContainer.innerHTML = '<p style="padding: 20px; text-align: center; color: var(--text-secondary);">No hay nodos disponibles</p>';
+                return;
+            }
+
+            nodosOrdenados.forEach(([centroId, data], index) => {
+                const nodo = data.nodo;
+                const municipio = nodo.municipio || 'N/A';
+                const demanda = data.demandaTotal.toLocaleString();
+                const colorRegion = mapaColoresNodoRaiz[centroId] || COLORES_REGIONES[index % COLORES_REGIONES.length];
+
+                html += `
+                    <div class="tree-node" style="margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                        <div class="tree-item">
+                            <input type="checkbox"
+                                   class="tree-checkbox"
+                                   id="check-nodo-${centroId}"
+                                   onchange="toggleNodoPrincipal('${centroId}', this.checked)"
+                                   onclick="event.stopPropagation()">
+                            <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}')">▶</span>
+                            <div class="region-color" style="background: ${colorRegion};"></div>
+                            <span class="tree-icon">⬢</span>
+                            <span class="tree-label" onclick="centrarEnMarcador('${centroId}')" style="font-weight: 500; cursor: pointer;">${municipio}</span>
+                            <span class="tree-count">${demanda}</span>
+                        </div>
+                        <div class="tree-children" id="tree-${centroId}">
+                `;
+
+                // Satélites CALE.n_2
+                if (data.satelites.n2.length > 0) {
+                    const demandaN2 = data.satelites.n2.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item">
+                                <input type="checkbox"
+                                       class="tree-checkbox"
+                                       id="check-grupo-${centroId}-n2"
+                                       onchange="toggleGrupoSatelites('${centroId}', 'n2', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n2')">▶</span>
+                                <span class="tree-icon">◆</span>
+                                <span class="tree-label">CALE.n_2 (${data.satelites.n2.length})</span>
+                                <span class="tree-count">${demandaN2.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n2">
+                    `;
+                    data.satelites.n2.forEach(sat => {
+                        const satId = sat.centro_id;
+                        html += `
+                            <div class="tree-item" style="padding-left: 10px;">
+                                <input type="checkbox"
+                                       class="tree-checkbox checkbox-satelite"
+                                       data-nodo="${centroId}"
+                                       data-grupo="n2"
+                                       id="check-sat-${satId}"
+                                       onchange="toggleSateliteIndividual('${centroId}', '${satId}', 'n2', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-icon">○</span>
+                                <span class="tree-label" onclick="centrarEnMarcador('${satId}')" style="cursor: pointer;">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites CALE.n_3
+                if (data.satelites.n3.length > 0) {
+                    const demandaN3 = data.satelites.n3.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item">
+                                <input type="checkbox"
+                                       class="tree-checkbox"
+                                       id="check-grupo-${centroId}-n3"
+                                       onchange="toggleGrupoSatelites('${centroId}', 'n3', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-n3')">▶</span>
+                                <span class="tree-icon">◆</span>
+                                <span class="tree-label">CALE.n_3 (${data.satelites.n3.length})</span>
+                                <span class="tree-count">${demandaN3.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-n3">
+                    `;
+                    data.satelites.n3.forEach(sat => {
+                        const satId = sat.centro_id;
+                        html += `
+                            <div class="tree-item" style="padding-left: 10px;">
+                                <input type="checkbox"
+                                       class="tree-checkbox checkbox-satelite"
+                                       data-nodo="${centroId}"
+                                       data-grupo="n3"
+                                       id="check-sat-${satId}"
+                                       onchange="toggleSateliteIndividual('${centroId}', '${satId}', 'n3', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-icon">○</span>
+                                <span class="tree-label" onclick="centrarEnMarcador('${satId}')" style="cursor: pointer;">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                // Satélites C2-C5
+                const satelitesC = [...data.satelites.c2, ...data.satelites.c3, ...data.satelites.c4, ...data.satelites.c5];
+                if (satelitesC.length > 0) {
+                    const demandaC = satelitesC.reduce((sum, c) => sum + parseInt(c.demanda_estimada_anual || 0), 0);
+                    html += `
+                        <div class="tree-node">
+                            <div class="tree-item">
+                                <input type="checkbox"
+                                       class="tree-checkbox"
+                                       id="check-grupo-${centroId}-c"
+                                       onchange="toggleGrupoSatelites('${centroId}', 'c', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-expand" onclick="toggleTreeNode(event, '${centroId}-c')">▶</span>
+                                <span class="tree-icon">◇</span>
+                                <span class="tree-label">Satélites C2-C5 (${satelitesC.length})</span>
+                                <span class="tree-count">${demandaC.toLocaleString()}</span>
+                            </div>
+                            <div class="tree-children" id="tree-${centroId}-c">
+                    `;
+                    satelitesC.forEach(sat => {
+                        const satId = sat.centro_id;
+                        const cat = sat.categoria_cale || sat.categoria || '';
+                        html += `
+                            <div class="tree-item" style="padding-left: 10px;">
+                                <input type="checkbox"
+                                       class="tree-checkbox checkbox-satelite"
+                                       data-nodo="${centroId}"
+                                       data-grupo="c"
+                                       id="check-sat-${satId}"
+                                       onchange="toggleSateliteIndividual('${centroId}', '${satId}', 'c', this.checked)"
+                                       onclick="event.stopPropagation()">
+                                <span class="tree-icon">${cat}</span>
+                                <span class="tree-label" onclick="centrarEnMarcador('${satId}')" style="cursor: pointer;">${sat.municipio}</span>
+                                <span class="tree-count">${parseInt(sat.demanda_estimada_anual || 0).toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+                    html += `</div></div>`;
+                }
+
+                html += `</div></div>`;
+            });
+
+            treeContainer.innerHTML = html;
+
+            setTimeout(() => {
+                nodosOrdenados.slice(0, 3).forEach(([centroId]) => {
+                    const childrenDiv = document.getElementById(`tree-${centroId}`);
+                    const expandBtn = childrenDiv?.previousElementSibling?.querySelector('.tree-expand');
+                    if (childrenDiv && expandBtn) {
+                        childrenDiv.classList.add('expanded');
+                        expandBtn.classList.add('expanded');
+                    }
+                });
+            }, 100);
+        }
+
+        function toggleTreeNode(event, nodeId) {
+            event.stopPropagation();
+            const children = document.getElementById(`tree-${nodeId}`);
+            const expand = event.target;
+
+            if (children) {
+                children.classList.toggle('expanded');
+                expand.classList.toggle('expanded');
+            }
+        }
+
+        function toggleNodoPrincipal(centroId, checked) {
+            console.log(`⬢ Toggle nodo principal ${centroId}: ${checked ? 'seleccionado' : 'deseleccionado'}`);
+
+            if (checked) {
+                seleccionJerarquica.nodos.add(centroId);
+
+                ['n2', 'n3', 'c'].forEach(grupo => {
+                    const checkGrupo = document.getElementById(`check-grupo-${centroId}-${grupo}`);
+                    if (checkGrupo) {
+                        checkGrupo.checked = true;
+                        toggleGrupoSatelites(centroId, grupo, true, true);
+                    }
+                });
+            } else {
+                seleccionJerarquica.nodos.delete(centroId);
+
+                ['n2', 'n3', 'c'].forEach(grupo => {
+                    const checkGrupo = document.getElementById(`check-grupo-${centroId}-${grupo}`);
+                    if (checkGrupo) {
+                        checkGrupo.checked = false;
+                        toggleGrupoSatelites(centroId, grupo, false, true);
+                    }
+                });
+            }
+
+            actualizarVisualizacion();
+        }
+
+        function toggleGrupoSatelites(centroId, grupo, checked, skipUpdate = false) {
+            console.log(`◆ Toggle grupo ${grupo} de nodo ${centroId}: ${checked ? 'seleccionado' : 'deseleccionado'}`);
+
+            const checkboxesSatelites = document.querySelectorAll(
+                `.checkbox-satelite[data-nodo="${centroId}"][data-grupo="${grupo}"]`
+            );
+
+            checkboxesSatelites.forEach(checkbox => {
+                checkbox.checked = checked;
+                const satId = checkbox.id.replace('check-sat-', '');
+
+                if (checked) {
+                    seleccionJerarquica.satelites.add(satId);
+                } else {
+                    seleccionJerarquica.satelites.delete(satId);
+                }
+            });
+
+            if (!skipUpdate) {
+                actualizarVisualizacion();
+            }
+        }
+
+        function toggleSateliteIndividual(centroId, satId, grupo, checked) {
+            console.log(`○ Toggle satélite ${satId}: ${checked ? 'seleccionado' : 'deseleccionado'}`);
+
+            if (checked) {
+                seleccionJerarquica.satelites.add(satId);
+            } else {
+                seleccionJerarquica.satelites.delete(satId);
+            }
+
+            const checkboxesSatelites = document.querySelectorAll(
+                `.checkbox-satelite[data-nodo="${centroId}"][data-grupo="${grupo}"]`
+            );
+            const todosSeleccionados = Array.from(checkboxesSatelites).every(cb => cb.checked);
+
+            const checkGrupo = document.getElementById(`check-grupo-${centroId}-${grupo}`);
+            if (checkGrupo) {
+                checkGrupo.checked = todosSeleccionados;
+            }
+
+            actualizarVisualizacion();
+        }
+
+        function actualizarVisualizacion() {
+            console.log('🔄 Actualizando visualización del mapa...');
+
+            if (seleccionJerarquica.nodos.size === 0 && seleccionJerarquica.satelites.size === 0) {
+                todosMarcadores.forEach(({ marker }) => {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                });
+
+                marcadoresIEBM.forEach(marker => {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                });
+                marcadoresIEBM = [];
+
+                return;
+            }
+
+            const centrosAMostrar = new Set();
+
+            for (const nodoId of seleccionJerarquica.nodos) {
+                centrosAMostrar.add(nodoId);
+
+                todosMarcadores.forEach(({ centro }) => {
+                    if (centro.nodo_principal === nodoId) {
+                        centrosAMostrar.add(centro.centro_id);
+                    }
+                });
+            }
+
+            for (const satId of seleccionJerarquica.satelites) {
+                centrosAMostrar.add(satId);
+            }
+
+            todosMarcadores.forEach(({ marker, centro }) => {
+                const mostrar = centrosAMostrar.has(centro.centro_id);
+
+                if (mostrar) {
+                    if (!mapaGlobal.hasLayer(marker)) marker.addTo(mapaGlobal);
+                } else {
+                    if (mapaGlobal.hasLayer(marker)) mapaGlobal.removeLayer(marker);
+                }
+            });
+        }
+
+        function centrarEnMarcador(centroId) {
+            const centro = centrosGlobal.find(c => c.centro_id === centroId);
+            if (centro) {
+                const latStr = (centro.latitud || '').toString().replace(',', '.');
+                const lngStr = (centro.longitud || '').toString().replace(',', '.');
+                const lat = parseFloat(latStr);
+                const lng = parseFloat(lngStr);
+
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    mapaGlobal.setView([lat, lng], 12);
+
+                    const marcador = todosMarcadores.find(m => m.centro.centro_id === centroId);
+                    if (marcador) {
+                        marcador.marker.openPopup();
+                    }
+                }
+            }
+        }
+
+        // ============================================================================
+        // INICIALIZACIÓN
+        // ============================================================================
+        inicializarMapa();
+
+        setInterval(() => {
+            const cacheInfo = loader.getCacheInfo();
+            if (cacheInfo.nodos && cacheInfo.nodos.is_valid) {
+                mostrarInfoCache(cacheInfo.nodos.time_left_ms);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

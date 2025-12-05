@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice L0 - Elementos Atómicos CALE</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: #ecf0f1;
+            padding: 20px 30px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .stat-box h3 {
+            color: #3498db;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .stat-box p {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .btn-back {
+            background: white;
+            color: #2c3e50;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .btn-back:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .categoria-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .categoria-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+        .elementos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .elemento-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid;
+            transition: all 0.3s;
+        }
+        .elemento-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .elemento-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+        .elemento-card .codigo {
+            color: #7f8c8d;
+            font-size: 0.85em;
+            margin-bottom: 12px;
+        }
+        .elemento-card p {
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .elemento-card .unidad {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .elemento-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+        .elemento-card a:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="btn-back">← Volver al Inicio</a>
+        
+        <div class="header">
+            <h1>🔬 Nivel L0 - Elementos Atómicos</h1>
+            <p>Base del Modelo BIM - Componentes Individuales</p>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Total Elementos</h3>
+                    <p>91</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Categorías</h3>
+                    <p>18</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Completitud</h3>
+                    <p>100%</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Con Normatividad</h3>
+                    <p>✅ Sí</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #34495e; border-color: #34495e;">
+                Infraestructura Civil (IC) - 4 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #34495e;">
+                    <h3 style="color: #34495e;">Pavimento flexible asfalto e=12cm</h3>
+                    <div class="codigo">BIM_L0_001 · L0.IC_001</div>
+                    <p>Carpeta asfáltica MDC-19 sobre base granular</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="IC-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #34495e;">
+                    <h3 style="color: #34495e;">Pavimento rígido concreto Fc=21MPa e=15cm</h3>
+                    <div class="codigo">BIM_L0_002 · L0.IC_002</div>
+                    <p>Losa concreto hidráulico sobre subbase</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="IC-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #34495e;">
+                    <h3 style="color: #34495e;">Pavimento reforzado concreto Fc=28MPa e=20cm</h3>
+                    <div class="codigo">BIM_L0_003 · L0.IC_003</div>
+                    <p>Losa reforzada malla electrosoldada</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="IC-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #34495e;">
+                    <h3 style="color: #34495e;">Pavimento especial concreto Fc=35MPa e=25cm</h3>
+                    <div class="codigo">BIM_L0_004 · L0.IC_004</div>
+                    <p>Losa alta resistencia vehículos pesados</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="IC-004.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #3498db; border-color: #3498db;">
+                Drenajes (DR) - 3 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #3498db;">
+                    <h3 style="color: #3498db;">Cuneta concreto perimetral</h3>
+                    <div class="codigo">BIM_L0_005 · L0.DR_001</div>
+                    <p>Cuneta tipo 1 sección 0.30×0.30m</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="DR-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #3498db;">
+                    <h3 style="color: #3498db;">Sistema drenaje pluvial</h3>
+                    <div class="codigo">BIM_L0_006 · L0.DR_002</div>
+                    <p>Rejillas + tubería PVC sanitaria</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="DR-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #3498db;">
+                    <h3 style="color: #3498db;">Drenaje reforzado alta capacidad</h3>
+                    <div class="codigo">BIM_L0_007 · L0.DR_003</div>
+                    <p>Sistema para cargas pesadas</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="DR-003.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #e67e22; border-color: #e67e22;">
+                Señalización Vial (SV) - 4 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #e67e22;">
+                    <h3 style="color: #e67e22;">Señalización horizontal termoplástica</h3>
+                    <div class="codigo">BIM_L0_008 · L0.SV_001</div>
+                    <p>Pintura termoplástica reflectiva blanca/amarilla</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="SV-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #e67e22;">
+                    <h3 style="color: #e67e22;">Demarcación espacio vehicular</h3>
+                    <div class="codigo">BIM_L0_009 · L0.SV_002</div>
+                    <p>Líneas demarcación parqueadero</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="SV-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #e67e22;">
+                    <h3 style="color: #e67e22;">Conos reflectivos 90cm</h3>
+                    <div class="codigo">BIM_L0_010 · L0.SV_003</div>
+                    <p>Conos viales reflectivos naranja</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="SV-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #e67e22;">
+                    <h3 style="color: #e67e22;">Señalización vertical Tipo I</h3>
+                    <div class="codigo">BIM_L0_011 · L0.SV_004</div>
+                    <p>Señal reglamentaria/preventiva 0.75×0.75m</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="SV-004.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #c0392b; border-color: #c0392b;">
+                Seguridad (SEG) - 4 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #c0392b;">
+                    <h3 style="color: #c0392b;">Baranda metálica contención</h3>
+                    <div class="codigo">BIM_L0_012 · L0.SEG_001</div>
+                    <p>Defensa metálica doble onda galvanizada</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="SEG-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #c0392b;">
+                    <h3 style="color: #c0392b;">Kit seguridad evaluación</h3>
+                    <div class="codigo">BIM_L0_013 · L0.SEG_002</div>
+                    <p>Conos + señales + extintores + botiquín</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="SEG-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #c0392b;">
+                    <h3 style="color: #c0392b;">Sistema detección incendios</h3>
+                    <div class="codigo">BIM_L0_014 · L0.SEG_003</div>
+                    <p>Detectores de humo + alarma + rociadores</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="SEG-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #c0392b;">
+                    <h3 style="color: #c0392b;">Paquete seguros obligatorios</h3>
+                    <div class="codigo">BIM_L0_076 · L0.SEG_100</div>
+                    <p>RC + Accidentes Personales</p>
+                    <span class="unidad">📦 año</span>
+                    <a href="SEG-100.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #95a5a6; border-color: #95a5a6;">
+                Edificación (EDIF) - 1 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Edificación principal CALE</h3>
+                    <div class="codigo">BIM_L0_015 · L0.EDIF_001</div>
+                    <p>Construcción permanente 250 m²</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="EDIF-001.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #16a085; border-color: #16a085;">
+                Materiales (MAT) - 3 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Construcción área sanitarios</h3>
+                    <div class="codigo">BIM_L0_016 · L0.MAT_001</div>
+                    <p>Mampostería + instalaciones + acabados</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="MAT-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Concreto premezclado 3000 PSI</h3>
+                    <div class="codigo">BIM_L0_017 · L0.MAT_002</div>
+                    <p>Concreto estructural f'c=21MPa</p>
+                    <span class="unidad">📦 m³</span>
+                    <a href="MAT-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Acero estructural ASTM A36</h3>
+                    <div class="codigo">BIM_L0_018 · L0.MAT_003</div>
+                    <p>Perfiles metálicos estructura</p>
+                    <span class="unidad">📦 Ton</span>
+                    <a href="MAT-003.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #27ae60; border-color: #27ae60;">
+                Adecuaciones (ADEC) - 5 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #27ae60;">
+                    <h3 style="color: #27ae60;">Adecuaciones Drywall completas</h3>
+                    <div class="codigo">BIM_L0_019 · L0.ADEC_001</div>
+                    <p>Sistema liviano paredes + cielo + piso</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="ADEC-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #27ae60;">
+                    <h3 style="color: #27ae60;">Drywall paredes y divisiones</h3>
+                    <div class="codigo">BIM_L0_020 · L0.ADEC_002</div>
+                    <p>Paneles yeso 1/2" + perfilería metálica</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="ADEC-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #27ae60;">
+                    <h3 style="color: #27ae60;">Cielo raso suspendido</h3>
+                    <div class="codigo">BIM_L0_021 · L0.ADEC_003</div>
+                    <p>Cielo raso modular 0.60×0.60m</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="ADEC-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #27ae60;">
+                    <h3 style="color: #27ae60;">Piso vinílico LVT</h3>
+                    <div class="codigo">BIM_L0_022 · L0.ADEC_004</div>
+                    <p>Piso tipo LVT tráfico comercial</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="ADEC-004.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #27ae60;">
+                    <h3 style="color: #27ae60;">Cubículos evaluación</h3>
+                    <div class="codigo">BIM_L0_023 · L0.ADEC_005</div>
+                    <p>Cabinas individuales aislamiento acústico</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ADEC-005.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #f39c12; border-color: #f39c12;">
+                Instalaciones Eléctricas (ELE) - 11 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Acometida trifásica 220V 30A</h3>
+                    <div class="codigo">BIM_L0_024 · L0.ELE_001</div>
+                    <p>Tablero + breakers + cableado</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Instalaciones eléctricas complementarias</h3>
+                    <div class="codigo">BIM_L0_025 · L0.ELE_002</div>
+                    <p>Red eléctrica completa edificación</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="ELE-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Puesta tierra varilla 5/8"×2.4m</h3>
+                    <div class="codigo">BIM_L0_026 · L0.ELE_003</div>
+                    <p>Sistema puesta a tierra SPT</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Supresor de picos 6 tomas</h3>
+                    <div class="codigo">BIM_L0_027 · L0.ELE_004</div>
+                    <p>Protector sobretensiones</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-004.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">UPS 10kVA doble conversión</h3>
+                    <div class="codigo">BIM_L0_028 · L0.ELE_006</div>
+                    <p>Sistema alimentación ininterrumpida</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-006.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Panel solar fotovoltaico 550Wp</h3>
+                    <div class="codigo">BIM_L0_029 · L0.ELE_007</div>
+                    <p>Panel monocristalino PERC 550W</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-007.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Inversor solar híbrido 10kW</h3>
+                    <div class="codigo">BIM_L0_030 · L0.ELE_008</div>
+                    <p>Inversor on-grid/off-grid con MPPT</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-008.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Batería litio 5kWh</h3>
+                    <div class="codigo">BIM_L0_031 · L0.ELE_009</div>
+                    <p>Batería LiFePO4 ciclo profundo</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-009.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Controlador de carga solar MPPT 60A</h3>
+                    <div class="codigo">BIM_L0_032 · L0.ELE_010</div>
+                    <p>Controlador MPPT con display</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ELE-010.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Estructura montaje paneles solares</h3>
+                    <div class="codigo">BIM_L0_033 · L0.ELE_011</div>
+                    <p>Estructura aluminio inclinación ajustable</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="ELE-011.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #f39c12;">
+                    <h3 style="color: #f39c12;">Cableado DC fotovoltaico 6mm²</h3>
+                    <div class="codigo">BIM_L0_034 · L0.ELE_012</div>
+                    <p>Cable solar UV resistente 1000V</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="ELE-012.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #8e44ad; border-color: #8e44ad;">
+                Iluminación (ILU) - 2 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #8e44ad;">
+                    <h3 style="color: #8e44ad;">Luminaria LED 150W poste 8m</h3>
+                    <div class="codigo">BIM_L0_035 · L0.ILU_001</div>
+                    <p>Luminaria vial LED</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ILU-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #8e44ad;">
+                    <h3 style="color: #8e44ad;">Luminaria LED 200W poste 10m</h3>
+                    <div class="codigo">BIM_L0_036 · L0.ILU_002</div>
+                    <p>Luminaria alta potencia pesados</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ILU-002.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #2980b9; border-color: #2980b9;">
+                Climatización (HVAC) - 2 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #2980b9;">
+                    <h3 style="color: #2980b9;">Sistema HVAC precision datacenter</h3>
+                    <div class="codigo">BIM_L0_040 · L0.HVAC_001</div>
+                    <p>Aire acondicionado precisión 18-22°C</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="HVAC-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #2980b9;">
+                    <h3 style="color: #2980b9;">Sistema HVAC precision datacenter</h3>
+                    <div class="codigo">BIM_L0_040 · L0.HVAC_001</div>
+                    <p>Aire acondicionado precisión 18-22°C</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="HVAC-001.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #3498db; border-color: #3498db;">
+                Instalaciones Hidráulicas (HID) - 4 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #3498db;">
+                    <h3 style="color: #3498db;">Tubería PVC + válvulas</h3>
+                    <div class="codigo">BIM_L0_041 · L0.HID_001</div>
+                    <p>Sistema hidráulico sanitario</p>
+                    <span class="unidad">📦 lote</span>
+                    <a href="HID-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #3498db;">
+                    <h3 style="color: #3498db;">Baño completo instalado</h3>
+                    <div class="codigo">BIM_L0_042 · L0.HID_002</div>
+                    <p>Sanitario + lavamanos + accesorios</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="HID-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #3498db;">
+                    <h3 style="color: #3498db;">Tubería PVC + válvulas</h3>
+                    <div class="codigo">BIM_L0_041 · L0.HID_001</div>
+                    <p>Sistema hidráulico sanitario</p>
+                    <span class="unidad">📦 lote</span>
+                    <a href="HID-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #3498db;">
+                    <h3 style="color: #3498db;">Baño completo instalado</h3>
+                    <div class="codigo">BIM_L0_042 · L0.HID_002</div>
+                    <p>Sanitario + lavamanos + accesorios</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="HID-002.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #d35400; border-color: #d35400;">
+                Mobiliario (MOB) - 14 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Escritorio ergonómico 1.20×0.60m</h3>
+                    <div class="codigo">BIM_L0_037 · L0.MOB_001</div>
+                    <p>Mesa trabajo melamina 25mm</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="MOB-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Silla ergonómica ajustable</h3>
+                    <div class="codigo">BIM_L0_038 · L0.MOB_002</div>
+                    <p>Silla oficina respaldo alto</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="MOB-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Sillas universitarias</h3>
+                    <div class="codigo">BIM_L0_039 · L0.MOB_003</div>
+                    <p>Silla paleta universitaria</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="MOB-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Tablero acrílico 3.0×1.5m</h3>
+                    <div class="codigo">BIM_L0_040 · L0.MOB_004</div>
+                    <p>Tablero borrable marcador</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="MOB-004.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Mobiliario completo CALE</h3>
+                    <div class="codigo">BIM_L0_041 · L0.MOB_005</div>
+                    <p>Conjunto mobiliario salas + oficinas</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="MOB-005.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Mobiliario aula informática</h3>
+                    <div class="codigo">BIM_L0_042 · L0.MOB_006</div>
+                    <p>Mesas + sillas ergonómicas</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="MOB-006.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Mobiliario oficina director</h3>
+                    <div class="codigo">BIM_L0_043 · L0.MOB_007</div>
+                    <p>Escritorio + silla ejecutiva + archivador</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="MOB-007.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Mobiliario oficina subdirector</h3>
+                    <div class="codigo">BIM_L0_044 · L0.MOB_008</div>
+                    <p>Escritorio + silla + archivador</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="MOB-008.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Mobiliario oficina coordinador</h3>
+                    <div class="codigo">BIM_L0_045 · L0.MOB_009</div>
+                    <p>Escritorio + silla + archivador</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="MOB-009.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Mobiliario oficina operaciones</h3>
+                    <div class="codigo">BIM_L0_046 · L0.MOB_010</div>
+                    <p>Escritorio + silla operativa</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="MOB-010.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Mobiliario sala juntas</h3>
+                    <div class="codigo">BIM_L0_047 · L0.MOB_011</div>
+                    <p>Mesa + 8 sillas + mueble credenza</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="MOB-011.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Archivo y bodega</h3>
+                    <div class="codigo">BIM_L0_048 · L0.MOB_012</div>
+                    <p>Archivadores + estantería metálica</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="MOB-012.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Counter recepción CALE</h3>
+                    <div class="codigo">BIM_L0_049 · L0.MOB_RECEPCION</div>
+                    <p>Mostrador 2.5×0.8m + silla operativa</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="MOB-RECEPCION.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #d35400;">
+                    <h3 style="color: #d35400;">Sillas tandem sala espera</h3>
+                    <div class="codigo">BIM_L0_050 · L0.MOB_SILLAS_ESPERA</div>
+                    <p>Sillas tandem 3-5 puestos metálicas</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="MOB-SILLAS-ESPERA.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #16a085; border-color: #16a085;">
+                Tecnología (TEC) - 7 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">PC Desktop Core i5</h3>
+                    <div class="codigo">BIM_L0_054 · L0.TEC_001</div>
+                    <p>CPU i5 11gen + 8GB RAM + 256GB SSD + W11 Pro</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="TEC-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Monitor LED Full HD 24"</h3>
+                    <div class="codigo">BIM_L0_055 · L0.TEC_002</div>
+                    <p>Monitor 1920×1080 IPS 24"</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="TEC-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Teclado + Mouse USB</h3>
+                    <div class="codigo">BIM_L0_056 · L0.TEC_003</div>
+                    <p>Teclado + mouse alambricos</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="TEC-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Rack servidor 42U</h3>
+                    <div class="codigo">BIM_L0_060 · L0.TEC_004</div>
+                    <p>Gabinete 42U con PDU + ventilación</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="TEC-004.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Servidor HP ProLiant DL380 Gen10</h3>
+                    <div class="codigo">BIM_L0_061 · L0.TEC_005</div>
+                    <p>2× Xeon Gold + 64GB RAM + storage</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="TEC-005.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Switch Gigabit 48 Puertos PoE+</h3>
+                    <div class="codigo">BIM_L0_062 · L0.TEC_006</div>
+                    <p>Switch manageable L3 PoE+ 48p</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="TEC-006.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #16a085;">
+                    <h3 style="color: #16a085;">Cámara IP Seguridad 4MP PoE</h3>
+                    <div class="codigo">BIM_L0_063 · L0.TEC_009</div>
+                    <p>Cámara IP domo 4MP PoE</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="TEC-009.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #9b59b6; border-color: #9b59b6;">
+                Audiovisual (AV) - 3 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #9b59b6;">
+                    <h3 style="color: #9b59b6;">Video proyector 5000 lúmenes</h3>
+                    <div class="codigo">BIM_L0_057 · L0.AV_001</div>
+                    <p>Proyector WXGA 5000 ANSI</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="AV-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #9b59b6;">
+                    <h3 style="color: #9b59b6;">Pantalla eléctrica 4.0×3.0m</h3>
+                    <div class="codigo">BIM_L0_058 · L0.AV_002</div>
+                    <p>Pantalla motorizada 4:3</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="AV-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #9b59b6;">
+                    <h3 style="color: #9b59b6;">Sistema audio amplificado</h3>
+                    <div class="codigo">BIM_L0_059 · L0.AV_003</div>
+                    <p>Amplificador + parlantes + micrófonos</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="AV-003.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #7f8c8d; border-color: #7f8c8d;">
+                Accesorios (ACC) - 3 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #7f8c8d;">
+                    <h3 style="color: #7f8c8d;">Mousepad ergonómico</h3>
+                    <div class="codigo">BIM_L0_068 · L0.ACC_001</div>
+                    <p>Pad reposamuñecas gel</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ACC-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #7f8c8d;">
+                    <h3 style="color: #7f8c8d;">Equipamiento sala teórica</h3>
+                    <div class="codigo">BIM_L0_069 · L0.ACC_002</div>
+                    <p>Proyector + audio + tableros</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="ACC-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #7f8c8d;">
+                    <h3 style="color: #7f8c8d;">Señalización interior</h3>
+                    <div class="codigo">BIM_L0_070 · L0.ACC_003</div>
+                    <p>Señalética completa + seguridad</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="ACC-003.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #1abc9c; border-color: #1abc9c;">
+                Vehículos (VEH) - 5 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #1abc9c;">
+                    <h3 style="color: #1abc9c;">Motocicleta ≤125cc adaptada</h3>
+                    <div class="codigo">BIM_L0_071 · L0.VEH_001</div>
+                    <p>Moto escuela categoría A1</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="VEH-001.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #1abc9c;">
+                    <h3 style="color: #1abc9c;">Motocicleta >125cc adaptada</h3>
+                    <div class="codigo">BIM_L0_072 · L0.VEH_002</div>
+                    <p>Moto escuela categoría A2</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="VEH-002.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #1abc9c;">
+                    <h3 style="color: #1abc9c;">Automóvil B1/C1 adaptado</h3>
+                    <div class="codigo">BIM_L0_073 · L0.VEH_003</div>
+                    <p>Vehículo escuela automóvil</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="VEH-003.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #1abc9c;">
+                    <h3 style="color: #1abc9c;">Camión B2/C2 adaptado</h3>
+                    <div class="codigo">BIM_L0_074 · L0.VEH_004</div>
+                    <p>Camión rígido escuela</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="VEH-004.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #1abc9c;">
+                    <h3 style="color: #1abc9c;">Tractocamión B3/C3 articulado</h3>
+                    <div class="codigo">BIM_L0_075 · L0.VEH_005</div>
+                    <p>Tractocamión articulado escuela</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="VEH-005.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #2ecc71; border-color: #2ecc71;">
+                Certificaciones (CERT) - 1 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #2ecc71;">
+                    <h3 style="color: #2ecc71;">Paquete certificaciones ISO</h3>
+                    <div class="codigo">BIM_L0_077 · L0.CERT_ISO</div>
+                    <p>ISO 9001 + 14001 + 45001 + 27001</p>
+                    <span class="unidad">📦 cert</span>
+                    <a href="CERT-ISO.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="categoria-section">
+            <h2 style="color: #95a5a6; border-color: #95a5a6;">
+                Otros (OTROS) - 15 elementos
+            </h2>
+            <div class="elementos-grid">
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Locker metálico 12 puertas</h3>
+                    <div class="codigo">BIM_L0_051 · L0.LOCKERS_ASPIRANTES</div>
+                    <p>Casillero metálico 12 compartimientos</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="LOCKERS-ASPIRANTES.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Estantería archivo rodante</h3>
+                    <div class="codigo">BIM_L0_052 · L0.ARCHIVO_ACTIVO</div>
+                    <p>Sistema archivo móvil alto tránsito</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="ARCHIVO-ACTIVO.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Archivador vertical 4 gavetas</h3>
+                    <div class="codigo">BIM_L0_053 · L0.ARCHIVADOR_VERTICAL</div>
+                    <p>Archivador metálico tamaño oficio</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="ARCHIVADOR-VERTICAL.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Estación supervisión pruebas teóricas</h3>
+                    <div class="codigo">BIM_L0_064 · L0.SALA_CONTROL_TEORICO</div>
+                    <p>PC + 2 monitores + software monitoreo</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="SALA-CONTROL-TEORICO.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Centro control pruebas prácticas</h3>
+                    <div class="codigo">BIM_L0_065 · L0.SALA_CONTROL_PRACTICO</div>
+                    <p>Workstation + 4-6 monitores + NVR + software</p>
+                    <span class="unidad">📦 set</span>
+                    <a href="SALA-CONTROL-PRACTICO.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Monitor LED 43" videowall</h3>
+                    <div class="codigo">BIM_L0_066 · L0.MONITOR_VIDEOWALL</div>
+                    <p>Pantalla LED bisel delgado para muro</p>
+                    <span class="unidad">📦 und</span>
+                    <a href="MONITOR-VIDEOWALL.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Plataforma tecnológica CALE completa</h3>
+                    <div class="codigo">BIM_L0_067 · L0.PLAT_TEC</div>
+                    <p>Software gestión + licencias + cloud</p>
+                    <span class="unidad">📦 glb</span>
+                    <a href="PLAT-TEC.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Pasillos interiores edificación</h3>
+                    <div class="codigo">BIM_L0_078 · L0.PASILLO_INTERNO</div>
+                    <p>Corredor interno ancho mín 1.50m</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="PASILLO-INTERNO.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Circulaciones exteriores</h3>
+                    <div class="codigo">BIM_L0_079 · L0.CIRCULACION_EXTERNA</div>
+                    <p>Andenes + caminos peatonales</p>
+                    <span class="unidad">📦 m²</span>
+                    <a href="CIRCULACION-EXTERNA.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Rampa acceso universal</h3>
+                    <div class="codigo">BIM_L0_080 · L0.RAMPA_ACCESIBILIDAD</div>
+                    <p>Rampa pendiente máx 8% + pasamanos</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="RAMPA-ACCESIBILIDAD.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Escalera principal</h3>
+                    <div class="codigo">BIM_L0_081 · L0.ESCALERA_INTERNA</div>
+                    <p>Escalera concreto/metálica huella 28cm contrahuella 18cm</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="ESCALERA-INTERNA.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Escalera emergencia</h3>
+                    <div class="codigo">BIM_L0_082 · L0.ESCALERA_EMERGENCIA</div>
+                    <p>Escalera evacuación protegida</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="ESCALERA-EMERGENCIA.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Rampa acceso universal</h3>
+                    <div class="codigo">BIM_L0_080 · L0.RAMPA_ACCESIBILIDAD</div>
+                    <p>Rampa pendiente máx 8% + pasamanos</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="RAMPA-ACCESIBILIDAD.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Escalera principal</h3>
+                    <div class="codigo">BIM_L0_081 · L0.ESCALERA_INTERNA</div>
+                    <p>Escalera concreto/metálica huella 28cm contrahuella 18cm</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="ESCALERA-INTERNA.html">Ver Detalles →</a>
+                </div>
+
+                <div class="elemento-card" style="border-color: #95a5a6;">
+                    <h3 style="color: #95a5a6;">Escalera emergencia</h3>
+                    <div class="codigo">BIM_L0_082 · L0.ESCALERA_EMERGENCIA</div>
+                    <p>Escalera evacuación protegida</p>
+                    <span class="unidad">📦 ml</span>
+                    <a href="ESCALERA-EMERGENCIA.html">Ver Detalles →</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM_L2_001 - Pista Clase I</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 40px;
+        }
+        .header h1 { font-size: 2.8em; margin-bottom: 10px; }
+        .header .subtitle { font-size: 1.3em; opacity: 0.9; }
+        .badges { margin-top: 15px; }
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-top: 5px;
+        }
+        .content { padding: 40px; }
+        .section { margin-bottom: 40px; }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        .info-box h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .info-box p {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background: #2c3e50;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+        tr:hover { background: #f5f5f5; }
+        .text-right { text-align: right; }
+        .badge-l1, .badge-l2 {
+            background: #3498db;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .badge-l2 { background: #e74c3c; }
+        .tipo-ref { background: #f39c12; color: white; }
+        .tipo-comp { background: #27ae60; color: white; }
+        .cat-A1, .cat-A2 { background: #9b59b6; color: white; }
+        .cat-B1, .cat-B2, .cat-B3 { background: #3498db; color: white; }
+        .cat-C1, .cat-C2, .cat-C3 { background: #e67e22; color: white; }
+        .normatividad-box {
+            background: #ecf0f1;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        .normatividad-box h3 {
+            color: #c0392b;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .norma-requisito {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        .norma-requisito strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .norma-requisito ul {
+            margin-left: 20px;
+        }
+        .norma-requisito li {
+            margin: 8px 0;
+            color: #555;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-back:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏁 Pista Clase I</h1>
+            <div class="subtitle">BIM_L2_001 · L2.pista_clase_I</div>
+            <div class="badges">
+                <span class="badge">Nivel BIM: L2 - Configuración</span>
+                <span class="badge">Tipo: CONFIGURACION_BASE</span>
+                <span class="badge cat-A1">A1</span><span class="badge cat-A2">A2</span><span class="badge cat-B1">B1</span><span class="badge cat-C1">C1</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📊 Información General</h2>
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h3>💰 Valor Total</h3>
+                        <p>$721,440,000 COP</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>🔧 Componentes</h3>
+                        <p>2 elementos</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>🚗 Categorías Licencia</h3>
+                        <p>4 tipos</p>
+                    </div>
+                </div>
+                <p><strong>Descripción:</strong> Infraestructura completa motos A1/A2 + carros B1/C1</p>
+                <p><strong>Fuente:</strong> Tabla #11 (valorización), Tabla #19 (componentes)</p>
+            </div>
+            
+            <div class="section">
+                <h2>🧩 Componentes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>BIM ID</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Valor (COP)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                <tr>
+                    <td><span class="badge-l1">BIM_L1_001</span></td>
+                    <td>Pista motos A1A2 completa</td>
+                    <td><span class="badge tipo-comp">COMPONENTE L1</span></td>
+                    <td class="text-right">$289,805,000</td>
+                </tr>
+            
+                <tr>
+                    <td><span class="badge-l1">BIM_L1_002</span></td>
+                    <td>Pista carros B1C1 completa</td>
+                    <td><span class="badge tipo-comp">COMPONENTE L1</span></td>
+                    <td class="text-right">$431,635,000</td>
+                </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+            
+
+        <div class="section">
+            <h2>📋 Marco Normativo</h2>
+            
+            <div class="normatividad-box">
+                <h3>⚖️ Resolución 20253040037125 de 2025</h3>
+                <p><strong>Emisor:</strong> Ministerio de Transporte</p>
+                <p><strong>Aplicación:</strong> Pistas de evaluación práctica</p>
+                
+                <div class="norma-requisito">
+                    <strong>Art. 3.7.1.1 - Dimensiones y Especificaciones:</strong>
+                    <ul>
+                        <li>Área mínima según clase: I (3,500 m²), II (5,200 m²), III (8,500 m²)</li>
+                        <li>Superficie en asfalto o concreto con rugosidad controlada</li>
+                        <li>Pendientes máximas: longitudinal 12%, transversal 2%</li>
+                        <li>Radio mínimo de giro según categoría vehículo</li>
+                        <li>Zonas de seguridad perimetrales ≥2.0 m</li>
+                    </ul>
+                </div>
+                
+                <div class="norma-requisito">
+                    <strong>Art. 3.7.1.2 - Señalización y Demarcación:</strong>
+                    <ul>
+                        <li>Señalización horizontal con pintura termoplástica reflectiva</li>
+                        <li>Señales verticales según Manual de Señalización Vial (Res 1885/2015)</li>
+                        <li>Demarcación circuitos según NT TS 004:2021</li>
+                        <li>Conos, balizas y elementos móviles certificados</li>
+                    </ul>
+                </div>
+                
+                <div class="norma-requisito">
+                    <strong>Art. 3.7.1.3 - Seguridad y Protección:</strong>
+                    <ul>
+                        <li>Barreras de contención en zonas de riesgo</li>
+                        <li>Zonas de escape en curvas y pendientes</li>
+                        <li>Sistema de drenaje certificado ISO 14001</li>
+                        <li>Seguro RC con cobertura ≥500 SMLMV</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="normatividad-box">
+                <h3>🌍 ISO 39001:2012 - Sistemas de Gestión de Seguridad Vial</h3>
+                <p><strong>Aplicación:</strong> Diseño y operación de infraestructura vial de evaluación</p>
+                
+                <div class="norma-requisito">
+                    <strong>Cláusula 4.3.1 - Identificación de Peligros:</strong>
+                    <ul>
+                        <li>Análisis de riesgos en cada maniobra de evaluación</li>
+                        <li>Matriz de peligros actualizada semestralmente</li>
+                        <li>Protocolos de emergencia para cada circuito</li>
+                    </ul>
+                </div>
+                
+                <div class="norma-requisito">
+                    <strong>Cláusula 5.2 - Infraestructura Segura:</strong>
+                    <ul>
+                        <li>Diseño "auto-explicativo" de circuitos</li>
+                        <li>Visibilidad mínima 100 m en rectas</li>
+                        <li>Iluminación ≥150 lux en zonas de maniobras</li>
+                        <li>Superficies antideslizantes (coef. fricción ≥0.45)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="normatividad-box">
+                <h3>🛣️ Resolución 160 de 2018 - INVIAS</h3>
+                <p><strong>Aplicación:</strong> Especificaciones técnicas de construcción</p>
+                
+                <div class="norma-requisito">
+                    <strong>Artículo 450 - Pavimentos Asfálticos:</strong>
+                    <ul>
+                        <li>MDC-3 (Mezcla Densa en Caliente tipo III) espesor ≥75mm</li>
+                        <li>Base granular estabilizada CBR ≥80%</li>
+                        <li>Subbase granular compactada 95% Proctor</li>
+                    </ul>
+                </div>
+                
+                <div class="norma-requisito">
+                    <strong>Artículo 500 - Concreto Hidráulico:</strong>
+                    <ul>
+                        <li>Resistencia f'c ≥280 kg/cm² (opcional en zonas específicas)</li>
+                        <li>Juntas de dilatación cada 4.5 m</li>
+                        <li>Acabado superficial con textura estriada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+            
+            <div class="section">
+                <a href="../index.html" class="btn-back">← Volver al Inicio</a>
+                <a href="index_l2.html" class="btn-back">📋 Índice L2</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

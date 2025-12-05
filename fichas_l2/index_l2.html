@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice L2 - Pistas CALE</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #e74c3c;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .stat-box {
+            background: #ecf0f1;
+            padding: 20px 30px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        .stat-box h3 {
+            color: #e74c3c;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .stat-box p {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 5px solid #e74c3c;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(231, 76, 60, 0.3);
+        }
+        .card h2 {
+            color: #e74c3c;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .card .bim-id {
+            color: #95a5a6;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .card p {
+            color: #555;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .card .info {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            padding-top: 15px;
+            border-top: 1px solid #ecf0f1;
+        }
+        .card .info-item {
+            text-align: center;
+        }
+        .card .info-item strong {
+            display: block;
+            color: #e74c3c;
+            font-size: 1.3em;
+        }
+        .card .info-item span {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .category-badge {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            color: white;
+        }
+        .cat-A { background: #9b59b6; }
+        .cat-B { background: #3498db; }
+        .cat-C { background: #e67e22; }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background: #c0392b;
+            transform: translateX(5px);
+        }
+        .btn-back {
+            background: #3498db;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        .btn-back:hover {
+            background: #2980b9;
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="btn btn-back">← Volver al Inicio</a>
+        
+        <div class="header">
+            <h1>🏁 Nivel L2 - Pistas de Evaluación</h1>
+            <p>Configuraciones de Infraestructura Vial</p>
+            
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Total Pistas</h3>
+                    <p>3</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Completitud</h3>
+                    <p>100%</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Con Normatividad</h3>
+                    <p>✅ Sí</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cards-grid">
+            <!-- Pista Clase I -->
+            <div class="card">
+                <h2>Pista Clase I</h2>
+                <div class="bim-id">BIM_L2_001 · L2.pista_clase_I</div>
+                <p><strong>Descripción:</strong> Infraestructura completa motos A1/A2 + carros B1/C1</p>
+                
+                <div class="categories">
+                    <span class="category-badge cat-A">A1</span>
+                    <span class="category-badge cat-A">A2</span>
+                    <span class="category-badge cat-B">B1</span>
+                    <span class="category-badge cat-C">C1</span>
+                </div>
+                
+                <div class="info">
+                    <div class="info-item">
+                        <strong>$721,440,000</strong>
+                        <span>Valor Total</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>2</strong>
+                        <span>Componentes L1</span>
+                    </div>
+                </div>
+                
+                <a href="BIM_L2_001.html" class="btn">Ver Detalles →</a>
+            </div>
+            
+            <!-- Pista Clase II -->
+            <div class="card">
+                <h2>Pista Clase II</h2>
+                <div class="bim-id">BIM_L2_002 · L2.pista_clase_II</div>
+                <p><strong>Descripción:</strong> Infraestructura completa clase I + camiones B2/C2</p>
+                
+                <div class="categories">
+                    <span class="category-badge cat-A">A1</span>
+                    <span class="category-badge cat-A">A2</span>
+                    <span class="category-badge cat-B">B1</span>
+                    <span class="category-badge cat-B">B2</span>
+                    <span class="category-badge cat-C">C1</span>
+                    <span class="category-badge cat-C">C2</span>
+                </div>
+                
+                <div class="info">
+                    <div class="info-item">
+                        <strong>$1,407,390,000</strong>
+                        <span>Valor Total</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>2</strong>
+                        <span>Componentes (L2+L1)</span>
+                    </div>
+                </div>
+                
+                <a href="BIM_L2_002.html" class="btn">Ver Detalles →</a>
+            </div>
+            
+            <!-- Pista Clase III -->
+            <div class="card">
+                <h2>Pista Clase III</h2>
+                <div class="bim-id">BIM_L2_003 · L2.pista_clase_III</div>
+                <p><strong>Descripción:</strong> Infraestructura completa clase II + tractocamiones B3/C3</p>
+                
+                <div class="categories">
+                    <span class="category-badge cat-A">A1</span>
+                    <span class="category-badge cat-A">A2</span>
+                    <span class="category-badge cat-B">B1</span>
+                    <span class="category-badge cat-B">B2</span>
+                    <span class="category-badge cat-B">B3</span>
+                    <span class="category-badge cat-C">C1</span>
+                    <span class="category-badge cat-C">C2</span>
+                    <span class="category-badge cat-C">C3</span>
+                </div>
+                
+                <div class="info">
+                    <div class="info-item">
+                        <strong>$2,093,340,000</strong>
+                        <span>Valor Total</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>2</strong>
+                        <span>Componentes (L2+L1)</span>
+                    </div>
+                </div>
+                
+                <a href="BIM_L2_003.html" class="btn">Ver Detalles →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

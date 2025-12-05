@@ -1,0 +1,14 @@
+Regenerar todas las fichas L1/L2/L3 desde Google Doc oficial (única fuente de verdad)
+
+- L1: 3 fichas actualizadas (BIM_L1_001-003) - Pistas Clase I/II/III
+- L2: 5 fichas (3 actualizadas + 2 nuevas) - Total $3.948B COP
+  * BIM_L2_001-003: Pistas Clase I/II/III
+  * BIM_L2_004-005: CALE Teóricos 24q/16q (NUEVAS)
+- L3: 4 fichas (1 nueva + 3 actualizadas) - Total $145.33B COP
+  * BIM_L3_001: CALE.n_1 Metropolitano (NUEVA)
+  * BIM_L3_002-003: CALE.n_2/n_3 Subregional/Local
+  * BIM_L3_004: Red Satélites (NUEVA)
+
+Fuente: Google Doc MUNAY_5.2__anexo_b__DEFINITIVO
+Doc ID: 16_6wrNUMfenjXHPmFdq-krjN3yFoCB8HO_LUVX3WblE
+Tablas procesadas: L1 (#10,#12,#14), L2 (#11,#13,#15,#16,#17), L3 (#2-#9)

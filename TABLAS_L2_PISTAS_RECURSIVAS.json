@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "fecha_creacion": "2025-01-XX",
+    "patron": "HERENCIA_MEJORAMIENTO_PROGRESIVO",
+    "recursividad": "L2→L2 habilitada",
+    "descripcion": "Pistas de conducción con herencia L2→L2: Clase I (base) → Clase II (extendida) → Clase III (máxima)",
+    "total_configuraciones": 3,
+    "autor": "GitHub Copilot - CAMBIO 2"
+  },
+  
+  "BIM_L2_001": {
+    "bim_id": "BIM_L2_001",
+    "codigo": "L2.pista_clase_I",
+    "nombre": "Pista Clase I - Configuración Base",
+    "tipo": "CONFIGURACION_BASE",
+    "categorias_soportadas": ["A1", "A2"],
+    "descripcion": "Pista básica para categorías livianas (A1: motos, A2: automóviles)",
+    
+    "componentes_l1": [
+      {
+        "tipo": "L1",
+        "bim_id": "BIM_L1_001",
+        "codigo": "L1.area_maniobras",
+        "nombre": "Área de Maniobras Básicas",
+        "cantidad": 1,
+        "valor_unitario": 450000000,
+        "valor_total": 450000000,
+        "area_m2": 2500,
+        "justificacion": "Maniobras básicas: estacionamiento paralelo, reversa, giros"
+      },
+      {
+        "tipo": "L1",
+        "bim_id": "BIM_L1_002",
+        "codigo": "L1.area_estacionamiento",
+        "nombre": "Área de Estacionamiento",
+        "cantidad": 1,
+        "valor_unitario": 180000000,
+        "valor_total": 180000000,
+        "area_m2": 800,
+        "justificacion": "Evaluación estacionamiento en línea y paralelo"
+      },
+      {
+        "tipo": "L1",
+        "bim_id": "BIM_L1_003",
+        "codigo": "L1.circuito_urbano",
+        "nombre": "Circuito de Conducción Urbana",
+        "cantidad": 1,
+        "valor_unitario": 91440000,
+        "valor_total": 91440000,
+        "longitud_m": 1200,
+        "justificacion": "Conducción en ciudad: señales, semáforos, intersecciones"
+      }
+    ],
+    
+    "valor_total_capex": 721440000,
+    "nota_capex": "CAPEX total BASE: $721,440,000 (3 componentes L1 básicos)",
+    
+    "capacidad_mes": 2080,
+    "capacidad_anual": 24960,
+    "nota_capacidad": "Capacidad basada en categorías livianas (A1+A2)",
+    
+    "recursos": {
+      "personal_evaluadores": 2,
+      "personal_apoyo": 1,
+      "personal_total": 3,
+      "area_total_m2": 4500
+    },
+    
+    "metadata": {
+      "version": "2.0",
+      "fecha_creacion": "2025-01-XX",
+      "patron": "CONFIGURACION_BASE",
+      "autor": "GitHub Copilot - CAMBIO 2"
+    }
+  },
+  
+  "BIM_L2_002": {
+    "bim_id": "BIM_L2_002",
+    "codigo": "L2.pista_clase_II",
+    "nombre": "Pista Clase II - Configuración Extendida",
+    "tipo": "CONFIGURACION_EXTENDIDA",
+    "categorias_soportadas": ["A1", "A2", "B1", "B2", "C1"],
+    "descripcion": "Pista Clase II = Clase I + componentes para vehículos medianos y camionetas",
+    
+    "recursividad_l2": {
+      "referencia_base": "BIM_L2_001",
+      "hereda_todos_componentes": true,
+      "descripcion": "Hereda TODOS los componentes de Pista Clase I y agrega 2 componentes",
+      "componentes_adicionales": [
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_004",
+          "codigo": "L1.area_carga_descarga",
+          "nombre": "Área de Carga y Descarga",
+          "cantidad": 1,
+          "valor_unitario": 120000000,
+          "valor_total": 120000000,
+          "area_m2": 600,
+          "justificacion": "Requerido para B2 (vehículos de carga) - maniobras con peso"
+        },
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_005",
+          "codigo": "L1.rampa_pendiente",
+          "nombre": "Rampa con Pendiente",
+          "cantidad": 1,
+          "valor_unitario": 45000000,
+          "valor_total": 45000000,
+          "pendiente_pct": 15,
+          "longitud_m": 80,
+          "justificacion": "Evaluación arranque en pendiente para C1 (camionetas)"
+        }
+      ]
+    },
+    
+    "valor_base": 721440000,
+    "valor_incremental": 165000000,
+    "valor_total_capex": 886440000,
+    "formula_capex": "Clase I ($721.4M) + Componentes adicionales ($165M) = $886.4M",
+    "nota_capex": "Incremento de $165M sobre clase I (22.9%)",
+    
+    "capacidad_mes": 3120,
+    "capacidad_anual": 37440,
+    "incremento_capacidad": 1040,
+    "nota_capacidad": "Capacidad incrementada: +1,040 eval/mes por categorías B y C1",
+    
+    "recursos": {
+      "personal_evaluadores": 3,
+      "personal_apoyo": 2,
+      "personal_total": 5,
+      "area_total_m2": 5100
+    },
+    
+    "metadata": {
+      "version": "2.0",
+      "fecha_creacion": "2025-01-XX",
+      "patron": "HERENCIA_MEJORAMIENTO_PROGRESIVO",
+      "nivel_herencia": 1,
+      "autor": "GitHub Copilot - CAMBIO 2"
+    }
+  },
+  
+  "BIM_L2_003": {
+    "bim_id": "BIM_L2_003",
+    "codigo": "L2.pista_clase_III",
+    "nombre": "Pista Clase III - Configuración Máxima",
+    "tipo": "CONFIGURACION_EXTENDIDA",
+    "categorias_soportadas": ["A1", "A2", "B1", "B2", "B3", "C1", "C2", "C3"],
+    "descripcion": "Pista Clase III = Clase II + componentes para vehículos pesados (tractocamiones)",
+    
+    "recursividad_l2": {
+      "referencia_base": "BIM_L2_002",
+      "hereda_todos_componentes": true,
+      "descripcion": "Hereda TODOS los componentes de Pista Clase II (que a su vez hereda de Clase I) y agrega 2 componentes especializados",
+      "componentes_adicionales": [
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_006",
+          "codigo": "L1.area_articulados",
+          "nombre": "Área para Vehículos Articulados",
+          "cantidad": 1,
+          "valor_unitario": 200000000,
+          "valor_total": 200000000,
+          "area_m2": 1200,
+          "justificacion": "Requerido para B3/C3 (tractocamiones, buses articulados) - maniobras complejas"
+        },
+        {
+          "tipo": "L1",
+          "bim_id": "BIM_L1_007",
+          "codigo": "L1.circuito_carretera",
+          "nombre": "Circuito de Conducción en Carretera",
+          "cantidad": 1,
+          "valor_unitario": 180000000,
+          "valor_total": 180000000,
+          "longitud_m": 2500,
+          "justificacion": "Simulación conducción en carretera para C2/C3 (velocidades altas)"
+        }
+      ]
+    },
+    
+    "valor_base": 886440000,
+    "valor_incremental": 380000000,
+    "valor_total_capex": 1266440000,
+    "formula_capex": "Clase II ($886.4M) + Componentes especializados ($380M) = $1,266.4M",
+    "formula_transitiva": "Clase I ($721.4M) + Inc. II ($165M) + Inc. III ($380M) = $1,266.4M",
+    "nota_capex": "Incremento de $380M sobre clase II (42.9%), $545M sobre clase I (75.5%)",
+    
+    "capacidad_mes": 5200,
+    "capacidad_anual": 62400,
+    "incremento_capacidad": 2080,
+    "incremento_capacidad_total": 3120,
+    "nota_capacidad": "Capacidad máxima: +2,080 eval/mes sobre clase II, +3,120 sobre clase I (TODAS categorías A1-C3)",
+    
+    "recursos": {
+      "personal_evaluadores": 6,
+      "personal_apoyo": 3,
+      "personal_total": 9,
+      "area_total_m2": 6800
+    },
+    
+    "metadata": {
+      "version": "2.0",
+      "fecha_creacion": "2025-01-XX",
+      "patron": "HERENCIA_MEJORAMIENTO_PROGRESIVO",
+      "nivel_herencia": 2,
+      "cadena_herencia": "BIM_L2_001 → BIM_L2_002 → BIM_L2_003",
+      "autor": "GitHub Copilot - CAMBIO 2"
+    }
+  }
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM_L3_C5 - CALE Satélite C5</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 0; margin: 0; display: flex; min-height: 100vh;
+        }
+        .sidebar-wrapper {
+            width: 280px; background: linear-gradient(135deg, #2c5282 0%, #4299e1 100%);
+            color: white; overflow-y: auto; border-right: 2px solid #1a365d; padding: 1.5rem 0;
+        }
+        .sidebar-wrapper::-webkit-scrollbar { width: 8px; }
+        .sidebar-wrapper::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+        .sidebar-wrapper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 4px; }
+        .sidebar-wrapper::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.5); }
+        .main-wrapper { flex: 1; display: flex; flex-direction: column; padding: 2rem 1rem; overflow-y: auto; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); overflow: hidden; width: 100%; }
+        .sidebar-header { padding: 0 1.5rem 1.5rem 1.5rem; border-bottom: 2px solid rgba(255,255,255,0.2); margin-bottom: 1rem; }
+        .sidebar-header h3 { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin: 0 0 0.5rem 0; text-transform: uppercase; letter-spacing: 1px; }
+        .sidebar-header .titulo-actual { font-size: 1rem; font-weight: 600; color: white; margin: 0; word-wrap: break-word; }
+        .jerarquia-item { margin-bottom: 0.3rem; border-radius: 6px; overflow: hidden; }
+        .jerarquia-header { display: flex; align-items: center; padding: 0.7rem 1.5rem; cursor: pointer; transition: all 0.3s; user-select: none; font-size: 0.85rem; background: rgba(255,255,255,0.1); }
+        .jerarquia-header:hover { background: rgba(255,255,255,0.15); }
+        .jerarquia-toggle { margin-right: 0.5rem; display: inline-block; transition: transform 0.3s; font-size: 0.8rem; }
+        .jerarquia-toggle.expanded { transform: rotate(90deg); }
+        .jerarquia-title { flex: 1; font-weight: 500; color: white; }
+        .jerarquia-count { font-size: 0.7rem; background: rgba(255,255,255,0.2); padding: 0.2rem 0.5rem; border-radius: 3px; color: rgba(255,255,255,0.9); }
+        .jerarquia-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background: rgba(0,0,0,0.1); }
+        .jerarquia-body.expanded { max-height: 1000px; }
+        .specs-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #2c5282; }
+        .specs-title { font-size: 1.8rem; color: #2c5282; font-weight: 600; }
+        .specs-back-btn { background: #2c5282; color: white; border: none; padding: 0.7rem 1.5rem; border-radius: 6px; cursor: pointer; font-size: 1rem; transition: background 0.3s; }
+        .specs-back-btn:hover { background: #4299e1; }
+        .specs-children { margin-top: 2rem; }
+        .specs-children h3 { color: #2c5282; font-size: 1.2rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #2c5282; }
+        .specs-item { background: white; padding: 1rem; margin-bottom: 0.5rem; border-radius: 6px; border-left: 3px solid #4299e1; cursor: pointer; transition: all 0.2s; }
+        .specs-item:hover { background: #f0f4f0; border-left-color: #2c5282; }
+        .jerarquia-item-level { padding: 0.5rem 1.5rem 0.5rem 2.2rem; font-size: 0.8rem; color: rgba(255,255,255,0.85); border-left: 2px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.2s; }
+        .jerarquia-item-level:hover { color: white; border-left-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+        @media (max-width: 768px) { body { flex-direction: column; } .sidebar-wrapper { width: 100%; border-right: none; border-bottom: 2px solid #1a365d; max-height: 200px; } .main-wrapper { padding: 1.5rem 1rem; } }
+        .header {
+            background: linear-gradient(135deg, #2c5282 0%, #4299e1 100%);
+            color: white; padding: 2.5rem 2rem;
+        }
+        .bim-id {
+            display: inline-block; background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem; border-radius: 6px;
+            font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;
+        }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.1rem; opacity: 0.95; font-weight: 300; }
+        .content { padding: 2.5rem; }
+        .info-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem; margin-bottom: 2.5rem;
+        }
+        .info-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem; border-radius: 8px; border-left: 4px solid #2c5282;
+        }
+        .info-card.destacada {
+            background: linear-gradient(135deg, #2c528215 0%, #4299e115 100%);
+            border-left: 4px solid #4299e1;
+        }
+        .info-card h3 {
+            font-size: 0.9rem; color: #666; margin-bottom: 0.5rem;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .info-card p { font-size: 1.3rem; font-weight: 600; color: #2c5282; margin: 0.3rem 0; }
+        .info-card.destacada p { font-size: 1.8rem; color: #4299e1; }
+        section { margin-bottom: 2.5rem; }
+        h2 {
+            color: #2c5282; font-size: 1.5rem; margin-bottom: 1rem;
+            padding-bottom: 0.5rem; border-bottom: 2px solid #2c5282;
+        }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        thead { background: linear-gradient(135deg, #2c5282 0%, #4299e1 100%); color: white; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #dee2e6; }
+        th { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        tbody tr:hover { background-color: #f8f9fa; }
+        .text-right { text-align: right; }
+        .text-center { text-align: center; }
+        code {
+            background: #f8f9fa; padding: 0.2rem 0.5rem; border-radius: 4px;
+            font-family: 'Courier New', monospace; font-size: 0.9em; color: #4299e1;
+        }
+        footer {
+            background: #f8f9fa; padding: 1.5rem 2.5rem; text-align: center;
+            color: #666; font-size: 0.9rem; border-top: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar-wrapper" id="sidebarWrapper"></div>
+    <div class="main-wrapper">
+        <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="bim-id">BIM_L3_C5</div>
+                <h1>CALE Satélite C5 - Punto Básico</h1>
+                <p class="subtitle">Configuración para 14 municipios - Infraestructura mínima esencial</p>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🔖 Identificador BIM</h3>
+                    <p><code>BIM_L3_C5</code></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📂 Nivel Jerarquía</h3>
+                    <p>Nivel L3</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🏗️ Tipo CALE</h3>
+                    <p>Satélite C5</p>
+                </div>
+                
+                <div class="info-card destacada">
+                    <h3>💰 Valorización Unitaria</h3>
+                    <p>$12.000.000 COP</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📍 Municipios</h3>
+                    <p>14 nodos</p>
+                </div>
+                
+                <div class="info-card destacada">
+                    <h3>💰 Valor Total Nacional</h3>
+                    <p>$168.000.000 COP</p>
+                </div>
+            </div>
+            
+            <section>
+                <h2>🔧 Componentes de la Configuración</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Componente</th>
+                            <th>Descripción</th>
+                            <th>Referencia BIM</th>
+                            <th>Valor Unitario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>Infraestructura Esencial</strong></td>
+                            <td>Punto de información básico</td>
+                            <td><code>L2.infraestr_esencial</code></td>
+                            <td class="text-right"><strong>$12.000.000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section>
+                <h2>📋 Información Adicional</h2>
+                <p><strong>Propósito:</strong> Presencia mínima institucional</p>
+                <p><strong>Capacidad:</strong> Información y derivación</p>
+                <p><strong>Integración:</strong> Conexión con centros CALE metropolitanos</p>
+                <p><strong>Estado:</strong> ✅ Ficha creada - Coherente con Anexo B</p>
+            </section>
+            </div>
+            
+            <footer>
+                <p>Sistema Nacional de Centros de Apoyo Logístico de Evaluación - SNCALE | UPTC</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem;">BIM_L3_C5 | Satélite C5 | UPTC 2025</p>
+            </footer>
+        </div>
+    </div>
+    <script>
+        function parseComponentTable() {
+            const table = document.querySelector('table');
+            if (!table) return [];
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
+            const components = [];
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                if (cells.length >= 4) {
+                    const componentName = cells[1].textContent.trim();
+                    const referenciaBim = cells[3].querySelector('code')?.textContent.trim() || '';
+                    const descripcion = cells[2].textContent.trim();
+                    if (referenciaBim.startsWith('L2.')) {
+                        components.push({ nombre: componentName, referencia: referenciaBim, descripcion: descripcion });
+                    }
+                }
+            });
+            return components;
+        }
+        function buildHierarchy(components) {
+            const titulo = document.querySelector('h1')?.textContent || 'Centro CALE';
+            const hijos_l2 = [];
+            
+            if (components.length > 0) {
+                const l2Comp = components[0];
+                hijos_l2.push({
+                    bim_id: 'BIM_L2_001',
+                    titulo: l2Comp.nombre,
+                    hijos_l1: []
+                });
+            }
+            
+            return { titulo: titulo, hijos_l2: hijos_l2 };
+        }
+        function renderSidebar() {
+            const sidebarWrapper = document.getElementById('sidebarWrapper');
+            const components = parseComponentTable();
+            const data = buildHierarchy(components);
+            let html = `<div class="sidebar-header"><h3></h3><p class="titulo-actual">${data.titulo}</p></div>`;
+            if (data.hijos_l2 && data.hijos_l2.length > 0) {
+                window.hierarchyData = data;
+                html += `<div class="jerarquia-item"><div class="jerarquia-header" onclick="toggleLevel(this); return false;"><span class="jerarquia-toggle">▶</span><span class="jerarquia-title">L3 ${data.titulo}</span><span class="jerarquia-count">${data.hijos_l2.length}</span></div><div class="jerarquia-body" id="body-l3">`;
+                data.hijos_l2.forEach((l2, idx) => {
+                    const hasL1 = l2.hijos_l1 && l2.hijos_l1.length > 0;
+                    html += `<div class="jerarquia-item" style="margin-left: 1rem;"><div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: rgba(255,255,255,0.08);"><span class="jerarquia-toggle ${hasL1 ? '' : 'disabled'}">▶</span><span class="jerarquia-title" onclick="showL2Specs(${idx}); return false;">L2 ${l2.titulo}</span>${hasL1 ? `<span class="jerarquia-count">${l2.hijos_l1.length}</span>` : ''}</div><div class="jerarquia-body" id="body-l2-${idx}">`;
+                    if (hasL1) {
+                        l2.hijos_l1.forEach((l1, l1idx) => {
+                            const hasL0 = l1.hijos_l0 && l1.hijos_l0.length > 0;
+                            html += `<div class="jerarquia-item" style="margin-left: 1rem;"><div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: rgba(255,255,255,0.05); font-size: 0.8rem;"><span class="jerarquia-toggle ${hasL0 ? '' : 'disabled'}">▶</span><span class="jerarquia-title" onclick="showL1Specs(${idx}, ${l1idx}); return false;">L1 ${l1.titulo}</span>${hasL0 ? `<span class="jerarquia-count">${l1.hijos_l0.length}</span>` : ''}</div><div class="jerarquia-body" id="body-l1-${idx}-${l1idx}">`;
+                            if (hasL0) {
+                                l1.hijos_l0.forEach((l0, l0idx) => {
+                                    html += `<div class="jerarquia-item-level" style="margin-left: 0.5rem; padding-left: 2.5rem; font-size: 0.75rem;" onclick="showL0Specs(${idx}, ${l1idx}, ${l0idx}); return false;">🔸 L0 ${l0.titulo}</div>`;
+                                });
+                            } else {
+                                html += `<div class="jerarquia-item-level" style="color: rgba(255,255,255,0.4); font-style: italic; font-size: 0.75rem;">Sin L0</div>`;
+                            }
+                            html += `</div></div>`;
+                        });
+                    } else {
+                        html += `<div class="jerarquia-item-level" style="color: rgba(255,255,255,0.4); font-style: italic;">Sin L1</div>`;
+                    }
+                    html += `</div></div>`;
+                });
+                html += `</div></div>`;
+            }
+            sidebarWrapper.innerHTML = html;
+        }
+        function toggleLevel(element) {
+            event.stopPropagation();
+            const body = element.nextElementSibling;
+            if (body && body.classList.contains('jerarquia-body')) {
+                body.classList.toggle('expanded');
+                const toggle = element.querySelector('.jerarquia-toggle');
+                if (toggle && !toggle.classList.contains('disabled')) {
+                    toggle.classList.toggle('expanded');
+                }
+            }
+        }
+        function showL2Specs(l2idx) { event.stopPropagation(); const specsView = document.querySelector('.content'); specsView.innerHTML = `<div class="specs-header"><button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button></div>`; document.querySelector('.main-wrapper').scrollTop = 0; }
+        function showL1Specs(l2idx, l1idx) { event.stopPropagation(); const specsView = document.querySelector('.content'); specsView.innerHTML = `<div class="specs-header"><button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button></div>`; document.querySelector('.main-wrapper').scrollTop = 0; }
+        async function showL0Specs(l2idx, l1idx, l0idx) {
+            event.stopPropagation();
+            const l0 = window.hierarchyData.hijos_l2[l2idx].hijos_l1[l1idx].hijos_l0[l0idx];
+            const specsView = document.querySelector('.content');
+            
+            specsView.innerHTML = '<div class="specs-content" style="text-align: center; padding: 3rem;"><p>Cargando fichá de componente L0...</p></div>';
+            
+            try {
+                let content = null;
+                let styles = null;
+                for (let i = 1; i <= 91; i++) {
+                    const fileNum = String(i).padStart(3, '0');
+                    const url = `../fichas/BIM_L0_${fileNum}.html`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const html = await response.text();
+                            if (html.includes('L0.' + l0.titulo) || html.includes('>' + l0.titulo + '<')) {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(html, 'text/html');
+                                const mainContent = doc.querySelector('.main-content');
+                                const styleTag = doc.querySelector('style');
+                                if (mainContent) {
+                                    content = mainContent.innerHTML;
+                                    if (styleTag) {
+                                        styles = styleTag.textContent;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    } catch (e) {
+                    }
+                }
+                
+                if (content) {
+                    specsView.innerHTML = `
+                        <style>
+                            ${styles || ''}
+                            .bim-l0-container { margin-left: 0; max-width: 100%; }
+                        </style>
+                        <div style="position: relative; margin-bottom: 2rem;">
+                            <button class="specs-back-btn" onclick="hideSpecs()" style="position: sticky; top: 0; z-index: 10;">← Volver al L3</button>
+                        </div>
+                        <div class="bim-l0-container">
+                            ${content}
+                        </div>
+                    `;
+                } else {
+                    specsView.innerHTML = `
+                        <div class="specs-header">
+                            <div>
+                                <span style="color: rgba(44, 82, 130, 0.6); font-size: 0.9rem;">🔸 L0 ELEMENTO ATÓMICO</span>
+                                <h2 class="specs-title">${l0.titulo}</h2>
+                            </div>
+                            <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                specsView.innerHTML = `
+                    <div class="specs-header">
+                        <div>
+                            <span style="color: rgba(44, 82, 130, 0.6); font-size: 0.9rem;">🔸 L0 ELEMENTO ATÓMICO</span>
+                            <h2 class="specs-title">${l0.titulo}</h2>
+                        </div>
+                        <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
+                    </div>
+                `;
+            }
+            
+            document.querySelector('.main-wrapper').scrollTop = 0;
+        }
+        function hideSpecs() { location.reload(); }
+        document.addEventListener('DOMContentLoaded', renderSidebar);
+    </script>
+</body>
+</html>
