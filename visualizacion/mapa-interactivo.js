@@ -5,17 +5,16 @@
 // CONFIGURACIÓN Y DATOS
 // ========================================
 
+// Vista inicial del mapa (Colombia)
+const MAPA_VISTA_INICIAL = {
+    lat: 4.5709,
+    lng: -74.2973,
+    zoom: 6
+};
+
 // TIPOS_CONFIG actualizado para coincidir con datos reales del JSON
 const TIPOS_CONFIG = [
     {
-        tipo_id: 'L3.CALE.n_1',
-        nombre: 'CALE Metropolitano',
-        categoria: 'Cat.A+',
-        color: '#E63946',
-        icono: '🔴',
-        cantidad: 17
-    },
-        {
         tipo_id: 'L3.CALE.n_1_plus',
         nombre: 'CALE Metropolitano Plus',
         categoria: 'Cat.A+',
@@ -24,12 +23,12 @@ const TIPOS_CONFIG = [
         cantidad: 8
     },
     {
-        tipo_id: 'L3.SATELITE.n_2',
-        nombre: 'CALE Regional',
-        categoria: 'Cat.B',
-        color: '#f3af10ff',
-        icono: '🟡',
-        cantidad: 4
+        tipo_id: 'L3.CALE.n_1',
+        nombre: 'CALE Metropolitano',
+        categoria: 'Cat.A+',
+        color: '#E63946',
+        icono: '🔴',
+        cantidad: 17
     },
     {
         tipo_id: 'L3.CALE.n_2_plus',
@@ -38,6 +37,14 @@ const TIPOS_CONFIG = [
         color: '#ff4d00',
         icono: '🟠',
         cantidad: 21
+    },
+    {
+        tipo_id: 'L3.SATELITE.n_2',
+        nombre: 'CALE Regional',
+        categoria: 'Cat.B',
+        color: '#f3af10ff',
+        icono: '🟡',
+        cantidad: 4
     },
     {
         tipo_id: 'L3.SATELITE.n_3',
@@ -90,7 +97,7 @@ const FICHAS_L3_CONFIG = {
         nombre: 'CALE Metropolitano'
     },
     'CALE.n_1+': {
-        ficha: '../cales/BIM_L3_001.html',
+        ficha: '../cales/BIM_L3_001b.html',
         cubiculos: 24,
         pistas: 'Clase I + II + III',
         nombre: 'CALE Metropolitano Plus'
@@ -102,7 +109,7 @@ const FICHAS_L3_CONFIG = {
         nombre: 'CALE Regional'
     },
     'CALE.n_2**': {
-        ficha: '../cales/BIM_L3_002.html',
+        ficha: '../cales/BIM_L3_002b.html',
         cubiculos: 16,
         pistas: 'Clase I + II',
         nombre: 'CALE Subregional Plus'
@@ -256,6 +263,7 @@ async function cargarRelacionesJerarquicas() {
                         lon: satelite.longitud
                     },
                     categoria: satelite.categoria,
+                    categoria_raw: `CALE.${satelite.categoria}`,
                     tipo_id: `L3.SATELITE.${satelite.categoria.toLowerCase()}`,
                     tipo_color: satelite.color,
                     tipo_icono: '⬤',
@@ -610,7 +618,7 @@ function inicializarMapa() {
     console.log('🗺️ Inicializando mapa Leaflet...');
     
     // Crear mapa centrado en Colombia
-    map = L.map('map').setView([4.5709, -74.2973], 6);
+    map = L.map('map').setView([MAPA_VISTA_INICIAL.lat, MAPA_VISTA_INICIAL.lng], MAPA_VISTA_INICIAL.zoom);
     
     // Tile layer (OpenStreetMap)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -774,15 +782,6 @@ function crearNodoElement(nodo) {
             🏢 ${fichaConfig.cubiculos} cubículos • 🛣️ ${fichaConfig.pistas}
         </div>` : '';
 
-    // Link a ficha L3
-    const fichaLink = fichaConfig ?
-        `<a href="${fichaConfig.ficha}" target="_blank"
-            onclick="event.stopPropagation();"
-            style="display:inline-block; font-size:0.7em; color:#27ae60; margin-top:4px; text-decoration:none;"
-            title="Ver ficha ${fichaConfig.nombre}">
-            📋 Ficha L3
-        </a>` : '';
-
     return `
         <div class="nodo-item" data-nodo-id="${nodo.nodo_id}" onclick="seleccionarNodo('${nodo.nodo_id}')">
             <div class="nodo-main-info">
@@ -790,7 +789,6 @@ function crearNodoElement(nodo) {
                 ${capacidadHtml}
                 <div class="nodo-stats" style="margin-top:4px;">
                     <span>📊 ${formatNumber(nodo.demanda_anual)}</span>
-                    ${fichaLink}
                 </div>
             </div>
             ${vinculados > 0 ? `<div class="nodo-links">🔗 ${vinculados}</div>` : ''}
@@ -857,32 +855,46 @@ function seleccionarNodo(nodoId) {
         element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
     
-    // Zoom en mapa
     const nodo = NODOS_DATA[nodoId];
-    if (nodo && map) {
-        map.flyTo([nodo.coords.lat, nodo.coords.lon], 10, {
-            duration: 1
-        });
-    }
+    if (!nodo) return;
     
-    // Mostrar panel flotante (existente)
-    mostrarPanel(nodo);
-
-    // Actualizar sidebar derecha con drill-down
-    mostrarNodoEnSidebarDerecha(nodo);
-
-    // Dibujar conexiones si tiene subnodos
-    const tieneSubnodos = (RELACIONES_JERARQUICAS[nodoId] && RELACIONES_JERARQUICAS[nodoId].subnodos?.length > 0) ||
-                          (nodo.satelites_vinculados && nodo.satelites_vinculados.length > 0);
+    // Verificar si hay una ficha abierta
+    const fichaContainer = document.getElementById('fichaContainer');
+    const fichaAbierta = fichaContainer && fichaContainer.classList.contains('active');
     
-    if (tieneSubnodos) {
-        dibujarConexiones(nodo);
+    if (fichaAbierta) {
+        // Si hay ficha abierta, actualizar la ficha con el nuevo nodo
+        const fichaConfig = getFichaL3Config(nodo.categoria_raw);
+        if (fichaConfig) {
+            mostrarFicha(fichaConfig.ficha, fichaConfig.nombre);
+        }
+    } else {
+        // Comportamiento normal: zoom en mapa y mostrar panel
+        if (map) {
+            map.flyTo([nodo.coords.lat, nodo.coords.lon], 10, {
+                duration: 1
+            });
+        }
         
-        // Auto-activar capa de conexiones si está desactivada
-        const checkboxConexiones = document.getElementById('layerConexiones');
-        if (checkboxConexiones && !checkboxConexiones.checked) {
-            checkboxConexiones.checked = true;
-            layers.conexiones.addTo(map);
+        // Mostrar panel flotante (existente)
+        mostrarPanel(nodo);
+
+        // Actualizar sidebar derecha con drill-down
+        mostrarNodoEnSidebarDerecha(nodo);
+
+        // Dibujar conexiones si tiene subnodos
+        const tieneSubnodos = (RELACIONES_JERARQUICAS[nodoId] && RELACIONES_JERARQUICAS[nodoId].subnodos?.length > 0) ||
+                              (nodo.satelites_vinculados && nodo.satelites_vinculados.length > 0);
+        
+        if (tieneSubnodos) {
+            dibujarConexiones(nodo);
+            
+            // Auto-activar capa de conexiones si está desactivada
+            const checkboxConexiones = document.getElementById('layerConexiones');
+            if (checkboxConexiones && !checkboxConexiones.checked) {
+                checkboxConexiones.checked = true;
+                layers.conexiones.addTo(map);
+            }
         }
     }
 }
@@ -894,14 +906,8 @@ function mostrarPanel(nodo) {
     // Actualizar contenido
     document.getElementById('panelNodoNombre').textContent = nodo.nombre;
 
-    // Agregar link a ficha L3 en el subtítulo
-    const categoriaHtml = fichaConfig ?
-        `${nodo.tipo_icono} ${nodo.categoria} • ${nodo.departamento}
-         <a href="${fichaConfig.ficha}" target="_blank"
-            style="display:inline-block; margin-left:10px; padding:3px 8px; background:#27ae60; color:white; text-decoration:none; border-radius:4px; font-size:0.8em;">
-            📋 Ver Ficha L3
-         </a>` :
-        `${nodo.tipo_icono} ${nodo.categoria} • ${nodo.departamento}`;
+    // Subtítulo sin el botón de ficha
+    const categoriaHtml = `${nodo.tipo_icono} ${nodo.categoria} • ${nodo.departamento}`;
 
     document.getElementById('panelNodoCategoria').innerHTML = categoriaHtml;
 
@@ -2087,6 +2093,7 @@ function mostrarFicha(urlFicha, titulo) {
     const fichaTitle = document.getElementById('fichaTitle');
     const mapDiv = document.getElementById('map');
     const headerTop = document.querySelector('.header');
+    const btnVolverMapaHeader = document.getElementById('btnVolverMapaHeader');
     
     if (!fichaContainer || !fichaContent) return;
     
@@ -2108,11 +2115,24 @@ function mostrarFicha(urlFicha, titulo) {
     // Ocultar mapa
     mapDiv.style.display = 'none';
     
-    // MANTENER sidebar izquierdo visible (no ocultar)
-    if (headerTop) headerTop.style.display = 'none';
+    // MANTENER header visible (NO OCULTAR)
+    // if (headerTop) headerTop.style.display = 'none'; // ← COMENTADO para mantener barra superior
+    
+    // Mostrar botón Volver al Mapa en el header
+    if (btnVolverMapaHeader) btnVolverMapaHeader.classList.add('active');
     
     // Mostrar contenedor de ficha
     fichaContainer.classList.add('active');
+}
+
+// Centrar mapa en vista inicial
+function centrarMapa() {
+    if (map) {
+        map.setView([MAPA_VISTA_INICIAL.lat, MAPA_VISTA_INICIAL.lng], MAPA_VISTA_INICIAL.zoom, {
+            animate: true,
+            duration: 0.5
+        });
+    }
 }
 
 // Volver a mostrar el mapa
@@ -2121,6 +2141,7 @@ function volverAlMapa() {
     const fichaContent = document.getElementById('fichaContent');
     const mapDiv = document.getElementById('map');
     const headerTop = document.querySelector('.header');
+    const btnVolverMapaHeader = document.getElementById('btnVolverMapaHeader');
     
     if (!fichaContainer || !fichaContent) return;
     
@@ -2133,8 +2154,11 @@ function volverAlMapa() {
     // Mostrar mapa
     mapDiv.style.display = 'block';
     
-    // Mostrar header
-    if (headerTop) headerTop.style.display = 'flex';
+    // Ocultar botón Volver al Mapa del header
+    if (btnVolverMapaHeader) btnVolverMapaHeader.classList.remove('active');
+    
+    // El header ya está visible (no necesita mostrarse de nuevo)
+    // if (headerTop) headerTop.style.display = 'flex'; // ← Ya no es necesario
 }
 
 // Agregar event listener al botón cuando el DOM está listo

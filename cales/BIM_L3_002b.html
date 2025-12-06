@@ -24,17 +24,17 @@
         
         .sidebar-wrapper {
             width: 280px;
-            background: linear-gradient(135deg, #006600 0%, #009900 100%);
-            color: white;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            color: #000;
             overflow-y: auto;
-            border-right: 2px solid #003300;
+            border-right: 2px solid #ccc;
             padding: 1.5rem 0;
         }
         
         .sidebar-wrapper::-webkit-scrollbar { width: 8px; }
         .sidebar-wrapper::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
-        .sidebar-wrapper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 4px; }
-        .sidebar-wrapper::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.5); }
+        .sidebar-wrapper::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }
+        .sidebar-wrapper::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.3); }
         
         .main-wrapper {
             flex: 1;
@@ -56,13 +56,13 @@
         
         .sidebar-header {
             padding: 0 1.5rem 1.5rem 1.5rem;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
+            border-bottom: 2px solid #ddd;
             margin-bottom: 1rem;
         }
         
         .sidebar-header h3 {
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
+            color: #666;
             margin: 0 0 0.5rem 0;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -71,7 +71,7 @@
         .sidebar-header .titulo-actual {
             font-size: 1rem;
             font-weight: 600;
-            color: white;
+            color: #000;
             margin: 0;
             word-wrap: break-word;
         }
@@ -90,11 +90,11 @@
             transition: all 0.3s;
             user-select: none;
             font-size: 0.85rem;
-            background: rgba(255,255,255,0.1);
+            background: #e8e8e8;
         }
         
         .jerarquia-header:hover {
-            background: rgba(255,255,255,0.15);
+            background: #d8d8d8;
         }
         
         .jerarquia-toggle {
@@ -111,22 +111,22 @@
         .jerarquia-title {
             flex: 1;
             font-weight: 500;
-            color: white;
+            color: #000;
         }
         
         .jerarquia-count {
             font-size: 0.7rem;
-            background: rgba(255,255,255,0.2);
+            background: #ddd;
             padding: 0.2rem 0.5rem;
             border-radius: 3px;
-            color: rgba(255,255,255,0.9);
+            color: #555;
         }
         
         .jerarquia-body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out;
-            background: rgba(0,0,0,0.1);
+            background: #f0f0f0;
         }
         
         .jerarquia-body.expanded {
@@ -150,17 +150,17 @@
             justify-content: space-between;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid #2d5016;
+            border-bottom: 2px solid #000000;
         }
 
         .specs-title {
             font-size: 1.8rem;
-            color: #2d5016;
+            color: #000000;
             font-weight: 600;
         }
 
         .specs-back-btn {
-            background: #2d5016;
+            background: #000000;
             color: white;
             border: none;
             padding: 0.7rem 1.5rem;
@@ -171,7 +171,7 @@
         }
 
         .specs-back-btn:hover {
-            background: #4a7c28;
+            background: #000000;
         }
 
         .specs-info {
@@ -185,7 +185,7 @@
             background: #f8f9fa;
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #2d5016;
+            border-left: 4px solid #000000;
         }
 
         .specs-card h3 {
@@ -213,11 +213,11 @@
         }
 
         .specs-children h3 {
-            color: #2d5016;
+            color: #000000;
             font-size: 1.2rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid #2d5016;
+            border-bottom: 2px solid #000000;
         }
 
         .specs-item {
@@ -225,29 +225,29 @@
             padding: 1rem;
             margin-bottom: 0.5rem;
             border-radius: 6px;
-            border-left: 3px solid #4a7c28;
+            border-left: 3px solid #000000;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .specs-item:hover {
             background: #f0f4f0;
-            border-left-color: #2d5016;
+            border-left-color: #000000;
         }
         
         .jerarquia-item-level {
             padding: 0.5rem 1.5rem 0.5rem 2.2rem;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.85);
-            border-left: 2px solid rgba(255,255,255,0.2);
+            color: #333;
+            border-left: 2px solid #ccc;
             cursor: pointer;
             transition: all 0.2s;
         }
         
         .jerarquia-item-level:hover {
-            color: white;
-            border-left-color: rgba(255,255,255,0.5);
-            background: rgba(255,255,255,0.05);
+            color: #000;
+            border-left-color: #999;
+            background: #e8e8e8;
         }
         
         @media (max-width: 768px) {
@@ -258,7 +258,7 @@
             .sidebar-wrapper {
                 width: 100%;
                 border-right: none;
-                border-bottom: 2px solid #003300;
+                border-bottom: 2px solid #ccc;
                 max-height: 200px;
             }
             
@@ -268,8 +268,8 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #006600 0%, #009900 100%);
-            color: white;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            color: #000;
             padding: 2.5rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -285,12 +285,12 @@
         .logo {
             width: 120px;
             height: auto;
-            filter: brightness(0) invert(1);
+            color: #000;
         }
         
         .bim-id {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
+            background: #e0e0e0;
             padding: 0.5rem 1rem;
             border-radius: 6px;
             font-size: 0.9rem;
@@ -324,12 +324,12 @@
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #006600;
+            border-left: 4px solid #333;
         }
         
         .info-card.destacada {
-            background: linear-gradient(135deg, #00660015 0%, #00990015 100%);
-            border-left: 4px solid #009900;
+            background: linear-gradient(135deg, #e8e8e8 0%, #d8d8d8 100%);
+            border-left: 4px solid #666;
         }
         
         .info-card h3 {
@@ -343,13 +343,13 @@
         .info-card p {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #006600;
+            color: #333;
             margin: 0.3rem 0;
         }
         
         .info-card.destacada p {
             font-size: 1.8rem;
-            color: #009900;
+            color: #000;
         }
         
         section {
@@ -357,11 +357,11 @@
         }
         
         h2 {
-            color: #006600;
+            color: #333;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid #006600;
+            border-bottom: 2px solid #333;
         }
         
         .table-wrapper {
@@ -378,7 +378,7 @@
         }
         
         thead {
-            background: linear-gradient(135deg, #006600 0%, #009900 100%);
+            background: linear-gradient(135deg, #4a4a4a 0%, #5a5a5a 100%);
             color: white;
         }
         
@@ -417,19 +417,19 @@
             border-radius: 4px;
             font-family: 'Courier New', monospace;
             font-size: 0.9em;
-            color: #009900;
+            color: #666;
         }
         
         .fuente-datos {
             background: #f8f9fa;
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #28a745;
+            border-left: 4px solid #000000;
             margin-top: 2rem;
         }
         
         .fuente-datos h3 {
-            color: #28a745;
+            color: #000000;
             margin-bottom: 0.75rem;
             font-size: 1.1rem;
         }
@@ -448,7 +448,7 @@
         
         .badge-variante {
             display: inline-block;
-            background: #ffc107;
+            background: #9d9c97;
             color: #000;
             padding: 0.25rem 0.75rem;
             border-radius: 4px;
@@ -467,7 +467,7 @@
         }
         
         footer a {
-            color: #006600;
+            color: #333;
             text-decoration: none;
             margin: 0 0.5rem;
         }
@@ -578,7 +578,7 @@
                 <td class="text-center">1</td>
                 <td class="text-right"><strong>$980.000.000</strong></td>
             </tr>
-            <tr style="background-color: #fff3cd;">
+            <tr style="background-color: #ffffff;">
                 <td>2</td>
                 <td><strong>PISTA_CLASE_I</strong></td>
                 <td>Pista Clase I adicional #1 (A1, A2, B1, C1)</td>
@@ -588,7 +588,7 @@
                 <td class="text-center">1</td>
                 <td class="text-right"><strong>$750.000.000</strong></td>
             </tr>
-            <tr style="background-color: #fff3cd;">
+            <tr style="background-color: #ffffff;">
                 <td>3</td>
                 <td><strong>PISTA_CLASE_I</strong></td>
                 <td>Pista Clase I adicional #2 (A1, A2, B1, C1)</td>
@@ -757,9 +757,8 @@
     </div>
     <script>
         const L2_COMPONENT_MAP = {
-            'L2.pista_clase_3': {titulo:'Pista Clase III',descripcion:'Circuito completo Clase III',l1_items:[{id:'L1.001',titulo:'Pista motos A1A2',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito A1A2'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_001',especificacion:'Vehículo prueba A1'},{titulo:'VEH_002',especificacion:'Vehículo prueba A2'}]},{id:'L1.002',titulo:'Pista carros B1C1',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B1C1'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_003',especificacion:'Vehículo prueba B1'},{titulo:'VEH_004',especificacion:'Vehículo prueba C1'}]},{id:'L1.003',titulo:'Pista camiones B2C2',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B2C2'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_005',especificacion:'Vehículo prueba B2/C2'}]},{id:'L1.004',titulo:'Pista tractocamiones B3C3',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B3C3'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_005',especificacion:'Vehículo prueba B3/C3'}]}]},
-            'L2.pista_clase_2': {titulo:'Pista Clase II',descripcion:'Circuito para motocicletas',l1_items:[{id:'L1.002',titulo:'Pista carros B1C1',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B1C1'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_003',especificacion:'Vehículo prueba B1'},{titulo:'VEH_004',especificacion:'Vehículo prueba C1'}]},{id:'L1.003',titulo:'Pista camiones B2C2',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B2C2'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_005',especificacion:'Vehículo prueba B2/C2'}]}]},
-            'L2.pista_clase_1': {titulo:'Pista Clase I',descripcion:'Circuito para vehículos livianos',l1_items:[{id:'L1.001',titulo:'Pista motos A1A2',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito A1A2'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_001',especificacion:'Vehículo prueba A1'},{titulo:'VEH_002',especificacion:'Vehículo prueba A2'}]},{id:'L1.002',titulo:'Pista carros B1C1',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B1C1'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_003',especificacion:'Vehículo prueba B1'},{titulo:'VEH_004',especificacion:'Vehículo prueba C1'}]}]},
+            'L2.pista_clase_II': {titulo:'Pista Clase II',descripcion:'Circuito para motocicletas',l1_items:[{id:'L1.002',titulo:'Pista carros B1C1',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B1C1'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_003',especificacion:'Vehículo prueba B1'},{titulo:'VEH_004',especificacion:'Vehículo prueba C1'}]},{id:'L1.003',titulo:'Pista camiones B2C2',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B2C2'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_005',especificacion:'Vehículo prueba B2/C2'}]}]},
+            'L2.pista_clase_I': {titulo:'Pista Clase I',descripcion:'Circuito para vehículos livianos',l1_items:[{id:'L1.001',titulo:'Pista motos A1A2',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito A1A2'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_001',especificacion:'Vehículo prueba A1'},{titulo:'VEH_002',especificacion:'Vehículo prueba A2'}]},{id:'L1.002',titulo:'Pista carros B1C1',l0_items:[{titulo:'IC_001',especificacion:'Infraestructura de circuito B1C1'},{titulo:'DR_003',especificacion:'Drenaje sector 3'},{titulo:'ILU_001',especificacion:'Iluminación sector 1'},{titulo:'ILU_002',especificacion:'Iluminación sector 2'},{titulo:'VEH_003',especificacion:'Vehículo prueba B1'},{titulo:'VEH_004',especificacion:'Vehículo prueba C1'}]}]},
             'L2.sala_12_cubiculos': {titulo:'Sala 12 Cubículos',descripcion:'Sala de formación 12 puestos',l1_items:[{id:'L1.005',titulo:'Eléctrica aulas',l0_items:[{titulo:'ELE_001',especificacion:'Cableado de baja tensión'},{titulo:'ELE_002',especificacion:'Panel de distribución'},{titulo:'ELE_003',especificacion:'Tomacorrientes tipo C'},{titulo:'ELE_004',especificacion:'Interruptores automáticos'}]},{id:'L1.006',titulo:'Mobiliario educativo',l0_items:[{titulo:'MOB_001',especificacion:'Pupitres'},{titulo:'MOB_002',especificacion:'Sillas'},{titulo:'MOB_003',especificacion:'Pizarra'},{titulo:'MOB_004',especificacion:'Estantería'},{titulo:'MOB_005',especificacion:'Armario'}]}]},
             'L2.edificacion': {titulo:'Edificación',descripcion:'Edificación administrativa',l1_items:[{id:'L1.007',titulo:'Estructura civil',l0_items:[{titulo:'EDIF_001',especificacion:'Estructura de concreto'},{titulo:'ACC_001',especificacion:'Acceso principal'},{titulo:'ACC_002',especificacion:'Acceso secundario'},{titulo:'ACC_003',especificacion:'Acceso de emergencia'}]},{id:'L1.008',titulo:'Sanitarias',l0_items:[{titulo:'HID_001',especificacion:'Red de agua potable'},{titulo:'HID_002',especificacion:'Sistema de alcantarillado'},{titulo:'SEG_001',especificacion:'Seguridad contra incendios'},{titulo:'SEG_002',especificacion:'Señalética'}]}]},
             'L2.cale_teorico_12q': {titulo:'Centro Teórico',descripcion:'Centro teórico 12 cubículos',l1_items:[{id:'L1.009',titulo:'Aulas teóricas',l0_items:[{titulo:'MOB_006',especificacion:'Escritorio'},{titulo:'MOB_007',especificacion:'Sillas'},{titulo:'MOB_008',especificacion:'Pizarras'},{titulo:'TEC_001',especificacion:'Computadora'},{titulo:'TEC_002',especificacion:'Proyector'}]},{id:'L1.010',titulo:'Audiovisuales',l0_items:[{titulo:'TEC_003',especificacion:'Cámara'},{titulo:'TEC_004',especificacion:'Sistema de sonido'},{titulo:'MONITOR_VIDEOWALL',especificacion:'Panel de video wall'}]}]},
@@ -769,6 +768,8 @@
             'L2.instalaciones': {titulo:'Instalaciones',descripcion:'Instalaciones especiales',l1_items:[{id:'L1.015',titulo:'Eléctrico integral',l0_items:[{titulo:'ELE_001',especificacion:'Transformador'},{titulo:'ELE_002',especificacion:'Panel principal'},{titulo:'ELE_003',especificacion:'UPS'},{titulo:'ELE_004',especificacion:'Generador'},{titulo:'ELE_006',especificacion:'Cableado media tensión'},{titulo:'ELE_007',especificacion:'Cableado baja tensión'},{titulo:'ELE_008',especificacion:'Puesta a tierra'},{titulo:'ELE_009',especificacion:'Protección'}]},{id:'L1.016',titulo:'HVAC comunicaciones',l0_items:[{titulo:'HVAC_001',especificacion:'Sistema de aire acondicionado'},{titulo:'IC_002',especificacion:'Red telecom'},{titulo:'IC_003',especificacion:'Fibra óptica'},{titulo:'IC_004',especificacion:'Cableado Cat-6A'}]}]},
             'L2.obras_exteriores': {titulo:'Obras Exteriores',descripcion:'Áreas exteriores',l1_items:[{id:'L1.014',titulo:'Circulación externa',l0_items:[{titulo:'CIRCULACION_EXTERNA',especificacion:'Vías externas'},{titulo:'PASILLO_INTERNO',especificacion:'Pasillos internos'},{titulo:'RAMPA_ACCESIBILIDAD',especificacion:'Rampa de accesibilidad'}]}]}
         };
+        let l3OriginalContent = null;
+
         function parseComponentTable() {
             const table = document.querySelector('table');
             if (!table) return [];
@@ -805,25 +806,25 @@
                 return;
             }
             window.hierarchyData = data;
-            let html = `<div class="sidebar-header"><h3></h3><p class="titulo-actual">${data.titulo}</p></div><div class="jerarquia-item"><div class="jerarquia-header" onclick="toggleLevel(this); return false;"><span class="jerarquia-toggle">▶</span><span class="jerarquia-title">L3 ${data.titulo}</span><span class="jerarquia-count">${data.hijos_l2.length}</span></div><div class="jerarquia-body" id="body-l3">`;
+            let html = `<div class="sidebar-header"><img src="../visualizacion/logo-uptc.svg" alt="UPTC Logo" style="width: 100%; max-width: 200px; margin: 0 auto; display: block;"></div><div class="jerarquia-item"><div class="jerarquia-header" onclick="toggleLevel(this); return false;"><span class="jerarquia-toggle">▶</span><span class="jerarquia-title" onclick="showL3Specs(); return false;" style="cursor: pointer;">L3 ${data.titulo}</span><span class="jerarquia-count">${data.hijos_l2.length}</span></div><div class="jerarquia-body" id="body-l3">`;
             data.hijos_l2.forEach((l2, idx) => {
                 const hasL1 = l2.hijos_l1 && l2.hijos_l1.length > 0;
-                html += `<div class="jerarquia-item" style="margin-left: 1rem;"><div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: rgba(255,255,255,0.08);"><span class="jerarquia-toggle ${hasL1 ? '' : 'disabled'}">▶</span><span class="jerarquia-title" onclick="showL2Specs(${idx}); return false;">L2 ${l2.titulo}</span>${hasL1 ? `<span class="jerarquia-count">${l2.hijos_l1.length}</span>` : ''}</div><div class="jerarquia-body" id="body-l2-${idx}">`;
+                html += `<div class="jerarquia-item" style="margin-left: 1rem;"><div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: #e8e8e8;"><span class="jerarquia-toggle ${hasL1 ? '' : 'disabled'}">▶</span><span class="jerarquia-title" onclick="showL2Specs(${idx}); return false;">L2 ${l2.titulo}</span>${hasL1 ? `<span class="jerarquia-count">${l2.hijos_l1.length}</span>` : ''}</div><div class="jerarquia-body" id="body-l2-${idx}">`;
                 if (hasL1) {
                     l2.hijos_l1.forEach((l1, l1idx) => {
                         const hasL0 = l1.hijos_l0 && l1.hijos_l0.length > 0;
-                        html += `<div class="jerarquia-item" style="margin-left: 1rem;"><div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: rgba(255,255,255,0.05); font-size: 0.8rem;"><span class="jerarquia-toggle ${hasL0 ? '' : 'disabled'}">▶</span><span class="jerarquia-title" onclick="showL1Specs(${idx}, ${l1idx}); return false;">L1 ${l1.titulo}</span>${hasL0 ? `<span class="jerarquia-count">${l1.hijos_l0.length}</span>` : ''}</div><div class="jerarquia-body" id="body-l1-${idx}-${l1idx}">`;
+                        html += `<div class="jerarquia-item" style="margin-left: 1rem;"><div class="jerarquia-header" onclick="toggleLevel(this); return false;" style="background: #d8d8d8; font-size: 0.8rem;"><span class="jerarquia-toggle ${hasL0 ? '' : 'disabled'}">▶</span><span class="jerarquia-title" onclick="showL1Specs(${idx}, ${l1idx}); return false;">L1 ${l1.titulo}</span>${hasL0 ? `<span class="jerarquia-count">${l1.hijos_l0.length}</span>` : ''}</div><div class="jerarquia-body" id="body-l1-${idx}-${l1idx}">`;
                         if (hasL0) {
                             l1.hijos_l0.forEach((l0, l0idx) => {
                                 html += `<div class="jerarquia-item-level" style="margin-left: 0.5rem; padding-left: 2.5rem; font-size: 0.75rem;" onclick="showL0Specs(${idx}, ${l1idx}, ${l0idx}); return false;">🔸 L0 ${l0.titulo}</div>`;
                             });
                         } else {
-                            html += `<div class="jerarquia-item-level" style="color: rgba(255,255,255,0.4); font-style: italic; font-size: 0.75rem;">Sin L0</div>`;
+                            html += `<div class="jerarquia-item-level" style="color: #999; font-style: italic; font-size: 0.75rem;">Sin L0</div>`;
                         }
                         html += `</div></div>`;
                     });
                 } else {
-                    html += `<div class="jerarquia-item-level" style="color: rgba(255,255,255,0.4); font-style: italic;">Sin L1</div>`;
+                    html += `<div class="jerarquia-item-level" style="color: #999; font-style: italic;">Sin L1</div>`;
                 }
                 html += `</div></div>`;
             });
@@ -845,7 +846,7 @@
             event.stopPropagation();
             const l2 = window.hierarchyData.hijos_l2[l2idx];
             const specsView = document.querySelector('.content');
-            let html = `<div class="specs-header"><div><span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">📦 L2 COMPONENTE</span><h2 class="specs-title">${l2.titulo}</h2></div><button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button></div><div class="specs-info"><div class="specs-card"><h3>Referencia BIM</h3><p><code>${l2.titulo}</code></p></div></div>`;
+            let html = `<div class="specs-header"><div><span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">📦 L2 COMPONENTE</span><h2 class="specs-title">${l2.titulo}</h2></div></div><div class="specs-info"><div class="specs-card"><h3>Referencia BIM</h3><p><code>${l2.titulo}</code></p></div></div>`;
             if (l2.hijos_l1 && l2.hijos_l1.length > 0) {
                 html += `<div class="specs-children"><h3>Sub-componentes L1 (${l2.hijos_l1.length})</h3>`;
                 l2.hijos_l1.forEach((l1, l1idx) => {
@@ -861,7 +862,7 @@
             const l2 = window.hierarchyData.hijos_l2[l2idx];
             const l1 = l2.hijos_l1[l1idx];
             const specsView = document.querySelector('.content');
-            let html = `<div class="specs-header"><div><span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">🔗 L1 SUB-COMPONENTE</span><h2 class="specs-title">${l1.titulo}</h2></div><button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button></div><div class="specs-info"><div class="specs-card"><h3>ID L1</h3><p><code>${l1.id}</code></p></div><div class="specs-card"><h3>Elementos L0</h3><p>${l1.hijos_l0 ? l1.hijos_l0.length : 0} componentes</p></div></div>`;
+            let html = `<div class="specs-header"><div><span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">🔗 L1 SUB-COMPONENTE</span><h2 class="specs-title">${l1.titulo}</h2></div></div><div class="specs-info"><div class="specs-card"><h3>ID L1</h3><p><code>${l1.id}</code></p></div><div class="specs-card"><h3>Elementos L0</h3><p>${l1.hijos_l0 ? l1.hijos_l0.length : 0} componentes</p></div></div>`;
             if (l1.hijos_l0 && l1.hijos_l0.length > 0) {
                 html += `<div class="specs-children"><h3>Elementos L0 (${l1.hijos_l0.length})</h3>`;
                 l1.hijos_l0.forEach((l0, l0idx) => {
@@ -915,9 +916,6 @@
                             ${styles || ''}
                             .bim-l0-container { margin-left: 0; max-width: 100%; }
                         </style>
-                        <div style="position: relative; margin-bottom: 2rem;">
-                            <button class="specs-back-btn" onclick="hideSpecs()" style="position: sticky; top: 0; z-index: 10;">← Volver al L3</button>
-                        </div>
                         <div class="bim-l0-container">
                             ${content}
                         </div>
@@ -929,7 +927,6 @@
                                 <span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">🔸 L0 ELEMENTO ATÓMICO</span>
                                 <h2 class="specs-title">${l0.titulo}</h2>
                             </div>
-                            <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
                         </div>
                         <div class="specs-content">
                             <h3>Especificaciones Técnicas</h3>
@@ -944,7 +941,6 @@
                             <span style="color: rgba(45, 80, 22, 0.6); font-size: 0.9rem;">🔸 L0 ELEMENTO ATÓMICO</span>
                             <h2 class="specs-title">${l0.titulo}</h2>
                         </div>
-                        <button class="specs-back-btn" onclick="hideSpecs()">← Volver al L3</button>
                     </div>
                     <div class="specs-content">
                         <h3>Error</h3>
@@ -955,10 +951,24 @@
             
             document.querySelector('.main-wrapper').scrollTop = 0;
         }
+        function showL3Specs() {
+            event.stopPropagation();
+            const specsView = document.querySelector('.content');
+            if (l3OriginalContent) {
+                specsView.innerHTML = l3OriginalContent;
+                document.querySelector('.main-wrapper').scrollTop = 0;
+            }
+        }
         function hideSpecs() {
             location.reload();
         }
-        document.addEventListener('DOMContentLoaded', renderSidebar);
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentArea = document.querySelector('.content');
+            if (contentArea) {
+                l3OriginalContent = contentArea.innerHTML;
+            }
+            renderSidebar();
+        });
     </script>
 </body>
 </html>
