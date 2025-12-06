@@ -268,13 +268,18 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-            color: #000;
+            background: linear-gradient(135deg, #036085 0%, #0e74b4 100%);
+            color: #ffffff;
             padding: 2.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgb(255, 252, 252);
+            flex-shrink: 0;
         }
         
         .header-content {
@@ -285,12 +290,12 @@
         .logo {
             width: 120px;
             height: auto;
-            color: #000;
+            color: #ffffff;
         }
         
         .bim-id {
             display: inline-block;
-            background: #e0e0e0;
+            background:#036085 0%;
             padding: 0.5rem 1rem;
             border-radius: 6px;
             font-size: 0.9rem;

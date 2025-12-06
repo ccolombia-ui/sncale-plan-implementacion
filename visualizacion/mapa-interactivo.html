@@ -628,10 +628,14 @@
 
         .ficha-content {
             flex: 1;
-            overflow: auto;
+            overflow: hidden;
             background: white;
             height: 100%;
             border-radius: 12px;
+        }
+        
+        .ficha-content::-webkit-scrollbar {
+            display: none;
         }
 
         .ficha-content iframe {
