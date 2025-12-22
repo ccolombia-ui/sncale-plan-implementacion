@@ -2217,15 +2217,15 @@ function aplicarFiltrosCategoria() {
     console.log(`🔍 Filtros aplicados: ${categoriasActivas.length > 0 ? categoriasActivas.join(', ') : 'Todos'}`);
 }
 
+console.log('✅ Script mapa-interactivo.js cargado');
+
 // ========================================
 // FUNCIÓN PARA CAMBIAR ENTRE ESCENARIOS
 // ========================================
 
 function cambiarEscenario() {
-    console.log('🔄 Cambiando a Escenario 2...');
-    // Navegar a la carpeta visualizacion_2
-    window.location.href = '../visualizacion_2/mapa-interactivo.html';
+    console.log('🔄 Cambiando a Escenario 1...');
+    // Navegar a la carpeta visualizacion
+    window.location.href = '../visualizacion/mapa-interactivo.html';
 }
-
-console.log('✅ Script mapa-interactivo.js cargado');
 

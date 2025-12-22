@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug CALE Metropolitano</title>
+</head>
+<body>
+    <h1>Debug CALE Metropolitano</h1>
+    <div id="results"></div>
+    <script>
+        (async () => {
+            try {
+                const response = await fetch('../data/nodos_completos_mapa.json');
+                const data = await response.json();
+                
+                let html = '<h2>Diagnóstico</h2>';
+                html += `<p>Total nodos en JSON: ${Object.keys(data.nodos).length}</p>`;
+                
+                const cale_n1_nodos = Object.values(data.nodos).filter(n => n.tipo_id === 'L3.CALE.n_1');
+                html += `<p>Nodos con tipo_id 'L3.CALE.n_1': <strong>${cale_n1_nodos.length}</strong></p>`;
+                
+                html += '<h3>Nodos CALE Metropolitano (L3.CALE.n_1):</h3><ul>';
+                cale_n1_nodos.forEach(nodo => {
+                    html += `<li>${nodo.nodo_id}: ${nodo.nombre} (${nodo.departamento}) - tipo_id: ${nodo.tipo_id}</li>`;
+                });
+                html += '</ul>';
+                
+                // Verificar TIPOS_CONFIG
+                const TIPOS_CONFIG = [
+                    {
+                        tipo_id: 'L3.CALE.n_1',
+                        nombre: 'CALE Metropolitano',
+                    }
+                ];
+                
+                html += '<h3>TIPOS_CONFIG esperado:</h3>';
+                html += `<p>Buscando nodos con tipo_id: '${TIPOS_CONFIG[0].tipo_id}'</p>`;
+                
+                const filtered = Object.values(data.nodos).filter(n => n.tipo_id === TIPOS_CONFIG[0].tipo_id);
+                html += `<p>Nodos encontrados: ${filtered.length}</p>`;
+                
+                document.getElementById('results').innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('results').innerHTML = `<p style="color:red">Error: ${error.message}</p>`;
+            }
+        })();
+    </script>
+</body>
+</html>

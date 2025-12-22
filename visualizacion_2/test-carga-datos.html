@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Carga Datos SNCALE</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        .log {
+            background: #0f0f1e;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 3px solid #4a90e2;
+        }
+        .error {
+            border-left-color: #e63946;
+            color: #ff6b6b;
+        }
+        .success {
+            border-left-color: #06d6a0;
+            color: #06d6a0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test de Carga de Datos SNCALE</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById('output');
+        
+        function log(msg, type = 'log') {
+            const div = document.createElement('div');
+            div.className = `log ${type}`;
+            div.textContent = msg;
+            output.appendChild(div);
+            console.log(msg);
+        }
+
+        async function testCargarDatos() {
+            log('🚀 Iniciando pruebas...');
+            
+            // Test 1: Cargar nodos principales
+            try {
+                log('📥 Test 1: Cargando nodos_completos_mapa.json...');
+                const response = await fetch('../data/nodos_completos_mapa.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                log(`✅ Archivo cargado. Estructura: ${JSON.stringify(Object.keys(data))}`, 'success');
+                
+                const nodos = data.nodos || {};
+                log(`✅ Total nodos principales: ${Object.keys(nodos).length}`, 'success');
+                
+                // Verificar primer nodo
+                const primerNodoId = Object.keys(nodos)[0];
+                const primerNodo = nodos[primerNodoId];
+                log(`🔍 Primer nodo: ${primerNodoId}`);
+                log(`   - nombre: ${primerNodo.nombre}`);
+                log(`   - coords: ${JSON.stringify(primerNodo.coords)}`);
+                log(`   - tipo_id: ${primerNodo.tipo_id}`);
+                
+            } catch (error) {
+                log(`❌ Error en Test 1: ${error.message}`, 'error');
+                log(`   Stack: ${error.stack}`, 'error');
+            }
+            
+            // Test 2: Cargar relaciones jerárquicas
+            try {
+                log('');
+                log('📥 Test 2: Cargando relaciones_jerarquicas_completas.json...');
+                const response = await fetch('../data/relaciones_jerarquicas_completas.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                log(`✅ Archivo cargado. Estructura: ${JSON.stringify(Object.keys(data))}`, 'success');
+                
+                const relaciones = data.relaciones || {};
+                log(`✅ Total nodos con relaciones: ${Object.keys(relaciones).length}`, 'success');
+                
+                // Contar satélites
+                let totalSatelites = 0;
+                Object.values(relaciones).forEach(rel => {
+                    totalSatelites += rel.subnodos.length;
+                });
+                log(`✅ Total satélites: ${totalSatelites}`, 'success');
+                
+                // Verificar primer satélite
+                const nodoConSatelites = Object.values(relaciones).find(r => r.subnodos.length > 0);
+                if (nodoConSatelites) {
+                    const sat = nodoConSatelites.subnodos[0];
+                    log(`🔍 Primer satélite: ${sat.id}`);
+                    log(`   - nombre: ${sat.nombre}`);
+                    log(`   - latitud: ${sat.latitud}`);
+                    log(`   - longitud: ${sat.longitud}`);
+                    log(`   - categoria: ${sat.categoria}`);
+                }
+                
+            } catch (error) {
+                log(`❌ Error en Test 2: ${error.message}`, 'error');
+                log(`   Stack: ${error.stack}`, 'error');
+            }
+            
+            // Test 3: Simular creación de satélite en NODOS_DATA
+            try {
+                log('');
+                log('📥 Test 3: Simulando creación de objeto satélite...');
+                
+                const sateliteEjemplo = {
+                    id: 'SAT_001',
+                    nombre: 'FOSCA',
+                    latitud: 4.339093,
+                    longitud: -73.93902,
+                    categoria: 'C5',
+                    color: '#6C757D',
+                    demanda: 500
+                };
+                
+                const nodoSatelite = {
+                    nodo_id: sateliteEjemplo.id,
+                    nombre: sateliteEjemplo.nombre,
+                    coords: {
+                        lat: sateliteEjemplo.latitud,
+                        lon: sateliteEjemplo.longitud
+                    },
+                    categoria: sateliteEjemplo.categoria,
+                    tipo_id: `L3.SATELITE.${sateliteEjemplo.categoria.toLowerCase()}`,
+                    tipo_color: sateliteEjemplo.color,
+                    tipo_icono: '⬤',
+                    demanda_anual: sateliteEjemplo.demanda,
+                    es_satelite: true
+                };
+                
+                log(`✅ Objeto creado: ${JSON.stringify(nodoSatelite, null, 2)}`, 'success');
+                log(`✅ coords.lat existe: ${nodoSatelite.coords.lat !== undefined}`, 'success');
+                log(`✅ coords.lon existe: ${nodoSatelite.coords.lon !== undefined}`, 'success');
+                
+            } catch (error) {
+                log(`❌ Error en Test 3: ${error.message}`, 'error');
+                log(`   Stack: ${error.stack}`, 'error');
+            }
+            
+            log('');
+            log('🏁 Pruebas completadas', 'success');
+        }
+
+        // Ejecutar pruebas
+        testCargarDatos();
+    </script>
+</body>
+</html>
