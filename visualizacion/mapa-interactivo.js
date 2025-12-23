@@ -204,6 +204,397 @@ document.addEventListener('DOMContentLoaded', async () => {
 // CARGA DE DATOS
 // ========================================
 
+// Función para agregar nodos Plus (VISUALIZACIÓN 1)
+function agregarNodosPlus() {
+    const nodosPlus = {
+        // CALE METROPOLITANO PLUS (n_1_plus)
+        'PLUS_01': {
+            nodo_id: 'PLUS_01',
+            nombre: 'BOGOTÁ, D.C.',
+            departamento: 'BOGOTA, D.C.',
+            codigo_dane: '11001',
+            coords: { lat: 4.710989, lon: -74.072092 },
+            demanda_anual: 80453,
+            cluster_municipios: 0,
+            tipo_id: 'L3.CALE.n_1_plus',
+            tipo_nombre: 'CALE Metropolitano Plus',
+            tipo_color: '#0000ff',
+            tipo_icono: '🔵',
+            categoria: 'Cat.A+',
+            categoria_raw: 'CALE.n_1+',
+            valores_unitarios: {
+                capex: 3728340000,
+                opex_anual: 2400000000,
+                capacidad_anual: 173040
+            }
+        },
+        'PLUS_02': {
+            nodo_id: 'PLUS_02',
+            nombre: 'BOGOTÁ, D.C.',
+            departamento: 'BOGOTA, D.C.',
+            codigo_dane: '11001',
+            coords: { lat: 4.649251, lon: -74.106992 },
+            demanda_anual: 70396,
+            cluster_municipios: 1,
+            tipo_id: 'L3.CALE.n_1_plus',
+            tipo_nombre: 'CALE Metropolitano Plus',
+            tipo_color: '#0000ff',
+            tipo_icono: '🔵',
+            categoria: 'Cat.A+',
+            categoria_raw: 'CALE.n_1+',
+            valores_unitarios: {
+                capex: 3728340000,
+                opex_anual: 2400000000,
+                capacidad_anual: 173040
+            }
+        },
+        'PLUS_03': {
+            nodo_id: 'PLUS_03',
+            nombre: 'BUCARAMANGA',
+            departamento: 'SANTANDER',
+            codigo_dane: '68001',
+            coords: { lat: 7.119349, lon: -73.122742 },
+            demanda_anual: 68000,
+            cluster_municipios: 0,
+            tipo_id: 'L3.CALE.n_1_plus',
+            tipo_nombre: 'CALE Metropolitano Plus',
+            tipo_color: '#0000ff',
+            tipo_icono: '🔵',
+            categoria: 'Cat.A+',
+            categoria_raw: 'CALE.n_1+',
+            valores_unitarios: {
+                capex: 3728340000,
+                opex_anual: 2400000000,
+                capacidad_anual: 173040
+            }
+        },
+        // CALE SUBREGIONAL PLUS (n_2_plus)
+        'PLUS_04': {
+            nodo_id: 'PLUS_04',
+            nombre: 'BARBOSA',
+            departamento: 'ANTIOQUIA',
+            codigo_dane: '05079',
+            coords: { lat: 6.438919, lon: -75.331486 },
+            demanda_anual: 33432,
+            cluster_municipios: 3,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_05': {
+            nodo_id: 'PLUS_05',
+            nombre: 'SANTA FÉ DE ANTIOQUIA',
+            departamento: 'ANTIOQUIA',
+            codigo_dane: '05042',
+            coords: { lat: 6.555906, lon: -75.827506 },
+            demanda_anual: 32510,
+            cluster_municipios: 3,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_06': {
+            nodo_id: 'PLUS_06',
+            nombre: 'VILLAVICENCIO',
+            departamento: 'META',
+            codigo_dane: '50001',
+            coords: { lat: 4.142002, lon: -73.626579 },
+            demanda_anual: 30258,
+            cluster_municipios: 4,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_07': {
+            nodo_id: 'PLUS_07',
+            nombre: 'JAMUNDÍ',
+            departamento: 'VALLE DEL CAUCA',
+            codigo_dane: '76364',
+            coords: { lat: 3.261944, lon: -76.540833 },
+            demanda_anual: 24973,
+            cluster_municipios: 1,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_08': {
+            nodo_id: 'PLUS_08',
+            nombre: 'RIOHACHA',
+            departamento: 'LA GUAJIRA',
+            codigo_dane: '44001',
+            coords: { lat: 11.544444, lon: -72.907222 },
+            demanda_anual: 22000,
+            cluster_municipios: 2,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_09': {
+            nodo_id: 'PLUS_09',
+            nombre: 'ENVIGADO',
+            departamento: 'ANTIOQUIA',
+            codigo_dane: '05266',
+            coords: { lat: 6.172275, lon: -75.578019 },
+            demanda_anual: 21571,
+            cluster_municipios: 1,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_10': {
+            nodo_id: 'PLUS_10',
+            nombre: 'IBAGUÉ',
+            departamento: 'TOLIMA',
+            codigo_dane: '73001',
+            coords: { lat: 4.438889, lon: -75.232222 },
+            demanda_anual: 20480,
+            cluster_municipios: 2,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_11': {
+            nodo_id: 'PLUS_11',
+            nombre: 'GIRARDOT',
+            departamento: 'CUNDINAMARCA',
+            codigo_dane: '25307',
+            coords: { lat: 4.304444, lon: -74.803889 },
+            demanda_anual: 16965,
+            cluster_municipios: 2,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_12': {
+            nodo_id: 'PLUS_12',
+            nombre: 'RIONEGRO',
+            departamento: 'ANTIOQUIA',
+            codigo_dane: '05615',
+            coords: { lat: 6.155278, lon: -75.373889 },
+            demanda_anual: 15461,
+            cluster_municipios: 2,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_13': {
+            nodo_id: 'PLUS_13',
+            nombre: 'EL PEÑÓN',
+            departamento: 'CUNDINAMARCA',
+            codigo_dane: '25258',
+            coords: { lat: 5.222222, lon: -74.745833 },
+            demanda_anual: 15098,
+            cluster_municipios: 7,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_14': {
+            nodo_id: 'PLUS_14',
+            nombre: 'TUNJA',
+            departamento: 'BOYACÁ',
+            codigo_dane: '15001',
+            coords: { lat: 5.535278, lon: -73.367778 },
+            demanda_anual: 14119,
+            cluster_municipios: 17,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_15': {
+            nodo_id: 'PLUS_15',
+            nombre: 'POPAYÁN',
+            departamento: 'CAUCA',
+            codigo_dane: '19001',
+            coords: { lat: 2.444444, lon: -76.614444 },
+            demanda_anual: 13741,
+            cluster_municipios: 4,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_16': {
+            nodo_id: 'PLUS_16',
+            nombre: 'NEIVA',
+            departamento: 'HUILA',
+            codigo_dane: '41001',
+            coords: { lat: 2.927589, lon: -75.280858 },
+            demanda_anual: 10427,
+            cluster_municipios: 4,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_17': {
+            nodo_id: 'PLUS_17',
+            nombre: 'MANIZALES',
+            departamento: 'CALDAS',
+            codigo_dane: '17001',
+            coords: { lat: 5.070275, lon: -75.513817 },
+            demanda_anual: 9541,
+            cluster_municipios: 5,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_18': {
+            nodo_id: 'PLUS_18',
+            nombre: 'TULUÁ',
+            departamento: 'VALLE DEL CAUCA',
+            codigo_dane: '76834',
+            coords: { lat: 4.083333, lon: -76.2 },
+            demanda_anual: 9017,
+            cluster_municipios: 2,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        },
+        'PLUS_19': {
+            nodo_id: 'PLUS_19',
+            nombre: 'ARMENIA',
+            departamento: 'QUINDÍO',
+            codigo_dane: '63001',
+            coords: { lat: 4.533889, lon: -75.681111 },
+            demanda_anual: 8292,
+            cluster_municipios: 2,
+            tipo_id: 'L3.CALE.n_2_plus',
+            tipo_nombre: 'CALE Subregional Plus',
+            tipo_color: '#ff4d00',
+            tipo_icono: '🟠',
+            categoria: 'Cat.A',
+            categoria_raw: 'CALE.n_2**',
+            valores_unitarios: {
+                capex: 2500000000,
+                opex_anual: 1800000000,
+                capacidad_anual: 115360
+            }
+        }
+    };
+    
+    // Agregar todos los nodos Plus a NODOS_DATA
+    Object.assign(NODOS_DATA, nodosPlus);
+}
+
 async function cargarDatos() {
     console.log('📥 Cargando datos desde JSON...');
     
@@ -214,6 +605,11 @@ async function cargarDatos() {
             const data = await response.json();
             NODOS_DATA = data.nodos || {};
             console.log(`✅ Cargados ${Object.keys(NODOS_DATA).length} nodos desde nodos_completos_mapa.json`);
+            
+            // VISUALIZACIÓN 1: Agregar nodos Plus manualmente
+            agregarNodosPlus();
+            console.log(`✅ Agregados nodos Plus. Total: ${Object.keys(NODOS_DATA).length}`);
+            
             return NODOS_DATA;
         }
         
@@ -223,6 +619,10 @@ async function cargarDatos() {
         
         NODOS_DATA = procesarDatos(data);
         console.log(`✅ Cargados ${Object.keys(NODOS_DATA).length} nodos desde tipos_l3_con_instancias_l4.json`);
+        
+        // VISUALIZACIÓN 1: Agregar nodos Plus manualmente
+        agregarNodosPlus();
+        console.log(`✅ Agregados nodos Plus. Total: ${Object.keys(NODOS_DATA).length}`);
         
         return NODOS_DATA;
     } catch (error) {
@@ -663,6 +1063,13 @@ function crearMarcador(nodo) {
     const size = esSatelite ? 16 : 24;
     const borderWidth = esSatelite ? 2 : 3;
     
+    // Para satélites C2-C5, no mostrar ningún texto/icono dentro del marcador
+    const esSateliteC2aC5 = esSatelite && nodo.tipo_id && 
+        (nodo.tipo_id.includes('.c2') || nodo.tipo_id.includes('.c3') || 
+         nodo.tipo_id.includes('.c4') || nodo.tipo_id.includes('.c5'));
+    
+    const contenidoIcono = esSateliteC2aC5 ? '' : nodo.tipo_icono;
+    
     const icon = L.divIcon({
         className: 'custom-marker',
         html: `<div style="
@@ -677,7 +1084,7 @@ function crearMarcador(nodo) {
             justify-content: center;
             font-size: ${esSatelite ? '10px' : '12px'};
             cursor: pointer;
-        ">${nodo.tipo_icono}</div>`,
+        ">${contenidoIcono}</div>`,
         iconSize: [size, size],
         iconAnchor: [size/2, size/2]
     });

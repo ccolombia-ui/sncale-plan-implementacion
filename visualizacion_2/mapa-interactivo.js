@@ -13,15 +13,8 @@ const MAPA_VISTA_INICIAL = {
 };
 
 // TIPOS_CONFIG actualizado para coincidir con datos reales del JSON
+// VISUALIZACIÓN 2: Filtrado para excluir C2, C3, C4, C5
 const TIPOS_CONFIG = [
-    {
-        tipo_id: 'L3.CALE.n_1_plus',
-        nombre: 'CALE Metropolitano Plus',
-        categoria: 'Cat.A+',
-        color: '#0000ff',
-        icono: '🔵',
-        cantidad: 8
-    },
     {
         tipo_id: 'L3.CALE.n_1',
         nombre: 'CALE Metropolitano',
@@ -29,14 +22,6 @@ const TIPOS_CONFIG = [
         color: '#E63946',
         icono: '🔴',
         cantidad: 17
-    },
-    {
-        tipo_id: 'L3.CALE.n_2_plus',
-        nombre: 'CALE Subregional Plus',
-        categoria: 'Cat.A',
-        color: '#ff4d00',
-        icono: '🟠',
-        cantidad: 21
     },
     {
         tipo_id: 'L3.SATELITE.n_2',
@@ -55,36 +40,12 @@ const TIPOS_CONFIG = [
         cantidad: 16
     },
     {
-        tipo_id: 'L3.SATELITE.c2',
-        nombre: 'Satélites C2',
-        categoria: 'Cat.C2',
-        color: '#711ed7ff',
-        icono: '🟣',
-        cantidad: 31
-    },
-    {
-        tipo_id: 'L3.SATELITE.c3',
-        nombre: 'Satélites C3',
-        categoria: 'Cat.C3',
-        color: '#711ed7ff',
-        icono: '🟣',
-        cantidad: 33
-    },
-    {
-        tipo_id: 'L3.SATELITE.c4',
-        nombre: 'Satélites C4',
-        categoria: 'Cat.C4',
-        color: '#711ed7ff',
-        icono: '🟣',
-        cantidad: 27
-    },
-    {
-        tipo_id: 'L3.SATELITE.c5',
-        nombre: 'Satélites C5',
-        categoria: 'Cat.C5',
-        color: '#6C757D',
-        icono: '⚪',
-        cantidad: 14
+        tipo_id: 'L3.SATELITE.c6',
+        nombre: 'Satelites',
+        categoria: 'Cat.C6',
+        color: '#FF6B6B',
+        icono: '🟠',
+        cantidad: 109
     }
 ];
 
@@ -96,23 +57,11 @@ const FICHAS_L3_CONFIG = {
         pistas: 'Clase I + II + III',
         nombre: 'CALE Metropolitano'
     },
-    'CALE.n_1+': {
-        ficha: '../cales/BIM_L3_001b.html',
-        cubiculos: 24,
-        pistas: 'Clase I + II + III',
-        nombre: 'CALE Metropolitano Plus'
-    },
     'CALE.n_2': {
         ficha: '../cales/BIM_L3_002.html',
         cubiculos: 16,
         pistas: 'Clase I + II',
         nombre: 'CALE Regional'
-    },
-    'CALE.n_2**': {
-        ficha: '../cales/BIM_L3_002b.html',
-        cubiculos: 16,
-        pistas: 'Clase I + II',
-        nombre: 'CALE Subregional Plus'
     },
     'CALE.n_3': {
         ficha: '../cales/BIM_L3_003.html',
@@ -143,13 +92,158 @@ const FICHAS_L3_CONFIG = {
         cubiculos: 1,
         pistas: 'Punto Info',
         nombre: 'Satélite C5'
+    },
+    'CALE.C6': {
+        ficha: '../cales/BIM_L3_C6.html',
+        cubiculos: 4, // Valor por defecto, se sobrescribe con CUBICULOS_SATELITES_POR_MUNICIPIO
+        pistas: 'Apoyo',
+        nombre: 'Satelites'
     }
 };
 
+// Mapeo de cubículos por municipio para TODOS los satélites (MOD POR AULA del info.md)
+// Formato: 'MUNICIPIO|DEPARTAMENTO': cubiculos (para evitar duplicados)
+const CUBICULOS_SATELITES_POR_MUNICIPIO = {
+    // ANTIOQUIA
+    'RIONEGRO': 4, 'BARBOSA|ANTIOQUIA': 4, 'GUARNE': 4, 'SABANETA': 4, 'ITAGUI': 2, 'APARTADO': 2,
+    'COPACABANA': 2, 'LA CEJA': 2, 'CHIGORODO': 2, 'GIRARDOTA': 2, 'EL CARMEN DE VIBORAL': 2,
+    'CAUCASIA': 2, 'MARINILLA': 2, 'ANDES': 2, 'CIUDAD BOLIVAR': 2, 'SANTA ROSA DE OSOS': 2,
+    // ATLANTICO
+    'PUERTO COLOMBIA': 4, 'GALAPA': 2, 'SABANAGRANDE': 2, 'MALAMBO': 2, 'BARANOA': 2, 'SABANALARGA': 2,
+    // BOLIVAR
+    'ARJONA': 2, 'SANTA ROSA': 2, 'TURBACO': 2, 'CLEMENCIA': 2, 'MAGANGUE': 2,
+    // BOYACA
+    'DUITAMA': 4, 'COMBITA': 4, 'CHIQUINQUIRA': 2, 'SANTA ROSA DE VITERBO': 2, 'PAIPA': 2,
+    'PUERTO BOYACA': 2, 'VILLA DE LEYVA': 2, 'RAMIRIQUI': 2,
+    // CESAR
+    'SAN DIEGO': 2, 'AGUACHICA': 2, 'EL PASO': 2, 'BOSCONIA': 2, 'SAN MARTIN': 2,
+    // CORDOBA
+    'LORICA': 2, 'CERETE': 2, 'PLANETA RICA': 2, 'SAHAGUN': 2, 'LA APARTADA': 2,
+    // NORTE DE SANTANDER
+    'OCAÑA': 2, 'PAMPLONA': 2, 'CUCUTA': 2,
+    // SANTANDER
+    'FLORIDABLANCA': 4, 'PIEDECUESTA': 4, 'BARBOSA|SANTANDER': 4, 'SAN GIL': 2, 'LEBRIJA': 2,
+    'SOCORRO': 2, 'CHARALA': 2,
+    // SUCRE
+    'SINCE': 4,
+    // LA GUAJIRA
+    'ALBANIA': 2,
+    // MAGDALENA
+    'ARACATACA': 2, 'CIENAGA': 2, 'SITIONUEVO': 2,
+    // TOLIMA
+    'ALVARADO': 2, 'MELGAR': 2, 'MARIQUITA': 2, 'CHAPARRAL': 2, 'PURIFICACION': 2,
+    'GUAMO': 2, 'FRESNO': 2,
+    // HUILA
+    'RIVERA': 4, 'PALERMO': 2, 'GARZON': 2,
+    // META
+    'ACACIAS': 2, 'RESTREPO': 2, 'PUERTO LOPEZ': 2,
+    // ARAUCA
+    'SARAVENA': 1, 'TAME': 1,
+    // CASANARE
+    'VILLANUEVA': 2, 'AGUAZUL': 2,
+    // CAUCA
+    'SANTANDER DE QUILICHAO': 2, 'PIENDAMO': 2, 'MIRANDA': 2, 'PUERTO TEJADA': 2, 'PATIA': 2,
+    // NARINO
+    'IPIALES': 2, 'PUPIALES': 2, 'TUQUERRES': 2, 'TUMACO': 2, 'LA UNION': 2, 'GUACHUCAL': 2,
+    // QUINDIO
+    'CIRCASIA': 4, 'CALARCA': 2, 'QUIMBAYA': 2, 'LA TEBAIDA': 2,
+    // CALDAS
+    'VILLAMARIA': 4, 'LA DORADA': 2, 'ANSERMA': 2, 'RIOSUCIO': 2, 'MANZANARES': 2,
+    'SUPIA': 2, 'CHINCHINA': 2, 'AGUADAS': 2,
+    // RISARALDA
+    'LA VIRGINIA': 4, 'SANTA ROSA DE CABAL': 2,
+    // VALLE DEL CAUCA
+    'GUADALAJARA DE BUGA': 4, 'CARTAGO': 4, 'DAGUA': 4, 'TULUA': 4, 'PRADERA': 4,
+    'ANDALUCIA': 4, 'YUMBO': 2, 'BUENAVENTURA': 2, 'EL CERRITO': 2, 'ROLDANILLO': 2,
+    'ZARZAL': 2, 'FLORIDA': 2, 'CAICEDONIA': 2,
+    // PUTUMAYO
+    'PUERTO ASIS': 2,
+    // CUNDINAMARCA
+    'CHIA': 4, 'FUNZA': 4, 'FUSAGASUGA': 4, 'UBATE': 4, 'CAJICA': 4,
+    'FACATATIVA': 2, 'SOPO': 2, 'MADRID': 2, 'LA CALERA': 2, 'CAQUEZA': 2,
+    'PACHO': 2, 'SIBATE': 2, 'SILVANIA': 2, 'CHOCONTA': 2,
+    // ARCHIPIELAGO
+    'SAN ANDRES': 2,
+    // AMAZONAS
+    'LETICIA': 1
+};
+
+// Función para reclasificar C6 según cubículos y demanda (VISUALIZACIÓN 2)
+function reclasificarC6(nodo) {
+    // Obtener cubículos para este nodo C6
+    const cubiculos = getCubiculosParaNodo(nodo, FICHAS_L3_CONFIG['CALE.C6']);
+    const demanda = nodo.demanda_anual || 0;
+    
+    // REGLA 1: Clasificar por cubículos primero
+    if (cubiculos === 4) {
+        return 'CALE.C2';
+    } else if (cubiculos === 3) {
+        return 'CALE.C3';
+    } else if (cubiculos === 2 || cubiculos === 1) {
+        // REGLA 2: Si tiene 2 o 1 cubículos, clasificar por demanda
+        if (demanda >= 2000) {
+            return 'CALE.C2';
+        } else if (demanda >= 1000) {
+            return 'CALE.C3';
+        } else if (demanda >= 500) {
+            return 'CALE.C4';
+        } else {
+            return 'CALE.C5';
+        }
+    }
+    
+    // Por defecto, si no hay cubículos definidos, usar solo demanda
+    if (demanda >= 2000) {
+        return 'CALE.C2';
+    } else if (demanda >= 1000) {
+        return 'CALE.C3';
+    } else if (demanda >= 500) {
+        return 'CALE.C4';
+    } else {
+        return 'CALE.C5';
+    }
+}
+
 // Función para obtener config de ficha L3
-function getFichaL3Config(categoriaRaw) {
+function getFichaL3Config(categoriaRaw, nodo = null) {
     if (!categoriaRaw) return null;
+    
+    // VISUALIZACIÓN 2: Si es C6, reclasificar dinámicamente
+    if (categoriaRaw === 'CALE.C6' && nodo) {
+        const categoriaReclasificada = reclasificarC6(nodo);
+        return FICHAS_L3_CONFIG[categoriaReclasificada] || null;
+    }
+    
     return FICHAS_L3_CONFIG[categoriaRaw] || null;
+}
+
+// Función para obtener cubículos específicos para TODOS los satélites
+function getCubiculosParaNodo(nodo, fichaConfig) {
+    // Si el nodo ya tiene cubículos definidos, usar ese valor
+    if (nodo.cubiculos !== undefined) {
+        return nodo.cubiculos;
+    }
+    
+    // Si es un satélite (C2, C3, C4, C5, C6), buscar en el mapeo por municipio
+    const esSatelite = nodo.categoria_raw && (nodo.categoria_raw.includes('SATELITE') || nodo.categoria_raw.startsWith('CALE.C'));
+    if (esSatelite && nodo.municipio) {
+        const municipioUpper = nodo.municipio.toUpperCase();
+        const deptoUpper = nodo.departamento ? nodo.departamento.toUpperCase() : '';
+        
+        // Intentar primero con municipio|departamento (para casos duplicados)
+        const claveCompuesta = `${municipioUpper}|${deptoUpper}`;
+        if (CUBICULOS_SATELITES_POR_MUNICIPIO[claveCompuesta] !== undefined) {
+            return CUBICULOS_SATELITES_POR_MUNICIPIO[claveCompuesta];
+        }
+        
+        // Si no, intentar solo con municipio
+        if (CUBICULOS_SATELITES_POR_MUNICIPIO[municipioUpper] !== undefined) {
+            return CUBICULOS_SATELITES_POR_MUNICIPIO[municipioUpper];
+        }
+    }
+    
+    // Si no, usar el valor de la configuración de ficha
+    return fichaConfig ? fichaConfig.cubiculos : 0;
 }
 
 // Datos de ejemplo (normalmente se cargarían desde tipos_l3_con_instancias_l4.json)
@@ -185,6 +279,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         await cargarDatos();
         await cargarRelacionesJerarquicas();
+        await cargarSatelitesC6();
         inicializarMapa();
         renderizarSidebar();
         configurarBusqueda();
@@ -234,7 +329,7 @@ async function cargarDatos() {
 
 async function cargarRelacionesJerarquicas() {
     console.log('🔗 Cargando relaciones jerárquicas...');
-    
+
     try {
         // Cargar relaciones COMPLETAS (56 nodos → 141 satélites)
         const response = await fetch('../data/relaciones_jerarquicas_completas.json');
@@ -252,8 +347,14 @@ async function cargarRelacionesJerarquicas() {
                 NODOS_DATA[nodoId].num_subnodos = relacion.subnodos.length;
             }
             
-            // Agregar satélites a NODOS_DATA
+            // Agregar satélites a NODOS_DATA (VISUALIZACIÓN 2: Filtrar C2-C5)
             relacion.subnodos.forEach(satelite => {
+                // Excluir satélites C2, C3, C4, C5 en visualización 2
+                const categoria = satelite.categoria.toLowerCase();
+                if (categoria === 'c2' || categoria === 'c3' || categoria === 'c4' || categoria === 'c5') {
+                    return; // Saltar este satélite
+                }
+                
                 NODOS_DATA[satelite.id] = {
                     nodo_id: satelite.id,
                     nombre: satelite.nombre,
@@ -294,6 +395,51 @@ async function cargarRelacionesJerarquicas() {
         }
         
         return {};
+    }
+}
+
+async function cargarSatelitesC6() {
+    console.log('🆕 Cargando satélites C6 adicionales...');
+    
+    try {
+        const response = await fetch('../data/satelites_completos_141_nodos.json');
+        const data = await response.json();
+        
+        // Filtrar solo satélites C6
+        const satelitesC6 = data.satelites.filter(s => s.categoria_cale === 'C6');
+        
+        // Agregar cada satélite C6 a NODOS_DATA
+        satelitesC6.forEach(satelite => {
+            NODOS_DATA[satelite.centro_id] = {
+                nodo_id: satelite.centro_id,
+                nombre: satelite.municipio,
+                departamento: satelite.departamento,
+                coords: {
+                    lat: satelite.latitud,
+                    lon: satelite.longitud
+                },
+                categoria: satelite.categoria_cale,
+                categoria_raw: `CALE.${satelite.categoria_cale}`,
+                tipo_id: `L3.SATELITE.${satelite.categoria_cale.toLowerCase()}`,
+                tipo_color: satelite.color,
+                tipo_icono: '🔶',
+                demanda_anual: satelite.demanda_estimada_anual,
+                nodo_principal: satelite.nodo_principal,
+                distancia_al_nodo_km: satelite.distancia_al_nodo_km,
+                es_satelite: true,
+                observaciones: satelite.observaciones,
+                cubiculos: satelite.cubiculos,  // ⭐ Campo cubiculos individual del JSON
+                municipio: satelite.municipio   // ⭐ Asegurar que municipio esté disponible
+            };
+        });
+        
+        console.log(`✅ Cargados ${satelitesC6.length} satélites C6`);
+        console.log(`✅ Total nodos en sistema: ${Object.keys(NODOS_DATA).length}`);
+        
+        return satelitesC6.length;
+    } catch (error) {
+        console.warn('⚠️ No se pudieron cargar satélites C6:', error);
+        return 0;
     }
 }
 
@@ -435,177 +581,6 @@ function generarDatosEjemplo() {
                 opex_anual: 2400000000,
                 capacidad_anual: 173040
             }
-        },
-        'NODO_06': {
-            nodo_id: 'NODO_06',
-            nombre: 'CARTAGENA PLUS',
-            departamento: 'BOLIVAR',
-            codigo_dane: '13001',
-            coords: { lat: 10.391659, lon: -75.4915 },
-            demanda_anual: 45000,
-            cluster_municipios: 5,
-            tipo_id: 'L3.CALE.n_1_plus',
-            tipo_nombre: 'CALE Metropolitano Plus',
-            tipo_color: '#0000ff',
-            tipo_icono: '🔵',
-            categoria: 'Cat.A+',
-            valores_unitarios: {
-                capex: 3728340000,
-                opex_anual: 2400000000,
-                capacidad_anual: 173040
-            }
-        },
-        'NODO_07': {
-            nodo_id: 'NODO_07',
-            nombre: 'SANTA MARTA PLUS',
-            departamento: 'MAGDALENA',
-            codigo_dane: '47001',
-            coords: { lat: 11.243833, lon: -74.199833 },
-            demanda_anual: 38000,
-            cluster_municipios: 4,
-            tipo_id: 'L3.CALE.n_1_plus',
-            tipo_nombre: 'CALE Metropolitano Plus',
-            tipo_color: '#0000ff',
-            tipo_icono: '🔵',
-            categoria: 'Cat.A+',
-            valores_unitarios: {
-                capex: 3728340000,
-                opex_anual: 2400000000,
-                capacidad_anual: 173040
-            }
-        },
-        'NODO_08': {
-            nodo_id: 'NODO_08',
-            nombre: 'SINCELEJO PLUS',
-            departamento: 'SUCRE',
-            codigo_dane: '70001',
-            coords: { lat: 9.305556, lon: -75.398333 },
-            demanda_anual: 32000,
-            cluster_municipios: 6,
-            tipo_id: 'L3.CALE.n_1_plus',
-            tipo_nombre: 'CALE Metropolitano Plus',
-            tipo_color: '#0000ff',
-            tipo_icono: '🔵',
-            categoria: 'Cat.A+',
-            valores_unitarios: {
-                capex: 3728340000,
-                opex_anual: 2400000000,
-                capacidad_anual: 173040
-            }
-        },
-        'NODO_09': {
-            nodo_id: 'NODO_09',
-            nombre: 'RIOHACHA PLUS',
-            departamento: 'LA GUAJIRA',
-            codigo_dane: '44001',
-            coords: { lat: 11.544167, lon: -72.308056 },
-            demanda_anual: 28000,
-            cluster_municipios: 3,
-            tipo_id: 'L3.CALE.n_1_plus',
-            tipo_nombre: 'CALE Metropolitano Plus',
-            tipo_color: '#0000ff',
-            tipo_icono: '🔵',
-            categoria: 'Cat.A+',
-            valores_unitarios: {
-                capex: 3728340000,
-                opex_anual: 2400000000,
-                capacidad_anual: 173040
-            }
-        },
-        'NODO_10': {
-            nodo_id: 'NODO_10',
-            nombre: 'MONTERÍA PLUS',
-            departamento: 'CORDOBA',
-            codigo_dane: '23001',
-            coords: { lat: 9.253333, lon: -75.886389 },
-            demanda_anual: 42000,
-            cluster_municipios: 7,
-            tipo_id: 'L3.CALE.n_2_plus',
-            tipo_nombre: 'CALE Subregional Plus',
-            tipo_color: '#ff4d00',
-            tipo_icono: '🟠',
-            categoria: 'Cat.A',
-            valores_unitarios: {
-                capex: 2500000000,
-                opex_anual: 1800000000,
-                capacidad_anual: 115360
-            }
-        },
-        'NODO_11': {
-            nodo_id: 'NODO_11',
-            nombre: 'VALLEDUPAR PLUS',
-            departamento: 'CESAR',
-            codigo_dane: '20001',
-            coords: { lat: 10.467333, lon: -73.251333 },
-            demanda_anual: 36000,
-            cluster_municipios: 5,
-            tipo_id: 'L3.CALE.n_2_plus',
-            tipo_nombre: 'CALE Subregional Plus',
-            tipo_color: '#ff4d00',
-            tipo_icono: '🟠',
-            categoria: 'Cat.A',
-            valores_unitarios: {
-                capex: 2500000000,
-                opex_anual: 1800000000,
-                capacidad_anual: 115360
-            }
-        },
-        'NODO_12': {
-            nodo_id: 'NODO_12',
-            nombre: 'TUMACO PLUS',
-            departamento: 'NARIÑO',
-            codigo_dane: '52001',
-            coords: { lat: 1.808333, lon: -78.7775 },
-            demanda_anual: 29000,
-            cluster_municipios: 4,
-            tipo_id: 'L3.CALE.n_2_plus',
-            tipo_nombre: 'CALE Subregional Plus',
-            tipo_color: '#ff4d00',
-            tipo_icono: '🟠',
-            categoria: 'Cat.A',
-            valores_unitarios: {
-                capex: 2500000000,
-                opex_anual: 1800000000,
-                capacidad_anual: 115360
-            }
-        },
-        'NODO_13': {
-            nodo_id: 'NODO_13',
-            nombre: 'IPIALES PLUS',
-            departamento: 'NARIÑO',
-            codigo_dane: '52407',
-            coords: { lat: 0.849722, lon: -77.277222 },
-            demanda_anual: 25000,
-            cluster_municipios: 3,
-            tipo_id: 'L3.CALE.n_2_plus',
-            tipo_nombre: 'CALE Subregional Plus',
-            tipo_color: '#ff4d00',
-            tipo_icono: '🟠',
-            categoria: 'Cat.A',
-            valores_unitarios: {
-                capex: 2500000000,
-                opex_anual: 1800000000,
-                capacidad_anual: 115360
-            }
-        },
-        'NODO_14': {
-            nodo_id: 'NODO_14',
-            nombre: 'MOCOA PLUS',
-            departamento: 'PUTUMAYO',
-            codigo_dane: '86001',
-            coords: { lat: 0.353889, lon: -76.646667 },
-            demanda_anual: 22000,
-            cluster_municipios: 2,
-            tipo_id: 'L3.CALE.n_2_plus',
-            tipo_nombre: 'CALE Subregional Plus',
-            tipo_color: '#ff4d00',
-            tipo_icono: '🟠',
-            categoria: 'Cat.A',
-            valores_unitarios: {
-                capex: 2500000000,
-                opex_anual: 1800000000,
-                capacidad_anual: 115360
-            }
         }
     };
 }
@@ -637,7 +612,15 @@ function inicializarMapa() {
 }
 
 function agregarMarcadores() {
+    // VISUALIZACIÓN 2: Filtrar satélites C2, C3, C4, C5
+    const tiposExcluidos = ['L3.SATELITE.c2', 'L3.SATELITE.c3', 'L3.SATELITE.c4', 'L3.SATELITE.c5'];
+    
     Object.values(NODOS_DATA).forEach(nodo => {
+        // Excluir tipos C2, C3, C4, C5 en visualización 2
+        if (tiposExcluidos.includes(nodo.tipo_id)) {
+            return;
+        }
+        
         const marker = crearMarcador(nodo);
         markers[nodo.nodo_id] = marker;
         
@@ -649,7 +632,7 @@ function agregarMarcadores() {
         }
     });
     
-    console.log(`✅ Agregados ${Object.keys(markers).length} marcadores`);
+    console.log(`✅ Agregados ${Object.keys(markers).length} marcadores (Visualización 2: sin C2, C3, C4, C5)`);
     
     // Contar por capa
     const numPrincipales = Object.values(NODOS_DATA).filter(n => !n.es_satelite && !n.nodo_id.startsWith('SAT_')).length;
@@ -700,11 +683,14 @@ function crearMarcador(nodo) {
 function crearPopupContent(nodo) {
     // Determinar categoría para mapear a la ficha correcta (incluye satélites C2-C5)
     const categoriaRaw = nodo.categoria_raw || determinarCategoriaRaw(nodo);
-    const fichaConfig = getFichaL3Config(categoriaRaw);
+    const fichaConfig = getFichaL3Config(categoriaRaw, nodo);
+
+    // Usar la función para obtener cubículos específicos
+    const cubiculos = getCubiculosParaNodo(nodo, fichaConfig);
 
     const capacidadInfo = fichaConfig ?
         `<div class="popup-stat">
-            <div class="popup-stat-value">${fichaConfig.cubiculos}</div>
+            <div class="popup-stat-value">${cubiculos}</div>
             <div class="popup-stat-label">Cubículos</div>
         </div>
         <div class="popup-stat">
@@ -739,12 +725,20 @@ function crearPopupContent(nodo) {
 function renderizarSidebar() {
     const container = document.getElementById('tiposContainer');
     
+    // VISUALIZACIÓN 2: Ya filtrado en TIPOS_CONFIG, pero por seguridad verificamos aquí también
+    const tiposExcluidos = ['L3.SATELITE.c2', 'L3.SATELITE.c3', 'L3.SATELITE.c4', 'L3.SATELITE.c5'];
+    
     TIPOS_CONFIG.forEach(tipo => {
+        // Saltar tipos excluidos
+        if (tiposExcluidos.includes(tipo.tipo_id)) {
+            return;
+        }
+        
         const tipoElement = crearTipoElement(tipo);
         container.appendChild(tipoElement);
     });
     
-    console.log('✅ Sidebar renderizado');
+    console.log('✅ Sidebar renderizado (Visualización 2: sin C2, C3, C4, C5)');
 }
 
 function crearTipoElement(tipo) {
@@ -752,8 +746,11 @@ function crearTipoElement(tipo) {
     div.className = 'tipo-item';
     div.dataset.tipoId = tipo.tipo_id;
     
-    // Obtener nodos de este tipo
-    const nodosTipo = Object.values(NODOS_DATA).filter(n => n.tipo_id === tipo.tipo_id);
+    // Obtener nodos de este tipo (VISUALIZACIÓN 2: ya filtrados en NODOS_DATA)
+    const tiposExcluidos = ['L3.SATELITE.c2', 'L3.SATELITE.c3', 'L3.SATELITE.c4', 'L3.SATELITE.c5'];
+    const nodosTipo = Object.values(NODOS_DATA).filter(n => 
+        n.tipo_id === tipo.tipo_id && !tiposExcluidos.includes(n.tipo_id)
+    );
     
     div.innerHTML = `
         <div class="tipo-header" onclick="toggleTipo('${tipo.tipo_id}')">
@@ -774,12 +771,15 @@ function crearTipoElement(tipo) {
 
 function crearNodoElement(nodo) {
     const vinculados = nodo.subnodos_ids?.length || nodo.satelites_vinculados?.length || 0;
-    const fichaConfig = getFichaL3Config(nodo.categoria_raw);
+    const fichaConfig = getFichaL3Config(nodo.categoria_raw, nodo);
+
+    // Obtener cubículos usando la función que considera el mapeo C6
+    const cubiculos = getCubiculosParaNodo(nodo, fichaConfig);
 
     // Info de capacidad
     const capacidadHtml = fichaConfig ?
         `<div class="nodo-capacidad" style="font-size:0.75em; color:#4299e1; margin-top:3px;">
-            🏢 ${fichaConfig.cubiculos} cubículos • 🛣️ ${fichaConfig.pistas}
+            🏢 ${cubiculos} cubículos • 🛣️ ${fichaConfig.pistas}
         </div>` : '';
 
     return `
@@ -820,15 +820,13 @@ function toggleTipo(tipoId) {
 }
 
 function highlightCategoria(tipoId) {
-    const nodosTipo = Object.values(NODOS_DATA).filter(n => n.tipo_id === tipoId);
-    
     // Fade otros nodos
     Object.keys(markers).forEach(nodoId => {
         const nodo = NODOS_DATA[nodoId];
-        if (nodo.tipo_id !== tipoId) {
-            markers[nodoId].setOpacity(0.3);
+        if (nodo.tipo_id === tipoId) {
+            markers[nodoId].setOpacity(1.0);
         } else {
-            markers[nodoId].setOpacity(1);
+            markers[nodoId].setOpacity(0.3);
         }
     });
 }
@@ -860,11 +858,11 @@ function seleccionarNodo(nodoId) {
     
     // Verificar si hay una ficha abierta
     const fichaContainer = document.getElementById('fichaContainer');
-    const fichaAbierta = fichaContainer && fichaContainer.classList.contains('active');
+    const fichaAbierta = fichaContainer?.classList.contains('active');
     
     if (fichaAbierta) {
         // Si hay ficha abierta, actualizar la ficha con el nuevo nodo
-        const fichaConfig = getFichaL3Config(nodo.categoria_raw);
+        const fichaConfig = getFichaL3Config(nodo.categoria_raw, nodo);
         if (fichaConfig) {
             mostrarFicha(fichaConfig.ficha, fichaConfig.nombre);
         }
@@ -901,7 +899,7 @@ function seleccionarNodo(nodoId) {
 
 function mostrarPanel(nodo) {
     const panel = document.getElementById('panelFlotante');
-    const fichaConfig = getFichaL3Config(nodo.categoria_raw);
+    const fichaConfig = getFichaL3Config(nodo.categoria_raw, nodo);
 
     // Actualizar contenido
     document.getElementById('panelNodoNombre').textContent = nodo.nombre;
@@ -914,10 +912,13 @@ function mostrarPanel(nodo) {
     // Tab General - Agregar info de capacidad
     document.getElementById('panelDemanda').textContent = formatNumber(nodo.demanda_anual);
 
+    // Obtener cubículos usando la función que considera el mapeo C6
+    const cubiculos = getCubiculosParaNodo(nodo, fichaConfig);
+
     // Mostrar cubículos y pistas en lugar de capacidad anual si hay config
     if (fichaConfig) {
         document.getElementById('panelCapacidad').innerHTML =
-            `${fichaConfig.cubiculos} cubículos<br><small style="color:#4299e1">${fichaConfig.pistas}</small>`;
+            `${cubiculos} cubículos<br><small style="color:#4299e1">${fichaConfig.pistas}</small>`;
     } else {
         document.getElementById('panelCapacidad').textContent = formatNumber(nodo.valores_unitarios?.capacidad_anual || 0);
     }
@@ -965,6 +966,12 @@ function actualizarClusterTab(nodo) {
         // Fallback a satelites_vinculados si existe
         subnodos = nodo.satelites_vinculados.map(id => ({ id, municipio: id }));
     }
+    
+    // VISUALIZACIÓN 2: Filtrar subnodos C2, C3, C4, C5
+    subnodos = subnodos.filter(subnodo => {
+        const categoria = subnodo.categoria ? subnodo.categoria.toLowerCase() : '';
+        return categoria !== 'c2' && categoria !== 'c3' && categoria !== 'c4' && categoria !== 'c5';
+    });
     
     clusterTitulo.textContent = `Nodos Vinculados (${subnodos.length})`;
     
@@ -1314,6 +1321,12 @@ function dibujarConexiones(nodo) {
         subnodos = nodo.satelites_vinculados.map(id => ({ id }));
     }
     
+    // VISUALIZACIÓN 2: Filtrar subnodos C2, C3, C4, C5
+    subnodos = subnodos.filter(subnodo => {
+        const categoria = subnodo.categoria ? subnodo.categoria.toLowerCase() : '';
+        return categoria !== 'c2' && categoria !== 'c3' && categoria !== 'c4' && categoria !== 'c5';
+    });
+    
     if (subnodos.length === 0) return;
     
     subnodos.forEach(subnodo => {
@@ -1363,10 +1376,15 @@ function configurarBusqueda() {
 }
 
 function buscarNodos(query) {
+    // VISUALIZACIÓN 2: Filtrar C2, C3, C4, C5 de los resultados de búsqueda
+    const tiposExcluidos = ['L3.SATELITE.c2', 'L3.SATELITE.c3', 'L3.SATELITE.c4', 'L3.SATELITE.c5'];
+    
     const resultados = Object.values(NODOS_DATA).filter(nodo => 
-        nodo.nombre.toLowerCase().includes(query) ||
-        nodo.departamento.toLowerCase().includes(query) ||
-        nodo.nodo_id.toLowerCase().includes(query)
+        !tiposExcluidos.includes(nodo.tipo_id) && (
+            nodo.nombre.toLowerCase().includes(query) ||
+            nodo.departamento.toLowerCase().includes(query) ||
+            nodo.nodo_id.toLowerCase().includes(query)
+        )
     );
     
     if (resultados.length > 0) {
@@ -2092,7 +2110,6 @@ function mostrarFicha(urlFicha, titulo) {
     const fichaContent = document.getElementById('fichaContent');
     const fichaTitle = document.getElementById('fichaTitle');
     const mapDiv = document.getElementById('map');
-    const headerTop = document.querySelector('.header');
     const btnVolverMapaHeader = document.getElementById('btnVolverMapaHeader');
     
     if (!fichaContainer || !fichaContent) return;
@@ -2140,7 +2157,6 @@ function volverAlMapa() {
     const fichaContainer = document.getElementById('fichaContainer');
     const fichaContent = document.getElementById('fichaContent');
     const mapDiv = document.getElementById('map');
-    const headerTop = document.querySelector('.header');
     const btnVolverMapaHeader = document.getElementById('btnVolverMapaHeader');
     
     if (!fichaContainer || !fichaContent) return;
@@ -2186,14 +2202,23 @@ function inicializarFiltrosCategoria() {
 // Aplicar filtros de categoría al mapa
 function aplicarFiltrosCategoria() {
     const checkboxes = document.querySelectorAll('#topCategories input[type="checkbox"]:checked');
-    const categoriasActivas = Array.from(checkboxes).map(cb => cb.getAttribute('data-cat'));
+    const categoriasActivas = Array.from(checkboxes).map(cb => cb.dataset.cat);
     
     // Si no hay ninguno seleccionado, mostrar todos
     const mostrarTodos = categoriasActivas.length === 0;
     
+    // VISUALIZACIÓN 2: Lista de tipos excluidos
+    const tiposExcluidos = ['L3.SATELITE.c2', 'L3.SATELITE.c3', 'L3.SATELITE.c4', 'L3.SATELITE.c5'];
+    
     Object.values(NODOS_DATA).forEach(nodo => {
         const marker = markers[nodo.nodo_id];
         if (!marker) return;
+        
+        // VISUALIZACIÓN 2: Nunca mostrar C2-C5
+        if (tiposExcluidos.includes(nodo.tipo_id)) {
+            marker.remove();
+            return;
+        }
         
         // Determinar categoría del nodo
         const categoriaRaw = nodo.categoria_raw || determinarCategoriaRaw(nodo);
