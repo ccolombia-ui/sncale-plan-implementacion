@@ -162,24 +162,31 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td><strong>Adecuación Infraestructura</strong></td>
-                            <td>Adecuación de espacios físicos simplificados</td>
-                            <td><code>L2.adecuacion_infraestr_simple</code></td>
-                            <td class="text-right"><strong>$8.000.000</strong></td>
+                            <td><strong>Infraestructura Civil Base</strong></td>
+                            <td>Edificación administrativa y servicios</td>
+                            <td><code>L2.edificacion_admin</code></td>
+                            <td class="text-right"><strong>$250.000.000</strong></td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td><strong>Equipamiento Reducido</strong></td>
-                            <td>Equipos de cómputo y mobiliario básico</td>
-                            <td><code>L1.equipamiento_reducido</code></td>
-                            <td class="text-right"><strong>$7.000.000</strong></td>
+                            <td><strong>Componente Teórico CALE-T</strong></td>
+                            <td>Infraestructura teórica ajustada</td>
+                            <td><code>L2.cale_teorico</code></td>
+                            <td class="text-right"><strong>$180.000.000</strong></td>
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td><strong>Conectividad Básica</strong></td>
-                            <td>Red local básica y conectividad</td>
-                            <td><code>L1.conectividad_basica</code></td>
-                            <td class="text-right"><strong>$5.000.000</strong></td>
+                            <td><strong>Instalaciones Especiales</strong></td>
+                            <td>Instalaciones eléctricas, hidráulicas, climatización y comunicaciones</td>
+                            <td><code>L2.instalaciones_especiales</code></td>
+                            <td class="text-right"><strong>$150.000.000</strong></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Obras Exteriores y Cerramiento</strong></td>
+                            <td>Áreas verdes, parqueaderos, cerramiento perimetral y accesos</td>
+                            <td><code>L2.obras_exteriores</code></td>
+                            <td class="text-right"><strong>$100.000.000</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -201,6 +208,40 @@
         </div>
     </div>
     <script>
+        const L2_COMPONENT_MAP = {
+            'L2.edificacion_admin': {
+                titulo: 'Infraestructura Civil Base',
+                descripcion: 'Edificación administrativa y servicios',
+                l1_items: [
+                    { id: 'L1.007', titulo: 'Estructura civil', l0_items: [{titulo:'EDIF_001',especificacion:'Estructura de concreto reforzado'},{titulo:'ACC_001',especificacion:'Acceso principal'},{titulo:'ACC_002',especificacion:'Acceso secundario'},{titulo:'ACC_003',especificacion:'Acceso de emergencia'}] },
+                    { id: 'L1.008', titulo: 'Instalaciones sanitarias', l0_items: [{titulo:'HID_001',especificacion:'Red de agua potable'},{titulo:'HID_002',especificacion:'Sistema de alcantarillado'},{titulo:'SEG_001',especificacion:'Sistemas de seguridad contra incendios'},{titulo:'SEG_002',especificacion:'Señalética de seguridad'}] }
+                ]
+            },
+            'L2.cale_teorico': {
+                titulo: 'Componente Teórico CALE-T',
+                descripcion: 'Infraestructura teórica ajustada (descontados C2-C5 satelitales)',
+                l1_items: [
+                    { id: 'L1.009', titulo: 'Aulas teóricas equipadas', l0_items: [{titulo:'MOB_006',especificacion:'Escritorio tipo pupitres con apoyo'},{titulo:'MOB_007',especificacion:'Sillas ergonómicas'},{titulo:'MOB_008',especificacion:'Pizarras interactivas'},{titulo:'TEC_001',especificacion:'Computadora de escritorio'},{titulo:'TEC_002',especificacion:'Sistema de proyección'}] },
+                    { id: 'L1.010', titulo: 'Sistemas audiovisuales', l0_items: [{titulo:'TEC_003',especificacion:'Cámara de video profesional'},{titulo:'TEC_004',especificacion:'Sistema de sonido integrado'},{titulo:'MONITOR_VIDEOWALL',especificacion:'Panel de video wall de alta resolución'}] }
+                ]
+            },
+            'L2.instalaciones_especiales': {
+                titulo: 'Instalaciones Especiales',
+                descripcion: 'Instalaciones eléctricas, hidráulicas, climatización y comunicaciones',
+                l1_items: [
+                    { id: 'L1.015', titulo: 'Sistema eléctrico integral', l0_items: [{titulo:'ELE_001',especificacion:'Transformador trifásico 500kVA'},{titulo:'ELE_002',especificacion:'Panel de distribución principal'},{titulo:'ELE_003',especificacion:'Sistema UPS de respaldo'},{titulo:'ELE_004',especificacion:'Generador diesel de emergencia'},{titulo:'ELE_006',especificacion:'Cableado de media tensión'},{titulo:'ELE_007',especificacion:'Cableado de baja tensión'},{titulo:'ELE_008',especificacion:'Sistema de puesta a tierra'},{titulo:'ELE_009',especificacion:'Pararrayos y protección'}] },
+                    { id: 'L1.016', titulo: 'HVAC y comunicaciones', l0_items: [{titulo:'HVAC_001',especificacion:'Sistema de aire acondicionado central'},{titulo:'IC_002',especificacion:'Red de telecomunicaciones'},{titulo:'IC_003',especificacion:'Sistema de fibra óptica'},{titulo:'IC_004',especificacion:'Cableado estructurado Cat-6A'}] }
+                ]
+            },
+            'L2.obras_exteriores': {
+                titulo: 'Obras Exteriores y Cerramiento',
+                descripcion: 'Áreas verdes, parqueaderos, cerramiento perimetral y accesos',
+                l1_items: [
+                    { id: 'L1.014', titulo: 'Circulación externa', l0_items: [{titulo:'CIRCULACION_EXTERNA',especificacion:'Vías perimetrales y accesos'},{titulo:'PASILLO_INTERNO',especificacion:'Pasillos internos entre módulos'},{titulo:'RAMPA_ACCESIBILIDAD',especificacion:'Rampa de accesibilidad para discapacitados'}] }
+                ]
+            }
+        };
+
         // Variable global para guardar el contenido original del L3
         let l3OriginalContent = null;
 
@@ -226,17 +267,30 @@
             const titulo = document.querySelector('h1')?.textContent || 'Centro CALE';
             const hijos_l2 = [];
             
-            if (components.length > 0) {
-                const l2Comp = components[0];
-                hijos_l2.push({
-                    bim_id: 'BIM_L2_001',
-                    titulo: l2Comp.nombre,
-                    hijos_l1: [
-                        { id: 'L1.equipamiento_reducido', titulo: 'Equipamiento Reducido', descripcion: 'Equipos de cómputo y mobiliario básico', hijos_l0: [] },
-                        { id: 'L1.conectividad_basica', titulo: 'Conectividad Básica', descripcion: 'Red local básica y conectividad', hijos_l0: [] }
-                    ]
-                });
-            }
+            // Usar los 4 L2 del CALE Metropolitano con toda su estructura
+            components.forEach((comp, idx) => {
+                const l2Data = L2_COMPONENT_MAP[comp.referencia];
+                if (l2Data) {
+                    const hijos_l1 = l2Data.l1_items.map(l1 => {
+                        const hijos_l0 = l1.l0_items.map(l0 => ({
+                            titulo: l0.titulo,
+                            especificacion: l0.especificacion
+                        }));
+                        return {
+                            id: l1.id,
+                            titulo: l1.titulo,
+                            hijos_l0: hijos_l0
+                        };
+                    });
+                    
+                    hijos_l2.push({
+                        bim_id: `BIM_L2_${String(idx + 1).padStart(3, '0')}`,
+                        titulo: comp.nombre,
+                        descripcion: l2Data.descripcion,
+                        hijos_l1: hijos_l1
+                    });
+                }
+            });
             
             return { titulo: titulo, hijos_l2: hijos_l2 };
         }

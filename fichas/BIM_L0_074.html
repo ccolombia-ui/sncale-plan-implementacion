@@ -12,7 +12,8 @@
             --success-color: #27ae60;
             --warning-color: #f39c12;
             --bg-light: #f5f7fa;
-            --sidebar-width: 280px;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --card-shadow-hover: 0 8px 16px rgba(0,0,0,0.15);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,7 +31,7 @@
             position: fixed;
             left: 0;
             top: 0;
-            width: var(--sidebar-width);
+            width: 280px;
             height: 100vh;
             background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
             color: #000;
@@ -59,127 +60,16 @@
             letter-spacing: 1px;
         }
         
-        /* Árbol jerárquico BIM */
-        .bim-tree {
-            margin-top: 20px;
-        }
-        
-        .tree-level {
-            margin: 15px 0;
-            position: relative;
-        }
-        
-        .tree-level::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 30px;
-            bottom: -15px;
-            width: 2px;
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .tree-level:last-child::before {
-            display: none;
-        }
-        
-        .level-header {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 5px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .level-header:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateX(5px);
-        }
-        
-        .level-header.active {
-            background: var(--secondary-color);
-            box-shadow: 0 2px 8px rgba(52,152,219,0.3);
-        }
-        
-        .level-checkbox {
-            margin-right: 10px;
-            font-size: 1.2em;
-        }
-        
-        .level-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 0.75em;
-            font-weight: bold;
-            margin-right: 8px;
-            min-width: 35px;
-            text-align: center;
-        }
-        
-        .level-name {
-            font-weight: 600;
-            font-size: 0.95em;
-        }
-        
-        .level-items {
-            margin-left: 35px;
-            padding-left: 15px;
-            border-left: 2px solid rgba(255,255,255,0.15);
-        }
-        
-        .item-node {
-            padding: 8px 10px;
-            margin: 5px 0;
-            background: rgba(255,255,255,0.05);
-            border-radius: 4px;
-            font-size: 0.85em;
-            position: relative;
-            transition: all 0.2s;
-        }
-        
-        .item-node::before {
-            content: '├─';
-            position: absolute;
-            left: -15px;
-            color: rgba(255,255,255,0.3);
-        }
-        
-        .item-node:last-child::before {
-            content: '└─';
-        }
-        
-        .item-node:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateX(3px);
-        }
-        
-        .item-node.current {
-            background: var(--accent-color);
-            font-weight: bold;
-            box-shadow: 0 2px 6px rgba(231,76,60,0.3);
-        }
-        
-        .item-code {
-            color: rgba(255,255,255,0.6);
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-        }
-        
         /* MAIN CONTENT */
         .main-content {
-            margin-left: var(--sidebar-width);
+            margin-left: 280px;
             flex: 1;
             padding: 20px;
-            max-width: calc(100% - var(--sidebar-width));
+            max-width: calc(100% - 280px);
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
@@ -191,7 +81,7 @@
             left: 20px;
             z-index: 1001;
             background: var(--primary-color);
-            color: #000;
+            color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 5px;
@@ -203,126 +93,225 @@
         .bim-header {
             background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
             color: #000;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
         }
         
         .bim-id {
-            font-size: 2.5em;
+            font-size: 2.8em;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
         }
         
         .bim-nivel {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
+            background: rgba(0,0,0,0.1);
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.9em;
             margin-right: 10px;
+            margin-bottom: 10px;
         }
         
-        /* Secciones */
+        .bim-header h1 {
+            margin-top: 20px;
+            font-size: 2em;
+            color: var(--primary-color);
+        }
+        
+        .bim-header p {
+            opacity: 0.8;
+            margin-top: 10px;
+            font-size: 1.05em;
+        }
+
+        /* Grid de Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Card Styling */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 10px;
+        }
+
+        /* Card Content */
+        .card-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .card-label {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .card-value {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .card-value.highlight {
+            font-size: 1.8em;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Tabla dentro de Card */
+        .card-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .card-table tr {
+            border-bottom: 1px solid var(--bg-light);
+        }
+
+        .card-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .card-table td {
+            padding: 10px 8px;
+            font-size: 0.9em;
+        }
+
+        .card-table td:first-child {
+            font-weight: 600;
+            color: var(--secondary-color);
+            width: 45%;
+        }
+
+        .card-table td:last-child {
+            color: var(--primary-color);
+        }
+
+        /* Secciones adicionales */
         .seccion {
             background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
         }
         
         .seccion h2 {
             color: var(--secondary-color);
             border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 1.6em;
+        }
+
+        .seccion h3 {
+            color: var(--accent-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
         
-        /* Grid de información */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .info-item {
-            padding: 15px;
-            background: var(--bg-light);
-            border-left: 4px solid var(--secondary-color);
-            border-radius: 5px;
-        }
-        
-        .info-label {
-            font-weight: bold;
-            color: var(--primary-color);
-            font-size: 0.9em;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        
-        .info-value {
-            font-size: 1.1em;
-            color: #333;
-        }
-        
-        /* Badge de confianza */
-        .confianza-badge {
-            display: inline-block;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.85em;
-            text-transform: uppercase;
-        }
-        
-        .confianza-alta { background: var(--success-color); color: #000; }
-        .confianza-media { background: var(--warning-color); color: #000; }
-        .confianza-baja { background: var(--accent-color); color: #000; }
-        
-        /* Tabla de especificaciones */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        th {
-            background: var(--primary-color);
-            color: #000;
-            font-weight: 600;
-        }
-        
-        tr:hover {
-            background: var(--bg-light);
-        }
-        
-        /* Normatividad */
         .normativa-item {
-            padding: 10px;
-            margin: 10px 0;
+            padding: 12px 15px;
+            margin: 12px 0;
             border-left: 3px solid var(--accent-color);
             background: #fff5f5;
+            border-radius: 4px;
         }
-        
+
         /* Footer */
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: #7f8c8d;
             font-size: 0.9em;
-            margin-top: 40px;
+            margin-top: 50px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .footer p {
+            margin: 8px 0;
+        }
+
+        /* Navegación */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 12px 24px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
         }
         
         /* Responsivo */
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s;
@@ -341,8 +330,29 @@
                 display: block;
             }
             
-            .info-grid {
+            .cards-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .bim-header {
+                padding: 25px;
+            }
+
+            .bim-id {
+                font-size: 2em;
+            }
+
+            .bim-header h1 {
+                font-size: 1.5em;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 1.2em;
             }
         }
     </style>
@@ -358,147 +368,145 @@
             <div class="sidebar-title">SNCALE - Jerarquía BIM</div>
         </div>
         
+        <!-- NAVEGACION RAPIDA -->
+        <div style="margin-bottom: 15px;">
+            <a href="../index.html" style="display: block; padding: 8px 12px; background: rgba(255,255,255,0.1); color: #000; text-decoration: none; border-radius: 5px; margin-bottom: 5px; font-size: 0.85em;">
+                🏠 Dashboard Principal
+            </a>
+            <a href="../fichas_l0/index_l0.html" style="display: block; padding: 8px 12px; background: rgba(52,152,219,0.3); color: #000; text-decoration: none; border-radius: 5px; font-size: 0.85em;">
+                📋 Índice L0 (91 componentes)
+            </a>
+        </div>
         
-        <div class="bim-tree">
-            <!-- NAVEGACION RAPIDA -->
-            <div style="margin-bottom: 15px;">
-                <a href="../index.html" style="display: block; padding: 8px 12px; background: rgba(255,255,255,0.1); color: #000; text-decoration: none; border-radius: 5px; margin-bottom: 5px; font-size: 0.85em;">
-                    🏠 Dashboard Principal
+        <!-- OTROS NIVELES -->
+        <div style="margin-bottom: 15px;">
+            <div style="font-size: 0.8em; color: rgba(0,0,0,0.6); margin-bottom: 8px; font-weight: 600;">OTROS NIVELES:</div>
+            <a href="../fichas_l1/index_l1.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; margin-bottom: 3px; font-size: 0.8em;">L1 - Ensamblajes</a>
+            <a href="../fichas_l2/index_l2.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; margin-bottom: 3px; font-size: 0.8em;">L2 - Configuraciones</a>
+            <a href="../fichas_l3/BIM_L3_001.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; margin-bottom: 3px; font-size: 0.8em;">L3 - Tipos CALE</a>
+            <a href="../fichas_l5/index_l5.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; font-size: 0.8em;">L5 - Dashboard Nacional</a>
+        </div>
+        
+        <!-- FICHAS L0 -->
+        <div>
+            <div style="font-size: 0.8em; color: rgba(0,0,0,0.6); margin-bottom: 8px; font-weight: 600;">COMPONENTES L0:</div>
+            <div style="max-height: 400px; overflow-y: auto; padding-right: 5px;">
+                <a href="BIM_L0_001.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_001 - Pavimento flexible asfalto e=12cm">
+                    001: Pavimento flexible asfalto e=12cm 
                 </a>
-                <a href="../fichas_l0/index_l0.html" style="display: block; padding: 8px 12px; background: rgba(52,152,219,0.3); color: #000; text-decoration: none; border-radius: 5px; font-size: 0.85em;">
-                    📋 Índice L0 (91 componentes)
+                <a href="BIM_L0_002.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_002 - Pavimento rígido concreto">
+                    002: Pavimento rígido concreto
                 </a>
-            </div>
-            
-            <!-- OTROS NIVELES -->
-            <div class="tree-level" style="margin-bottom: 15px;">
-                <div style="font-size: 0.8em; color: rgba(255,255,255,0.7); margin-bottom: 8px;">OTROS NIVELES:</div>
-                <a href="../fichas_l1/index_l1.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; margin-bottom: 3px; font-size: 0.8em;">L1 - Ensamblajes</a>
-                <a href="../fichas_l2/index_l2.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; margin-bottom: 3px; font-size: 0.8em;">L2 - Configuraciones</a>
-                <a href="../fichas_l3/BIM_L3_001.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; margin-bottom: 3px; font-size: 0.8em;">L3 - Tipos CALE</a>
-                <a href="../fichas_l5/index_l5.html" style="display: block; padding: 6px 10px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 4px; font-size: 0.8em;">L5 - Dashboard Nacional</a>
-            </div>
-            
-            <!-- FICHAS L0 -->
-            <div class="tree-level">
-                <div style="font-size: 0.8em; color: rgba(255,255,255,0.7); margin-bottom: 8px;">COMPONENTES L0:</div>
-                <div style="max-height: 400px; overflow-y: auto; padding-right: 5px;">
-                    <a href="BIM_L0_001.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_001 - Pavimento flexible asfalto e=12cm">
-                        001: Pavimento flexible asfalto e=12cm
-                    </a>
-                    <a href="BIM_L0_002.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_002 - Pavimento rígido concreto Fc=21MPa ">
-                        002: Pavimento rígido concreto Fc=21MPa 
-                    </a>
-                    <a href="BIM_L0_003.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_003 - Pavimento reforzado concreto Fc=28M">
+                <a href="BIM_L0_003.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_003 - Pavimento reforzado concreto Fc=28M">
                         003: Pavimento reforzado concreto Fc=28M
                     </a>
                     <a href="BIM_L0_004.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_004 - Pavimento especial concreto Fc=35MP">
                         004: Pavimento especial concreto Fc=35MP
                     </a>
                     <a href="BIM_L0_005.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_005 - Cuneta concreto perimetral">
-                        005: Cuneta concreto perimetral
+                        005: Cuneta concreto perimetral 
                     </a>
                     <a href="BIM_L0_006.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_006 - Sistema drenaje pluvial">
-                        006: Sistema drenaje pluvial
+                        006: Sistema drenaje pluvial 
                     </a>
-                    <a href="BIM_L0_007.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_007 - Drenaje reforzado alta capacidad">
-                        007: Drenaje reforzado alta capacidad
+                    <a href="BIM_L0_007.html" style="display: block; padding: 5px 8px; background:  rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_007 - Drenaje reforzado alta capacidad">
+                        007: Drenaje reforzado alta capacidad 
                     </a>
                     <a href="BIM_L0_008.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_008 - Señalización horizontal termoplásti">
-                        008: Señalización horizontal termoplásti
+                        008: Señalización horizontal termoplástico 
                     </a>
-                    <a href="BIM_L0_009.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_009 - Demarcación espacio vehicular">
-                        009: Demarcación espacio vehicular
+                    <a href="BIM_L0_009.html" style="display: block; padding: 5px 8px; background:  rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_009 - Demarcación espacio vehicular">
+                        009: Demarcación espacio vehicular 
                     </a>
-                    <a href="BIM_L0_010.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_010 - Conos reflectivos 90cm">
-                        010: Conos reflectivos 90cm
+                    <a href="BIM_L0_010.html" style="display: block; padding: 5px 8px; background:  rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_010 - Conos reflectivos 90cm">
+                        010: Conos reflectivos 90cm 
                     </a>
                     <a href="BIM_L0_011.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_011 - Señalización vertical Tipo I">
-                        011: Señalización vertical Tipo I
+                        011: Señalización vertical Tipo I 
                     </a>
                     <a href="BIM_L0_012.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_012 - Baranda metálica contención">
-                        012: Baranda metálica contención
+                        012: Baranda metálica contención 
                     </a>
                     <a href="BIM_L0_013.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_013 - Kit seguridad evaluación">
-                        013: Kit seguridad evaluación
+                        013: Kit seguridad evaluación 
                     </a>
                     <a href="BIM_L0_014.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_014 - Sistema detección incendios">
                         014: Sistema detección incendios
                     </a>
                     <a href="BIM_L0_015.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_015 - Edificación principal CALE">
-                        015: Edificación principal CALE
+                        015: Edificación principal CALE 
                     </a>
                     <a href="BIM_L0_016.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_016 - Construcción área sanitarios">
-                        016: Construcción área sanitarios
+                        016: Construcción área sanitarios 
                     </a>
                     <a href="BIM_L0_017.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_017 - Concreto premezclado 3000 PSI">
-                        017: Concreto premezclado 3000 PSI
+                        017: Concreto premezclado 3000 PSI 
                     </a>
                     <a href="BIM_L0_018.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_018 - Acero estructural ASTM A36">
-                        018: Acero estructural ASTM A36
+                        018: Acero estructural ASTM A36 
                     </a>
                     <a href="BIM_L0_019.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_019 - Adecuaciones Drywall completas">
-                        019: Adecuaciones Drywall completas
+                        019: Adecuaciones Drywall completas 
                     </a>
-                    <a href="BIM_L0_020.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_020 - Drywall paredes y divisiones">
-                        020: Drywall paredes y divisiones
+                    <a href="BIM_L0_020.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color:#000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_020 - Drywall paredes y divisiones">
+                        020: Drywall paredes y divisiones 
                     </a>
-                    <a href="BIM_L0_021.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_021 - Cielo raso suspendido">
-                        021: Cielo raso suspendido
+                    <a href="BIM_L0_021.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05);  color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_021 - Cielo raso suspendido">
+                        021: Cielo raso suspendido 
                     </a>
                     <a href="BIM_L0_022.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_022 - Piso vinílico LVT">
-                        022: Piso vinílico LVT
+                        022: Piso vinílico LVT 
                     </a>
                     <a href="BIM_L0_023.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_023 - Cubículos evaluación">
-                        023: Cubículos evaluación
+                        023: Cubículos evaluación 
                     </a>
                     <a href="BIM_L0_024.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_024 - Acometida trifásica 220V 30A">
-                        024: Acometida trifásica 220V 30A
+                        024: Acometida trifásica 220V 30A 
                     </a>
                     <a href="BIM_L0_025.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_025 - Instalaciones eléctricas complement">
-                        025: Instalaciones eléctricas complement
+                        025: Instalaciones eléctricas complement 
                     </a>
                     <a href="BIM_L0_026.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_026 - Puesta tierra varilla 5/8"×2.4m">
-                        026: Puesta tierra varilla 5/8"×2.4m
+                        026: Puesta tierra varilla 5/8"×2.4m 
                     </a>
                     <a href="BIM_L0_027.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_027 - Supresor de picos 6 tomas">
-                        027: Supresor de picos 6 tomas
+                        027: Supresor de picos 6 tomas 
                     </a>
                     <a href="BIM_L0_028.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_028 - UPS 10kVA doble conversión">
-                        028: UPS 10kVA doble conversión
+                        028: UPS 10kVA doble conversión 
                     </a>
                     <a href="BIM_L0_029.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_029 - Panel solar fotovoltaico 550Wp">
-                        029: Panel solar fotovoltaico 550Wp
+                        029: Panel solar fotovoltaico 550Wp 
                     </a>
                     <a href="BIM_L0_030.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_030 - Inversor solar híbrido 10kW">
-                        030: Inversor solar híbrido 10kW
+                        030: Inversor solar híbrido 10kW 
                     </a>
                     <a href="BIM_L0_031.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_031 - Batería litio 5kWh">
-                        031: Batería litio 5kWh
+                        031: Batería litio 5kWh 
                     </a>
                     <a href="BIM_L0_032.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_032 - Controlador de carga solar MPPT 60A">
-                        032: Controlador de carga solar MPPT 60A
+                        032: Controlador de carga solar MPPT 60A 
                     </a>
                     <a href="BIM_L0_033.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_033 - Estructura montaje paneles solares">
-                        033: Estructura montaje paneles solares
+                        033: Estructura montaje paneles solares 
                     </a>
-                    <a href="BIM_L0_034.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_034 - Cableado DC fotovoltaico 6mm²">
-                        034: Cableado DC fotovoltaico 6mm²
+                    <a href="BIM_L0_034.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05);  color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_034 - Cableado DC fotovoltaico 6mm²">
+                        034: Cableado DC fotovoltaico 6mm² 
                     </a>
                     <a href="BIM_L0_035.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_035 - Luminaria LED 150W poste 8m">
-                        035: Luminaria LED 150W poste 8m
+                        035: Luminaria LED 150W poste 8m 
                     </a>
                     <a href="BIM_L0_036.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_036 - Luminaria LED 200W poste 10m">
-                        036: Luminaria LED 200W poste 10m
+                        036: Luminaria LED 200W poste 10m 
                     </a>
                     <a href="BIM_L0_037.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_037 - Red y datos Cat6A">
-                        037: Red y datos Cat6A
+                        037: Escritorio ergonómico 1.20×0.60m 
                     </a>
                     <a href="BIM_L0_038.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_038 - Sistema CCTV interior">
-                        038: Sistema CCTV interior
+                        038: Silla ergonómica ajustable
                     </a>
                     <a href="BIM_L0_039.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_039 - Control acceso biométrico">
-                        039: Control acceso biométrico
+                        039: Sillas universitarias 
                     </a>
                     <a href="BIM_L0_040.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_040 - Sistema HVAC precision datacenter">
                         040: Sistema HVAC precision datacenter
@@ -510,34 +518,34 @@
                         042: Baño completo instalado
                     </a>
                     <a href="BIM_L0_043.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_043 - Escritorio ergonómico 1.20×0.60m">
-                        043: Escritorio ergonómico 1.20×0.60m
+                        043: Mobiliario oficina director 
                     </a>
                     <a href="BIM_L0_044.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_044 - Silla ergonómica ajustable">
-                        044: Silla ergonómica ajustable
+                        044: Mobiliario oficina subdirector 
                     </a>
                     <a href="BIM_L0_045.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_045 - Sillas universitarias">
-                        045: Sillas universitarias
+                        045: Mobiliario oficina coordinador
                     </a>
                     <a href="BIM_L0_046.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_046 - Tablero acrílico 3.0×1.5m">
-                        046: Tablero acrílico 3.0×1.5m
+                        046: Tablero acrílico 3.0×1.5m 
                     </a>
                     <a href="BIM_L0_047.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_047 - Mobiliario completo CALE">
-                        047: Mobiliario completo CALE
+                        047: Mobiliario sala juntas 
                     </a>
                     <a href="BIM_L0_048.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_048 - Mobiliario aula informática">
-                        048: Mobiliario aula informática
+                        048: Archivo y bodega 
                     </a>
                     <a href="BIM_L0_049.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_049 - Mobiliario oficina director">
-                        049: Mobiliario oficina director
+                        049: Counter recepción CALE 
                     </a>
                     <a href="BIM_L0_050.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_050 - Mobiliario oficina subdirector">
-                        050: Mobiliario oficina subdirector
+                        050: Sillas tandem sala espera 
                     </a>
                     <a href="BIM_L0_051.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_051 - Mobiliario oficina coordinador">
-                        051: Mobiliario oficina coordinador
+                        051: Locker metálico 12 puertas 
                     </a>
                     <a href="BIM_L0_052.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_052 - Mobiliario oficina operaciones">
-                        052: Mobiliario oficina operaciones
+                        052: Estantería archivo rodante 
                     </a>
                     <a href="BIM_L0_053.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_053 - Mobiliario sala juntas">
                         053: Mobiliario sala juntas
@@ -552,58 +560,58 @@
                         056: Sillas tandem sala espera
                     </a>
                     <a href="BIM_L0_057.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_057 - Locker metálico 12 puertas">
-                        057: Locker metálico 12 puertas
+                        057: Video proyector 5000 lúmenes 
                     </a>
                     <a href="BIM_L0_058.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_058 - Estantería archivo rodante">
-                        058: Estantería archivo rodante
+                        058: Pantalla eléctrica 4.0×3.0m 
                     </a>
                     <a href="BIM_L0_059.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_059 - Archivador vertical 4 gavetas">
-                        059: Archivador vertical 4 gavetas
+                        059: Sistema audio amplificado 
                     </a>
                     <a href="BIM_L0_060.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_060 - PC Desktop Core i5">
-                        060: PC Desktop Core i5
+                        060: Rack Servidor 42U 
                     </a>
                     <a href="BIM_L0_061.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_061 - Monitor LED Full HD 24"">
-                        061: Monitor LED Full HD 24"
+                        061: Servidor HP ProLiant DL380 Gen10 
                     </a>
                     <a href="BIM_L0_062.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_062 - Teclado + Mouse USB">
-                        062: Teclado + Mouse USB
+                        062: Switch Gigabit 48 Puertos PoE+ 
                     </a>
                     <a href="BIM_L0_063.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_063 - Video proyector 5000 lúmenes">
-                        063: Video proyector 5000 lúmenes
+                        063: Cámara IP Seguridad 4MP PoE 
                     </a>
                     <a href="BIM_L0_064.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_064 - Pantalla eléctrica 4.0×3.0m">
-                        064: Pantalla eléctrica 4.0×3.0m
+                        064: Estación supervisión pruebas teóricas 
                     </a>
                     <a href="BIM_L0_065.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_065 - Sistema audio amplificado">
-                        065: Sistema audio amplificado
+                        065: Centro control pruebas prácticas 
                     </a>
                     <a href="BIM_L0_066.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_066 - Rack servidor 42U">
-                        066: Rack servidor 42U
+                        066: Monitor LED 43" videowall 
                     </a>
                     <a href="BIM_L0_067.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_067 - Servidor HP ProLiant DL380 Gen10">
-                        067: Servidor HP ProLiant DL380 Gen10
+                        067: Plataforma tecnológica CALE completa 
                     </a>
                     <a href="BIM_L0_068.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_068 - Switch Gigabit 48 Puertos PoE+">
-                        068: Switch Gigabit 48 Puertos PoE+
+                        068: Mousepad ergonómico 
                     </a>
                     <a href="BIM_L0_069.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_069 - Cámara IP Seguridad 4MP PoE">
                         069: Cámara IP Seguridad 4MP PoE
                     </a>
                     <a href="BIM_L0_070.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_070 - Estación supervisión pruebas teóric">
-                        070: Estación supervisión pruebas teóric
+                        070: Señalización interior 
                     </a>
                     <a href="BIM_L0_071.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_071 - Centro control pruebas prácticas">
-                        071: Centro control pruebas prácticas
+                        071: Motocicleta ≤125cc (A1) 
                     </a>
                     <a href="BIM_L0_072.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_072 - Monitor LED 43" videowall">
-                        072: Monitor LED 43" videowall
+                        072: Motocicleta >125cc (A2) 
                     </a>
                     <a href="BIM_L0_073.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_073 - Plataforma tecnológica CALE complet">
-                        073: Plataforma tecnológica CALE complet
+                        073: Automóvil (B1) 
                     </a>
-                    <a href="BIM_L0_074.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_074 - Mousepad ergonómico">
-                        074: Mousepad ergonómico
+                    <a href="BIM_L0_074.html" style="display: block; padding: 5px 8px; background: rgba(52,152,219,0.5); font-weight: bold;  color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_074 - Mousepad ergonómico">
+                        074: Camioneta (B2/C1) ◄
                     </a>
                     <a href="BIM_L0_075.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_075 - Equipamiento sala teórica">
                         075: Equipamiento sala teórica
@@ -620,47 +628,19 @@
                     <a href="BIM_L0_079.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_079 - Automóvil B1/C1 adaptado">
                         079: Automóvil B1/C1 adaptado
                     </a>
-                    <a href="BIM_L0_080.html" style="display: block; padding: 5px 8px; background: rgba(52,152,219,0.5); font-weight: bold; color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_080 - Camión B2/C2 adaptado">
-                        080: Camión B2/C2 adaptado ◄
+                    <a href="BIM_L0_080.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_080 - Camión B2/C2 adaptado">
+                        080: Camión B2/C2 adaptado
                     </a>
                     <a href="BIM_L0_081.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_081 - Tractocamión B3/C3 articulado">
                         081: Tractocamión B3/C3 articulado
                     </a>
                     <a href="BIM_L0_082.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_082 - Paquete seguros obligatorios">
                         082: Paquete seguros obligatorios
-                    </a>
-                    <a href="BIM_L0_083.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_083 - Paquete certificaciones ISO">
-                        083: Paquete certificaciones ISO
-                    </a>
-                    <a href="BIM_L0_084.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_084 - Pasillos interiores edificación">
-                        084: Pasillos interiores edificación
-                    </a>
-                    <a href="BIM_L0_085.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_085 - Circulaciones exteriores">
-                        085: Circulaciones exteriores
-                    </a>
-                    <a href="BIM_L0_086.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_086 - Rampa acceso universal">
-                        086: Rampa acceso universal
-                    </a>
-                    <a href="BIM_L0_087.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_087 - Escalera principal">
-                        087: Escalera principal
-                    </a>
-                    <a href="BIM_L0_088.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_088 - Escalera emergencia">
-                        088: Escalera emergencia
-                    </a>
-                    <a href="BIM_L0_089.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_089 - Pasamanos rampa/escalera">
-                        089: Pasamanos rampa/escalera
-                    </a>
-                    <a href="BIM_L0_090.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_090 - Piso podotáctil direccional">
-                        090: Piso podotáctil direccional
-                    </a>
-                    <a href="BIM_L0_091.html" style="display: block; padding: 5px 8px; background: rgba(255,255,255,0.05); color: #000; text-decoration: none; border-radius: 3px; margin-bottom: 2px; font-size: 0.75em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="BIM_L0_091 - Señalización inclusiva braille">
-                        091: Señalización inclusiva braille
-                    </a>
-                </div>
-            </div>
+                    </a></div>
         </div>
+        
         <!-- Botón volver al índice -->
-        <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.2);">
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(0,0,0,0.1);">
             <a href="../index_v2_incremental.html" style="display: block; text-align: center; padding: 12px; background: rgba(255,255,255,0.1); color: #000; text-decoration: none; border-radius: 5px; transition: all 0.3s;">
                 ← Volver al Índice General
             </a>
@@ -669,154 +649,136 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <div class="main-content">
-        <div class="container">
-            <!-- HEADER BIM -->
-            <div class="bim-header">
-                <div class="bim-id">BIM_L0_074</div>
-                <div>
-                    <span class="bim-nivel">📐 Nivel: L0 - Componente Atómico</span>
-                    <span class="bim-nivel">🏗️ Sistema: B70</span>
-                    <span class="bim-nivel">📦 Categoría: VEH</span>
-                </div>
-                <h1 style="margin-top: 15px;">Camión B2/C2 adaptado</h1>
-                <p style="opacity: 0.9; margin-top: 10px;">Camión B2/C2 adaptado</p>
-            </div>
+    <div class="container">
+        </div>
 
-            <!-- SECCIÓN 1: IDENTIFICACIÓN BIM -->
-            <div class="seccion">
-                <h2>🎯 Identificación BIM</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">BIM ID</div>
-                        <div class="info-value">BIM_L0_074</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Código L0</div>
-                        <div class="info-value">L0.VEH_004</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Código ERP</div>
-                        <div class="info-value">VEH-004</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Clasificación OmniClass</div>
-                        <div class="info-value">Por definir</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Clasificación UniFormat</div>
-                        <div class="info-value">Por definir</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">COBie Type</div>
-                        <div class="info-value">Component</div>
-                    </div>
-                </div>
+        <!-- HEADER BIM -->
+        <div class="bim-header">
+            <div class="bim-id">BIM_L0_074</div>
+            <div>
+                <span class="bim-nivel">📐 Nivel: L0 - Componente Atómico</span>
+                <span class="bim-nivel">🏗️ Sistema: B70</span>
+                <span class="bim-nivel">📦 Categoría: VEH</span>
             </div>
+            <h1>Camioneta (B2/C1)</h1>
+            <p>Camión rígido escuela</p>
+            </div> 
 
-            <!-- SECCIÓN 2: INFORMACIÓN PRESUPUESTAL -->
-            <div class="seccion">
-                <h2>💰 Información Presupuestal</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">Valor Unitario B70</div>
-                        <div class="info-value" style="font-size: 1.5em; color: var(--secondary-color);">
-                            $$180.000.000
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">📊 ref_vrUnitario</div>
-                        <div class="info-value" style="font-size: 1.5em; color: var(--success-color);">
-                            $$180.000.000
-                        </div>
-                        <div style="margin-top: 8px; font-size: 0.85em; color: #666;">
-                            Fuente: Valor B70 actual - pendiente validación
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Nivel Confianza</div>
-                        <div class="info-value">
-                            <span class="confianza-badge confianza-baja">
-                                PENDIENTE COTIZACIÓN
-                            </span>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Diferencia (%)</div>
-                        <div class="info-value" style="color: #27ae60;">
-                            0.0%
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Unidad de Medida</div>
-                        <div class="info-value">und</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Última Actualización</div>
-                        <div class="info-value">2025-10-31</div>
-                    </div>
+        <!-- CARDS GRID -->
+        <div class="cards-grid">
+            <!-- CARD 1: Identificación BIM -->
+            <div class="card">
+                <span class="card-icon">🎯</span>
+                <h2 class="card-title">Identificación BIM</h2>
+                
+                <div class="card-item">
+                    <div class="card-label">BIM ID</div>
+                    <div class="card-value">BIM_L0_074</div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-label">Código L0</div>
+                    <div class="card-value">L0.VEH-004</div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-label">Código ERP</div>
+                    <div class="card-value">VEH-004</div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-label">Clase IFC</div>
+                    <div class="card-value">IfcTransportElement</div>
                 </div>
             </div>
 
-            <!-- SECCIÓN 3: ESPECIFICACIONES TÉCNICAS -->
-            <div class="seccion">
-                <h2>⚙️ Especificaciones Técnicas</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Parámetro</th>
-                            <th>Valor/Característica</th>
-                            <th>Norma Aplicable</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-        <tr>
-            <td>Unidad de Medida</td>
-            <td>und</td>
-            <td>Sistema BIM</td>
-        </tr>
-        
-                    </tbody>
+            <!-- CARD 2: Información Presupuestal -->
+            <div class="card">
+                <span class="card-icon">💰</span>
+                <h2 class="card-title">Información Presupuestal</h2>
+                
+                <div class="card-item">
+                    <div class="card-label">Valor Unitario</div>
+                    <div class="card-value highlight">$165.000.000</div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-label">Unidad de Medida</div>
+                    <div class="card-value">und</div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-label">Última Actualización</div>
+                    <div class="card-value">2025-10-31</div>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-label">Fuente</div>
+                    <div class="card-value" style="font-size: 0.9em;">SECOP - Promedio infraestructura vial 2024</div>
+                </div>
+            </div>
+
+            <!-- CARD 3: Especificaciones Técnicas -->
+            <div class="card">
+                <span class="card-icon">⚙️</span>
+                <h2 class="card-title">Especificaciones Técnicas</h2>
+                
+                <table class="card-table">
+                    <tr>
+                        <td>Tipo de vehículo</td>
+                        <td>Camión rígido o camioneta grande para enseñanza de conducción pesada</td>
+                    </tr>
+                    <tr>
+                        <td>Motor</td>
+                        <td>≥ 2.5 L, diésel o gasolina, potencia adecuada para transporte de carga ligera a media</td>
+                    </tr>
+                    <tr>
+                        <td>Transmisión</td>
+                        <td>Manual de 6–8 velocidades, adecuada para aprendizaje de manejo de vehículos pesados</td>
+                    </tr>
+                    <tr>
+                        <td>Frenos</td> 
+                        <td>Frenos de disco o tambor en todas las ruedas, con sistema hidráulico y ABS opcional</td>
+                    </tr>
+                    <tr>
+                        <td>Equipamiento de seguridad</td>
+                        <td>Cinturones, espejos grandes, luces delanteras y traseras, señalización completa, y cabina reforzada.</td>
+                    </tr>
                 </table>
             </div>
+        </div>
 
-            <!-- SECCIÓN 4: NORMATIVIDAD Y CUMPLIMIENTO -->
-            <div class="seccion">
-                <h2>📜 Normatividad y Cumplimiento</h2>
-                
-                <h3 style="color: var(--accent-color); margin-top: 20px;">Resolución 20253040037125 - CALE</h3>
-                <div class="normativa-item">
-                    <strong>Aplicabilidad CALE:</strong> Componente aplicable según Resolución 20253040037125
-                </div>
-                
-                <h3 style="color: var(--accent-color); margin-top: 20px;">Normas Técnicas Colombianas</h3>
-                
-        <div class="normativa-item">
-            <strong>NTC 4901</strong>: Vehículos Automotores
-        </div>
-        
-        <div class="normativa-item">
-            <strong>Resolución 20253040037125 CALE</strong>: Aplicable
-        </div>
-        
-                
-                <h3 style="color: var(--accent-color); margin-top: 20px;">Normas Internacionales</h3>
-                
-        <div class="normativa-item">
-            <strong>ISO 19650-1:2018</strong>: Organization and digitization of information
-        </div>
-        <div class="normativa-item">
-            <strong>ISO 16739-1:2018</strong>: Industry Foundation Classes (IFC)
-        </div>
-        
+        <!-- SECCIÓN: NORMATIVIDAD Y CUMPLIMIENTO -->
+        <div class="seccion">
+            <h2>📜 Normatividad y Cumplimiento</h2>
+            
+            <h3>Resolución 20253040037125 - CALE</h3>
+            <div class="normativa-item">
+                <strong>Aplicabilidad CALE:</strong> Componente aplicable según Resolución 20253040037125
             </div>
+            
+            <h3>Normas Técnicas Colombianas</h3>
+            <div class="normativa-item">
+                <strong>NTC 4901:</strong> Vehículos Automotores
+            </div>
+            <div class="normativa-item">
+                <strong>Resolución 20253040037125 CALE:</strong> Aplicable
+            </div>
+            
+            <h3>Normas Internacionales</h3>
+            <div class="normativa-item">
+                <strong>ISO 19650-1:2018:</strong> Organization and digitization of information
+            </div>
+            <div class="normativa-item">
+                <strong>ISO 16739-1:2018:</strong> Industry Foundation Classes (IFC)
+            </div>
+        </div>
 
-            <!-- FOOTER -->
-            <div class="footer">
-                <p><strong>Sistema MUNAY/SNCALE</strong> - Metodología BIM para Proyectos Públicos</p>
-                <p>Generado automáticamente | Última actualización: 2025-10-31 15:12:27</p>
-                <p>Conforme a: ISO 19650 | COBie | Guía BIM Colombia | Resolución 20253040037125</p>
-            </div>
+        <!-- FOOTER -->
+        <div class="footer">
+            <p><strong>Sistema MUNAY/SNCALE</strong> - Metodología BIM para Proyectos Públicos</p>
+            <p>Generado automáticamente | Última actualización: 2025-10-31 15:12:27</p>
+            <p>Conforme a: ISO 19650 | COBie | Guía BIM Colombia | Resolución 20253040037125</p>
         </div>
     </div>
 
@@ -827,7 +789,7 @@
         
         // Cerrar sidebar al hacer clic fuera (móvil)
         document.querySelector('.main-content').addEventListener('click', function() {
-            if (window.innerWidth <= 1024) {
+            if (window.innerWidth <= 768) {
                 document.querySelector('.sidebar').classList.remove('active');
             }
         });
